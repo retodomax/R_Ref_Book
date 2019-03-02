@@ -15,6 +15,13 @@ description: "This is a collection of useful R knowledge"
 
 # Prerequisites
 
+
+<center>
+![](figures/01_cover/Cover.svg){width=70%}
+</center>
+
+***
+
 This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
 
 The **bookdown** package can be installed from CRAN or Github:
@@ -35,3 +42,6 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+
+
