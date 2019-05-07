@@ -1,0 +1,59 @@
+# (PART) R Programming {-} 
+
+# Performance
+
+* `system.time()`: returns the CPU time used by an expression
+* `proc.time()`: similar to `system.time()`
+
+## In general
+
+1) Look for existing solutions.
+2) Do less work.
+3) Vectorise.
+4) Parallelise.
+5) Avoid copies.
+6) Byte-code compile
+
+
+## Profiling
+
+Example:
+
+1) Open an Rprof file and start profiling
+2) Run a process
+3) Stop profiling
+4) Analyze the functions run during profiling
+
+```{r, eval=FALSE}
+Rprof("dumkoll.Rprof", interval = 0.005) # start profiling
+dd <- dumkoll(50000, df=TRUE)
+Rprof(NULL) # stop profiling
+sr <- summaryRprof("dumkoll.Rprof")
+sr
+```
+
+
+
+## Microbenchmark
+
+Compare small pieces of code (here function1, function2, function3)
+
+```{r, eval = FALSE}
+library(microbenchmark)
+mbd <- microbenchmark(function1(n), function2(n), function3(n))
+```
+
+
+
+## Use package compiler
+
+
+First compile a function before you apply it to data
+
+```{r, eval = FALSE}
+library(compiler)
+dumkoll2 <- cmpfun(dumkoll)
+dumkoll2(<data>)
+```
+
+

@@ -1,0 +1,161 @@
+# Vectors {#vec}
+
+Almost all data in R is stored in vectors. Most famous vector types are listed below
+
+|Vectors        |Description                                        |
+|---------------|---------------------------------------------------|
+|Atomic vector  |1 dimensional collection, homogeneous, flat        |
+|List           |1 dimensional collection, heterogeneous, recursive |
+|Matrix         |Atomic vector 2 dimensions                         |
+|Array          |Atomic vector n dimensions                         |
+|Data frame     |List containing atomic vectors of same length      |
+
+**homogeneous:** only contains one data type
+**flat:** no nested structure (vector containing another vector)
+**recursive:** nesting is possible
+
+
+All vectores can be described using 4 properties
+
+|Property                  | Explanation                         | Example `x <- 1:3`|
+|--------------------------|-------------------------------------|------------------:|
+|Content                   | Information stored in the vector    |            `1 2 3`|
+|[Type](#type)             | Data type (numeric, list, ...)      |          `integer`|
+|[Length](#length)         | Lenght of the vector                |                  3|
+|[Attributes](#attributes) | Additional properties of the vector |             `NULL`|
+
+
+
+## Type {#type}
+
+### Atomic
+
+Within atomic vectors there are 6 vector types
+
+* Logical
+* Integer
+* Double
+* Character
+* Complex
+* Raw
+
+| Action      | R command                  |
+|-------------|------------------------------------------------------------|
+| Create      | Create a vector with `c()`. The output of function `c()` is of a certain type. The type is determined by the following hierarchy (so called coercian = "Zwang") <br> NULL < raw < logical < integer < double < complex < character < list < expression|
+| Check       | `typeof()` or with `is.character()`, `is.double()`, `is.integer()`, `is.logical()` and more generally `is.atomic()`|
+| Coerce      | `as.character()`, `as.double()`, `as.integer()` or `as.logical()`|
+
+
+### List
+
+| Action      | R command                            |
+|-------------|--------------------------------------|
+| Create      | Creat a list with `list()` or connect existing lists with `c()`|
+| Check       | `is.list()`                          |
+| Coerce      | `as.list()`                          |
+| Unlist      | Make atomic vector out of list: `unlist()` |
+
+
+## Length {#length}
+
+`length()` or generalization for higher dimensional vectors (`nrow()`,`ncol()`,`dim()`)
+
+## Attributes {#attributes}
+
+* named list
+* metadata about objects
+* access all with `attributes()`
+* set several attributes with `structure()`
+* access, set and change single attribute with `attr()`
+
+```{r}
+x <- 1:3; names(x) <- c("a", "b", "c")
+x
+attributes(x)
+```
+
+set and change them with `names()`, `dim()`, `class()`, `unname()`, ... 
+
+
+Three attributes  are **not** lost when object is modified
+
+* Names: names of entries in vector
+* Dimensions: define matrix and arrays
+* Class: (e.g. numeric, data.frame, function, ... implement S3 object system)
+
+
+
+## Factors
+
+Factors
+
+* Atomic vectors
+* Type: integer
+* Class: factor
+* Additional attribute: levels
+
+```{r}
+x <- as.factor(1:4)
+attributes(x)
+```
+
+| Action      | R command                            |
+|-------------|--------------------------------------|
+| Create      | `factor()`                           |
+| Check       | `is.factor()`                        |
+| Coerce      | `as.factor()`                        |
+
+Access set and rename levels with `levels()`
+
+
+
+## Matrices/Arrays
+
+
+Adding dimensions to an atomic vector automatically changes it to an Matrix/Array
+
+* Class: Matrix/Array (but not shown in attributes)
+* Additional attribute: dim
+
+| Action      | R command                            |
+|-------------|--------------------------------------|
+| Create      | `matrix()`, `array()`                |
+| Check       | `is.matrix()`, `is.array()`          |
+| Coerce      | `as.matrix()`, `as.array()`          |
+
+Access, set and change dimensions with `dim()`
+
+
+Higher dimensional generalization of `length()`, `names()` and `c()`
+
+|1 dim      | 2 dim                     | n dim       |
+|-----------|---------------------------|-------------|
+|`length()` |`nrow()`, `ncol()`         | `dim()`     |
+|`names()`  |`rownames()`, `colnames()` |`dimnames()` |
+|`c()`      |`rbind()`, `cbind()`       |`abind()`    |
+
+
+## Data frames
+
+* Type: list
+* Class: data.frame
+* Additional attribute: `names`, `row.names` and `class`
+
+| Action      | R command                            |
+|-------------|--------------------------------------|
+| Create      | `data.frame()`                       |
+| Check       | `is.data.frame()`                    |
+| Coerce      | `as.data.frame()`                    |
+
+Data frame columns can also contain lists and matrices, but it is better to use lists for this purpose.
+
+## Missing values
+
+Different types of `NA`
+
+* `NA_real_` (double)
+* `NA_integer_`
+* `NA_character_`
+
+
+

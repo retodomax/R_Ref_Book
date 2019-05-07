@@ -1,0 +1,44 @@
+# Functional programming
+
+* Functionals: functions that take a function as an argument
+* Closures: functions written by another function
+* Anonymous function: function without name
+
+
+## Closures {#FunProgClosures}
+* Not the same meaning as type `closure` (Chapter \@ref(FunTypes))
+* Functions which were written by another function
+    - Have non-trivial environments (not `R_GlobalEnv` or a package's environment)
+* Enclosing environment is the function environment of the function which reated them
+    - The function "Enclose" this non-trivial environment
+    - Can access all its variables
+* Two levels of parameters
+    - Child level (Function environment): does the work
+    - Parent level (Environment property): control parameter
+
+```{r}
+power <- function(exponent) {
+  function(x) x ^ exponent
+}
+
+square <- power(2)
+square(2)
+```
+
+Note: function environment of the call `power(2)` is not deleted in this case because it is the enclosing environment of the `square()` function.
+
+
+## Lists of functions
+
+Useful to apply several functions to one object
+
+```{r}
+x <- 1:10
+funs <- list(
+  sum = sum,
+  mean = mean,
+  median = median
+)
+lapply(funs, function(f) f(x))
+```
+

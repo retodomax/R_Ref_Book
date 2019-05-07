@@ -1,0 +1,150 @@
+# (PART) R Statistics {-} 
+
+# (PART) R Plots {-} 
+
+# Plots {#Plots}
+
+
+
+## Graphical parameters `par()`
+
+### Set graphical parameters
+Change global option
+```{r}
+par(xlog = T)
+```
+
+change for local plot
+```{r, eval=F}
+plot(..., xlog = T)
+```
+
+When parameters are set, their previous values are returned in an invisible named list. Such a list can be passed as an argument to par to restore the parameter values.
+
+```{r, eval = F}
+opar <- par(xlog = T)
+plot(...)
+par(opar)
+```
+
+reset default
+
+```{r, eval=F}
+dev.off()
+```
+
+check current parameter
+
+```{r, eval = T}
+par("xlog")
+```
+
+The parameters are defined for the currently active device
+
+* Normally the Rstudio plot panel
+* If `png()` or `pdf()` opend => only within this document
+* `dev.off()` closes device and reset `par()`
+    + If `png()` or `pdf()` &emsp; &rArr; the same par are active as they were before the device `png()` or `pdf()` was opend
+    + If Rstudio panel \t &emsp; &rArr; the default par are active
+
+
+### Default
+```{r}
+par()
+```
+
+
+### Device region
+
+<!-- ![figure margines](C:/Users/Reto/Downloads/fig_margins.jpg){width=50%} -->
+
+<!-- <img style="float: right;" src="C:/Users/Reto/Downloads/fig_margins.jpg" width=400> -->
+
+```{r}
+opar <- par(xpd = NA,
+    mar = c(5,4,4,2) + 0.1,
+    oma = c(3,3,3,3) + 0.05)
+
+plot(1:10, 1:10, type = "n",
+     xlab = "", ylab = "Y")
+
+box("plot", col = "red")
+box("inner", col = "green")
+box("outer", col = "blue")
+
+text(5,9, "Plot", col = "red", cex  = 2)
+mtext("Figure", col = "green", cex = 2,
+      side = 3, line = 2)
+mtext("Device", col = "blue", cex = 2,
+      side = 3, line = 1, outer = T)
+
+mtext(text = c("Line 0",
+               "Line 1",
+               "Line 2",
+               "Line 3"),
+      side = 3, line = 0:3,
+      at = grconvertX(1, "npc", "user"),
+      adj = 1,
+      col = "green")
+
+mtext(text = c("Line 0",
+               "Line 1",
+               "Line 2",
+               "Line 3"),
+      side = 2, line = 0:3,
+      adj = 1,
+      col = "green")
+
+mtext(text = c("Line 0",
+               "Line 1",
+               "Line 2"),
+      side = 1, line = 0:2, outer = T,
+      at = 0, adj = 0,
+      col = "blue")
+
+
+mtext(text = "Margins",
+      side = 1, line = 2, cex = 2)
+mtext(text = "par(mar=c(5,4,4,2) + 0.1)",
+      side = 1, line = 3)
+
+mtext(text = "Outer Margin",
+      side = 1, line = 1, cex = 2, outer = T)
+mtext(text = "par(oma=c(3,3,3,3))",
+      side = 1, line = 2, outer = T)
+
+par(opar)
+```
+
+
+
+
+
+
+#### Coordinate system outside plot
+```{r, collapse=TRUE}
+par("mar") # Margine Area
+par("oma") # Outer Margin Area
+par("mgp") # position of [1] x/y-label, [2] axis, [3] ticks
+par("mex") # "height"" of one line
+```
+
+#### Normalized device coordinates (NDC) [0, 1]
+```{r, collapse=TRUE}
+par("fig") # Start and endpoint of ploting region
+par("omd") # oma in NDC
+```
+
+#### Change between coordinate system
+Use `grconvertX()` to change between different coordinate systems
+
+#### Plot outside plotting region
+```{r, collapse=TRUE}
+par("xpd")
+```
+
+`FALSE`  $\Rightarrow$ clipped to the plot regions  
+`TRUE`   $\Rightarrow$ clipped to the figure region  
+`NA`     $\Rightarrow$ clipped to the device region
+
+

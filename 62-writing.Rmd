@@ -1,0 +1,221 @@
+# R Markdown
+
+## Literate programming
+Sweave, Knitr and R markdown all based on Donald Knuth's [Literate programming](https://en.wikipedia.org/wiki/Literate_programming). Text and code are in a common file and the code follows the structure of the text.
+
+
+### Sweave
+
+* Takes text in latex formate and R/S code chunks to generate (weave) one tex file.
+* Included in R standard library (utils package)
+
+### Knitr
+
+* Takes several imputs for text (Latex, Markdown, HTML, AsciiDoc, reStructuredText, and Textile) and code (R, Python, ...)
+* R package
+* See: [Knitr Homepage](https://yihui.name/knitr)
+
+### R Markdown
+
+Combination of Knitr and Pandoc
+
+* Knitr: executes the computer code embedded in Markdown, and converts R Markdown to Markdown
+* Pandoc: renders Markdown to the output format you want (such as PDF, HTML, Word, and so on)
+
+```{r echo = FALSE, out.width='70%', fig.align = 'center'}
+knitr::include_graphics("figures/workflow_knitr.png")
+```
+
+
+
+* See: [Markdown Manual](https://bookdown.org/yihui/rmarkdown/)
+* Compile/Render an  R Markdown document by
+    - using function `rmarkdown::render()`
+    - pushing knit button (Ctrl + Shift + k)
+
+
+## Components
+
+* Three basic components of an R Markdown document
+    - Metadata (YAML frontmatter)
+    - Text (Markdown)
+    - Code (R, Python, C++, ...)
+
+
+### YAML frontmatter
+The information of the YAML frontmatter is passed to the output function when the document is rendered. To see **all possible options** go to the help page of the output function (e.g. `?rmarkdown::html_document` or `?bookdown::gitbook`). Some options are passed to kniter and some are passed to pandoc.
+
+All output functions:
+
+`r knitr::combine_words(grep('^[^_]+_(document|presentation)$', ls(asNamespace('rmarkdown')), value = TRUE), sep = '\n', and = '', before = '- \x60', after = '\x60')`
+
+And some of extension packages (you need to include the package name) e.g. `tufte::tufte_html`
+
+
+The YAML frontmatter follows the a certain syntax
+
+- starts and ends with three dashes `---`
+- tag and value sparated by `:`
+- `true`, `false` (unlike `TRUE`, `FALSE` in R)
+- vectors: with square brackets e.g. `output: ["html_document", "word_document"]`
+- lists: indet code by two spaces
+
+### Text
+The syntax for text (also known as prose or narratives) is Markdown. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents.
+
+Find all formatting syntax in detail in the [Pandoc Manual](https://pandoc.org/MANUAL.html#pandocs-markdown) e.g. 
+
+* [Inline formatting](https://pandoc.org/MANUAL.html#inline-formatting)
+* [Links](https://pandoc.org/MANUAL.html#links-1)
+* [Lists](https://pandoc.org/MANUAL.html#lists)
+* [Tables](https://pandoc.org/MANUAL.html#tables)
+
+or in less detail in the [R Markdown manual](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html)
+
+* \\ : escape
+* \` : code
+* \* : italic/bold
+* \_ : italic/bold
+* \^ : superscript
+* \~ : subscript
+* \$ : formula
+* \@ : reference
+* \# : header
+* \-/\+ : itemize
+* \> : blockquote
+
+
+```{r echo = FALSE, out.width='70%', fig.align = 'center'}
+knitr::include_graphics("figures/writing_markdown.png")
+```
+
+
+My favourit html_document themes: flatly, spacelab, lumen and sandstone
+
+
+### Code
+
+#### Types
+Two types of code
+
+- A code chunk\index{code chunk} starts with three backticks like ```` ```{r} ```` where `r` indicates the language name, and ends with three backticks. You can write chunk options in the curly braces (e.g., set the figure height to 5 inches: ```` ```{r, fig.height=5} ````).
+- An inline R code expression starts with `` `r `` and ends with a backtick `` ` ``.
+
+#### Chunck Ouput
+
+* Text
+* Tables
+* Graphics
+
+#### Chunck options
+
+All chunk options can be found in the [Knitr Manual](https://yihui.name/knitr/options/)
+
+Most important chunck options:
+
+- first element gives the engine (name of the language)
+- second element can be a chunck name e.g. `{r, my-name, eval = ...}`
+- `eval`: Whether to evaluate a code chunk.
+- `echo`: Whether to echo the source code in the output document.
+- `results`: When set to `'hide'`, text output will be hidden; when set to `'asis'`, text output is written "as-is", e.g., you can write out raw Markdown text from R code (like `cat('**Markdown** is cool.\n')`).
+- `collapse`: Whether to merge text output and source code into a single code block in the output.
+- `warning`, `message`, and `error`: Whether to show warnings, messages, and errors in the output document.
+- `include`: Whether to include anything from a code chunk in the output document.
+- `cache`: Whether to enable caching.
+- `fig.width` and `fig.height` (or `fig.dim`): The (graphical device) size of R plots in **inches**.
+- `out.width` and `out.height`: The output size of R plots in the output document in **percentage** (e.g. `out.width = '80%'`).
+- `fig.align`: The alignment of plots. It can be `'left'`, `'center'`, or `'right'`.
+- `dev`: The graphical device to record R plots. Typically it is `'pdf'` for LaTeX output, and `'png'` for HTML output, but you can certainly use other devices, such as `'svg'` or `'jpeg'`.
+- `fig.cap`: The figure caption.
+- `child`: You can include a child document in the main document. This option takes a path to an external file.
+
+
+Set chunk option globally:
+
+
+
+````markdown
+`r ''````{r, setup, include=FALSE}
+knitr::opts_chunk$set(comment = "#>",
+                      tidy = TRUE,
+                      fig.align = "center",
+                      out.width = "80%")
+```
+````
+
+<!-- 
+## this seems necessary for correct source code displaying...
+``` --> 
+
+
+## Figures
+
+Plot from code chunks or insert via `knitr::include_graphics()`
+
+e.g.
+
+````markdown
+`r ''````{r, out.width='25%', fig.align='center', fig.cap='...'}
+knitr::include_graphics('figures/hex-rmarkdown.png')
+```
+````
+<!-- 
+## this seems necessary for correct source code displaying...
+``` --> 
+
+```{r include-graphics, echo=FALSE, fig.cap='The R Markdown hex logo.', out.width='25%', fig.align='center'}
+knitr::include_graphics('figures/hex-rmarkdown.png')
+```
+
+Chunk options
+
+* `fig.show='hold'` Show figures next to each other (if out.width < 50%)
+* `fig.cap = "text"` Figure captation text or text reference
+
+Recomended file formate
+
+* If output pdf use pdf images ([svg not possible](https://stackoverflow.com/questions/50165404/how-to-make-a-pdf-using-bookdown-including-svg-images)!)
+* If output html use png images
+* If output both use png
+    - `options(knitr.graphics.auto_pdf = TRUE)` pdf output will automatically take file with same name but pdf format if it is available.
+
+
+## Tables
+
+* For data in R use `knitr::kable()` (See [Kable Manual](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html))
+* For text use [Pandoc tables](https://pandoc.org/MANUAL.html#tables)
+    + Available
+        - Simple tables
+        - Multiline tables
+        - Grid tables
+        - Pipe tables
+    + Recommended to use
+        - pipe tables for simple tables (generate [here](https://www.tablesgenerator.com/markdown_tables))
+        - Grid tables where you need bullet points within the table (generate [here](https://www.tablesgenerator.com/text_tables))
+
+> Attention: without using a header, the formated table is reduced to an unformatted html table. Avoid this by including a white space into the header ()
+
+
+
+## Sepecial characters
+
+* Mathematical stuff with Latex
+    - $\alpha$ $\Gamma$ $\ggg$ $\notin$ $\dagger$ $\mathbb{R}$ $\Rightarrow$ $\infty$ $n$
+* What you can reach on the keyboard, use keyboard
+    - §°+"ç%&/()=?¦¬|¢~[]èéàüöä<$£
+* Some characters with special meaning in markdown needs to be escaped with \\
+    - Everywhere \\ \` \* \_ \^ \~ \$ \@ \{ \}
+    - Beginning of new line \# \- \+ \>
+* Furter characters
+    - Find symbol with google, copy-paste (e.g. €)
+    - Find html code (e.g. \&euro; $\Rightarrow$ &euro;)
+        + Find many [here](https://dev.w3.org/html5/html-author/charref)
+* html code examples examples
+    - \&nbsp; for non-breaking space (several after each other possible)
+    - \&Tab; for a tab
+    - \&#128512; for &#128512;
+    - \&larr; for &larr; (does work in pdf)
+    - \&rArr; for &rArr; (does not work in pdf)
+    - Will not always work with pdf output (some characters work others not)!
+
+

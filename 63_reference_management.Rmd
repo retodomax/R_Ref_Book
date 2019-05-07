@@ -1,0 +1,57 @@
+# Reference management
+
+## Literature
+
+* R Markdown recommends using BibTeX databases (text file with .bib extension in a certain format)
+* BibTeX files can be written by hand or generated from common reference management programms like EndNote, Zotero, JabRef, ...
+
+### Recommended: Using Zotero
+
+* Download Zotero
+* Download extension *Better BibTeX* (See: [here](http://unimelb.libguides.com/c.php?g=565734&p=3897111))
+* Generate automatically updating .bib file
+    - Right click on citation Folder
+    - Export
+    - Format: Better BibTeX, tick *Keep updated*
+    - Select folder with LaTeX file
+    - Manage your exports in Bearbeiten -> Einstellungen -> Better BibTeX -> Automatischer Export
+* Use **citation key** (e.g. Zihlmann2019) within markdown to refere to a certain reference
+  - Use drag and drop of Zotero to insert citation key ([Better BibTeX Citation Key Quick Copy](https://retorque.re/zotero-better-bibtex/citation-keys/))
+  - `@Zihlmann2019` will generate Zihlmann (2019)
+  - `[@Zihlmann2019]` will generate (Zihlmann 2019)
+  - `[see @Zihlmann2019, pp. 33-35`] will generate (see Zihlmann 2019, 33-35)
+  - `[@Zihlmann2019; @Fritsche1900]` will generate (Zihlmann 2019; Fritsche 1900)
+  - `@Zihlmann2019 [p. 33] says ` will generate Zihlmann (2019, 33) says
+  - `@R-packagename` to cite an R package  (necessary to export package citation before)
+  - Further information see [Bibliographies and Citations](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
+
+To add citations to the bibliography without using them in the text include 
+
+```
+---
+nocite: | 
+  @item1, @item2
+...
+```
+
+## Cross-References
+
+* Sections
+* Equations
+* Theorems
+* Figures
+* Tables
+
+See [Bookdown manual](https://bookdown.org/yihui/bookdown/cross-references.html)
+
+Labels may contain (a-z, A-Z, 0-9, -, /)
+
+
+Try to add some citations:
+
+See @wickhamAdvanced
+
+which was shown several times [@grolemundDataScience]
+
+
+

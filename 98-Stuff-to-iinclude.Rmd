@@ -1,0 +1,9 @@
+# Stuff still to include
+
+1) Regularly updating R, RStudio and all packages...
+    - [great link](https://bioinfo.umassmed.edu/bootstrappers/bootstrappers-courses/courses/rCourse/Additional_Resources/Updating_R.html)
+    - Try to find a solution with the `updateR()` function in the `installr` package
+2) Reproducible package handling
+    - Find a solution with packrat
+    - implemented in RStudio!!
+    - [good link](http://rstudio.github.io/packrat/?version=1.1.383&mode=desktop)

@@ -1,0 +1,153 @@
+# (PART) R Language {-} 
+
+# Objects
+
+> To understand computations in R, two slogans are helpful:
+>
+> * Everything that exists is an object.
+> * Everything that happens is a function call.
+>
+> --- John Chambers
+
+
+## Inspect object
+* `str()`: struction of object, get unsystematic overview
+* `typeof()`: "low-level" type of an object
+* `mode()`: storage mode of an object
+* `class()`: "high-level" class of object
+    - Determines what method is applied when passed to generic functions
+
+`typeof()` and `mode()` are almost the same (at the same level) except that they use different names
+
+| `typeof()`      | `mode()`           |
+|-----------------|--------------------|
+|`integer`, `double`|`numeric`         |
+|`special`, `builtin`|`function`       |
+|`symbol`         |`name`              | 
+|`language`       |`(`, `call`         |
+
+`class()` is on a complete different level and determines what method is applied when passed to generic functions. Some classes are explicitly stated as an attribute, others are implicitly given by the `mode`
+
+For historical reasons (back compatibility with S / S+), another low-level inspector function is `storage.mode()`.
+
+
+```{r, echo = FALSE}
+l.ex <- list(one = 1, s1 = 1:2, pi = pi, I = 1i, `NA` = NA, let = c("A", "a", "b", ":::"),
+             fn = mean, fn2 = c, fnSpec = `function`,
+             n = as.name("Mä"), n2 = quote(x), nb = quote(`{`),
+             ex = expression(1+1), cl = call("round",10), cl2 = quote(sin(x)),
+             formula = y ~ x+t, formals = formals(lm), arg1 = formals(lm)[[1]],
+             NULL = NULL)
+# str(l.ex, vec.len = 16, max.level = 1)
+
+myShow <- function(x, max.length= 1000L) {
+    r <- tryCatch(format(x), error=function(e)e)
+    r <- if(inherits(r, "error"))
+             tryCatch(as.character(x), error=function(e)e)
+         else paste(r, collapse = " ")
+    r <- if(inherits(r, "error"))
+             tryCatch(capture.output(x), error=function(e)e)
+         else paste(r, collapse = " ")
+    substr(r, 1L, max.length)
+}
+
+cbind(show    = sapply(l.ex, myShow, max.length = 16),
+      typeof  = sapply(l.ex, typeof),
+      storage.mode = sapply(l.ex, storage.mode),
+      mode    = sapply(l.ex, mode),
+      class   = sapply(l.ex, class)) -> tab.ex
+knitr::kable(tab.ex, format="pandoc")
+```
+
+
+
+## Hirarchy
+
+Objects can be ordered in a hirarchical structure
+
+* Vector
+    + Atomic vector
+        - Matrix
+        - Array
+    + List
+        - Data frame
+* Function
+    + Primitive
+    + Closure
+* Environment
+* Symbol
+* Call
+* Expression
+* Forumla
+* ...
+
+Some objects are building blocks for other objects
+
+* Symbols can be combined to calls.
+* Calls can be combined to expressions
+
+
+## Basic Objects
+
+### Vectors, functions and environments
+Vectors will be covered in chapter \@ref(vec), functions in  chapter \@ref(fun) and environments in chapter \@ref(env)
+
+
+
+### Symbols
+* A way to refer to R objects by name
+* Constituent of calls
+* Type: symbol
+* Class: name
+
+```{r}
+x <- call("sin", 1:3)
+typeof(x[[1]])
+```
+
+
+
+### Calls
+* An unevaluated expression which consists of the named function applied to the given arguments
+* Class: call
+* Type: language
+* Evaluate a call with `eval()`
+
+| Action      | R command                            |
+|-------------|--------------------------------------|
+| Create      | `call()` or `quote()`|
+| Check       | `is.call()`                          |
+| Coerce      | `as.call()`                          |
+
+```{r}
+x <- call("sin", 1:3)
+y <- quote(sin(1:3))
+eval(x)
+```
+
+
+
+### Expression
+* Lists of calls
+* `expression()` returns its arguments as a vector of unevaluated expressions.
+* `quote()` returns its argument as an unevaluated expression.
+* `eval()` evaluates an expression in a certain environment
+
+```{r}
+eval(quote(mean(c(1:3))))
+```
+
+
+
+### Not understand yet
+* `parse()`
+* `all.equal()`
+
+
+Why?
+```{r}
+x <- call("sin", 1:10)
+y <- quote(sin(1:10))
+identical(x,y)
+```
+

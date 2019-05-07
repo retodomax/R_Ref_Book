@@ -1,0 +1,20 @@
+# (PART) R Outreach {-} 
+
+# Reproducible Research
+
+* Data
+    - R
+    - RStudio (IDE)
+* Collaboration
+    - Git
+* Writing
+    - R Markdown
+    - Tinytex
+    - TeXworks
+* Literature
+    - Zotero
+    - BibTeX
+* Communication
+    - Inkscape
+    - Gimp
+    - Twitter

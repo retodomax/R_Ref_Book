@@ -1,0 +1,281 @@
+# Environments {#env}
+
+## General properties
+
+### Definition
+
+* "Map" of the location of the function’s variables.
+    - Objects of the enviromentent are stored somewhere in memory
+    - Environment contains names and associated pointers to the place in memory
+    - Contrary to lists, environments
+        + contain always named entries
+        + order does not matter
+        + have enclosing environments
+        + cannot be copied but only replaced
+* Every object in R lives in an environment
+* An Environment contains two things
+    - Frame: collection of named objects
+    - Enclosing environment/"Parent environment": reference to another environment
+
+
+(ref:EnvDef) Environments consist of a frame containing pointers to objects and a pointer to the enclosing environment. The sequence of all pointers make up the search path.
+
+```{r echo = FALSE, out.width='70%', fig.align = 'center', fig.cap='(ref:EnvDef)'}
+knitr::include_graphics("figures/env01_environment-structure.png")
+```
+
+
+> **parent environment &#8800; parent frame**: parent frame, called by `parent.frame()` The enclosing environment is distinguished from the parent frame: the latter (returned by `parent.frame()`) refers to the environment of the caller of a function (call stack).
+
+
+* `new.env()`: create new environment
+* Access environment by name: `as.environment("package:stats")`
+* Access namespaces by name: `asNamespace("stats")`
+* Elements of enviornment can be accessed with `$`
+* `parent.env()`: find enclosing environment
+    - `parent.env<-` replacement function to change enclosing environment
+
+
+
+### Attributes
+* Name: new environemnts get hexadecimal names (location of the environment in memory). A name attribute can be added to have easier recognizable names.
+    - get name with `environmentName()`
+    - set name with `attr(x, "name") <- "Cool Name`
+
+
+### Special environments
+* `R_EmptyEnv`
+    - Can be accessed with `emptyenv()`
+    -  Only environment without an enclosing environment.
+* `base`
+    - Can be accessed with `baseenv()`
+    - Environment of the base package
+* `R_GlobalEnv`
+    - Can be accessed with `globalenv()` or `.GlobalEnv`
+    - Current environment when you start R
+* Current/"local" environment
+    - Can be accessed with `environment()` without argument.
+    - Every time R runs an expression, it is run in one current environment
+    - Value of variables defined in an expression are saved in memory and the pointer to that memory is saved in the current environment
+
+
+### Search path and search list
+* List of environments in a specified order
+    - Each item's enclosing environemnt is the next item
+* Search path &#8800; search list
+    - Search path
+        + Always starts from `.GlobalEnv`
+        + Called with `search()`
+    - Search list
+        + Always starts from current environment
+        + Called with `library(pryr); parenvs(all = TRUE)`
+* The value of an object called by its name is searched along the search list
+    - first in the current environment
+    - second in the enclosing environment of the current ennvironment
+    - third in the enclosing environment of the enclosing environment, and so on ...
+* `library()` puts the package environment directly below `.GlobalEnv` and load the namespace of the package
+* `attach()` let you attache any list/environment to the search path (at any position)
+* `::` operator skips the search list and goes directly to the namespace of a certain environment
+    - The package namespace will be loaded if it was not loaded before the call, but the package will not be attached to the search path.
+    - `:::` operator let you access internal (private) objects of a namespace (at your own risk!)
+    - If you do not know the namespace of the object you can use `getAnywhere()` to access internal and exported objects (public and private)
+
+
+
+### Objects within the environment
+
+* `ls()` stands for list. Lists all objects of a certain environment
+    - Objects starting with a `.` are hidden. Use `all.names = TRUE` to show them
+    - `ls.str()` lists all objects and applies `str()` to all objects
+* `assign()`: create an object in a specific environment
+    - `<-` creates an object in the current environment
+    - `<<-` replaces existing object somewhere in the search list or if not existing defines it in `R_GlobalEnv`
+* `exists()` returns boolean if an object with the specified name exists in the environment
+* `get()` return the value of a named object
+* `rm()` remove an object from a specified environment
+* All those functions can be applied to a specific environment using the argument `pos`
+    - By default `pos = -1L` which means current environment
+    - By position in the search list: `pos = 1` means first entry in search path
+    - By name: `pos = ".GlobalEnv"`
+    - By a specific environment `pos = as.environment("package:base")`
+
+```{r}
+assign("x", 1:3, envir = .GlobalEnv) # same as x <- 1:3 but specific
+ls()
+get("x", ".GlobalEnv")
+rm(list = ls()) ## removes all objects from current environment
+```
+
+
+* Determine framing environment of an object
+    - There is no easy way to query an object for the environment that owns it.
+    - It is possible that two or more environments own the same object.
+    - One object name can refere to several objects (see `conflicts()`)
+    - If you want to see the first environment in the search list containg an object with a certain name use `library(pryr); where("x")`
+    - If you want to see all packages which contain a certain name use `find()`
+
+
+## Environment of functions
+
+
+```{r, collapse=TRUE}
+p_env <- function() print(environment())
+p_env() # returns function environment
+environment(p_env) # returns environment property
+
+
+age = 32 
+MyFunction = function(){
+  age = 22
+  FromLocal = function() { print( age + 1 ) } 
+  FromGlobal = function() { print( age + 1 ) } 
+  NoSearch =  function() { age = 11; print( age + 1 ) } 
+  environment( FromGlobal ) = .GlobalEnv
+  
+  FromLocal() 
+  FromGlobal() 
+  NoSearch()
+} 
+MyFunction()
+```
+
+
+Functions are related with three environments
+
+1. Function environment
+    * Every time R executes a function it creates a new local environment.
+    * Variables (e.g. actual arguments) created inside that function will live inside that new environment
+        - They will not overwrite variables by the same name outside the function's environment
+    * When the function ends, the last value is returned and the environment is deleted
+        - There is one exception: If the function environment is enclosing environment of a still existing function, it will **not** be deleted (see chapter \@ref(FunProgClosures)).
+2. Framing environment
+    * Where it is saved
+    * Framing environment contiains function name and pointer to memory where function is stored
+    * Determines if the function is found when it is called by name
+3. Environment property
+    * Where it should run
+    * Environment property becomes enclosing environment of function environment (local environment created by calling the function)
+    * Determines if the objects in the function are found
+    * Get environment object with `environment(<function name>)`
+
+
+By default:
+
+- Framing environment = Environment property = Environment in which function was defined
+- Can be changed with `environment<-` replacement function
+
+(ref:EnvFun) The framing environment (green) is not necessarily the environment property of the function (blue). The Environment Property points to another environment and defines the search list of a function.
+
+```{r EnvFun, echo = FALSE, out.width='50%', fig.align = 'center', fig.cap='(ref:EnvFun)', fig.show = 'hold'}
+knitr::include_graphics(c("figures/env4_fun.png",
+                          "figures/env5_fun.png"))
+```
+
+
+> **Search list &#8800; call stack**: the call stack is a list of hirarchical function calls where higher functions are executed within lower functions. This does not mean that the environment property of the higher function is the lower function.
+
+> **Lexical scoping &#8800; dynamic scoping**: Lexical scoping means variables are searched where the function was defined, dynamic scoping means variables are searched where the function was called. R is closer to lexical scoping.
+
+
+## Packages 
+* Each package has 3 associated environements
+    - Package environment
+    - Namespace environment
+    - Imports environment
+
+### Package environment
+Contains all exported (public) objects of the package (objects that the package author wants you to see)
+
+### Namespace environment
+Contains all objects of the package (public and private)
+
+### Imports environment
+Contains all objects from other packages that are explicitly stated requirements for a package to work properly. Packages which are imported by another package are listed in [CRAN](https://cran.r-project.org/) (see example of [ggplot](https://cran.r-project.org/web/packages/ggplot2/index.html)).
+
+
+Advantage: Functions within a package always search for objects in the following order
+
+1) Within the function environment
+2) Within the package namespace
+3) Within the namespace of imported packages
+4) Within the base namespace
+5) Along normal search path (`.GlobalEnv` &rarr; `package:base`)
+
+If any package in the search path redefines any basic function (e.g. `+`), it will not affect the functions in the package as all objects used by the package are either imported or in the base namespace.
+
+
+(ref:EnvMap) The environment property of a function in any package is the namespace of the package. The enclosing environment of namespace is imports:package. The environment property of the functions within imports:package is again the namespace of their package. Box: environment, Dotted arrows: environment property, solid arrows: enclosing environment
+
+```{r EnvMap, echo = FALSE, out.width='100%', fig.align = 'center', fig.cap='(ref:EnvMap)', fig.show = 'hold'}
+knitr::include_graphics("figures/env02_dotted.png")
+```
+
+
+(ref:EnvMap2) Map of the world. All search lists and environment properties in R.
+
+```{r EnvMap2, echo = FALSE, out.width='100%', fig.align = 'center', fig.cap='(ref:EnvMap2)', fig.show = 'hold'}
+knitr::include_graphics("figures/env03_map-of-the-world.png")
+```
+
+
+See how your current map of the world looks like (which package are attached, which namespaces are loaded)
+
+```{r}
+sessionInfo()
+```
+
+
+
+## Examples
+
+### Example 1: pass object of class "acf" to `plot()`
+
+1. Generic function (OOP)
+    a) calls `UseMethod()` => determines class
+    b) goes along search list to find `plot.acf()`
+    c) finds it in environment `package:stats`
+2. Function call
+    a) function `plot.acf()` is called
+    b) objects/functions within body of `plot.acf` are searched along search list
+        - Search list: function environment &rarr; namespace:stats &rarr; imports:stats &rarr; namespace:base &rarr; R_GlobalEnv &rarr; ... &rarr; package:base
+        - Example 1
+            - In `plot.acf` there is the function `match.arg`
+            - Will be found in namespace:base
+        - Example 2
+            - In `plot.acf` there is the function `par()`
+            - Will be found in imports:stats because stats imports graphics
+            - When `par()` is called a new environment is created with new search list (function environment &rarr; namespace:graphics &rarr; imports:graphics &rarr; namespace:base &rarr; R_GlobalEnv &rarr; ... &rarr; package:base)
+
+
+### Example 2: Search list &#8800; call stack
+
+```{r}
+outer_fun <- function(x, y = 1) x + y
+inner_fun <- function(x) x + y
+y <- 2
+
+outer_fun(inner_fun(1))
+## inner function takes y from global.env NOT from outer_fun
+
+outer_fun <- function(y){
+  inner_var <- inner_fun(1)
+  inner_var + y
+}
+
+outer_fun(100)
+## Also here the inner function takes y from .GlobalEnv
+## Note that two different y are used (once from .GlbalEnv and once from outer_fun function environment)
+```
+
+
+### Example 3: Change package function
+
+Let's assume an auxiliary function in package
+
+1. print it to console
+2. copy&paste to *.R  script
+3. "fix the bug"
+4. "send to console" (evaluate in globalenv)
+5. This is not sufficient
+
+but rather you must additionally get it to have the correct "enclosing environment" with `environment(<thisFun>) <- asNamespace("pkgName")`

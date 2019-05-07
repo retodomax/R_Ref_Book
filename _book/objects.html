@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 1 Objects | R Reference book</title>
+  <meta name="description" content="This is a collection of useful R knowledge">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 1 Objects | R Reference book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="figures/01_cover/Cover.svg" />
+  <meta property="og:description" content="This is a collection of useful R knowledge" />
+  <meta name="github-repo" content="retodomax/R_Ref_Book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Objects | R Reference book" />
+  
+  <meta name="twitter:description" content="This is a collection of useful R knowledge" />
+  <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
+
+<meta name="author" content="Reto Zihlmann">
+
+
+<meta name="date" content="2019-05-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon">
+<link rel="prev" href="table-of-content.html">
+<link rel="next" href="vec.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Reference book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="table-of-content.html"><a href="table-of-content.html"><i class="fa fa-check"></i>Table of content</a></li>
+<li class="part"><span><b>I R Language</b></span></li>
+<li class="chapter" data-level="1" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>1</b> Objects</a><ul>
+<li class="chapter" data-level="1.1" data-path="objects.html"><a href="objects.html#inspect-object"><i class="fa fa-check"></i><b>1.1</b> Inspect object</a></li>
+<li class="chapter" data-level="1.2" data-path="objects.html"><a href="objects.html#hirarchy"><i class="fa fa-check"></i><b>1.2</b> Hirarchy</a></li>
+<li class="chapter" data-level="1.3" data-path="objects.html"><a href="objects.html#basic-objects"><i class="fa fa-check"></i><b>1.3</b> Basic Objects</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="objects.html"><a href="objects.html#vectors-functions-and-environments"><i class="fa fa-check"></i><b>1.3.1</b> Vectors, functions and environments</a></li>
+<li class="chapter" data-level="1.3.2" data-path="objects.html"><a href="objects.html#symbols"><i class="fa fa-check"></i><b>1.3.2</b> Symbols</a></li>
+<li class="chapter" data-level="1.3.3" data-path="objects.html"><a href="objects.html#calls"><i class="fa fa-check"></i><b>1.3.3</b> Calls</a></li>
+<li class="chapter" data-level="1.3.4" data-path="objects.html"><a href="objects.html#expression"><i class="fa fa-check"></i><b>1.3.4</b> Expression</a></li>
+<li class="chapter" data-level="1.3.5" data-path="objects.html"><a href="objects.html#not-understand-yet"><i class="fa fa-check"></i><b>1.3.5</b> Not understand yet</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="vec.html"><a href="vec.html"><i class="fa fa-check"></i><b>2</b> Vectors</a><ul>
+<li class="chapter" data-level="2.1" data-path="vec.html"><a href="vec.html#type"><i class="fa fa-check"></i><b>2.1</b> Type</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="vec.html"><a href="vec.html#atomic"><i class="fa fa-check"></i><b>2.1.1</b> Atomic</a></li>
+<li class="chapter" data-level="2.1.2" data-path="vec.html"><a href="vec.html#list"><i class="fa fa-check"></i><b>2.1.2</b> List</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="vec.html"><a href="vec.html#length"><i class="fa fa-check"></i><b>2.2</b> Length</a></li>
+<li class="chapter" data-level="2.3" data-path="vec.html"><a href="vec.html#attributes"><i class="fa fa-check"></i><b>2.3</b> Attributes</a></li>
+<li class="chapter" data-level="2.4" data-path="vec.html"><a href="vec.html#factors"><i class="fa fa-check"></i><b>2.4</b> Factors</a></li>
+<li class="chapter" data-level="2.5" data-path="vec.html"><a href="vec.html#matricesarrays"><i class="fa fa-check"></i><b>2.5</b> Matrices/Arrays</a></li>
+<li class="chapter" data-level="2.6" data-path="vec.html"><a href="vec.html#data-frames"><i class="fa fa-check"></i><b>2.6</b> Data frames</a></li>
+<li class="chapter" data-level="2.7" data-path="vec.html"><a href="vec.html#missing-values"><i class="fa fa-check"></i><b>2.7</b> Missing values</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="fun.html"><a href="fun.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
+<li class="chapter" data-level="3.1" data-path="fun.html"><a href="fun.html#FunTypes"><i class="fa fa-check"></i><b>3.1</b> Types</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="fun.html"><a href="fun.html#primitive-functions"><i class="fa fa-check"></i><b>3.1.1</b> Primitive functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="fun.html"><a href="fun.html#function-components"><i class="fa fa-check"></i><b>3.2</b> Function components</a></li>
+<li class="chapter" data-level="3.3" data-path="fun.html"><a href="fun.html#function-arguments"><i class="fa fa-check"></i><b>3.3</b> Arguments</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="fun.html"><a href="fun.html#lazy-evaluation"><i class="fa fa-check"></i><b>3.3.1</b> Lazy evaluation:</a></li>
+<li class="chapter" data-level="3.3.2" data-path="fun.html"><a href="fun.html#elipsis-..."><i class="fa fa-check"></i><b>3.3.2</b> Elipsis <code>...</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="fun.html"><a href="fun.html#function-environment"><i class="fa fa-check"></i><b>3.4</b> Environment</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="fun.html"><a href="fun.html#lexical-scoping"><i class="fa fa-check"></i><b>3.4.1</b> Lexical scoping</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="fun.html"><a href="fun.html#return-value"><i class="fa fa-check"></i><b>3.5</b> Return value</a></li>
+<li class="chapter" data-level="3.6" data-path="fun.html"><a href="fun.html#special-calls"><i class="fa fa-check"></i><b>3.6</b> Special calls</a></li>
+<li class="chapter" data-level="3.7" data-path="fun.html"><a href="fun.html#generic-functions"><i class="fa fa-check"></i><b>3.7</b> Generic functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="env.html"><a href="env.html"><i class="fa fa-check"></i><b>4</b> Environments</a><ul>
+<li class="chapter" data-level="4.1" data-path="env.html"><a href="env.html#general-properties"><i class="fa fa-check"></i><b>4.1</b> General properties</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="env.html"><a href="env.html#definition"><i class="fa fa-check"></i><b>4.1.1</b> Definition</a></li>
+<li class="chapter" data-level="4.1.2" data-path="vec.html"><a href="vec.html#attributes"><i class="fa fa-check"></i><b>4.1.2</b> Attributes</a></li>
+<li class="chapter" data-level="4.1.3" data-path="env.html"><a href="env.html#special-environments"><i class="fa fa-check"></i><b>4.1.3</b> Special environments</a></li>
+<li class="chapter" data-level="4.1.4" data-path="env.html"><a href="env.html#search-path-and-search-list"><i class="fa fa-check"></i><b>4.1.4</b> Search path and search list</a></li>
+<li class="chapter" data-level="4.1.5" data-path="env.html"><a href="env.html#objects-within-the-environment"><i class="fa fa-check"></i><b>4.1.5</b> Objects within the environment</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="env.html"><a href="env.html#environment-of-functions"><i class="fa fa-check"></i><b>4.2</b> Environment of functions</a></li>
+<li class="chapter" data-level="4.3" data-path="env.html"><a href="env.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="env.html"><a href="env.html#package-environment"><i class="fa fa-check"></i><b>4.3.1</b> Package environment</a></li>
+<li class="chapter" data-level="4.3.2" data-path="env.html"><a href="env.html#namespace-environment"><i class="fa fa-check"></i><b>4.3.2</b> Namespace environment</a></li>
+<li class="chapter" data-level="4.3.3" data-path="env.html"><a href="env.html#imports-environment"><i class="fa fa-check"></i><b>4.3.3</b> Imports environment</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="env.html"><a href="env.html#examples"><i class="fa fa-check"></i><b>4.4</b> Examples</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="env.html"><a href="env.html#example-1-pass-object-of-class-acf-to-plot"><i class="fa fa-check"></i><b>4.4.1</b> Example 1: pass object of class “acf” to <code>plot()</code></a></li>
+<li class="chapter" data-level="4.4.2" data-path="env.html"><a href="env.html#example-2-search-list-call-stack"><i class="fa fa-check"></i><b>4.4.2</b> Example 2: Search list ≠ call stack</a></li>
+<li class="chapter" data-level="4.4.3" data-path="env.html"><a href="env.html#example-3-change-package-function"><i class="fa fa-check"></i><b>4.4.3</b> Example 3: Change package function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="miscellaneous.html"><a href="miscellaneous.html"><i class="fa fa-check"></i><b>5</b> Miscellaneous</a><ul>
+<li class="chapter" data-level="5.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-does-r-save-numbers"><i class="fa fa-check"></i><b>5.1</b> How does R save numbers</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-to-avoid-problems-with-doubles"><i class="fa fa-check"></i><b>5.1.1</b> How to avoid problems with doubles</a></li>
+<li class="chapter" data-level="5.1.2" data-path="miscellaneous.html"><a href="miscellaneous.html#more-interesting-information-about-double-representation"><i class="fa fa-check"></i><b>5.1.2</b> More interesting information about double representation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="miscellaneous.html"><a href="miscellaneous.html#how-packages-can-exist"><i class="fa fa-check"></i><b>5.2</b> How packages can exist</a></li>
+</ul></li>
+<li class="part"><span><b>II R Basics</b></span></li>
+<li class="chapter" data-level="6" data-path="regular-expressions.html"><a href="regular-expressions.html"><i class="fa fa-check"></i><b>6</b> Regular Expressions</a></li>
+<li class="part"><span><b>III R Programming</b></span></li>
+<li class="chapter" data-level="7" data-path="performance.html"><a href="performance.html"><i class="fa fa-check"></i><b>7</b> Performance</a><ul>
+<li class="chapter" data-level="7.1" data-path="performance.html"><a href="performance.html#in-general"><i class="fa fa-check"></i><b>7.1</b> In general</a></li>
+<li class="chapter" data-level="7.2" data-path="performance.html"><a href="performance.html#profiling"><i class="fa fa-check"></i><b>7.2</b> Profiling</a></li>
+<li class="chapter" data-level="7.3" data-path="performance.html"><a href="performance.html#microbenchmark"><i class="fa fa-check"></i><b>7.3</b> Microbenchmark</a></li>
+<li class="chapter" data-level="7.4" data-path="performance.html"><a href="performance.html#use-package-compiler"><i class="fa fa-check"></i><b>7.4</b> Use package compiler</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>8</b> Functional programming</a><ul>
+<li class="chapter" data-level="8.1" data-path="functional-programming.html"><a href="functional-programming.html#FunProgClosures"><i class="fa fa-check"></i><b>8.1</b> Closures</a></li>
+<li class="chapter" data-level="8.2" data-path="functional-programming.html"><a href="functional-programming.html#lists-of-functions"><i class="fa fa-check"></i><b>8.2</b> Lists of functions</a></li>
+</ul></li>
+<li class="part"><span><b>IV R Statistics</b></span></li>
+<li class="part"><span><b>V R Plots</b></span></li>
+<li class="chapter" data-level="9" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>9</b> Plots</a><ul>
+<li class="chapter" data-level="9.1" data-path="Plots.html"><a href="Plots.html#graphical-parameters-par"><i class="fa fa-check"></i><b>9.1</b> Graphical parameters <code>par()</code></a><ul>
+<li class="chapter" data-level="9.1.1" data-path="Plots.html"><a href="Plots.html#set-graphical-parameters"><i class="fa fa-check"></i><b>9.1.1</b> Set graphical parameters</a></li>
+<li class="chapter" data-level="9.1.2" data-path="Plots.html"><a href="Plots.html#default"><i class="fa fa-check"></i><b>9.1.2</b> Default</a></li>
+<li class="chapter" data-level="9.1.3" data-path="Plots.html"><a href="Plots.html#device-region"><i class="fa fa-check"></i><b>9.1.3</b> Device region</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>10</b> Interactive Plots</a></li>
+<li class="part"><span><b>VI R Outreach</b></span></li>
+<li class="chapter" data-level="11" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>11</b> Reproducible Research</a></li>
+<li class="chapter" data-level="12" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>12</b> R Markdown</a><ul>
+<li class="chapter" data-level="12.1" data-path="r-markdown.html"><a href="r-markdown.html#literate-programming"><i class="fa fa-check"></i><b>12.1</b> Literate programming</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="r-markdown.html"><a href="r-markdown.html#sweave"><i class="fa fa-check"></i><b>12.1.1</b> Sweave</a></li>
+<li class="chapter" data-level="12.1.2" data-path="r-markdown.html"><a href="r-markdown.html#knitr"><i class="fa fa-check"></i><b>12.1.2</b> Knitr</a></li>
+<li class="chapter" data-level="12.1.3" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown-1"><i class="fa fa-check"></i><b>12.1.3</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="r-markdown.html"><a href="r-markdown.html#components"><i class="fa fa-check"></i><b>12.2</b> Components</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="r-markdown.html"><a href="r-markdown.html#yaml-frontmatter"><i class="fa fa-check"></i><b>12.2.1</b> YAML frontmatter</a></li>
+<li class="chapter" data-level="12.2.2" data-path="r-markdown.html"><a href="r-markdown.html#text"><i class="fa fa-check"></i><b>12.2.2</b> Text</a></li>
+<li class="chapter" data-level="12.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>12.2.3</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>12.3</b> Figures</a></li>
+<li class="chapter" data-level="12.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>12.4</b> Tables</a></li>
+<li class="chapter" data-level="12.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>12.5</b> Sepecial characters</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>13</b> Reference management</a><ul>
+<li class="chapter" data-level="13.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>13.1</b> Literature</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>13.1.1</b> Recommended: Using Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>13.2</b> Cross-References</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>14</b> Stuff still to include</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Reference book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="objects" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Objects</h1>
+<blockquote>
+<p>To understand computations in R, two slogans are helpful:</p>
+<ul>
+<li>Everything that exists is an object.</li>
+<li>Everything that happens is a function call.</li>
+</ul>
+<p>— John Chambers</p>
+</blockquote>
+<div id="inspect-object" class="section level2">
+<h2><span class="header-section-number">1.1</span> Inspect object</h2>
+<ul>
+<li><code>str()</code>: struction of object, get unsystematic overview</li>
+<li><code>typeof()</code>: “low-level” type of an object</li>
+<li><code>mode()</code>: storage mode of an object</li>
+<li><code>class()</code>: “high-level” class of object
+<ul>
+<li>Determines what method is applied when passed to generic functions</li>
+</ul></li>
+</ul>
+<p><code>typeof()</code> and <code>mode()</code> are almost the same (at the same level) except that they use different names</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>typeof()</code></th>
+<th><code>mode()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>integer</code>, <code>double</code></td>
+<td><code>numeric</code></td>
+</tr>
+<tr class="even">
+<td><code>special</code>, <code>builtin</code></td>
+<td><code>function</code></td>
+</tr>
+<tr class="odd">
+<td><code>symbol</code></td>
+<td><code>name</code></td>
+</tr>
+<tr class="even">
+<td><code>language</code></td>
+<td><code>(</code>, <code>call</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>class()</code> is on a complete different level and determines what method is applied when passed to generic functions. Some classes are explicitly stated as an attribute, others are implicitly given by the <code>mode</code></p>
+<p>For historical reasons (back compatibility with S / S+), another low-level inspector function is <code>storage.mode()</code>.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">show</th>
+<th align="left">typeof</th>
+<th align="left">storage.mode</th>
+<th align="left">mode</th>
+<th align="left">class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>one</td>
+<td align="left">1</td>
+<td align="left">double</td>
+<td align="left">double</td>
+<td align="left">numeric</td>
+<td align="left">numeric</td>
+</tr>
+<tr class="even">
+<td>s1</td>
+<td align="left">1 2</td>
+<td align="left">integer</td>
+<td align="left">integer</td>
+<td align="left">numeric</td>
+<td align="left">integer</td>
+</tr>
+<tr class="odd">
+<td>pi</td>
+<td align="left">3.141593</td>
+<td align="left">double</td>
+<td align="left">double</td>
+<td align="left">numeric</td>
+<td align="left">numeric</td>
+</tr>
+<tr class="even">
+<td>I</td>
+<td align="left">0+1i</td>
+<td align="left">complex</td>
+<td align="left">complex</td>
+<td align="left">complex</td>
+<td align="left">complex</td>
+</tr>
+<tr class="odd">
+<td>NA</td>
+<td align="left">NA</td>
+<td align="left">logical</td>
+<td align="left">logical</td>
+<td align="left">logical</td>
+<td align="left">logical</td>
+</tr>
+<tr class="even">
+<td>let</td>
+<td align="left">A a b :::</td>
+<td align="left">character</td>
+<td align="left">character</td>
+<td align="left">character</td>
+<td align="left">character</td>
+</tr>
+<tr class="odd">
+<td>fn</td>
+<td align="left">function (x, …</td>
+<td align="left">closure</td>
+<td align="left">function</td>
+<td align="left">function</td>
+<td align="left">function</td>
+</tr>
+<tr class="even">
+<td>fn2</td>
+<td align="left">.Primitive(“c”)</td>
+<td align="left">builtin</td>
+<td align="left">function</td>
+<td align="left">function</td>
+<td align="left">function</td>
+</tr>
+<tr class="odd">
+<td>fnSpec</td>
+<td align="left">.Primitive(“func</td>
+<td align="left">special</td>
+<td align="left">function</td>
+<td align="left">function</td>
+<td align="left">function</td>
+</tr>
+<tr class="even">
+<td>n</td>
+<td align="left">Mä</td>
+<td align="left">symbol</td>
+<td align="left">symbol</td>
+<td align="left">name</td>
+<td align="left">name</td>
+</tr>
+<tr class="odd">
+<td>n2</td>
+<td align="left">x</td>
+<td align="left">symbol</td>
+<td align="left">symbol</td>
+<td align="left">name</td>
+<td align="left">name</td>
+</tr>
+<tr class="even">
+<td>nb</td>
+<td align="left">{</td>
+<td align="left">symbol</td>
+<td align="left">symbol</td>
+<td align="left">name</td>
+<td align="left">name</td>
+</tr>
+<tr class="odd">
+<td>ex</td>
+<td align="left">expression(1 + 1</td>
+<td align="left">expression</td>
+<td align="left">expression</td>
+<td align="left">expression</td>
+<td align="left">expression</td>
+</tr>
+<tr class="even">
+<td>cl</td>
+<td align="left">round(10)</td>
+<td align="left">language</td>
+<td align="left">language</td>
+<td align="left">call</td>
+<td align="left">call</td>
+</tr>
+<tr class="odd">
+<td>cl2</td>
+<td align="left">sin(x)</td>
+<td align="left">language</td>
+<td align="left">language</td>
+<td align="left">call</td>
+<td align="left">call</td>
+</tr>
+<tr class="even">
+<td>formula</td>
+<td align="left">y ~ x + t</td>
+<td align="left">language</td>
+<td align="left">language</td>
+<td align="left">call</td>
+<td align="left">formula</td>
+</tr>
+<tr class="odd">
+<td>formals</td>
+<td align="left">qr TRUE FAL</td>
+<td align="left">pairlist</td>
+<td align="left">pairlist</td>
+<td align="left">pairlist</td>
+<td align="left">pairlist</td>
+</tr>
+<tr class="even">
+<td>arg1</td>
+<td align="left"></td>
+<td align="left">symbol</td>
+<td align="left">symbol</td>
+<td align="left">name</td>
+<td align="left">name</td>
+</tr>
+<tr class="odd">
+<td>NULL</td>
+<td align="left">NULL</td>
+<td align="left">NULL</td>
+<td align="left">NULL</td>
+<td align="left">NULL</td>
+<td align="left">NULL</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="hirarchy" class="section level2">
+<h2><span class="header-section-number">1.2</span> Hirarchy</h2>
+<p>Objects can be ordered in a hirarchical structure</p>
+<ul>
+<li>Vector
+<ul>
+<li>Atomic vector
+<ul>
+<li>Matrix</li>
+<li>Array</li>
+</ul></li>
+<li>List
+<ul>
+<li>Data frame</li>
+</ul></li>
+</ul></li>
+<li>Function
+<ul>
+<li>Primitive</li>
+<li>Closure</li>
+</ul></li>
+<li>Environment</li>
+<li>Symbol</li>
+<li>Call</li>
+<li>Expression</li>
+<li>Forumla</li>
+<li>…</li>
+</ul>
+<p>Some objects are building blocks for other objects</p>
+<ul>
+<li>Symbols can be combined to calls.</li>
+<li>Calls can be combined to expressions</li>
+</ul>
+</div>
+<div id="basic-objects" class="section level2">
+<h2><span class="header-section-number">1.3</span> Basic Objects</h2>
+<div id="vectors-functions-and-environments" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Vectors, functions and environments</h3>
+<p>Vectors will be covered in chapter <a href="vec.html#vec">2</a>, functions in chapter <a href="fun.html#fun">3</a> and environments in chapter <a href="env.html#env">4</a></p>
+</div>
+<div id="symbols" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Symbols</h3>
+<ul>
+<li>A way to refer to R objects by name</li>
+<li>Constituent of calls</li>
+<li>Type: symbol</li>
+<li>Class: name</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">call</span>(<span class="st">&quot;sin&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)
+<span class="kw">typeof</span>(x[[<span class="dv">1</span>]])</code></pre></div>
+<pre><code>#&gt; [1] &quot;symbol&quot;</code></pre>
+</div>
+<div id="calls" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Calls</h3>
+<ul>
+<li>An unevaluated expression which consists of the named function applied to the given arguments</li>
+<li>Class: call</li>
+<li>Type: language</li>
+<li>Evaluate a call with <code>eval()</code></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>R command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code>call()</code> or <code>quote()</code></td>
+</tr>
+<tr class="even">
+<td>Check</td>
+<td><code>is.call()</code></td>
+</tr>
+<tr class="odd">
+<td>Coerce</td>
+<td><code>as.call()</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">call</span>(<span class="st">&quot;sin&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)
+y &lt;-<span class="st"> </span><span class="kw">quote</span>(<span class="kw">sin</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>))
+<span class="kw">eval</span>(x)</code></pre></div>
+<pre><code>#&gt; [1] 0.8414710 0.9092974 0.1411200</code></pre>
+</div>
+<div id="expression" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> Expression</h3>
+<ul>
+<li>Lists of calls</li>
+<li><code>expression()</code> returns its arguments as a vector of unevaluated expressions.</li>
+<li><code>quote()</code> returns its argument as an unevaluated expression.</li>
+<li><code>eval()</code> evaluates an expression in a certain environment</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">eval</span>(<span class="kw">quote</span>(<span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>))))</code></pre></div>
+<pre><code>#&gt; [1] 2</code></pre>
+</div>
+<div id="not-understand-yet" class="section level3">
+<h3><span class="header-section-number">1.3.5</span> Not understand yet</h3>
+<ul>
+<li><code>parse()</code></li>
+<li><code>all.equal()</code></li>
+</ul>
+<p>Why?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">call</span>(<span class="st">&quot;sin&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)
+y &lt;-<span class="st"> </span><span class="kw">quote</span>(<span class="kw">sin</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>))
+<span class="kw">identical</span>(x, y)</code></pre></div>
+<pre><code>#&gt; [1] FALSE</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="table-of-content.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vec.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/11-obj.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["R_Ref_Book.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

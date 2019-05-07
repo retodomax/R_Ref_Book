@@ -1,0 +1,8 @@
+# Interactive Plots
+
+* HTML Widgets framework
+    - Do not need live R session
+    - Interactivity comes from the client side (via JavaScript in the web browser)
+* Shiny framework
+    - Easy but rely on a live R session
+    - Interactivity from the provider (server with running R session)

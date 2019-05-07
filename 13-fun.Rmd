@@ -1,0 +1,260 @@
+# Functions {#fun}
+
+## Types {#FunTypes}
+
+Find function "type" with `typeof()`
+
+* builtin (primitive functions e.g. `sum`)
+* special (primitive functions e.g. `[`)
+* closure (functions built upon primitive functions, they always have their own environment)
+
+### Primitive functions
+
+* Implemented in C
+* Separated into builtin and special
+    - builtin: arguments evaluated before passed to C code
+    - special: unevaluated arguments passed to C code
+* C code called via `.Primitive()` or `.Internal()`
+    - `.Primitive()` for pure C code
+    - `.Internal()` for mixtures of R and C code
+* `body()`, `formals()` and `environment()` are `NULL` (see \@ref(function-components))
+* All in base package
+* Check with `is.primitive()`
+
+Many primitive function can be used without the classical syntax functionname() (see \@ref(special-calls)). Backticks ` ` ` let you refere to objects that have otherwise reserved or illegal name.
+
+
+
+
+
+## Function components {#function-components}
+
++---------------------+----------------------------------------------------------------------------+----------------------------------+
+| - `body()`          | Code inside the function.                                                  |                                  |
++---------------------+----------------------------------------------------------------------------+----------------------------------+
+| - `formals()`       | List of formal **arguments** which controls how you can call the function. | Chapter \@ref(function-arguments)   |
++---------------------+----------------------------------------------------------------------------+----------------------------------+
+| - `environment()`   | “Map” of the location of the function’s variables.                         | Chapter \@ref(function-environment) |
++---------------------+----------------------------------------------------------------------------+----------------------------------+
+
+Like other objects, functions have certain attributes
+
+* `srcref` (source reference): Attribute which all functions have. Returns source code (similar to `body()` but with comments and formatting)
+* additional attributes possible
+
+```{r, collapse=TRUE}
+myfun <- function(x) {
+  x^2 # with comment
+  }
+attributes(myfun)
+body(myfun)
+```
+
+## Arguments {#function-arguments}
+
+* Formal arguments (stated in function definition)
+* Actual arguments (explicetly passed to the function when you call it)
+
+* Get formal argument: `formals()`
+* Set formal arguments: `` `formals<-` ``  (replacement function: change default formals, add formals, remove formals)
+* `formals()` without arguments will list the arguments of the function which calls it
+
+```{r, collapse=TRUE}
+myfunction <- function(x = 1, y = 2) x + y
+formals(myfunction)
+myfunction()
+formals(myfunction) <- list(x = 3, y = 4)
+myfunction()
+(function(x) formals())()
+```
+
+Arguments are matched by the following hirarchy
+
+* Complete name
+* Partial name (prefix maching)
+* Position
+
+
+Use `do.call()` to pass arguments containd in a list to a function.
+
+Use `missing()` to check if a formal argument has been manually set.
+
+### Lazy evaluation:
+
+* Arguments are evaluated when they are used
+* If they are never used within a function, they might never be evaluated $\Rightarrow$ not saved in the environment of that function
+* To avoid problems in **loops which return functions**, make sure to `force()` the evaluation of the objects which are needed for the returned function
+* Example:
+    - `add()` is a function in the global environment which returns a function
+    - Each function in the list `adders_bad`/`adders_good` are in separate environments
+    - without `force(x)` `x` is **not** evaluated in those environments
+    - `x` is lazily evaluated the first time that you call one of the adder functions. At this point, the loop is complete and the final value of `x` is 10. Therefore `x` is evaluated in all environments to have a value of 10.
+
+
+```{r, collapse=TRUE}
+# wrong
+add <- function(x) function(y) x + y
+adders_bad <- vector("list", 10)
+for (i in seq_along(adders_bad)) adders_bad[[i]] <- add(i)
+adders_bad[[1]](10) # should be 11
+adders_bad[[10]](10) ## should be 20
+get("x", envir = environment(adders_bad[[1]])) # should be 1
+
+# good
+add <- function(x){
+  force(x)
+  function(y) x + y
+}
+adders_good <- vector("list", 10)
+for (i in seq_along(adders_good)) adders_good[[i]] <- add(i)
+adders_good[[1]](10) # should be 11
+adders_good[[10]](10) ## should be 20
+get("x", envir = environment(adders_good[[1]])) # should be 1
+```
+
+
+* An unevaluated argument is called a **promise**. A promise is made up of two parts:
+    - The expression which gives rise to the delayed computation.
+    - The environment where the expression was created and where it should be evaluated.
+
+### Elipsis `...`
+
+This argument will match any arguments not otherwise matched, and can be easily passed on to other functions.
+
+
+## Environment {#function-environment}
+
+### Lexical scoping
+
+* Scoping: Where to look for objects
+* Lexical: Scoping is determined where the function is defined (not where it is called)
+
+Rules
+
+* If a name is not defined inside a function, R will look one level up
+* Example: x is searched in the environment of each function in the following order h $\rightarrow$ g $\rightarrow$ f $\rightarrow$ global environment
+
+```{r}
+x <- 2
+f <- function(){
+  g <- function() {
+    h <- function() x
+    h()
+  }
+  g()
+}
+f()
+```
+
+* Assigning a function also assignes a certain environment (environment property)
+* Example:
+    - Function `j` returns a function (which connects `x` and `y`)
+    - Assigning `j(1)` to `k` makes `k` an function with the environment property pointing to the environment created by running `j()` (the function where the output function was defined). This environment **contains x and y**
+
+```{r}
+j <- function(x) {
+  y <- 2
+  function() {
+    c(x, y)
+  }
+}
+k <- j(1)
+k()
+```
+
+* Object saved in a higher environment are not found below
+* Example:
+    * `a` is not saved except within function
+    * A new call of `j` will not find previous `a`
+    * Functon will always return 1 exept if we save `a`
+
+```{r}
+j <- function() {
+  if (!exists("a")) {
+    a <- 1
+  } else {
+    a <- a + 1
+  }
+  a
+}
+j()
+```
+
+
+
+## Return value
+
+* The last expression evaluated in a function becomes the return value
+* `return()` usful to stop evaluation and return error
+* `invisible()` usful to invisible return an object (e.g. for ploting functions)
+* pure functions: functions which change nothing except for what they return
+* Few non-pure functions
+    - `library()` which loads a package, and hence modifies the search path.
+    - `setwd()`, `Sys.setenv()`, `Sys.setlocale()` which change the working directory,
+    - environment variables, and the locale, respectively.
+    - `plot()` and friends which produce graphical output.
+    - `write()`, `write.csv()`, `saveRDS()`, etc. which save output to disk.
+    - `options()` and `par()` which modify global settings.
+    - S4 related functions which modify global tables of classes and methods.
+    - Random number generators which produce different numbers each time you run them.
+* `on.exit()` evaluates expression when function call is finished
+* Example
+
+```{r}
+in_dir <- function(dir, code) {
+  old <- setwd(dir)
+  on.exit(setwd(old))
+  
+  ## what function does...
+}
+```
+
+
+
+
+
+
+## Special calls {#special-calls}
+
+| name                   | description                                  | Built-in examples                               | Your own   |
+|------------------------|----------------------------------------------|-------------------------------------------------|------------|
+| Control flow operators | Decide which line is evaluated               | `if`, `else`, `for`, `while`, `break`           |            |
+| Subsetting operators   | Subset an object                             | `[`, `[[`, `$`                                  |            |
+| Infix operators        | function name comes in between ist arguments | `%in%`, `%*%`, `+`, `*`, `^`, `>`, `&`, `<-`, … | `%myname%` |
+| Replacement functions  | Replace an existing object                   | `<-`, `[<-`, `names<-`, `levels<-`, …           | `myname<-` |
+
+All special functions can also be called like a "normal" function
+
+```{r}
+`[`(letters[1:10], 2)
+```
+
+Replacement function make some changes to the data and assign the new output to the first argument
+
+```{r}
+x <- 1:10
+names(x) <- letters[1:10] # user friendly
+x <- `names<-`(x, letters[1:10]) ## behind scenes this is executed
+```
+
+
+You can create your own infix and replacement functions. This is a useful example of providing a default value in case the output of another function is `NULL`:
+
+```{r, eval=FALSE}
+`%||%` <- function(a, b) if (!is.null(a)) a else b
+function_that_might_return_null() %||% default value
+```
+
+
+
+## Generic functions
+
+* Depending on the class of the first argument, different **methods** of a function are called by `UseMethod()`
+* All available methods of a functionname can be shown with `methods()`.
+* methods ending with an asterisks `*` are not exported in the namespace, meaning they should not explicitly be called by the user.
+    - get their source code with `getAnywhere()`
+```{r}
+print
+head(methods(print))
+```
+

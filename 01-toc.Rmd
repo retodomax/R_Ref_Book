@@ -1,0 +1,31 @@
+# Table of content {-}
+
+- R language
+    - Objects
+    - Vectors
+    - Functions
+    - Environments
+    - Misc
+- R basics
+    - Data import/export
+    - Data handling
+    - Regex
+- R Programming
+    - Basics (loop, if, ...)
+    - Performance
+    - Functional programming
+- R Plots
+    - Standard
+    - ggplot
+    - Interactive plots
+- R Statistics
+    - Anova
+    - Regression
+    - Timeseries
+    - Multivariate
+- R Outreach
+    - Markdown
+- Misc
+    - R packages
+    - R Studio
+    - R settings

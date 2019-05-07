@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 10 Interactive Plots | R Reference book</title>
+  <meta name="description" content="This is a collection of useful R knowledge">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 10 Interactive Plots | R Reference book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="figures/01_cover/Cover.svg" />
+  <meta property="og:description" content="This is a collection of useful R knowledge" />
+  <meta name="github-repo" content="retodomax/R_Ref_Book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Interactive Plots | R Reference book" />
+  
+  <meta name="twitter:description" content="This is a collection of useful R knowledge" />
+  <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
+
+<meta name="author" content="Reto Zihlmann">
+
+
+<meta name="date" content="2019-05-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon">
+<link rel="prev" href="Plots.html">
+<link rel="next" href="reproducible-research.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Reference book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="table-of-content.html"><a href="table-of-content.html"><i class="fa fa-check"></i>Table of content</a></li>
+<li class="part"><span><b>I R Language</b></span></li>
+<li class="chapter" data-level="1" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>1</b> Objects</a><ul>
+<li class="chapter" data-level="1.1" data-path="objects.html"><a href="objects.html#inspect-object"><i class="fa fa-check"></i><b>1.1</b> Inspect object</a></li>
+<li class="chapter" data-level="1.2" data-path="objects.html"><a href="objects.html#hirarchy"><i class="fa fa-check"></i><b>1.2</b> Hirarchy</a></li>
+<li class="chapter" data-level="1.3" data-path="objects.html"><a href="objects.html#basic-objects"><i class="fa fa-check"></i><b>1.3</b> Basic Objects</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="objects.html"><a href="objects.html#vectors-functions-and-environments"><i class="fa fa-check"></i><b>1.3.1</b> Vectors, functions and environments</a></li>
+<li class="chapter" data-level="1.3.2" data-path="objects.html"><a href="objects.html#symbols"><i class="fa fa-check"></i><b>1.3.2</b> Symbols</a></li>
+<li class="chapter" data-level="1.3.3" data-path="objects.html"><a href="objects.html#calls"><i class="fa fa-check"></i><b>1.3.3</b> Calls</a></li>
+<li class="chapter" data-level="1.3.4" data-path="objects.html"><a href="objects.html#expression"><i class="fa fa-check"></i><b>1.3.4</b> Expression</a></li>
+<li class="chapter" data-level="1.3.5" data-path="objects.html"><a href="objects.html#not-understand-yet"><i class="fa fa-check"></i><b>1.3.5</b> Not understand yet</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="vec.html"><a href="vec.html"><i class="fa fa-check"></i><b>2</b> Vectors</a><ul>
+<li class="chapter" data-level="2.1" data-path="vec.html"><a href="vec.html#type"><i class="fa fa-check"></i><b>2.1</b> Type</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="vec.html"><a href="vec.html#atomic"><i class="fa fa-check"></i><b>2.1.1</b> Atomic</a></li>
+<li class="chapter" data-level="2.1.2" data-path="vec.html"><a href="vec.html#list"><i class="fa fa-check"></i><b>2.1.2</b> List</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="vec.html"><a href="vec.html#length"><i class="fa fa-check"></i><b>2.2</b> Length</a></li>
+<li class="chapter" data-level="2.3" data-path="vec.html"><a href="vec.html#attributes"><i class="fa fa-check"></i><b>2.3</b> Attributes</a></li>
+<li class="chapter" data-level="2.4" data-path="vec.html"><a href="vec.html#factors"><i class="fa fa-check"></i><b>2.4</b> Factors</a></li>
+<li class="chapter" data-level="2.5" data-path="vec.html"><a href="vec.html#matricesarrays"><i class="fa fa-check"></i><b>2.5</b> Matrices/Arrays</a></li>
+<li class="chapter" data-level="2.6" data-path="vec.html"><a href="vec.html#data-frames"><i class="fa fa-check"></i><b>2.6</b> Data frames</a></li>
+<li class="chapter" data-level="2.7" data-path="vec.html"><a href="vec.html#missing-values"><i class="fa fa-check"></i><b>2.7</b> Missing values</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="fun.html"><a href="fun.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
+<li class="chapter" data-level="3.1" data-path="fun.html"><a href="fun.html#FunTypes"><i class="fa fa-check"></i><b>3.1</b> Types</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="fun.html"><a href="fun.html#primitive-functions"><i class="fa fa-check"></i><b>3.1.1</b> Primitive functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="fun.html"><a href="fun.html#function-components"><i class="fa fa-check"></i><b>3.2</b> Function components</a></li>
+<li class="chapter" data-level="3.3" data-path="fun.html"><a href="fun.html#function-arguments"><i class="fa fa-check"></i><b>3.3</b> Arguments</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="fun.html"><a href="fun.html#lazy-evaluation"><i class="fa fa-check"></i><b>3.3.1</b> Lazy evaluation:</a></li>
+<li class="chapter" data-level="3.3.2" data-path="fun.html"><a href="fun.html#elipsis-..."><i class="fa fa-check"></i><b>3.3.2</b> Elipsis <code>...</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="fun.html"><a href="fun.html#function-environment"><i class="fa fa-check"></i><b>3.4</b> Environment</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="fun.html"><a href="fun.html#lexical-scoping"><i class="fa fa-check"></i><b>3.4.1</b> Lexical scoping</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="fun.html"><a href="fun.html#return-value"><i class="fa fa-check"></i><b>3.5</b> Return value</a></li>
+<li class="chapter" data-level="3.6" data-path="fun.html"><a href="fun.html#special-calls"><i class="fa fa-check"></i><b>3.6</b> Special calls</a></li>
+<li class="chapter" data-level="3.7" data-path="fun.html"><a href="fun.html#generic-functions"><i class="fa fa-check"></i><b>3.7</b> Generic functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="env.html"><a href="env.html"><i class="fa fa-check"></i><b>4</b> Environments</a><ul>
+<li class="chapter" data-level="4.1" data-path="env.html"><a href="env.html#general-properties"><i class="fa fa-check"></i><b>4.1</b> General properties</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="env.html"><a href="env.html#definition"><i class="fa fa-check"></i><b>4.1.1</b> Definition</a></li>
+<li class="chapter" data-level="4.1.2" data-path="vec.html"><a href="vec.html#attributes"><i class="fa fa-check"></i><b>4.1.2</b> Attributes</a></li>
+<li class="chapter" data-level="4.1.3" data-path="env.html"><a href="env.html#special-environments"><i class="fa fa-check"></i><b>4.1.3</b> Special environments</a></li>
+<li class="chapter" data-level="4.1.4" data-path="env.html"><a href="env.html#search-path-and-search-list"><i class="fa fa-check"></i><b>4.1.4</b> Search path and search list</a></li>
+<li class="chapter" data-level="4.1.5" data-path="env.html"><a href="env.html#objects-within-the-environment"><i class="fa fa-check"></i><b>4.1.5</b> Objects within the environment</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="env.html"><a href="env.html#environment-of-functions"><i class="fa fa-check"></i><b>4.2</b> Environment of functions</a></li>
+<li class="chapter" data-level="4.3" data-path="env.html"><a href="env.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="env.html"><a href="env.html#package-environment"><i class="fa fa-check"></i><b>4.3.1</b> Package environment</a></li>
+<li class="chapter" data-level="4.3.2" data-path="env.html"><a href="env.html#namespace-environment"><i class="fa fa-check"></i><b>4.3.2</b> Namespace environment</a></li>
+<li class="chapter" data-level="4.3.3" data-path="env.html"><a href="env.html#imports-environment"><i class="fa fa-check"></i><b>4.3.3</b> Imports environment</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="env.html"><a href="env.html#examples"><i class="fa fa-check"></i><b>4.4</b> Examples</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="env.html"><a href="env.html#example-1-pass-object-of-class-acf-to-plot"><i class="fa fa-check"></i><b>4.4.1</b> Example 1: pass object of class “acf” to <code>plot()</code></a></li>
+<li class="chapter" data-level="4.4.2" data-path="env.html"><a href="env.html#example-2-search-list-call-stack"><i class="fa fa-check"></i><b>4.4.2</b> Example 2: Search list ≠ call stack</a></li>
+<li class="chapter" data-level="4.4.3" data-path="env.html"><a href="env.html#example-3-change-package-function"><i class="fa fa-check"></i><b>4.4.3</b> Example 3: Change package function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="miscellaneous.html"><a href="miscellaneous.html"><i class="fa fa-check"></i><b>5</b> Miscellaneous</a><ul>
+<li class="chapter" data-level="5.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-does-r-save-numbers"><i class="fa fa-check"></i><b>5.1</b> How does R save numbers</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-to-avoid-problems-with-doubles"><i class="fa fa-check"></i><b>5.1.1</b> How to avoid problems with doubles</a></li>
+<li class="chapter" data-level="5.1.2" data-path="miscellaneous.html"><a href="miscellaneous.html#more-interesting-information-about-double-representation"><i class="fa fa-check"></i><b>5.1.2</b> More interesting information about double representation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="miscellaneous.html"><a href="miscellaneous.html#how-packages-can-exist"><i class="fa fa-check"></i><b>5.2</b> How packages can exist</a></li>
+</ul></li>
+<li class="part"><span><b>II R Basics</b></span></li>
+<li class="chapter" data-level="6" data-path="regular-expressions.html"><a href="regular-expressions.html"><i class="fa fa-check"></i><b>6</b> Regular Expressions</a></li>
+<li class="part"><span><b>III R Programming</b></span></li>
+<li class="chapter" data-level="7" data-path="performance.html"><a href="performance.html"><i class="fa fa-check"></i><b>7</b> Performance</a><ul>
+<li class="chapter" data-level="7.1" data-path="performance.html"><a href="performance.html#in-general"><i class="fa fa-check"></i><b>7.1</b> In general</a></li>
+<li class="chapter" data-level="7.2" data-path="performance.html"><a href="performance.html#profiling"><i class="fa fa-check"></i><b>7.2</b> Profiling</a></li>
+<li class="chapter" data-level="7.3" data-path="performance.html"><a href="performance.html#microbenchmark"><i class="fa fa-check"></i><b>7.3</b> Microbenchmark</a></li>
+<li class="chapter" data-level="7.4" data-path="performance.html"><a href="performance.html#use-package-compiler"><i class="fa fa-check"></i><b>7.4</b> Use package compiler</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>8</b> Functional programming</a><ul>
+<li class="chapter" data-level="8.1" data-path="functional-programming.html"><a href="functional-programming.html#FunProgClosures"><i class="fa fa-check"></i><b>8.1</b> Closures</a></li>
+<li class="chapter" data-level="8.2" data-path="functional-programming.html"><a href="functional-programming.html#lists-of-functions"><i class="fa fa-check"></i><b>8.2</b> Lists of functions</a></li>
+</ul></li>
+<li class="part"><span><b>IV R Statistics</b></span></li>
+<li class="part"><span><b>V R Plots</b></span></li>
+<li class="chapter" data-level="9" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>9</b> Plots</a><ul>
+<li class="chapter" data-level="9.1" data-path="Plots.html"><a href="Plots.html#graphical-parameters-par"><i class="fa fa-check"></i><b>9.1</b> Graphical parameters <code>par()</code></a><ul>
+<li class="chapter" data-level="9.1.1" data-path="Plots.html"><a href="Plots.html#set-graphical-parameters"><i class="fa fa-check"></i><b>9.1.1</b> Set graphical parameters</a></li>
+<li class="chapter" data-level="9.1.2" data-path="Plots.html"><a href="Plots.html#default"><i class="fa fa-check"></i><b>9.1.2</b> Default</a></li>
+<li class="chapter" data-level="9.1.3" data-path="Plots.html"><a href="Plots.html#device-region"><i class="fa fa-check"></i><b>9.1.3</b> Device region</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>10</b> Interactive Plots</a></li>
+<li class="part"><span><b>VI R Outreach</b></span></li>
+<li class="chapter" data-level="11" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>11</b> Reproducible Research</a></li>
+<li class="chapter" data-level="12" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>12</b> R Markdown</a><ul>
+<li class="chapter" data-level="12.1" data-path="r-markdown.html"><a href="r-markdown.html#literate-programming"><i class="fa fa-check"></i><b>12.1</b> Literate programming</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="r-markdown.html"><a href="r-markdown.html#sweave"><i class="fa fa-check"></i><b>12.1.1</b> Sweave</a></li>
+<li class="chapter" data-level="12.1.2" data-path="r-markdown.html"><a href="r-markdown.html#knitr"><i class="fa fa-check"></i><b>12.1.2</b> Knitr</a></li>
+<li class="chapter" data-level="12.1.3" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown-1"><i class="fa fa-check"></i><b>12.1.3</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="r-markdown.html"><a href="r-markdown.html#components"><i class="fa fa-check"></i><b>12.2</b> Components</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="r-markdown.html"><a href="r-markdown.html#yaml-frontmatter"><i class="fa fa-check"></i><b>12.2.1</b> YAML frontmatter</a></li>
+<li class="chapter" data-level="12.2.2" data-path="r-markdown.html"><a href="r-markdown.html#text"><i class="fa fa-check"></i><b>12.2.2</b> Text</a></li>
+<li class="chapter" data-level="12.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>12.2.3</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>12.3</b> Figures</a></li>
+<li class="chapter" data-level="12.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>12.4</b> Tables</a></li>
+<li class="chapter" data-level="12.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>12.5</b> Sepecial characters</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>13</b> Reference management</a><ul>
+<li class="chapter" data-level="13.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>13.1</b> Literature</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>13.1.1</b> Recommended: Using Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>13.2</b> Cross-References</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>14</b> Stuff still to include</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Reference book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="interactive-plots" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> Interactive Plots</h1>
+<ul>
+<li>HTML Widgets framework
+<ul>
+<li>Do not need live R session</li>
+<li>Interactivity comes from the client side (via JavaScript in the web browser)</li>
+</ul></li>
+<li>Shiny framework
+<ul>
+<li>Easy but rely on a live R session</li>
+<li>Interactivity from the provider (server with running R session)</li>
+</ul></li>
+</ul>
+
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Plots.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reproducible-research.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/43-interactive-plots.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["R_Ref_Book.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

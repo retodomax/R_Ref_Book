@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 12 R Markdown | R Reference book</title>
+  <meta name="description" content="This is a collection of useful R knowledge">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 12 R Markdown | R Reference book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="figures/01_cover/Cover.svg" />
+  <meta property="og:description" content="This is a collection of useful R knowledge" />
+  <meta name="github-repo" content="retodomax/R_Ref_Book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 12 R Markdown | R Reference book" />
+  
+  <meta name="twitter:description" content="This is a collection of useful R knowledge" />
+  <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
+
+<meta name="author" content="Reto Zihlmann">
+
+
+<meta name="date" content="2019-05-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon">
+<link rel="prev" href="reproducible-research.html">
+<link rel="next" href="reference-management.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Reference book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="table-of-content.html"><a href="table-of-content.html"><i class="fa fa-check"></i>Table of content</a></li>
+<li class="part"><span><b>I R Language</b></span></li>
+<li class="chapter" data-level="1" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>1</b> Objects</a><ul>
+<li class="chapter" data-level="1.1" data-path="objects.html"><a href="objects.html#inspect-object"><i class="fa fa-check"></i><b>1.1</b> Inspect object</a></li>
+<li class="chapter" data-level="1.2" data-path="objects.html"><a href="objects.html#hirarchy"><i class="fa fa-check"></i><b>1.2</b> Hirarchy</a></li>
+<li class="chapter" data-level="1.3" data-path="objects.html"><a href="objects.html#basic-objects"><i class="fa fa-check"></i><b>1.3</b> Basic Objects</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="objects.html"><a href="objects.html#vectors-functions-and-environments"><i class="fa fa-check"></i><b>1.3.1</b> Vectors, functions and environments</a></li>
+<li class="chapter" data-level="1.3.2" data-path="objects.html"><a href="objects.html#symbols"><i class="fa fa-check"></i><b>1.3.2</b> Symbols</a></li>
+<li class="chapter" data-level="1.3.3" data-path="objects.html"><a href="objects.html#calls"><i class="fa fa-check"></i><b>1.3.3</b> Calls</a></li>
+<li class="chapter" data-level="1.3.4" data-path="objects.html"><a href="objects.html#expression"><i class="fa fa-check"></i><b>1.3.4</b> Expression</a></li>
+<li class="chapter" data-level="1.3.5" data-path="objects.html"><a href="objects.html#not-understand-yet"><i class="fa fa-check"></i><b>1.3.5</b> Not understand yet</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="vec.html"><a href="vec.html"><i class="fa fa-check"></i><b>2</b> Vectors</a><ul>
+<li class="chapter" data-level="2.1" data-path="vec.html"><a href="vec.html#type"><i class="fa fa-check"></i><b>2.1</b> Type</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="vec.html"><a href="vec.html#atomic"><i class="fa fa-check"></i><b>2.1.1</b> Atomic</a></li>
+<li class="chapter" data-level="2.1.2" data-path="vec.html"><a href="vec.html#list"><i class="fa fa-check"></i><b>2.1.2</b> List</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="vec.html"><a href="vec.html#length"><i class="fa fa-check"></i><b>2.2</b> Length</a></li>
+<li class="chapter" data-level="2.3" data-path="vec.html"><a href="vec.html#attributes"><i class="fa fa-check"></i><b>2.3</b> Attributes</a></li>
+<li class="chapter" data-level="2.4" data-path="vec.html"><a href="vec.html#factors"><i class="fa fa-check"></i><b>2.4</b> Factors</a></li>
+<li class="chapter" data-level="2.5" data-path="vec.html"><a href="vec.html#matricesarrays"><i class="fa fa-check"></i><b>2.5</b> Matrices/Arrays</a></li>
+<li class="chapter" data-level="2.6" data-path="vec.html"><a href="vec.html#data-frames"><i class="fa fa-check"></i><b>2.6</b> Data frames</a></li>
+<li class="chapter" data-level="2.7" data-path="vec.html"><a href="vec.html#missing-values"><i class="fa fa-check"></i><b>2.7</b> Missing values</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="fun.html"><a href="fun.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
+<li class="chapter" data-level="3.1" data-path="fun.html"><a href="fun.html#FunTypes"><i class="fa fa-check"></i><b>3.1</b> Types</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="fun.html"><a href="fun.html#primitive-functions"><i class="fa fa-check"></i><b>3.1.1</b> Primitive functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="fun.html"><a href="fun.html#function-components"><i class="fa fa-check"></i><b>3.2</b> Function components</a></li>
+<li class="chapter" data-level="3.3" data-path="fun.html"><a href="fun.html#function-arguments"><i class="fa fa-check"></i><b>3.3</b> Arguments</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="fun.html"><a href="fun.html#lazy-evaluation"><i class="fa fa-check"></i><b>3.3.1</b> Lazy evaluation:</a></li>
+<li class="chapter" data-level="3.3.2" data-path="fun.html"><a href="fun.html#elipsis-..."><i class="fa fa-check"></i><b>3.3.2</b> Elipsis <code>...</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="fun.html"><a href="fun.html#function-environment"><i class="fa fa-check"></i><b>3.4</b> Environment</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="fun.html"><a href="fun.html#lexical-scoping"><i class="fa fa-check"></i><b>3.4.1</b> Lexical scoping</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="fun.html"><a href="fun.html#return-value"><i class="fa fa-check"></i><b>3.5</b> Return value</a></li>
+<li class="chapter" data-level="3.6" data-path="fun.html"><a href="fun.html#special-calls"><i class="fa fa-check"></i><b>3.6</b> Special calls</a></li>
+<li class="chapter" data-level="3.7" data-path="fun.html"><a href="fun.html#generic-functions"><i class="fa fa-check"></i><b>3.7</b> Generic functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="env.html"><a href="env.html"><i class="fa fa-check"></i><b>4</b> Environments</a><ul>
+<li class="chapter" data-level="4.1" data-path="env.html"><a href="env.html#general-properties"><i class="fa fa-check"></i><b>4.1</b> General properties</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="env.html"><a href="env.html#definition"><i class="fa fa-check"></i><b>4.1.1</b> Definition</a></li>
+<li class="chapter" data-level="4.1.2" data-path="vec.html"><a href="vec.html#attributes"><i class="fa fa-check"></i><b>4.1.2</b> Attributes</a></li>
+<li class="chapter" data-level="4.1.3" data-path="env.html"><a href="env.html#special-environments"><i class="fa fa-check"></i><b>4.1.3</b> Special environments</a></li>
+<li class="chapter" data-level="4.1.4" data-path="env.html"><a href="env.html#search-path-and-search-list"><i class="fa fa-check"></i><b>4.1.4</b> Search path and search list</a></li>
+<li class="chapter" data-level="4.1.5" data-path="env.html"><a href="env.html#objects-within-the-environment"><i class="fa fa-check"></i><b>4.1.5</b> Objects within the environment</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="env.html"><a href="env.html#environment-of-functions"><i class="fa fa-check"></i><b>4.2</b> Environment of functions</a></li>
+<li class="chapter" data-level="4.3" data-path="env.html"><a href="env.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="env.html"><a href="env.html#package-environment"><i class="fa fa-check"></i><b>4.3.1</b> Package environment</a></li>
+<li class="chapter" data-level="4.3.2" data-path="env.html"><a href="env.html#namespace-environment"><i class="fa fa-check"></i><b>4.3.2</b> Namespace environment</a></li>
+<li class="chapter" data-level="4.3.3" data-path="env.html"><a href="env.html#imports-environment"><i class="fa fa-check"></i><b>4.3.3</b> Imports environment</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="env.html"><a href="env.html#examples"><i class="fa fa-check"></i><b>4.4</b> Examples</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="env.html"><a href="env.html#example-1-pass-object-of-class-acf-to-plot"><i class="fa fa-check"></i><b>4.4.1</b> Example 1: pass object of class “acf” to <code>plot()</code></a></li>
+<li class="chapter" data-level="4.4.2" data-path="env.html"><a href="env.html#example-2-search-list-call-stack"><i class="fa fa-check"></i><b>4.4.2</b> Example 2: Search list ≠ call stack</a></li>
+<li class="chapter" data-level="4.4.3" data-path="env.html"><a href="env.html#example-3-change-package-function"><i class="fa fa-check"></i><b>4.4.3</b> Example 3: Change package function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="miscellaneous.html"><a href="miscellaneous.html"><i class="fa fa-check"></i><b>5</b> Miscellaneous</a><ul>
+<li class="chapter" data-level="5.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-does-r-save-numbers"><i class="fa fa-check"></i><b>5.1</b> How does R save numbers</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-to-avoid-problems-with-doubles"><i class="fa fa-check"></i><b>5.1.1</b> How to avoid problems with doubles</a></li>
+<li class="chapter" data-level="5.1.2" data-path="miscellaneous.html"><a href="miscellaneous.html#more-interesting-information-about-double-representation"><i class="fa fa-check"></i><b>5.1.2</b> More interesting information about double representation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="miscellaneous.html"><a href="miscellaneous.html#how-packages-can-exist"><i class="fa fa-check"></i><b>5.2</b> How packages can exist</a></li>
+</ul></li>
+<li class="part"><span><b>II R Basics</b></span></li>
+<li class="chapter" data-level="6" data-path="regular-expressions.html"><a href="regular-expressions.html"><i class="fa fa-check"></i><b>6</b> Regular Expressions</a></li>
+<li class="part"><span><b>III R Programming</b></span></li>
+<li class="chapter" data-level="7" data-path="performance.html"><a href="performance.html"><i class="fa fa-check"></i><b>7</b> Performance</a><ul>
+<li class="chapter" data-level="7.1" data-path="performance.html"><a href="performance.html#in-general"><i class="fa fa-check"></i><b>7.1</b> In general</a></li>
+<li class="chapter" data-level="7.2" data-path="performance.html"><a href="performance.html#profiling"><i class="fa fa-check"></i><b>7.2</b> Profiling</a></li>
+<li class="chapter" data-level="7.3" data-path="performance.html"><a href="performance.html#microbenchmark"><i class="fa fa-check"></i><b>7.3</b> Microbenchmark</a></li>
+<li class="chapter" data-level="7.4" data-path="performance.html"><a href="performance.html#use-package-compiler"><i class="fa fa-check"></i><b>7.4</b> Use package compiler</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>8</b> Functional programming</a><ul>
+<li class="chapter" data-level="8.1" data-path="functional-programming.html"><a href="functional-programming.html#FunProgClosures"><i class="fa fa-check"></i><b>8.1</b> Closures</a></li>
+<li class="chapter" data-level="8.2" data-path="functional-programming.html"><a href="functional-programming.html#lists-of-functions"><i class="fa fa-check"></i><b>8.2</b> Lists of functions</a></li>
+</ul></li>
+<li class="part"><span><b>IV R Statistics</b></span></li>
+<li class="part"><span><b>V R Plots</b></span></li>
+<li class="chapter" data-level="9" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>9</b> Plots</a><ul>
+<li class="chapter" data-level="9.1" data-path="Plots.html"><a href="Plots.html#graphical-parameters-par"><i class="fa fa-check"></i><b>9.1</b> Graphical parameters <code>par()</code></a><ul>
+<li class="chapter" data-level="9.1.1" data-path="Plots.html"><a href="Plots.html#set-graphical-parameters"><i class="fa fa-check"></i><b>9.1.1</b> Set graphical parameters</a></li>
+<li class="chapter" data-level="9.1.2" data-path="Plots.html"><a href="Plots.html#default"><i class="fa fa-check"></i><b>9.1.2</b> Default</a></li>
+<li class="chapter" data-level="9.1.3" data-path="Plots.html"><a href="Plots.html#device-region"><i class="fa fa-check"></i><b>9.1.3</b> Device region</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>10</b> Interactive Plots</a></li>
+<li class="part"><span><b>VI R Outreach</b></span></li>
+<li class="chapter" data-level="11" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>11</b> Reproducible Research</a></li>
+<li class="chapter" data-level="12" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>12</b> R Markdown</a><ul>
+<li class="chapter" data-level="12.1" data-path="r-markdown.html"><a href="r-markdown.html#literate-programming"><i class="fa fa-check"></i><b>12.1</b> Literate programming</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="r-markdown.html"><a href="r-markdown.html#sweave"><i class="fa fa-check"></i><b>12.1.1</b> Sweave</a></li>
+<li class="chapter" data-level="12.1.2" data-path="r-markdown.html"><a href="r-markdown.html#knitr"><i class="fa fa-check"></i><b>12.1.2</b> Knitr</a></li>
+<li class="chapter" data-level="12.1.3" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown-1"><i class="fa fa-check"></i><b>12.1.3</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="r-markdown.html"><a href="r-markdown.html#components"><i class="fa fa-check"></i><b>12.2</b> Components</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="r-markdown.html"><a href="r-markdown.html#yaml-frontmatter"><i class="fa fa-check"></i><b>12.2.1</b> YAML frontmatter</a></li>
+<li class="chapter" data-level="12.2.2" data-path="r-markdown.html"><a href="r-markdown.html#text"><i class="fa fa-check"></i><b>12.2.2</b> Text</a></li>
+<li class="chapter" data-level="12.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>12.2.3</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>12.3</b> Figures</a></li>
+<li class="chapter" data-level="12.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>12.4</b> Tables</a></li>
+<li class="chapter" data-level="12.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>12.5</b> Sepecial characters</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>13</b> Reference management</a><ul>
+<li class="chapter" data-level="13.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>13.1</b> Literature</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>13.1.1</b> Recommended: Using Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>13.2</b> Cross-References</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>14</b> Stuff still to include</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Reference book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-markdown" class="section level1">
+<h1><span class="header-section-number">Chapter 12</span> R Markdown</h1>
+<div id="literate-programming" class="section level2">
+<h2><span class="header-section-number">12.1</span> Literate programming</h2>
+<p>Sweave, Knitr and R markdown all based on Donald Knuth’s <a href="https://en.wikipedia.org/wiki/Literate_programming">Literate programming</a>. Text and code are in a common file and the code follows the structure of the text.</p>
+<div id="sweave" class="section level3">
+<h3><span class="header-section-number">12.1.1</span> Sweave</h3>
+<ul>
+<li>Takes text in latex formate and R/S code chunks to generate (weave) one tex file.</li>
+<li>Included in R standard library (utils package)</li>
+</ul>
+</div>
+<div id="knitr" class="section level3">
+<h3><span class="header-section-number">12.1.2</span> Knitr</h3>
+<ul>
+<li>Takes several imputs for text (Latex, Markdown, HTML, AsciiDoc, reStructuredText, and Textile) and code (R, Python, …)</li>
+<li>R package</li>
+<li>See: <a href="https://yihui.name/knitr">Knitr Homepage</a></li>
+</ul>
+</div>
+<div id="r-markdown-1" class="section level3">
+<h3><span class="header-section-number">12.1.3</span> R Markdown</h3>
+<p>Combination of Knitr and Pandoc</p>
+<ul>
+<li>Knitr: executes the computer code embedded in Markdown, and converts R Markdown to Markdown</li>
+<li>Pandoc: renders Markdown to the output format you want (such as PDF, HTML, Word, and so on)</li>
+</ul>
+<p><img src="figures/workflow_knitr.png" width="70%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>See: <a href="https://bookdown.org/yihui/rmarkdown/">Markdown Manual</a></li>
+<li>Compile/Render an R Markdown document by
+<ul>
+<li>using function <code>rmarkdown::render()</code></li>
+<li>pushing knit button (Ctrl + Shift + k)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="components" class="section level2">
+<h2><span class="header-section-number">12.2</span> Components</h2>
+<ul>
+<li>Three basic components of an R Markdown document
+<ul>
+<li>Metadata (YAML frontmatter)</li>
+<li>Text (Markdown)</li>
+<li>Code (R, Python, C++, …)</li>
+</ul></li>
+</ul>
+<div id="yaml-frontmatter" class="section level3">
+<h3><span class="header-section-number">12.2.1</span> YAML frontmatter</h3>
+<p>The information of the YAML frontmatter is passed to the output function when the document is rendered. To see <strong>all possible options</strong> go to the help page of the output function (e.g. <code>?rmarkdown::html_document</code> or <code>?bookdown::gitbook</code>). Some options are passed to kniter and some are passed to pandoc.</p>
+<p>All output functions:</p>
+<ul>
+<li><code>beamer_presentation</code></li>
+<li><code>github_document</code></li>
+<li><code>html_document</code></li>
+<li><code>ioslides_presentation</code></li>
+<li><code>latex_document</code></li>
+<li><code>md_document</code></li>
+<li><code>odt_document</code></li>
+<li><code>pdf_document</code></li>
+<li><code>powerpoint_presentation</code></li>
+<li><code>rtf_document</code></li>
+<li><code>slidy_presentation</code></li>
+<li><code>word_document</code></li>
+</ul>
+<p>And some of extension packages (you need to include the package name) e.g. <code>tufte::tufte_html</code></p>
+<p>The YAML frontmatter follows the a certain syntax</p>
+<ul>
+<li>starts and ends with three dashes <code>---</code></li>
+<li>tag and value sparated by <code>:</code></li>
+<li><code>true</code>, <code>false</code> (unlike <code>TRUE</code>, <code>FALSE</code> in R)</li>
+<li>vectors: with square brackets e.g. <code>output: [&quot;html_document&quot;, &quot;word_document&quot;]</code></li>
+<li>lists: indet code by two spaces</li>
+</ul>
+</div>
+<div id="text" class="section level3">
+<h3><span class="header-section-number">12.2.2</span> Text</h3>
+<p>The syntax for text (also known as prose or narratives) is Markdown. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents.</p>
+<p>Find all formatting syntax in detail in the <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc Manual</a> e.g.</p>
+<ul>
+<li><a href="https://pandoc.org/MANUAL.html#inline-formatting">Inline formatting</a></li>
+<li><a href="https://pandoc.org/MANUAL.html#links-1">Links</a></li>
+<li><a href="https://pandoc.org/MANUAL.html#lists">Lists</a></li>
+<li><a href="https://pandoc.org/MANUAL.html#tables">Tables</a></li>
+</ul>
+<p>or in less detail in the <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">R Markdown manual</a></p>
+<ul>
+<li>\ : escape</li>
+<li>` : code</li>
+<li>* : italic/bold</li>
+<li>_ : italic/bold</li>
+<li>^ : superscript</li>
+<li>~ : subscript</li>
+<li>$ : formula</li>
+<li>@ : reference</li>
+<li># : header</li>
+<li>-/+ : itemize</li>
+<li>&gt; : blockquote</li>
+</ul>
+<p><img src="figures/writing_markdown.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>My favourit html_document themes: flatly, spacelab, lumen and sandstone</p>
+</div>
+<div id="code" class="section level3">
+<h3><span class="header-section-number">12.2.3</span> Code</h3>
+<div id="types" class="section level4">
+<h4><span class="header-section-number">12.2.3.1</span> Types</h4>
+<p>Two types of code</p>
+<ul>
+<li>A code chunk starts with three backticks like <code>```{r}</code> where <code>r</code> indicates the language name, and ends with three backticks. You can write chunk options in the curly braces (e.g., set the figure height to 5 inches: <code>```{r, fig.height=5}</code>).</li>
+<li>An inline R code expression starts with <code>`r</code> and ends with a backtick <code>`</code>.</li>
+</ul>
+</div>
+<div id="chunck-ouput" class="section level4">
+<h4><span class="header-section-number">12.2.3.2</span> Chunck Ouput</h4>
+<ul>
+<li>Text</li>
+<li>Tables</li>
+<li>Graphics</li>
+</ul>
+</div>
+<div id="chunck-options" class="section level4">
+<h4><span class="header-section-number">12.2.3.3</span> Chunck options</h4>
+<p>All chunk options can be found in the <a href="https://yihui.name/knitr/options/">Knitr Manual</a></p>
+<p>Most important chunck options:</p>
+<ul>
+<li>first element gives the engine (name of the language)</li>
+<li>second element can be a chunck name e.g. <code>{r, my-name, eval = ...}</code></li>
+<li><code>eval</code>: Whether to evaluate a code chunk.</li>
+<li><code>echo</code>: Whether to echo the source code in the output document.</li>
+<li><code>results</code>: When set to <code>'hide'</code>, text output will be hidden; when set to <code>'asis'</code>, text output is written “as-is”, e.g., you can write out raw Markdown text from R code (like <code>cat('**Markdown** is cool.\n')</code>).</li>
+<li><code>collapse</code>: Whether to merge text output and source code into a single code block in the output.</li>
+<li><code>warning</code>, <code>message</code>, and <code>error</code>: Whether to show warnings, messages, and errors in the output document.</li>
+<li><code>include</code>: Whether to include anything from a code chunk in the output document.</li>
+<li><code>cache</code>: Whether to enable caching.</li>
+<li><code>fig.width</code> and <code>fig.height</code> (or <code>fig.dim</code>): The (graphical device) size of R plots in <strong>inches</strong>.</li>
+<li><code>out.width</code> and <code>out.height</code>: The output size of R plots in the output document in <strong>percentage</strong> (e.g. <code>out.width = '80%'</code>).</li>
+<li><code>fig.align</code>: The alignment of plots. It can be <code>'left'</code>, <code>'center'</code>, or <code>'right'</code>.</li>
+<li><code>dev</code>: The graphical device to record R plots. Typically it is <code>'pdf'</code> for LaTeX output, and <code>'png'</code> for HTML output, but you can certainly use other devices, such as <code>'svg'</code> or <code>'jpeg'</code>.</li>
+<li><code>fig.cap</code>: The figure caption.</li>
+<li><code>child</code>: You can include a child document in the main document. This option takes a path to an external file.</li>
+</ul>
+<p>Set chunk option globally:</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">```{r, setup, include=FALSE}
+knitr::opts_chunk$set(comment = &quot;#&gt;&quot;,
+<span class="bn">                      tidy = TRUE,</span>
+<span class="bn">                      fig.align = &quot;center&quot;,</span>
+<span class="bn">                      out.width = &quot;80%&quot;)</span>
+```</code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+</div>
+</div>
+</div>
+<div id="figures" class="section level2">
+<h2><span class="header-section-number">12.3</span> Figures</h2>
+<p>Plot from code chunks or insert via <code>knitr::include_graphics()</code></p>
+<p>e.g.</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">```{r, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}
+knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)
+```</code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+<div class="figure" style="text-align: center"><span id="fig:include-graphics"></span>
+<img src="figures/hex-rmarkdown.png" alt="The R Markdown hex logo." width="25%" />
+<p class="caption">
+Figure 12.1: The R Markdown hex logo.
+</p>
+</div>
+<p>Chunk options</p>
+<ul>
+<li><code>fig.show='hold'</code> Show figures next to each other (if out.width &lt; 50%)</li>
+<li><code>fig.cap = &quot;text&quot;</code> Figure captation text or text reference</li>
+</ul>
+<p>Recomended file formate</p>
+<ul>
+<li>If output pdf use pdf images (<a href="https://stackoverflow.com/questions/50165404/how-to-make-a-pdf-using-bookdown-including-svg-images">svg not possible</a>!)</li>
+<li>If output html use png images</li>
+<li>If output both use png
+<ul>
+<li><code>options(knitr.graphics.auto_pdf = TRUE)</code> pdf output will automatically take file with same name but pdf format if it is available.</li>
+</ul></li>
+</ul>
+</div>
+<div id="tables" class="section level2">
+<h2><span class="header-section-number">12.4</span> Tables</h2>
+<ul>
+<li>For data in R use <code>knitr::kable()</code> (See <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">Kable Manual</a>)</li>
+<li>For text use <a href="https://pandoc.org/MANUAL.html#tables">Pandoc tables</a>
+<ul>
+<li>Available
+<ul>
+<li>Simple tables</li>
+<li>Multiline tables</li>
+<li>Grid tables</li>
+<li>Pipe tables</li>
+</ul></li>
+<li>Recommended to use
+<ul>
+<li>pipe tables for simple tables (generate <a href="https://www.tablesgenerator.com/markdown_tables">here</a>)</li>
+<li>Grid tables where you need bullet points within the table (generate <a href="https://www.tablesgenerator.com/text_tables">here</a>)</li>
+</ul></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Attention: without using a header, the formated table is reduced to an unformatted html table. Avoid this by including a white space into the header ()</p>
+</blockquote>
+</div>
+<div id="sepecial-characters" class="section level2">
+<h2><span class="header-section-number">12.5</span> Sepecial characters</h2>
+<ul>
+<li>Mathematical stuff with Latex
+<ul>
+<li><span class="math inline">\(\alpha\)</span> <span class="math inline">\(\Gamma\)</span> <span class="math inline">\(\ggg\)</span> <span class="math inline">\(\notin\)</span> <span class="math inline">\(\dagger\)</span> <span class="math inline">\(\mathbb{R}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\infty\)</span> <span class="math inline">\(n\)</span></li>
+</ul></li>
+<li>What you can reach on the keyboard, use keyboard
+<ul>
+<li>§°+“ç%&amp;/()=?¦¬|¢~[]èéàüöä&lt;$£</li>
+</ul></li>
+<li>Some characters with special meaning in markdown needs to be escaped with \
+<ul>
+<li>Everywhere \ ` * _ ^ ~ $ @ { }</li>
+<li>Beginning of new line # - + &gt;</li>
+</ul></li>
+<li>Furter characters
+<ul>
+<li>Find symbol with google, copy-paste (e.g. €)</li>
+<li>Find html code (e.g. &amp;euro; <span class="math inline">\(\Rightarrow\)</span> €)
+<ul>
+<li>Find many <a href="https://dev.w3.org/html5/html-author/charref">here</a></li>
+</ul></li>
+</ul></li>
+<li>html code examples examples
+<ul>
+<li>&amp;nbsp; for non-breaking space (several after each other possible)</li>
+<li>&amp;Tab; for a tab</li>
+<li>&amp;#128512; for 😀</li>
+<li>&amp;larr; for ← (does work in pdf)</li>
+<li>&amp;rArr; for ⇒ (does not work in pdf)</li>
+<li>Will not always work with pdf output (some characters work others not)!</li>
+</ul></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="reproducible-research.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reference-management.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/62-writing.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["R_Ref_Book.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
