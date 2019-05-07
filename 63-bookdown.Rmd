@@ -1,0 +1,38 @@
+# Bookdown
+
+## Configuration
+
+Some options are passed to
+
+1) `bookdown::render()`
+1) kniter
+2) pandoc
+
+
+Where to define configuration (see also [here](https://stackoverflow.com/questions/51424537/whats-the-difference-between-bookdown-yml-output-yml-and-yaml-header-of))
+
+1) `_bookdown.yml`
+2) `_output.yml`
+3) yaml header of first document (index)
+
+
+Example with all possible default options
+
+### `_bookdown.yml`
+```
+book_filename: "myBookname"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+```
+
+
+### `_output.yml`
+
+
+
+### yaml header
+
+
+

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 3 Functions | R Reference book</title>
+  <title>Chapter 12 R Markdown | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 3 Functions | R Reference book" />
+  <meta property="og:title" content="Chapter 12 R Markdown | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Functions | R Reference book" />
+  <meta name="twitter:title" content="Chapter 12 R Markdown | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon">
-<link rel="prev" href="vec.html">
-<link rel="next" href="env.html">
+<link rel="prev" href="reproducible-research.html">
+<link rel="next" href="bookdown.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -213,13 +213,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="12.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>12.4</b> Tables</a></li>
 <li class="chapter" data-level="12.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>12.5</b> Sepecial characters</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>13</b> Reference management</a><ul>
-<li class="chapter" data-level="13.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>13.1</b> Literature</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>13.1.1</b> Recommended: Using Zotero</a></li>
+<li class="chapter" data-level="13" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>13</b> Bookdown</a><ul>
+<li class="chapter" data-level="13.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>13.1</b> Configuration</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="bookdown.html"><a href="bookdown.html#bookdown.yml"><i class="fa fa-check"></i><b>13.1.1</b> <code>_bookdown.yml</code></a></li>
+<li class="chapter" data-level="13.1.2" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>13.1.2</b> <code>_output.yml</code></a></li>
+<li class="chapter" data-level="13.1.3" data-path="bookdown.html"><a href="bookdown.html#yaml-header"><i class="fa fa-check"></i><b>13.1.3</b> yaml header</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>13.2</b> Cross-References</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>14</b> Stuff still to include</a></li>
+<li class="chapter" data-level="14" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>14</b> Reference management</a><ul>
+<li class="chapter" data-level="14.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>14.1</b> Literature</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>14.1.1</b> Recommended: Using Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>14.2</b> Cross-References</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>15</b> Stuff still to include</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -241,331 +248,250 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="fun" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Functions</h1>
-<div id="FunTypes" class="section level2">
-<h2><span class="header-section-number">3.1</span> Types</h2>
-<p>Find function “type” with <code>typeof()</code></p>
+<div id="r-markdown" class="section level1">
+<h1><span class="header-section-number">Chapter 12</span> R Markdown</h1>
+<div id="literate-programming" class="section level2">
+<h2><span class="header-section-number">12.1</span> Literate programming</h2>
+<p>Sweave, Knitr and R markdown all based on Donald Knuth’s <a href="https://en.wikipedia.org/wiki/Literate_programming">Literate programming</a>. Text and code are in a common file and the code follows the structure of the text.</p>
+<div id="sweave" class="section level3">
+<h3><span class="header-section-number">12.1.1</span> Sweave</h3>
 <ul>
-<li>builtin (primitive functions e.g. <code>sum</code>)</li>
-<li>special (primitive functions e.g. <code>[</code>)</li>
-<li>closure (functions built upon primitive functions, they always have their own environment)</li>
+<li>Takes text in latex formate and R/S code chunks to generate (weave) one tex file.</li>
+<li>Included in R standard library (utils package)</li>
 </ul>
-<div id="primitive-functions" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> Primitive functions</h3>
-<ul>
-<li>Implemented in C</li>
-<li>Separated into builtin and special
-<ul>
-<li>builtin: arguments evaluated before passed to C code</li>
-<li>special: unevaluated arguments passed to C code</li>
-</ul></li>
-<li>C code called via <code>.Primitive()</code> or <code>.Internal()</code>
-<ul>
-<li><code>.Primitive()</code> for pure C code</li>
-<li><code>.Internal()</code> for mixtures of R and C code</li>
-</ul></li>
-<li><code>body()</code>, <code>formals()</code> and <code>environment()</code> are <code>NULL</code> (see <a href="fun.html#function-components">3.2</a>)</li>
-<li>All in base package</li>
-<li>Check with <code>is.primitive()</code></li>
-</ul>
-<p>Many primitive function can be used without the classical syntax functionname() (see <a href="fun.html#special-calls">3.6</a>). Backticks <code>`</code> let you refere to objects that have otherwise reserved or illegal name.</p>
 </div>
+<div id="knitr" class="section level3">
+<h3><span class="header-section-number">12.1.2</span> Knitr</h3>
+<ul>
+<li>Takes several imputs for text (Latex, Markdown, HTML, AsciiDoc, reStructuredText, and Textile) and code (R, Python, …)</li>
+<li>R package</li>
+<li>See: <a href="https://yihui.name/knitr">Knitr Homepage</a></li>
+</ul>
 </div>
-<div id="function-components" class="section level2">
-<h2><span class="header-section-number">3.2</span> Function components</h2>
-<table>
-<colgroup>
-<col width="16%" />
-<col width="57%" />
-<col width="26%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><ul>
-<li><code>body()</code></li>
-</ul></td>
-<td><p>Code inside the function.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><ul>
-<li><code>formals()</code></li>
-</ul></td>
-<td><p>List of formal <strong>arguments</strong> which controls how you can call the function.</p></td>
-<td><p>Chapter <a href="fun.html#function-arguments">3.3</a></p></td>
-</tr>
-<tr class="odd">
-<td><ul>
-<li><code>environment()</code></li>
-</ul></td>
-<td><p>“Map” of the location of the function’s variables.</p></td>
-<td><p>Chapter <a href="fun.html#function-environment">3.4</a></p></td>
-</tr>
-</tbody>
-</table>
-<p>Like other objects, functions have certain attributes</p>
+<div id="r-markdown-1" class="section level3">
+<h3><span class="header-section-number">12.1.3</span> R Markdown</h3>
+<p>Combination of Knitr and Pandoc</p>
 <ul>
-<li><code>srcref</code> (source reference): Attribute which all functions have. Returns source code (similar to <code>body()</code> but with comments and formatting)</li>
-<li>additional attributes possible</li>
+<li>Knitr: executes the computer code embedded in Markdown, and converts R Markdown to Markdown</li>
+<li>Pandoc: renders Markdown to the output format you want (such as PDF, HTML, Word, and so on)</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myfun &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
-    x<span class="op">^</span><span class="dv">2</span>  <span class="co"># with comment</span>
-}
-<span class="kw">attributes</span>(myfun)
-<span class="co">#&gt; $srcref</span>
-<span class="co">#&gt; function(x) {</span>
-<span class="co">#&gt;     x^2  # with comment</span>
-<span class="co">#&gt; }</span>
-<span class="kw">body</span>(myfun)
-<span class="co">#&gt; {</span>
-<span class="co">#&gt;     x^2</span>
-<span class="co">#&gt; }</span></code></pre></div>
-</div>
-<div id="function-arguments" class="section level2">
-<h2><span class="header-section-number">3.3</span> Arguments</h2>
+<p><img src="figures/workflow_knitr.png" width="70%" style="display: block; margin: auto;" /></p>
 <ul>
-<li>Formal arguments (stated in function definition)</li>
-<li><p>Actual arguments (explicetly passed to the function when you call it)</p></li>
-<li>Get formal argument: <code>formals()</code></li>
-<li>Set formal arguments: <code>`formals&lt;-`</code> (replacement function: change default formals, add formals, remove formals)</li>
-<li><p><code>formals()</code> without arguments will list the arguments of the function which calls it</p></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myfunction &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="dv">2</span>) x <span class="op">+</span><span class="st"> </span>y
-<span class="kw">formals</span>(myfunction)
-<span class="co">#&gt; $x</span>
-<span class="co">#&gt; [1] 1</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $y</span>
-<span class="co">#&gt; [1] 2</span>
-<span class="kw">myfunction</span>()
-<span class="co">#&gt; [1] 3</span>
-<span class="kw">formals</span>(myfunction) &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">3</span>, <span class="dt">y =</span> <span class="dv">4</span>)
-<span class="kw">myfunction</span>()
-<span class="co">#&gt; [1] 7</span>
-(<span class="cf">function</span>(x) <span class="kw">formals</span>())()
-<span class="co">#&gt; $x</span></code></pre></div>
-<p>Arguments are matched by the following hirarchy</p>
+<li>See: <a href="https://bookdown.org/yihui/rmarkdown/">Markdown Manual</a></li>
+<li>Compile/Render an R Markdown document by
 <ul>
-<li>Complete name</li>
-<li>Partial name (prefix maching)</li>
-<li>Position</li>
-</ul>
-<p>Use <code>do.call()</code> to pass arguments containd in a list to a function.</p>
-<p>Use <code>missing()</code> to check if a formal argument has been manually set.</p>
-<div id="lazy-evaluation" class="section level3">
-<h3><span class="header-section-number">3.3.1</span> Lazy evaluation:</h3>
-<ul>
-<li>Arguments are evaluated when they are used</li>
-<li>If they are never used within a function, they might never be evaluated <span class="math inline">\(\Rightarrow\)</span> not saved in the environment of that function</li>
-<li>To avoid problems in <strong>loops which return functions</strong>, make sure to <code>force()</code> the evaluation of the objects which are needed for the returned function</li>
-<li>Example:
-<ul>
-<li><code>add()</code> is a function in the global environment which returns a function</li>
-<li>Each function in the list <code>adders_bad</code>/<code>adders_good</code> are in separate environments</li>
-<li>without <code>force(x)</code> <code>x</code> is <strong>not</strong> evaluated in those environments</li>
-<li><code>x</code> is lazily evaluated the first time that you call one of the adder functions. At this point, the loop is complete and the final value of <code>x</code> is 10. Therefore <code>x</code> is evaluated in all environments to have a value of 10.</li>
-</ul></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># wrong</span>
-add &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="cf">function</span>(y) x <span class="op">+</span><span class="st"> </span>y
-adders_bad &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">10</span>)
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(adders_bad)) adders_bad[[i]] &lt;-<span class="st"> </span><span class="kw">add</span>(i)
-adders_bad[[<span class="dv">1</span>]](<span class="dv">10</span>)  <span class="co"># should be 11</span>
-<span class="co">#&gt; [1] 20</span>
-adders_bad[[<span class="dv">10</span>]](<span class="dv">10</span>)  ## should be 20
-<span class="co">#&gt; [1] 20</span>
-<span class="kw">get</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">envir =</span> <span class="kw">environment</span>(adders_bad[[<span class="dv">1</span>]]))  <span class="co"># should be 1</span>
-<span class="co">#&gt; [1] 10</span>
-
-<span class="co"># good</span>
-add &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
-    <span class="kw">force</span>(x)
-    <span class="cf">function</span>(y) x <span class="op">+</span><span class="st"> </span>y
-}
-adders_good &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">10</span>)
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(adders_good)) adders_good[[i]] &lt;-<span class="st"> </span><span class="kw">add</span>(i)
-adders_good[[<span class="dv">1</span>]](<span class="dv">10</span>)  <span class="co"># should be 11</span>
-<span class="co">#&gt; [1] 11</span>
-adders_good[[<span class="dv">10</span>]](<span class="dv">10</span>)  ## should be 20
-<span class="co">#&gt; [1] 20</span>
-<span class="kw">get</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">envir =</span> <span class="kw">environment</span>(adders_good[[<span class="dv">1</span>]]))  <span class="co"># should be 1</span>
-<span class="co">#&gt; [1] 1</span></code></pre></div>
-<ul>
-<li>An unevaluated argument is called a <strong>promise</strong>. A promise is made up of two parts:
-<ul>
-<li>The expression which gives rise to the delayed computation.</li>
-<li>The environment where the expression was created and where it should be evaluated.</li>
+<li>using function <code>rmarkdown::render()</code></li>
+<li>pushing knit button (Ctrl + Shift + k)</li>
 </ul></li>
 </ul>
 </div>
-<div id="elipsis-..." class="section level3">
-<h3><span class="header-section-number">3.3.2</span> Elipsis <code>...</code></h3>
-<p>This argument will match any arguments not otherwise matched, and can be easily passed on to other functions.</p>
 </div>
-</div>
-<div id="function-environment" class="section level2">
-<h2><span class="header-section-number">3.4</span> Environment</h2>
-<div id="lexical-scoping" class="section level3">
-<h3><span class="header-section-number">3.4.1</span> Lexical scoping</h3>
+<div id="components" class="section level2">
+<h2><span class="header-section-number">12.2</span> Components</h2>
 <ul>
-<li>Scoping: Where to look for objects</li>
-<li>Lexical: Scoping is determined where the function is defined (not where it is called)</li>
-</ul>
-<p>Rules</p>
+<li>Three basic components of an R Markdown document
 <ul>
-<li>If a name is not defined inside a function, R will look one level up</li>
-<li>Example: x is searched in the environment of each function in the following order h <span class="math inline">\(\rightarrow\)</span> g <span class="math inline">\(\rightarrow\)</span> f <span class="math inline">\(\rightarrow\)</span> global environment</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">2</span>
-f &lt;-<span class="st"> </span><span class="cf">function</span>() {
-    g &lt;-<span class="st"> </span><span class="cf">function</span>() {
-        h &lt;-<span class="st"> </span><span class="cf">function</span>() x
-        <span class="kw">h</span>()
-    }
-    <span class="kw">g</span>()
-}
-<span class="kw">f</span>()</code></pre></div>
-<pre><code>#&gt; [1] 2</code></pre>
-<ul>
-<li>Assigning a function also assignes a certain environment (environment property)</li>
-<li>Example:
-<ul>
-<li>Function <code>j</code> returns a function (which connects <code>x</code> and <code>y</code>)</li>
-<li>Assigning <code>j(1)</code> to <code>k</code> makes <code>k</code> an function with the environment property pointing to the environment created by running <code>j()</code> (the function where the output function was defined). This environment <strong>contains x and y</strong></li>
+<li>Metadata (YAML frontmatter)</li>
+<li>Text (Markdown)</li>
+<li>Code (R, Python, C++, …)</li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">j &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
-    y &lt;-<span class="st"> </span><span class="dv">2</span>
-    <span class="cf">function</span>() {
-        <span class="kw">c</span>(x, y)
-    }
-}
-k &lt;-<span class="st"> </span><span class="kw">j</span>(<span class="dv">1</span>)
-<span class="kw">k</span>()</code></pre></div>
-<pre><code>#&gt; [1] 1 2</code></pre>
+<div id="yaml-frontmatter" class="section level3">
+<h3><span class="header-section-number">12.2.1</span> YAML frontmatter</h3>
+<p>The information of the YAML frontmatter is passed to the output function when the document is rendered. To see <strong>all possible options</strong> go to the help page of the output function (e.g. <code>?rmarkdown::html_document</code> or <code>?bookdown::gitbook</code>). Some options are passed to kniter and some are passed to pandoc.</p>
+<p>All output functions:</p>
 <ul>
-<li>Object saved in a higher environment are not found below</li>
-<li>Example:
+<li><code>beamer_presentation</code></li>
+<li><code>github_document</code></li>
+<li><code>html_document</code></li>
+<li><code>ioslides_presentation</code></li>
+<li><code>latex_document</code></li>
+<li><code>md_document</code></li>
+<li><code>odt_document</code></li>
+<li><code>pdf_document</code></li>
+<li><code>powerpoint_presentation</code></li>
+<li><code>rtf_document</code></li>
+<li><code>slidy_presentation</code></li>
+<li><code>word_document</code></li>
+</ul>
+<p>And some of extension packages (you need to include the package name) e.g. <code>tufte::tufte_html</code></p>
+<p>The YAML frontmatter follows the a certain syntax</p>
 <ul>
-<li><code>a</code> is not saved except within function</li>
-<li>A new call of <code>j</code> will not find previous <code>a</code></li>
-<li>Functon will always return 1 exept if we save <code>a</code></li>
+<li>starts and ends with three dashes <code>---</code></li>
+<li>tag and value sparated by <code>:</code></li>
+<li><code>true</code>, <code>false</code> (unlike <code>TRUE</code>, <code>FALSE</code> in R)</li>
+<li>vectors: with square brackets e.g. <code>output: [&quot;html_document&quot;, &quot;word_document&quot;]</code></li>
+<li>lists: indet code by two spaces</li>
+</ul>
+</div>
+<div id="text" class="section level3">
+<h3><span class="header-section-number">12.2.2</span> Text</h3>
+<p>The syntax for text (also known as prose or narratives) is Markdown. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents.</p>
+<p>Find all formatting syntax in detail in the <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc Manual</a> e.g.</p>
+<ul>
+<li><a href="https://pandoc.org/MANUAL.html#inline-formatting">Inline formatting</a></li>
+<li><a href="https://pandoc.org/MANUAL.html#links-1">Links</a></li>
+<li><a href="https://pandoc.org/MANUAL.html#lists">Lists</a></li>
+<li><a href="https://pandoc.org/MANUAL.html#tables">Tables</a></li>
+</ul>
+<p>or in less detail in the <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">R Markdown manual</a></p>
+<ul>
+<li>\ : escape</li>
+<li>` : code</li>
+<li>* : italic/bold</li>
+<li>_ : italic/bold</li>
+<li>^ : superscript</li>
+<li>~ : subscript</li>
+<li>$ : formula</li>
+<li>@ : reference</li>
+<li># : header</li>
+<li>-/+ : itemize</li>
+<li>&gt; : blockquote</li>
+</ul>
+<p><img src="figures/writing_markdown.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>My favourit html_document themes: flatly, spacelab, lumen and sandstone</p>
+</div>
+<div id="code" class="section level3">
+<h3><span class="header-section-number">12.2.3</span> Code</h3>
+<div id="types" class="section level4">
+<h4><span class="header-section-number">12.2.3.1</span> Types</h4>
+<p>Two types of code</p>
+<ul>
+<li>A code chunk starts with three backticks like <code>```{r}</code> where <code>r</code> indicates the language name, and ends with three backticks. You can write chunk options in the curly braces (e.g., set the figure height to 5 inches: <code>```{r, fig.height=5}</code>).</li>
+<li>An inline R code expression starts with <code>`r</code> and ends with a backtick <code>`</code>.</li>
+</ul>
+</div>
+<div id="chunck-ouput" class="section level4">
+<h4><span class="header-section-number">12.2.3.2</span> Chunck Ouput</h4>
+<ul>
+<li>Text</li>
+<li>Tables</li>
+<li>Graphics</li>
+</ul>
+</div>
+<div id="chunck-options" class="section level4">
+<h4><span class="header-section-number">12.2.3.3</span> Chunck options</h4>
+<p>All chunk options can be found in the <a href="https://yihui.name/knitr/options/">Knitr Manual</a></p>
+<p>Most important chunck options:</p>
+<ul>
+<li>first element gives the engine (name of the language)</li>
+<li>second element can be a chunck name e.g. <code>{r, my-name, eval = ...}</code></li>
+<li><code>eval</code>: Whether to evaluate a code chunk.</li>
+<li><code>echo</code>: Whether to echo the source code in the output document.</li>
+<li><code>results</code>: When set to <code>'hide'</code>, text output will be hidden; when set to <code>'asis'</code>, text output is written “as-is”, e.g., you can write out raw Markdown text from R code (like <code>cat('**Markdown** is cool.\n')</code>).</li>
+<li><code>collapse</code>: Whether to merge text output and source code into a single code block in the output.</li>
+<li><code>warning</code>, <code>message</code>, and <code>error</code>: Whether to show warnings, messages, and errors in the output document.</li>
+<li><code>include</code>: Whether to include anything from a code chunk in the output document.</li>
+<li><code>cache</code>: Whether to enable caching.</li>
+<li><code>fig.width</code> and <code>fig.height</code> (or <code>fig.dim</code>): The (graphical device) size of R plots in <strong>inches</strong>.</li>
+<li><code>out.width</code> and <code>out.height</code>: The output size of R plots in the output document in <strong>percentage</strong> (e.g. <code>out.width = '80%'</code>).</li>
+<li><code>fig.align</code>: The alignment of plots. It can be <code>'left'</code>, <code>'center'</code>, or <code>'right'</code>.</li>
+<li><code>dev</code>: The graphical device to record R plots. Typically it is <code>'pdf'</code> for LaTeX output, and <code>'png'</code> for HTML output, but you can certainly use other devices, such as <code>'svg'</code> or <code>'jpeg'</code>.</li>
+<li><code>fig.cap</code>: The figure caption.</li>
+<li><code>child</code>: You can include a child document in the main document. This option takes a path to an external file.</li>
+</ul>
+<p>Set chunk option globally:</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">```{r, setup, include=FALSE}
+knitr::opts_chunk$set(comment = &quot;#&gt;&quot;,
+<span class="bn">                      tidy = TRUE,</span>
+<span class="bn">                      fig.align = &quot;center&quot;,</span>
+<span class="bn">                      out.width = &quot;80%&quot;)</span>
+```</code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+</div>
+</div>
+</div>
+<div id="figures" class="section level2">
+<h2><span class="header-section-number">12.3</span> Figures</h2>
+<p>Plot from code chunks or insert via <code>knitr::include_graphics()</code></p>
+<p>e.g.</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">```{r, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}
+knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)
+```</code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+<div class="figure" style="text-align: center"><span id="fig:include-graphics"></span>
+<img src="figures/hex-rmarkdown.png" alt="The R Markdown hex logo." width="25%" />
+<p class="caption">
+Figure 12.1: The R Markdown hex logo.
+</p>
+</div>
+<p>Chunk options</p>
+<ul>
+<li><code>fig.show='hold'</code> Show figures next to each other (if out.width &lt; 50%)</li>
+<li><code>fig.cap = &quot;text&quot;</code> Figure captation text or text reference</li>
+</ul>
+<p>Recomended file formate</p>
+<ul>
+<li>If output pdf use pdf images (<a href="https://stackoverflow.com/questions/50165404/how-to-make-a-pdf-using-bookdown-including-svg-images">svg not possible</a>!)</li>
+<li>If output html use png images</li>
+<li>If output both use png
+<ul>
+<li><code>options(knitr.graphics.auto_pdf = TRUE)</code> pdf output will automatically take file with same name but pdf format if it is available.</li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">j &lt;-<span class="st"> </span><span class="cf">function</span>() {
-    <span class="cf">if</span> (<span class="op">!</span><span class="kw">exists</span>(<span class="st">&quot;a&quot;</span>)) {
-        a &lt;-<span class="st"> </span><span class="dv">1</span>
-    } <span class="cf">else</span> {
-        a &lt;-<span class="st"> </span>a <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
-    }
-    a
-}
-<span class="kw">j</span>()</code></pre></div>
-<pre><code>#&gt; [1] 1</code></pre>
 </div>
-</div>
-<div id="return-value" class="section level2">
-<h2><span class="header-section-number">3.5</span> Return value</h2>
+<div id="tables" class="section level2">
+<h2><span class="header-section-number">12.4</span> Tables</h2>
 <ul>
-<li>The last expression evaluated in a function becomes the return value</li>
-<li><code>return()</code> usful to stop evaluation and return error</li>
-<li><code>invisible()</code> usful to invisible return an object (e.g. for ploting functions)</li>
-<li>pure functions: functions which change nothing except for what they return</li>
-<li>Few non-pure functions
+<li>For data in R use <code>knitr::kable()</code> (See <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">Kable Manual</a>)</li>
+<li>For text use <a href="https://pandoc.org/MANUAL.html#tables">Pandoc tables</a>
 <ul>
-<li><code>library()</code> which loads a package, and hence modifies the search path.</li>
-<li><code>setwd()</code>, <code>Sys.setenv()</code>, <code>Sys.setlocale()</code> which change the working directory,</li>
-<li>environment variables, and the locale, respectively.</li>
-<li><code>plot()</code> and friends which produce graphical output.</li>
-<li><code>write()</code>, <code>write.csv()</code>, <code>saveRDS()</code>, etc. which save output to disk.</li>
-<li><code>options()</code> and <code>par()</code> which modify global settings.</li>
-<li>S4 related functions which modify global tables of classes and methods.</li>
-<li>Random number generators which produce different numbers each time you run them.</li>
+<li>Available
+<ul>
+<li>Simple tables</li>
+<li>Multiline tables</li>
+<li>Grid tables</li>
+<li>Pipe tables</li>
 </ul></li>
-<li><code>on.exit()</code> evaluates expression when function call is finished</li>
-<li>Example</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">in_dir &lt;-<span class="st"> </span><span class="cf">function</span>(dir, code) {
-    old &lt;-<span class="st"> </span><span class="kw">setwd</span>(dir)
-    <span class="kw">on.exit</span>(<span class="kw">setwd</span>(old))
-    
-    ## what function does...
-}</code></pre></div>
-</div>
-<div id="special-calls" class="section level2">
-<h2><span class="header-section-number">3.6</span> Special calls</h2>
-<table>
-<colgroup>
-<col width="18%" />
-<col width="34%" />
-<col width="37%" />
-<col width="9%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>name</th>
-<th>description</th>
-<th>Built-in examples</th>
-<th>Your own</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Control flow operators</td>
-<td>Decide which line is evaluated</td>
-<td><code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>, <code>break</code></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Subsetting operators</td>
-<td>Subset an object</td>
-<td><code>[</code>, <code>[[</code>, <code>$</code></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Infix operators</td>
-<td>function name comes in between ist arguments</td>
-<td><code>%in%</code>, <code>%*%</code>, <code>+</code>, <code>*</code>, <code>^</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&lt;-</code>, …</td>
-<td><code>%myname%</code></td>
-</tr>
-<tr class="even">
-<td>Replacement functions</td>
-<td>Replace an existing object</td>
-<td><code>&lt;-</code>, <code>[&lt;-</code>, <code>names&lt;-</code>, <code>levels&lt;-</code>, …</td>
-<td><code>myname&lt;-</code></td>
-</tr>
-</tbody>
-</table>
-<p>All special functions can also be called like a “normal” function</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>][<span class="dv">2</span>]</code></pre></div>
-<pre><code>#&gt; [1] &quot;b&quot;</code></pre>
-<p>Replacement function make some changes to the data and assign the new output to the first argument</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>
-<span class="kw">names</span>(x) &lt;-<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]  <span class="co"># user friendly</span>
-x &lt;-<span class="st"> `</span><span class="dt">names&lt;-</span><span class="st">`</span>(x, letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>])  ## behind scenes this is executed</code></pre></div>
-<p>You can create your own infix and replacement functions. This is a useful example of providing a default value in case the output of another function is <code>NULL</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="st">`</span><span class="dt">%||%</span><span class="st">`</span> &lt;-<span class="st"> </span><span class="cf">function</span>(a, b) <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.null</span>(a)) a <span class="cf">else</span> b
-<span class="kw">function_that_might_return_null</span>() <span class="op">%||%</span><span class="st"> </span>default value</code></pre></div>
-</div>
-<div id="generic-functions" class="section level2">
-<h2><span class="header-section-number">3.7</span> Generic functions</h2>
+<li>Recommended to use
 <ul>
-<li>Depending on the class of the first argument, different <strong>methods</strong> of a function are called by <code>UseMethod()</code></li>
-<li>All available methods of a functionname can be shown with <code>methods()</code>.</li>
-<li>methods ending with an asterisks <code>*</code> are not exported in the namespace, meaning they should not explicitly be called by the user.
-<ul>
-<li>get their source code with <code>getAnywhere()</code></li>
+<li>pipe tables for simple tables (generate <a href="https://www.tablesgenerator.com/markdown_tables">here</a>)</li>
+<li>Grid tables where you need bullet points within the table (generate <a href="https://www.tablesgenerator.com/text_tables">here</a>)</li>
+</ul></li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">print</code></pre></div>
-<pre><code>#&gt; function (x, ...) 
-#&gt; UseMethod(&quot;print&quot;)
-#&gt; &lt;bytecode: 0x00000000144ee888&gt;
-#&gt; &lt;environment: namespace:base&gt;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">methods</span>(print))</code></pre></div>
-<pre><code>#&gt; [1] &quot;print.acf&quot;     &quot;print.AES&quot;     &quot;print.anova&quot;   &quot;print.aov&quot;    
-#&gt; [5] &quot;print.aovlist&quot; &quot;print.ar&quot;</code></pre>
+<blockquote>
+<p>Attention: without using a header, the formated table is reduced to an unformatted html table. Avoid this by including a white space into the header ()</p>
+</blockquote>
+</div>
+<div id="sepecial-characters" class="section level2">
+<h2><span class="header-section-number">12.5</span> Sepecial characters</h2>
+<ul>
+<li>Mathematical stuff with Latex
+<ul>
+<li><span class="math inline">\(\alpha\)</span> <span class="math inline">\(\Gamma\)</span> <span class="math inline">\(\ggg\)</span> <span class="math inline">\(\notin\)</span> <span class="math inline">\(\dagger\)</span> <span class="math inline">\(\mathbb{R}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\infty\)</span> <span class="math inline">\(n\)</span></li>
+</ul></li>
+<li>What you can reach on the keyboard, use keyboard
+<ul>
+<li>§°+“ç%&amp;/()=?¦¬|¢~[]èéàüöä&lt;$£</li>
+</ul></li>
+<li>Some characters with special meaning in markdown needs to be escaped with \
+<ul>
+<li>Everywhere \ ` * _ ^ ~ $ @ { }</li>
+<li>Beginning of new line # - + &gt;</li>
+</ul></li>
+<li>Furter characters
+<ul>
+<li>Find symbol with google, copy-paste (e.g. €)</li>
+<li>Find html code (e.g. &amp;euro; <span class="math inline">\(\Rightarrow\)</span> €)
+<ul>
+<li>Find many <a href="https://dev.w3.org/html5/html-author/charref">here</a></li>
+</ul></li>
+</ul></li>
+<li>html code examples examples
+<ul>
+<li>&amp;nbsp; for non-breaking space (several after each other possible)</li>
+<li>&amp;Tab; for a tab</li>
+<li>&amp;#128512; for 😀</li>
+<li>&amp;larr; for ← (does work in pdf)</li>
+<li>&amp;rArr; for ⇒ (does not work in pdf)</li>
+<li>Will not always work with pdf output (some characters work others not)!</li>
+</ul></li>
+</ul>
 
 </div>
 </div>
@@ -574,8 +500,8 @@ x &lt;-<span class="st"> `</span><span class="dt">names&lt;-</span><span class="
           </div>
         </div>
       </div>
-<a href="vec.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="env.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="reproducible-research.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bookdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -605,7 +531,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/retodomax/R_Ref_Book/edit/master/13-fun.Rmd",
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/62-writing.Rmd",
 "text": "Edit"
 },
 "history": {

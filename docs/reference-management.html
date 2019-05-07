@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 3 Functions | R Reference book</title>
+  <title>Chapter 14 Reference management | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 3 Functions | R Reference book" />
+  <meta property="og:title" content="Chapter 14 Reference management | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Functions | R Reference book" />
+  <meta name="twitter:title" content="Chapter 14 Reference management | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon">
-<link rel="prev" href="vec.html">
-<link rel="next" href="env.html">
+<link rel="prev" href="bookdown.html">
+<link rel="next" href="stuff-still-to-include.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -213,13 +213,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="12.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>12.4</b> Tables</a></li>
 <li class="chapter" data-level="12.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>12.5</b> Sepecial characters</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>13</b> Reference management</a><ul>
-<li class="chapter" data-level="13.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>13.1</b> Literature</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>13.1.1</b> Recommended: Using Zotero</a></li>
+<li class="chapter" data-level="13" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>13</b> Bookdown</a><ul>
+<li class="chapter" data-level="13.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>13.1</b> Configuration</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="bookdown.html"><a href="bookdown.html#bookdown.yml"><i class="fa fa-check"></i><b>13.1.1</b> <code>_bookdown.yml</code></a></li>
+<li class="chapter" data-level="13.1.2" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>13.1.2</b> <code>_output.yml</code></a></li>
+<li class="chapter" data-level="13.1.3" data-path="bookdown.html"><a href="bookdown.html#yaml-header"><i class="fa fa-check"></i><b>13.1.3</b> yaml header</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>13.2</b> Cross-References</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>14</b> Stuff still to include</a></li>
+<li class="chapter" data-level="14" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>14</b> Reference management</a><ul>
+<li class="chapter" data-level="14.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>14.1</b> Literature</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>14.1.1</b> Recommended: Using Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>14.2</b> Cross-References</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>15</b> Stuff still to include</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -241,332 +248,68 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="fun" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Functions</h1>
-<div id="FunTypes" class="section level2">
-<h2><span class="header-section-number">3.1</span> Types</h2>
-<p>Find function “type” with <code>typeof()</code></p>
+<div id="reference-management" class="section level1">
+<h1><span class="header-section-number">Chapter 14</span> Reference management</h1>
+<div id="literature" class="section level2">
+<h2><span class="header-section-number">14.1</span> Literature</h2>
 <ul>
-<li>builtin (primitive functions e.g. <code>sum</code>)</li>
-<li>special (primitive functions e.g. <code>[</code>)</li>
-<li>closure (functions built upon primitive functions, they always have their own environment)</li>
+<li>R Markdown recommends using BibTeX databases (text file with .bib extension in a certain format)</li>
+<li>BibTeX files can be written by hand or generated from common reference management programms like EndNote, Zotero, JabRef, …</li>
 </ul>
-<div id="primitive-functions" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> Primitive functions</h3>
+<div id="recommended-using-zotero" class="section level3">
+<h3><span class="header-section-number">14.1.1</span> Recommended: Using Zotero</h3>
 <ul>
-<li>Implemented in C</li>
-<li>Separated into builtin and special
+<li>Download Zotero</li>
+<li>Download extension <em>Better BibTeX</em> (See: <a href="http://unimelb.libguides.com/c.php?g=565734&amp;p=3897111">here</a>)</li>
+<li>Generate automatically updating .bib file
 <ul>
-<li>builtin: arguments evaluated before passed to C code</li>
-<li>special: unevaluated arguments passed to C code</li>
+<li>Right click on citation Folder</li>
+<li>Export</li>
+<li>Format: Better BibTeX, tick <em>Keep updated</em></li>
+<li>Select folder with LaTeX file</li>
+<li>Manage your exports in Bearbeiten -&gt; Einstellungen -&gt; Better BibTeX -&gt; Automatischer Export</li>
 </ul></li>
-<li>C code called via <code>.Primitive()</code> or <code>.Internal()</code>
-<ul>
-<li><code>.Primitive()</code> for pure C code</li>
-<li><code>.Internal()</code> for mixtures of R and C code</li>
-</ul></li>
-<li><code>body()</code>, <code>formals()</code> and <code>environment()</code> are <code>NULL</code> (see <a href="fun.html#function-components">3.2</a>)</li>
-<li>All in base package</li>
-<li>Check with <code>is.primitive()</code></li>
+<li>Use <strong>citation key</strong> (e.g. Zihlmann2019) within markdown to refere to a certain reference</li>
+<li>Use drag and drop of Zotero to insert citation key (<a href="https://retorque.re/zotero-better-bibtex/citation-keys/">Better BibTeX Citation Key Quick Copy</a>)</li>
+<li><code>@Zihlmann2019</code> will generate Zihlmann (2019)</li>
+<li><code>[@Zihlmann2019]</code> will generate (Zihlmann 2019)</li>
+<li><code>[see @Zihlmann2019, pp. 33-35</code>] will generate (see Zihlmann 2019, 33-35)</li>
+<li><code>[@Zihlmann2019; @Fritsche1900]</code> will generate (Zihlmann 2019; Fritsche 1900)</li>
+<li><code>@Zihlmann2019 [p. 33] says</code> will generate Zihlmann (2019, 33) says</li>
+<li><code>@R-packagename</code> to cite an R package (necessary to export package citation before)</li>
+<li>Further information see <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html">Bibliographies and Citations</a></li>
 </ul>
-<p>Many primitive function can be used without the classical syntax functionname() (see <a href="fun.html#special-calls">3.6</a>). Backticks <code>`</code> let you refere to objects that have otherwise reserved or illegal name.</p>
+<p>To add citations to the bibliography without using them in the text include</p>
+<pre><code>---
+nocite: | 
+  @item1, @item2
+...</code></pre>
 </div>
 </div>
-<div id="function-components" class="section level2">
-<h2><span class="header-section-number">3.2</span> Function components</h2>
-<table>
-<colgroup>
-<col width="16%" />
-<col width="57%" />
-<col width="26%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><ul>
-<li><code>body()</code></li>
-</ul></td>
-<td><p>Code inside the function.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><ul>
-<li><code>formals()</code></li>
-</ul></td>
-<td><p>List of formal <strong>arguments</strong> which controls how you can call the function.</p></td>
-<td><p>Chapter <a href="fun.html#function-arguments">3.3</a></p></td>
-</tr>
-<tr class="odd">
-<td><ul>
-<li><code>environment()</code></li>
-</ul></td>
-<td><p>“Map” of the location of the function’s variables.</p></td>
-<td><p>Chapter <a href="fun.html#function-environment">3.4</a></p></td>
-</tr>
-</tbody>
-</table>
-<p>Like other objects, functions have certain attributes</p>
+<div id="cross-references" class="section level2">
+<h2><span class="header-section-number">14.2</span> Cross-References</h2>
 <ul>
-<li><code>srcref</code> (source reference): Attribute which all functions have. Returns source code (similar to <code>body()</code> but with comments and formatting)</li>
-<li>additional attributes possible</li>
+<li>Sections</li>
+<li>Equations</li>
+<li>Theorems</li>
+<li>Figures</li>
+<li>Tables</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myfun &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
-    x<span class="op">^</span><span class="dv">2</span>  <span class="co"># with comment</span>
-}
-<span class="kw">attributes</span>(myfun)
-<span class="co">#&gt; $srcref</span>
-<span class="co">#&gt; function(x) {</span>
-<span class="co">#&gt;     x^2  # with comment</span>
-<span class="co">#&gt; }</span>
-<span class="kw">body</span>(myfun)
-<span class="co">#&gt; {</span>
-<span class="co">#&gt;     x^2</span>
-<span class="co">#&gt; }</span></code></pre></div>
-</div>
-<div id="function-arguments" class="section level2">
-<h2><span class="header-section-number">3.3</span> Arguments</h2>
-<ul>
-<li>Formal arguments (stated in function definition)</li>
-<li><p>Actual arguments (explicetly passed to the function when you call it)</p></li>
-<li>Get formal argument: <code>formals()</code></li>
-<li>Set formal arguments: <code>`formals&lt;-`</code> (replacement function: change default formals, add formals, remove formals)</li>
-<li><p><code>formals()</code> without arguments will list the arguments of the function which calls it</p></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myfunction &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="dv">2</span>) x <span class="op">+</span><span class="st"> </span>y
-<span class="kw">formals</span>(myfunction)
-<span class="co">#&gt; $x</span>
-<span class="co">#&gt; [1] 1</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $y</span>
-<span class="co">#&gt; [1] 2</span>
-<span class="kw">myfunction</span>()
-<span class="co">#&gt; [1] 3</span>
-<span class="kw">formals</span>(myfunction) &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">3</span>, <span class="dt">y =</span> <span class="dv">4</span>)
-<span class="kw">myfunction</span>()
-<span class="co">#&gt; [1] 7</span>
-(<span class="cf">function</span>(x) <span class="kw">formals</span>())()
-<span class="co">#&gt; $x</span></code></pre></div>
-<p>Arguments are matched by the following hirarchy</p>
-<ul>
-<li>Complete name</li>
-<li>Partial name (prefix maching)</li>
-<li>Position</li>
-</ul>
-<p>Use <code>do.call()</code> to pass arguments containd in a list to a function.</p>
-<p>Use <code>missing()</code> to check if a formal argument has been manually set.</p>
-<div id="lazy-evaluation" class="section level3">
-<h3><span class="header-section-number">3.3.1</span> Lazy evaluation:</h3>
-<ul>
-<li>Arguments are evaluated when they are used</li>
-<li>If they are never used within a function, they might never be evaluated <span class="math inline">\(\Rightarrow\)</span> not saved in the environment of that function</li>
-<li>To avoid problems in <strong>loops which return functions</strong>, make sure to <code>force()</code> the evaluation of the objects which are needed for the returned function</li>
-<li>Example:
-<ul>
-<li><code>add()</code> is a function in the global environment which returns a function</li>
-<li>Each function in the list <code>adders_bad</code>/<code>adders_good</code> are in separate environments</li>
-<li>without <code>force(x)</code> <code>x</code> is <strong>not</strong> evaluated in those environments</li>
-<li><code>x</code> is lazily evaluated the first time that you call one of the adder functions. At this point, the loop is complete and the final value of <code>x</code> is 10. Therefore <code>x</code> is evaluated in all environments to have a value of 10.</li>
-</ul></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># wrong</span>
-add &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="cf">function</span>(y) x <span class="op">+</span><span class="st"> </span>y
-adders_bad &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">10</span>)
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(adders_bad)) adders_bad[[i]] &lt;-<span class="st"> </span><span class="kw">add</span>(i)
-adders_bad[[<span class="dv">1</span>]](<span class="dv">10</span>)  <span class="co"># should be 11</span>
-<span class="co">#&gt; [1] 20</span>
-adders_bad[[<span class="dv">10</span>]](<span class="dv">10</span>)  ## should be 20
-<span class="co">#&gt; [1] 20</span>
-<span class="kw">get</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">envir =</span> <span class="kw">environment</span>(adders_bad[[<span class="dv">1</span>]]))  <span class="co"># should be 1</span>
-<span class="co">#&gt; [1] 10</span>
+<p>See <a href="https://bookdown.org/yihui/bookdown/cross-references.html">Bookdown manual</a></p>
+<p>Labels may contain (a-z, A-Z, 0-9, -, /)</p>
+<p>Try to add some citations:</p>
+<p>See <span class="citation">Wickham (<a href="#ref-wickhamAdvanced">2019</a>)</span></p>
+<p>which was shown several times <span class="citation">(Grolemund and Wickham <a href="#ref-grolemundDataScience">2019</a>)</span></p>
 
-<span class="co"># good</span>
-add &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
-    <span class="kw">force</span>(x)
-    <span class="cf">function</span>(y) x <span class="op">+</span><span class="st"> </span>y
-}
-adders_good &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">10</span>)
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(adders_good)) adders_good[[i]] &lt;-<span class="st"> </span><span class="kw">add</span>(i)
-adders_good[[<span class="dv">1</span>]](<span class="dv">10</span>)  <span class="co"># should be 11</span>
-<span class="co">#&gt; [1] 11</span>
-adders_good[[<span class="dv">10</span>]](<span class="dv">10</span>)  ## should be 20
-<span class="co">#&gt; [1] 20</span>
-<span class="kw">get</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">envir =</span> <span class="kw">environment</span>(adders_good[[<span class="dv">1</span>]]))  <span class="co"># should be 1</span>
-<span class="co">#&gt; [1] 1</span></code></pre></div>
-<ul>
-<li>An unevaluated argument is called a <strong>promise</strong>. A promise is made up of two parts:
-<ul>
-<li>The expression which gives rise to the delayed computation.</li>
-<li>The environment where the expression was created and where it should be evaluated.</li>
-</ul></li>
-</ul>
-</div>
-<div id="elipsis-..." class="section level3">
-<h3><span class="header-section-number">3.3.2</span> Elipsis <code>...</code></h3>
-<p>This argument will match any arguments not otherwise matched, and can be easily passed on to other functions.</p>
 </div>
 </div>
-<div id="function-environment" class="section level2">
-<h2><span class="header-section-number">3.4</span> Environment</h2>
-<div id="lexical-scoping" class="section level3">
-<h3><span class="header-section-number">3.4.1</span> Lexical scoping</h3>
-<ul>
-<li>Scoping: Where to look for objects</li>
-<li>Lexical: Scoping is determined where the function is defined (not where it is called)</li>
-</ul>
-<p>Rules</p>
-<ul>
-<li>If a name is not defined inside a function, R will look one level up</li>
-<li>Example: x is searched in the environment of each function in the following order h <span class="math inline">\(\rightarrow\)</span> g <span class="math inline">\(\rightarrow\)</span> f <span class="math inline">\(\rightarrow\)</span> global environment</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">2</span>
-f &lt;-<span class="st"> </span><span class="cf">function</span>() {
-    g &lt;-<span class="st"> </span><span class="cf">function</span>() {
-        h &lt;-<span class="st"> </span><span class="cf">function</span>() x
-        <span class="kw">h</span>()
-    }
-    <span class="kw">g</span>()
-}
-<span class="kw">f</span>()</code></pre></div>
-<pre><code>#&gt; [1] 2</code></pre>
-<ul>
-<li>Assigning a function also assignes a certain environment (environment property)</li>
-<li>Example:
-<ul>
-<li>Function <code>j</code> returns a function (which connects <code>x</code> and <code>y</code>)</li>
-<li>Assigning <code>j(1)</code> to <code>k</code> makes <code>k</code> an function with the environment property pointing to the environment created by running <code>j()</code> (the function where the output function was defined). This environment <strong>contains x and y</strong></li>
-</ul></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">j &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
-    y &lt;-<span class="st"> </span><span class="dv">2</span>
-    <span class="cf">function</span>() {
-        <span class="kw">c</span>(x, y)
-    }
-}
-k &lt;-<span class="st"> </span><span class="kw">j</span>(<span class="dv">1</span>)
-<span class="kw">k</span>()</code></pre></div>
-<pre><code>#&gt; [1] 1 2</code></pre>
-<ul>
-<li>Object saved in a higher environment are not found below</li>
-<li>Example:
-<ul>
-<li><code>a</code> is not saved except within function</li>
-<li>A new call of <code>j</code> will not find previous <code>a</code></li>
-<li>Functon will always return 1 exept if we save <code>a</code></li>
-</ul></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">j &lt;-<span class="st"> </span><span class="cf">function</span>() {
-    <span class="cf">if</span> (<span class="op">!</span><span class="kw">exists</span>(<span class="st">&quot;a&quot;</span>)) {
-        a &lt;-<span class="st"> </span><span class="dv">1</span>
-    } <span class="cf">else</span> {
-        a &lt;-<span class="st"> </span>a <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
-    }
-    a
-}
-<span class="kw">j</span>()</code></pre></div>
-<pre><code>#&gt; [1] 1</code></pre>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-wickhamAdvanced">
+<p>Wickham, Hadley. 2019. <em>Advanced R</em>. 2nd ed. Accessed April 12. <a href="https://adv-r.hadley.nz/" class="uri">https://adv-r.hadley.nz/</a>.</p>
 </div>
-</div>
-<div id="return-value" class="section level2">
-<h2><span class="header-section-number">3.5</span> Return value</h2>
-<ul>
-<li>The last expression evaluated in a function becomes the return value</li>
-<li><code>return()</code> usful to stop evaluation and return error</li>
-<li><code>invisible()</code> usful to invisible return an object (e.g. for ploting functions)</li>
-<li>pure functions: functions which change nothing except for what they return</li>
-<li>Few non-pure functions
-<ul>
-<li><code>library()</code> which loads a package, and hence modifies the search path.</li>
-<li><code>setwd()</code>, <code>Sys.setenv()</code>, <code>Sys.setlocale()</code> which change the working directory,</li>
-<li>environment variables, and the locale, respectively.</li>
-<li><code>plot()</code> and friends which produce graphical output.</li>
-<li><code>write()</code>, <code>write.csv()</code>, <code>saveRDS()</code>, etc. which save output to disk.</li>
-<li><code>options()</code> and <code>par()</code> which modify global settings.</li>
-<li>S4 related functions which modify global tables of classes and methods.</li>
-<li>Random number generators which produce different numbers each time you run them.</li>
-</ul></li>
-<li><code>on.exit()</code> evaluates expression when function call is finished</li>
-<li>Example</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">in_dir &lt;-<span class="st"> </span><span class="cf">function</span>(dir, code) {
-    old &lt;-<span class="st"> </span><span class="kw">setwd</span>(dir)
-    <span class="kw">on.exit</span>(<span class="kw">setwd</span>(old))
-    
-    ## what function does...
-}</code></pre></div>
-</div>
-<div id="special-calls" class="section level2">
-<h2><span class="header-section-number">3.6</span> Special calls</h2>
-<table>
-<colgroup>
-<col width="18%" />
-<col width="34%" />
-<col width="37%" />
-<col width="9%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>name</th>
-<th>description</th>
-<th>Built-in examples</th>
-<th>Your own</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Control flow operators</td>
-<td>Decide which line is evaluated</td>
-<td><code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>, <code>break</code></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Subsetting operators</td>
-<td>Subset an object</td>
-<td><code>[</code>, <code>[[</code>, <code>$</code></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Infix operators</td>
-<td>function name comes in between ist arguments</td>
-<td><code>%in%</code>, <code>%*%</code>, <code>+</code>, <code>*</code>, <code>^</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&lt;-</code>, …</td>
-<td><code>%myname%</code></td>
-</tr>
-<tr class="even">
-<td>Replacement functions</td>
-<td>Replace an existing object</td>
-<td><code>&lt;-</code>, <code>[&lt;-</code>, <code>names&lt;-</code>, <code>levels&lt;-</code>, …</td>
-<td><code>myname&lt;-</code></td>
-</tr>
-</tbody>
-</table>
-<p>All special functions can also be called like a “normal” function</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>][<span class="dv">2</span>]</code></pre></div>
-<pre><code>#&gt; [1] &quot;b&quot;</code></pre>
-<p>Replacement function make some changes to the data and assign the new output to the first argument</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>
-<span class="kw">names</span>(x) &lt;-<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]  <span class="co"># user friendly</span>
-x &lt;-<span class="st"> `</span><span class="dt">names&lt;-</span><span class="st">`</span>(x, letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>])  ## behind scenes this is executed</code></pre></div>
-<p>You can create your own infix and replacement functions. This is a useful example of providing a default value in case the output of another function is <code>NULL</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="st">`</span><span class="dt">%||%</span><span class="st">`</span> &lt;-<span class="st"> </span><span class="cf">function</span>(a, b) <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.null</span>(a)) a <span class="cf">else</span> b
-<span class="kw">function_that_might_return_null</span>() <span class="op">%||%</span><span class="st"> </span>default value</code></pre></div>
-</div>
-<div id="generic-functions" class="section level2">
-<h2><span class="header-section-number">3.7</span> Generic functions</h2>
-<ul>
-<li>Depending on the class of the first argument, different <strong>methods</strong> of a function are called by <code>UseMethod()</code></li>
-<li>All available methods of a functionname can be shown with <code>methods()</code>.</li>
-<li>methods ending with an asterisks <code>*</code> are not exported in the namespace, meaning they should not explicitly be called by the user.
-<ul>
-<li>get their source code with <code>getAnywhere()</code></li>
-</ul></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">print</code></pre></div>
-<pre><code>#&gt; function (x, ...) 
-#&gt; UseMethod(&quot;print&quot;)
-#&gt; &lt;bytecode: 0x00000000144ee888&gt;
-#&gt; &lt;environment: namespace:base&gt;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">methods</span>(print))</code></pre></div>
-<pre><code>#&gt; [1] &quot;print.acf&quot;     &quot;print.AES&quot;     &quot;print.anova&quot;   &quot;print.aov&quot;    
-#&gt; [5] &quot;print.aovlist&quot; &quot;print.ar&quot;</code></pre>
-
+<div id="ref-grolemundDataScience">
+<p>Grolemund, Garrett, and Hadley Wickham. 2019. <em>R for Data Science</em>. Accessed April 12. <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a>.</p>
 </div>
 </div>
             </section>
@@ -574,8 +317,8 @@ x &lt;-<span class="st"> `</span><span class="dt">names&lt;-</span><span class="
           </div>
         </div>
       </div>
-<a href="vec.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="env.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bookdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="stuff-still-to-include.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -605,7 +348,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/retodomax/R_Ref_Book/edit/master/13-fun.Rmd",
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/63_reference_management.Rmd",
 "text": "Edit"
 },
 "history": {
