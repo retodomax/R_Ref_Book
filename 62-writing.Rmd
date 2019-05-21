@@ -217,5 +217,10 @@ Recomended file formate
     - \&larr; for &larr; (does work in pdf)
     - \&rArr; for &rArr; (does not work in pdf)
     - Will not always work with pdf output (some characters work others not)!
+* Text writing symbols
+    - "\\  " backslash followed by space = nonbreaking space
+    - backslash followed by newline = hard line break
+    -"&#8239;" thin nonbreaking space
+    -"&#8209;" nonbreaking hythen (should be used as hythen minus)
 
 

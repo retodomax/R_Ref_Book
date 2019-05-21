@@ -25,7 +25,7 @@
 <meta name="author" content="Reto Zihlmann">
 
 
-<meta name="date" content="2019-05-07">
+<meta name="date" content="2019-05-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -197,7 +197,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>10</b> Interactive Plots</a></li>
 <li class="part"><span><b>VI R Outreach</b></span></li>
-<li class="chapter" data-level="11" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>11</b> Reproducible Research</a></li>
+<li class="chapter" data-level="11" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>11</b> Reproducible Research</a><ul>
+<li class="chapter" data-level="11.1" data-path="reproducible-research.html"><a href="reproducible-research.html#tasks"><i class="fa fa-check"></i><b>11.1</b> Tasks</a></li>
+<li class="chapter" data-level="11.2" data-path="reproducible-research.html"><a href="reproducible-research.html#chronology"><i class="fa fa-check"></i><b>11.2</b> Chronology</a></li>
+</ul></li>
 <li class="chapter" data-level="12" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>12</b> R Markdown</a><ul>
 <li class="chapter" data-level="12.1" data-path="r-markdown.html"><a href="r-markdown.html#literate-programming"><i class="fa fa-check"></i><b>12.1</b> Literate programming</a><ul>
 <li class="chapter" data-level="12.1.1" data-path="r-markdown.html"><a href="r-markdown.html#sweave"><i class="fa fa-check"></i><b>12.1.1</b> Sweave</a></li>
@@ -226,7 +229,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>14.2</b> Cross-References</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>15</b> Stuff still to include</a></li>
+<li class="chapter" data-level="15" data-path="git-version-control.html"><a href="git-version-control.html"><i class="fa fa-check"></i><b>15</b> Git Version control</a><ul>
+<li class="chapter" data-level="15.1" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>15.1</b> Single user</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>15.1.1</b> Regular workflow</a></li>
+<li class="chapter" data-level="15.1.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>15.1.2</b> Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>15.2</b> Git basics</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>16</b> Stuff still to include</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -271,13 +281,50 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 delete_merged_file: true
 language:
   ui:
-    chapter_name: &quot;Chapter &quot;</code></pre>
+    chapter_name: &quot;Chapter &quot;
+chapter_name: &quot;Chapter &quot;
+repo: https://github.com/seankross/bookdown-start
+output_dir: docs
+rmd_files: [&quot;index.Rmd&quot;, &quot;01-Introduction.Rmd&quot;, &quot;02-Diving-In.Rmd&quot;]
+clean: [packages.bib, bookdown.bbl]
+new_session: yes</code></pre>
+<p>Here: add explanation to each option</p>
 </div>
 <div id="output.yml" class="section level3">
 <h3><span class="header-section-number">13.1.2</span> <code>_output.yml</code></h3>
+<pre><code>bookdown::gitbook:
+  css: style.css
+  split_by: chapter
+  config:
+    toc:
+      collapse: subsection
+      before: |
+        &lt;li&gt;&lt;a href=&quot;./&quot;&gt;A Minimal Bookdown Book&lt;/a&gt;&lt;/li&gt;
+      after: |
+        &lt;li&gt;&lt;a href=&quot;https://github.com/rstudio/bookdown&quot; target=&quot;blank&quot;&gt;Published with bookdown&lt;/a&gt;&lt;/li&gt;
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+bookdown::epub_book:
+  stylesheet: style.css</code></pre>
 </div>
 <div id="yaml-header" class="section level3">
 <h3><span class="header-section-number">13.1.3</span> yaml header</h3>
+<pre><code>---
+title: &quot;A Minimal Bookdown Book&quot;
+author: &quot;Sean Kross&quot;
+date: &quot;2016-12-02&quot;
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: seankross/bookdown-start
+url: &#39;http\://seankross.com/bookdown-start/&#39;
+description: &quot;Everything you need (and nothing more) to start a bookdown book.&quot;
+---</code></pre>
 
 </div>
 </div>
@@ -315,7 +362,7 @@ gitbook.start({
 "fontsettings": {
 "theme": "white",
 "family": "sans",
-"size": 2
+"size": 1
 },
 "edit": {
 "link": "https://github.com/retodomax/R_Ref_Book/edit/master/63-bookdown.Rmd",

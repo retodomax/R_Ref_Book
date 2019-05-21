@@ -25,14 +25,56 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: "Chapter "
+chapter_name: "Chapter "
+repo: https://github.com/seankross/bookdown-start
+output_dir: docs
+rmd_files: ["index.Rmd", "01-Introduction.Rmd", "02-Diving-In.Rmd"]
+clean: [packages.bib, bookdown.bbl]
+new_session: yes
 ```
+
+Here: add explanation to each option
 
 
 ### `_output.yml`
+
+```
+bookdown::gitbook:
+  css: style.css
+  split_by: chapter
+  config:
+    toc:
+      collapse: subsection
+      before: |
+        <li><a href="./">A Minimal Bookdown Book</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+bookdown::epub_book:
+  stylesheet: style.css
+```
 
 
 
 ### yaml header
 
-
+```
+---
+title: "A Minimal Bookdown Book"
+author: "Sean Kross"
+date: "2016-12-02"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: seankross/bookdown-start
+url: 'http\://seankross.com/bookdown-start/'
+description: "Everything you need (and nothing more) to start a bookdown book."
+---
+```
 

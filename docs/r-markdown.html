@@ -25,7 +25,7 @@
 <meta name="author" content="Reto Zihlmann">
 
 
-<meta name="date" content="2019-05-07">
+<meta name="date" content="2019-05-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -197,7 +197,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>10</b> Interactive Plots</a></li>
 <li class="part"><span><b>VI R Outreach</b></span></li>
-<li class="chapter" data-level="11" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>11</b> Reproducible Research</a></li>
+<li class="chapter" data-level="11" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>11</b> Reproducible Research</a><ul>
+<li class="chapter" data-level="11.1" data-path="reproducible-research.html"><a href="reproducible-research.html#tasks"><i class="fa fa-check"></i><b>11.1</b> Tasks</a></li>
+<li class="chapter" data-level="11.2" data-path="reproducible-research.html"><a href="reproducible-research.html#chronology"><i class="fa fa-check"></i><b>11.2</b> Chronology</a></li>
+</ul></li>
 <li class="chapter" data-level="12" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>12</b> R Markdown</a><ul>
 <li class="chapter" data-level="12.1" data-path="r-markdown.html"><a href="r-markdown.html#literate-programming"><i class="fa fa-check"></i><b>12.1</b> Literate programming</a><ul>
 <li class="chapter" data-level="12.1.1" data-path="r-markdown.html"><a href="r-markdown.html#sweave"><i class="fa fa-check"></i><b>12.1.1</b> Sweave</a></li>
@@ -226,7 +229,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>14.2</b> Cross-References</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>15</b> Stuff still to include</a></li>
+<li class="chapter" data-level="15" data-path="git-version-control.html"><a href="git-version-control.html"><i class="fa fa-check"></i><b>15</b> Git Version control</a><ul>
+<li class="chapter" data-level="15.1" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>15.1</b> Single user</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>15.1.1</b> Regular workflow</a></li>
+<li class="chapter" data-level="15.1.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>15.1.2</b> Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>15.2</b> Git basics</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>16</b> Stuff still to include</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -491,6 +501,11 @@ Figure 12.1: The R Markdown hex logo.
 <li>&amp;rArr; for ⇒ (does not work in pdf)</li>
 <li>Will not always work with pdf output (some characters work others not)!</li>
 </ul></li>
+<li>Text writing symbols
+<ul>
+<li>“\” backslash followed by space = nonbreaking space</li>
+<li>backslash followed by newline = hard line break -“ ” thin nonbreaking space -“‑” nonbreaking hythen (should be used as hythen minus)</li>
+</ul></li>
 </ul>
 
 </div>
@@ -528,7 +543,7 @@ gitbook.start({
 "fontsettings": {
 "theme": "white",
 "family": "sans",
-"size": 2
+"size": 1
 },
 "edit": {
 "link": "https://github.com/retodomax/R_Ref_Book/edit/master/62-writing.Rmd",

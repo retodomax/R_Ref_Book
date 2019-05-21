@@ -1,0 +1,110 @@
+# Git Version control
+
+## Single user
+
+### Regular workflow
+
+1. Make new project in RStudio (tick "Create a git repository")
+2. Make first commit (impossible to push empty git file)
+3. Go to Server (e.g. [github.com](www.github.com)) and create new respository (Do not add README)
+4. copy two git commands for pushing existing respository
+  - use https or ssh link
+``` bash
+git remote add origin https://github.com/retodomax/My_project.git
+git push -u origin master
+```
+5. paste commands in RStudio Shell
+
+### Troubleshooting
+
+* `git@github.com: Permission denied (pulickey)`: Are correct public keys registered on server website
+* `fatal: remote origin already exists.`: there is already an "old" origin defined, which first needs to be removed. Use `git remote rm origin`
+
+
+## Git basics
+
+Two very good intros:
+
+- [Happy git with R](https://happygitwithr.com/)
+- [Pro Git](https://git-scm.com/book/en/v2) or [1st edition in german](https://git-scm.com/book/de/v1)
+
+Recommended: do your first steps with a Git client (GUI) to get a feeling for the workflow. Good clients are [SourceTree](https://www.sourcetreeapp.com/) or [GitKraken](https://www.gitkraken.com/)
+
+**Important bash commands**
+
+* `cd` change directory
+* `ls` list all files within directory
+* `head` show head of file
+* `rm` remove file
+
+**Set global config variables**
+
+``` bash
+git config --global user.name 'Reto Zihlmann'
+git config --global user.email 'retozihlmann@outlook.com'
+git config --global --list
+```
+- user.email should be the same as used for your server
+- config file is normally located in your `HOME` directory `~`
+- in Windows `~` often corresponds to `C:\Users\Reto`
+
+
+
+**Clone repo to your local computer**
+
+``` bash
+git clone https://github.com/retodomax/YOUR-REPOSITORY.git
+```
+
+**Show origin variable**
+
+``` bash
+git remote show origin
+```
+
+or shorter
+
+``` bash
+git remote -v
+```
+
+**list existing keys**
+``` bash
+ls -al ~/.ssh/
+```
+
+
+** generate new key**
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "retozihlmann@outlook.com Lenovo"
+```
+
+- text at end of command should be something to recognize a computer
+- only generate new keys if you have non
+- find them in `~/.ssh`
+- keygen will open dialog (always leave empty and press enter)
+- after you generated your keys they have to be added to the **ssh-agent** and to the server
+
+Check if agent is running
+
+``` bash
+eval $(ssh-agent -s)
+```
+
+Add keys to agent
+
+``` bash
+ssh-add ~/.ssh/id_rsa
+```
+
+Add keys to server
+
+[github.com](www.github.com) -> Settings -> SSH
+
+
+
+
+
+
+

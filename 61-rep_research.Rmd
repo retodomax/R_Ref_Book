@@ -1,0 +1,35 @@
+# (PART) R Outreach {-} 
+
+# Reproducible Research
+
+## Tasks
+
+* Data
+    - R
+    - RStudio (IDE)
+* Collaboration
+    - Git
+* Writing
+    - R Markdown
+    - Tinytex
+    - TeXworks
+* Literature
+    - Zotero
+    - BibTeX
+* Communication
+    - Inkscape
+    - Gimp
+    - Twitter
+
+
+## Chronology
+
+| Step                        | Description                 | Recommended implementation |
+|-----------------------------|-----------------------------|----------------------------|
+| Source                      | Information                 | R, R Markdown              |
+| Distributed version control | Connect and coordinate versions | Git                    |
+| Continuous Integration (CI) | Test, build and deploy      | AppVeyor/Travis CI         |
+| Respository                 | Store and access            | Github                     |
+
+
+Good package for CI would be [tic](https://ropenscilabs.github.io/tic/index.html) but I don't understand it completely.

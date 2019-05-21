@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 9 Plots | R Reference book</title>
+  <title>Chapter 15 Git Version control | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 9 Plots | R Reference book" />
+  <meta property="og:title" content="Chapter 15 Git Version control | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Plots | R Reference book" />
+  <meta name="twitter:title" content="Chapter 15 Git Version control | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon">
-<link rel="prev" href="functional-programming.html">
-<link rel="next" href="interactive-plots.html">
+<link rel="prev" href="reference-management.html">
+<link rel="next" href="stuff-still-to-include.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -258,320 +258,83 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Plots" class="section level1">
-<h1><span class="header-section-number">Chapter 9</span> Plots</h1>
-<div id="graphical-parameters-par" class="section level2">
-<h2><span class="header-section-number">9.1</span> Graphical parameters <code>par()</code></h2>
-<div id="set-graphical-parameters" class="section level3">
-<h3><span class="header-section-number">9.1.1</span> Set graphical parameters</h3>
-<p>Change global option</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">xlog =</span> T)</code></pre></div>
-<p>change for local plot</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(..., <span class="dt">xlog =</span> T)</code></pre></div>
-<p>When parameters are set, their previous values are returned in an invisible named list. Such a list can be passed as an argument to par to restore the parameter values.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">opar &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">xlog =</span> T)
-<span class="kw">plot</span>(...)
-<span class="kw">par</span>(opar)</code></pre></div>
-<p>reset default</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dev.off</span>()</code></pre></div>
-<p>check current parameter</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="st">&quot;xlog&quot;</span>)</code></pre></div>
-<pre><code>#&gt; [1] FALSE</code></pre>
-<p>The parameters are defined for the currently active device</p>
+<div id="git-version-control" class="section level1">
+<h1><span class="header-section-number">Chapter 15</span> Git Version control</h1>
+<div id="single-user" class="section level2">
+<h2><span class="header-section-number">15.1</span> Single user</h2>
+<div id="regular-workflow" class="section level3">
+<h3><span class="header-section-number">15.1.1</span> Regular workflow</h3>
+<ol style="list-style-type: decimal">
+<li>Make new project in RStudio (tick “Create a git repository”)</li>
+<li>Make first commit (impossible to push empty git file)</li>
+<li>Go to Server (e.g. <a href="www.github.com">github.com</a>) and create new respository (Do not add README)</li>
+<li>copy two git commands for pushing existing respository</li>
+</ol>
 <ul>
-<li>Normally the Rstudio plot panel</li>
-<li>If <code>png()</code> or <code>pdf()</code> opend =&gt; only within this document</li>
-<li><code>dev.off()</code> closes device and reset <code>par()</code>
+<li><p>use https or ssh link</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote add origin https://github.com/retodomax/My_project.git
+<span class="fu">git</span> push -u origin master</code></pre></div></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>paste commands in RStudio Shell</li>
+</ol>
+</div>
+<div id="troubleshooting" class="section level3">
+<h3><span class="header-section-number">15.1.2</span> Troubleshooting</h3>
 <ul>
-<li>If <code>png()</code> or <code>pdf()</code>   ⇒ the same par are active as they were before the device <code>png()</code> or <code>pdf()</code> was opend</li>
-<li>If Rstudio panel   ⇒ the default par are active</li>
-</ul></li>
+<li><code>git@github.com: Permission denied (pulickey)</code>: Are correct public keys registered on server website</li>
+<li><code>fatal: remote origin already exists.</code>: there is already an “old” origin defined, which first needs to be removed. Use <code>git remote rm origin</code></li>
 </ul>
 </div>
-<div id="default" class="section level3">
-<h3><span class="header-section-number">9.1.2</span> Default</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>()</code></pre></div>
-<pre><code>#&gt; $xlog
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $ylog
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $adj
-#&gt; [1] 0.5
-#&gt; 
-#&gt; $ann
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $ask
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $bg
-#&gt; [1] &quot;white&quot;
-#&gt; 
-#&gt; $bty
-#&gt; [1] &quot;o&quot;
-#&gt; 
-#&gt; $cex
-#&gt; [1] 1
-#&gt; 
-#&gt; $cex.axis
-#&gt; [1] 1
-#&gt; 
-#&gt; $cex.lab
-#&gt; [1] 1
-#&gt; 
-#&gt; $cex.main
-#&gt; [1] 1.2
-#&gt; 
-#&gt; $cex.sub
-#&gt; [1] 1
-#&gt; 
-#&gt; $cin
-#&gt; [1] 0.15 0.20
-#&gt; 
-#&gt; $col
-#&gt; [1] &quot;black&quot;
-#&gt; 
-#&gt; $col.axis
-#&gt; [1] &quot;black&quot;
-#&gt; 
-#&gt; $col.lab
-#&gt; [1] &quot;black&quot;
-#&gt; 
-#&gt; $col.main
-#&gt; [1] &quot;black&quot;
-#&gt; 
-#&gt; $col.sub
-#&gt; [1] &quot;black&quot;
-#&gt; 
-#&gt; $cra
-#&gt; [1] 28.8 38.4
-#&gt; 
-#&gt; $crt
-#&gt; [1] 0
-#&gt; 
-#&gt; $csi
-#&gt; [1] 0.2
-#&gt; 
-#&gt; $cxy
-#&gt; [1] 0.02604167 0.06329115
-#&gt; 
-#&gt; $din
-#&gt; [1] 6.999999 4.999999
-#&gt; 
-#&gt; $err
-#&gt; [1] 0
-#&gt; 
-#&gt; $family
-#&gt; [1] &quot;&quot;
-#&gt; 
-#&gt; $fg
-#&gt; [1] &quot;black&quot;
-#&gt; 
-#&gt; $fig
-#&gt; [1] 0 1 0 1
-#&gt; 
-#&gt; $fin
-#&gt; [1] 6.999999 4.999999
-#&gt; 
-#&gt; $font
-#&gt; [1] 1
-#&gt; 
-#&gt; $font.axis
-#&gt; [1] 1
-#&gt; 
-#&gt; $font.lab
-#&gt; [1] 1
-#&gt; 
-#&gt; $font.main
-#&gt; [1] 2
-#&gt; 
-#&gt; $font.sub
-#&gt; [1] 1
-#&gt; 
-#&gt; $lab
-#&gt; [1] 5 5 7
-#&gt; 
-#&gt; $las
-#&gt; [1] 0
-#&gt; 
-#&gt; $lend
-#&gt; [1] &quot;round&quot;
-#&gt; 
-#&gt; $lheight
-#&gt; [1] 1
-#&gt; 
-#&gt; $ljoin
-#&gt; [1] &quot;round&quot;
-#&gt; 
-#&gt; $lmitre
-#&gt; [1] 10
-#&gt; 
-#&gt; $lty
-#&gt; [1] &quot;solid&quot;
-#&gt; 
-#&gt; $lwd
-#&gt; [1] 1
-#&gt; 
-#&gt; $mai
-#&gt; [1] 1.02 0.82 0.82 0.42
-#&gt; 
-#&gt; $mar
-#&gt; [1] 5.1 4.1 4.1 2.1
-#&gt; 
-#&gt; $mex
-#&gt; [1] 1
-#&gt; 
-#&gt; $mfcol
-#&gt; [1] 1 1
-#&gt; 
-#&gt; $mfg
-#&gt; [1] 1 1 1 1
-#&gt; 
-#&gt; $mfrow
-#&gt; [1] 1 1
-#&gt; 
-#&gt; $mgp
-#&gt; [1] 3 1 0
-#&gt; 
-#&gt; $mkh
-#&gt; [1] 0.001
-#&gt; 
-#&gt; $new
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $oma
-#&gt; [1] 0 0 0 0
-#&gt; 
-#&gt; $omd
-#&gt; [1] 0 1 0 1
-#&gt; 
-#&gt; $omi
-#&gt; [1] 0 0 0 0
-#&gt; 
-#&gt; $page
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $pch
-#&gt; [1] 1
-#&gt; 
-#&gt; $pin
-#&gt; [1] 5.759999 3.159999
-#&gt; 
-#&gt; $plt
-#&gt; [1] 0.1171429 0.9400000 0.2040000 0.8360000
-#&gt; 
-#&gt; $ps
-#&gt; [1] 12
-#&gt; 
-#&gt; $pty
-#&gt; [1] &quot;m&quot;
-#&gt; 
-#&gt; $smo
-#&gt; [1] 1
-#&gt; 
-#&gt; $srt
-#&gt; [1] 0
-#&gt; 
-#&gt; $tck
-#&gt; [1] NA
-#&gt; 
-#&gt; $tcl
-#&gt; [1] -0.5
-#&gt; 
-#&gt; $usr
-#&gt; [1] 0 1 0 1
-#&gt; 
-#&gt; $xaxp
-#&gt; [1] 0 1 5
-#&gt; 
-#&gt; $xaxs
-#&gt; [1] &quot;r&quot;
-#&gt; 
-#&gt; $xaxt
-#&gt; [1] &quot;s&quot;
-#&gt; 
-#&gt; $xpd
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $yaxp
-#&gt; [1] 0 1 5
-#&gt; 
-#&gt; $yaxs
-#&gt; [1] &quot;r&quot;
-#&gt; 
-#&gt; $yaxt
-#&gt; [1] &quot;s&quot;
-#&gt; 
-#&gt; $ylbias
-#&gt; [1] 0.2</code></pre>
 </div>
-<div id="device-region" class="section level3">
-<h3><span class="header-section-number">9.1.3</span> Device region</h3>
-<!-- ![figure margines](C:/Users/Reto/Downloads/fig_margins.jpg){width=50%} -->
-<!-- <img style="float: right;" src="C:/Users/Reto/Downloads/fig_margins.jpg" width=400> -->
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">opar &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">xpd =</span> <span class="ot">NA</span>, <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>, <span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.05</span>)
+<div id="git-basics" class="section level2">
+<h2><span class="header-section-number">15.2</span> Git basics</h2>
+<p>Two very good intros:</p>
+<ul>
+<li><a href="https://happygitwithr.com/">Happy git with R</a></li>
+<li><a href="https://git-scm.com/book/en/v2">Pro Git</a> or <a href="https://git-scm.com/book/de/v1">1st edition in german</a></li>
+</ul>
+<p>Recommended: do your first steps with a Git client (GUI) to get a feeling for the workflow. Good clients are <a href="https://www.sourcetreeapp.com/">SourceTree</a> or <a href="https://www.gitkraken.com/">GitKraken</a></p>
+<p><strong>Important bash commands</strong></p>
+<ul>
+<li><code>cd</code> change directory</li>
+<li><code>ls</code> list all files within directory</li>
+<li><code>head</code> show head of file</li>
+<li><code>rm</code> remove file</li>
+</ul>
+<p><strong>Set global config variables</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> config --global user.name <span class="st">&#39;Reto Zihlmann&#39;</span>
+<span class="fu">git</span> config --global user.email <span class="st">&#39;retozihlmann@outlook.com&#39;</span>
+<span class="fu">git</span> config --global --list</code></pre></div>
+<ul>
+<li>user.email should be the same as used for your server</li>
+<li>config file is normally located in your <code>HOME</code> directory <code>~</code></li>
+<li>in Windows <code>~</code> often corresponds to <code>C:\Users\Reto</code></li>
+</ul>
+<p><strong>Clone repo to your local computer</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone https://github.com/retodomax/YOUR-REPOSITORY.git</code></pre></div>
+<p><strong>Show origin variable</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote show origin</code></pre></div>
+<p>or shorter</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote -v</code></pre></div>
+<p><strong>list existing keys</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -al ~/.ssh/</code></pre></div>
+<p>** generate new key**</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh-keygen</span> -t rsa -b 4096 -C <span class="st">&quot;retozihlmann@outlook.com Lenovo&quot;</span></code></pre></div>
+<ul>
+<li>text at end of command should be something to recognize a computer</li>
+<li>only generate new keys if you have non</li>
+<li>find them in <code>~/.ssh</code></li>
+<li>keygen will open dialog (always leave empty and press enter)</li>
+<li>after you generated your keys they have to be added to the <strong>ssh-agent</strong> and to the server</li>
+</ul>
+<p>Check if agent is running</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">eval</span> <span class="va">$(</span><span class="fu">ssh-agent</span> -s<span class="va">)</span></code></pre></div>
+<p>Add keys to agent</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh-add</span> ~/.ssh/id_rsa</code></pre></div>
+<p>Add keys to server</p>
+<p><a href="www.github.com">github.com</a> -&gt; Settings -&gt; SSH</p>
 
-<span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Y&quot;</span>)
-
-<span class="kw">box</span>(<span class="st">&quot;plot&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
-<span class="kw">box</span>(<span class="st">&quot;inner&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)
-<span class="kw">box</span>(<span class="st">&quot;outer&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)
-
-<span class="kw">text</span>(<span class="dv">5</span>, <span class="dv">9</span>, <span class="st">&quot;Plot&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>)
-<span class="kw">mtext</span>(<span class="st">&quot;Figure&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">2</span>)
-<span class="kw">mtext</span>(<span class="st">&quot;Device&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">1</span>, <span class="dt">outer =</span> T)
-
-<span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>, <span class="st">&quot;Line 3&quot;</span>), <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, 
-    <span class="dt">at =</span> <span class="kw">grconvertX</span>(<span class="dv">1</span>, <span class="st">&quot;npc&quot;</span>, <span class="st">&quot;user&quot;</span>), <span class="dt">adj =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)
-
-<span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>, <span class="st">&quot;Line 3&quot;</span>), <span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, 
-    <span class="dt">adj =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)
-
-<span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>), <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">outer =</span> T, 
-    <span class="dt">at =</span> <span class="dv">0</span>, <span class="dt">adj =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)
-
-
-<span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;Margins&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">2</span>, <span class="dt">cex =</span> <span class="dv">2</span>)
-<span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;par(mar=c(5,4,4,2) + 0.1)&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">3</span>)
-
-<span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;Outer Margin&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">1</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">outer =</span> T)
-<span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;par(oma=c(3,3,3,3))&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">2</span>, <span class="dt">outer =</span> T)</code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-42-1.png" width="80%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(opar)</code></pre></div>
-<div id="coordinate-system-outside-plot" class="section level4">
-<h4><span class="header-section-number">9.1.3.1</span> Coordinate system outside plot</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="st">&quot;mar&quot;</span>)  <span class="co"># Margine Area</span>
-<span class="co">#&gt; [1] 5.1 4.1 4.1 2.1</span>
-<span class="kw">par</span>(<span class="st">&quot;oma&quot;</span>)  <span class="co"># Outer Margin Area</span>
-<span class="co">#&gt; [1] 0 0 0 0</span>
-<span class="kw">par</span>(<span class="st">&quot;mgp&quot;</span>)  <span class="co"># position of [1] x/y-label, [2] axis, [3] ticks</span>
-<span class="co">#&gt; [1] 3 1 0</span>
-<span class="kw">par</span>(<span class="st">&quot;mex&quot;</span>)  <span class="co"># &#39;height&#39;&#39; of one line</span>
-<span class="co">#&gt; [1] 1</span></code></pre></div>
-</div>
-<div id="normalized-device-coordinates-ndc-0-1" class="section level4">
-<h4><span class="header-section-number">9.1.3.2</span> Normalized device coordinates (NDC) [0, 1]</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="st">&quot;fig&quot;</span>)  <span class="co"># Start and endpoint of ploting region</span>
-<span class="co">#&gt; [1] 0 1 0 1</span>
-<span class="kw">par</span>(<span class="st">&quot;omd&quot;</span>)  <span class="co"># oma in NDC</span>
-<span class="co">#&gt; [1] 0 1 0 1</span></code></pre></div>
-</div>
-<div id="change-between-coordinate-system" class="section level4">
-<h4><span class="header-section-number">9.1.3.3</span> Change between coordinate system</h4>
-<p>Use <code>grconvertX()</code> to change between different coordinate systems</p>
-</div>
-<div id="plot-outside-plotting-region" class="section level4">
-<h4><span class="header-section-number">9.1.3.4</span> Plot outside plotting region</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="st">&quot;xpd&quot;</span>)
-<span class="co">#&gt; [1] FALSE</span></code></pre></div>
-<p><code>FALSE</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the plot regions<br />
-<code>TRUE</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the figure region<br />
-<code>NA</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the device region</p>
-
-</div>
-</div>
 </div>
 </div>
             </section>
@@ -579,8 +342,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="functional-programming.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="interactive-plots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="reference-management.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="stuff-still-to-include.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -610,7 +373,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/R_Ref_Book/edit/master/41-plots.Rmd",
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/64-git.Rmd",
 "text": "Edit"
 },
 "history": {
