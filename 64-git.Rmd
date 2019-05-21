@@ -1,25 +1,5 @@
 # Git Version control
 
-## Single user
-
-### Regular workflow
-
-1. Make new project in RStudio (tick "Create a git repository")
-2. Make first commit (impossible to push empty git file)
-3. Go to Server (e.g. [github.com](www.github.com)) and create new respository (Do not add README)
-4. copy two git commands for pushing existing respository
-  - use https or ssh link
-``` bash
-git remote add origin https://github.com/retodomax/My_project.git
-git push -u origin master
-```
-5. paste commands in RStudio Shell
-
-### Troubleshooting
-
-* `git@github.com: Permission denied (pulickey)`: Are correct public keys registered on server website
-* `fatal: remote origin already exists.`: there is already an "old" origin defined, which first needs to be removed. Use `git remote rm origin`
-
 
 ## Git basics
 
@@ -104,6 +84,37 @@ Add keys to server
 
 
 
+## Single user
+
+### Regular workflow
+
+1. Make new project in RStudio (tick "Create a git repository")
+2. Make first commit (impossible to push empty git file)
+3. Go to Server (e.g. [github.com](www.github.com)) and create new respository (Do not add README)
+4. copy two git commands for pushing existing respository
+  - use https or ssh link
+``` bash
+git remote add origin https://github.com/retodomax/My_project.git
+git push -u origin master
+```
+5. paste commands in RStudio Shell
+
+### Troubleshooting
+
+* `git@github.com: Permission denied (pulickey)`: Are correct public keys registered on server website
+* `fatal: remote origin already exists.`: there is already an "old" origin defined, which first needs to be removed. Use `git remote rm origin`
+
+
+
+## Multiple users
+
+### get foreign respository (fork)
+
+
+1. Make folder where you want working directory
+2. Right click and open: "Git bash here"
+3. `git clone LINK`
+    - --LINK can be found at "Clone or download" button of the github project (e.g. https://github.com/Stanimir-Ivanov/stats-lab.git)
 
 
 
