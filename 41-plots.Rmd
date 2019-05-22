@@ -1,5 +1,3 @@
-# (PART) R Statistics {-} 
-
 # (PART) R Plots {-} 
 
 # Plots {#Plots}

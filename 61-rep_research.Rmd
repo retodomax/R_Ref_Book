@@ -1,4 +1,6 @@
-# (PART) R Outreach {-} 
+# (PART) R Statistics {-} 
+
+# (PART) R Workflow {-} 
 
 # Reproducible Research
 

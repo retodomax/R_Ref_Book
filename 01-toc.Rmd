@@ -23,7 +23,7 @@
     - Regression
     - Timeseries
     - Multivariate
-- R Outreach
+- R Workflow
     - Markdown
 - Misc
     - R packages
