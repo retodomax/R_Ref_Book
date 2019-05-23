@@ -8,7 +8,9 @@ Two very good intros:
 - [Happy git with R](https://happygitwithr.com/)
 - [Pro Git](https://git-scm.com/book/en/v2) or [1st edition in german](https://git-scm.com/book/de/v1)
 
-Recommended: do your first steps with a Git client (GUI) to get a feeling for the workflow. Good clients are [SourceTree](https://www.sourcetreeapp.com/) or [GitKraken](https://www.gitkraken.com/)
+Download Git: [here](https://git-scm.com/downloads)
+
+Recommended: do your first steps with a Git client (GUI) to get a feeling for the workflow. Good clients are [SourceTree](https://www.sourcetreeapp.com/), [GitKraken](https://www.gitkraken.com/) but there are many more [here](https://git-scm.com/downloads/guis)
 
 **Important bash commands**
 
@@ -24,7 +26,9 @@ git config --global user.name 'Reto Zihlmann'
 git config --global user.email 'retozihlmann@outlook.com'
 git config --global --list
 ```
-- user.email should be the same as used for your server
+- user.email should be the same as used for your server (otherwise your commits appear as if they were done by someone else)
+    - for GitHub: user.name 'retodomax', user.email 'retozihlmann@outlook.com'
+    - for GitLab: user.name 'retoz', user.email 'retoz@student.ethz.ch'
 - config file is normally located in your `HOME` directory `~`
 - in Windows `~` often corresponds to `C:\Users\Reto`
 
@@ -93,17 +97,19 @@ Add keys to server
 3. Go to Server (e.g. [github.com](www.github.com)) and create new respository (Do not add README)
 4. copy two git commands for pushing existing respository
   - use https or ssh link
+
 ``` bash
 git remote add origin https://github.com/retodomax/My_project.git
 git push -u origin master
 ```
-5. paste commands in RStudio Shell
+5. paste commands in in Git Bash opend in the project folder
+    - Attention: You can also use the RStudio Shell BUT it often does not find the right path to the keys (for ssh).
 
 ### Troubleshooting
 
 * `git@github.com: Permission denied (pulickey)`: Are correct public keys registered on server website
 * `fatal: remote origin already exists.`: there is already an "old" origin defined, which first needs to be removed. Use `git remote rm origin`
-
+* `Could not create directory '/c/Users/Reto/OneDrive - ETHZ/Dokumente/.../repo/=/.ssh'`: RStudio shell has some problems in finding the HOME path to your keys. Use Git Bash instead to type in the command.
 
 
 ## Multiple users
