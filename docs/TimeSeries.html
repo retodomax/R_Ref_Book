@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 17 Git Version control | R Reference book</title>
+  <title>Chapter 12 Time series | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 17 Git Version control | R Reference book" />
+  <meta property="og:title" content="Chapter 12 Time series | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 17 Git Version control | R Reference book" />
+  <meta name="twitter:title" content="Chapter 12 Time series | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon">
-<link rel="prev" href="reference-management.html">
-<link rel="next" href="stuff-still-to-include.html">
+<link rel="prev" href="MultivarStat.html">
+<link rel="next" href="reproducible-research.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -280,122 +280,124 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="git-version-control" class="section level1">
-<h1><span class="header-section-number">Chapter 17</span> Git Version control</h1>
-<div id="git-basics" class="section level2">
-<h2><span class="header-section-number">17.1</span> Git basics</h2>
-<p>Two very good intros:</p>
-<ul>
-<li><a href="https://happygitwithr.com/">Happy git with R</a></li>
-<li><a href="https://git-scm.com/book/en/v2">Pro Git</a> or <a href="https://git-scm.com/book/de/v1">1st edition in german</a></li>
-</ul>
-<p>Download Git: <a href="https://git-scm.com/downloads">here</a></p>
-<p>Recommended: do your first steps with a Git client (GUI) to get a feeling for the workflow. Good clients are <a href="https://www.sourcetreeapp.com/">SourceTree</a>, <a href="https://www.gitkraken.com/">GitKraken</a> but there are many more <a href="https://git-scm.com/downloads/guis">here</a></p>
-<p><strong>Important bash commands</strong></p>
-<ul>
-<li><code>cd</code> change directory</li>
-<li><code>ls</code> list all files within directory</li>
-<li><code>head</code> show head of file</li>
-<li><code>rm</code> remove file</li>
-</ul>
-<p><strong>Set global config variables</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> config --global user.name <span class="st">&#39;Reto Zihlmann&#39;</span>
-<span class="fu">git</span> config --global user.email <span class="st">&#39;retozihlmann@outlook.com&#39;</span>
-<span class="fu">git</span> config --global --list</code></pre></div>
-<ul>
-<li>user.email should be the same as used for your server (otherwise your commits appear as if they were done by someone else)
-<ul>
-<li>for GitHub: user.name ‘retodomax’, user.email ‘<a href="mailto:retozihlmann@outlook.com">retozihlmann@outlook.com</a>’</li>
-<li>for GitLab: user.name ‘retoz’, user.email ‘<a href="mailto:retoz@student.ethz.ch">retoz@student.ethz.ch</a>’</li>
-</ul></li>
-<li>config file is normally located in your <code>HOME</code> directory <code>~</code></li>
-<li>in Windows <code>~</code> often corresponds to <code>C:\Users\Reto</code></li>
-</ul>
-<p><strong>Clone repo to your local computer</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone https://github.com/retodomax/YOUR-REPOSITORY.git</code></pre></div>
-<strong>Conect with remote respository</strong>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-50"></span>
-<img src="figures/git_remote.png" alt="..." width="100%" />
-<p class="caption">
-Figure 17.1: …
-</p>
+<div id="TimeSeries" class="section level1">
+<h1><span class="header-section-number">Chapter 12</span> Time series</h1>
+<div id="data-sets-1" class="section level2">
+<h2><span class="header-section-number">12.1</span> Data sets</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;AirPassengers&quot;</span>)  <span class="co"># Air passengers </span>
+<span class="kw">data</span>(<span class="st">&quot;lynx&quot;</span>)  <span class="co"># Lynx Trappings</span>
+<span class="kw">data</span>(<span class="st">&quot;lh&quot;</span>)  <span class="co"># Luteinizing Hormone</span>
+<span class="kw">data</span>(<span class="st">&quot;EuStockMarkets&quot;</span>)  <span class="co"># Eu Stock Markets</span>
+<span class="kw">data</span>(<span class="st">&quot;co2&quot;</span>)  <span class="co"># Mauna Loa CO2</span></code></pre></div>
 </div>
-<p><strong>Show origin variable</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote show origin</code></pre></div>
-<p>or shorter</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote -v</code></pre></div>
-<p><strong>list existing keys</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -al ~/.ssh/</code></pre></div>
-<p>** generate new key**</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh-keygen</span> -t rsa -b 4096 -C <span class="st">&quot;retozihlmann@outlook.com Lenovo&quot;</span></code></pre></div>
+<div id="date-and-time" class="section level2">
+<h2><span class="header-section-number">12.2</span> Date and Time</h2>
+<p>Two important types</p>
 <ul>
-<li>text at end of command should be something to recognize a computer</li>
-<li>only generate new keys if you have non</li>
-<li>find them in <code>~/.ssh</code></li>
-<li>keygen will open dialog (always leave empty and press enter)</li>
-<li>after you generated your keys they have to be added to the <strong>ssh-agent</strong> and to the server</li>
+<li>Date</li>
+<li>Date-Time</li>
 </ul>
-<p>Check if agent is running</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">eval</span> <span class="va">$(</span><span class="fu">ssh-agent</span> -s<span class="va">)</span></code></pre></div>
-<p>Add keys to agent</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh-add</span> ~/.ssh/id_rsa</code></pre></div>
-<p>Add keys to server</p>
-<p><a href="www.github.com">github.com</a> -&gt; Settings -&gt; SSH</p>
-</div>
-<div id="single-user" class="section level2">
-<h2><span class="header-section-number">17.2</span> Single user</h2>
-<div id="regular-workflow" class="section level3">
-<h3><span class="header-section-number">17.2.1</span> Regular workflow</h3>
-<ol style="list-style-type: decimal">
-<li>Make new project in RStudio (tick “Create a git repository”)</li>
-<li>Make first commit (impossible to push empty git file)</li>
-<li>Go to Server (e.g. <a href="www.github.com">github.com</a>) and create new respository (Do not add README)</li>
-<li>copy two git commands for pushing existing respository</li>
-</ol>
+<div id="date" class="section level3">
+<h3><span class="header-section-number">12.2.1</span> Date</h3>
 <ul>
-<li>use https or ssh link</li>
+<li>Number of days since 1970-01-01</li>
+<li><code>Sys.Date</code> Get current Date</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote add origin https://github.com/retodomax/My_project.git
-<span class="fu">git</span> push -u origin master</code></pre></div>
-<ol start="5" style="list-style-type: decimal">
-<li>paste commands in in Git Bash opend in the project folder
-<ul>
-<li>Attention: You can also use the RStudio Shell BUT it often does not find the right path to the keys (for ssh).</li>
-</ul></li>
-</ol>
 </div>
-<div id="troubleshooting" class="section level3">
-<h3><span class="header-section-number">17.2.2</span> Troubleshooting</h3>
+<div id="date-time" class="section level3">
+<h3><span class="header-section-number">12.2.2</span> Date-Time</h3>
 <ul>
-<li><code>git@github.com: Permission denied (pulickey)</code>: Are correct public keys registered on server website</li>
-<li><code>fatal: remote origin already exists.</code>: there is already an “old” origin defined, which first needs to be removed. Use <code>git remote rm origin</code></li>
-<li><code>Could not create directory '/c/Users/Reto/OneDrive - ETHZ/Dokumente/.../repo/=/.ssh'</code>: RStudio shell has some problems in finding the HOME path to your keys. Use Git Bash instead to type in the command.</li>
+<li>Number of seconds since 1970-01-01 00:00:00</li>
+<li>POSIXct: number</li>
+<li>POSIXlt: list of character specifying day, hour, min, sec, …</li>
+<li><code>Sys.time</code> Get current Date-Time</li>
+<li><code>as.Date()</code> coerce</li>
+<li><code>strptime()</code> convert between character and POSIXct</li>
 </ul>
 </div>
 </div>
-<div id="multiple-users" class="section level2">
-<h2><span class="header-section-number">17.3</span> Multiple users</h2>
-<div id="get-foreign-respository-fork" class="section level3">
-<h3><span class="header-section-number">17.3.1</span> get foreign respository (fork)</h3>
-<ol style="list-style-type: decimal">
-<li>Make folder where you want working directory</li>
-<li>Right click and open: “Git bash here”</li>
-<li><code>git clone LINK</code>
+<div id="time-series-classes" class="section level2">
+<h2><span class="header-section-number">12.3</span> Time series classes</h2>
+<p>Object classes which are meant for time series</p>
+<div id="ts" class="section level3">
+<h3><span class="header-section-number">12.3.1</span> ts</h3>
 <ul>
-<li>–LINK can be found at “Clone or download” button of the github project (e.g. <a href="https://github.com/Stanimir-Ivanov/stats-lab.git" class="uri">https://github.com/Stanimir-Ivanov/stats-lab.git</a>)</li>
-</ul></li>
-</ol>
+<li>Simple</li>
+<li>Only regularly spaced TS</li>
+</ul>
+<div id="basic-functions" class="section level4">
+<h4><span class="header-section-number">12.3.1.1</span> Basic functions</h4>
+<ul>
+<li><code>ts()</code> create time-series objects</li>
+<li><code>start()</code> time of first observation (number)</li>
+<li><code>end()</code> time of last observation (number)</li>
+<li><code>frequency()</code> the number of observations per unit of time</li>
+<li><code>deltat()</code> the fraction of the sampling period between successive observations</li>
+<li><code>time()</code> vector of times at which a time series was sampled</li>
+<li><code>window()</code> subsetting ts objects</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myts &lt;-<span class="st"> </span><span class="kw">ts</span>(<span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">12</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">15</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">27</span>), <span class="dt">start =</span> <span class="dv">2004</span>, <span class="dt">freq =</span> <span class="dv">4</span>)
+myts
+<span class="co">#&gt;      Qtr1 Qtr2 Qtr3 Qtr4</span>
+<span class="co">#&gt; 2004   10   12   14   13</span>
+<span class="co">#&gt; 2005   12   10    5    2</span>
+<span class="co">#&gt; 2006   15   23   25   27</span>
+<span class="kw">start</span>(myts)
+<span class="co">#&gt; [1] 2004    1</span>
+<span class="kw">end</span>(myts)
+<span class="co">#&gt; [1] 2006    4</span>
+<span class="kw">frequency</span>(myts)
+<span class="co">#&gt; [1] 4</span>
+<span class="kw">deltat</span>(ts)
+<span class="co">#&gt; [1] 1</span>
+<span class="kw">time</span>(myts)
+<span class="co">#&gt;         Qtr1    Qtr2    Qtr3    Qtr4</span>
+<span class="co">#&gt; 2004 2004.00 2004.25 2004.50 2004.75</span>
+<span class="co">#&gt; 2005 2005.00 2005.25 2005.50 2005.75</span>
+<span class="co">#&gt; 2006 2006.00 2006.25 2006.50 2006.75</span>
+<span class="kw">window</span>(myts, <span class="dt">start =</span> <span class="dv">2005</span>, <span class="dt">end =</span> <span class="dv">2006</span>)
+<span class="co">#&gt;      Qtr1 Qtr2 Qtr3 Qtr4</span>
+<span class="co">#&gt; 2005   12   10    5    2</span>
+<span class="co">#&gt; 2006   15</span>
+<span class="kw">plot</span>(myts)</code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-47-1.png" width="80%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="zoo" class="section level3">
+<h3><span class="header-section-number">12.3.2</span> zoo</h3>
+<ul>
+<li>Regularly and irregularly spaced TS</li>
+</ul>
+</div>
+<div id="futher-classes" class="section level3">
+<h3><span class="header-section-number">12.3.3</span> futher classes</h3>
+<ul>
+<li>xts</li>
+<li>its</li>
+<li>tseries</li>
+</ul>
+</div>
+</div>
+<div id="differencing" class="section level2">
+<h2><span class="header-section-number">12.4</span> Differencing</h2>
+<ul>
+<li><code>diff()</code></li>
+<li><code>lag = 1</code> how far back goes the backshift operator <span class="math inline">\(Y=(1-B^p)X\)</span></li>
+<li><code>differences = 1</code> how many times iteratively apply differencing <span class="math inline">\(Y=(1-B)^dX\)</span></li>
+</ul>
 
 </div>
 </div>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="reference-management.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="stuff-still-to-include.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="MultivarStat.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reproducible-research.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -425,7 +427,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/R_Ref_Book/edit/master/64-git.Rmd",
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/54_time_series.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 17 Git Version control | R Reference book</title>
+  <title>Chapter 11 Multivariate Statistics | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 17 Git Version control | R Reference book" />
+  <meta property="og:title" content="Chapter 11 Multivariate Statistics | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 17 Git Version control | R Reference book" />
+  <meta name="twitter:title" content="Chapter 11 Multivariate Statistics | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon">
-<link rel="prev" href="reference-management.html">
-<link rel="next" href="stuff-still-to-include.html">
+<link rel="prev" href="interactive-plots.html">
+<link rel="next" href="TimeSeries.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -280,111 +280,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="git-version-control" class="section level1">
-<h1><span class="header-section-number">Chapter 17</span> Git Version control</h1>
-<div id="git-basics" class="section level2">
-<h2><span class="header-section-number">17.1</span> Git basics</h2>
-<p>Two very good intros:</p>
+<div id="MultivarStat" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Multivariate Statistics</h1>
+<div id="data-sets" class="section level2">
+<h2><span class="header-section-number">11.1</span> Data sets</h2>
+</div>
+<div id="some-functions" class="section level2">
+<h2><span class="header-section-number">11.2</span> Some functions</h2>
+<div id="visualization" class="section level3">
+<h3><span class="header-section-number">11.2.1</span> Visualization</h3>
 <ul>
-<li><a href="https://happygitwithr.com/">Happy git with R</a></li>
-<li><a href="https://git-scm.com/book/en/v2">Pro Git</a> or <a href="https://git-scm.com/book/de/v1">1st edition in german</a></li>
-</ul>
-<p>Download Git: <a href="https://git-scm.com/downloads">here</a></p>
-<p>Recommended: do your first steps with a Git client (GUI) to get a feeling for the workflow. Good clients are <a href="https://www.sourcetreeapp.com/">SourceTree</a>, <a href="https://www.gitkraken.com/">GitKraken</a> but there are many more <a href="https://git-scm.com/downloads/guis">here</a></p>
-<p><strong>Important bash commands</strong></p>
+<li>Glyph plots
 <ul>
-<li><code>cd</code> change directory</li>
-<li><code>ls</code> list all files within directory</li>
-<li><code>head</code> show head of file</li>
-<li><code>rm</code> remove file</li>
-</ul>
-<p><strong>Set global config variables</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> config --global user.name <span class="st">&#39;Reto Zihlmann&#39;</span>
-<span class="fu">git</span> config --global user.email <span class="st">&#39;retozihlmann@outlook.com&#39;</span>
-<span class="fu">git</span> config --global --list</code></pre></div>
-<ul>
-<li>user.email should be the same as used for your server (otherwise your commits appear as if they were done by someone else)
-<ul>
-<li>for GitHub: user.name ‘retodomax’, user.email ‘<a href="mailto:retozihlmann@outlook.com">retozihlmann@outlook.com</a>’</li>
-<li>for GitLab: user.name ‘retoz’, user.email ‘<a href="mailto:retoz@student.ethz.ch">retoz@student.ethz.ch</a>’</li>
+<li><code>plot(x~y, pch = z, col = w, cex = v, ...)</code> (up to 5 dimensions)</li>
+<li><code>symbols()</code> (&gt; 5 dimensions)</li>
 </ul></li>
-<li>config file is normally located in your <code>HOME</code> directory <code>~</code></li>
-<li>in Windows <code>~</code> often corresponds to <code>C:\Users\Reto</code></li>
+<li><code>stars()</code> stars plot</li>
+<li><code>MASS::parcoord()</code> paralell coordinates</li>
+<li><code>coplot()</code> conditioning plot</li>
+<li>``</li>
 </ul>
-<p><strong>Clone repo to your local computer</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone https://github.com/retodomax/YOUR-REPOSITORY.git</code></pre></div>
-<strong>Conect with remote respository</strong>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-50"></span>
-<img src="figures/git_remote.png" alt="..." width="100%" />
-<p class="caption">
-Figure 17.1: …
-</p>
-</div>
-<p><strong>Show origin variable</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote show origin</code></pre></div>
-<p>or shorter</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote -v</code></pre></div>
-<p><strong>list existing keys</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ls</span> -al ~/.ssh/</code></pre></div>
-<p>** generate new key**</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh-keygen</span> -t rsa -b 4096 -C <span class="st">&quot;retozihlmann@outlook.com Lenovo&quot;</span></code></pre></div>
-<ul>
-<li>text at end of command should be something to recognize a computer</li>
-<li>only generate new keys if you have non</li>
-<li>find them in <code>~/.ssh</code></li>
-<li>keygen will open dialog (always leave empty and press enter)</li>
-<li>after you generated your keys they have to be added to the <strong>ssh-agent</strong> and to the server</li>
-</ul>
-<p>Check if agent is running</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">eval</span> <span class="va">$(</span><span class="fu">ssh-agent</span> -s<span class="va">)</span></code></pre></div>
-<p>Add keys to agent</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh-add</span> ~/.ssh/id_rsa</code></pre></div>
-<p>Add keys to server</p>
-<p><a href="www.github.com">github.com</a> -&gt; Settings -&gt; SSH</p>
-</div>
-<div id="single-user" class="section level2">
-<h2><span class="header-section-number">17.2</span> Single user</h2>
-<div id="regular-workflow" class="section level3">
-<h3><span class="header-section-number">17.2.1</span> Regular workflow</h3>
-<ol style="list-style-type: decimal">
-<li>Make new project in RStudio (tick “Create a git repository”)</li>
-<li>Make first commit (impossible to push empty git file)</li>
-<li>Go to Server (e.g. <a href="www.github.com">github.com</a>) and create new respository (Do not add README)</li>
-<li>copy two git commands for pushing existing respository</li>
-</ol>
-<ul>
-<li>use https or ssh link</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote add origin https://github.com/retodomax/My_project.git
-<span class="fu">git</span> push -u origin master</code></pre></div>
-<ol start="5" style="list-style-type: decimal">
-<li>paste commands in in Git Bash opend in the project folder
-<ul>
-<li>Attention: You can also use the RStudio Shell BUT it often does not find the right path to the keys (for ssh).</li>
-</ul></li>
-</ol>
-</div>
-<div id="troubleshooting" class="section level3">
-<h3><span class="header-section-number">17.2.2</span> Troubleshooting</h3>
-<ul>
-<li><code>git@github.com: Permission denied (pulickey)</code>: Are correct public keys registered on server website</li>
-<li><code>fatal: remote origin already exists.</code>: there is already an “old” origin defined, which first needs to be removed. Use <code>git remote rm origin</code></li>
-<li><code>Could not create directory '/c/Users/Reto/OneDrive - ETHZ/Dokumente/.../repo/=/.ssh'</code>: RStudio shell has some problems in finding the HOME path to your keys. Use Git Bash instead to type in the command.</li>
-</ul>
-</div>
-</div>
-<div id="multiple-users" class="section level2">
-<h2><span class="header-section-number">17.3</span> Multiple users</h2>
-<div id="get-foreign-respository-fork" class="section level3">
-<h3><span class="header-section-number">17.3.1</span> get foreign respository (fork)</h3>
-<ol style="list-style-type: decimal">
-<li>Make folder where you want working directory</li>
-<li>Right click and open: “Git bash here”</li>
-<li><code>git clone LINK</code>
-<ul>
-<li>–LINK can be found at “Clone or download” button of the github project (e.g. <a href="https://github.com/Stanimir-Ivanov/stats-lab.git" class="uri">https://github.com/Stanimir-Ivanov/stats-lab.git</a>)</li>
-</ul></li>
-</ol>
 
 </div>
 </div>
@@ -394,8 +309,8 @@ Figure 17.1: …
           </div>
         </div>
       </div>
-<a href="reference-management.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="stuff-still-to-include.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="interactive-plots.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="TimeSeries.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -425,7 +340,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/R_Ref_Book/edit/master/64-git.Rmd",
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/53_multivar_stat.Rmd",
 "text": "Edit"
 },
 "history": {

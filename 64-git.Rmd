@@ -40,6 +40,12 @@ git config --global --list
 git clone https://github.com/retodomax/YOUR-REPOSITORY.git
 ```
 
+**Conect with remote respository**
+```{r, out.width='100%', fig.align='center', fig.cap='...', echo = F}
+knitr::include_graphics('figures/git_remote.png')
+```
+
+
 **Show origin variable**
 
 ``` bash

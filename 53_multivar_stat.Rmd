@@ -1,0 +1,21 @@
+# (PART) R Statistics {-} 
+
+# Multivariate Statistics {#MultivarStat}
+
+
+## Data sets
+
+
+## Some functions
+
+
+### Visualization
+* Glyph plots
+    - `plot(x~y, pch = z, col = w, cex = v, ...)` (up to 5 dimensions)
+    - `symbols()` (> 5 dimensions)
+* `stars()`  stars plot
+* `MASS::parcoord()`  paralell coordinates
+* `coplot()`  conditioning plot
+*
+``
+
