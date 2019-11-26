@@ -332,7 +332,7 @@ plot(1:10)
 
 
 
-Now we continue with some text. As you can see in Figure \@ref(fig:figPoints) there are 10 points. The same was also decribed in Section \@ref(intro) or in Equation \@ref(eq:pythagoras) or in the package `rmarkdown` [see @R-bookdown]. The second way to make References [@@R-mgcv]. For the third way see @R-knitr.
+Now we continue with some text. As you can see in Figure \@ref(fig:figPoints) there are 10 points. The same was also decribed in Section \@ref(intro) or in Equation \@ref(eq:pythagoras) or in the package `rmarkdown` [see @R-bookdown]. The second way to make References [@R-mgcv]. For the third way see @R-knitr.
 
 
 # Discussion {#disc}
