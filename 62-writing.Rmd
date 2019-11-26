@@ -227,7 +227,7 @@ Recomended file formate
 
 ## Template
 
-This is a template containing structure, equations, references, cross-references, figures and tables with caption. The rendered output of the template can be found [here](missing link).
+This is a template containing structure, equations, references, cross-references, figures and tables with caption. The rendered output of the template can be found [here](https://retodomax.github.io/R_Ref_Book/template.html).
 To get the the template in pdf, replace the `output` section in the YAML header with
 
 ```
