@@ -3,15 +3,6 @@
 
 ## Path to your file
 
-```{r}
-
-
-read.csv("Data/import/myfile.csv")
-
-```
-
-read.
-
 * Absolute path
     - `read.csv("C:/Users/Reto/Downloads/myfile.csv")`
     - Not recomended, impossible to share between computers
@@ -22,4 +13,5 @@ read.
     - Starts at you working directory
         * R project have fixed wd
         * `getwd()`, `setwd()`
-        * Rmarkdown sets its working directory to the folder which contains the Rmd file. Do not change working directory but use relative path (maybe with ../) to get to your files.
+        * Rmarkdown sets its working directory to the folder which contains the Rmd file (“working directory = directory where this file lives” even if you are in a Rproj!). Do not change working directory but use relative path (maybe with ../) to get to your files.
+* Consider using package `here`

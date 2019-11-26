@@ -58,6 +58,14 @@ or shorter
 git remote -v
 ```
 
+**Show branch we are traking**
+
+```bash
+git branch -vv
+```
+
+
+
 **list existing keys**
 ``` bash
 ls -al ~/.ssh/
@@ -129,5 +137,72 @@ git push -u origin master
     - --LINK can be found at "Clone or download" button of the github project (e.g. https://github.com/Stanimir-Ivanov/stats-lab.git)
 
 
+===========================================
+
+
+# New Chapter
+
+
+
+
+## Git basics
+
+**basic bash commands**
+
+* `cd` change directory
+* `ls` list all files within directory
+* `head` show head of file
+* `rm` remove file
+
+**basic git commands**
+
+* `git config` change global/local variables (name, email, ...)
+* `git init` initialize git respository
+* `git add` add file to staged area, "stage file"
+* `git commit` commit staged files
+* `git push` push your branch to origin
+* `git pull` pull newest branch to your local
+
+### Common tasks
+
+**create a new repository on the command line**
+
+``` bash
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:retodomax/test.git
+git push -u origin master
+```
+
+**push an existing repository from the command line**
+
+``` bash
+git remote add origin git@github.com:retodomax/test.git
+git push -u origin master
+```
+
+**clone existing repository and push changes**
+
+``` bash
+git clone git@github.com:retodomax/test.git
+cd test
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+```
+
+**push existing folder to origin**
+
+``` bash
+cd existing_folder
+git init
+git remote add origin git@github.com:retodomax/test.git
+git add .
+git commit
+git push -u origin master
+```
 
 

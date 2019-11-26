@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 17 Reference management | R Reference book</title>
+  <title>Chapter 6 Data Import/Export | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 17 Reference management | R Reference book" />
+  <meta property="og:title" content="Chapter 6 Data Import/Export | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 17 Reference management | R Reference book" />
+  <meta name="twitter:title" content="Chapter 6 Data Import/Export | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
-<link rel="prev" href="bookdown.html"/>
-<link rel="next" href="git-version-control.html"/>
+<link rel="prev" href="miscellaneous.html"/>
+<link rel="next" href="regular-expressions.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -305,77 +305,45 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="reference-management" class="section level1">
-<h1><span class="header-section-number">Chapter 17</span> Reference management</h1>
-<div id="literature" class="section level2">
-<h2><span class="header-section-number">17.1</span> Literature</h2>
+<div id="data-importexport" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Data Import/Export</h1>
+<div id="path-to-your-file" class="section level2">
+<h2><span class="header-section-number">6.1</span> Path to your file</h2>
 <ul>
-<li>R Markdown recommends using BibTeX databases (text file with .bib extension in a certain format)</li>
-<li>BibTeX files can be written by hand or generated from common reference management programms like EndNote, Zotero, JabRef, …</li>
-</ul>
-<div id="recommended-using-zotero" class="section level3">
-<h3><span class="header-section-number">17.1.1</span> Recommended: Using Zotero</h3>
+<li>Absolute path
 <ul>
-<li>Download Zotero</li>
-<li>Download extension <em>Better BibTeX</em> (See: <a href="http://unimelb.libguides.com/c.php?g=565734&amp;p=3897111">here</a>)</li>
-<li>Generate automatically updating .bib file
-<ul>
-<li>Right click on citation Folder</li>
-<li>Export</li>
-<li>Format: Better BibTeX, tick <em>Keep updated</em></li>
-<li>Select folder with LaTeX file</li>
-<li>Manage your exports in Bearbeiten -&gt; Einstellungen -&gt; Better BibTeX -&gt; Automatischer Export</li>
+<li><code>read.csv(&quot;C:/Users/Reto/Downloads/myfile.csv&quot;)</code></li>
+<li>Not recomended, impossible to share between computers</li>
 </ul></li>
-<li>Use <strong>citation key</strong> (e.g. Zihlmann2019) within markdown to refere to a certain reference</li>
-<li>Use drag and drop of Zotero to insert citation key (<a href="https://retorque.re/zotero-better-bibtex/citation-keys/">Better BibTeX Citation Key Quick Copy</a>)</li>
-<li><code>@Zihlmann2019</code> will generate Zihlmann (2019)</li>
-<li><code>[@Zihlmann2019]</code> will generate (Zihlmann 2019)</li>
-<li><code>[see @Zihlmann2019, pp. 33-35</code>] will generate (see Zihlmann 2019, 33-35)</li>
-<li><code>[@Zihlmann2019; @Fritsche1900]</code> will generate (Zihlmann 2019; Fritsche 1900)</li>
-<li><code>@Zihlmann2019 [p. 33] says</code> will generate Zihlmann (2019, 33) says</li>
-<li><code>@R-packagename</code> to cite an R package (necessary to export package citation before)</li>
-<li>Further information see <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html">Bibliographies and Citations</a></li>
-</ul>
-<p>To add citations to the bibliography without using them in the text include</p>
-<pre><code>---
-nocite: | 
-  @item1, @item2
-...</code></pre>
-</div>
-</div>
-<div id="cross-references" class="section level2">
-<h2><span class="header-section-number">17.2</span> Cross-References</h2>
+<li>Relative path
 <ul>
-<li>Sections</li>
-<li>Equations</li>
-<li>Theorems</li>
-<li>Figures</li>
-<li>Tables</li>
+<li><code>read.csv(&quot;Data/import/myfile.csv&quot;)</code></li>
+<li><code>read.csv(&quot;../../Data/import/myfile.csv&quot;)</code>
+<ul>
+<li>Goes two levels up</li>
+</ul></li>
+<li>Starts at you working directory
+<ul>
+<li>R project have fixed wd</li>
+<li><code>getwd()</code>, <code>setwd()</code></li>
+<li>Rmarkdown sets its working directory to the folder which contains the Rmd file (“working directory = directory where this file lives” even if you are in a Rproj!). Do not change working directory but use relative path (maybe with ../) to get to your files.</li>
+</ul></li>
+</ul></li>
+<li>Consider using package <code>here</code></li>
 </ul>
-<p>See <a href="https://bookdown.org/yihui/bookdown/cross-references.html">Bookdown manual</a></p>
-<p>Labels may contain (a-z, A-Z, 0-9, -, /)</p>
-<p>Try to add some citations:</p>
-<p>See <span class="citation">Wickham (<a href="#ref-wickhamAdvanced">2019</a>)</span></p>
-<p>which was shown several times <span class="citation">(Grolemund and Wickham <a href="#ref-grolemundDataScience">2019</a>)</span></p>
 
 </div>
 </div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-grolemundDataScience">
-<p>Grolemund, Garrett, and Hadley Wickham. 2019. <em>R for Data Science</em>. Accessed April 12. <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a>.</p>
-</div>
-<div id="ref-wickhamAdvanced">
-<p>Wickham, Hadley. 2019. <em>Advanced R</em>. 2nd ed. Accessed April 12. <a href="https://adv-r.hadley.nz/" class="uri">https://adv-r.hadley.nz/</a>.</p>
-</div>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="bookdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="git-version-control.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="miscellaneous.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regular-expressions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -407,7 +375,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/R_Ref_Book/edit/master/63-reference_management.Rmd",
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/21-data-import.Rmd",
 "text": "Edit"
 },
 "history": {

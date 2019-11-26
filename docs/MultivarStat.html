@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 11 Multivariate Statistics | R Reference book</title>
-  <meta name="description" content="This is a collection of useful R knowledge">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 12 Multivariate Statistics | R Reference book</title>
+  <meta name="description" content="This is a collection of useful R knowledge" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 Multivariate Statistics | R Reference book" />
+  <meta property="og:title" content="Chapter 12 Multivariate Statistics | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -17,23 +16,23 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 Multivariate Statistics | R Reference book" />
+  <meta name="twitter:title" content="Chapter 12 Multivariate Statistics | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
 
-<meta name="author" content="Reto Zihlmann">
+<meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2019-10-02">
+<meta name="date" content="2019-11-26" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
-  <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon">
-<link rel="prev" href="interactive-plots.html">
-<link rel="next" href="TimeSeries.html">
+  <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
+<link rel="prev" href="interactive-plots.html"/>
+<link rel="next" href="TimeSeries.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +40,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -48,6 +48,22 @@
 
 
 
+
+
+<!––html code for Show/Hide buttons––>
+<!––see: https://web.stanford.edu/~naras/post/toggle-visibility-of-solutions-in-bookdown/––>
+<!––and see: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp––>
+
+<script>
+function myFunction(myid) {
+  var x = document.getElementById(myid);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
 
 
 <style type="text/css">
@@ -173,92 +189,101 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="miscellaneous.html"><a href="miscellaneous.html#how-packages-can-exist"><i class="fa fa-check"></i><b>5.2</b> How packages can exist</a></li>
 </ul></li>
-<li class="part"><span><b>II R Basics</b></span></li>
-<li class="chapter" data-level="6" data-path="regular-expressions.html"><a href="regular-expressions.html"><i class="fa fa-check"></i><b>6</b> Regular Expressions</a></li>
-<li class="part"><span><b>III R Programming</b></span></li>
-<li class="chapter" data-level="7" data-path="performance.html"><a href="performance.html"><i class="fa fa-check"></i><b>7</b> Performance</a><ul>
-<li class="chapter" data-level="7.1" data-path="performance.html"><a href="performance.html#in-general"><i class="fa fa-check"></i><b>7.1</b> In general</a></li>
-<li class="chapter" data-level="7.2" data-path="performance.html"><a href="performance.html#profiling"><i class="fa fa-check"></i><b>7.2</b> Profiling</a></li>
-<li class="chapter" data-level="7.3" data-path="performance.html"><a href="performance.html#microbenchmark"><i class="fa fa-check"></i><b>7.3</b> Microbenchmark</a></li>
-<li class="chapter" data-level="7.4" data-path="performance.html"><a href="performance.html#use-package-compiler"><i class="fa fa-check"></i><b>7.4</b> Use package compiler</a></li>
+<li class="chapter" data-level="6" data-path="data-importexport.html"><a href="data-importexport.html"><i class="fa fa-check"></i><b>6</b> Data Import/Export</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-importexport.html"><a href="data-importexport.html#path-to-your-file"><i class="fa fa-check"></i><b>6.1</b> Path to your file</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>8</b> Functional programming</a><ul>
-<li class="chapter" data-level="8.1" data-path="functional-programming.html"><a href="functional-programming.html#FunProgClosures"><i class="fa fa-check"></i><b>8.1</b> Closures</a></li>
-<li class="chapter" data-level="8.2" data-path="functional-programming.html"><a href="functional-programming.html#lists-of-functions"><i class="fa fa-check"></i><b>8.2</b> Lists of functions</a></li>
+<li class="part"><span><b>II R Basics</b></span></li>
+<li class="chapter" data-level="7" data-path="regular-expressions.html"><a href="regular-expressions.html"><i class="fa fa-check"></i><b>7</b> Regular Expressions</a></li>
+<li class="part"><span><b>III R Programming</b></span></li>
+<li class="chapter" data-level="8" data-path="performance.html"><a href="performance.html"><i class="fa fa-check"></i><b>8</b> Performance</a><ul>
+<li class="chapter" data-level="8.1" data-path="performance.html"><a href="performance.html#in-general"><i class="fa fa-check"></i><b>8.1</b> In general</a></li>
+<li class="chapter" data-level="8.2" data-path="performance.html"><a href="performance.html#profiling"><i class="fa fa-check"></i><b>8.2</b> Profiling</a></li>
+<li class="chapter" data-level="8.3" data-path="performance.html"><a href="performance.html#microbenchmark"><i class="fa fa-check"></i><b>8.3</b> Microbenchmark</a></li>
+<li class="chapter" data-level="8.4" data-path="performance.html"><a href="performance.html#use-package-compiler"><i class="fa fa-check"></i><b>8.4</b> Use package compiler</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>9</b> Functional programming</a><ul>
+<li class="chapter" data-level="9.1" data-path="functional-programming.html"><a href="functional-programming.html#FunProgClosures"><i class="fa fa-check"></i><b>9.1</b> Closures</a></li>
+<li class="chapter" data-level="9.2" data-path="functional-programming.html"><a href="functional-programming.html#lists-of-functions"><i class="fa fa-check"></i><b>9.2</b> Lists of functions</a></li>
 </ul></li>
 <li class="part"><span><b>IV R Plots</b></span></li>
-<li class="chapter" data-level="9" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>9</b> Plots</a><ul>
-<li class="chapter" data-level="9.1" data-path="Plots.html"><a href="Plots.html#graphical-parameters-par"><i class="fa fa-check"></i><b>9.1</b> Graphical parameters <code>par()</code></a><ul>
-<li class="chapter" data-level="9.1.1" data-path="Plots.html"><a href="Plots.html#set-graphical-parameters"><i class="fa fa-check"></i><b>9.1.1</b> Set graphical parameters</a></li>
-<li class="chapter" data-level="9.1.2" data-path="Plots.html"><a href="Plots.html#default"><i class="fa fa-check"></i><b>9.1.2</b> Default</a></li>
-<li class="chapter" data-level="9.1.3" data-path="Plots.html"><a href="Plots.html#device-region"><i class="fa fa-check"></i><b>9.1.3</b> Device region</a></li>
+<li class="chapter" data-level="10" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>10</b> Plots</a><ul>
+<li class="chapter" data-level="10.1" data-path="Plots.html"><a href="Plots.html#graphical-parameters-par"><i class="fa fa-check"></i><b>10.1</b> Graphical parameters <code>par()</code></a><ul>
+<li class="chapter" data-level="10.1.1" data-path="Plots.html"><a href="Plots.html#set-graphical-parameters"><i class="fa fa-check"></i><b>10.1.1</b> Set graphical parameters</a></li>
+<li class="chapter" data-level="10.1.2" data-path="Plots.html"><a href="Plots.html#default"><i class="fa fa-check"></i><b>10.1.2</b> Default</a></li>
+<li class="chapter" data-level="10.1.3" data-path="Plots.html"><a href="Plots.html#device-region"><i class="fa fa-check"></i><b>10.1.3</b> Device region</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>10</b> Interactive Plots</a></li>
+<li class="chapter" data-level="11" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>11</b> Interactive Plots</a></li>
 <li class="part"><span><b>V R Statistics</b></span></li>
-<li class="chapter" data-level="11" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>11</b> Multivariate Statistics</a><ul>
-<li class="chapter" data-level="11.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>11.1</b> Data sets</a></li>
-<li class="chapter" data-level="11.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>11.2</b> Some functions</a><ul>
-<li class="chapter" data-level="11.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization"><i class="fa fa-check"></i><b>11.2.1</b> Visualization</a></li>
+<li class="chapter" data-level="12" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>12</b> Multivariate Statistics</a><ul>
+<li class="chapter" data-level="12.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>12.1</b> Data sets</a></li>
+<li class="chapter" data-level="12.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>12.2</b> Some functions</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization"><i class="fa fa-check"></i><b>12.2.1</b> Visualization</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>12</b> Time series</a><ul>
-<li class="chapter" data-level="12.1" data-path="TimeSeries.html"><a href="TimeSeries.html#data-sets-1"><i class="fa fa-check"></i><b>12.1</b> Data sets</a></li>
-<li class="chapter" data-level="12.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-and-time"><i class="fa fa-check"></i><b>12.2</b> Date and Time</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="TimeSeries.html"><a href="TimeSeries.html#date"><i class="fa fa-check"></i><b>12.2.1</b> Date</a></li>
-<li class="chapter" data-level="12.2.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-time"><i class="fa fa-check"></i><b>12.2.2</b> Date-Time</a></li>
+<li class="chapter" data-level="13" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>13</b> Time series</a><ul>
+<li class="chapter" data-level="13.1" data-path="TimeSeries.html"><a href="TimeSeries.html#data-sets-1"><i class="fa fa-check"></i><b>13.1</b> Data sets</a></li>
+<li class="chapter" data-level="13.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-and-time"><i class="fa fa-check"></i><b>13.2</b> Date and Time</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="TimeSeries.html"><a href="TimeSeries.html#date"><i class="fa fa-check"></i><b>13.2.1</b> Date</a></li>
+<li class="chapter" data-level="13.2.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-time"><i class="fa fa-check"></i><b>13.2.2</b> Date-Time</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="TimeSeries.html"><a href="TimeSeries.html#time-series-classes"><i class="fa fa-check"></i><b>12.3</b> Time series classes</a><ul>
-<li class="chapter" data-level="12.3.1" data-path="TimeSeries.html"><a href="TimeSeries.html#ts"><i class="fa fa-check"></i><b>12.3.1</b> ts</a></li>
-<li class="chapter" data-level="12.3.2" data-path="TimeSeries.html"><a href="TimeSeries.html#zoo"><i class="fa fa-check"></i><b>12.3.2</b> zoo</a></li>
-<li class="chapter" data-level="12.3.3" data-path="TimeSeries.html"><a href="TimeSeries.html#futher-classes"><i class="fa fa-check"></i><b>12.3.3</b> futher classes</a></li>
+<li class="chapter" data-level="13.3" data-path="TimeSeries.html"><a href="TimeSeries.html#time-series-classes"><i class="fa fa-check"></i><b>13.3</b> Time series classes</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="TimeSeries.html"><a href="TimeSeries.html#ts"><i class="fa fa-check"></i><b>13.3.1</b> ts</a></li>
+<li class="chapter" data-level="13.3.2" data-path="TimeSeries.html"><a href="TimeSeries.html#zoo"><i class="fa fa-check"></i><b>13.3.2</b> zoo</a></li>
+<li class="chapter" data-level="13.3.3" data-path="TimeSeries.html"><a href="TimeSeries.html#futher-classes"><i class="fa fa-check"></i><b>13.3.3</b> futher classes</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>12.4</b> Differencing</a></li>
+<li class="chapter" data-level="13.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>13.4</b> Differencing</a></li>
 </ul></li>
 <li class="part"><span><b>VI R Workflow</b></span></li>
-<li class="chapter" data-level="13" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>13</b> Reproducible Research</a><ul>
-<li class="chapter" data-level="13.1" data-path="reproducible-research.html"><a href="reproducible-research.html#tasks"><i class="fa fa-check"></i><b>13.1</b> Tasks</a></li>
-<li class="chapter" data-level="13.2" data-path="reproducible-research.html"><a href="reproducible-research.html#chronology"><i class="fa fa-check"></i><b>13.2</b> Chronology</a></li>
+<li class="chapter" data-level="14" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>14</b> Reproducible Research</a><ul>
+<li class="chapter" data-level="14.1" data-path="reproducible-research.html"><a href="reproducible-research.html#tasks"><i class="fa fa-check"></i><b>14.1</b> Tasks</a></li>
+<li class="chapter" data-level="14.2" data-path="reproducible-research.html"><a href="reproducible-research.html#chronology"><i class="fa fa-check"></i><b>14.2</b> Chronology</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>14</b> R Markdown</a><ul>
-<li class="chapter" data-level="14.1" data-path="r-markdown.html"><a href="r-markdown.html#literate-programming"><i class="fa fa-check"></i><b>14.1</b> Literate programming</a><ul>
-<li class="chapter" data-level="14.1.1" data-path="r-markdown.html"><a href="r-markdown.html#sweave"><i class="fa fa-check"></i><b>14.1.1</b> Sweave</a></li>
-<li class="chapter" data-level="14.1.2" data-path="r-markdown.html"><a href="r-markdown.html#knitr"><i class="fa fa-check"></i><b>14.1.2</b> Knitr</a></li>
-<li class="chapter" data-level="14.1.3" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown-1"><i class="fa fa-check"></i><b>14.1.3</b> R Markdown</a></li>
+<li class="chapter" data-level="15" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>15</b> R Markdown</a><ul>
+<li class="chapter" data-level="15.1" data-path="r-markdown.html"><a href="r-markdown.html#literate-programming"><i class="fa fa-check"></i><b>15.1</b> Literate programming</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="r-markdown.html"><a href="r-markdown.html#sweave"><i class="fa fa-check"></i><b>15.1.1</b> Sweave</a></li>
+<li class="chapter" data-level="15.1.2" data-path="r-markdown.html"><a href="r-markdown.html#knitr"><i class="fa fa-check"></i><b>15.1.2</b> Knitr</a></li>
+<li class="chapter" data-level="15.1.3" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown-1"><i class="fa fa-check"></i><b>15.1.3</b> R Markdown</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="r-markdown.html"><a href="r-markdown.html#components"><i class="fa fa-check"></i><b>14.2</b> Components</a><ul>
-<li class="chapter" data-level="14.2.1" data-path="r-markdown.html"><a href="r-markdown.html#yaml-frontmatter"><i class="fa fa-check"></i><b>14.2.1</b> YAML frontmatter</a></li>
-<li class="chapter" data-level="14.2.2" data-path="r-markdown.html"><a href="r-markdown.html#text"><i class="fa fa-check"></i><b>14.2.2</b> Text</a></li>
-<li class="chapter" data-level="14.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>14.2.3</b> Code</a></li>
+<li class="chapter" data-level="15.2" data-path="r-markdown.html"><a href="r-markdown.html#components"><i class="fa fa-check"></i><b>15.2</b> Components</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="r-markdown.html"><a href="r-markdown.html#yaml-frontmatter"><i class="fa fa-check"></i><b>15.2.1</b> YAML frontmatter</a></li>
+<li class="chapter" data-level="15.2.2" data-path="r-markdown.html"><a href="r-markdown.html#text"><i class="fa fa-check"></i><b>15.2.2</b> Text</a></li>
+<li class="chapter" data-level="15.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>15.2.3</b> Code</a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>14.3</b> Figures</a></li>
-<li class="chapter" data-level="14.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>14.4</b> Tables</a></li>
-<li class="chapter" data-level="14.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>14.5</b> Sepecial characters</a></li>
+<li class="chapter" data-level="15.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>15.3</b> Figures</a></li>
+<li class="chapter" data-level="15.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>15.4</b> Tables</a></li>
+<li class="chapter" data-level="15.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>15.5</b> Sepecial characters</a></li>
+<li class="chapter" data-level="15.6" data-path="r-markdown.html"><a href="r-markdown.html#template"><i class="fa fa-check"></i><b>15.6</b> Template</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>15</b> Bookdown</a><ul>
-<li class="chapter" data-level="15.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>15.1</b> Configuration</a><ul>
-<li class="chapter" data-level="15.1.1" data-path="bookdown.html"><a href="bookdown.html#bookdown.yml"><i class="fa fa-check"></i><b>15.1.1</b> <code>_bookdown.yml</code></a></li>
-<li class="chapter" data-level="15.1.2" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>15.1.2</b> <code>_output.yml</code></a></li>
-<li class="chapter" data-level="15.1.3" data-path="bookdown.html"><a href="bookdown.html#yaml-header"><i class="fa fa-check"></i><b>15.1.3</b> yaml header</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>16</b> Reference management</a><ul>
-<li class="chapter" data-level="16.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>16.1</b> Literature</a><ul>
-<li class="chapter" data-level="16.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>16.1.1</b> Recommended: Using Zotero</a></li>
-</ul></li>
-<li class="chapter" data-level="16.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>16.2</b> Cross-References</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="git-version-control.html"><a href="git-version-control.html"><i class="fa fa-check"></i><b>17</b> Git Version control</a><ul>
-<li class="chapter" data-level="17.1" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>17.1</b> Git basics</a></li>
-<li class="chapter" data-level="17.2" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>17.2</b> Single user</a><ul>
-<li class="chapter" data-level="17.2.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>17.2.1</b> Regular workflow</a></li>
-<li class="chapter" data-level="17.2.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>17.2.2</b> Troubleshooting</a></li>
-</ul></li>
-<li class="chapter" data-level="17.3" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>17.3</b> Multiple users</a><ul>
-<li class="chapter" data-level="17.3.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>17.3.1</b> get foreign respository (fork)</a></li>
+<li class="chapter" data-level="16" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>16</b> Bookdown</a><ul>
+<li class="chapter" data-level="16.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>16.1</b> Configuration</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="bookdown.html"><a href="bookdown.html#bookdown.yml"><i class="fa fa-check"></i><b>16.1.1</b> <code>_bookdown.yml</code></a></li>
+<li class="chapter" data-level="16.1.2" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>16.1.2</b> <code>_output.yml</code></a></li>
+<li class="chapter" data-level="16.1.3" data-path="bookdown.html"><a href="bookdown.html#yaml-header"><i class="fa fa-check"></i><b>16.1.3</b> yaml header</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>18</b> Stuff still to include</a></li>
+<li class="chapter" data-level="17" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>17</b> Reference management</a><ul>
+<li class="chapter" data-level="17.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>17.1</b> Literature</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>17.1.1</b> Recommended: Using Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>17.2</b> Cross-References</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="git-version-control.html"><a href="git-version-control.html"><i class="fa fa-check"></i><b>18</b> Git Version control</a><ul>
+<li class="chapter" data-level="18.1" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>18.1</b> Git basics</a></li>
+<li class="chapter" data-level="18.2" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>18.2</b> Single user</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>18.2.1</b> Regular workflow</a></li>
+<li class="chapter" data-level="18.2.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>18.2.2</b> Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>18.3</b> Multiple users</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>18.3.1</b> get foreign respository (fork)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="new-chapter.html"><a href="new-chapter.html"><i class="fa fa-check"></i><b>19</b> New Chapter</a><ul>
+<li class="chapter" data-level="19.1" data-path="new-chapter.html"><a href="new-chapter.html#git-basics-1"><i class="fa fa-check"></i><b>19.1</b> Git basics</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="new-chapter.html"><a href="new-chapter.html#common-tasks"><i class="fa fa-check"></i><b>19.1.1</b> Common tasks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>20</b> Stuff still to include</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -281,14 +306,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="MultivarStat" class="section level1">
-<h1><span class="header-section-number">Chapter 11</span> Multivariate Statistics</h1>
+<h1><span class="header-section-number">Chapter 12</span> Multivariate Statistics</h1>
 <div id="data-sets" class="section level2">
-<h2><span class="header-section-number">11.1</span> Data sets</h2>
+<h2><span class="header-section-number">12.1</span> Data sets</h2>
 </div>
 <div id="some-functions" class="section level2">
-<h2><span class="header-section-number">11.2</span> Some functions</h2>
+<h2><span class="header-section-number">12.2</span> Some functions</h2>
 <div id="visualization" class="section level3">
-<h3><span class="header-section-number">11.2.1</span> Visualization</h3>
+<h3><span class="header-section-number">12.2.1</span> Visualization</h3>
 <ul>
 <li>Glyph plots
 <ul>
@@ -315,11 +340,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -362,8 +389,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

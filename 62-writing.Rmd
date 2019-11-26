@@ -224,3 +224,143 @@ Recomended file formate
     -"&#8209;" nonbreaking hythen (should be used as hythen minus)
 
 
+
+## Template
+
+This is a template containing structure, equations, references, cross-references, figures and tables with caption. The rendered output of the template can be found [here](missing link).
+To get the the template in pdf, replace the `output` section in the YAML header with
+
+```
+  bookdown::pdf_document2:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+```
+
+
+<button onclick="myFunction('markdown_template')">Show template</button>
+
+<div id="markdown_template" style="display: none">
+````markdown
+---
+project: CompSkills    #################################################
+title:   Template
+author:  "[Reto Zihlmann](https://retodomax.github.io/)"
+date:    "`r Sys.Date()`"
+output:
+  bookdown::html_document2:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+bibliography: [bib_zotero.bib, bib_packages.bib]
+link-citations: true
+---
+
+`r ''````{r, setup, include=FALSE}
+knitr::opts_chunk$set(comment = "",
+                      tidy = TRUE,
+                      fig.align = "left",
+                      out.width = "100%",
+                      echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE,
+                      error = FALSE)
+```
+
+`r ''````{r, package-bib, include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', "mgcv"
+), 'bib_packages.bib')
+```
+
+
+<!-- CSS Stype for Figure caption -->
+<style>
+p.caption {
+  color: gray;
+  font-size: 0.7em;
+  padding-bottom: 30px;
+}
+</style>
+
+
+# Abstract {-}
+
+Here is some small abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+# Introduction {#intro}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+1. What is the first research question?
+2. How should we answer it?
+3. What is the third research question?
+
+
+# Method {#method}
+
+## Idea {#idea}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit (see [here](https://www.google.ch/)), sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Some inline equation $h = f(x)$ in the middle of text. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+$$
+a^2 + b^2 = c^2
+(\#eq:pythagoras)
+$$
+
+As you can see in Equation \@ref(eq:pythagoras), lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+`r ''````{r, someCalculations, echo = T}
+x <- 5.012345678901234567890
+y <- 1:20
+```
+
+
+In this text we use the variable $x$ and write it `r format(x, digits=4)` inline in text. Now a picture
+
+
+(ref:resPr3) This is the figure caption. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure.
+
+## Calcultion {#calc}
+
+`r ''````{r, figPoints, fig.cap="(ref:resPr3)"}
+plot(1:10)
+```
+
+
+
+Now we continue with some text. As you can see in Figure \@ref(fig:figPoints) there are 10 points. The same was also decribed in Section \@ref(intro) or in Equation \@ref(eq:pythagoras) or in the package `rmarkdown` [see @R-bookdown]. The second way to make References [@@R-mgcv]. For the third way see @R-knitr.
+
+
+# Discussion {#disc}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+`r ''````{r}
+library(magrittr)
+library(kableExtra)
+dt <- mtcars[1:5, 1:6]
+kable(dt,
+      digits = 3,
+      caption = "Estimated motor current and standard deviation for each impeller at the two operating points") %>%
+  kable_styling("striped",
+                full_width = F,
+                position = "left") %>%
+  add_header_above(c(" " = 1, "Group 1" = 2, "Group 2" = 2, "Group 3" = 2))
+```
+
+
+
+
+
+# References {#ref}
+````
+
+</div>
+
+

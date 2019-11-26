@@ -47,9 +47,14 @@ The parameters are defined for the currently active device
 
 
 ### Default
+
+<button onclick="myFunction('default_par')">Show default par() options</button>
+
+<div id="default_par" style="display: none">
 ```{r}
 par()
 ```
+</div>
 
 
 ### Device region
