@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2019-11-26" />
+<meta name="date" content="2019-11-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,7 +50,7 @@
 
 
 
-<!––html code for Show/Hide buttons––>
+<!––JavaScript code for Show/Hide buttons––>
 <!––see: https://web.stanford.edu/~naras/post/toggle-visibility-of-solutions-in-bookdown/––>
 <!––and see: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp––>
 
@@ -67,41 +67,66 @@ function myFunction(myid) {
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -165,7 +190,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4" data-path="env.html"><a href="env.html"><i class="fa fa-check"></i><b>4</b> Environments</a><ul>
 <li class="chapter" data-level="4.1" data-path="env.html"><a href="env.html#general-properties"><i class="fa fa-check"></i><b>4.1</b> General properties</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="env.html"><a href="env.html#definition"><i class="fa fa-check"></i><b>4.1.1</b> Definition</a></li>
-<li class="chapter" data-level="4.1.2" data-path="vec.html"><a href="vec.html#attributes"><i class="fa fa-check"></i><b>4.1.2</b> Attributes</a></li>
+<li class="chapter" data-level="4.1.2" data-path="env.html"><a href="env.html#attributes-1"><i class="fa fa-check"></i><b>4.1.2</b> Attributes</a></li>
 <li class="chapter" data-level="4.1.3" data-path="env.html"><a href="env.html#special-environments"><i class="fa fa-check"></i><b>4.1.3</b> Special environments</a></li>
 <li class="chapter" data-level="4.1.4" data-path="env.html"><a href="env.html#search-path-and-search-list"><i class="fa fa-check"></i><b>4.1.4</b> Search path and search list</a></li>
 <li class="chapter" data-level="4.1.5" data-path="env.html"><a href="env.html#objects-within-the-environment"><i class="fa fa-check"></i><b>4.1.5</b> Objects within the environment</a></li>
@@ -261,6 +286,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="16.1.2" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>16.1.2</b> <code>_output.yml</code></a></li>
 <li class="chapter" data-level="16.1.3" data-path="bookdown.html"><a href="bookdown.html#yaml-header"><i class="fa fa-check"></i><b>16.1.3</b> yaml header</a></li>
 </ul></li>
+<li class="chapter" data-level="16.2" data-path="bookdown.html"><a href="bookdown.html#create-new-project"><i class="fa fa-check"></i><b>16.2</b> Create new project</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>17</b> Reference management</a><ul>
 <li class="chapter" data-level="17.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>17.1</b> Literature</a><ul>
@@ -311,8 +337,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">3.1</span> Types</h2>
 <p>Find function “type” with <code>typeof()</code></p>
 <ul>
-<li>builtin (primitive functions e.g. <code>sum</code>)</li>
-<li>special (primitive functions e.g. <code>[</code>)</li>
+<li>builtin (primitive functions e.g. <code>sum</code>)</li>
+<li>special (primitive functions e.g. <code>[</code>)</li>
 <li>closure (functions built upon primitive functions, they always have their own environment)</li>
 </ul>
 <div id="primitive-functions" class="section level3">
@@ -333,7 +359,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>All in base package</li>
 <li>Check with <code>is.primitive()</code></li>
 </ul>
-<p>Many primitive function can be used without the classical syntax functionname() (see <a href="fun.html#special-calls">3.6</a>). Backticks <code>`</code> let you refere to objects that have otherwise reserved or illegal name.</p>
+<p>Many primitive function can be used without the classical syntax functionname() (see <a href="fun.html#special-calls">3.6</a>). Backticks <code></code> ` let you refere to objects that have otherwise reserved or illegal name.</p>
 </div>
 </div>
 <div id="function-components" class="section level2">
@@ -349,22 +375,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <td><ul>
 <li><code>body()</code></li>
 </ul></td>
-<td><p>Code inside the function.</p></td>
+<td>Code inside the function.</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><ul>
 <li><code>formals()</code></li>
 </ul></td>
-<td><p>List of formal <strong>arguments</strong> which controls how you can call the function.</p></td>
-<td><p>Chapter <a href="fun.html#function-arguments">3.3</a></p></td>
+<td>List of formal <strong>arguments</strong> which controls how you can call the function.</td>
+<td>Chapter <a href="fun.html#function-arguments">3.3</a></td>
 </tr>
 <tr class="odd">
 <td><ul>
 <li><code>environment()</code></li>
 </ul></td>
-<td><p>“Map” of the location of the function’s variables.</p></td>
-<td><p>Chapter <a href="fun.html#function-environment">3.4</a></p></td>
+<td>“Map” of the location of the function’s variables.</td>
+<td>Chapter <a href="fun.html#function-environment">3.4</a></td>
 </tr>
 </tbody>
 </table>
@@ -373,42 +399,42 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>srcref</code> (source reference): Attribute which all functions have. Returns source code (similar to <code>body()</code> but with comments and formatting)</li>
 <li>additional attributes possible</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myfun &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
-    x<span class="op">^</span><span class="dv">2</span>  <span class="co"># with comment</span>
-}
-<span class="kw">attributes</span>(myfun)
-<span class="co">#&gt; $srcref</span>
-<span class="co">#&gt; function(x) {</span>
-<span class="co">#&gt;     x^2  # with comment</span>
-<span class="co">#&gt; }</span>
-<span class="kw">body</span>(myfun)
-<span class="co">#&gt; {</span>
-<span class="co">#&gt;     x^2</span>
-<span class="co">#&gt; }</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">myfun &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb15-2" title="2">    x<span class="op">^</span><span class="dv">2</span>  <span class="co"># with comment</span></a>
+<a class="sourceLine" id="cb15-3" title="3">}</a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="kw">attributes</span>(myfun)</a>
+<a class="sourceLine" id="cb15-5" title="5"><span class="co">#&gt; $srcref</span></a>
+<a class="sourceLine" id="cb15-6" title="6"><span class="co">#&gt; function(x) {</span></a>
+<a class="sourceLine" id="cb15-7" title="7"><span class="co">#&gt;     x^2  # with comment</span></a>
+<a class="sourceLine" id="cb15-8" title="8"><span class="co">#&gt; }</span></a>
+<a class="sourceLine" id="cb15-9" title="9"><span class="kw">body</span>(myfun)</a>
+<a class="sourceLine" id="cb15-10" title="10"><span class="co">#&gt; {</span></a>
+<a class="sourceLine" id="cb15-11" title="11"><span class="co">#&gt;     x^2</span></a>
+<a class="sourceLine" id="cb15-12" title="12"><span class="co">#&gt; }</span></a></code></pre></div>
 </div>
 <div id="function-arguments" class="section level2">
 <h2><span class="header-section-number">3.3</span> Arguments</h2>
 <ul>
-<li>Formal arguments (stated in function definition)</li>
+<li><p>Formal arguments (stated in function definition)</p></li>
 <li><p>Actual arguments (explicetly passed to the function when you call it)</p></li>
-<li>Get formal argument: <code>formals()</code></li>
-<li>Set formal arguments: <code>`formals&lt;-`</code> (replacement function: change default formals, add formals, remove formals)</li>
+<li><p>Get formal argument: <code>formals()</code></p></li>
+<li><p>Set formal arguments: <code>`formals&lt;-`</code> (replacement function: change default formals, add formals, remove formals)</p></li>
 <li><p><code>formals()</code> without arguments will list the arguments of the function which calls it</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myfunction &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="dv">2</span>) x <span class="op">+</span><span class="st"> </span>y
-<span class="kw">formals</span>(myfunction)
-<span class="co">#&gt; $x</span>
-<span class="co">#&gt; [1] 1</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $y</span>
-<span class="co">#&gt; [1] 2</span>
-<span class="kw">myfunction</span>()
-<span class="co">#&gt; [1] 3</span>
-<span class="kw">formals</span>(myfunction) &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">3</span>, <span class="dt">y =</span> <span class="dv">4</span>)
-<span class="kw">myfunction</span>()
-<span class="co">#&gt; [1] 7</span>
-(<span class="cf">function</span>(x) <span class="kw">formals</span>())()
-<span class="co">#&gt; $x</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">myfunction &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="dv">2</span>) x <span class="op">+</span><span class="st"> </span>y</a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="kw">formals</span>(myfunction)</a>
+<a class="sourceLine" id="cb16-3" title="3"><span class="co">#&gt; $x</span></a>
+<a class="sourceLine" id="cb16-4" title="4"><span class="co">#&gt; [1] 1</span></a>
+<a class="sourceLine" id="cb16-5" title="5"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb16-6" title="6"><span class="co">#&gt; $y</span></a>
+<a class="sourceLine" id="cb16-7" title="7"><span class="co">#&gt; [1] 2</span></a>
+<a class="sourceLine" id="cb16-8" title="8"><span class="kw">myfunction</span>()</a>
+<a class="sourceLine" id="cb16-9" title="9"><span class="co">#&gt; [1] 3</span></a>
+<a class="sourceLine" id="cb16-10" title="10"><span class="kw">formals</span>(myfunction) &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">3</span>, <span class="dt">y =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb16-11" title="11"><span class="kw">myfunction</span>()</a>
+<a class="sourceLine" id="cb16-12" title="12"><span class="co">#&gt; [1] 7</span></a>
+<a class="sourceLine" id="cb16-13" title="13">(<span class="cf">function</span>(x) <span class="kw">formals</span>())()</a>
+<a class="sourceLine" id="cb16-14" title="14"><span class="co">#&gt; $x</span></a></code></pre></div>
 <p>Arguments are matched by the following hirarchy</p>
 <ul>
 <li>Complete name</li>
@@ -431,30 +457,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>x</code> is lazily evaluated the first time that you call one of the adder functions. At this point, the loop is complete and the final value of <code>x</code> is 10. Therefore <code>x</code> is evaluated in all environments to have a value of 10.</li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># wrong</span>
-add &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="cf">function</span>(y) x <span class="op">+</span><span class="st"> </span>y
-adders_bad &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">10</span>)
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(adders_bad)) adders_bad[[i]] &lt;-<span class="st"> </span><span class="kw">add</span>(i)
-adders_bad[[<span class="dv">1</span>]](<span class="dv">10</span>)  <span class="co"># should be 11</span>
-<span class="co">#&gt; [1] 20</span>
-adders_bad[[<span class="dv">10</span>]](<span class="dv">10</span>)  ## should be 20
-<span class="co">#&gt; [1] 20</span>
-<span class="kw">get</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">envir =</span> <span class="kw">environment</span>(adders_bad[[<span class="dv">1</span>]]))  <span class="co"># should be 1</span>
-<span class="co">#&gt; [1] 10</span>
-
-<span class="co"># good</span>
-add &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
-    <span class="kw">force</span>(x)
-    <span class="cf">function</span>(y) x <span class="op">+</span><span class="st"> </span>y
-}
-adders_good &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">10</span>)
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(adders_good)) adders_good[[i]] &lt;-<span class="st"> </span><span class="kw">add</span>(i)
-adders_good[[<span class="dv">1</span>]](<span class="dv">10</span>)  <span class="co"># should be 11</span>
-<span class="co">#&gt; [1] 11</span>
-adders_good[[<span class="dv">10</span>]](<span class="dv">10</span>)  ## should be 20
-<span class="co">#&gt; [1] 20</span>
-<span class="kw">get</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">envir =</span> <span class="kw">environment</span>(adders_good[[<span class="dv">1</span>]]))  <span class="co"># should be 1</span>
-<span class="co">#&gt; [1] 1</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="co"># wrong</span></a>
+<a class="sourceLine" id="cb17-2" title="2">add &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="cf">function</span>(y) x <span class="op">+</span><span class="st"> </span>y</a>
+<a class="sourceLine" id="cb17-3" title="3">adders_bad &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb17-4" title="4"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(adders_bad)) adders_bad[[i]] &lt;-<span class="st"> </span><span class="kw">add</span>(i)</a>
+<a class="sourceLine" id="cb17-5" title="5">adders_bad[[<span class="dv">1</span>]](<span class="dv">10</span>)  <span class="co"># should be 11</span></a>
+<a class="sourceLine" id="cb17-6" title="6"><span class="co">#&gt; [1] 20</span></a>
+<a class="sourceLine" id="cb17-7" title="7">adders_bad[[<span class="dv">10</span>]](<span class="dv">10</span>)  <span class="co">## should be 20</span></a>
+<a class="sourceLine" id="cb17-8" title="8"><span class="co">#&gt; [1] 20</span></a>
+<a class="sourceLine" id="cb17-9" title="9"><span class="kw">get</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">envir =</span> <span class="kw">environment</span>(adders_bad[[<span class="dv">1</span>]]))  <span class="co"># should be 1</span></a>
+<a class="sourceLine" id="cb17-10" title="10"><span class="co">#&gt; [1] 10</span></a>
+<a class="sourceLine" id="cb17-11" title="11"></a>
+<a class="sourceLine" id="cb17-12" title="12"><span class="co"># good</span></a>
+<a class="sourceLine" id="cb17-13" title="13">add &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb17-14" title="14">    <span class="kw">force</span>(x)</a>
+<a class="sourceLine" id="cb17-15" title="15">    <span class="cf">function</span>(y) x <span class="op">+</span><span class="st"> </span>y</a>
+<a class="sourceLine" id="cb17-16" title="16">}</a>
+<a class="sourceLine" id="cb17-17" title="17">adders_good &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb17-18" title="18"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(adders_good)) adders_good[[i]] &lt;-<span class="st"> </span><span class="kw">add</span>(i)</a>
+<a class="sourceLine" id="cb17-19" title="19">adders_good[[<span class="dv">1</span>]](<span class="dv">10</span>)  <span class="co"># should be 11</span></a>
+<a class="sourceLine" id="cb17-20" title="20"><span class="co">#&gt; [1] 11</span></a>
+<a class="sourceLine" id="cb17-21" title="21">adders_good[[<span class="dv">10</span>]](<span class="dv">10</span>)  <span class="co">## should be 20</span></a>
+<a class="sourceLine" id="cb17-22" title="22"><span class="co">#&gt; [1] 20</span></a>
+<a class="sourceLine" id="cb17-23" title="23"><span class="kw">get</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">envir =</span> <span class="kw">environment</span>(adders_good[[<span class="dv">1</span>]]))  <span class="co"># should be 1</span></a>
+<a class="sourceLine" id="cb17-24" title="24"><span class="co">#&gt; [1] 1</span></a></code></pre></div>
 <ul>
 <li>An unevaluated argument is called a <strong>promise</strong>. A promise is made up of two parts:
 <ul>
@@ -481,15 +507,15 @@ adders_good[[<span class="dv">10</span>]](<span class="dv">10</span>)  ## should
 <li>If a name is not defined inside a function, R will look one level up</li>
 <li>Example: x is searched in the environment of each function in the following order h <span class="math inline">\(\rightarrow\)</span> g <span class="math inline">\(\rightarrow\)</span> f <span class="math inline">\(\rightarrow\)</span> global environment</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">2</span>
-f &lt;-<span class="st"> </span><span class="cf">function</span>() {
-    g &lt;-<span class="st"> </span><span class="cf">function</span>() {
-        h &lt;-<span class="st"> </span><span class="cf">function</span>() x
-        <span class="kw">h</span>()
-    }
-    <span class="kw">g</span>()
-}
-<span class="kw">f</span>()</code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1">x &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb18-2" title="2">f &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
+<a class="sourceLine" id="cb18-3" title="3">    g &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
+<a class="sourceLine" id="cb18-4" title="4">        h &lt;-<span class="st"> </span><span class="cf">function</span>() x</a>
+<a class="sourceLine" id="cb18-5" title="5">        <span class="kw">h</span>()</a>
+<a class="sourceLine" id="cb18-6" title="6">    }</a>
+<a class="sourceLine" id="cb18-7" title="7">    <span class="kw">g</span>()</a>
+<a class="sourceLine" id="cb18-8" title="8">}</a>
+<a class="sourceLine" id="cb18-9" title="9"><span class="kw">f</span>()</a></code></pre></div>
 <pre><code>#&gt; [1] 2</code></pre>
 <ul>
 <li>Assigning a function also assignes a certain environment (environment property)</li>
@@ -499,14 +525,14 @@ f &lt;-<span class="st"> </span><span class="cf">function</span>() {
 <li>Assigning <code>j(1)</code> to <code>k</code> makes <code>k</code> an function with the environment property pointing to the environment created by running <code>j()</code> (the function where the output function was defined). This environment <strong>contains x and y</strong></li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">j &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
-    y &lt;-<span class="st"> </span><span class="dv">2</span>
-    <span class="cf">function</span>() {
-        <span class="kw">c</span>(x, y)
-    }
-}
-k &lt;-<span class="st"> </span><span class="kw">j</span>(<span class="dv">1</span>)
-<span class="kw">k</span>()</code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">j &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb20-2" title="2">    y &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb20-3" title="3">    <span class="cf">function</span>() {</a>
+<a class="sourceLine" id="cb20-4" title="4">        <span class="kw">c</span>(x, y)</a>
+<a class="sourceLine" id="cb20-5" title="5">    }</a>
+<a class="sourceLine" id="cb20-6" title="6">}</a>
+<a class="sourceLine" id="cb20-7" title="7">k &lt;-<span class="st"> </span><span class="kw">j</span>(<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb20-8" title="8"><span class="kw">k</span>()</a></code></pre></div>
 <pre><code>#&gt; [1] 1 2</code></pre>
 <ul>
 <li>Object saved in a higher environment are not found below</li>
@@ -517,15 +543,15 @@ k &lt;-<span class="st"> </span><span class="kw">j</span>(<span class="dv">1</sp
 <li>Functon will always return 1 exept if we save <code>a</code></li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">j &lt;-<span class="st"> </span><span class="cf">function</span>() {
-    <span class="cf">if</span> (<span class="op">!</span><span class="kw">exists</span>(<span class="st">&quot;a&quot;</span>)) {
-        a &lt;-<span class="st"> </span><span class="dv">1</span>
-    } <span class="cf">else</span> {
-        a &lt;-<span class="st"> </span>a <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
-    }
-    a
-}
-<span class="kw">j</span>()</code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1">j &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
+<a class="sourceLine" id="cb22-2" title="2">    <span class="cf">if</span> (<span class="op">!</span><span class="kw">exists</span>(<span class="st">&quot;a&quot;</span>)) {</a>
+<a class="sourceLine" id="cb22-3" title="3">        a &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb22-4" title="4">    } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb22-5" title="5">        a &lt;-<span class="st"> </span>a <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb22-6" title="6">    }</a>
+<a class="sourceLine" id="cb22-7" title="7">    a</a>
+<a class="sourceLine" id="cb22-8" title="8">}</a>
+<a class="sourceLine" id="cb22-9" title="9"><span class="kw">j</span>()</a></code></pre></div>
 <pre><code>#&gt; [1] 1</code></pre>
 </div>
 </div>
@@ -550,19 +576,19 @@ k &lt;-<span class="st"> </span><span class="kw">j</span>(<span class="dv">1</sp
 <li><code>on.exit()</code> evaluates expression when function call is finished</li>
 <li>Example</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">in_dir &lt;-<span class="st"> </span><span class="cf">function</span>(dir, code) {
-    old &lt;-<span class="st"> </span><span class="kw">setwd</span>(dir)
-    <span class="kw">on.exit</span>(<span class="kw">setwd</span>(old))
-    
-    ## what function does...
-}</code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1">in_dir &lt;-<span class="st"> </span><span class="cf">function</span>(dir, code) {</a>
+<a class="sourceLine" id="cb24-2" title="2">    old &lt;-<span class="st"> </span><span class="kw">setwd</span>(dir)</a>
+<a class="sourceLine" id="cb24-3" title="3">    <span class="kw">on.exit</span>(<span class="kw">setwd</span>(old))</a>
+<a class="sourceLine" id="cb24-4" title="4">    </a>
+<a class="sourceLine" id="cb24-5" title="5">    <span class="co">## what function does...</span></a>
+<a class="sourceLine" id="cb24-6" title="6">}</a></code></pre></div>
 </div>
 <div id="special-calls" class="section level2">
 <h2><span class="header-section-number">3.6</span> Special calls</h2>
 <table>
 <colgroup>
 <col width="18%" />
-<col width="34%" />
+<col width="35%" />
 <col width="37%" />
 <col width="9%" />
 </colgroup>
@@ -602,15 +628,15 @@ k &lt;-<span class="st"> </span><span class="kw">j</span>(<span class="dv">1</sp
 </tbody>
 </table>
 <p>All special functions can also be called like a “normal” function</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>][<span class="dv">2</span>]</code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>][<span class="dv">2</span>]</a></code></pre></div>
 <pre><code>#&gt; [1] &quot;b&quot;</code></pre>
 <p>Replacement function make some changes to the data and assign the new output to the first argument</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>
-<span class="kw">names</span>(x) &lt;-<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]  <span class="co"># user friendly</span>
-x &lt;-<span class="st"> `</span><span class="dt">names&lt;-</span><span class="st">`</span>(x, letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>])  ## behind scenes this is executed</code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="kw">names</span>(x) &lt;-<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]  <span class="co"># user friendly</span></a>
+<a class="sourceLine" id="cb27-3" title="3">x &lt;-<span class="st"> `</span><span class="dt">names&lt;-</span><span class="st">`</span>(x, letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>])  <span class="co">## behind scenes this is executed</span></a></code></pre></div>
 <p>You can create your own infix and replacement functions. This is a useful example of providing a default value in case the output of another function is <code>NULL</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="st">`</span><span class="dt">%||%</span><span class="st">`</span> &lt;-<span class="st"> </span><span class="cf">function</span>(a, b) <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.null</span>(a)) a <span class="cf">else</span> b
-<span class="kw">function_that_might_return_null</span>() <span class="op">%||%</span><span class="st"> </span>default value</code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="st">`</span><span class="dt">%||%</span><span class="st">`</span> &lt;-<span class="st"> </span><span class="cf">function</span>(a, b) <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.null</span>(a)) a <span class="cf">else</span> b</a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="kw">function_that_might_return_null</span>() <span class="op">%||%</span><span class="st"> </span>default value</a></code></pre></div>
 </div>
 <div id="generic-functions" class="section level2">
 <h2><span class="header-section-number">3.7</span> Generic functions</h2>
@@ -622,12 +648,12 @@ x &lt;-<span class="st"> `</span><span class="dt">names&lt;-</span><span class="
 <li>get their source code with <code>getAnywhere()</code></li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">print</code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">print</a></code></pre></div>
 <pre><code>#&gt; function (x, ...) 
 #&gt; UseMethod(&quot;print&quot;)
-#&gt; &lt;bytecode: 0x0000000015747aa8&gt;
+#&gt; &lt;bytecode: 0x000000001174e8a8&gt;
 #&gt; &lt;environment: namespace:base&gt;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">methods</span>(print))</code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">head</span>(<span class="kw">methods</span>(print))</a></code></pre></div>
 <pre><code>#&gt; [1] &quot;print.acf&quot;     &quot;print.AES&quot;     &quot;print.anova&quot;   &quot;print.aov&quot;    
 #&gt; [5] &quot;print.aovlist&quot; &quot;print.ar&quot;</code></pre>
 
@@ -678,7 +704,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["R_Ref_Book.pdf"],
+"download": null,
 "toc": {
 "collapse": "section"
 }
@@ -691,7 +717,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

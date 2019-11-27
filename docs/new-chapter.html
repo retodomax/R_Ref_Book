@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2019-11-26" />
+<meta name="date" content="2019-11-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,7 +50,7 @@
 
 
 
-<!––html code for Show/Hide buttons––>
+<!––JavaScript code for Show/Hide buttons––>
 <!––see: https://web.stanford.edu/~naras/post/toggle-visibility-of-solutions-in-bookdown/––>
 <!––and see: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp––>
 
@@ -67,41 +67,66 @@ function myFunction(myid) {
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -165,7 +190,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4" data-path="env.html"><a href="env.html"><i class="fa fa-check"></i><b>4</b> Environments</a><ul>
 <li class="chapter" data-level="4.1" data-path="env.html"><a href="env.html#general-properties"><i class="fa fa-check"></i><b>4.1</b> General properties</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="env.html"><a href="env.html#definition"><i class="fa fa-check"></i><b>4.1.1</b> Definition</a></li>
-<li class="chapter" data-level="4.1.2" data-path="vec.html"><a href="vec.html#attributes"><i class="fa fa-check"></i><b>4.1.2</b> Attributes</a></li>
+<li class="chapter" data-level="4.1.2" data-path="env.html"><a href="env.html#attributes-1"><i class="fa fa-check"></i><b>4.1.2</b> Attributes</a></li>
 <li class="chapter" data-level="4.1.3" data-path="env.html"><a href="env.html#special-environments"><i class="fa fa-check"></i><b>4.1.3</b> Special environments</a></li>
 <li class="chapter" data-level="4.1.4" data-path="env.html"><a href="env.html#search-path-and-search-list"><i class="fa fa-check"></i><b>4.1.4</b> Search path and search list</a></li>
 <li class="chapter" data-level="4.1.5" data-path="env.html"><a href="env.html#objects-within-the-environment"><i class="fa fa-check"></i><b>4.1.5</b> Objects within the environment</a></li>
@@ -261,6 +286,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="16.1.2" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>16.1.2</b> <code>_output.yml</code></a></li>
 <li class="chapter" data-level="16.1.3" data-path="bookdown.html"><a href="bookdown.html#yaml-header"><i class="fa fa-check"></i><b>16.1.3</b> yaml header</a></li>
 </ul></li>
+<li class="chapter" data-level="16.2" data-path="bookdown.html"><a href="bookdown.html#create-new-project"><i class="fa fa-check"></i><b>16.2</b> Create new project</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>17</b> Reference management</a><ul>
 <li class="chapter" data-level="17.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>17.1</b> Literature</a><ul>
@@ -328,29 +354,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="common-tasks" class="section level3">
 <h3><span class="header-section-number">19.1.1</span> Common tasks</h3>
 <p><strong>create a new repository on the command line</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md
-<span class="fu">git</span> init
-<span class="fu">git</span> add README.md
-<span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span>
-<span class="fu">git</span> remote add origin git@github.com:retodomax/test.git
-<span class="fu">git</span> push -u origin master</code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb96-1" title="1"><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</a>
+<a class="sourceLine" id="cb96-2" title="2"><span class="fu">git</span> init</a>
+<a class="sourceLine" id="cb96-3" title="3"><span class="fu">git</span> add README.md</a>
+<a class="sourceLine" id="cb96-4" title="4"><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></a>
+<a class="sourceLine" id="cb96-5" title="5"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb96-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 <p><strong>push an existing repository from the command line</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git
-<span class="fu">git</span> push -u origin master</code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb97-1" title="1"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb97-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 <p><strong>clone existing repository and push changes</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone git@github.com:retodomax/test.git
-<span class="bu">cd</span> test
-<span class="fu">touch</span> README.md
-<span class="fu">git</span> add README.md
-<span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span>
-<span class="fu">git</span> push -u origin master</code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb98-1" title="1"><span class="fu">git</span> clone git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb98-2" title="2"><span class="bu">cd</span> test</a>
+<a class="sourceLine" id="cb98-3" title="3"><span class="fu">touch</span> README.md</a>
+<a class="sourceLine" id="cb98-4" title="4"><span class="fu">git</span> add README.md</a>
+<a class="sourceLine" id="cb98-5" title="5"><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></a>
+<a class="sourceLine" id="cb98-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 <p><strong>push existing folder to origin</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> existing_folder
-<span class="fu">git</span> init
-<span class="fu">git</span> remote add origin git@github.com:retodomax/test.git
-<span class="fu">git</span> add .
-<span class="fu">git</span> commit
-<span class="fu">git</span> push -u origin master</code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb99-1" title="1"><span class="bu">cd</span> existing_folder</a>
+<a class="sourceLine" id="cb99-2" title="2"><span class="fu">git</span> init</a>
+<a class="sourceLine" id="cb99-3" title="3"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb99-4" title="4"><span class="fu">git</span> add .</a>
+<a class="sourceLine" id="cb99-5" title="5"><span class="fu">git</span> commit</a>
+<a class="sourceLine" id="cb99-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 
 </div>
 </div>
@@ -400,7 +426,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["R_Ref_Book.pdf"],
+"download": null,
 "toc": {
 "collapse": "section"
 }
@@ -413,7 +439,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

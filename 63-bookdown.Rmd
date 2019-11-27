@@ -78,3 +78,15 @@ description: "Everything you need (and nothing more) to start a bookdown book."
 ---
 ```
 
+
+## Create new project
+
+1. Open template of RStudio
+2. Connect with GitHub repository and push
+3. github.com/retodomax/projectname
+  a. go to Settings
+  b. at GitHub Pages set source to docs folder
+  c. Don't worry if page does not immideatly appear on link (takes long time to be built)
+4. Make a figures folder containing a png and an ico file (transfere png to ico at some png-to-ico transformation website)
+5. Set `_bookdown.yml`, `_output.yml` and yaml header with the options you whish.
+6. Create content, build and push
