@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 20 New Chapter | R Reference book</title>
+  <title>Chapter 10 R from the Shell | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 20 New Chapter | R Reference book" />
+  <meta property="og:title" content="Chapter 10 R from the Shell | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 20 New Chapter | R Reference book" />
+  <meta name="twitter:title" content="Chapter 10 R from the Shell | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
-<link rel="prev" href="git-version-control.html"/>
-<link rel="next" href="stuff-still-to-include.html"/>
+<link rel="prev" href="functional-programming.html"/>
+<link rel="next" href="Plots.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -336,63 +336,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="new-chapter" class="section level1">
-<h1><span class="header-section-number">Chapter 20</span> New Chapter</h1>
-<div id="git-basics-1" class="section level2">
-<h2><span class="header-section-number">20.1</span> Git basics</h2>
-<p><strong>basic bash commands</strong></p>
+<div id="r-from-the-shell" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> R from the Shell</h1>
+<p>Execute single commands</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb69-1" title="1"><span class="ex">Rscript</span> -e <span class="st">&quot;x &lt;- rnorm(10); mean(x)&quot;</span></a></code></pre></div>
+<p>Run R script</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb70-1" title="1"><span class="ex">Rscript</span> reto_script.R</a></code></pre></div>
+<p>Run R script and save image (workspace)</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb71-1" title="1"><span class="ex">Rscript</span> --save reto_script.R</a></code></pre></div>
+<p>Start running one script and continue working in the shell on another core</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb72-1" title="1"><span class="ex">Rscript</span> reto_script.R <span class="kw">&amp;</span></a></code></pre></div>
+<p>Write a shell script which does some tasks and runs R scripts. The following shell script:</p>
 <ul>
-<li><code>cd</code> change directory</li>
-<li><code>ls</code> list all files within directory</li>
-<li><code>head</code> show head of file</li>
-<li><code>rm</code> remove file</li>
+<li>starts a for loop (from 1 to 4)</li>
+<li>prints the loop number (called <code>seed</code>)</li>
+<li>Runs <code>reto_script.R</code> with different seeds</li>
+<li>saves the output to the file <code>reto_script_loopnr.RData</code></li>
+<li>the <code>&amp;</code> runs differnt loop cicles on different cores in parallel.</li>
 </ul>
-<p><strong>basic git commands</strong></p>
-<ul>
-<li><code>git config</code> change global/local variables (name, email, …)</li>
-<li><code>git init</code> initialize git respository</li>
-<li><code>git add</code> add file to staged area, “stage file”</li>
-<li><code>git commit</code> commit staged files</li>
-<li><code>git push</code> push your branch to origin</li>
-<li><code>git pull</code> pull newest branch to your local</li>
-</ul>
-<div id="common-tasks" class="section level3">
-<h3><span class="header-section-number">20.1.1</span> Common tasks</h3>
-<p><strong>create a new repository on the command line</strong></p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb129-1" title="1"><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</a>
-<a class="sourceLine" id="cb129-2" title="2"><span class="fu">git</span> init</a>
-<a class="sourceLine" id="cb129-3" title="3"><span class="fu">git</span> add README.md</a>
-<a class="sourceLine" id="cb129-4" title="4"><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></a>
-<a class="sourceLine" id="cb129-5" title="5"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb129-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
-<p><strong>push an existing repository from the command line</strong></p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb130-1" title="1"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb130-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
-<p><strong>clone existing repository and push changes</strong></p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb131-1" title="1"><span class="fu">git</span> clone git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb131-2" title="2"><span class="bu">cd</span> test</a>
-<a class="sourceLine" id="cb131-3" title="3"><span class="fu">touch</span> README.md</a>
-<a class="sourceLine" id="cb131-4" title="4"><span class="fu">git</span> add README.md</a>
-<a class="sourceLine" id="cb131-5" title="5"><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></a>
-<a class="sourceLine" id="cb131-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
-<p><strong>push existing folder to origin</strong></p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb132-1" title="1"><span class="bu">cd</span> existing_folder</a>
-<a class="sourceLine" id="cb132-2" title="2"><span class="fu">git</span> init</a>
-<a class="sourceLine" id="cb132-3" title="3"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb132-4" title="4"><span class="fu">git</span> add .</a>
-<a class="sourceLine" id="cb132-5" title="5"><span class="fu">git</span> commit</a>
-<a class="sourceLine" id="cb132-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb73-1" title="1"><span class="co">#!/bin/sh</span></a>
+<a class="sourceLine" id="cb73-2" title="2"><span class="kw">for</span> <span class="ex">seed</span> in 1 4 </a>
+<a class="sourceLine" id="cb73-3" title="3"><span class="kw">do</span> </a>
+<a class="sourceLine" id="cb73-4" title="4">   <span class="bu">echo</span> <span class="va">$seed</span>   </a>
+<a class="sourceLine" id="cb73-5" title="5">   <span class="ex">Rscript</span> -e <span class="st">&quot;set.seed(</span><span class="va">$seed</span><span class="st">); source(&#39;reto_script.R&#39;);save(a, file=&#39;reto_script_</span><span class="va">$seed</span><span class="st">.RData&#39;)&quot;</span> <span class="kw">&amp;</span></a>
+<a class="sourceLine" id="cb73-6" title="6"><span class="kw">done</span></a></code></pre></div>
 
 </div>
-</div>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="git-version-control.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="stuff-still-to-include.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="functional-programming.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Plots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -424,7 +403,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/R_Ref_Book/edit/master/64-git.Rmd",
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/34-shell.Rmd",
 "text": "Edit"
 },
 "history": {

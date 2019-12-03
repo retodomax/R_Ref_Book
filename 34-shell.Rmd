@@ -32,14 +32,14 @@ Write a shell script which does some tasks and runs R scripts. The following she
 - starts a for loop (from 1 to 4)
 - prints the loop number (called `seed`)
 - Runs `reto_script.R` with different seeds
-- saves the output to the file `reto_script_loopnr.Rout`
-- the `&` in front of the assign `>` runs differnt loop cicles on different cores in parallel. 
+- saves the output to the file `reto_script_loopnr.RData`
+- the `&` runs differnt loop cicles on different cores in parallel. 
 
 ```bash
 #!/bin/sh
 for seed in 1 4 
 do 
    echo $seed   
-   Rscript -e "set.seed($seed); source('reto_script.R');save(a, file='reto_script_$seed.RData')" & > reto_script_$seed.Rout 
+   Rscript -e "set.seed($seed); source('reto_script.R');save(a, file='reto_script_$seed.RData')" &
 done
 ```

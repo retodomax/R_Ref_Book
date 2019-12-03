@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Plots | R Reference book</title>
+  <title>Chapter 11 Plots | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Plots | R Reference book" />
+  <meta property="og:title" content="Chapter 11 Plots | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Plots | R Reference book" />
+  <meta name="twitter:title" content="Chapter 11 Plots | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -24,14 +24,14 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2019-12-02" />
+<meta name="date" content="2019-12-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
-<link rel="prev" href="functional-programming.html"/>
+<link rel="prev" href="r-from-the-shell.html"/>
 <link rel="next" href="interactive-plots.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -225,93 +225,96 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2" data-path="performance.html"><a href="performance.html#profiling"><i class="fa fa-check"></i><b>8.2</b> Profiling</a></li>
 <li class="chapter" data-level="8.3" data-path="performance.html"><a href="performance.html#microbenchmark"><i class="fa fa-check"></i><b>8.3</b> Microbenchmark</a></li>
 <li class="chapter" data-level="8.4" data-path="performance.html"><a href="performance.html#use-package-compiler"><i class="fa fa-check"></i><b>8.4</b> Use package compiler</a></li>
+<li class="chapter" data-level="8.5" data-path="performance.html"><a href="performance.html#parallelise"><i class="fa fa-check"></i><b>8.5</b> Parallelise</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>9</b> Functional programming</a><ul>
 <li class="chapter" data-level="9.1" data-path="functional-programming.html"><a href="functional-programming.html#FunProgClosures"><i class="fa fa-check"></i><b>9.1</b> Closures</a></li>
 <li class="chapter" data-level="9.2" data-path="functional-programming.html"><a href="functional-programming.html#lists-of-functions"><i class="fa fa-check"></i><b>9.2</b> Lists of functions</a></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="r-from-the-shell.html"><a href="r-from-the-shell.html"><i class="fa fa-check"></i><b>10</b> R from the Shell</a></li>
 <li class="part"><span><b>IV R Plots</b></span></li>
-<li class="chapter" data-level="10" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>10</b> Plots</a><ul>
-<li class="chapter" data-level="10.1" data-path="Plots.html"><a href="Plots.html#graphical-parameters-par"><i class="fa fa-check"></i><b>10.1</b> Graphical parameters <code>par()</code></a><ul>
-<li class="chapter" data-level="10.1.1" data-path="Plots.html"><a href="Plots.html#set-graphical-parameters"><i class="fa fa-check"></i><b>10.1.1</b> Set graphical parameters</a></li>
-<li class="chapter" data-level="10.1.2" data-path="Plots.html"><a href="Plots.html#default"><i class="fa fa-check"></i><b>10.1.2</b> Default</a></li>
-<li class="chapter" data-level="10.1.3" data-path="Plots.html"><a href="Plots.html#device-region"><i class="fa fa-check"></i><b>10.1.3</b> Device region</a></li>
+<li class="chapter" data-level="11" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>11</b> Plots</a><ul>
+<li class="chapter" data-level="11.1" data-path="Plots.html"><a href="Plots.html#graphical-parameters-par"><i class="fa fa-check"></i><b>11.1</b> Graphical parameters <code>par()</code></a><ul>
+<li class="chapter" data-level="11.1.1" data-path="Plots.html"><a href="Plots.html#set-graphical-parameters"><i class="fa fa-check"></i><b>11.1.1</b> Set graphical parameters</a></li>
+<li class="chapter" data-level="11.1.2" data-path="Plots.html"><a href="Plots.html#default"><i class="fa fa-check"></i><b>11.1.2</b> Default</a></li>
+<li class="chapter" data-level="11.1.3" data-path="Plots.html"><a href="Plots.html#device-region"><i class="fa fa-check"></i><b>11.1.3</b> Device region</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>11</b> Interactive Plots</a></li>
+<li class="chapter" data-level="12" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>12</b> Interactive Plots</a></li>
 <li class="part"><span><b>V R Statistics</b></span></li>
-<li class="chapter" data-level="12" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>12</b> Multivariate Statistics</a><ul>
-<li class="chapter" data-level="12.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>12.1</b> Data sets</a></li>
-<li class="chapter" data-level="12.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>12.2</b> Some functions</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization"><i class="fa fa-check"></i><b>12.2.1</b> Visualization</a></li>
+<li class="chapter" data-level="13" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>13</b> Multivariate Statistics</a><ul>
+<li class="chapter" data-level="13.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>13.1</b> Data sets</a></li>
+<li class="chapter" data-level="13.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>13.2</b> Some functions</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization"><i class="fa fa-check"></i><b>13.2.1</b> Visualization</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>13</b> Time series</a><ul>
-<li class="chapter" data-level="13.1" data-path="TimeSeries.html"><a href="TimeSeries.html#data-sets-1"><i class="fa fa-check"></i><b>13.1</b> Data sets</a></li>
-<li class="chapter" data-level="13.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-and-time"><i class="fa fa-check"></i><b>13.2</b> Date and Time</a><ul>
-<li class="chapter" data-level="13.2.1" data-path="TimeSeries.html"><a href="TimeSeries.html#date"><i class="fa fa-check"></i><b>13.2.1</b> Date</a></li>
-<li class="chapter" data-level="13.2.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-time"><i class="fa fa-check"></i><b>13.2.2</b> Date-Time</a></li>
+<li class="chapter" data-level="14" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>14</b> Time series</a><ul>
+<li class="chapter" data-level="14.1" data-path="TimeSeries.html"><a href="TimeSeries.html#data-sets-1"><i class="fa fa-check"></i><b>14.1</b> Data sets</a></li>
+<li class="chapter" data-level="14.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-and-time"><i class="fa fa-check"></i><b>14.2</b> Date and Time</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="TimeSeries.html"><a href="TimeSeries.html#date"><i class="fa fa-check"></i><b>14.2.1</b> Date</a></li>
+<li class="chapter" data-level="14.2.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-time"><i class="fa fa-check"></i><b>14.2.2</b> Date-Time</a></li>
 </ul></li>
-<li class="chapter" data-level="13.3" data-path="TimeSeries.html"><a href="TimeSeries.html#time-series-classes"><i class="fa fa-check"></i><b>13.3</b> Time series classes</a><ul>
-<li class="chapter" data-level="13.3.1" data-path="TimeSeries.html"><a href="TimeSeries.html#ts"><i class="fa fa-check"></i><b>13.3.1</b> ts</a></li>
-<li class="chapter" data-level="13.3.2" data-path="TimeSeries.html"><a href="TimeSeries.html#zoo"><i class="fa fa-check"></i><b>13.3.2</b> zoo</a></li>
-<li class="chapter" data-level="13.3.3" data-path="TimeSeries.html"><a href="TimeSeries.html#futher-classes"><i class="fa fa-check"></i><b>13.3.3</b> futher classes</a></li>
+<li class="chapter" data-level="14.3" data-path="TimeSeries.html"><a href="TimeSeries.html#time-series-classes"><i class="fa fa-check"></i><b>14.3</b> Time series classes</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="TimeSeries.html"><a href="TimeSeries.html#ts"><i class="fa fa-check"></i><b>14.3.1</b> ts</a></li>
+<li class="chapter" data-level="14.3.2" data-path="TimeSeries.html"><a href="TimeSeries.html#zoo"><i class="fa fa-check"></i><b>14.3.2</b> zoo</a></li>
+<li class="chapter" data-level="14.3.3" data-path="TimeSeries.html"><a href="TimeSeries.html#futher-classes"><i class="fa fa-check"></i><b>14.3.3</b> futher classes</a></li>
 </ul></li>
-<li class="chapter" data-level="13.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>13.4</b> Differencing</a></li>
+<li class="chapter" data-level="14.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>14.4</b> Differencing</a></li>
 </ul></li>
 <li class="part"><span><b>VI R Workflow</b></span></li>
-<li class="chapter" data-level="14" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>14</b> Reproducible Research</a><ul>
-<li class="chapter" data-level="14.1" data-path="reproducible-research.html"><a href="reproducible-research.html#tasks"><i class="fa fa-check"></i><b>14.1</b> Tasks</a></li>
-<li class="chapter" data-level="14.2" data-path="reproducible-research.html"><a href="reproducible-research.html#chronology"><i class="fa fa-check"></i><b>14.2</b> Chronology</a></li>
+<li class="chapter" data-level="15" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>15</b> Reproducible Research</a><ul>
+<li class="chapter" data-level="15.1" data-path="reproducible-research.html"><a href="reproducible-research.html#tasks"><i class="fa fa-check"></i><b>15.1</b> Tasks</a></li>
+<li class="chapter" data-level="15.2" data-path="reproducible-research.html"><a href="reproducible-research.html#chronology"><i class="fa fa-check"></i><b>15.2</b> Chronology</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>15</b> R Markdown</a><ul>
-<li class="chapter" data-level="15.1" data-path="r-markdown.html"><a href="r-markdown.html#literate-programming"><i class="fa fa-check"></i><b>15.1</b> Literate programming</a><ul>
-<li class="chapter" data-level="15.1.1" data-path="r-markdown.html"><a href="r-markdown.html#sweave"><i class="fa fa-check"></i><b>15.1.1</b> Sweave</a></li>
-<li class="chapter" data-level="15.1.2" data-path="r-markdown.html"><a href="r-markdown.html#knitr"><i class="fa fa-check"></i><b>15.1.2</b> Knitr</a></li>
-<li class="chapter" data-level="15.1.3" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown-1"><i class="fa fa-check"></i><b>15.1.3</b> R Markdown</a></li>
+<li class="chapter" data-level="16" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>16</b> R Markdown</a><ul>
+<li class="chapter" data-level="16.1" data-path="r-markdown.html"><a href="r-markdown.html#literate-programming"><i class="fa fa-check"></i><b>16.1</b> Literate programming</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="r-markdown.html"><a href="r-markdown.html#sweave"><i class="fa fa-check"></i><b>16.1.1</b> Sweave</a></li>
+<li class="chapter" data-level="16.1.2" data-path="r-markdown.html"><a href="r-markdown.html#knitr"><i class="fa fa-check"></i><b>16.1.2</b> Knitr</a></li>
+<li class="chapter" data-level="16.1.3" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown-1"><i class="fa fa-check"></i><b>16.1.3</b> R Markdown</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="r-markdown.html"><a href="r-markdown.html#components"><i class="fa fa-check"></i><b>15.2</b> Components</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="r-markdown.html"><a href="r-markdown.html#yaml-frontmatter"><i class="fa fa-check"></i><b>15.2.1</b> YAML frontmatter</a></li>
-<li class="chapter" data-level="15.2.2" data-path="r-markdown.html"><a href="r-markdown.html#text"><i class="fa fa-check"></i><b>15.2.2</b> Text</a></li>
-<li class="chapter" data-level="15.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>15.2.3</b> Code</a></li>
+<li class="chapter" data-level="16.2" data-path="r-markdown.html"><a href="r-markdown.html#components"><i class="fa fa-check"></i><b>16.2</b> Components</a><ul>
+<li class="chapter" data-level="16.2.1" data-path="r-markdown.html"><a href="r-markdown.html#yaml-frontmatter"><i class="fa fa-check"></i><b>16.2.1</b> YAML frontmatter</a></li>
+<li class="chapter" data-level="16.2.2" data-path="r-markdown.html"><a href="r-markdown.html#text"><i class="fa fa-check"></i><b>16.2.2</b> Text</a></li>
+<li class="chapter" data-level="16.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>16.2.3</b> Code</a></li>
 </ul></li>
-<li class="chapter" data-level="15.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>15.3</b> Figures</a></li>
-<li class="chapter" data-level="15.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>15.4</b> Tables</a><ul>
-<li class="chapter" data-level="15.4.1" data-path="r-markdown.html"><a href="r-markdown.html#html-tables"><i class="fa fa-check"></i><b>15.4.1</b> HTML tables</a></li>
+<li class="chapter" data-level="16.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>16.3</b> Figures</a></li>
+<li class="chapter" data-level="16.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>16.4</b> Tables</a><ul>
+<li class="chapter" data-level="16.4.1" data-path="r-markdown.html"><a href="r-markdown.html#html-tables"><i class="fa fa-check"></i><b>16.4.1</b> HTML tables</a></li>
 </ul></li>
-<li class="chapter" data-level="15.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>15.5</b> Sepecial characters</a></li>
-<li class="chapter" data-level="15.6" data-path="r-markdown.html"><a href="r-markdown.html#template"><i class="fa fa-check"></i><b>15.6</b> Template</a></li>
+<li class="chapter" data-level="16.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>16.5</b> Sepecial characters</a></li>
+<li class="chapter" data-level="16.6" data-path="r-markdown.html"><a href="r-markdown.html#template"><i class="fa fa-check"></i><b>16.6</b> Template</a></li>
+<li class="chapter" data-level="16.7" data-path="r-markdown.html"><a href="r-markdown.html#basic-elements"><i class="fa fa-check"></i><b>16.7</b> Basic Elements</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>16</b> Bookdown</a><ul>
-<li class="chapter" data-level="16.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>16.1</b> Configuration</a><ul>
-<li class="chapter" data-level="16.1.1" data-path="bookdown.html"><a href="bookdown.html#bookdown.yml"><i class="fa fa-check"></i><b>16.1.1</b> <code>_bookdown.yml</code></a></li>
-<li class="chapter" data-level="16.1.2" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>16.1.2</b> <code>_output.yml</code></a></li>
-<li class="chapter" data-level="16.1.3" data-path="bookdown.html"><a href="bookdown.html#yaml-header"><i class="fa fa-check"></i><b>16.1.3</b> yaml header</a></li>
+<li class="chapter" data-level="17" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>17</b> Bookdown</a><ul>
+<li class="chapter" data-level="17.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>17.1</b> Configuration</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="bookdown.html"><a href="bookdown.html#bookdown.yml"><i class="fa fa-check"></i><b>17.1.1</b> <code>_bookdown.yml</code></a></li>
+<li class="chapter" data-level="17.1.2" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>17.1.2</b> <code>_output.yml</code></a></li>
+<li class="chapter" data-level="17.1.3" data-path="bookdown.html"><a href="bookdown.html#yaml-header"><i class="fa fa-check"></i><b>17.1.3</b> yaml header</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="bookdown.html"><a href="bookdown.html#create-new-project"><i class="fa fa-check"></i><b>16.2</b> Create new project</a></li>
+<li class="chapter" data-level="17.2" data-path="bookdown.html"><a href="bookdown.html#create-new-project"><i class="fa fa-check"></i><b>17.2</b> Create new project</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>17</b> Reference management</a><ul>
-<li class="chapter" data-level="17.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>17.1</b> Literature</a><ul>
-<li class="chapter" data-level="17.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>17.1.1</b> Recommended: Using Zotero</a></li>
+<li class="chapter" data-level="18" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>18</b> Reference management</a><ul>
+<li class="chapter" data-level="18.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>18.1</b> Literature</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>18.1.1</b> Recommended: Using Zotero</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>17.2</b> Cross-References</a></li>
+<li class="chapter" data-level="18.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>18.2</b> Cross-References</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="git-version-control.html"><a href="git-version-control.html"><i class="fa fa-check"></i><b>18</b> Git Version control</a><ul>
-<li class="chapter" data-level="18.1" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>18.1</b> Git basics</a></li>
-<li class="chapter" data-level="18.2" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>18.2</b> Single user</a><ul>
-<li class="chapter" data-level="18.2.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>18.2.1</b> Regular workflow</a></li>
-<li class="chapter" data-level="18.2.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>18.2.2</b> Troubleshooting</a></li>
+<li class="chapter" data-level="19" data-path="git-version-control.html"><a href="git-version-control.html"><i class="fa fa-check"></i><b>19</b> Git Version control</a><ul>
+<li class="chapter" data-level="19.1" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>19.1</b> Git basics</a></li>
+<li class="chapter" data-level="19.2" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>19.2</b> Single user</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>19.2.1</b> Regular workflow</a></li>
+<li class="chapter" data-level="19.2.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>19.2.2</b> Troubleshooting</a></li>
 </ul></li>
-<li class="chapter" data-level="18.3" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>18.3</b> Multiple users</a><ul>
-<li class="chapter" data-level="18.3.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>18.3.1</b> get foreign respository (fork)</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="19" data-path="new-chapter.html"><a href="new-chapter.html"><i class="fa fa-check"></i><b>19</b> New Chapter</a><ul>
-<li class="chapter" data-level="19.1" data-path="new-chapter.html"><a href="new-chapter.html#git-basics-1"><i class="fa fa-check"></i><b>19.1</b> Git basics</a><ul>
-<li class="chapter" data-level="19.1.1" data-path="new-chapter.html"><a href="new-chapter.html#common-tasks"><i class="fa fa-check"></i><b>19.1.1</b> Common tasks</a></li>
+<li class="chapter" data-level="19.3" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>19.3</b> Multiple users</a><ul>
+<li class="chapter" data-level="19.3.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>19.3.1</b> get foreign respository (fork)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>20</b> Stuff still to include</a></li>
+<li class="chapter" data-level="20" data-path="new-chapter.html"><a href="new-chapter.html"><i class="fa fa-check"></i><b>20</b> New Chapter</a><ul>
+<li class="chapter" data-level="20.1" data-path="new-chapter.html"><a href="new-chapter.html#git-basics-1"><i class="fa fa-check"></i><b>20.1</b> Git basics</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="new-chapter.html"><a href="new-chapter.html#common-tasks"><i class="fa fa-check"></i><b>20.1.1</b> Common tasks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>21</b> Stuff still to include</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -334,23 +337,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="Plots" class="section level1">
-<h1><span class="header-section-number">Chapter 10</span> Plots</h1>
+<h1><span class="header-section-number">Chapter 11</span> Plots</h1>
 <div id="graphical-parameters-par" class="section level2">
-<h2><span class="header-section-number">10.1</span> Graphical parameters <code>par()</code></h2>
+<h2><span class="header-section-number">11.1</span> Graphical parameters <code>par()</code></h2>
 <div id="set-graphical-parameters" class="section level3">
-<h3><span class="header-section-number">10.1.1</span> Set graphical parameters</h3>
+<h3><span class="header-section-number">11.1.1</span> Set graphical parameters</h3>
 <p>Change global option</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" title="1"><span class="kw">par</span>(<span class="dt">xlog =</span> T)</a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" title="1"><span class="kw">par</span>(<span class="dt">xlog =</span> T)</a></code></pre></div>
 <p>change for local plot</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1"><span class="kw">plot</span>(..., <span class="dt">xlog =</span> T)</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1"><span class="kw">plot</span>(..., <span class="dt">xlog =</span> T)</a></code></pre></div>
 <p>When parameters are set, their previous values are returned in an invisible named list. Such a list can be passed as an argument to par to restore the parameter values.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1">opar &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">xlog =</span> T)</a>
-<a class="sourceLine" id="cb65-2" title="2"><span class="kw">plot</span>(...)</a>
-<a class="sourceLine" id="cb65-3" title="3"><span class="kw">par</span>(opar)</a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" title="1">opar &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">xlog =</span> T)</a>
+<a class="sourceLine" id="cb76-2" title="2"><span class="kw">plot</span>(...)</a>
+<a class="sourceLine" id="cb76-3" title="3"><span class="kw">par</span>(opar)</a></code></pre></div>
 <p>reset default</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" title="1"><span class="kw">dev.off</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" title="1"><span class="kw">dev.off</span>()</a></code></pre></div>
 <p>check current parameter</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1"><span class="kw">par</span>(<span class="st">&quot;xlog&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" title="1"><span class="kw">par</span>(<span class="st">&quot;xlog&quot;</span>)</a></code></pre></div>
 <pre><code>#&gt; [1] FALSE</code></pre>
 <p>The parameters are defined for the currently active device</p>
 <ul>
@@ -364,12 +367,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="default" class="section level3">
-<h3><span class="header-section-number">10.1.2</span> Default</h3>
+<h3><span class="header-section-number">11.1.2</span> Default</h3>
 <button onclick="myFunction(&#39;default_par&#39;)">
 Show default par() options
 </button>
 <div id="default_par" style="display: none">
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1"><span class="kw">par</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" title="1"><span class="kw">par</span>()</a></code></pre></div>
 <pre><code>#&gt; $xlog
 #&gt; [1] FALSE
 #&gt; 
@@ -588,64 +591,64 @@ Show default par() options
 </div>
 </div>
 <div id="device-region" class="section level3">
-<h3><span class="header-section-number">10.1.3</span> Device region</h3>
+<h3><span class="header-section-number">11.1.3</span> Device region</h3>
 <!-- ![figure margines](C:/Users/Reto/Downloads/fig_margins.jpg){width=50%} -->
 <!-- <img style="float: right;" src="C:/Users/Reto/Downloads/fig_margins.jpg" width=400> -->
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" title="1">opar &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">xpd =</span> <span class="ot">NA</span>, <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>, <span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.05</span>)</a>
-<a class="sourceLine" id="cb71-2" title="2"></a>
-<a class="sourceLine" id="cb71-3" title="3"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Y&quot;</span>)</a>
-<a class="sourceLine" id="cb71-4" title="4"></a>
-<a class="sourceLine" id="cb71-5" title="5"><span class="kw">box</span>(<span class="st">&quot;plot&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a>
-<a class="sourceLine" id="cb71-6" title="6"><span class="kw">box</span>(<span class="st">&quot;inner&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</a>
-<a class="sourceLine" id="cb71-7" title="7"><span class="kw">box</span>(<span class="st">&quot;outer&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb71-8" title="8"></a>
-<a class="sourceLine" id="cb71-9" title="9"><span class="kw">text</span>(<span class="dv">5</span>, <span class="dv">9</span>, <span class="st">&quot;Plot&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb71-10" title="10"><span class="kw">mtext</span>(<span class="st">&quot;Figure&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb71-11" title="11"><span class="kw">mtext</span>(<span class="st">&quot;Device&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">1</span>, <span class="dt">outer =</span> T)</a>
-<a class="sourceLine" id="cb71-12" title="12"></a>
-<a class="sourceLine" id="cb71-13" title="13"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>, <span class="st">&quot;Line 3&quot;</span>), <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, </a>
-<a class="sourceLine" id="cb71-14" title="14">    <span class="dt">at =</span> <span class="kw">grconvertX</span>(<span class="dv">1</span>, <span class="st">&quot;npc&quot;</span>, <span class="st">&quot;user&quot;</span>), <span class="dt">adj =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</a>
-<a class="sourceLine" id="cb71-15" title="15"></a>
-<a class="sourceLine" id="cb71-16" title="16"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>, <span class="st">&quot;Line 3&quot;</span>), <span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, </a>
-<a class="sourceLine" id="cb71-17" title="17">    <span class="dt">adj =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</a>
-<a class="sourceLine" id="cb71-18" title="18"></a>
-<a class="sourceLine" id="cb71-19" title="19"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>), <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">outer =</span> T, </a>
-<a class="sourceLine" id="cb71-20" title="20">    <span class="dt">at =</span> <span class="dv">0</span>, <span class="dt">adj =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb71-21" title="21"></a>
-<a class="sourceLine" id="cb71-22" title="22"></a>
-<a class="sourceLine" id="cb71-23" title="23"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;Margins&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">2</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb71-24" title="24"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;par(mar=c(5,4,4,2) + 0.1)&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb71-25" title="25"></a>
-<a class="sourceLine" id="cb71-26" title="26"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;Outer Margin&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">1</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">outer =</span> T)</a>
-<a class="sourceLine" id="cb71-27" title="27"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;par(oma=c(3,3,3,3))&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">2</span>, <span class="dt">outer =</span> T)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-42-1.png" width="80%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" title="1"><span class="kw">par</span>(opar)</a></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" title="1">opar &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">xpd =</span> <span class="ot">NA</span>, <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>, <span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.05</span>)</a>
+<a class="sourceLine" id="cb82-2" title="2"></a>
+<a class="sourceLine" id="cb82-3" title="3"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Y&quot;</span>)</a>
+<a class="sourceLine" id="cb82-4" title="4"></a>
+<a class="sourceLine" id="cb82-5" title="5"><span class="kw">box</span>(<span class="st">&quot;plot&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb82-6" title="6"><span class="kw">box</span>(<span class="st">&quot;inner&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</a>
+<a class="sourceLine" id="cb82-7" title="7"><span class="kw">box</span>(<span class="st">&quot;outer&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb82-8" title="8"></a>
+<a class="sourceLine" id="cb82-9" title="9"><span class="kw">text</span>(<span class="dv">5</span>, <span class="dv">9</span>, <span class="st">&quot;Plot&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb82-10" title="10"><span class="kw">mtext</span>(<span class="st">&quot;Figure&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb82-11" title="11"><span class="kw">mtext</span>(<span class="st">&quot;Device&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">1</span>, <span class="dt">outer =</span> T)</a>
+<a class="sourceLine" id="cb82-12" title="12"></a>
+<a class="sourceLine" id="cb82-13" title="13"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>, <span class="st">&quot;Line 3&quot;</span>), <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, </a>
+<a class="sourceLine" id="cb82-14" title="14">    <span class="dt">at =</span> <span class="kw">grconvertX</span>(<span class="dv">1</span>, <span class="st">&quot;npc&quot;</span>, <span class="st">&quot;user&quot;</span>), <span class="dt">adj =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</a>
+<a class="sourceLine" id="cb82-15" title="15"></a>
+<a class="sourceLine" id="cb82-16" title="16"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>, <span class="st">&quot;Line 3&quot;</span>), <span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, </a>
+<a class="sourceLine" id="cb82-17" title="17">    <span class="dt">adj =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</a>
+<a class="sourceLine" id="cb82-18" title="18"></a>
+<a class="sourceLine" id="cb82-19" title="19"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>), <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">outer =</span> T, </a>
+<a class="sourceLine" id="cb82-20" title="20">    <span class="dt">at =</span> <span class="dv">0</span>, <span class="dt">adj =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb82-21" title="21"></a>
+<a class="sourceLine" id="cb82-22" title="22"></a>
+<a class="sourceLine" id="cb82-23" title="23"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;Margins&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">2</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb82-24" title="24"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;par(mar=c(5,4,4,2) + 0.1)&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb82-25" title="25"></a>
+<a class="sourceLine" id="cb82-26" title="26"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;Outer Margin&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">1</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">outer =</span> T)</a>
+<a class="sourceLine" id="cb82-27" title="27"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;par(oma=c(3,3,3,3))&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">2</span>, <span class="dt">outer =</span> T)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-43-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" title="1"><span class="kw">par</span>(opar)</a></code></pre></div>
 <div id="coordinate-system-outside-plot" class="section level4">
-<h4><span class="header-section-number">10.1.3.1</span> Coordinate system outside plot</h4>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" title="1"><span class="kw">par</span>(<span class="st">&quot;mar&quot;</span>)  <span class="co"># Margine Area</span></a>
-<a class="sourceLine" id="cb73-2" title="2"><span class="co">#&gt; [1] 5.1 4.1 4.1 2.1</span></a>
-<a class="sourceLine" id="cb73-3" title="3"><span class="kw">par</span>(<span class="st">&quot;oma&quot;</span>)  <span class="co"># Outer Margin Area</span></a>
-<a class="sourceLine" id="cb73-4" title="4"><span class="co">#&gt; [1] 0 0 0 0</span></a>
-<a class="sourceLine" id="cb73-5" title="5"><span class="kw">par</span>(<span class="st">&quot;mgp&quot;</span>)  <span class="co"># position of [1] x/y-label, [2] axis, [3] ticks</span></a>
-<a class="sourceLine" id="cb73-6" title="6"><span class="co">#&gt; [1] 3 1 0</span></a>
-<a class="sourceLine" id="cb73-7" title="7"><span class="kw">par</span>(<span class="st">&quot;mex&quot;</span>)  <span class="co"># &#39;height&#39;&#39; of one line</span></a>
-<a class="sourceLine" id="cb73-8" title="8"><span class="co">#&gt; [1] 1</span></a></code></pre></div>
+<h4><span class="header-section-number">11.1.3.1</span> Coordinate system outside plot</h4>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" title="1"><span class="kw">par</span>(<span class="st">&quot;mar&quot;</span>)  <span class="co"># Margine Area</span></a>
+<a class="sourceLine" id="cb84-2" title="2"><span class="co">#&gt; [1] 5.1 4.1 4.1 2.1</span></a>
+<a class="sourceLine" id="cb84-3" title="3"><span class="kw">par</span>(<span class="st">&quot;oma&quot;</span>)  <span class="co"># Outer Margin Area</span></a>
+<a class="sourceLine" id="cb84-4" title="4"><span class="co">#&gt; [1] 0 0 0 0</span></a>
+<a class="sourceLine" id="cb84-5" title="5"><span class="kw">par</span>(<span class="st">&quot;mgp&quot;</span>)  <span class="co"># position of [1] x/y-label, [2] axis, [3] ticks</span></a>
+<a class="sourceLine" id="cb84-6" title="6"><span class="co">#&gt; [1] 3 1 0</span></a>
+<a class="sourceLine" id="cb84-7" title="7"><span class="kw">par</span>(<span class="st">&quot;mex&quot;</span>)  <span class="co"># &#39;height&#39;&#39; of one line</span></a>
+<a class="sourceLine" id="cb84-8" title="8"><span class="co">#&gt; [1] 1</span></a></code></pre></div>
 </div>
 <div id="normalized-device-coordinates-ndc-0-1" class="section level4">
-<h4><span class="header-section-number">10.1.3.2</span> Normalized device coordinates (NDC) [0, 1]</h4>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" title="1"><span class="kw">par</span>(<span class="st">&quot;fig&quot;</span>)  <span class="co"># Start and endpoint of ploting region</span></a>
-<a class="sourceLine" id="cb74-2" title="2"><span class="co">#&gt; [1] 0 1 0 1</span></a>
-<a class="sourceLine" id="cb74-3" title="3"><span class="kw">par</span>(<span class="st">&quot;omd&quot;</span>)  <span class="co"># oma in NDC</span></a>
-<a class="sourceLine" id="cb74-4" title="4"><span class="co">#&gt; [1] 0 1 0 1</span></a></code></pre></div>
+<h4><span class="header-section-number">11.1.3.2</span> Normalized device coordinates (NDC) [0, 1]</h4>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1"><span class="kw">par</span>(<span class="st">&quot;fig&quot;</span>)  <span class="co"># Start and endpoint of ploting region</span></a>
+<a class="sourceLine" id="cb85-2" title="2"><span class="co">#&gt; [1] 0 1 0 1</span></a>
+<a class="sourceLine" id="cb85-3" title="3"><span class="kw">par</span>(<span class="st">&quot;omd&quot;</span>)  <span class="co"># oma in NDC</span></a>
+<a class="sourceLine" id="cb85-4" title="4"><span class="co">#&gt; [1] 0 1 0 1</span></a></code></pre></div>
 </div>
 <div id="change-between-coordinate-system" class="section level4">
-<h4><span class="header-section-number">10.1.3.3</span> Change between coordinate system</h4>
+<h4><span class="header-section-number">11.1.3.3</span> Change between coordinate system</h4>
 <p>Use <code>grconvertX()</code> to change between different coordinate systems</p>
 </div>
 <div id="plot-outside-plotting-region" class="section level4">
-<h4><span class="header-section-number">10.1.3.4</span> Plot outside plotting region</h4>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1"><span class="kw">par</span>(<span class="st">&quot;xpd&quot;</span>)</a>
-<a class="sourceLine" id="cb75-2" title="2"><span class="co">#&gt; [1] FALSE</span></a></code></pre></div>
+<h4><span class="header-section-number">11.1.3.4</span> Plot outside plotting region</h4>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" title="1"><span class="kw">par</span>(<span class="st">&quot;xpd&quot;</span>)</a>
+<a class="sourceLine" id="cb86-2" title="2"><span class="co">#&gt; [1] FALSE</span></a></code></pre></div>
 <p><code>FALSE</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the plot regions<br />
 <code>TRUE</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the figure region<br />
 <code>NA</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the device region</p>
@@ -659,7 +662,7 @@ Show default par() options
           </div>
         </div>
       </div>
-<a href="functional-programming.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-from-the-shell.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="interactive-plots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
