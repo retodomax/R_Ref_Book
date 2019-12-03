@@ -2,8 +2,15 @@
 
 # Performance
 
-* `system.time()`: returns the CPU time used by an expression
-* `proc.time()`: similar to `system.time()`
+* `system.time()`
+    - returns the CPU time used by an expression
+    - works well for relatively long computation times, not well for very short computation times
+    - runs the expr only once
+* `proc.time()`
+    - similar to `system.time()`
+* `microbenchmark::microbenchmark()`
+    - works well for very small timing steps
+    - runs the expr 100 times and calculates average runtimes
 
 ## In general
 
@@ -54,6 +61,22 @@ First compile a function before you apply it to data
 library(compiler)
 dumkoll2 <- cmpfun(dumkoll)
 dumkoll2(<data>)
+```
+
+
+
+## Parallelise
+
+Useful packages:
+
+- foreach
+- doParallel
+
+Example:
+
+```{r}
+library(doParallel)
+detectCores() # How many cores are available on my machine
 ```
 
 

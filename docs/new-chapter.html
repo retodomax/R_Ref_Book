@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2019-11-27" />
+<meta name="date" content="2019-12-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -276,7 +276,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>15.2.3</b> Code</a></li>
 </ul></li>
 <li class="chapter" data-level="15.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>15.3</b> Figures</a></li>
-<li class="chapter" data-level="15.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>15.4</b> Tables</a></li>
+<li class="chapter" data-level="15.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>15.4</b> Tables</a><ul>
+<li class="chapter" data-level="15.4.1" data-path="r-markdown.html"><a href="r-markdown.html#html-tables"><i class="fa fa-check"></i><b>15.4.1</b> HTML tables</a></li>
+</ul></li>
 <li class="chapter" data-level="15.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>15.5</b> Sepecial characters</a></li>
 <li class="chapter" data-level="15.6" data-path="r-markdown.html"><a href="r-markdown.html#template"><i class="fa fa-check"></i><b>15.6</b> Template</a></li>
 </ul></li>
@@ -354,29 +356,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="common-tasks" class="section level3">
 <h3><span class="header-section-number">19.1.1</span> Common tasks</h3>
 <p><strong>create a new repository on the command line</strong></p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb96-1" title="1"><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</a>
-<a class="sourceLine" id="cb96-2" title="2"><span class="fu">git</span> init</a>
-<a class="sourceLine" id="cb96-3" title="3"><span class="fu">git</span> add README.md</a>
-<a class="sourceLine" id="cb96-4" title="4"><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></a>
-<a class="sourceLine" id="cb96-5" title="5"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb96-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
-<p><strong>push an existing repository from the command line</strong></p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb97-1" title="1"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb97-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
-<p><strong>clone existing repository and push changes</strong></p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb98-1" title="1"><span class="fu">git</span> clone git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb98-2" title="2"><span class="bu">cd</span> test</a>
-<a class="sourceLine" id="cb98-3" title="3"><span class="fu">touch</span> README.md</a>
-<a class="sourceLine" id="cb98-4" title="4"><span class="fu">git</span> add README.md</a>
-<a class="sourceLine" id="cb98-5" title="5"><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></a>
+<div class="sourceCode" id="cb98"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb98-1" title="1"><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</a>
+<a class="sourceLine" id="cb98-2" title="2"><span class="fu">git</span> init</a>
+<a class="sourceLine" id="cb98-3" title="3"><span class="fu">git</span> add README.md</a>
+<a class="sourceLine" id="cb98-4" title="4"><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></a>
+<a class="sourceLine" id="cb98-5" title="5"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
 <a class="sourceLine" id="cb98-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<p><strong>push an existing repository from the command line</strong></p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb99-1" title="1"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb99-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<p><strong>clone existing repository and push changes</strong></p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb100-1" title="1"><span class="fu">git</span> clone git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb100-2" title="2"><span class="bu">cd</span> test</a>
+<a class="sourceLine" id="cb100-3" title="3"><span class="fu">touch</span> README.md</a>
+<a class="sourceLine" id="cb100-4" title="4"><span class="fu">git</span> add README.md</a>
+<a class="sourceLine" id="cb100-5" title="5"><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></a>
+<a class="sourceLine" id="cb100-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 <p><strong>push existing folder to origin</strong></p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb99-1" title="1"><span class="bu">cd</span> existing_folder</a>
-<a class="sourceLine" id="cb99-2" title="2"><span class="fu">git</span> init</a>
-<a class="sourceLine" id="cb99-3" title="3"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb99-4" title="4"><span class="fu">git</span> add .</a>
-<a class="sourceLine" id="cb99-5" title="5"><span class="fu">git</span> commit</a>
-<a class="sourceLine" id="cb99-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb101-1" title="1"><span class="bu">cd</span> existing_folder</a>
+<a class="sourceLine" id="cb101-2" title="2"><span class="fu">git</span> init</a>
+<a class="sourceLine" id="cb101-3" title="3"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb101-4" title="4"><span class="fu">git</span> add .</a>
+<a class="sourceLine" id="cb101-5" title="5"><span class="fu">git</span> commit</a>
+<a class="sourceLine" id="cb101-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 
 </div>
 </div>

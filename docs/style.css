@@ -1,7 +1,11 @@
+/* make figure caption more nice (RZ) */
 p.caption {
   color: #777;
   margin-top: 10px;
 }
+
+
+/* I don't remember for what these comands are (RZ) */
 p code {
   white-space: inherit;
 }
@@ -11,4 +15,22 @@ pre {
 }
 pre code {
   white-space: inherit;
+}
+
+
+
+/* definition tables (RZ) */
+.deftab {
+  width: 100%;
+}
+.deftab th, .deftab td {
+  vertical-align: top;
+  text-align: left;
+  padding-bottom: 15px;    /* space between two rows */
+}
+.deftab th {
+  width: 20%;       /* header cells are 20% width (first column) */
+}
+.deftab td:nth-child(1) {
+  width: 20%;       /* first td cell also 20% width (first column) */
 }

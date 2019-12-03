@@ -195,6 +195,66 @@ Recomended file formate
 
 > Attention: without using a header, the formated table is reduced to an unformatted html table. Avoid this by including a white space into the header ()
 
+### HTML tables
+
+Tables can be formatted in CSS if we are only interested in HTML output. Add the following internal `<style>` element or use an external CSS file.
+
+**Definition tables**
+
+```css
+/* definition tables (RZ) */
+.deftab {
+  width: 100%;
+}
+.deftab th, .deftab td {
+  vertical-align: top;
+  text-align: left;
+  padding-bottom: 15px;    /* space between two rows */
+}
+.deftab th {
+  width: 20%;       /* header cells are 20% width (first column) */
+}
+.deftab td:nth-child(1) {
+  width: 20%;       /* first td cell also 20% width (first column) */
+}
+```
+
+Afterwards we can use HTML tags to create the table
+
+```html
+<table class = "deftab">
+  <tr>
+    <th>Doe</th>
+    <td>John</td>
+  </tr>
+  <tr>
+    <td>Doe</td> <!-- use td tag if it should not be bold -->
+    <td>John</td>
+  </tr>
+  <tr>
+    <th>Doe</th>
+    <td>John</td>
+  </tr>
+</table>
+```
+
+Results in 
+
+<table class = "deftab">
+  <tr>
+    <th>Doe</th>
+    <td>John</td>
+  </tr>
+  <tr>
+    <th>Doe</th>
+    <td>John</td>
+  </tr>
+  <tr>
+    <th>Doe</th>
+    <td>John</td>
+  </tr>
+</table>
+
 
 
 ## Sepecial characters
