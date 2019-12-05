@@ -197,7 +197,7 @@ Recomended file formate
 
 ### HTML tables
 
-Tables can be formatted in CSS if we are only interested in HTML output. Add the following internal `<style>` element or use an external CSS file.
+Tables can be formatted in CSS if we are only interested in HTML output. Add the following internal `<style>` element (in document between `<style>` and `</style>` tag) or use an external CSS file (`style.css`).
 
 **Definition tables**
 
