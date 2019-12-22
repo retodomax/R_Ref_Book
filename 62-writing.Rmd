@@ -747,7 +747,7 @@ kableExtra::kable(...)
   </tr>
   <tr>
     <td>Cross ref figure</td>
-    <td>`See figure~\ref(fig:label)`</td>
+    <td>`See figure~\ref{fig:label}`</td>
     <td>`See figure\ \@ref(fig:label)`</td>
   </tr>
   <tr>
