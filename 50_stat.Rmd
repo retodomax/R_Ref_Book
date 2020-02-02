@@ -1,0 +1,21 @@
+# (PART) R Statistics {-} 
+
+
+# Topics
+
+* Basic statistics
+    - PDF/PMF, CDF, distributions,
+    - Probability, E(), Var(),
+    -...
+* Likelihood inference
+* Bayes
+* Regression
+* ANOVA
+* Mixed Models
+* Multivariate Statistics
+* Time Series
+* Computational Statistics
+    - Nonparametric
+    - Resampling
+    - Bootstrap
+    - ML

@@ -742,7 +742,7 @@ kableExtra::kable(...)
   </tr>
   <tr>
     <td>Cross ref equation</td>
-    <td>`See equation~\ref{eq:label}`</td>
+    <td>`See equation~\eqref{eq:label}`</td>
     <td>`See equation\ \@ref(eq:label)`</td>
   </tr>
   <tr>
