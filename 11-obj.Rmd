@@ -31,32 +31,31 @@
 For historical reasons (back compatibility with S / S+), another low-level inspector function is `storage.mode()`.
 
 
+
 ```{r, echo = FALSE}
-l.ex <- list(one = 1, s1 = 1:2, pi = pi, I = 1i, `NA` = NA, let = c("A", "a", "b", ":::"),
-             fn = mean, fn2 = c, fnSpec = `function`,
-             n = as.name("Mä"), n2 = quote(x), nb = quote(`{`),
-             ex = expression(1+1), cl = call("round",10), cl2 = quote(sin(x)),
-             formula = y ~ x+t, formals = formals(lm), arg1 = formals(lm)[[1]],
-             NULL = NULL)
-# str(l.ex, vec.len = 16, max.level = 1)
-
-myShow <- function(x, max.length= 1000L) {
-    r <- tryCatch(format(x), error=function(e)e)
-    r <- if(inherits(r, "error"))
-             tryCatch(as.character(x), error=function(e)e)
-         else paste(r, collapse = " ")
-    r <- if(inherits(r, "error"))
-             tryCatch(capture.output(x), error=function(e)e)
-         else paste(r, collapse = " ")
-    substr(r, 1L, max.length)
+mystrings <- list("1", "1:2", "pi", "1i", "NA", "c('A', 'b', ':::')",
+              "mean", "c", "`function`", "as.name('Mä')", "quote(x)",
+              "quote(`{`)", "expression(1+1)", "call('round',10)", "quote(sin(x))",
+              "y ~ x+t", "formals(lm)", "formals(lm)[[1]]", "NULL")
+myexpr <- lapply(mystrings, str2expression)
+myobj <- lapply(myexpr, eval)
+myprint <- function(x, max.length= 1000L) {
+  r <- tryCatch(format(x), error=function(e)e)
+  r <- if(inherits(r, "error"))
+    tryCatch(as.character(x), error=function(e)e)
+  else paste(r, collapse = " ")
+  r <- if(inherits(r, "error"))
+    tryCatch(capture.output(x), error=function(e)e)
+  else paste(r, collapse = " ")
+  substr(r, 1L, max.length)
 }
-
-cbind(show    = sapply(l.ex, myShow, max.length = 16),
-      typeof  = sapply(l.ex, typeof),
-      storage.mode = sapply(l.ex, storage.mode),
-      mode    = sapply(l.ex, mode),
-      class   = sapply(l.ex, class)) -> tab.ex
-knitr::kable(tab.ex, format="pandoc")
+mytab <- cbind(expr = mystrings,
+               object = sapply(myobj, myprint, max.length = 16),
+      typeof  = sapply(myobj, typeof),
+      storage.mode = sapply(myobj, storage.mode),
+      mode    = sapply(myobj, mode),
+      class   = sapply(myobj, class))
+knitr::kable(mytab, format="pandoc")
 ```
 
 

@@ -1,0 +1,25 @@
+# Nonparametric and Resampling Methodes
+
+## Bootstrap
+
+**Problem:** If we would know the true Model (data generating mechanism) $P$ we could use simulation to get the distribution of estimator $\hat{\theta}$
+
+**Idea** Simulate from estimated version of $P$ ($= \hat{P}$)
+
+
+```{r}
+knitr::include_graphics(path = "figures/bootstrap_diag.png")
+```
+
+
+
+
+```{r}
+knitr::include_graphics(path = "https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1#G1CE9oSwrcFVZVwdF3DGHnH7C9xUT3tmeG")
+```
+
+
+
+
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;www.draw.io\&quot; modified=\&quot;2020-02-02T16:33:31.851Z\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36\&quot; etag=\&quot;wfRMFttaLNwQe4VnSy61\&quot; version=\&quot;12.6.4\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;q9leG2a7vCDuBEXNin2n\&quot; name=\&quot;Page-1\&quot;&gt;7Vltb9owEP41kbZKnRIbSPm4UNpqXVWkruvaL5WbuElaE1PHFMKvn4OdN5IAbYHQaRISufPZsZ/nnjsLNNgbTk8ZGnkX1MFEA7oz1eCxBoBh6EB8xZ5Ieo6OlMNlvqOCMseVP8PKqSvv2HdwWAjklBLuj4pOmwYBtnnBhxijk2LYIyXFt46Qi0uOKxuRsvfGd7inTgHMzH+GfddL3mx0unJkiJJgtUToIYdOpGt+ONjXYI9RyuXTcNrDJAYvwUUicFIzmm6M4YCvM+GFeb97l79mJ5d39rVv/XBh9/uh2mzIo+TA2BHnVyZl3KMuDRDpZ16L0XHg4HhVXVhZzE9KR8JpCOcT5jxSZKIxp8Ll8SFRo3jq8z/x9G9tZd3mRo6nauW5ESVGwFmUmxSbt/mxbNrcSuaVUUrooGNm4yXQJNmGmIv5kjiVzzFuuRcoDk4xHWKxHxHAMEHcfy3mFVLp6aZxGYPiQZH4BkLVuq+IjNWbNNASn4H8KtFdJHPi+RxfjdAcmIlQdJG4WjBfMeN4uvT4yajKUj1asCc5dSmXlxNWS98SYO0mFWDk8j9TwyoFFPI/k8PGFQDWVADcLwXon6WmfZiZzSGupg6oL7aSibVTFGuqzGQJmRpq1gJv6TbeTyWoKWZ39+IoYklda/ccykNp3N0He1rkgL67IvfUCW9ewOTsfHZ9fn06nD1cWDDpCvsviVybBzvq83DNKtdpqspVMgo+IaPmf0ZX77pU7ESN8xDXTGugmcd7UuDS6rUvtzijYT2AXXT9jedrddeHrWa7vgGb5dL8h7hsNXyD69QUtS/xFa7dF1XtwJiXtcrbXBbwtSIit4a1ag1LrtEhgibrgYknl8/5+3g5ffQJ6VFCmbADGuDtVNiqK2RaTndTYut+WkgblHjgHuZIYL2Zq/h2oC3dzo+abl6ttyG7VDdL50idfGIVVFC1YxWYFVwtABd6aBQ/2mNGIosh+zm+hq5CMIO7Bk9GuWgFNBCew+7S7rM+wLC7AHCrAuAKfLcIcLdeDDKf2/2DOM/jIX0gra3kb8gZfcabT+rF+xU0y5gbVaC/A3NhZv8wyKae/U8D+38B&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://www.draw.io/js/viewer.min.js"></script>

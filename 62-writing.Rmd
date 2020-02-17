@@ -425,6 +425,12 @@ kable(dt,
 </div>
 
 
+Good resources for additional tips/templates
+
+* <https://holtzy.github.io/Pimp-my-rmd/> (Tips)
+* <https://github.com/juba/rmdformats> (Templates package)
+
+
 
 ## Basic Elements
 

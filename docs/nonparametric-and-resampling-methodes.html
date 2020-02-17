@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 22 New Chapter | R Reference book</title>
+  <title>Chapter 16 Nonparametric and Resampling Methodes | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 22 New Chapter | R Reference book" />
+  <meta property="og:title" content="Chapter 16 Nonparametric and Resampling Methodes | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 22 New Chapter | R Reference book" />
+  <meta name="twitter:title" content="Chapter 16 Nonparametric and Resampling Methodes | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
-<link rel="prev" href="git-version-control.html"/>
-<link rel="next" href="stuff-still-to-include.html"/>
+<link rel="prev" href="TimeSeries.html"/>
+<link rel="next" href="reproducible-research.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -341,63 +341,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="new-chapter" class="section level1">
-<h1><span class="header-section-number">Chapter 22</span> New Chapter</h1>
-<div id="git-basics-1" class="section level2">
-<h2><span class="header-section-number">22.1</span> Git basics</h2>
-<p><strong>basic bash commands</strong></p>
-<ul>
-<li><code>cd</code> change directory</li>
-<li><code>ls</code> list all files within directory</li>
-<li><code>head</code> show head of file</li>
-<li><code>rm</code> remove file</li>
-</ul>
-<p><strong>basic git commands</strong></p>
-<ul>
-<li><code>git config</code> change global/local variables (name, email, …)</li>
-<li><code>git init</code> initialize git respository</li>
-<li><code>git add</code> add file to staged area, “stage file”</li>
-<li><code>git commit</code> commit staged files</li>
-<li><code>git push</code> push your branch to origin</li>
-<li><code>git pull</code> pull newest branch to your local</li>
-</ul>
-<div id="common-tasks" class="section level3">
-<h3><span class="header-section-number">22.1.1</span> Common tasks</h3>
-<p><strong>create a new repository on the command line</strong></p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb131-1" title="1"><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</a>
-<a class="sourceLine" id="cb131-2" title="2"><span class="fu">git</span> init</a>
-<a class="sourceLine" id="cb131-3" title="3"><span class="fu">git</span> add README.md</a>
-<a class="sourceLine" id="cb131-4" title="4"><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></a>
-<a class="sourceLine" id="cb131-5" title="5"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb131-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
-<p><strong>push an existing repository from the command line</strong></p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb132-1" title="1"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb132-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
-<p><strong>clone existing repository and push changes</strong></p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb133-1" title="1"><span class="fu">git</span> clone git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb133-2" title="2"><span class="bu">cd</span> test</a>
-<a class="sourceLine" id="cb133-3" title="3"><span class="fu">touch</span> README.md</a>
-<a class="sourceLine" id="cb133-4" title="4"><span class="fu">git</span> add README.md</a>
-<a class="sourceLine" id="cb133-5" title="5"><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></a>
-<a class="sourceLine" id="cb133-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
-<p><strong>push existing folder to origin</strong></p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb134-1" title="1"><span class="bu">cd</span> existing_folder</a>
-<a class="sourceLine" id="cb134-2" title="2"><span class="fu">git</span> init</a>
-<a class="sourceLine" id="cb134-3" title="3"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb134-4" title="4"><span class="fu">git</span> add .</a>
-<a class="sourceLine" id="cb134-5" title="5"><span class="fu">git</span> commit</a>
-<a class="sourceLine" id="cb134-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div id="nonparametric-and-resampling-methodes" class="section level1">
+<h1><span class="header-section-number">Chapter 16</span> Nonparametric and Resampling Methodes</h1>
+<div id="bootstrap" class="section level2">
+<h2><span class="header-section-number">16.1</span> Bootstrap</h2>
+<p><strong>Problem:</strong> If we would know the true Model (data generating mechanism) <span class="math inline">\(P\)</span> we could use simulation to get the distribution of estimator <span class="math inline">\(\hat{\theta}\)</span></p>
+<p><strong>Idea</strong> Simulate from estimated version of <span class="math inline">\(P\)</span> (<span class="math inline">\(= \hat{P}\)</span>)</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="dt">path =</span> <span class="st">&quot;figures/bootstrap_diag.png&quot;</span>)</a></code></pre></div>
+<p><img src="figures/bootstrap_diag.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="dt">path =</span> <span class="st">&quot;https://www.draw.io/?lightbox=1&amp;highlight=0000ff&amp;edit=_blank&amp;layers=1&amp;nav=1#G1CE9oSwrcFVZVwdF3DGHnH7C9xUT3tmeG&quot;</span>)</a></code></pre></div>
+<p><img src="https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1#G1CE9oSwrcFVZVwdF3DGHnH7C9xUT3tmeG" width="80%" style="display: block; margin: auto;" /></p>
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;www.draw.io\&quot; modified=\&quot;2020-02-02T16:33:31.851Z\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36\&quot; etag=\&quot;wfRMFttaLNwQe4VnSy61\&quot; version=\&quot;12.6.4\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;q9leG2a7vCDuBEXNin2n\&quot; name=\&quot;Page-1\&quot;&gt;7Vltb9owEP41kbZKnRIbSPm4UNpqXVWkruvaL5WbuElaE1PHFMKvn4OdN5IAbYHQaRISufPZsZ/nnjsLNNgbTk8ZGnkX1MFEA7oz1eCxBoBh6EB8xZ5Ieo6OlMNlvqOCMseVP8PKqSvv2HdwWAjklBLuj4pOmwYBtnnBhxijk2LYIyXFt46Qi0uOKxuRsvfGd7inTgHMzH+GfddL3mx0unJkiJJgtUToIYdOpGt+ONjXYI9RyuXTcNrDJAYvwUUicFIzmm6M4YCvM+GFeb97l79mJ5d39rVv/XBh9/uh2mzIo+TA2BHnVyZl3KMuDRDpZ16L0XHg4HhVXVhZzE9KR8JpCOcT5jxSZKIxp8Ll8SFRo3jq8z/x9G9tZd3mRo6nauW5ESVGwFmUmxSbt/mxbNrcSuaVUUrooGNm4yXQJNmGmIv5kjiVzzFuuRcoDk4xHWKxHxHAMEHcfy3mFVLp6aZxGYPiQZH4BkLVuq+IjNWbNNASn4H8KtFdJHPi+RxfjdAcmIlQdJG4WjBfMeN4uvT4yajKUj1asCc5dSmXlxNWS98SYO0mFWDk8j9TwyoFFPI/k8PGFQDWVADcLwXon6WmfZiZzSGupg6oL7aSibVTFGuqzGQJmRpq1gJv6TbeTyWoKWZ39+IoYklda/ccykNp3N0He1rkgL67IvfUCW9ewOTsfHZ9fn06nD1cWDDpCvsviVybBzvq83DNKtdpqspVMgo+IaPmf0ZX77pU7ESN8xDXTGugmcd7UuDS6rUvtzijYT2AXXT9jedrddeHrWa7vgGb5dL8h7hsNXyD69QUtS/xFa7dF1XtwJiXtcrbXBbwtSIit4a1ag1LrtEhgibrgYknl8/5+3g5ffQJ6VFCmbADGuDtVNiqK2RaTndTYut+WkgblHjgHuZIYL2Zq/h2oC3dzo+abl6ttyG7VDdL50idfGIVVFC1YxWYFVwtABd6aBQ/2mNGIosh+zm+hq5CMIO7Bk9GuWgFNBCew+7S7rM+wLC7AHCrAuAKfLcIcLdeDDKf2/2DOM/jIX0gra3kb8gZfcabT+rF+xU0y5gbVaC/A3NhZv8wyKae/U8D+38B&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}">
+
+</div>
+<script type="text/javascript" src="https://www.draw.io/js/viewer.min.js"></script>
 
 </div>
 </div>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="git-version-control.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="stuff-still-to-include.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="TimeSeries.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reproducible-research.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -428,7 +398,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/R_Ref_Book/edit/master/64-git.Rmd",
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/57_boot.Rmd",
 "text": "Edit"
 },
 "history": {
