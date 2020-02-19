@@ -83,10 +83,90 @@ description: "Everything you need (and nothing more) to start a bookdown book."
 
 1. Open template of RStudio
 2. Connect with GitHub repository and push
-3. github.com/retodomax/projectname
-  a. go to Settings
-  b. at GitHub Pages set source to docs folder
-  c. Don't worry if page does not immideatly appear on link (takes long time to be built)
-4. Make a figures folder containing a png and an ico file (transfere png to ico at some png-to-ico transformation website)
-5. Set `_bookdown.yml`, `_output.yml` and yaml header with the options you whish.
-6. Create content, build and push
+3. Go to github.com/retodomax/projectname
+    a. Go to Settings
+    b. At GitHub Pages set source to docs folder
+    c. Don't worry if page does not immideatly appear on link (takes long time to be built)
+4. Go to `_bookdown.yml` file, add `output_dir: docs`
+5. Go to `_output.yml` file
+    a. Delete all pdf/ebook output
+    b. Delete `download: ["pdf", "epub"]`
+    c. Add these lines
+```yaml
+config:
+  fontsettings:
+    theme: white
+    family: sans
+    size: 1
+  edit: https://github.com/retodomax/R_Ref_Book/edit/master/%s
+includes:
+  in_header: header.html
+```
+6. Go to `index.Rmd`, add these lines
+```yaml
+github-repo: "retodomax/R_Ref_Book"
+cover-image: "figures/01_cover/Cover.svg"
+favicon: "figures/00_icon/icon.ico"
+```
+7. Add `header.html` file with following content: (hidde button)
+```html
+<script>
+function myFunction(myid) {
+  var x = document.getElementById(myid);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+```
+8. Go to `styles.css`, add these lines
+```css
+/* definition tables (RZ) */
+.book .book-body .page-wrapper .page-inner section.normal .deftab td,
+.book .book-body .page-wrapper .page-inner section.normal .deftab th,
+.book .book-body .page-wrapper .page-inner section.normal .deftab tr
+{
+  padding:0;
+  border-style: hidden;
+  background-color: white;
+}
+
+.deftab th, .deftab td {
+  vertical-align: top;
+  text-align: left;
+}
+.deftab th {
+  width: 20%;       /* header cells are 20% width (first column) */
+}
+.deftab td:nth-child(1) {
+  width: 20%;       /* first td cell also 20% width (first column) */
+}
+
+/* boxes with warnings, notes, tips,... */
+.rmdcaution, .rmdimportant, .rmdnote, .rmdtip, .rmdwarning {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #f5f5f5 5px center/3em no-repeat;
+}
+.rmdcaution {
+  background-image: url("../figures/02_css/caution.png");
+}
+.rmdimportant {
+  background-image: url("../figures/02_css/important.png");
+}
+.rmdnote {
+  background-image: url("../figures/02_css/note.png");
+}
+.rmdtip {
+  background-image: url("../figures/02_css/tip.png");
+}
+.rmdwarning {
+  background-image: url("../figures/02_css/warning.png");
+}
+```
+9. Add folder `figures` with following subfolders (containing png files)
+    - `00_icon`
+    - `01_cover`
+    - `02_css`

@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-02-17" />
+<meta name="date" content="2020-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -319,7 +319,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.1.1" data-path="new-chapter.html"><a href="new-chapter.html#common-tasks"><i class="fa fa-check"></i><b>22.1.1</b> Common tasks</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="23" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>23</b> Stuff still to include</a></li>
+<li class="chapter" data-level="23" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>23</b> Test</a></li>
+<li class="chapter" data-level="24" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>24</b> Stuff still to include</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -548,29 +549,35 @@ Figure 18.1: The R Markdown hex logo.
 </ul></li>
 </ul></li>
 </ul>
-<blockquote>
-<p>Attention: without using a header, the formated table is reduced to an unformatted html table. Avoid this by including a white space into the header ()</p>
-</blockquote>
+
+<div class="rmdcaution">
+Without using a header, the formated table is reduced to an unformatted html table. Avoid this by including a white space into the header ()
+</div>
+
 <div id="html-tables" class="section level3">
 <h3><span class="header-section-number">18.4.1</span> HTML tables</h3>
 <p>Tables can be formatted in CSS if we are only interested in HTML output. Add the following internal <code>&lt;style&gt;</code> element (in document between <code>&lt;style&gt;</code> and <code>&lt;/style&gt;</code> tag) or use an external CSS file (<code>style.css</code>).</p>
 <p><strong>Definition tables</strong></p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb93-1" title="1"><span class="co">/* definition tables (RZ) */</span></a>
-<a class="sourceLine" id="cb93-2" title="2"><span class="fu">.deftab</span><span class="op">,</span> <span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td<span class="op">,</span> <span class="fu">.deftab</span> tr {</a>
-<a class="sourceLine" id="cb93-3" title="3">  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb93-4" title="4">  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb93-5" title="5">  <span class="co">/*  padding-left: 0px; */</span>   <span class="co">/* somehow this is not working!! */</span></a>
-<a class="sourceLine" id="cb93-6" title="6">}</a>
-<a class="sourceLine" id="cb93-7" title="7"><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</a>
-<a class="sourceLine" id="cb93-8" title="8">  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb93-9" title="9">  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb93-10" title="10">}</a>
-<a class="sourceLine" id="cb93-11" title="11"><span class="fu">.deftab</span> th {</a>
-<a class="sourceLine" id="cb93-12" title="12">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></a>
-<a class="sourceLine" id="cb93-13" title="13">}</a>
-<a class="sourceLine" id="cb93-14" title="14"><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</a>
-<a class="sourceLine" id="cb93-15" title="15">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></a>
-<a class="sourceLine" id="cb93-16" title="16">}</a></code></pre></div>
+<a class="sourceLine" id="cb93-2" title="2"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></a>
+<a class="sourceLine" id="cb93-3" title="3"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></a>
+<a class="sourceLine" id="cb93-4" title="4"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</a>
+<a class="sourceLine" id="cb93-5" title="5">{</a>
+<a class="sourceLine" id="cb93-6" title="6">  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb93-7" title="7">  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb93-8" title="8">  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb93-9" title="9">}</a>
+<a class="sourceLine" id="cb93-10" title="10"></a>
+<a class="sourceLine" id="cb93-11" title="11"><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</a>
+<a class="sourceLine" id="cb93-12" title="12">  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb93-13" title="13">  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb93-14" title="14">}</a>
+<a class="sourceLine" id="cb93-15" title="15"><span class="fu">.deftab</span> th {</a>
+<a class="sourceLine" id="cb93-16" title="16">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></a>
+<a class="sourceLine" id="cb93-17" title="17">}</a>
+<a class="sourceLine" id="cb93-18" title="18"><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</a>
+<a class="sourceLine" id="cb93-19" title="19">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></a>
+<a class="sourceLine" id="cb93-20" title="20">}</a></code></pre></div>
 <p>Afterwards we can use HTML tags to create the table</p>
 <div class="sourceCode" id="cb94"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb94-1" title="1"><span class="kw">&lt;table</span><span class="ot"> class</span> <span class="ot">=</span> <span class="st">&quot;deftab&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb94-2" title="2">  <span class="kw">&lt;tr&gt;</span></a>
@@ -661,10 +668,10 @@ John
 <h2><span class="header-section-number">18.6</span> Template</h2>
 <p>This is a template containing structure, equations, references, cross-references, figures and tables with caption. The rendered output of the template can be found <a href="https://retodomax.github.io/R_Ref_Book/template.html">here</a>.
 To get the the template in pdf, replace the <code>output</code> section in the YAML header with</p>
-<pre><code>  bookdown::pdf_document2:
-    toc: true
-    toc_depth: 3
-    number_sections: true</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb95-1" title="1">  bookdown:<span class="fu">:pdf_document2:</span></a>
+<a class="sourceLine" id="cb95-2" title="2">    <span class="fu">toc:</span><span class="at"> </span><span class="ch">true</span></a>
+<a class="sourceLine" id="cb95-3" title="3">    <span class="fu">toc_depth:</span><span class="at"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb95-4" title="4">    <span class="fu">number_sections:</span><span class="at"> </span><span class="ch">true</span></a></code></pre></div>
 <button onclick="myFunction(&#39;markdown_template&#39;)">
 Show template
 </button>
@@ -673,7 +680,7 @@ Show template
 <a class="sourceLine" id="cb96-2" title="2">project: CompSkills    #################################################</a>
 <a class="sourceLine" id="cb96-3" title="3">title:   Template</a>
 <a class="sourceLine" id="cb96-4" title="4">author:  &quot;<span class="ot">[Reto Zihlmann](https://retodomax.github.io/)</span>&quot;</a>
-<a class="sourceLine" id="cb96-5" title="5">date:    &quot;2020-02-17&quot;</a>
+<a class="sourceLine" id="cb96-5" title="5">date:    &quot;2020-02-19&quot;</a>
 <a class="sourceLine" id="cb96-6" title="6">output:</a>
 <a class="sourceLine" id="cb96-7" title="7">  bookdown::html_document2:</a>
 <a class="sourceLine" id="cb96-8" title="8"><span class="bn">    toc: true</span></a>

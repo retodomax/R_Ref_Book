@@ -29,13 +29,14 @@ Many primitive function can be used without the classical syntax functionname() 
 
 ## Function components {#function-components}
 
-+---------------------+----------------------------------------------------------------------------+----------------------------------+
-| - `body()`          | Code inside the function.                                                  |                                  |
-+---------------------+----------------------------------------------------------------------------+----------------------------------+
-| - `formals()`       | List of formal **arguments** which controls how you can call the function. | Chapter \@ref(function-arguments)   |
-+---------------------+----------------------------------------------------------------------------+----------------------------------+
-| - `environment()`   | “Map” of the location of the function’s variables.                         | Chapter \@ref(function-environment) |
-+---------------------+----------------------------------------------------------------------------+----------------------------------+
+|             |                                 |                |
+|:------------|:--------------------------------|----------------|
+| `body()`    | Code inside the function.       |                |
+| `formals()` | List of formal **arguments** which controls how you can call the function.              | Chapter \@ref(function-arguments) |
+| `environment()`| “Map” of the location of the function’s variables.                         | Chapter \@ref(function-environment)            | Chapter \@ref(function-environment) |
+
+
+
 
 Like other objects, functions have certain attributes
 
@@ -52,13 +53,13 @@ body(myfun)
 
 ## Arguments {#function-arguments}
 
-* Formal arguments (stated in function definition)
-* Actual arguments (explicetly passed to the function when you call it)
-
-
-* Get formal argument: `formals()`
-* Set formal arguments: `` `formals<-` ``  (replacement function: change default formals, add formals, remove formals)
-* `formals()` without arguments will list the arguments of the function which calls it
+* Two types of arguments
+    - Formal arguments (stated in function definition)
+    - Actual arguments (explicetly passed to the function when you call it)
+* How to get/set formal arguments
+    - Get formal argument: `formals()`
+    - Set formal arguments: `` `formals<-` ``  (replacement function: change default formals, add formals, remove formals)
+    - `formals()` without arguments will list the arguments of the function which calls it
 
 ```{r, collapse=TRUE}
 myfunction <- function(x = 1, y = 2) x + y
@@ -76,8 +77,7 @@ Arguments are matched by the following hirarchy
 * Position
 
 
-Use `do.call()` to pass arguments containd in a list to a function.
-
+Use `do.call()` to pass arguments containd in a list to a function. <br>
 Use `missing()` to check if a formal argument has been manually set.
 
 ### Lazy evaluation:

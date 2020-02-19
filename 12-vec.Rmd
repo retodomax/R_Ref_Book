@@ -3,7 +3,7 @@
 Almost all data in R is stored in vectors. Most famous vector types are listed below
 
 |Vectors        |Description                                        |
-|---------------|---------------------------------------------------|
+|:--------------|:--------------------------------------------------|
 |Atomic vector  |1 dimensional collection, homogeneous, flat        |
 |List           |1 dimensional collection, heterogeneous, recursive |
 |Matrix         |Atomic vector 2 dimensions                         |
@@ -18,7 +18,7 @@ Almost all data in R is stored in vectors. Most famous vector types are listed b
 All vectores can be described using 4 properties
 
 |Property                  | Explanation                         | Example `x <- 1:3`|
-|--------------------------|-------------------------------------|------------------:|
+|:-------------------------|:------------------------------------|------------------:|
 |Content                   | Information stored in the vector    |            `1 2 3`|
 |[Type](#type)             | Data type (numeric, list, ...)      |          `integer`|
 |[Length](#length)         | Lenght of the vector                |                  3|
@@ -40,7 +40,7 @@ Within atomic vectors there are 6 vector types
 * Raw
 
 | Action      | R command                  |
-|-------------|------------------------------------------------------------|
+|:------------|:-----------------------------------------------------------|
 | Create      | Create a vector with `c()`. The output of function `c()` is of a certain type. The type is determined by the following hierarchy (so called coercian = "Zwang") <br> NULL < raw < logical < integer < double < complex < character < list < expression|
 | Check       | `typeof()` or with `is.character()`, `is.double()`, `is.integer()`, `is.logical()` and more generally `is.atomic()`|
 | Coerce      | `as.character()`, `as.double()`, `as.integer()` or `as.logical()`|
@@ -49,7 +49,7 @@ Within atomic vectors there are 6 vector types
 ### List
 
 | Action      | R command                            |
-|-------------|--------------------------------------|
+|:------------|:-------------------------------------|
 | Create      | Creat a list with `list()` or connect existing lists with `c()`|
 | Check       | `is.list()`                          |
 | Coerce      | `as.list()`                          |
@@ -100,7 +100,7 @@ attributes(x)
 ```
 
 | Action      | R command                            |
-|-------------|--------------------------------------|
+|:------------|:-------------------------------------|
 | Create      | `factor()`                           |
 | Check       | `is.factor()`                        |
 | Coerce      | `as.factor()`                        |
@@ -118,7 +118,7 @@ Adding dimensions to an atomic vector automatically changes it to an Matrix/Arra
 * Additional attribute: dim
 
 | Action      | R command                            |
-|-------------|--------------------------------------|
+|:------------|:-------------------------------------|
 | Create      | `matrix()`, `array()`                |
 | Check       | `is.matrix()`, `is.array()`          |
 | Coerce      | `as.matrix()`, `as.array()`          |
@@ -129,7 +129,7 @@ Access, set and change dimensions with `dim()`
 Higher dimensional generalization of `length()`, `names()` and `c()`
 
 |1 dim      | 2 dim                     | n dim       |
-|-----------|---------------------------|-------------|
+|:----------|:--------------------------|:------------|
 |`length()` |`nrow()`, `ncol()`         | `dim()`     |
 |`names()`  |`rownames()`, `colnames()` |`dimnames()` |
 |`c()`      |`rbind()`, `cbind()`       |`abind()`    |
@@ -142,7 +142,7 @@ Higher dimensional generalization of `length()`, `names()` and `c()`
 * Additional attribute: `names`, `row.names` and `class`
 
 | Action      | R command                            |
-|-------------|--------------------------------------|
+|:------------|:-------------------------------------|
 | Create      | `data.frame()`                       |
 | Check       | `is.data.frame()`                    |
 | Coerce      | `as.data.frame()`                    |

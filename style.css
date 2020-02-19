@@ -18,11 +18,15 @@ pre code {
 
 
 /* definition tables (RZ) */
-.deftab, .deftab th, .deftab td, .deftab tr {
+.book .book-body .page-wrapper .page-inner section.normal .deftab td,
+.book .book-body .page-wrapper .page-inner section.normal .deftab th,
+.book .book-body .page-wrapper .page-inner section.normal .deftab tr
+{
+  padding:0;
   border-style: hidden;
   background-color: white;
-  /*  padding-left: 0px; */   /* somehow this is not working!! */
 }
+
 .deftab th, .deftab td {
   vertical-align: top;
   text-align: left;
@@ -33,6 +37,7 @@ pre code {
 .deftab td:nth-child(1) {
   width: 20%;       /* first td cell also 20% width (first column) */
 }
+
 
 
 /* comparison tables (RZ) */
@@ -46,5 +51,29 @@ pre code {
   padding: 5px;
   vertical-align: top;
   text-align: left;
+}
+
+
+
+/* boxes with warnings, notes, tips,... */
+.rmdcaution, .rmdimportant, .rmdnote, .rmdtip, .rmdwarning {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #f5f5f5 5px center/3em no-repeat;
+}
+.rmdcaution {
+  background-image: url("../figures/02_css/caution.png");
+}
+.rmdimportant {
+  background-image: url("../figures/02_css/important.png");
+}
+.rmdnote {
+  background-image: url("../figures/02_css/note.png");
+}
+.rmdtip {
+  background-image: url("../figures/02_css/tip.png");
+}
+.rmdwarning {
+  background-image: url("../figures/02_css/warning.png");
 }
 

@@ -20,7 +20,7 @@
 `typeof()` and `mode()` are almost the same (at the same level) except that they use different names
 
 | `typeof()`      | `mode()`           |
-|-----------------|--------------------|
+|:----------------|:-------------------|
 |`integer`, `double`|`numeric`         |
 |`special`, `builtin`|`function`       |
 |`symbol`         |`name`              | 
@@ -113,7 +113,7 @@ typeof(x[[1]])
 * Evaluate a call with `eval()`
 
 | Action      | R command                            |
-|-------------|--------------------------------------|
+|:------------|:-------------------------------------|
 | Create      | `call()` or `quote()`|
 | Check       | `is.call()`                          |
 | Coerce      | `as.call()`                          |

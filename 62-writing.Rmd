@@ -193,7 +193,12 @@ Recomended file formate
         - pipe tables for simple tables (generate [here](https://www.tablesgenerator.com/markdown_tables))
         - Grid tables where you need bullet points within the table (generate [here](https://www.tablesgenerator.com/text_tables))
 
-> Attention: without using a header, the formated table is reduced to an unformatted html table. Avoid this by including a white space into the header ()
+
+```{block2, type='rmdcaution'}
+Without using a header, the formated table is reduced to an unformatted html table. Avoid this by including a white space into the header ()
+```
+
+
 
 ### HTML tables
 
@@ -203,11 +208,15 @@ Tables can be formatted in CSS if we are only interested in HTML output. Add the
 
 ```css
 /* definition tables (RZ) */
-.deftab, .deftab th, .deftab td, .deftab tr {
+.book .book-body .page-wrapper .page-inner section.normal .deftab td,
+.book .book-body .page-wrapper .page-inner section.normal .deftab th,
+.book .book-body .page-wrapper .page-inner section.normal .deftab tr
+{
+  padding:0;
   border-style: hidden;
   background-color: white;
-  /*  padding-left: 0px; */   /* somehow this is not working!! */
 }
+
 .deftab th, .deftab td {
   vertical-align: top;
   text-align: left;
@@ -291,7 +300,7 @@ Results in
 This is a template containing structure, equations, references, cross-references, figures and tables with caption. The rendered output of the template can be found [here](https://retodomax.github.io/R_Ref_Book/template.html).
 To get the the template in pdf, replace the `output` section in the YAML header with
 
-```
+```yaml
   bookdown::pdf_document2:
     toc: true
     toc_depth: 3

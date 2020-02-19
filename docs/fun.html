@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-02-17" />
+<meta name="date" content="2020-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -319,7 +319,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.1.1" data-path="new-chapter.html"><a href="new-chapter.html#common-tasks"><i class="fa fa-check"></i><b>22.1.1</b> Common tasks</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="23" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>23</b> Stuff still to include</a></li>
+<li class="chapter" data-level="23" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>23</b> Test</a></li>
+<li class="chapter" data-level="24" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>24</b> Stuff still to include</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -376,30 +377,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.2</span> Function components</h2>
 <table>
 <colgroup>
-<col width="16%" />
-<col width="57%" />
-<col width="26%" />
+<col width="20%" />
+<col width="53%" />
+<col width="25%" />
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><ul>
-<li><code>body()</code></li>
-</ul></td>
-<td>Code inside the function.</td>
+<td align="left"><code>body()</code></td>
+<td align="left">Code inside the function.</td>
 <td></td>
 </tr>
 <tr class="even">
-<td><ul>
-<li><code>formals()</code></li>
-</ul></td>
-<td>List of formal <strong>arguments</strong> which controls how you can call the function.</td>
+<td align="left"><code>formals()</code></td>
+<td align="left">List of formal <strong>arguments</strong> which controls how you can call the function.</td>
 <td>Chapter <a href="fun.html#function-arguments">3.3</a></td>
 </tr>
 <tr class="odd">
-<td><ul>
-<li><code>environment()</code></li>
-</ul></td>
-<td>“Map” of the location of the function’s variables.</td>
+<td align="left"><code>environment()</code></td>
+<td align="left">“Map” of the location of the function’s variables.</td>
 <td>Chapter <a href="fun.html#function-environment">3.4</a></td>
 </tr>
 </tbody>
@@ -425,11 +420,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="function-arguments" class="section level2">
 <h2><span class="header-section-number">3.3</span> Arguments</h2>
 <ul>
-<li><p>Formal arguments (stated in function definition)</p></li>
-<li><p>Actual arguments (explicetly passed to the function when you call it)</p></li>
-<li><p>Get formal argument: <code>formals()</code></p></li>
-<li><p>Set formal arguments: <code>`formals&lt;-`</code> (replacement function: change default formals, add formals, remove formals)</p></li>
-<li><p><code>formals()</code> without arguments will list the arguments of the function which calls it</p></li>
+<li>Two types of arguments
+<ul>
+<li>Formal arguments (stated in function definition)</li>
+<li>Actual arguments (explicetly passed to the function when you call it)</li>
+</ul></li>
+<li>How to get/set formal arguments
+<ul>
+<li>Get formal argument: <code>formals()</code></li>
+<li>Set formal arguments: <code>`formals&lt;-`</code> (replacement function: change default formals, add formals, remove formals)</li>
+<li><code>formals()</code> without arguments will list the arguments of the function which calls it</li>
+</ul></li>
 </ul>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">myfunction &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="dv">2</span>) x <span class="op">+</span><span class="st"> </span>y</a>
 <a class="sourceLine" id="cb16-2" title="2"><span class="kw">formals</span>(myfunction)</a>
@@ -451,8 +452,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Partial name (prefix maching)</li>
 <li>Position</li>
 </ul>
-<p>Use <code>do.call()</code> to pass arguments containd in a list to a function.</p>
-<p>Use <code>missing()</code> to check if a formal argument has been manually set.</p>
+<p>Use <code>do.call()</code> to pass arguments containd in a list to a function. <br>
+Use <code>missing()</code> to check if a formal argument has been manually set.</p>
 <div id="lazy-evaluation" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Lazy evaluation:</h3>
 <ul>
@@ -661,7 +662,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">print</a></code></pre></div>
 <pre><code>#&gt; function (x, ...) 
 #&gt; UseMethod(&quot;print&quot;)
-#&gt; &lt;bytecode: 0x0000000010e445f8&gt;
+#&gt; &lt;bytecode: 0x0000000014e45cb8&gt;
 #&gt; &lt;environment: namespace:base&gt;</code></pre>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">head</span>(<span class="kw">methods</span>(print))</a></code></pre></div>
 <pre><code>#&gt; [1] &quot;print.acf&quot;     &quot;print.AES&quot;     &quot;print.anova&quot;   &quot;print.aov&quot;    

@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-02-17" />
+<meta name="date" content="2020-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -319,7 +319,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.1.1" data-path="new-chapter.html"><a href="new-chapter.html#common-tasks"><i class="fa fa-check"></i><b>22.1.1</b> Common tasks</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="23" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>23</b> Stuff still to include</a></li>
+<li class="chapter" data-level="23" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>23</b> Test</a></li>
+<li class="chapter" data-level="24" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>24</b> Stuff still to include</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -347,30 +348,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <table>
 <thead>
 <tr class="header">
-<th>Vectors</th>
-<th>Description</th>
+<th align="left">Vectors</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Atomic vector</td>
-<td>1 dimensional collection, homogeneous, flat</td>
+<td align="left">Atomic vector</td>
+<td align="left">1 dimensional collection, homogeneous, flat</td>
 </tr>
 <tr class="even">
-<td>List</td>
-<td>1 dimensional collection, heterogeneous, recursive</td>
+<td align="left">List</td>
+<td align="left">1 dimensional collection, heterogeneous, recursive</td>
 </tr>
 <tr class="odd">
-<td>Matrix</td>
-<td>Atomic vector 2 dimensions</td>
+<td align="left">Matrix</td>
+<td align="left">Atomic vector 2 dimensions</td>
 </tr>
 <tr class="even">
-<td>Array</td>
-<td>Atomic vector n dimensions</td>
+<td align="left">Array</td>
+<td align="left">Atomic vector n dimensions</td>
 </tr>
 <tr class="odd">
-<td>Data frame</td>
-<td>List containing atomic vectors of same length</td>
+<td align="left">Data frame</td>
+<td align="left">List containing atomic vectors of same length</td>
 </tr>
 </tbody>
 </table>
@@ -381,30 +382,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <table>
 <thead>
 <tr class="header">
-<th>Property</th>
-<th>Explanation</th>
+<th align="left">Property</th>
+<th align="left">Explanation</th>
 <th align="right">Example <code>x &lt;- 1:3</code></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Content</td>
-<td>Information stored in the vector</td>
+<td align="left">Content</td>
+<td align="left">Information stored in the vector</td>
 <td align="right"><code>1 2 3</code></td>
 </tr>
 <tr class="even">
-<td><a href="vec.html#type">Type</a></td>
-<td>Data type (numeric, list, …)</td>
+<td align="left"><a href="vec.html#type">Type</a></td>
+<td align="left">Data type (numeric, list, …)</td>
 <td align="right"><code>integer</code></td>
 </tr>
 <tr class="odd">
-<td><a href="vec.html#length">Length</a></td>
-<td>Lenght of the vector</td>
+<td align="left"><a href="vec.html#length">Length</a></td>
+<td align="left">Lenght of the vector</td>
 <td align="right">3</td>
 </tr>
 <tr class="even">
-<td><a href="vec.html#attributes">Attributes</a></td>
-<td>Additional properties of the vector</td>
+<td align="left"><a href="vec.html#attributes">Attributes</a></td>
+<td align="left">Additional properties of the vector</td>
 <td align="right"><code>NULL</code></td>
 </tr>
 </tbody>
@@ -429,22 +430,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </colgroup>
 <thead>
 <tr class="header">
-<th>Action</th>
-<th>R command</th>
+<th align="left">Action</th>
+<th align="left">R command</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Create</td>
-<td>Create a vector with <code>c()</code>. The output of function <code>c()</code> is of a certain type. The type is determined by the following hierarchy (so called coercian = “Zwang”) <br> NULL &lt; raw &lt; logical &lt; integer &lt; double &lt; complex &lt; character &lt; list &lt; expression</td>
+<td align="left">Create</td>
+<td align="left">Create a vector with <code>c()</code>. The output of function <code>c()</code> is of a certain type. The type is determined by the following hierarchy (so called coercian = “Zwang”) <br> NULL &lt; raw &lt; logical &lt; integer &lt; double &lt; complex &lt; character &lt; list &lt; expression</td>
 </tr>
 <tr class="even">
-<td>Check</td>
-<td><code>typeof()</code> or with <code>is.character()</code>, <code>is.double()</code>, <code>is.integer()</code>, <code>is.logical()</code> and more generally <code>is.atomic()</code></td>
+<td align="left">Check</td>
+<td align="left"><code>typeof()</code> or with <code>is.character()</code>, <code>is.double()</code>, <code>is.integer()</code>, <code>is.logical()</code> and more generally <code>is.atomic()</code></td>
 </tr>
 <tr class="odd">
-<td>Coerce</td>
-<td><code>as.character()</code>, <code>as.double()</code>, <code>as.integer()</code> or <code>as.logical()</code></td>
+<td align="left">Coerce</td>
+<td align="left"><code>as.character()</code>, <code>as.double()</code>, <code>as.integer()</code> or <code>as.logical()</code></td>
 </tr>
 </tbody>
 </table>
@@ -454,26 +455,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <table>
 <thead>
 <tr class="header">
-<th>Action</th>
-<th>R command</th>
+<th align="left">Action</th>
+<th align="left">R command</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Create</td>
-<td>Creat a list with <code>list()</code> or connect existing lists with <code>c()</code></td>
+<td align="left">Create</td>
+<td align="left">Creat a list with <code>list()</code> or connect existing lists with <code>c()</code></td>
 </tr>
 <tr class="even">
-<td>Check</td>
-<td><code>is.list()</code></td>
+<td align="left">Check</td>
+<td align="left"><code>is.list()</code></td>
 </tr>
 <tr class="odd">
-<td>Coerce</td>
-<td><code>as.list()</code></td>
+<td align="left">Coerce</td>
+<td align="left"><code>as.list()</code></td>
 </tr>
 <tr class="even">
-<td>Unlist</td>
-<td>Make atomic vector out of list: <code>unlist()</code></td>
+<td align="left">Unlist</td>
+<td align="left">Make atomic vector out of list: <code>unlist()</code></td>
 </tr>
 </tbody>
 </table>
@@ -527,22 +528,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <table>
 <thead>
 <tr class="header">
-<th>Action</th>
-<th>R command</th>
+<th align="left">Action</th>
+<th align="left">R command</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Create</td>
-<td><code>factor()</code></td>
+<td align="left">Create</td>
+<td align="left"><code>factor()</code></td>
 </tr>
 <tr class="even">
-<td>Check</td>
-<td><code>is.factor()</code></td>
+<td align="left">Check</td>
+<td align="left"><code>is.factor()</code></td>
 </tr>
 <tr class="odd">
-<td>Coerce</td>
-<td><code>as.factor()</code></td>
+<td align="left">Coerce</td>
+<td align="left"><code>as.factor()</code></td>
 </tr>
 </tbody>
 </table>
@@ -558,22 +559,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <table>
 <thead>
 <tr class="header">
-<th>Action</th>
-<th>R command</th>
+<th align="left">Action</th>
+<th align="left">R command</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Create</td>
-<td><code>matrix()</code>, <code>array()</code></td>
+<td align="left">Create</td>
+<td align="left"><code>matrix()</code>, <code>array()</code></td>
 </tr>
 <tr class="even">
-<td>Check</td>
-<td><code>is.matrix()</code>, <code>is.array()</code></td>
+<td align="left">Check</td>
+<td align="left"><code>is.matrix()</code>, <code>is.array()</code></td>
 </tr>
 <tr class="odd">
-<td>Coerce</td>
-<td><code>as.matrix()</code>, <code>as.array()</code></td>
+<td align="left">Coerce</td>
+<td align="left"><code>as.matrix()</code>, <code>as.array()</code></td>
 </tr>
 </tbody>
 </table>
@@ -582,26 +583,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <table>
 <thead>
 <tr class="header">
-<th>1 dim</th>
-<th>2 dim</th>
-<th>n dim</th>
+<th align="left">1 dim</th>
+<th align="left">2 dim</th>
+<th align="left">n dim</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>length()</code></td>
-<td><code>nrow()</code>, <code>ncol()</code></td>
-<td><code>dim()</code></td>
+<td align="left"><code>length()</code></td>
+<td align="left"><code>nrow()</code>, <code>ncol()</code></td>
+<td align="left"><code>dim()</code></td>
 </tr>
 <tr class="even">
-<td><code>names()</code></td>
-<td><code>rownames()</code>, <code>colnames()</code></td>
-<td><code>dimnames()</code></td>
+<td align="left"><code>names()</code></td>
+<td align="left"><code>rownames()</code>, <code>colnames()</code></td>
+<td align="left"><code>dimnames()</code></td>
 </tr>
 <tr class="odd">
-<td><code>c()</code></td>
-<td><code>rbind()</code>, <code>cbind()</code></td>
-<td><code>abind()</code></td>
+<td align="left"><code>c()</code></td>
+<td align="left"><code>rbind()</code>, <code>cbind()</code></td>
+<td align="left"><code>abind()</code></td>
 </tr>
 </tbody>
 </table>
@@ -616,22 +617,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <table>
 <thead>
 <tr class="header">
-<th>Action</th>
-<th>R command</th>
+<th align="left">Action</th>
+<th align="left">R command</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Create</td>
-<td><code>data.frame()</code></td>
+<td align="left">Create</td>
+<td align="left"><code>data.frame()</code></td>
 </tr>
 <tr class="even">
-<td>Check</td>
-<td><code>is.data.frame()</code></td>
+<td align="left">Check</td>
+<td align="left"><code>is.data.frame()</code></td>
 </tr>
 <tr class="odd">
-<td>Coerce</td>
-<td><code>as.data.frame()</code></td>
+<td align="left">Coerce</td>
+<td align="left"><code>as.data.frame()</code></td>
 </tr>
 </tbody>
 </table>

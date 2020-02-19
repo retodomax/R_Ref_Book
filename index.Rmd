@@ -24,7 +24,7 @@ knitr::opts_chunk$set(comment = "#>",
 ```
 
 
-```{r echo = FALSE, out.width='70%', fig.align = 'center'}
+```{r echo = FALSE, out.width='40%', fig.align = 'center'}
 knitr::include_graphics("figures/01_cover/Cover2.png")
 ```
 

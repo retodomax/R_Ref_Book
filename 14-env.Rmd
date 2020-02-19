@@ -25,7 +25,11 @@ knitr::include_graphics("figures/env01_environment-structure.png")
 ```
 
 
-> **parent environment &#8800; parent frame**: parent frame, called by `parent.frame()` The enclosing environment is distinguished from the parent frame: the latter (returned by `parent.frame()`) refers to the environment of the caller of a function (call stack).
+```{block2, type='rmdnote'}
+**parent environment &#8800; parent frame**: The enclosing environment is distinguished from the parent frame: the latter (returned by `parent.frame()`) refers to the environment of the caller of a function (call stack).
+```
+
+
 
 
 * `new.env()`: create new environment
@@ -172,9 +176,15 @@ knitr::include_graphics(c("figures/env4_fun.png",
 ```
 
 
-> **Search list &#8800; call stack**: the call stack is a list of hirarchical function calls where higher functions are executed within lower functions. This does not mean that the environment property of the higher function is the lower function.
+```{block2, type='rmdnote'}
+**Search list &#8800; call stack**: the call stack is a list of hirarchical function calls where higher functions are executed within lower functions. This does not mean that the environment property of the higher function is the lower function.
+```
 
-> **Lexical scoping &#8800; dynamic scoping**: Lexical scoping means variables are searched where the function was defined, dynamic scoping means variables are searched where the function was called. R is closer to lexical scoping.
+
+```{block2, type='rmdnote'}
+**Lexical scoping &#8800; dynamic scoping**: Lexical scoping means variables are searched where the function was defined, dynamic scoping means variables are searched where the function was called. R is closer to lexical scoping.
+```
+
 
 
 ## Packages 

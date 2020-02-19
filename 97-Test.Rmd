@@ -1,0 +1,59 @@
+# Test
+
+
+Here is a review of existing methods.
+
+
+
+<table class = "deftab">
+  <tr>
+    <td>**Doe**</td>
+    <td>John</td>
+  </tr>
+  <tr>
+    <td>Doe</td>
+    <td>John</td>
+  </tr>
+  <tr>
+    <td>Doe</td>
+    <td>John</td>
+  </tr>
+</table>
+
+
+And now some examples with
+
+some space
+
+in between
+
+and more spaces
+
+spaces
+
+
+<table>
+  <tr>
+    <td>**Doe**</td>
+    <td>John</td>
+  </tr>
+  <tr>
+    <td>Doe</td>
+    <td>John</td>
+  </tr>
+  <tr>
+    <td>Doe</td>
+    <td>John</td>
+  </tr>
+</table>
+
+
+
+```{block2, type='rmdnote'}
+If you are planning on printing your book to PDF, you will need a LaTeX distribution. We recommend that you install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+```
+
+
+```{block2, type='rmdnote'}
+If you are planning on printing your book to PDF, you will need a LaTeX distribution. We recommend that you install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+```
