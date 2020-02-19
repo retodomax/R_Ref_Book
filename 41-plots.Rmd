@@ -124,7 +124,7 @@ par(opar)
 
 
 
-#### Coordinate system outside plot
+##### Coordinate system outside plot {-}
 ```{r, collapse=TRUE}
 par("mar") # Margine Area
 par("oma") # Outer Margin Area
@@ -132,16 +132,16 @@ par("mgp") # position of [1] x/y-label, [2] axis, [3] ticks
 par("mex") # "height"" of one line
 ```
 
-#### Normalized device coordinates (NDC) [0, 1]
+##### Normalized device coordinates (NDC) [0, 1] {-}
 ```{r, collapse=TRUE}
 par("fig") # Start and endpoint of ploting region
 par("omd") # oma in NDC
 ```
 
-#### Change between coordinate system
+##### Change between coordinate system {-}
 Use `grconvertX()` to change between different coordinate systems
 
-#### Plot outside plotting region
+##### Plot outside plotting region {-}
 ```{r, collapse=TRUE}
 par("xpd")
 ```

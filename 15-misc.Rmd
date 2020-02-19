@@ -24,7 +24,7 @@ The saved numbers are not precisely the number we would expect. There are two re
 1. Rounding to store decimal numbers
 2. Binary representation of decimal numbers
 
-**Rounding decimal numbers**
+##### Rounding decimal numbers {-}
 
 Storing a decimal numbers (double) with infinite precision uses an infinite amount of memory. Therefore doubles are rounded before they are stored to the computer:
 
@@ -35,7 +35,7 @@ print(x, digits = 22)
 
 only 17 digits after the comma are stored when calculating 1/3
 
-**Binary representations**
+##### Binary representations {-}
 
 But why was it not possible to store 1/10 precicely even as it has only one digit after the comma? Computers use binary representations to store data. If we write 0.1 in binary representation it has infinite decimal places (see [here](https://www.exploringbinary.com/why-0-point-1-does-not-exist-in-floating-point/)). Therefore the number has to be rounded and is no longer precise.
 

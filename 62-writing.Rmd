@@ -180,6 +180,21 @@ Recomended file formate
     - `options(knitr.graphics.auto_pdf = TRUE)` pdf output will automatically take file with same name but pdf format if it is available.
 
 
+##### Wrap text arround plot {-}
+
+Plots can be placed on right side with text wraped arround it. Use the following chunk options:
+
+````markdown
+`r ''````{r, out.width='25%', echo = FALSE, out.extra='style="float:right; padding:5px"'}
+knitr::include_graphics('figures/hex-rmarkdown.png')
+```
+````
+<!-- 
+## this seems necessary for correct source code displaying...
+``` --> 
+
+
+
 ## Tables
 
 * For data in R use `knitr::kable()` (See [Kable Manual](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html))
@@ -204,7 +219,7 @@ Without using a header, the formated table is reduced to an unformatted html tab
 
 Tables can be formatted in CSS if we are only interested in HTML output. Add the following internal `<style>` element (in document between `<style>` and `</style>` tag) or use an external CSS file (`style.css`).
 
-**Definition tables**
+##### Definition tables {-}
 
 ```css
 /* definition tables (RZ) */
@@ -292,6 +307,92 @@ Results in
     - backslash followed by newline = hard line break
     -"&#8239;" thin nonbreaking space
     -"&#8209;" nonbreaking hythen (should be used as hythen minus)
+
+
+
+## Section folding
+
+Section folding is only available for HTML documents. There are two good options
+
+* Global code folding
+* Local section folding
+
+
+##### Global code folding {-}
+
+Well explained [here](https://bookdown.org/yihui/rmarkdown/html-document.html#code-folding). Put the line `code_folding: hide` in the YAML header
+
+```yaml
+---
+title: "My Document"
+output:
+  html_document:
+    code_folding: hide
+---
+```
+
+You can specify `code_folding: show` to still show all R code by default but then allow users to hide the code if they wish.
+
+
+##### Local section folding {-}
+
+Good ideas can be found [here](https://stackoverflow.com/questions/52576626/rmarkdown-collapsible-panel). Here we describe a methode with HTML/CSS buttons.
+
+1. Add HTML code for button at beginning of your document. Alternatively you make a separate html file. Find button code and how to make separate HTML file in Chapter \@ref(NewBookdownProject)
+2. Add this HTML code at the place were you want the button.
+
+```html
+<button onclick="myFunction('new_identifier')">Text on button</button>
+<div id="new_identifier" style="display: none">
+
+Blabla.
+
+</div>
+```
+
+Replace `new_identifier` with unique identifier for that section. Replace `Text on button` and `Blabla`
+
+
+
+## Add box
+
+These type of boxes are only available for HTML documents.
+There is a good implementation to add boxes for caution, important, note, tip and waring
+
+1. Add CSS code for button at beginning of your document. Alternatively you make a separate CSS style file. Find button code and how to make separate CSS style file in Chapter \@ref(NewBookdownProject)
+2. Add this code at the place were you want the button.
+
+
+
+````markdown
+`r ''````{block2, type='rmdcaution'}
+Text
+```
+````
+
+Replace `rmdcaution` with `rmdimportant`, `rmdnote`, `rmdtip` and `rmdwarning`
+
+Here how they look like
+
+```{block2, type='rmdcaution'}
+Caution
+```
+
+```{block2, type='rmdimportant'}
+Important
+```
+
+```{block2, type='rmdnote'}
+Note
+```
+
+```{block2, type='rmdtip'}
+Tip
+```
+
+```{block2, type='rmdwarning'}
+Warning
+```
 
 
 

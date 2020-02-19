@@ -25,6 +25,7 @@ knitr::include_graphics("figures/env01_environment-structure.png")
 ```
 
 
+
 ```{block2, type='rmdnote'}
 **parent environment &#8800; parent frame**: The enclosing environment is distinguished from the parent frame: the latter (returned by `parent.frame()`) refers to the environment of the caller of a function (call stack).
 ```

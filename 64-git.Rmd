@@ -12,14 +12,14 @@ Download Git: [here](https://git-scm.com/downloads)
 
 Recommended: do your first steps with a Git client (GUI) to get a feeling for the workflow. Good clients are [SourceTree](https://www.sourcetreeapp.com/), [GitKraken](https://www.gitkraken.com/) but there are many more [here](https://git-scm.com/downloads/guis)
 
-**Important bash commands**
+##### Important bash commands {-}
 
 * `cd` change directory
 * `ls` list all files within directory
 * `head` show head of file
 * `rm` remove file
 
-**Set global config variables**
+##### Set global config variables {-}
 
 ``` bash
 git config --global user.name 'Reto Zihlmann'
@@ -34,19 +34,19 @@ git config --global --list
 
 
 
-**Clone repo to your local computer**
+##### Clone repo to your local computer {-}
 
 ``` bash
 git clone https://github.com/retodomax/YOUR-REPOSITORY.git
 ```
 
-**Conect with remote respository**
+##### Conect with remote respository {-}
 ```{r, out.width='100%', fig.align='center', fig.cap='...', echo = F}
 knitr::include_graphics('figures/git_remote.png')
 ```
 
 
-**Show origin variable**
+##### Show origin variable {-}
 
 ``` bash
 git remote show origin
@@ -58,7 +58,7 @@ or shorter
 git remote -v
 ```
 
-**Show branch we are traking**
+##### Show branch we are traking {-}
 
 ```bash
 git branch -vv
@@ -66,13 +66,13 @@ git branch -vv
 
 
 
-**list existing keys**
+##### list existing keys {-}
 ``` bash
 ls -al ~/.ssh/
 ```
 
 
-** generate new key**
+##### generate new key {-}
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "retozihlmann@outlook.com Lenovo"
@@ -147,14 +147,14 @@ git push -u origin master
 
 ## Git basics
 
-**basic bash commands**
+##### basic bash commands {-}
 
 * `cd` change directory
 * `ls` list all files within directory
 * `head` show head of file
 * `rm` remove file
 
-**basic git commands**
+##### basic git commands {-}
 
 * `git config` change global/local variables (name, email, ...)
 * `git init` initialize git respository
@@ -165,7 +165,7 @@ git push -u origin master
 
 ### Common tasks
 
-**create a new repository on the command line**
+##### create a new repository on the command line {-}
 
 ``` bash
 echo "# test" >> README.md
@@ -176,14 +176,14 @@ git remote add origin git@github.com:retodomax/test.git
 git push -u origin master
 ```
 
-**push an existing repository from the command line**
+##### push an existing repository from the command line {-}
 
 ``` bash
 git remote add origin git@github.com:retodomax/test.git
 git push -u origin master
 ```
 
-**clone existing repository and push changes**
+##### clone existing repository and push changes {-}
 
 ``` bash
 git clone git@github.com:retodomax/test.git
@@ -194,7 +194,7 @@ git commit -m "add README"
 git push -u origin master
 ```
 
-**push existing folder to origin**
+##### push existing folder to origin {-}
 
 ``` bash
 cd existing_folder

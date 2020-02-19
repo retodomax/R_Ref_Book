@@ -287,8 +287,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.4.1" data-path="r-markdown.html"><a href="r-markdown.html#html-tables"><i class="fa fa-check"></i><b>18.4.1</b> HTML tables</a></li>
 </ul></li>
 <li class="chapter" data-level="18.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>18.5</b> Sepecial characters</a></li>
-<li class="chapter" data-level="18.6" data-path="r-markdown.html"><a href="r-markdown.html#template"><i class="fa fa-check"></i><b>18.6</b> Template</a></li>
-<li class="chapter" data-level="18.7" data-path="r-markdown.html"><a href="r-markdown.html#basic-elements"><i class="fa fa-check"></i><b>18.7</b> Basic Elements</a></li>
+<li class="chapter" data-level="18.6" data-path="r-markdown.html"><a href="r-markdown.html#section-folding"><i class="fa fa-check"></i><b>18.6</b> Section folding</a></li>
+<li class="chapter" data-level="18.7" data-path="r-markdown.html"><a href="r-markdown.html#add-box"><i class="fa fa-check"></i><b>18.7</b> Add box</a></li>
+<li class="chapter" data-level="18.8" data-path="r-markdown.html"><a href="r-markdown.html#template"><i class="fa fa-check"></i><b>18.8</b> Template</a></li>
+<li class="chapter" data-level="18.9" data-path="r-markdown.html"><a href="r-markdown.html#basic-elements"><i class="fa fa-check"></i><b>18.9</b> Basic Elements</a></li>
 </ul></li>
 <li class="chapter" data-level="19" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>19</b> Bookdown</a><ul>
 <li class="chapter" data-level="19.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>19.1</b> Configuration</a><ul>
@@ -296,7 +298,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="19.1.2" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>19.1.2</b> <code>_output.yml</code></a></li>
 <li class="chapter" data-level="19.1.3" data-path="bookdown.html"><a href="bookdown.html#yaml-header"><i class="fa fa-check"></i><b>19.1.3</b> yaml header</a></li>
 </ul></li>
-<li class="chapter" data-level="19.2" data-path="bookdown.html"><a href="bookdown.html#create-new-project"><i class="fa fa-check"></i><b>19.2</b> Create new project</a></li>
+<li class="chapter" data-level="19.2" data-path="bookdown.html"><a href="bookdown.html#NewBookdownProject"><i class="fa fa-check"></i><b>19.2</b> Create new project</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>20</b> Reference management</a><ul>
 <li class="chapter" data-level="20.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>20.1</b> Literature</a><ul>
@@ -629,8 +631,8 @@ Show default par() options
 <a class="sourceLine" id="cb82-27" title="27"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;par(oma=c(3,3,3,3))&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">2</span>, <span class="dt">outer =</span> T)</a></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-46-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" title="1"><span class="kw">par</span>(opar)</a></code></pre></div>
-<div id="coordinate-system-outside-plot" class="section level4">
-<h4><span class="header-section-number">11.1.3.1</span> Coordinate system outside plot</h4>
+<div id="coordinate-system-outside-plot" class="section level5 unnumbered">
+<h5>Coordinate system outside plot</h5>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" title="1"><span class="kw">par</span>(<span class="st">&quot;mar&quot;</span>)  <span class="co"># Margine Area</span></a>
 <a class="sourceLine" id="cb84-2" title="2"><span class="co">#&gt; [1] 5.1 4.1 4.1 2.1</span></a>
 <a class="sourceLine" id="cb84-3" title="3"><span class="kw">par</span>(<span class="st">&quot;oma&quot;</span>)  <span class="co"># Outer Margin Area</span></a>
@@ -640,19 +642,19 @@ Show default par() options
 <a class="sourceLine" id="cb84-7" title="7"><span class="kw">par</span>(<span class="st">&quot;mex&quot;</span>)  <span class="co"># &#39;height&#39;&#39; of one line</span></a>
 <a class="sourceLine" id="cb84-8" title="8"><span class="co">#&gt; [1] 1</span></a></code></pre></div>
 </div>
-<div id="normalized-device-coordinates-ndc-0-1" class="section level4">
-<h4><span class="header-section-number">11.1.3.2</span> Normalized device coordinates (NDC) [0, 1]</h4>
+<div id="normalized-device-coordinates-ndc-0-1" class="section level5 unnumbered">
+<h5>Normalized device coordinates (NDC) [0, 1]</h5>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1"><span class="kw">par</span>(<span class="st">&quot;fig&quot;</span>)  <span class="co"># Start and endpoint of ploting region</span></a>
 <a class="sourceLine" id="cb85-2" title="2"><span class="co">#&gt; [1] 0 1 0 1</span></a>
 <a class="sourceLine" id="cb85-3" title="3"><span class="kw">par</span>(<span class="st">&quot;omd&quot;</span>)  <span class="co"># oma in NDC</span></a>
 <a class="sourceLine" id="cb85-4" title="4"><span class="co">#&gt; [1] 0 1 0 1</span></a></code></pre></div>
 </div>
-<div id="change-between-coordinate-system" class="section level4">
-<h4><span class="header-section-number">11.1.3.3</span> Change between coordinate system</h4>
+<div id="change-between-coordinate-system" class="section level5 unnumbered">
+<h5>Change between coordinate system</h5>
 <p>Use <code>grconvertX()</code> to change between different coordinate systems</p>
 </div>
-<div id="plot-outside-plotting-region" class="section level4">
-<h4><span class="header-section-number">11.1.3.4</span> Plot outside plotting region</h4>
+<div id="plot-outside-plotting-region" class="section level5 unnumbered">
+<h5>Plot outside plotting region</h5>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" title="1"><span class="kw">par</span>(<span class="st">&quot;xpd&quot;</span>)</a>
 <a class="sourceLine" id="cb86-2" title="2"><span class="co">#&gt; [1] FALSE</span></a></code></pre></div>
 <p><code>FALSE</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the plot regions<br />

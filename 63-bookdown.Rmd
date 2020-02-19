@@ -19,7 +19,8 @@ Where to define configuration (see also [here](https://stackoverflow.com/questio
 Example with all possible default options
 
 ### `_bookdown.yml`
-```
+
+```yaml
 book_filename: "myBookname"
 delete_merged_file: true
 language:
@@ -38,7 +39,7 @@ Here: add explanation to each option
 
 ### `_output.yml`
 
-```
+```yaml
 bookdown::gitbook:
   css: style.css
   split_by: chapter
@@ -62,7 +63,7 @@ bookdown::epub_book:
 
 ### yaml header
 
-```
+```yaml
 ---
 title: "A Minimal Bookdown Book"
 author: "Sean Kross"
@@ -79,7 +80,7 @@ description: "Everything you need (and nothing more) to start a bookdown book."
 ```
 
 
-## Create new project
+## Create new project {#NewBookdownProject}
 
 1. Open template of RStudio
 2. Connect with GitHub repository and push
@@ -108,7 +109,8 @@ github-repo: "retodomax/R_Ref_Book"
 cover-image: "figures/01_cover/Cover.svg"
 favicon: "figures/00_icon/icon.ico"
 ```
-7. Add `header.html` file with following content: (hidde button)
+7. Add `header.html` file with following content: (hide button)
+
 ```html
 <script>
 function myFunction(myid) {
