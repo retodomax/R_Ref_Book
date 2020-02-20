@@ -62,7 +62,7 @@ pre code {
   background: #f5f5f5 5px center/3em no-repeat;
 }
 .rmdcaution {
-  background-image: url("../figures/02_css/caution.png");
+  background-image: url("figures/02_css/caution.png");
 }
 .rmdimportant {
   background-image: url("../figures/02_css/important.png");
