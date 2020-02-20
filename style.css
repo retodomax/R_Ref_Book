@@ -65,15 +65,15 @@ pre code {
   background-image: url("figures/02_css/caution.png");
 }
 .rmdimportant {
-  background-image: url("../figures/02_css/important.png");
+  background-image: url("figures/02_css/important.png");
 }
 .rmdnote {
-  background-image: url("../figures/02_css/note.png");
+  background-image: url("figures/02_css/note.png");
 }
 .rmdtip {
-  background-image: url("../figures/02_css/tip.png");
+  background-image: url("figures/02_css/tip.png");
 }
 .rmdwarning {
-  background-image: url("../figures/02_css/warning.png");
+  background-image: url("figures/02_css/warning.png");
 }
 
