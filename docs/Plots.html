@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-02-20" />
+<meta name="date" content="2020-02-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -238,6 +238,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1.1" data-path="Plots.html"><a href="Plots.html#set-graphical-parameters"><i class="fa fa-check"></i><b>11.1.1</b> Set graphical parameters</a></li>
 <li class="chapter" data-level="11.1.2" data-path="Plots.html"><a href="Plots.html#default"><i class="fa fa-check"></i><b>11.1.2</b> Default</a></li>
 <li class="chapter" data-level="11.1.3" data-path="Plots.html"><a href="Plots.html#device-region"><i class="fa fa-check"></i><b>11.1.3</b> Device region</a></li>
+<li class="chapter" data-level="11.1.4" data-path="Plots.html"><a href="Plots.html#coordinate-sytem"><i class="fa fa-check"></i><b>11.1.4</b> Coordinate sytem</a></li>
+<li class="chapter" data-level="11.1.5" data-path="Plots.html"><a href="Plots.html#define-device-regions"><i class="fa fa-check"></i><b>11.1.5</b> Define device regions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>12</b> Interactive Plots</a></li>
@@ -366,11 +368,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The parameters are defined for the currently active device</p>
 <ul>
 <li>Normally the Rstudio plot panel</li>
-<li>If <code>png()</code> or <code>pdf()</code> opend =&gt; only within this document</li>
+<li>If <code>png()</code> or <code>pdf()</code> opend   ⇒ only within this document</li>
 <li><code>dev.off()</code> closes device and reset <code>par()</code>
 <ul>
-<li>If <code>png()</code> or <code>pdf()</code>   ⇒ the same par are active as they were before the device <code>png()</code> or <code>pdf()</code> was opend</li>
-<li>If Rstudio panel \t   ⇒ the default par are active</li>
+<li>If <code>png()</code> or <code>pdf()</code>   ⇒ the same <code>par</code> are active as they were before the device <code>png()</code> or <code>pdf()</code> was opend</li>
+<li>If Rstudio panel   ⇒ the default <code>par</code> are active</li>
 </ul></li>
 </ul>
 </div>
@@ -602,65 +604,146 @@ Show default par() options
 <h3><span class="header-section-number">11.1.3</span> Device region</h3>
 <!-- ![figure margines](C:/Users/Reto/Downloads/fig_margins.jpg){width=50%} -->
 <!-- <img style="float: right;" src="C:/Users/Reto/Downloads/fig_margins.jpg" width=400> -->
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" title="1">opar &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">xpd =</span> <span class="ot">NA</span>, <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>, <span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.05</span>)</a>
-<a class="sourceLine" id="cb82-2" title="2"></a>
-<a class="sourceLine" id="cb82-3" title="3"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Y&quot;</span>)</a>
-<a class="sourceLine" id="cb82-4" title="4"></a>
-<a class="sourceLine" id="cb82-5" title="5"><span class="kw">box</span>(<span class="st">&quot;plot&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a>
-<a class="sourceLine" id="cb82-6" title="6"><span class="kw">box</span>(<span class="st">&quot;inner&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</a>
-<a class="sourceLine" id="cb82-7" title="7"><span class="kw">box</span>(<span class="st">&quot;outer&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb82-8" title="8"></a>
-<a class="sourceLine" id="cb82-9" title="9"><span class="kw">text</span>(<span class="dv">5</span>, <span class="dv">9</span>, <span class="st">&quot;Plot&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb82-10" title="10"><span class="kw">mtext</span>(<span class="st">&quot;Figure&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb82-11" title="11"><span class="kw">mtext</span>(<span class="st">&quot;Device&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">1</span>, <span class="dt">outer =</span> T)</a>
-<a class="sourceLine" id="cb82-12" title="12"></a>
-<a class="sourceLine" id="cb82-13" title="13"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>, <span class="st">&quot;Line 3&quot;</span>), <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">at =</span> <span class="kw">grconvertX</span>(<span class="dv">1</span>, </a>
-<a class="sourceLine" id="cb82-14" title="14">    <span class="st">&quot;npc&quot;</span>, <span class="st">&quot;user&quot;</span>), <span class="dt">adj =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</a>
-<a class="sourceLine" id="cb82-15" title="15"></a>
-<a class="sourceLine" id="cb82-16" title="16"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>, <span class="st">&quot;Line 3&quot;</span>), <span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">adj =</span> <span class="dv">1</span>, </a>
-<a class="sourceLine" id="cb82-17" title="17">    <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</a>
-<a class="sourceLine" id="cb82-18" title="18"></a>
-<a class="sourceLine" id="cb82-19" title="19"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="kw">c</span>(<span class="st">&quot;Line 0&quot;</span>, <span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>), <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">outer =</span> T, <span class="dt">at =</span> <span class="dv">0</span>, </a>
-<a class="sourceLine" id="cb82-20" title="20">    <span class="dt">adj =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb82-21" title="21"></a>
-<a class="sourceLine" id="cb82-22" title="22"></a>
-<a class="sourceLine" id="cb82-23" title="23"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;Margins&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">2</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb82-24" title="24"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;par(mar=c(5,4,4,2) + 0.1)&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb82-25" title="25"></a>
-<a class="sourceLine" id="cb82-26" title="26"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;Outer Margin&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">1</span>, <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">outer =</span> T)</a>
-<a class="sourceLine" id="cb82-27" title="27"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;par(oma=c(3,3,3,3))&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">2</span>, <span class="dt">outer =</span> T)</a></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-46-1.png" width="80%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" title="1"><span class="kw">par</span>(opar)</a></code></pre></div>
-<div id="coordinate-system-outside-plot" class="section level5 unnumbered">
-<h5>Coordinate system outside plot</h5>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" title="1"><span class="kw">par</span>(<span class="st">&quot;mar&quot;</span>)  <span class="co"># Margine Area</span></a>
-<a class="sourceLine" id="cb84-2" title="2"><span class="co">#&gt; [1] 5.1 4.1 4.1 2.1</span></a>
-<a class="sourceLine" id="cb84-3" title="3"><span class="kw">par</span>(<span class="st">&quot;oma&quot;</span>)  <span class="co"># Outer Margin Area</span></a>
-<a class="sourceLine" id="cb84-4" title="4"><span class="co">#&gt; [1] 0 0 0 0</span></a>
-<a class="sourceLine" id="cb84-5" title="5"><span class="kw">par</span>(<span class="st">&quot;mgp&quot;</span>)  <span class="co"># position of [1] x/y-label, [2] axis, [3] ticks</span></a>
-<a class="sourceLine" id="cb84-6" title="6"><span class="co">#&gt; [1] 3 1 0</span></a>
-<a class="sourceLine" id="cb84-7" title="7"><span class="kw">par</span>(<span class="st">&quot;mex&quot;</span>)  <span class="co"># &#39;height&#39;&#39; of one line</span></a>
-<a class="sourceLine" id="cb84-8" title="8"><span class="co">#&gt; [1] 1</span></a></code></pre></div>
-</div>
-<div id="normalized-device-coordinates-ndc-0-1" class="section level5 unnumbered">
-<h5>Normalized device coordinates (NDC) [0, 1]</h5>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1"><span class="kw">par</span>(<span class="st">&quot;fig&quot;</span>)  <span class="co"># Start and endpoint of ploting region</span></a>
-<a class="sourceLine" id="cb85-2" title="2"><span class="co">#&gt; [1] 0 1 0 1</span></a>
-<a class="sourceLine" id="cb85-3" title="3"><span class="kw">par</span>(<span class="st">&quot;omd&quot;</span>)  <span class="co"># oma in NDC</span></a>
-<a class="sourceLine" id="cb85-4" title="4"><span class="co">#&gt; [1] 0 1 0 1</span></a></code></pre></div>
-</div>
-<div id="change-between-coordinate-system" class="section level5 unnumbered">
-<h5>Change between coordinate system</h5>
-<p>Use <code>grconvertX()</code> to change between different coordinate systems</p>
-</div>
 <div id="plot-outside-plotting-region" class="section level5 unnumbered">
 <h5>Plot outside plotting region</h5>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" title="1"><span class="kw">par</span>(<span class="st">&quot;xpd&quot;</span>)</a>
-<a class="sourceLine" id="cb86-2" title="2"><span class="co">#&gt; [1] FALSE</span></a></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" title="1"><span class="kw">par</span>(<span class="st">&quot;xpd&quot;</span>)</a>
+<a class="sourceLine" id="cb82-2" title="2"><span class="co">#&gt; [1] FALSE</span></a></code></pre></div>
 <p><code>FALSE</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the plot regions<br />
 <code>TRUE</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the figure region<br />
 <code>NA</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the device region</p>
+</div>
+</div>
+<div id="coordinate-sytem" class="section level3">
+<h3><span class="header-section-number">11.1.4</span> Coordinate sytem</h3>
+<p>There are in total 9 coordinate sytems</p>
+<ul>
+<li>absolute
+<ul>
+<li><span class="math inline">\((0,0)\)</span> in lower left device corner
+<ul>
+<li><code>inches</code> can be converted to cm with function <code>cm()</code></li>
+<li><code>device</code> usually in pixels (png) or points (pdf)</li>
+<li><code>lines</code> based on <code>mex</code> (relative to font size)</li>
+<li><code>chars</code> based on <code>cex</code> (font size)</li>
+</ul></li>
+<li><span class="math inline">\((0,0)\)</span> depend on what is plotted
+<ul>
+<li><code>user</code> user coordinates</li>
+</ul></li>
+</ul></li>
+<li>normalized
+<ul>
+<li><code>ndc</code> normalized device coordinates</li>
+<li><code>nic</code> normalized inner region coordinates</li>
+<li><code>nfc</code> normalized figure coordinates</li>
+<li><code>npc</code> normalized plot coordinates</li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-48"></span>
+<img src="R_Ref_Book_files/figure-html/unnamed-chunk-48-1.png" alt="Interval [0, 1] for different normalized coordinate systems" width="80%" />
+<p class="caption">
+Figure 11.1: Interval [0, 1] for different normalized coordinate systems
+</p>
+</div>
+<div id="convert-between-coordinate-system" class="section level5 unnumbered">
+<h5>Convert between coordinate system</h5>
+<p>Use <code>grconvertX()</code> to convert between different coordinate systems</p>
+</div>
+</div>
+<div id="define-device-regions" class="section level3">
+<h3><span class="header-section-number">11.1.5</span> Define device regions</h3>
+<p>Useful links: (Device regions)[<a href="http://www.melissaclarkson.com/resources/R_guides/documents/figure_layout_Ver1.pdf" class="uri">http://www.melissaclarkson.com/resources/R_guides/documents/figure_layout_Ver1.pdf</a>], (fig and fin)[<a href="http://www.programmingr.com/content/positioning-charts-fig-and-fin/" class="uri">http://www.programmingr.com/content/positioning-charts-fig-and-fin/</a>], (oma and mgp[<a href="http://www.programmingr.com/content/controlling-margins-and-axes-oma-and-mgp/" class="uri">http://www.programmingr.com/content/controlling-margins-and-axes-oma-and-mgp/</a>])</p>
+<div id="split-device" class="section level4">
+<h4><span class="header-section-number">11.1.5.1</span> Split device</h4>
+<p>Several options (see <a href="https://www.statmethods.net/advgraphs/layout.html">here</a>)</p>
+<ul>
+<li>array: <code>par(mfrow = c(2,2))</code> (<code>mfcol</code> fills the array by columns)</li>
+<li>grid: <code>layout(matrix())</code></li>
+<li>arbitrary locations: <code>par(fig = ...)</code> combined with <code>par(new=TRUE)</code></li>
+<li><code>split.screen()</code></li>
+<li><code>pairs()</code></li>
+<li><code>coplot()</code></li>
+</ul>
+<div id="example-for-copy-paste" class="section level5 unnumbered">
+<h5>Example for copy paste</h5>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))  <span class="co"># 2-by-2 grid of plots</span></a>
+<a class="sourceLine" id="cb83-2" title="2"><span class="kw">par</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">0</span>))  <span class="co"># make room (i.e. the 4&#39;s) for the overall x and y axis titles</span></a>
+<a class="sourceLine" id="cb83-3" title="3"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>))  <span class="co"># make the plots be closer together</span></a>
+<a class="sourceLine" id="cb83-4" title="4"></a>
+<a class="sourceLine" id="cb83-5" title="5"><span class="co"># now plot the graphs with the appropriate axes removed (via xaxt and yaxt),</span></a>
+<a class="sourceLine" id="cb83-6" title="6"><span class="co"># remove axis labels (so that they are not redundant with overall labels, and set</span></a>
+<a class="sourceLine" id="cb83-7" title="7"><span class="co"># some other nice choices for graphics parameters</span></a>
+<a class="sourceLine" id="cb83-8" title="8"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb83-9" title="9"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb83-10" title="10"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb83-11" title="11"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb83-12" title="12"></a>
+<a class="sourceLine" id="cb83-13" title="13"><span class="co"># print the overall labels</span></a>
+<a class="sourceLine" id="cb83-14" title="14"><span class="kw">mtext</span>(<span class="st">&quot;x-axis title&quot;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">outer =</span> <span class="ot">TRUE</span>, <span class="dt">line =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb83-15" title="15"><span class="kw">mtext</span>(<span class="st">&quot;y-axis title&quot;</span>, <span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">outer =</span> <span class="ot">TRUE</span>, <span class="dt">line =</span> <span class="dv">2</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-49-1.png" width="80%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="useful-helper-function" class="section level5 unnumbered">
+<h5>Useful helper function</h5>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" title="1">FunNewPar &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">tcl =</span> <span class="fl">-0.3</span>, <span class="dt">mgp =</span> <span class="kw">c</span>(<span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb84-2" title="2">    <span class="fl">0.5</span>, <span class="dv">0</span>), <span class="dt">cex.axis =</span> <span class="fl">0.7</span>, <span class="dt">ps =</span> <span class="dv">10</span>, <span class="dt">xpd =</span> <span class="ot">NA</span>) {</a>
+<a class="sourceLine" id="cb84-3" title="3">    x &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">oma =</span> oma, <span class="dt">mar =</span> mar, <span class="dt">tcl =</span> tcl, <span class="dt">mgp =</span> mgp, <span class="dt">cex.axis =</span> cex.axis, <span class="dt">ps =</span> ps, </a>
+<a class="sourceLine" id="cb84-4" title="4">        <span class="dt">xpd =</span> xpd)</a>
+<a class="sourceLine" id="cb84-5" title="5">    <span class="kw">invisible</span>(x)</a>
+<a class="sourceLine" id="cb84-6" title="6">}</a></code></pre></div>
+<p>Multiple plots with everything</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1"><span class="kw">FunNewPar</span>()</a></code></pre></div>
+<p>Multiple plots without axis title</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" title="1"><span class="kw">FunNewPar</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>))</a></code></pre></div>
+<p>Multiple plots without axis</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" title="1"><span class="kw">FunNewPar</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>))</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-54-1.png" width="30%" style="display: block; margin: auto;" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-54-2.png" width="30%" style="display: block; margin: auto;" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-54-3.png" width="30%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="margins" class="section level4">
+<h4><span class="header-section-number">11.1.5.2</span> Margins</h4>
+<p>Define margine area using <code>lines</code> coordinate system</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" title="1"><span class="kw">par</span>(<span class="st">&quot;mar&quot;</span>)  <span class="co"># Margine Area</span></a>
+<a class="sourceLine" id="cb88-2" title="2"><span class="co">#&gt; [1] 5.1 4.1 4.1 2.1</span></a>
+<a class="sourceLine" id="cb88-3" title="3"><span class="kw">par</span>(<span class="st">&quot;oma&quot;</span>)  <span class="co"># Outer Margin Area</span></a>
+<a class="sourceLine" id="cb88-4" title="4"><span class="co">#&gt; [1] 0 0 0 0</span></a></code></pre></div>
+<p>Define margine area using <code>inches</code> coordinate system</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" title="1"><span class="kw">par</span>(<span class="st">&quot;mai&quot;</span>)  <span class="co"># Margine Area</span></a>
+<a class="sourceLine" id="cb89-2" title="2"><span class="co">#&gt; [1] 1.02 0.82 0.82 0.42</span></a>
+<a class="sourceLine" id="cb89-3" title="3"><span class="kw">par</span>(<span class="st">&quot;omi&quot;</span>)  <span class="co"># Outer Margin Area</span></a>
+<a class="sourceLine" id="cb89-4" title="4"><span class="co">#&gt; [1] 0 0 0 0</span></a></code></pre></div>
+<p>Define margine area using <code>ndc</code> coordinate system</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" title="1"><span class="kw">par</span>(<span class="st">&quot;plt&quot;</span>)  <span class="co"># Start and endpoint of plot region</span></a>
+<a class="sourceLine" id="cb90-2" title="2"><span class="co">#&gt; [1] 0.1171429 0.9400000 0.2040000 0.8360000</span></a>
+<a class="sourceLine" id="cb90-3" title="3"><span class="kw">par</span>(<span class="st">&quot;fig&quot;</span>)  <span class="co"># Start and endpoint of figure region</span></a>
+<a class="sourceLine" id="cb90-4" title="4"><span class="co">#&gt; [1] 0 1 0 1</span></a></code></pre></div>
+<p>Define region dimensions in <code>inches</code></p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" title="1"><span class="kw">par</span>(<span class="st">&quot;pin&quot;</span>)  <span class="co"># Plot dimensions, (width, height)</span></a></code></pre></div>
+<pre><code>#&gt; [1] 5.759999 3.159999</code></pre>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" title="1"><span class="kw">par</span>(<span class="st">&quot;fin&quot;</span>)  <span class="co"># Figure dimensions, (width, height)</span></a></code></pre></div>
+<pre><code>#&gt; [1] 6.999999 4.999999</code></pre>
+<p>Define plot region using <code>nfc</code></p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" title="1"><span class="kw">par</span>(<span class="st">&quot;plt&quot;</span>)  <span class="co"># A vector of the form c(x1, x2, y1, y2) giving the coordinates of the plot region as fractions of the current figure region.</span></a></code></pre></div>
+<pre><code>#&gt; [1] 0.1171429 0.9400000 0.2040000 0.8360000</code></pre>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" title="1"><span class="kw">par</span>(<span class="st">&quot;omd&quot;</span>)  <span class="co"># ??</span></a></code></pre></div>
+<pre><code>#&gt; [1] 0 1 0 1</code></pre>
+</div>
+<div id="square-plot" class="section level4">
+<h4><span class="header-section-number">11.1.5.3</span> Square plot</h4>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" title="1"><span class="kw">par</span>(<span class="st">&quot;pty&quot;</span>)  <span class="co"># pty = &#39;m&#39;: maximum,  pty = &#39;s&#39;: square</span></a></code></pre></div>
+<pre><code>#&gt; [1] &quot;m&quot;</code></pre>
+</div>
+<div id="axis-position" class="section level4">
+<h4><span class="header-section-number">11.1.5.4</span> Axis position</h4>
+<div id="coordinate-system-outside-plot" class="section level5 unnumbered">
+<h5>Coordinate system outside plot</h5>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" title="1"><span class="kw">par</span>(<span class="st">&quot;mgp&quot;</span>)  <span class="co"># position of [1] x/y-label, [2] axis, [3] ticks</span></a>
+<a class="sourceLine" id="cb101-2" title="2"><span class="co">#&gt; [1] 3 1 0</span></a>
+<a class="sourceLine" id="cb101-3" title="3"><span class="kw">par</span>(<span class="st">&quot;mex&quot;</span>)  <span class="co"># &#39;height&#39; of one line (e.g. space between Line 0 and Line 1)</span></a>
+<a class="sourceLine" id="cb101-4" title="4"><span class="co">#&gt; [1] 1</span></a></code></pre></div>
 
+</div>
 </div>
 </div>
 </div>

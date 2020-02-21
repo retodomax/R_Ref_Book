@@ -40,10 +40,10 @@ par("xlog")
 The parameters are defined for the currently active device
 
 * Normally the Rstudio plot panel
-* If `png()` or `pdf()` opend => only within this document
+* If `png()` or `pdf()` opend &emsp; &rArr; only within this document
 * `dev.off()` closes device and reset `par()`
-    + If `png()` or `pdf()` &emsp; &rArr; the same par are active as they were before the device `png()` or `pdf()` was opend
-    + If Rstudio panel \t &emsp; &rArr; the default par are active
+    + If `png()` or `pdf()` &emsp; &rArr; the same `par` are active as they were before the device `png()` or `pdf()` was opend
+    + If Rstudio panel &emsp; &rArr; the default `par` are active
 
 
 ### Default
@@ -63,7 +63,7 @@ par()
 
 <!-- <img style="float: right;" src="C:/Users/Reto/Downloads/fig_margins.jpg" width=400> -->
 
-```{r}
+```{r, echo=FALSE}
 opar <- par(xpd = NA,
     mar = c(5,4,4,2) + 0.1,
     oma = c(3,3,3,3) + 0.05)
@@ -75,10 +75,10 @@ box("plot", col = "red")
 box("inner", col = "green")
 box("outer", col = "blue")
 
-text(5,9, "Plot", col = "red", cex  = 2)
-mtext("Figure", col = "green", cex = 2,
+text(5,9, "Plot region", col = "red", cex  = 2)
+mtext("Figure region", col = "green", cex = 2,
       side = 3, line = 2)
-mtext("Device", col = "blue", cex = 2,
+mtext("Device region", col = "blue", cex = 2,
       side = 3, line = 1, outer = T)
 
 mtext(text = c("Line 0",
@@ -119,28 +119,6 @@ mtext(text = "par(oma=c(3,3,3,3))",
 par(opar)
 ```
 
-
-
-
-
-
-##### Coordinate system outside plot {-}
-```{r, collapse=TRUE}
-par("mar") # Margine Area
-par("oma") # Outer Margin Area
-par("mgp") # position of [1] x/y-label, [2] axis, [3] ticks
-par("mex") # "height"" of one line
-```
-
-##### Normalized device coordinates (NDC) [0, 1] {-}
-```{r, collapse=TRUE}
-par("fig") # Start and endpoint of ploting region
-par("omd") # oma in NDC
-```
-
-##### Change between coordinate system {-}
-Use `grconvertX()` to change between different coordinate systems
-
 ##### Plot outside plotting region {-}
 ```{r, collapse=TRUE}
 par("xpd")
@@ -149,5 +127,244 @@ par("xpd")
 `FALSE`  $\Rightarrow$ clipped to the plot regions  
 `TRUE`   $\Rightarrow$ clipped to the figure region  
 `NA`     $\Rightarrow$ clipped to the device region
+
+
+
+
+### Coordinate sytem
+
+There are in total 9 coordinate sytems
+
+* absolute
+    - $(0,0)$ in lower left device corner
+        + `inches` can be converted to cm with function `cm()`
+        + `device` usually in pixels (png) or points (pdf)
+        + `lines` based on `mex` (relative to font size)
+        + `chars` based on `cex` (font size)
+    - $(0,0)$ depend on what is plotted
+        + `user` user coordinates
+* normalized
+    - `ndc` normalized device coordinates
+    - `nic` normalized inner region coordinates
+    - `nfc` normalized figure coordinates
+    - `npc` normalized plot coordinates
+
+
+
+```{r, out.width='80%', fig.align='center', fig.cap='Interval [0, 1] for different normalized coordinate systems', echo=FALSE}
+y_pos <- grconvertY(y = c(0.3, 0.2, 0.1), from = "ndc", to = "lines")
+opar <- par(xpd = NA,
+            mfrow = c(1,2),
+            mar = c(y_pos[1], 4, y_pos[3], 2),
+            oma = c(y_pos[2], 3, y_pos[3], 3))
+plot(1:10, 1:10, type = "n", xlab = "", ylab = "")
+box("plot", col = "red")
+box("figure", col = "green")
+box(which = "inner", col = "violet")
+box(which = "outer", col = "blue")
+one_line <- grconvertY(y = 0.8, from = "lines", to = "user") -
+  grconvertY(y = 0, from = "lines", to = "user")
+ar_y <- grconvertY(y = c(0.02, 0.22, 0.32, 0.52), from = "ndc")
+arrow_label <- c("ndc", "nic", "nfc", "npc")
+for(i in 1:length(arrow_label)){
+  ar_x <- grconvertX(x = c(0,1), from = arrow_label[i], to = "user")
+  arrows(x0 = ar_x[1], y0 = ar_y[i], x1 = ar_x[2], y1 = ar_y[i], code = 3, length = 0.1)
+  text(x = mean(ar_x), y = ar_y[i]+one_line, labels = arrow_label[i])
+}
+plot(1:10, 1:10, type = "n", xlab = "", ylab = "")
+box("plot", col = "red")
+par(opar)
+``` 
+
+
+##### Convert between coordinate system {-}
+Use `grconvertX()` to convert between different coordinate systems
+
+
+### Define device regions
+
+Useful links: (Device regions)[http://www.melissaclarkson.com/resources/R_guides/documents/figure_layout_Ver1.pdf], (fig and fin)[http://www.programmingr.com/content/positioning-charts-fig-and-fin/], (oma and mgp[http://www.programmingr.com/content/controlling-margins-and-axes-oma-and-mgp/])
+
+#### Split device
+
+Several options (see [here](https://www.statmethods.net/advgraphs/layout.html))
+
+* array: `par(mfrow = c(2,2))` (`mfcol` fills the array by columns)
+* grid: `layout(matrix())`
+* arbitrary locations: `par(fig = ...)` combined with `par(new=TRUE)`
+* `split.screen()`
+* `pairs()`
+* `coplot()`
+
+##### Example for copy paste {-}
+
+```{r}
+par(mfrow = c(2, 2)) # 2-by-2 grid of plots
+par(oma = c(4, 4, 0, 0)) # make room (i.e. the 4's) for the overall x and y axis titles
+par(mar = c(2, 2, 1, 1)) # make the plots be closer together
+
+# now plot the graphs with the appropriate axes removed (via xaxt and yaxt),
+# remove axis labels (so that they are not redundant with overall labels,
+# and set some other nice choices for graphics parameters
+plot(runif(10), xlab = '', ylab = '', xaxt = 'n', las = 1, ylim = c(0, 1))
+plot(runif(10), xlab = '', ylab = '', xaxt = 'n', yaxt = 'n', ylim = c(0, 1))
+plot(runif(10), xlab = '', ylab = '', las = 1, ylim = c(0, 1))
+plot(runif(10), xlab = '', ylab = '', yaxt = 'n', ylim = c(0, 1))
+
+# print the overall labels
+mtext('x-axis title', side = 1, outer = TRUE, line = 2)
+mtext('y-axis title', side = 2, outer = TRUE, line = 2)
+```
+
+
+##### Useful helper function {-}
+
+```{r}
+FunNewPar <- function(oma = c(0,0,2,2),
+                      mar = c(4,4,0,0),
+                      tcl = -0.3,
+                      mgp = c(2,0.5,0),
+                      cex.axis = 0.7,
+                      ps = 10,
+                      xpd = NA){
+  x <- par(oma = oma,
+           mar = mar,
+           tcl = tcl,
+           mgp = mgp,
+           cex.axis = cex.axis,
+           ps = ps,
+           xpd = xpd)
+  invisible(x)
+}
+```
+
+Multiple plots with everything
+
+```{r, eval=FALSE}
+FunNewPar()
+```
+
+Multiple plots without axis title
+
+```{r, eval=FALSE}
+FunNewPar(oma = c(1,1,2,2),
+          mar = c(3,3,0,0))
+```
+
+Multiple plots without axis
+
+```{r, eval=FALSE}
+FunNewPar(oma = c(1,1,2,2),
+          mar = c(3,3,0,0))
+```
+
+```{r, out.width='30%', fig.show = 'hold', echo=FALSE}
+FunNewPar <- function(oma = c(0,0,2,2),
+                      mar = c(4,4,0,0),
+                      tcl = -0.3,
+                      mgp = c(2,0.5,0),
+                      cex.axis = 0.7,
+                      ps = 10,
+                      xpd = NA){
+  x <- par(oma = oma,
+           mar = mar,
+           tcl = tcl,
+           mgp = mgp,
+           cex.axis = cex.axis,
+           ps = ps,
+           xpd = xpd)
+  invisible(x)
+}
+opar <- FunNewPar(oma = c(1,1,5,2))
+
+par(mfrow = c(2,2))
+plot(1, xlab = "X axis title", ylab = "Y axis title")
+plot(1, xlab = "X axis title", ylab = "Y axis title")
+plot(1, xlab = "X axis title", ylab = "Y axis title")
+plot(1, xlab = "X axis title", ylab = "Y axis title")
+mtext(text = "Multiple plots with everything", side = 3, line = 2, outer = T, cex = 3)
+
+FunNewPar(oma = c(1,1,5,2), mar = c(3,3,0,0))
+plot(1, xlab = "", ylab = "Y axis title")
+plot(1, xlab = "", ylab = "")
+plot(1, xlab = "X axis title", ylab = "Y axis title")
+plot(1, xlab = "X axis title", ylab = "")
+mtext(text = "Multiple plots without axis title", side = 3, line = 2, outer = T, cex = 3)
+
+FunNewPar(oma = c(1,1,5,2), mar = c(3,3,0,0))
+plot(1, xlab = "", ylab = "Y axis title", xaxt = "n")
+plot(1, xlab = "", ylab = "", xaxt = "n", yaxt = "n")
+plot(1, xlab = "X axis title", ylab = "Y axis title")
+plot(1, xlab = "X axis title", ylab = "", yaxt = "n")
+mtext(text = "Multiple plots without axis", side = 3, line = 2, outer = T, cex = 3)
+
+par(opar)
+par(mfrow = c(1,1))
+```
+
+
+#### Margins
+
+Define margine area using `lines` coordinate system
+
+```{r, collapse=TRUE}
+par("mar") # Margine Area
+par("oma") # Outer Margin Area
+```
+
+Define margine area using `inches` coordinate system
+
+```{r, collapse=TRUE}
+par("mai") # Margine Area
+par("omi") # Outer Margin Area
+```
+
+Define margine area using `ndc` coordinate system
+
+```{r, collapse=TRUE}
+par("plt") # Start and endpoint of plot region
+par("fig") # Start and endpoint of figure region
+```
+
+
+Define region dimensions in `inches`
+
+```{r}
+par("pin")  # Plot dimensions, (width, height)
+par("fin")  # Figure dimensions, (width, height)
+```
+
+Define plot region using `nfc`
+
+```{r}
+par("plt") # A vector of the form c(x1, x2, y1, y2) giving the coordinates of the plot region as fractions of the current figure region.
+
+par("omd") # ??
+```
+
+
+#### Square plot
+
+```{r}
+par("pty") # pty = "m": maximum,  pty = "s": square
+```
+
+
+
+#### Axis position
+
+
+
+
+
+
+
+
+##### Coordinate system outside plot {-}
+```{r, collapse=TRUE}
+par("mgp") # position of [1] x/y-label, [2] axis, [3] ticks
+par("mex") # "height" of one line (e.g. space between Line 0 and Line 1)
+```
+
 
 

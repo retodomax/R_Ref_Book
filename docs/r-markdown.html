@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-02-20" />
+<meta name="date" content="2020-02-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -238,6 +238,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1.1" data-path="Plots.html"><a href="Plots.html#set-graphical-parameters"><i class="fa fa-check"></i><b>11.1.1</b> Set graphical parameters</a></li>
 <li class="chapter" data-level="11.1.2" data-path="Plots.html"><a href="Plots.html#default"><i class="fa fa-check"></i><b>11.1.2</b> Default</a></li>
 <li class="chapter" data-level="11.1.3" data-path="Plots.html"><a href="Plots.html#device-region"><i class="fa fa-check"></i><b>11.1.3</b> Device region</a></li>
+<li class="chapter" data-level="11.1.4" data-path="Plots.html"><a href="Plots.html#coordinate-sytem"><i class="fa fa-check"></i><b>11.1.4</b> Coordinate sytem</a></li>
+<li class="chapter" data-level="11.1.5" data-path="Plots.html"><a href="Plots.html#define-device-regions"><i class="fa fa-check"></i><b>11.1.5</b> Define device regions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>12</b> Interactive Plots</a></li>
@@ -488,12 +490,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>child</code>: You can include a child document in the main document. This option takes a path to an external file.</li>
 </ul>
 <p>Set chunk option globally:</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb91-1" title="1"><span class="bn">```{r, setup, include=FALSE}</span></a>
-<a class="sourceLine" id="cb91-2" title="2"><span class="bn">knitr::opts_chunk$set(comment = &quot;#&gt;&quot;,</span></a>
-<a class="sourceLine" id="cb91-3" title="3"><span class="bn">                      tidy = TRUE,</span></a>
-<a class="sourceLine" id="cb91-4" title="4"><span class="bn">                      fig.align = &quot;center&quot;,</span></a>
-<a class="sourceLine" id="cb91-5" title="5"><span class="bn">                      out.width = &quot;80%&quot;)</span></a>
-<a class="sourceLine" id="cb91-6" title="6"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb106-1" title="1"><span class="bn">```{r, setup, include=FALSE}</span></a>
+<a class="sourceLine" id="cb106-2" title="2"><span class="bn">knitr::opts_chunk$set(comment = &quot;#&gt;&quot;,</span></a>
+<a class="sourceLine" id="cb106-3" title="3"><span class="bn">                      tidy = TRUE,</span></a>
+<a class="sourceLine" id="cb106-4" title="4"><span class="bn">                      fig.align = &quot;center&quot;,</span></a>
+<a class="sourceLine" id="cb106-5" title="5"><span class="bn">                      out.width = &quot;80%&quot;)</span></a>
+<a class="sourceLine" id="cb106-6" title="6"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -504,9 +506,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">18.3</span> Figures</h2>
 <p>Plot from code chunks or insert via <code>knitr::include_graphics()</code></p>
 <p>e.g.</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb92-1" title="1"><span class="bn">```{r, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></a>
-<a class="sourceLine" id="cb92-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
-<a class="sourceLine" id="cb92-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb107-1" title="1"><span class="bn">```{r, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></a>
+<a class="sourceLine" id="cb107-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
+<a class="sourceLine" id="cb107-3" title="3"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -518,8 +520,11 @@ Figure 18.1: The R Markdown hex logo.
 </div>
 <p>Chunk options</p>
 <ul>
-<li><code>fig.show='hold'</code> Show figures next to each other (if out.width &lt; 50%)</li>
 <li><code>fig.cap = "text"</code> Figure captation text or text reference</li>
+<li><code>fig.show='hold'</code> Show figures next to each other (if out.width &lt; 50%)
+<ul>
+<li>Does currently not work with <code>fig.align = "center"</code></li>
+</ul></li>
 </ul>
 <p>Recomended file formate</p>
 <ul>
@@ -533,9 +538,9 @@ Figure 18.1: The R Markdown hex logo.
 <div id="wrap-text-arround-plot" class="section level5 unnumbered">
 <h5>Wrap text arround plot</h5>
 <p>Plots can be placed on right side with text wraped arround it. Use the following chunk options:</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb93-1" title="1"><span class="bn">```{r, out.width=&#39;25%&#39;, echo = FALSE, out.extra=&#39;style=&quot;float:right; padding:5px&quot;&#39;}</span></a>
-<a class="sourceLine" id="cb93-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
-<a class="sourceLine" id="cb93-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb108-1" title="1"><span class="bn">```{r, out.width=&#39;25%&#39;, echo = FALSE, out.extra=&#39;style=&quot;float:right; padding:5px&quot;&#39;}</span></a>
+<a class="sourceLine" id="cb108-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
+<a class="sourceLine" id="cb108-3" title="3"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -571,41 +576,41 @@ Without using a header, the formated table is reduced to an unformatted html tab
 <p>Tables can be formatted in CSS if we are only interested in HTML output. Add the following internal <code>&lt;style&gt;</code> element (in document between <code>&lt;style&gt;</code> and <code>&lt;/style&gt;</code> tag) or use an external CSS file (<code>style.css</code>).</p>
 <div id="definition-tables" class="section level5 unnumbered">
 <h5>Definition tables</h5>
-<div class="sourceCode" id="cb94"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb94-1" title="1"><span class="co">/* definition tables (RZ) */</span></a>
-<a class="sourceLine" id="cb94-2" title="2"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></a>
-<a class="sourceLine" id="cb94-3" title="3"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></a>
-<a class="sourceLine" id="cb94-4" title="4"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</a>
-<a class="sourceLine" id="cb94-5" title="5">{</a>
-<a class="sourceLine" id="cb94-6" title="6">  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb94-7" title="7">  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb94-8" title="8">  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb94-9" title="9">}</a>
-<a class="sourceLine" id="cb94-10" title="10"></a>
-<a class="sourceLine" id="cb94-11" title="11"><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</a>
-<a class="sourceLine" id="cb94-12" title="12">  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb94-13" title="13">  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb94-14" title="14">}</a>
-<a class="sourceLine" id="cb94-15" title="15"><span class="fu">.deftab</span> th {</a>
-<a class="sourceLine" id="cb94-16" title="16">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></a>
-<a class="sourceLine" id="cb94-17" title="17">}</a>
-<a class="sourceLine" id="cb94-18" title="18"><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</a>
-<a class="sourceLine" id="cb94-19" title="19">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></a>
-<a class="sourceLine" id="cb94-20" title="20">}</a></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb109-1" title="1"><span class="co">/* definition tables (RZ) */</span></a>
+<a class="sourceLine" id="cb109-2" title="2"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></a>
+<a class="sourceLine" id="cb109-3" title="3"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></a>
+<a class="sourceLine" id="cb109-4" title="4"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</a>
+<a class="sourceLine" id="cb109-5" title="5">{</a>
+<a class="sourceLine" id="cb109-6" title="6">  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb109-7" title="7">  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb109-8" title="8">  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb109-9" title="9">}</a>
+<a class="sourceLine" id="cb109-10" title="10"></a>
+<a class="sourceLine" id="cb109-11" title="11"><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</a>
+<a class="sourceLine" id="cb109-12" title="12">  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb109-13" title="13">  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb109-14" title="14">}</a>
+<a class="sourceLine" id="cb109-15" title="15"><span class="fu">.deftab</span> th {</a>
+<a class="sourceLine" id="cb109-16" title="16">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></a>
+<a class="sourceLine" id="cb109-17" title="17">}</a>
+<a class="sourceLine" id="cb109-18" title="18"><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</a>
+<a class="sourceLine" id="cb109-19" title="19">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></a>
+<a class="sourceLine" id="cb109-20" title="20">}</a></code></pre></div>
 <p>Afterwards we can use HTML tags to create the table</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb95-1" title="1"><span class="kw">&lt;table</span><span class="ot"> class</span> <span class="ot">=</span> <span class="st">&quot;deftab&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb95-2" title="2">  <span class="kw">&lt;tr&gt;</span></a>
-<a class="sourceLine" id="cb95-3" title="3">    <span class="kw">&lt;td&gt;</span>**Doe**<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb95-4" title="4">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb95-5" title="5">  <span class="kw">&lt;/tr&gt;</span></a>
-<a class="sourceLine" id="cb95-6" title="6">  <span class="kw">&lt;tr&gt;</span></a>
-<a class="sourceLine" id="cb95-7" title="7">    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb95-8" title="8">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb95-9" title="9">  <span class="kw">&lt;/tr&gt;</span></a>
-<a class="sourceLine" id="cb95-10" title="10">  <span class="kw">&lt;tr&gt;</span></a>
-<a class="sourceLine" id="cb95-11" title="11">    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb95-12" title="12">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb95-13" title="13">  <span class="kw">&lt;/tr&gt;</span></a>
-<a class="sourceLine" id="cb95-14" title="14"><span class="kw">&lt;/table&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb110-1" title="1"><span class="kw">&lt;table</span><span class="ot"> class</span> <span class="ot">=</span> <span class="st">&quot;deftab&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb110-2" title="2">  <span class="kw">&lt;tr&gt;</span></a>
+<a class="sourceLine" id="cb110-3" title="3">    <span class="kw">&lt;td&gt;</span>**Doe**<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb110-4" title="4">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb110-5" title="5">  <span class="kw">&lt;/tr&gt;</span></a>
+<a class="sourceLine" id="cb110-6" title="6">  <span class="kw">&lt;tr&gt;</span></a>
+<a class="sourceLine" id="cb110-7" title="7">    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb110-8" title="8">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb110-9" title="9">  <span class="kw">&lt;/tr&gt;</span></a>
+<a class="sourceLine" id="cb110-10" title="10">  <span class="kw">&lt;tr&gt;</span></a>
+<a class="sourceLine" id="cb110-11" title="11">    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb110-12" title="12">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb110-13" title="13">  <span class="kw">&lt;/tr&gt;</span></a>
+<a class="sourceLine" id="cb110-14" title="14"><span class="kw">&lt;/table&gt;</span></a></code></pre></div>
 <p>Results in</p>
 <table class = "deftab">
 <tr>
@@ -688,12 +693,12 @@ John
 <div id="global-code-folding" class="section level5 unnumbered">
 <h5>Global code folding</h5>
 <p>Well explained <a href="https://bookdown.org/yihui/rmarkdown/html-document.html#code-folding">here</a>. Put the line <code>code_folding: hide</code> in the YAML header</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb96-1" title="1"><span class="ot">---</span></a>
-<a class="sourceLine" id="cb96-2" title="2"><span class="fu">title:</span><span class="at"> </span><span class="st">&quot;My Document&quot;</span></a>
-<a class="sourceLine" id="cb96-3" title="3"><span class="fu">output:</span></a>
-<a class="sourceLine" id="cb96-4" title="4">  <span class="fu">html_document:</span></a>
-<a class="sourceLine" id="cb96-5" title="5">    <span class="fu">code_folding:</span><span class="at"> hide</span></a>
-<a class="sourceLine" id="cb96-6" title="6"><span class="ot">---</span></a></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb111-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb111-2" title="2"><span class="fu">title:</span><span class="at"> </span><span class="st">&quot;My Document&quot;</span></a>
+<a class="sourceLine" id="cb111-3" title="3"><span class="fu">output:</span></a>
+<a class="sourceLine" id="cb111-4" title="4">  <span class="fu">html_document:</span></a>
+<a class="sourceLine" id="cb111-5" title="5">    <span class="fu">code_folding:</span><span class="at"> hide</span></a>
+<a class="sourceLine" id="cb111-6" title="6"><span class="ot">---</span></a></code></pre></div>
 <p>You can specify <code>code_folding: show</code> to still show all R code by default but then allow users to hide the code if they wish.</p>
 </div>
 <div id="local-section-folding" class="section level5 unnumbered">
@@ -703,12 +708,12 @@ John
 <li>Add HTML code for button at beginning of your document. Alternatively you make a separate html file. Find button code and how to make separate HTML file in Chapter <a href="bookdown.html#NewBookdownProject">19.2</a></li>
 <li>Add this HTML code at the place were you want the button.</li>
 </ol>
-<div class="sourceCode" id="cb97"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb97-1" title="1"><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction(&#39;new_identifier&#39;)&quot;</span><span class="kw">&gt;</span>Text on button<span class="kw">&lt;/button&gt;</span></a>
-<a class="sourceLine" id="cb97-2" title="2"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;new_identifier&quot;</span><span class="ot"> style=</span><span class="st">&quot;display: none&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb97-3" title="3"></a>
-<a class="sourceLine" id="cb97-4" title="4">Blabla.</a>
-<a class="sourceLine" id="cb97-5" title="5"></a>
-<a class="sourceLine" id="cb97-6" title="6"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb112-1" title="1"><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction(&#39;new_identifier&#39;)&quot;</span><span class="kw">&gt;</span>Text on button<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb112-2" title="2"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;new_identifier&quot;</span><span class="ot"> style=</span><span class="st">&quot;display: none&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb112-3" title="3"></a>
+<a class="sourceLine" id="cb112-4" title="4">Blabla.</a>
+<a class="sourceLine" id="cb112-5" title="5"></a>
+<a class="sourceLine" id="cb112-6" title="6"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
 <p>Replace <code>new_identifier</code> with unique identifier for that section. Replace <code>Text on button</code> and <code>Blabla</code></p>
 </div>
 </div>
@@ -720,10 +725,10 @@ There is a good implementation to add boxes for caution, important, note, tip an
 <li>Add CSS code for button at beginning of your document. Alternatively you make a separate CSS style file. Find button code and how to make separate CSS style file in Chapter <a href="bookdown.html#NewBookdownProject">19.2</a></li>
 <li>Add this code at the place were you want the button.</li>
 </ol>
-<div class="sourceCode" id="cb98"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb98-1" title="1"><span class="bn">```{block2, type=&#39;rmdcaution&#39;}</span></a>
-<a class="sourceLine" id="cb98-2" title="2"><span class="bn">Text</span></a>
-<a class="sourceLine" id="cb98-3" title="3"><span class="bn">```</span></a></code></pre></div>
-<p>Replace <code>rmdcaution</code> with <code>rmdimportant</code>, <code>rmdnote</code>, <code>rmdtip</code> and <code>rmdwarning</code></p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb113-1" title="1"><span class="bn">```{block2, type=&#39;rmdcaution&#39;}</span></a>
+<a class="sourceLine" id="cb113-2" title="2"><span class="bn">Text</span></a>
+<a class="sourceLine" id="cb113-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<p>Replace <code>rmdcaution</code> with <code>rmdimportant</code>, <code>rmdnote</code>, <code>rmdtip</code> and <code>rmdwarning</code>. Note that the code chunk always needs to be taged as <code>block2</code>.</p>
 <p>Here how they look like</p>
 
 <div class="rmdcaution">
@@ -755,131 +760,131 @@ Warning
 <h2><span class="header-section-number">18.8</span> Template</h2>
 <p>This is a template containing structure, equations, references, cross-references, figures and tables with caption. The rendered output of the template can be found <a href="https://retodomax.github.io/R_Ref_Book/template.html">here</a>.
 To get the the template in pdf, replace the <code>output</code> section in the YAML header with</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb99-1" title="1">  bookdown:<span class="fu">:pdf_document2:</span></a>
-<a class="sourceLine" id="cb99-2" title="2">    <span class="fu">toc:</span><span class="at"> </span><span class="ch">true</span></a>
-<a class="sourceLine" id="cb99-3" title="3">    <span class="fu">toc_depth:</span><span class="at"> </span><span class="dv">3</span></a>
-<a class="sourceLine" id="cb99-4" title="4">    <span class="fu">number_sections:</span><span class="at"> </span><span class="ch">true</span></a></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb114-1" title="1">  bookdown:<span class="fu">:pdf_document2:</span></a>
+<a class="sourceLine" id="cb114-2" title="2">    <span class="fu">toc:</span><span class="at"> </span><span class="ch">true</span></a>
+<a class="sourceLine" id="cb114-3" title="3">    <span class="fu">toc_depth:</span><span class="at"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb114-4" title="4">    <span class="fu">number_sections:</span><span class="at"> </span><span class="ch">true</span></a></code></pre></div>
 <button onclick="myFunction(&#39;markdown_template&#39;)">
 Show template
 </button>
 <div id="markdown_template" style="display: none">
-<div class="sourceCode" id="cb100"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb100-1" title="1">---</a>
-<a class="sourceLine" id="cb100-2" title="2">project: CompSkills    #################################################</a>
-<a class="sourceLine" id="cb100-3" title="3">title:   Template</a>
-<a class="sourceLine" id="cb100-4" title="4">author:  &quot;<span class="ot">[Reto Zihlmann](https://retodomax.github.io/)</span>&quot;</a>
-<a class="sourceLine" id="cb100-5" title="5">date:    &quot;2020-02-20&quot;</a>
-<a class="sourceLine" id="cb100-6" title="6">output:</a>
-<a class="sourceLine" id="cb100-7" title="7">  bookdown::html_document2:</a>
-<a class="sourceLine" id="cb100-8" title="8"><span class="bn">    toc: true</span></a>
-<a class="sourceLine" id="cb100-9" title="9"><span class="bn">    toc_depth: 3</span></a>
-<a class="sourceLine" id="cb100-10" title="10"><span class="bn">    toc_float: true</span></a>
-<a class="sourceLine" id="cb100-11" title="11">bibliography: [bib_zotero.bib, bib_packages.bib]</a>
-<a class="sourceLine" id="cb100-12" title="12">link-citations: true</a>
-<a class="sourceLine" id="cb100-13" title="13">---</a>
-<a class="sourceLine" id="cb100-14" title="14"></a>
-<a class="sourceLine" id="cb100-15" title="15"><span class="bn">```{r, setup, include=FALSE}</span></a>
-<a class="sourceLine" id="cb100-16" title="16"><span class="bn">knitr::opts_chunk$set(comment = &quot;&quot;,</span></a>
-<a class="sourceLine" id="cb100-17" title="17"><span class="bn">                      tidy = TRUE,</span></a>
-<a class="sourceLine" id="cb100-18" title="18"><span class="bn">                      fig.align = &quot;left&quot;,</span></a>
-<a class="sourceLine" id="cb100-19" title="19"><span class="bn">                      out.width = &quot;100%&quot;,</span></a>
-<a class="sourceLine" id="cb100-20" title="20"><span class="bn">                      echo = FALSE,</span></a>
-<a class="sourceLine" id="cb100-21" title="21"><span class="bn">                      warning = FALSE,</span></a>
-<a class="sourceLine" id="cb100-22" title="22"><span class="bn">                      message = FALSE,</span></a>
-<a class="sourceLine" id="cb100-23" title="23"><span class="bn">                      error = FALSE)</span></a>
-<a class="sourceLine" id="cb100-24" title="24"><span class="bn">```</span></a>
-<a class="sourceLine" id="cb100-25" title="25"></a>
-<a class="sourceLine" id="cb100-26" title="26"><span class="bn">```{r, package-bib, include=FALSE}</span></a>
-<a class="sourceLine" id="cb100-27" title="27"><span class="bn"># automatically create a bib database for R packages</span></a>
-<a class="sourceLine" id="cb100-28" title="28"><span class="bn">knitr::write_bib(c(</span></a>
-<a class="sourceLine" id="cb100-29" title="29"><span class="bn">  .packages(), &#39;bookdown&#39;, &#39;knitr&#39;, &#39;rmarkdown&#39;, &quot;mgcv&quot;</span></a>
-<a class="sourceLine" id="cb100-30" title="30"><span class="bn">), &#39;bib_packages.bib&#39;)</span></a>
-<a class="sourceLine" id="cb100-31" title="31"><span class="bn">```</span></a>
-<a class="sourceLine" id="cb100-32" title="32"></a>
-<a class="sourceLine" id="cb100-33" title="33"></a>
-<a class="sourceLine" id="cb100-34" title="34">&lt;!--<span class="co"> CSS Stype for Figure caption --&gt;</span></a>
-<a class="sourceLine" id="cb100-35" title="35">&lt;style&gt;</a>
-<a class="sourceLine" id="cb100-36" title="36">p.caption {</a>
-<a class="sourceLine" id="cb100-37" title="37">  color: gray;</a>
-<a class="sourceLine" id="cb100-38" title="38">  font-size: 0.7em;</a>
-<a class="sourceLine" id="cb100-39" title="39">  padding-bottom: 30px;</a>
-<a class="sourceLine" id="cb100-40" title="40">}</a>
-<a class="sourceLine" id="cb100-41" title="41">&lt;/style&gt;</a>
-<a class="sourceLine" id="cb100-42" title="42"></a>
-<a class="sourceLine" id="cb100-43" title="43"></a>
-<a class="sourceLine" id="cb100-44" title="44"><span class="fu"># Abstract {-}</span></a>
-<a class="sourceLine" id="cb100-45" title="45"></a>
-<a class="sourceLine" id="cb100-46" title="46">Here is some small abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb100-47" title="47"></a>
-<a class="sourceLine" id="cb100-48" title="48"></a>
-<a class="sourceLine" id="cb100-49" title="49"><span class="fu"># Introduction {#intro}</span></a>
-<a class="sourceLine" id="cb100-50" title="50"></a>
-<a class="sourceLine" id="cb100-51" title="51">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb100-52" title="52"></a>
-<a class="sourceLine" id="cb100-53" title="53">1. <span class="fl">What is the first research question?</span></a>
-<a class="sourceLine" id="cb100-54" title="54"><span class="fl">2. How should we answer it?</span></a>
-<a class="sourceLine" id="cb100-55" title="55"><span class="fl">3. What is the third research question?</span></a>
-<a class="sourceLine" id="cb100-56" title="56"></a>
-<a class="sourceLine" id="cb100-57" title="57"></a>
-<a class="sourceLine" id="cb100-58" title="58"><span class="fu"># Method {#method}</span></a>
-<a class="sourceLine" id="cb100-59" title="59"></a>
-<a class="sourceLine" id="cb100-60" title="60"><span class="fu">## Idea {#idea}</span></a>
-<a class="sourceLine" id="cb100-61" title="61"></a>
-<a class="sourceLine" id="cb100-62" title="62">Lorem ipsum dolor sit amet, consectetur adipiscing elit (see <span class="ot">[here](https://www.google.ch/))</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Some inline equation $h = f(x)$ in the middle of text. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb100-63" title="63"></a>
-<a class="sourceLine" id="cb100-64" title="64">$$</a>
-<a class="sourceLine" id="cb100-65" title="65">a^2 + b^2 = c^2</a>
-<a class="sourceLine" id="cb100-66" title="66">(\#eq:pythagoras)</a>
-<a class="sourceLine" id="cb100-67" title="67">$$</a>
-<a class="sourceLine" id="cb100-68" title="68"></a>
-<a class="sourceLine" id="cb100-69" title="69">As you can see in Equation \@ref(eq:pythagoras), lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb100-70" title="70"></a>
-<a class="sourceLine" id="cb100-71" title="71"></a>
-<a class="sourceLine" id="cb100-72" title="72"><span class="bn">```{r, someCalculations, echo = T}</span></a>
-<a class="sourceLine" id="cb100-73" title="73"><span class="bn">x &lt;- 5.012345678901234567890</span></a>
-<a class="sourceLine" id="cb100-74" title="74"><span class="bn">y &lt;- 1:20</span></a>
-<a class="sourceLine" id="cb100-75" title="75"><span class="bn">```</span></a>
-<a class="sourceLine" id="cb100-76" title="76"></a>
-<a class="sourceLine" id="cb100-77" title="77"></a>
-<a class="sourceLine" id="cb100-78" title="78">In this text we use the variable $x$ and write it  1,  2,  3,  4,  5,  6,  7,  8,  9, 10 inline in text. Now a picture</a>
-<a class="sourceLine" id="cb100-79" title="79"></a>
-<a class="sourceLine" id="cb100-80" title="80"></a>
-<a class="sourceLine" id="cb100-81" title="81">(ref:resPr3) This is the figure caption. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure.</a>
-<a class="sourceLine" id="cb100-82" title="82"></a>
-<a class="sourceLine" id="cb100-83" title="83"><span class="fu">## Calcultion {#calc}</span></a>
-<a class="sourceLine" id="cb100-84" title="84"></a>
-<a class="sourceLine" id="cb100-85" title="85"><span class="bn">```{r, figPoints, fig.cap=&quot;(ref:resPr3)&quot;}</span></a>
-<a class="sourceLine" id="cb100-86" title="86"><span class="bn">plot(1:10)</span></a>
-<a class="sourceLine" id="cb100-87" title="87"><span class="bn">```</span></a>
-<a class="sourceLine" id="cb100-88" title="88"></a>
-<a class="sourceLine" id="cb100-89" title="89"></a>
-<a class="sourceLine" id="cb100-90" title="90"></a>
-<a class="sourceLine" id="cb100-91" title="91">Now we continue with some text. As you can see in Figure \@ref(fig:figPoints) there are 10 points. The same was also decribed in Section \@ref(intro) or in Equation \@ref(eq:pythagoras) or in the package <span class="bn">`rmarkdown`</span> [see @R-bookdown]. The second way to make References [@R-mgcv]. For the third way see @R-knitr.</a>
-<a class="sourceLine" id="cb100-92" title="92"></a>
-<a class="sourceLine" id="cb100-93" title="93"></a>
-<a class="sourceLine" id="cb100-94" title="94"><span class="fu"># Discussion {#disc}</span></a>
-<a class="sourceLine" id="cb100-95" title="95"></a>
-<a class="sourceLine" id="cb100-96" title="96">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb100-97" title="97"></a>
-<a class="sourceLine" id="cb100-98" title="98">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb100-99" title="99"></a>
-<a class="sourceLine" id="cb100-100" title="100"><span class="bn">```{r}</span></a>
-<a class="sourceLine" id="cb100-101" title="101"><span class="bn">library(magrittr)</span></a>
-<a class="sourceLine" id="cb100-102" title="102"><span class="bn">library(kableExtra)</span></a>
-<a class="sourceLine" id="cb100-103" title="103"><span class="bn">dt &lt;- mtcars[1:5, 1:6]</span></a>
-<a class="sourceLine" id="cb100-104" title="104"><span class="bn">kable(dt,</span></a>
-<a class="sourceLine" id="cb100-105" title="105"><span class="bn">      digits = 3,</span></a>
-<a class="sourceLine" id="cb100-106" title="106"><span class="bn">      caption = &quot;Estimated motor current and standard deviation for each impeller at the two operating points&quot;) %&gt;%</span></a>
-<a class="sourceLine" id="cb100-107" title="107"><span class="bn">  kable_styling(&quot;striped&quot;,</span></a>
-<a class="sourceLine" id="cb100-108" title="108"><span class="bn">                full_width = F,</span></a>
-<a class="sourceLine" id="cb100-109" title="109"><span class="bn">                position = &quot;left&quot;) %&gt;%</span></a>
-<a class="sourceLine" id="cb100-110" title="110"><span class="bn">  add_header_above(c(&quot; &quot; = 1, &quot;Group 1&quot; = 2, &quot;Group 2&quot; = 2, &quot;Group 3&quot; = 2))</span></a>
-<a class="sourceLine" id="cb100-111" title="111"><span class="bn">```</span></a>
-<a class="sourceLine" id="cb100-112" title="112"></a>
-<a class="sourceLine" id="cb100-113" title="113"></a>
-<a class="sourceLine" id="cb100-114" title="114"></a>
-<a class="sourceLine" id="cb100-115" title="115"></a>
-<a class="sourceLine" id="cb100-116" title="116"></a>
-<a class="sourceLine" id="cb100-117" title="117"><span class="fu"># References {#ref}</span></a></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb115-1" title="1">---</a>
+<a class="sourceLine" id="cb115-2" title="2">project: CompSkills    #################################################</a>
+<a class="sourceLine" id="cb115-3" title="3">title:   Template</a>
+<a class="sourceLine" id="cb115-4" title="4">author:  &quot;<span class="ot">[Reto Zihlmann](https://retodomax.github.io/)</span>&quot;</a>
+<a class="sourceLine" id="cb115-5" title="5">date:    &quot;2020-02-21&quot;</a>
+<a class="sourceLine" id="cb115-6" title="6">output:</a>
+<a class="sourceLine" id="cb115-7" title="7">  bookdown::html_document2:</a>
+<a class="sourceLine" id="cb115-8" title="8"><span class="bn">    toc: true</span></a>
+<a class="sourceLine" id="cb115-9" title="9"><span class="bn">    toc_depth: 3</span></a>
+<a class="sourceLine" id="cb115-10" title="10"><span class="bn">    toc_float: true</span></a>
+<a class="sourceLine" id="cb115-11" title="11">bibliography: [bib_zotero.bib, bib_packages.bib]</a>
+<a class="sourceLine" id="cb115-12" title="12">link-citations: true</a>
+<a class="sourceLine" id="cb115-13" title="13">---</a>
+<a class="sourceLine" id="cb115-14" title="14"></a>
+<a class="sourceLine" id="cb115-15" title="15"><span class="bn">```{r, setup, include=FALSE}</span></a>
+<a class="sourceLine" id="cb115-16" title="16"><span class="bn">knitr::opts_chunk$set(comment = &quot;&quot;,</span></a>
+<a class="sourceLine" id="cb115-17" title="17"><span class="bn">                      tidy = TRUE,</span></a>
+<a class="sourceLine" id="cb115-18" title="18"><span class="bn">                      fig.align = &quot;left&quot;,</span></a>
+<a class="sourceLine" id="cb115-19" title="19"><span class="bn">                      out.width = &quot;100%&quot;,</span></a>
+<a class="sourceLine" id="cb115-20" title="20"><span class="bn">                      echo = FALSE,</span></a>
+<a class="sourceLine" id="cb115-21" title="21"><span class="bn">                      warning = FALSE,</span></a>
+<a class="sourceLine" id="cb115-22" title="22"><span class="bn">                      message = FALSE,</span></a>
+<a class="sourceLine" id="cb115-23" title="23"><span class="bn">                      error = FALSE)</span></a>
+<a class="sourceLine" id="cb115-24" title="24"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb115-25" title="25"></a>
+<a class="sourceLine" id="cb115-26" title="26"><span class="bn">```{r, package-bib, include=FALSE}</span></a>
+<a class="sourceLine" id="cb115-27" title="27"><span class="bn"># automatically create a bib database for R packages</span></a>
+<a class="sourceLine" id="cb115-28" title="28"><span class="bn">knitr::write_bib(c(</span></a>
+<a class="sourceLine" id="cb115-29" title="29"><span class="bn">  .packages(), &#39;bookdown&#39;, &#39;knitr&#39;, &#39;rmarkdown&#39;, &quot;mgcv&quot;</span></a>
+<a class="sourceLine" id="cb115-30" title="30"><span class="bn">), &#39;bib_packages.bib&#39;)</span></a>
+<a class="sourceLine" id="cb115-31" title="31"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb115-32" title="32"></a>
+<a class="sourceLine" id="cb115-33" title="33"></a>
+<a class="sourceLine" id="cb115-34" title="34">&lt;!--<span class="co"> CSS Stype for Figure caption --&gt;</span></a>
+<a class="sourceLine" id="cb115-35" title="35">&lt;style&gt;</a>
+<a class="sourceLine" id="cb115-36" title="36">p.caption {</a>
+<a class="sourceLine" id="cb115-37" title="37">  color: gray;</a>
+<a class="sourceLine" id="cb115-38" title="38">  font-size: 0.7em;</a>
+<a class="sourceLine" id="cb115-39" title="39">  padding-bottom: 30px;</a>
+<a class="sourceLine" id="cb115-40" title="40">}</a>
+<a class="sourceLine" id="cb115-41" title="41">&lt;/style&gt;</a>
+<a class="sourceLine" id="cb115-42" title="42"></a>
+<a class="sourceLine" id="cb115-43" title="43"></a>
+<a class="sourceLine" id="cb115-44" title="44"><span class="fu"># Abstract {-}</span></a>
+<a class="sourceLine" id="cb115-45" title="45"></a>
+<a class="sourceLine" id="cb115-46" title="46">Here is some small abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb115-47" title="47"></a>
+<a class="sourceLine" id="cb115-48" title="48"></a>
+<a class="sourceLine" id="cb115-49" title="49"><span class="fu"># Introduction {#intro}</span></a>
+<a class="sourceLine" id="cb115-50" title="50"></a>
+<a class="sourceLine" id="cb115-51" title="51">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb115-52" title="52"></a>
+<a class="sourceLine" id="cb115-53" title="53">1. <span class="fl">What is the first research question?</span></a>
+<a class="sourceLine" id="cb115-54" title="54"><span class="fl">2. How should we answer it?</span></a>
+<a class="sourceLine" id="cb115-55" title="55"><span class="fl">3. What is the third research question?</span></a>
+<a class="sourceLine" id="cb115-56" title="56"></a>
+<a class="sourceLine" id="cb115-57" title="57"></a>
+<a class="sourceLine" id="cb115-58" title="58"><span class="fu"># Method {#method}</span></a>
+<a class="sourceLine" id="cb115-59" title="59"></a>
+<a class="sourceLine" id="cb115-60" title="60"><span class="fu">## Idea {#idea}</span></a>
+<a class="sourceLine" id="cb115-61" title="61"></a>
+<a class="sourceLine" id="cb115-62" title="62">Lorem ipsum dolor sit amet, consectetur adipiscing elit (see <span class="ot">[here](https://www.google.ch/))</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Some inline equation $h = f(x)$ in the middle of text. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb115-63" title="63"></a>
+<a class="sourceLine" id="cb115-64" title="64">$$</a>
+<a class="sourceLine" id="cb115-65" title="65">a^2 + b^2 = c^2</a>
+<a class="sourceLine" id="cb115-66" title="66">(\#eq:pythagoras)</a>
+<a class="sourceLine" id="cb115-67" title="67">$$</a>
+<a class="sourceLine" id="cb115-68" title="68"></a>
+<a class="sourceLine" id="cb115-69" title="69">As you can see in Equation \@ref(eq:pythagoras), lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb115-70" title="70"></a>
+<a class="sourceLine" id="cb115-71" title="71"></a>
+<a class="sourceLine" id="cb115-72" title="72"><span class="bn">```{r, someCalculations, echo = T}</span></a>
+<a class="sourceLine" id="cb115-73" title="73"><span class="bn">x &lt;- 5.012345678901234567890</span></a>
+<a class="sourceLine" id="cb115-74" title="74"><span class="bn">y &lt;- 1:20</span></a>
+<a class="sourceLine" id="cb115-75" title="75"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb115-76" title="76"></a>
+<a class="sourceLine" id="cb115-77" title="77"></a>
+<a class="sourceLine" id="cb115-78" title="78">In this text we use the variable $x$ and write it  1,  2,  3,  4,  5,  6,  7,  8,  9, 10 inline in text. Now a picture</a>
+<a class="sourceLine" id="cb115-79" title="79"></a>
+<a class="sourceLine" id="cb115-80" title="80"></a>
+<a class="sourceLine" id="cb115-81" title="81">(ref:resPr3) This is the figure caption. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure.</a>
+<a class="sourceLine" id="cb115-82" title="82"></a>
+<a class="sourceLine" id="cb115-83" title="83"><span class="fu">## Calcultion {#calc}</span></a>
+<a class="sourceLine" id="cb115-84" title="84"></a>
+<a class="sourceLine" id="cb115-85" title="85"><span class="bn">```{r, figPoints, fig.cap=&quot;(ref:resPr3)&quot;}</span></a>
+<a class="sourceLine" id="cb115-86" title="86"><span class="bn">plot(1:10)</span></a>
+<a class="sourceLine" id="cb115-87" title="87"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb115-88" title="88"></a>
+<a class="sourceLine" id="cb115-89" title="89"></a>
+<a class="sourceLine" id="cb115-90" title="90"></a>
+<a class="sourceLine" id="cb115-91" title="91">Now we continue with some text. As you can see in Figure \@ref(fig:figPoints) there are 10 points. The same was also decribed in Section \@ref(intro) or in Equation \@ref(eq:pythagoras) or in the package <span class="bn">`rmarkdown`</span> [see @R-bookdown]. The second way to make References [@R-mgcv]. For the third way see @R-knitr.</a>
+<a class="sourceLine" id="cb115-92" title="92"></a>
+<a class="sourceLine" id="cb115-93" title="93"></a>
+<a class="sourceLine" id="cb115-94" title="94"><span class="fu"># Discussion {#disc}</span></a>
+<a class="sourceLine" id="cb115-95" title="95"></a>
+<a class="sourceLine" id="cb115-96" title="96">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb115-97" title="97"></a>
+<a class="sourceLine" id="cb115-98" title="98">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb115-99" title="99"></a>
+<a class="sourceLine" id="cb115-100" title="100"><span class="bn">```{r}</span></a>
+<a class="sourceLine" id="cb115-101" title="101"><span class="bn">library(magrittr)</span></a>
+<a class="sourceLine" id="cb115-102" title="102"><span class="bn">library(kableExtra)</span></a>
+<a class="sourceLine" id="cb115-103" title="103"><span class="bn">dt &lt;- mtcars[1:5, 1:6]</span></a>
+<a class="sourceLine" id="cb115-104" title="104"><span class="bn">kable(dt,</span></a>
+<a class="sourceLine" id="cb115-105" title="105"><span class="bn">      digits = 3,</span></a>
+<a class="sourceLine" id="cb115-106" title="106"><span class="bn">      caption = &quot;Estimated motor current and standard deviation for each impeller at the two operating points&quot;) %&gt;%</span></a>
+<a class="sourceLine" id="cb115-107" title="107"><span class="bn">  kable_styling(&quot;striped&quot;,</span></a>
+<a class="sourceLine" id="cb115-108" title="108"><span class="bn">                full_width = F,</span></a>
+<a class="sourceLine" id="cb115-109" title="109"><span class="bn">                position = &quot;left&quot;) %&gt;%</span></a>
+<a class="sourceLine" id="cb115-110" title="110"><span class="bn">  add_header_above(c(&quot; &quot; = 1, &quot;Group 1&quot; = 2, &quot;Group 2&quot; = 2, &quot;Group 3&quot; = 2))</span></a>
+<a class="sourceLine" id="cb115-111" title="111"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb115-112" title="112"></a>
+<a class="sourceLine" id="cb115-113" title="113"></a>
+<a class="sourceLine" id="cb115-114" title="114"></a>
+<a class="sourceLine" id="cb115-115" title="115"></a>
+<a class="sourceLine" id="cb115-116" title="116"></a>
+<a class="sourceLine" id="cb115-117" title="117"><span class="fu"># References {#ref}</span></a></code></pre></div>
 </div>
 <p>Good resources for additional tips/templates</p>
 <ul>
@@ -975,8 +980,8 @@ Superscript<sup>2</sup>
 <del>Strikethrough</del>
 </td>
 <td>
-<div class="sourceCode" id="cb101"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb101-1" title="1">\usepackage{ulem}</a>
-<a class="sourceLine" id="cb101-2" title="2">\sout{Strikethrough}</a></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb116-1" title="1">\usepackage{ulem}</a>
+<a class="sourceLine" id="cb116-2" title="2">\sout{Strikethrough}</a></code></pre></div>
 </td>
 <td>
 <code>~~strikethrough~~</code>
@@ -1064,10 +1069,10 @@ Inline eqation <span class="math inline">\(A = \pi*r^2\)</span>
 Equation block
 </td>
 <td>
-<div class="sourceCode" id="cb102"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb102-1" title="1">\usepackage{amsmath}</a>
-<a class="sourceLine" id="cb102-2" title="2">\begin{align*} </a>
-<a class="sourceLine" id="cb102-3" title="3"><span class="bn">    E=mc^2</span></a>
-<a class="sourceLine" id="cb102-4" title="4">\end{align*}</a></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb117-1" title="1">\usepackage{amsmath}</a>
+<a class="sourceLine" id="cb117-2" title="2">\begin{align*} </a>
+<a class="sourceLine" id="cb117-3" title="3"><span class="bn">    E=mc^2</span></a>
+<a class="sourceLine" id="cb117-4" title="4">\end{align*}</a></code></pre></div>
 </td>
 <td>
 <code>$$E=mc^2$$</code>
@@ -1082,16 +1087,16 @@ a^2 + b^2 = c^2
 \]</span>
 </td>
 <td>
-<div class="sourceCode" id="cb103"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb103-1" title="1">\usepackage{amsmath}</a>
-<a class="sourceLine" id="cb103-2" title="2">\begin{align} </a>
-<a class="sourceLine" id="cb103-3" title="3"><span class="bn">    a^2 + b^2 = c^2</span></a>
-<a class="sourceLine" id="cb103-4" title="4">\end{align}</a></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb118-1" title="1">\usepackage{amsmath}</a>
+<a class="sourceLine" id="cb118-2" title="2">\begin{align} </a>
+<a class="sourceLine" id="cb118-3" title="3"><span class="bn">    a^2 + b^2 = c^2</span></a>
+<a class="sourceLine" id="cb118-4" title="4">\end{align}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb104"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb104-1" title="1">$$</a>
-<a class="sourceLine" id="cb104-2" title="2">a^2 + b^2 = c^2</a>
-<a class="sourceLine" id="cb104-3" title="3">(\#eq:pythagoras)</a>
-<a class="sourceLine" id="cb104-4" title="4">$$</a></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb119-1" title="1">$$</a>
+<a class="sourceLine" id="cb119-2" title="2">a^2 + b^2 = c^2</a>
+<a class="sourceLine" id="cb119-3" title="3">(\#eq:pythagoras)</a>
+<a class="sourceLine" id="cb119-4" title="4">$$</a></code></pre></div>
 </td>
 </tr>
 <tr>
@@ -1132,10 +1137,10 @@ Comments
 Multiline comment
 </td>
 <td>
-<div class="sourceCode" id="cb105"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb105-1" title="1">\usepackage{verbatim}</a>
-<a class="sourceLine" id="cb105-2" title="2">\begin{comment}</a>
-<a class="sourceLine" id="cb105-3" title="3"><span class="bn">    comment</span></a>
-<a class="sourceLine" id="cb105-4" title="4">\end{comment}</a></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb120-1" title="1">\usepackage{verbatim}</a>
+<a class="sourceLine" id="cb120-2" title="2">\begin{comment}</a>
+<a class="sourceLine" id="cb120-3" title="3"><span class="bn">    comment</span></a>
+<a class="sourceLine" id="cb120-4" title="4">\end{comment}</a></code></pre></div>
 </td>
 <td>
 <code>&lt;!--comment</code> <br>
@@ -1173,12 +1178,12 @@ Multiline comment
 </td>
 <td></li>
 </ul>
-<div class="sourceCode" id="cb106"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb106-1" title="1">\begin{itemize}</a>
-<a class="sourceLine" id="cb106-2" title="2">  \item Unordered list</a>
-<a class="sourceLine" id="cb106-3" title="3">  \begin{itemize}</a>
-<a class="sourceLine" id="cb106-4" title="4"><span class="bn">      \item Second level</span></a>
-<a class="sourceLine" id="cb106-5" title="5">  \end{itemize}</a>
-<a class="sourceLine" id="cb106-6" title="6">\end{itemize}</a></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb121-1" title="1">\begin{itemize}</a>
+<a class="sourceLine" id="cb121-2" title="2">  \item Unordered list</a>
+<a class="sourceLine" id="cb121-3" title="3">  \begin{itemize}</a>
+<a class="sourceLine" id="cb121-4" title="4"><span class="bn">      \item Second level</span></a>
+<a class="sourceLine" id="cb121-5" title="5">  \end{itemize}</a>
+<a class="sourceLine" id="cb121-6" title="6">\end{itemize}</a></code></pre></div>
 </td>
 <td>
 <code>* Unordered list</code> <br>
@@ -1192,9 +1197,9 @@ Multiline comment
 </td>
 <td></li>
 </ol>
-<div class="sourceCode" id="cb107"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb107-1" title="1">\begin{enumerate}</a>
-<a class="sourceLine" id="cb107-2" title="2">  \item Ordered list</a>
-<a class="sourceLine" id="cb107-3" title="3">\end{enumerate}</a></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb122-1" title="1">\begin{enumerate}</a>
+<a class="sourceLine" id="cb122-2" title="2">  \item Ordered list</a>
+<a class="sourceLine" id="cb122-3" title="3">\end{enumerate}</a></code></pre></div>
 </td>
 <td>
 <code>1. Ordered list</code>
@@ -1207,9 +1212,9 @@ block quote
 </td>
 <td>
 </blockquote>
-<div class="sourceCode" id="cb108"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb108-1" title="1">\begin{quote}</a>
-<a class="sourceLine" id="cb108-2" title="2">Text</a>
-<a class="sourceLine" id="cb108-3" title="3">\end{quote}</a></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb123-1" title="1">\begin{quote}</a>
+<a class="sourceLine" id="cb123-2" title="2">Text</a>
+<a class="sourceLine" id="cb123-3" title="3">\end{quote}</a></code></pre></div>
 </td>
 <td>
 <code>&gt; Text</code>
@@ -1231,8 +1236,8 @@ Horizontal line
 Small image <img src="figures/R_logo2.png" />
 </td>
 <td>
-<div class="sourceCode" id="cb109"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb109-1" title="1">\usepackage{graphicx}</a>
-<a class="sourceLine" id="cb109-2" title="2">\includegraphics{R_logo2}</a></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb124-1" title="1">\usepackage{graphicx}</a>
+<a class="sourceLine" id="cb124-2" title="2">\includegraphics{R_logo2}</a></code></pre></div>
 </td>
 <td>
 <code>![](R_logo2.png)</code>
@@ -1243,18 +1248,18 @@ Small image <img src="figures/R_logo2.png" />
 Formal image <img src="figures/R_logo2.png" />
 </td>
 <td>
-<div class="sourceCode" id="cb110"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb110-1" title="1">\usepackage{graphicx}</a>
-<a class="sourceLine" id="cb110-2" title="2">\begin{figure}</a>
-<a class="sourceLine" id="cb110-3" title="3">\centering</a>
-<a class="sourceLine" id="cb110-4" title="4">\includegraphics[width=0.25\textwidth]{R_logo2}</a>
-<a class="sourceLine" id="cb110-5" title="5">\caption{Figure caption}</a>
-<a class="sourceLine" id="cb110-6" title="6">\label{fig:mesh1}</a>
-<a class="sourceLine" id="cb110-7" title="7">\end{figure}</a></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb125-1" title="1">\usepackage{graphicx}</a>
+<a class="sourceLine" id="cb125-2" title="2">\begin{figure}</a>
+<a class="sourceLine" id="cb125-3" title="3">\centering</a>
+<a class="sourceLine" id="cb125-4" title="4">\includegraphics[width=0.25\textwidth]{R_logo2}</a>
+<a class="sourceLine" id="cb125-5" title="5">\caption{Figure caption}</a>
+<a class="sourceLine" id="cb125-6" title="6">\label{fig:mesh1}</a>
+<a class="sourceLine" id="cb125-7" title="7">\end{figure}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb111"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb111-1" title="1"><span class="bn">```{r, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></a>
-<a class="sourceLine" id="cb111-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/R_logo2.png&#39;)</span></a>
-<a class="sourceLine" id="cb111-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb126-1" title="1"><span class="bn">```{r, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></a>
+<a class="sourceLine" id="cb126-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/R_logo2.png&#39;)</span></a>
+<a class="sourceLine" id="cb126-3" title="3"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -1276,16 +1281,16 @@ Label section
 Label equation
 </td>
 <td>
-<div class="sourceCode" id="cb112"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb112-1" title="1">\begin{align}</a>
-<a class="sourceLine" id="cb112-2" title="2">  a^2 + b^2 = c^2</a>
-<a class="sourceLine" id="cb112-3" title="3">  \label{eq:1}</a>
-<a class="sourceLine" id="cb112-4" title="4">\end{align}</a></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb127-1" title="1">\begin{align}</a>
+<a class="sourceLine" id="cb127-2" title="2">  a^2 + b^2 = c^2</a>
+<a class="sourceLine" id="cb127-3" title="3">  \label{eq:1}</a>
+<a class="sourceLine" id="cb127-4" title="4">\end{align}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb113"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb113-1" title="1">$$</a>
-<a class="sourceLine" id="cb113-2" title="2">a^2 + b^2 = c^2</a>
-<a class="sourceLine" id="cb113-3" title="3">(\#eq:pythagoras)</a>
-<a class="sourceLine" id="cb113-4" title="4">$$</a></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb128-1" title="1">$$</a>
+<a class="sourceLine" id="cb128-2" title="2">a^2 + b^2 = c^2</a>
+<a class="sourceLine" id="cb128-3" title="3">(\#eq:pythagoras)</a>
+<a class="sourceLine" id="cb128-4" title="4">$$</a></code></pre></div>
 </td>
 </tr>
 <tr>
@@ -1293,15 +1298,15 @@ Label equation
 Label figure
 </td>
 <td>
-<div class="sourceCode" id="cb114"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb114-1" title="1">\begin{figure}</a>
-<a class="sourceLine" id="cb114-2" title="2">...</a>
-<a class="sourceLine" id="cb114-3" title="3">\label{fig:meshy}</a>
-<a class="sourceLine" id="cb114-4" title="4">\end{figure}</a></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb129-1" title="1">\begin{figure}</a>
+<a class="sourceLine" id="cb129-2" title="2">...</a>
+<a class="sourceLine" id="cb129-3" title="3">\label{fig:meshy}</a>
+<a class="sourceLine" id="cb129-4" title="4">\end{figure}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb115"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb115-1" title="1"><span class="bn">```{r, label, fig.cap=&#39;...&#39;}</span></a>
-<a class="sourceLine" id="cb115-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
-<a class="sourceLine" id="cb115-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb130-1" title="1"><span class="bn">```{r, label, fig.cap=&#39;...&#39;}</span></a>
+<a class="sourceLine" id="cb130-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
+<a class="sourceLine" id="cb130-3" title="3"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -1312,15 +1317,15 @@ Label figure
 Label table
 </td>
 <td>
-<div class="sourceCode" id="cb116"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb116-1" title="1">\begin{longtable}[]{@{}lll@{}}</a>
-<a class="sourceLine" id="cb116-2" title="2">...</a>
-<a class="sourceLine" id="cb116-3" title="3">\label{tab:pros}</a>
-<a class="sourceLine" id="cb116-4" title="4">\end{longtable}</a></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb131-1" title="1">\begin{longtable}[]{@{}lll@{}}</a>
+<a class="sourceLine" id="cb131-2" title="2">...</a>
+<a class="sourceLine" id="cb131-3" title="3">\label{tab:pros}</a>
+<a class="sourceLine" id="cb131-4" title="4">\end{longtable}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb117"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb117-1" title="1"><span class="bn">```{r, label}</span></a>
-<a class="sourceLine" id="cb117-2" title="2"><span class="bn">kableExtra::kable(...)</span></a>
-<a class="sourceLine" id="cb117-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb132-1" title="1"><span class="bn">```{r, label}</span></a>
+<a class="sourceLine" id="cb132-2" title="2"><span class="bn">kableExtra::kable(...)</span></a>
+<a class="sourceLine" id="cb132-3" title="3"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -1375,20 +1380,20 @@ Cross ref table
 Bibliography
 </td>
 <td>
-<div class="sourceCode" id="cb118"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb118-1" title="1">\usepackage{biblatex}</a>
-<a class="sourceLine" id="cb118-2" title="2">\addbibresource{sample.bib}</a>
-<a class="sourceLine" id="cb118-3" title="3">\begin{document}</a>
-<a class="sourceLine" id="cb118-4" title="4">...</a>
-<a class="sourceLine" id="cb118-5" title="5">\printbibliography</a>
-<a class="sourceLine" id="cb118-6" title="6">\end{document}</a></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb133-1" title="1">\usepackage{biblatex}</a>
+<a class="sourceLine" id="cb133-2" title="2">\addbibresource{sample.bib}</a>
+<a class="sourceLine" id="cb133-3" title="3">\begin{document}</a>
+<a class="sourceLine" id="cb133-4" title="4">...</a>
+<a class="sourceLine" id="cb133-5" title="5">\printbibliography</a>
+<a class="sourceLine" id="cb133-6" title="6">\end{document}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb119"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb119-1" title="1">---</a>
-<a class="sourceLine" id="cb119-2" title="2">title: Thesis</a>
-<a class="sourceLine" id="cb119-3" title="3">author: &quot;Reto Zihlmann&quot;</a>
-<a class="sourceLine" id="cb119-4" title="4">bibliography: [retoMT2018.bib]</a>
-<a class="sourceLine" id="cb119-5" title="5">...</a>
-<a class="sourceLine" id="cb119-6" title="6">---</a></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb134-1" title="1">---</a>
+<a class="sourceLine" id="cb134-2" title="2">title: Thesis</a>
+<a class="sourceLine" id="cb134-3" title="3">author: &quot;Reto Zihlmann&quot;</a>
+<a class="sourceLine" id="cb134-4" title="4">bibliography: [retoMT2018.bib]</a>
+<a class="sourceLine" id="cb134-5" title="5">...</a>
+<a class="sourceLine" id="cb134-6" title="6">---</a></code></pre></div>
 </td>
 </tr>
 <tr>
@@ -1423,17 +1428,17 @@ text <code>(ref:label)</code> text
 Tables
 </td>
 <td>
-<div class="sourceCode" id="cb120"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb120-1" title="1">\begin{longtable}[]{@{}lll@{}}</a>
-<a class="sourceLine" id="cb120-2" title="2">\caption{The caption}\\</a>
-<a class="sourceLine" id="cb120-3" title="3">\toprule</a>
-<a class="sourceLine" id="cb120-4" title="4">col1 &amp; col2 &amp; col3\\</a>
-<a class="sourceLine" id="cb120-5" title="5">\midrule</a>
-<a class="sourceLine" id="cb120-6" title="6">\endhead</a>
-<a class="sourceLine" id="cb120-7" title="7">1 &amp; 2 &amp; 3\\</a>
-<a class="sourceLine" id="cb120-8" title="8">1 &amp; 2 &amp; 3\\</a>
-<a class="sourceLine" id="cb120-9" title="9">\bottomrule</a>
-<a class="sourceLine" id="cb120-10" title="10">\label{tab:pros}</a>
-<a class="sourceLine" id="cb120-11" title="11">\end{longtable}</a></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb135-1" title="1">\begin{longtable}[]{@{}lll@{}}</a>
+<a class="sourceLine" id="cb135-2" title="2">\caption{The caption}\\</a>
+<a class="sourceLine" id="cb135-3" title="3">\toprule</a>
+<a class="sourceLine" id="cb135-4" title="4">col1 &amp; col2 &amp; col3\\</a>
+<a class="sourceLine" id="cb135-5" title="5">\midrule</a>
+<a class="sourceLine" id="cb135-6" title="6">\endhead</a>
+<a class="sourceLine" id="cb135-7" title="7">1 &amp; 2 &amp; 3\\</a>
+<a class="sourceLine" id="cb135-8" title="8">1 &amp; 2 &amp; 3\\</a>
+<a class="sourceLine" id="cb135-9" title="9">\bottomrule</a>
+<a class="sourceLine" id="cb135-10" title="10">\label{tab:pros}</a>
+<a class="sourceLine" id="cb135-11" title="11">\end{longtable}</a></code></pre></div>
 </td>
 <td>
 Rmarkdown

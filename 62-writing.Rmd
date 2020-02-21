@@ -169,8 +169,9 @@ knitr::include_graphics('figures/hex-rmarkdown.png')
 
 Chunk options
 
-* `fig.show='hold'` Show figures next to each other (if out.width < 50%)
 * `fig.cap = "text"` Figure captation text or text reference
+* `fig.show='hold'` Show figures next to each other (if out.width < 50%)
+    - Does currently not work with `fig.align = "center"`
 
 Recomended file formate
 
@@ -370,7 +371,7 @@ Text
 ```
 ````
 
-Replace `rmdcaution` with `rmdimportant`, `rmdnote`, `rmdtip` and `rmdwarning`
+Replace `rmdcaution` with `rmdimportant`, `rmdnote`, `rmdtip` and `rmdwarning`. Note that the code chunk always needs to be taged as `block2`.
 
 Here how they look like
 
