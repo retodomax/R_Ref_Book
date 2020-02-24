@@ -5,7 +5,7 @@
 
 (ref:RegExCheat) Cheat sheet for regex
 
-```{r RegExCheat, echo = FALSE, out.width='100%', fig.align = 'center', fig.cap='(ref:RegExCheat)', fig.show = 'hold'}
+```{r RegExCheat, echo = FALSE, out.width='100%', fig.cap='(ref:RegExCheat)'}
 knitr::include_graphics("figures/regex.png")
 ```
 

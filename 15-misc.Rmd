@@ -92,6 +92,6 @@ Note that you can store much larger numbers with double than with integers. Numb
 
 (ref:MiscPack) Four formes how a package can be saved (upper: source, lower: binary)
 
-```{r MiscPack, echo = FALSE, out.width='100%', fig.align = 'center', fig.cap='(ref:MiscPack)', fig.show = 'hold'}
+```{r MiscPack, echo = FALSE, fig.cap='(ref:MiscPack)', fig.show = 'hold'}
 knitr::include_graphics("figures/package-kinds.png")
 ```

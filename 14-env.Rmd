@@ -20,7 +20,7 @@
 
 (ref:EnvDef) Environments consist of a frame containing pointers to objects and a pointer to the enclosing environment. The sequence of all pointers make up the search path.
 
-```{r echo = FALSE, out.width='70%', fig.align = 'center', fig.cap='(ref:EnvDef)'}
+```{r, echo = FALSE, fig.cap='(ref:EnvDef)'}
 knitr::include_graphics("figures/env01_environment-structure.png")
 ```
 
@@ -171,7 +171,7 @@ By default:
 
 (ref:EnvFun) The framing environment (green) is not necessarily the environment property of the function (blue). The Environment Property points to another environment and defines the search list of a function.
 
-```{r EnvFun, echo = FALSE, out.width='50%', fig.align = 'center', fig.cap='(ref:EnvFun)', fig.show = 'hold'}
+```{r EnvFun, echo = FALSE, out.width='50%', fig.align ='default', fig.show = 'hold', fig.cap='(ref:EnvFun)'}
 knitr::include_graphics(c("figures/env4_fun.png",
                           "figures/env5_fun.png"))
 ```
@@ -217,14 +217,14 @@ If any package in the search path redefines any basic function (e.g. `+`), it wi
 
 (ref:EnvMap) The environment property of a function in any package is the namespace of the package. The enclosing environment of namespace is imports:package. The environment property of the functions within imports:package is again the namespace of their package. Box: environment, Dotted arrows: environment property, solid arrows: enclosing environment
 
-```{r EnvMap, echo = FALSE, out.width='100%', fig.align = 'center', fig.cap='(ref:EnvMap)', fig.show = 'hold'}
+```{r EnvMap, echo = FALSE, out.width='100%', fig.cap='(ref:EnvMap)'}
 knitr::include_graphics("figures/env02_dotted.png")
 ```
 
 
 (ref:EnvMap2) Map of the world. All search lists and environment properties in R.
 
-```{r EnvMap2, echo = FALSE, out.width='100%', fig.align = 'center', fig.cap='(ref:EnvMap2)', fig.show = 'hold'}
+```{r EnvMap2, echo = FALSE, out.width='100%', fig.cap='(ref:EnvMap2)'}
 knitr::include_graphics("figures/env03_map-of-the-world.png")
 ```
 

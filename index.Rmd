@@ -17,10 +17,14 @@ favicon: "figures/00_icon/icon2.ico"
 # Introduction {-}
 
 ```{r, setup, include=FALSE}
-knitr::opts_chunk$set(comment = "#>",
+knitr::opts_chunk$set(comment = "",
                       tidy = TRUE,
-                      fig.align = "center",
-                      out.width = "80%")
+                      fig.align = "left",
+                      out.width = "80%",
+                      echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      error = FALSE)
 ```
 
 

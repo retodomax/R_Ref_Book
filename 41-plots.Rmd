@@ -6,6 +6,11 @@
 
 ## Graphical parameters `par()`
 
+Good overviews:
+* [Official Documentation](https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/par.html)
+* [Illustrated Documentation](http://rstudio-pubs-static.s3.amazonaws.com/315576_85cccd774c29428ba46969316cbc76c0.html)
+* Book R in a Nutshell: A Desktop Quick Reference
+
 ### Set graphical parameters
 Change global option
 ```{r}
@@ -55,6 +60,16 @@ The parameters are defined for the currently active device
 par()
 ```
 </div>
+
+
+### Device
+
+```{r, collapse=TRUE}
+par("ask")  # asks user before new figure is drawn
+par("new")  # if TRUE, plots next high-level plot above previous
+```
+
+
 
 
 ### Device region
@@ -151,7 +166,7 @@ There are in total 9 coordinate sytems
 
 
 
-```{r, out.width='80%', fig.align='center', fig.cap='Interval [0, 1] for different normalized coordinate systems', echo=FALSE}
+```{r, echo=FALSE, fig.cap='Interval [0, 1] for different normalized coordinate systems'}
 y_pos <- grconvertY(y = c(0.3, 0.2, 0.1), from = "ndc", to = "lines")
 opar <- par(xpd = NA,
             mfrow = c(1,2),
@@ -160,7 +175,7 @@ opar <- par(xpd = NA,
 plot(1:10, 1:10, type = "n", xlab = "", ylab = "")
 box("plot", col = "red")
 box("figure", col = "green")
-box(which = "inner", col = "violet")
+box(which = "inner", col = "orange")
 box(which = "outer", col = "blue")
 one_line <- grconvertY(y = 0.8, from = "lines", to = "user") -
   grconvertY(y = 0, from = "lines", to = "user")
@@ -181,15 +196,23 @@ par(opar)
 Use `grconvertX()` to convert between different coordinate systems
 
 
+##### Define `lines` coordinate system {-}
+```{r}
+par("mex")   # defines lines coordinate system from point size of text, "height" of one line (e.g. space between Line 0 and Line 1)
+```
+
+
+
 ### Define device regions
 
-Useful links: (Device regions)[http://www.melissaclarkson.com/resources/R_guides/documents/figure_layout_Ver1.pdf], (fig and fin)[http://www.programmingr.com/content/positioning-charts-fig-and-fin/], (oma and mgp[http://www.programmingr.com/content/controlling-margins-and-axes-oma-and-mgp/])
+Useful links: [Device regions](http://www.melissaclarkson.com/resources/R_guides/documents/figure_layout_Ver1.pdf), [fig and fin](http://www.programmingr.com/content/positioning-charts-fig-and-fin/), [oma and mgp](http://www.programmingr.com/content/controlling-margins-and-axes-oma-and-mgp/)
 
 #### Split device
 
 Several options (see [here](https://www.statmethods.net/advgraphs/layout.html))
 
 * array: `par(mfrow = c(2,2))` (`mfcol` fills the array by columns)
+    - use `par("mfg")` to plot a specific field in the array
 * grid: `layout(matrix())`
 * arbitrary locations: `par(fig = ...)` combined with `par(new=TRUE)`
 * `split.screen()`
@@ -255,10 +278,10 @@ Multiple plots without axis
 
 ```{r, eval=FALSE}
 FunNewPar(oma = c(1,1,2,2),
-          mar = c(3,3,0,0))
+          mar = c(1,1,0,0))
 ```
 
-```{r, out.width='30%', fig.show = 'hold', echo=FALSE}
+```{r, echo=FALSE, out.width='30%', fig.show ='hold', fig.align='default'}
 FunNewPar <- function(oma = c(0,0,2,2),
                       mar = c(4,4,0,0),
                       tcl = -0.3,
@@ -291,7 +314,7 @@ plot(1, xlab = "X axis title", ylab = "Y axis title")
 plot(1, xlab = "X axis title", ylab = "")
 mtext(text = "Multiple plots without axis title", side = 3, line = 2, outer = T, cex = 3)
 
-FunNewPar(oma = c(1,1,5,2), mar = c(3,3,0,0))
+FunNewPar(oma = c(1,1,5,2), mar = c(1,1,0,0))
 plot(1, xlab = "", ylab = "Y axis title", xaxt = "n")
 plot(1, xlab = "", ylab = "", xaxt = "n", yaxt = "n")
 plot(1, xlab = "X axis title", ylab = "Y axis title")
@@ -308,63 +331,349 @@ par(mfrow = c(1,1))
 Define margine area using `lines` coordinate system
 
 ```{r, collapse=TRUE}
-par("mar") # Margine Area
 par("oma") # Outer Margin Area
+par("mar") # Margine Area
 ```
 
 Define margine area using `inches` coordinate system
 
 ```{r, collapse=TRUE}
-par("mai") # Margine Area
 par("omi") # Outer Margin Area
+par("mai") # Margine Area
 ```
 
-Define margine area using `ndc` coordinate system
+
+```{r, echo=FALSE}
+prep_plot <- function(){
+  opar <- par(mfrow = c(1,2))
+  par(xpd = NA)
+  par(omd = c(0.2,0.9,0.2,0.8))
+  par(plt = c(0.3,0.8,0.3,0.7))
+  plot.new()
+  box(which = "plot", col = "red")
+  box(which = "figure", col = "green")
+  box(which = "inner", col = "orange")
+  box(which = "outer", col = "blue")
+  invisible(opar)
+}
+
+opar <- prep_plot()
+
+x_blue <- grconvertX(0, from = "ndc")
+x_orange <- grconvertX(0, from = "nic")
+x_red <- grconvertX(0, from = "npc")
+x_red2 <- grconvertX(1, from = "npc")
+x_green <- grconvertX(1, from = "nfc")
+x_orange2 <- grconvertX(1, from = "nic")
+
+y_bottom1 <- grconvertY(y = 0.05, from = "ndc")
+y_bottom2 <- grconvertY(y = 0.1, from = "ndc")
+y_middle1 <- grconvertY(y = 0.05, from = "nfc")
+y_middle2 <- grconvertY(y = 0.15, from = "nfc")
+y_top1 <- grconvertY(y = 0.85, from = "ndc")
+y_top2 <- grconvertY(y = 0.9, from = "ndc")
+
+
+
+arr <- function(x0, x1, y0, code = 3){
+  arrows(x0 = x0, y0 = y0, x1 = x1, y1 = y0, length = 0.1, code = code)
+}
+
+arr(x0 = x_blue, x1 = x_orange, y0 = y_middle2)
+text(x = mean(c(x_blue, x_orange)), y = y_middle2, labels = "oma, omi", pos = 3)
+arr(x0 = x_orange, x1 = x_red, y0 = y_middle1)
+text(x = mean(c(x_orange, x_red)), y = y_middle1, labels = "mar, mai", pos = 3)
+
+plot.new()
+box(which = "plot", col = "red")
+par(opar)
+```
+
+
+
+
+Define margine area using `ndc`/`nfc` coordinate system
 
 ```{r, collapse=TRUE}
-par("plt") # Start and endpoint of plot region
-par("fig") # Start and endpoint of figure region
+par("omd") # Start and endpoint of inner region  c(x1, x2, y1, y2)
+par("fig") # Start and endpoint of figure region c(x1, x2, y1, y2)
+par("plt") # Start and endpoint of plot region   c(x1, x2, y1, y2)
+```
+
+
+```{r, echo=FALSE}
+prep_plot()
+x_blue <- grconvertX(0, from = "ndc")
+x_orange <- grconvertX(0, from = "nic")
+x_red <- grconvertX(0, from = "npc")
+x_red2 <- grconvertX(1, from = "npc")
+x_green <- grconvertX(1, from = "nfc")
+x_orange2 <- grconvertX(1, from = "nic")
+
+y_bottom1 <- grconvertY(y = 0.05, from = "ndc")
+y_bottom2 <- grconvertY(y = 0.1, from = "ndc")
+y_middle1 <- grconvertY(y = 0.05, from = "nfc")
+y_middle2 <- grconvertY(y = 0.15, from = "nfc")
+y_top1 <- grconvertY(y = 0.85, from = "ndc")
+y_top2 <- grconvertY(y = 0.9, from = "ndc")
+
+arr(x0 = x_blue, x1 = x_orange, y0 = y_top2, code = 2)
+arr(x0 = x_blue, x1 = x_green, y0 = y_top1, code = 2)
+text(x = mean(c(x_orange, x_green)), y = y_top1, labels = "fig", pos = 3)
+
+arr(x0 = x_blue, x1 = x_orange, y0 = y_bottom2, code = 2)
+arr(x0 = x_blue, x1 = x_orange2, y0 = y_bottom1, code = 2)
+text(x = mean(c(x_orange, x_orange2)), y = y_bottom1, labels = "omd", pos = 3)
+
+arr(x0 = x_orange, x1 = x_red, y0 = y_middle2, code = 2)
+arr(x0 = x_orange, x1 = x_red2, y0 = y_middle1, code = 2)
+text(x = mean(c(x_red, x_red2)), y = y_middle1, labels = "plt", pos = 3)
+
+plot.new()
+box(which = "plot", col = "red")
+par(opar)
 ```
 
 
 Define region dimensions in `inches`
 
-```{r}
-par("pin")  # Plot dimensions, (width, height)
+```{r, collapse=TRUE}
 par("fin")  # Figure dimensions, (width, height)
+par("pin")  # Plot dimensions, (width, height)
 ```
 
-Define plot region using `nfc`
+```{r, echo=FALSE}
+prep_plot()
+x_blue <- grconvertX(0, from = "ndc")
+x_orange <- grconvertX(0, from = "nic")
+x_red <- grconvertX(0, from = "npc")
+x_red2 <- grconvertX(1, from = "npc")
+x_green <- grconvertX(1, from = "nfc")
+x_orange2 <- grconvertX(1, from = "nic")
 
-```{r}
-par("plt") # A vector of the form c(x1, x2, y1, y2) giving the coordinates of the plot region as fractions of the current figure region.
+y_bottom1 <- grconvertY(y = 0.05, from = "ndc")
+y_bottom2 <- grconvertY(y = 0.1, from = "ndc")
+y_middle1 <- grconvertY(y = 0.05, from = "nfc")
+y_middle2 <- grconvertY(y = 0.15, from = "nfc")
+y_top1 <- grconvertY(y = 0.85, from = "ndc")
+y_top2 <- grconvertY(y = 0.9, from = "ndc")
 
-par("omd") # ??
+
+arr(x0 = x_orange, x1 = x_green, y0 = y_top1)
+text(x = mean(c(x_orange, x_green)), y = y_top1, labels = "fin", pos = 3)
+arr(x0 = x_red, x1 = x_red2, y0 = y_middle1)
+text(x = mean(c(x_red, x_red2)), y = y_middle1, labels = "pin", pos = 3)
+arr(x0 = x_orange, x1 = x_orange2, y0 = y_bottom1)
+text(x = mean(c(x_orange, x_orange2)), y = y_bottom1, labels = "??", pos = 3)
+
+plot.new()
+box(which = "plot", col = "red")
+par(opar)
 ```
 
 
 #### Square plot
 
-```{r}
+```{r, collapse=TRUE}
 par("pty") # pty = "m": maximum,  pty = "s": square
 ```
 
 
+### User coordinates limits
 
-#### Axis position
-
-
-
-
-
-
-
-
-##### Coordinate system outside plot {-}
 ```{r, collapse=TRUE}
-par("mgp") # position of [1] x/y-label, [2] axis, [3] ticks
-par("mex") # "height" of one line (e.g. space between Line 0 and Line 1)
+par("usr")  # extremes of the user coordinate system (xmin, xmax, ymin, ymax)
+par("xaxs") # "r": xlim +/- 4%, "i": xlim
 ```
 
 
+### General appearence
+```{r, collapse=TRUE}
+par("bg")  # color for the background of the device region. NA => transparent
+par("fg")  # color for the foreground (axes, boxes, plotting)
+```
+
+
+### Symbols
+```{r, collapse=TRUE}
+par("pch") # symbol
+par("cex") # magnifies text/symbols relative to default
+par("col") # symbol color
+```
+
+```{r, echo=FALSE, out.width='50%'}
+plot(x = rep(1:6, each = 6)[1:26], y = rep(6:1, 6)[1:26],
+     pch = c(0:25), col = "red3", bg = "yellow2", cex = 3,
+     xlim = c(0.5, 6.5), ylim = c(0.5, 6.5), xlab = "", ylab = "",
+     panel.first = abline(h = 6:1, v = 1:6, col = "lightgray", lty = 3))
+mysym <- c("*", ".", "o", "O", "0", "+", "-", "|", "%", "#")
+points(x = rep(1:6, each = 6)[27:36], y = rep(6:1, 6)[27:36],
+       pch = mysym, col = "red3", bg = "yellow2", cex = 3)
+text(x = rep(1:6, each = 6) - 0.4, y = rep(6:1, 6), labels = c(0:25, mysym))
+```
+
+
+### Lines
+```{r, collapse=TRUE}
+par("lty")    # line type
+par("lwd")    # line width
+par("col")    # line color
+par("lend")   # line end type
+par("ljoin")  # line join style
+par("lmitre") # detail to ljoin option "mitre"
+```
+
+```{r, echo=FALSE, out.width='50%', fig.show ='hold', fig.align='default'}
+par(bty = "n")
+plot(x = 0:6, y = 6:0, type = "n", xaxt = "n", ylab = "", xlab = "",
+     main = "Line Types: lty =", ylim = c(6.5, -0.5), las = 2)
+abline(h = 0:6, lty = 0:6)
+text(x = 1, y = 0:6, labels = c("blank", "solid", "dashed", "dotted", "dotdash", "longdash", "twodash"), pos = 3)
+
+# par(mar = c(1,3,3,1)+0.1)
+plot(1:3, 0:2, type = "n", ylim = c(2.5, -0.5), yaxt = "n", xaxt = "n", xlab = "", ylab = "", main = "lend =")
+axis(2, at = 0:2, las = 2)
+abline(v = 2, lty = 2)
+lines(x = c(1,2), y = c(0,0), lwd = 25, lend = 0)
+lines(x = c(1,2), y = c(1,1), lwd = 25, lend = 1)
+lines(x = c(1,2), y = c(2,2), lwd = 25, lend = 2)
+text(x = 2.5, y = 0, label = "\"round\"")
+text(x = 2.5, y = 1, label = "\"butt\"")
+text(x = 2.5, y = 2, label = "\"square\"")
+
+# par(mar = c(1, 2,2,1))
+y=c(2.5, 0, 2.5)
+par(ljoin=0)
+plot(y, lwd = 20, type = "l", ylim = c(2.5, -0.6), xlim = c(1, 5),
+     xaxt = "n", yaxt = "n", main = "ljoin =", xlab = "", ylab = "")
+axis(2, at = 0:2)
+par(ljoin=1)
+lines(y+1,lwd=20,type="l")
+par(ljoin=2)
+lines(y+2,lwd=20,type="l")
+text(x = 3.8, y = 0, label = "\"round\"")
+text(x = 3.8, y = 1, label = "\"mitre\"")
+text(x = 3.8, y = 2, label = "\"bevel\"")
+```
+
+
+### Text
+```{r, collapse=TRUE}
+par("font")    # text font
+par("family")  # text font family
+par("cex")     # magnifies text/symbols relative to default
+par("ps")      # text pointsize
+par("col")     # text color
+par("srt")     # string rotation in degrees (°)
+par("lheight") # vertical spacing in multi-line text
+```
+
+Point size of text = `ps` * `cex`
+
+Point size of title = `ps` * `cex` * `cex.main`
+
+Size of "lines" (coordinate system) = constant * `cex` * `mex`
+
+
+```{r, echo=FALSE, out.width='50%', fig.show ='hold', fig.align='default'}
+
+par(bty = "n")
+plot(1:5, ylim = c(5.5,0.5), type = "n", xlab = "", ylab = "", xaxt = "n", main = "font = ")
+opar <- par(cex = 2)
+text(x = 1, y = 1, labels = "plain", font = 1, pos = 4)
+text(x = 1, y = 2, labels = "bold", font = 2, pos = 4)
+text(x = 1, y = 3, labels = "italic", font = 3, pos = 4)
+text(x = 1, y = 4, labels = "bold italic", font = 4, pos = 4)
+text(x = 1, y = 5, labels = "symbol", font = 5, pos = 4)
+text(x = 3, y = 5, labels = "symbol ('d' => delta)", pos = 4, cex = 0.75)
+par(opar)
+
+plot(1:3, ylim = c(4,0), type = "n", xlab = "", ylab = "", xaxt = "n", main = "family =", yaxt = "n")
+par(cex = 2)
+text(1,1,pos=4, family = "sans", "sans (= default)")
+text(1,2,pos=4, family = "serif", "serif")
+text(1,3,pos=4, family = "mono", "mono")
+```
+
+
+Get new text families with packet extrafont (see [here](http://blog.revolutionanalytics.com/2012/09/how-to-use-your-favorite-fonts-in-r-charts.html))
+
+```{block2, type='rmdwarning'}
+You could also use this command to get your fonts from Windows `windowsFonts(MyFont = windowsFont("NameFromWord"))`, however with this way the new font cannot be printed to PDF.
+```
+
+
+### Axis labels
+```{r, collapse=TRUE}
+par("font.lab")
+par("cex.lab")
+par("col.lab")
+par("ann")   # should there be any annotations (title, axis title)
+par("adj")   # axis title position (0: left, 1: right)
+par("mgp")   # position of 1) labels, 2) tick-mark labels, 3) tick marks (in lines)
+```
+
+
+### Axis
+```{r, collapse=TRUE}
+par("font.axis")
+par("cex.axis")
+par("col.axis")
+par("xaxt") # should there be an axis ("n" suppresses axis)
+par("las")  # orientation of tick-mark labels (0: parallel, 1: horizontal, 2: perpendicular, 3: vertical)
+par("mgp")  # position of 1) labels, 2) tick-mark labels, 3) tick marks (in lines)
+```
+
+
+### Ticks
+```{r, collapse=TRUE}
+par("mgp")  # position of 1) labels, 2) tick-mark labels, 3) tick marks (in lines)
+par("tck")  # length of tick marks (in npc), 1 => grid lines
+par("tcl")  # length of tick marks (in chars), negative => look outside plot
+par("lab")  # ≈ number of ticks per axis (x-axis, y-axis, unimplementent)
+par("xaxp") # look where ticks are plotted (lower xlim, upper xlim, nr of ticks minus 1)
+par("xaxs") # "r": xlim +/- 4%, "i": xlim
+par("xlog") # log x axis
+```
+
+
+### Box
+```{r, collapse=TRUE}
+par("bty")  # one of  "o", "l", "7", "c", "u", "]", no box: "n"
+```
+
+
+### Title
+```{r, collapse=TRUE}
+par("font.main")
+par("cex.main")
+par("col.main")
+par("font.sub")
+par("cex.sub")
+par("col.sub")
+par("ann")     # should there be any annotations (title, axis title)
+```
+
+
+### R.O. (Read only)
+
+```{r, collapse=TRUE}
+par("cin")  # character size (width, height) in inches
+par("cra")  # character size (width, height) in pixels
+par("csi")  # same as par("cin")[2]
+par("cxy")  # character size (width, height) in user coordinate system
+par("din")  # device dimensions (width, height) in inches
+par("page") # A boolean value indicating whether the next call to plot.new is going to start a new page
+```
+
+
+### Useless
+
+```{r}
+par("crt")    # rotate single characters, does NOT work on most devices.
+par("ylbias") # used in positioning of text in margin (no effect?)
+par("err")    # unimplemented
+par("mkh")    # unimplemented
+par("smo")    # unimplemented
+```
 
