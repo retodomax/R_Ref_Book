@@ -7,6 +7,7 @@
 ## Graphical parameters `par()`
 
 Good overviews:
+
 * [Official Documentation](https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/par.html)
 * [Illustrated Documentation](http://rstudio-pubs-static.s3.amazonaws.com/315576_85cccd774c29428ba46969316cbc76c0.html)
 * Book R in a Nutshell: A Desktop Quick Reference
@@ -14,31 +15,31 @@ Good overviews:
 ### Set graphical parameters
 Change global option
 ```{r}
-par(xlog = T)
+par(xlog = TRUE)
 ```
 
 change for local plot
-```{r, eval=F}
-plot(..., xlog = T)
+```{r, eval=FALSE}
+plot(..., xlog = TRUE)
 ```
 
 When parameters are set, their previous values are returned in an invisible named list. Such a list can be passed as an argument to par to restore the parameter values.
 
-```{r, eval = F}
-opar <- par(xlog = T)
+```{r, eval = FALSE}
+opar <- par(xlog = TRUE)
 plot(...)
 par(opar)
 ```
 
 reset default
 
-```{r, eval=F}
+```{r, eval=FALSE}
 dev.off()
 ```
 
 check current parameter
 
-```{r, eval = T}
+```{r, eval = TRUE}
 par("xlog")
 ```
 
@@ -197,7 +198,7 @@ Use `grconvertX()` to convert between different coordinate systems
 
 
 ##### Define `lines` coordinate system {-}
-```{r}
+```{r, collapse=TRUE}
 par("mex")   # defines lines coordinate system from point size of text, "height" of one line (e.g. space between Line 0 and Line 1)
 ```
 
@@ -242,7 +243,7 @@ mtext('y-axis title', side = 2, outer = TRUE, line = 2)
 
 ##### Useful helper function {-}
 
-```{r}
+```{r, tidy=FALSE}
 FunNewPar <- function(oma = c(0,0,2,2),
                       mar = c(4,4,0,0),
                       tcl = -0.3,
@@ -277,7 +278,7 @@ FunNewPar(oma = c(1,1,2,2),
 Multiple plots without axis
 
 ```{r, eval=FALSE}
-FunNewPar(oma = c(1,1,2,2),
+FunNewPar(oma = c(3,3,2,2),
           mar = c(1,1,0,0))
 ```
 
@@ -314,7 +315,7 @@ plot(1, xlab = "X axis title", ylab = "Y axis title")
 plot(1, xlab = "X axis title", ylab = "")
 mtext(text = "Multiple plots without axis title", side = 3, line = 2, outer = T, cex = 3)
 
-FunNewPar(oma = c(1,1,5,2), mar = c(1,1,0,0))
+FunNewPar(oma = c(3,3,5,2), mar = c(1,1,0,0))
 plot(1, xlab = "", ylab = "Y axis title", xaxt = "n")
 plot(1, xlab = "", ylab = "", xaxt = "n", yaxt = "n")
 plot(1, xlab = "X axis title", ylab = "Y axis title")
@@ -504,8 +505,9 @@ par("col") # symbol color
 ```{r, echo=FALSE, out.width='50%'}
 plot(x = rep(1:6, each = 6)[1:26], y = rep(6:1, 6)[1:26],
      pch = c(0:25), col = "red3", bg = "yellow2", cex = 3,
-     xlim = c(0.5, 6.5), ylim = c(0.5, 6.5), xlab = "", ylab = "",
+     xlim = c(0.5, 6.5), ylim = c(0.5, 6.5), xlab = "", ylab = "", main = "pch = ", axes = F,
      panel.first = abline(h = 6:1, v = 1:6, col = "lightgray", lty = 3))
+box()
 mysym <- c("*", ".", "o", "O", "0", "+", "-", "|", "%", "#")
 points(x = rep(1:6, each = 6)[27:36], y = rep(6:1, 6)[27:36],
        pch = mysym, col = "red3", bg = "yellow2", cex = 3)
@@ -669,11 +671,116 @@ par("page") # A boolean value indicating whether the next call to plot.new is go
 
 ### Useless
 
-```{r}
+```{r, collapse=TRUE}
 par("crt")    # rotate single characters, does NOT work on most devices.
 par("ylbias") # used in positioning of text in margin (no effect?)
 par("err")    # unimplemented
 par("mkh")    # unimplemented
 par("smo")    # unimplemented
 ```
+
+
+## Colors
+
+Very well explained [here](http://www.melissaclarkson.com/resources/R_guides/documents/colors_Ver2.pdf)
+
+Specify by:
+
+* Name
+    - example `col = "black"`
+    - possible names: `colors()`
+* Hexadecimal RGB code
+    - example `col = "#000000"` => black
+    - format `"#RRGGBB"`
+    - RR, GG, BB are hexadecimal digits (00 to FF)
+* Index
+    - example `col = 1` => black
+    - index gives colors position in `palette()`
+    - `palette()` can be manipulated
+        + restore default palete with `palette("default")`
+    - Special: index 0 is background color
+
+
+Default palette:
+
+```{r, echo=FALSE, out.width='50%'}
+plot(x = rep(1:3, 3), y = rep(1:3, each = 3),
+     ylim = c(3.5,0.5), xlim = c(0.5,3.5),
+     pch = 15, col = 0:8, cex = 12,
+     xlab = "", ylab = "",
+     axes = F, main = "col = ")
+box()
+text(x = rep(1:3, 3), y = rep(1:3, each = 3), labels = 0:8)
+```
+
+### Functions
+
+* `rgb()`
+    - converts RGB to hexadecimal
+* `col2rgb()`
+    - converts R colors (hexadecimal, name, index) to RGB
+    
+NEXT: GO THROUGH COLORS PDF OF MELISSA CLARKSON...
+
+
+
+
+* Function
+    - example `col = rgb(0,0,0)` => black
+    - `rgb()`, `hsv()`, `hcl()`, `gray()`, `rainbow()`
+
+
+### Make new palettes
+
+Create a vector of $n$ continuous colors
+
+```{r, eval=FALSE}
+rainbow(n)
+heat.colors(n)
+terrain.colors(n)
+topo.colors(n)
+cm.colors(n)
+```
+
+
+### Partially transparent colors
+
+Add two more digits to hexadecimal code, which define transparency
+
+`#RRGGBBaa`
+
+
+Use `alpha()` function of package `ggplot2`
+
+```{r, eval=FALSE}
+require(ggplot2)
+plot(..., col = alpha(gray, 0.5))
+```
+
+
+
+
+
+## Plot empty
+
+##### Plot without axis/box {-}
+```{r, eval=FALSE}
+par( ann = FALSE      # no titles
+    , bty = "n"   # no box
+    , xaxt = "n"  # no x axis
+    , yaxt = "n"  # no y axis
+    )
+```
+
+##### Plot empty {-}
+```{r, eval=FALSE}
+# Perfect
+plot.new()
+
+# Good
+plot(0, type = "n", axes = FALSE, ann = FALSE)
+```
+
+
+
 
