@@ -1,0 +1,23 @@
+# Text output
+
+## Format
+
+Always and exactly 2 places after comma
+
+```{r}
+x <- 0.1234567
+format(round(x, 2), nsmall = 2)
+```
+
+
+
+## New lines
+
+Plot text with line break
+
+```{r, fig.height=2, out.width='50%'}
+par(mar = c(0,0,0,0)+0.5)
+plot(1, type = "n")
+text(1,1, labels = "text \n and more text")
+```
+

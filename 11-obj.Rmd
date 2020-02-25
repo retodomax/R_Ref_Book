@@ -136,6 +136,13 @@ eval(x)
 eval(quote(mean(c(1:3))))
 ```
 
+#### Evaluate strings as variable names {-}
+```{r, collapse=TRUE}
+a <- 1.34
+get("a")  # returns object
+eval(parse(text = "a"))  # eval: evaluates an expression, parse: convert string to expression
+```
+
 
 
 ### Not understand yet
