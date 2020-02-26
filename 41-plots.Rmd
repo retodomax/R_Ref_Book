@@ -833,21 +833,128 @@ text(1,1, labels = label1)
 
 Common high level plot functions
 
-* `plot.default()`
-* `scatter.smooth()`
-* `matplot()`
-* `hist()`
-* `boxplot()`
-* `stripchart()`
-* `dotchart()`
-* `barplot()`
-* `spineplot()`
-* `pie()`
-* `contour()`
-* `filled.contour()`
-* `image()`
-* `interaction.plot()`
-* `qqplot()`
+* 1D continuous
+    - `curve()`
+    - `hist()`
+    - `stripchart()`
+    - `dotchart()`
+* 1D discrete
+    - `barplot()`
+    - `spineplot()`
+    - `pie()`
+* 2D continuous - continuous
+    - `plot.default()`
+    - `scatter.smooth()`
+    - `matplot()`
+    - `pairs()`
+* 2D continuous - discrete
+    - `boxplot()`
+    - `stripchart()`
+    - `dotchart()`
+    - `barplot()`
+    - `spineplot()`
+    - `pie()`
+* 2D discrete - discrete
+    - `mosaicplot()`
+* 3D
+    - `contour()`
+    - `filled.contour()`
+    - `image()`
+* ANOVA
+    - `interaction.plot()`
+    - `plot.design()`
+* Multivariate
+    - `pairs()`
+    - Bubble Plot
+    - Conditioning Plot
+    - Segment Plot
+    - `mosaicplot()`
+* Distribution
+    - `qqplot()`
+
+
+```{r, out.width='30%', echo=FALSE, fig.show='hold', fig.align='default'}
+
+par(cex.main = 2)
+
+# scatter.smooth() --------------------------------------------------------
+set.seed(1)
+scatter.smooth(x = 1:10, y = rnorm(10), lpars = list(col = "red"),
+               xlab = "X", ylab = "Y", main = "scatter.smooth()")
+
+# curve() -----------------------------------------------------------------
+curve(dnorm, -5, 5, main = "curve()")
+
+# matplot() ---------------------------------------------------------------
+sines <- outer(1:20, 1:4, function(x, y) sin(x / 20 * pi * y))
+matplot(sines, lwd = 2, type = "l", col = gray.colors(ncol(sines)), lty = 1,
+        main = "matplot()", xlab = "")
+
+# hist() ------------------------------------------------------------------
+set.seed(1)
+hist(rnorm(100), main = "hist()", xlab = "X", col = "lightgray")
+
+# boxplot() ---------------------------------------------------------------
+boxplot(count ~ spray, data = InsectSprays, col = "lightgray", main = "boxplot()")
+
+# stripchart() ------------------------------------------------------------
+stripchart(decrease ~ treatment,
+           main = "stripchart()",
+           vertical = TRUE, log = "y", data = OrchardSprays)
+
+# dotchart() --------------------------------------------------------------
+dotchart(t(VADeaths), xlim = c(0,100), bg = "skyblue",
+         main = "dotchart()")
+
+# barplot() ---------------------------------------------------------------
+barplot(GNP ~ Year, data = longley, main = "barplot()")
+
+# spineplot() -------------------------------------------------------------
+spineplot(margin.table(UCBAdmissions, c(3, 2)),
+           main = "spineplot()")
+
+# pie() -------------------------------------------------------------------
+pie(c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5),
+    init.angle = 315, col = c("deepskyblue", "yellow", "yellow3"),
+    border = FALSE, main = "pie()")
+
+# contour() ---------------------------------------------------------------
+x <- -6:16
+contour(outer(x, x), main = "contour()")
+
+# filled.contour() --------------------------------------------------------
+# filled.contour(volcano, asp = 1)
+# filled.contour uses the layout function and so is restricted to a
+# full page display.
+
+# image() -----------------------------------------------------------------
+x <- 10*(1:nrow(volcano))
+y <- 10*(1:ncol(volcano))
+image(x, y, volcano, col = hcl.colors(100, "terrain"), axes = TRUE,
+      main = "image()")
+
+# interaction.plot() ------------------------------------------------------
+with(CO2[CO2$conc == 1000,],
+     interaction.plot(x.factor = Type, trace.factor = Treatment, response = uptake,
+                      main = "intaraction.plot()"))
+
+# plot.design() -----------------------------------------------------------
+plot.design(uptake ~ Type + Treatment, data = CO2, main = "plot.design()")
+
+# qqnorm() ----------------------------------------------------------------
+set.seed(1)
+y <- rt(200, df = 5)
+qqnorm(y, main = "qqnorm()")
+qqline(y, col = 2)
+
+# pairs -------------------------------------------------------------------
+
+library(FunRZ)
+pairs(x = iris, lower.panel = panel.smooth,
+      upper.panel = panel.cor, diag.panel = panel.hist, main = "pairs()")
+
+```
+
 
 
 
