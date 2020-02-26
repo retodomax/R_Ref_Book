@@ -262,8 +262,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3" data-path="Plots.html"><a href="Plots.html#mathematical-annotation"><i class="fa fa-check"></i><b>11.3</b> Mathematical annotation</a></li>
 <li class="chapter" data-level="11.4" data-path="Plots.html"><a href="Plots.html#high-level-plots"><i class="fa fa-check"></i><b>11.4</b> High level plots</a><ul>
 <li class="chapter" data-level="11.4.1" data-path="Plots.html"><a href="Plots.html#plot-function"><i class="fa fa-check"></i><b>11.4.1</b> Plot function</a></li>
+<li class="chapter" data-level="11.4.2" data-path="Plots.html"><a href="Plots.html#example-barplot"><i class="fa fa-check"></i><b>11.4.2</b> Example: Barplot</a></li>
+<li class="chapter" data-level="11.4.3" data-path="Plots.html"><a href="Plots.html#example-matplot"><i class="fa fa-check"></i><b>11.4.3</b> Example: Matplot</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="Plots.html"><a href="Plots.html#low-level-plots"><i class="fa fa-check"></i><b>11.5</b> Low level plots</a></li>
+<li class="chapter" data-level="11.5" data-path="Plots.html"><a href="Plots.html#low-level-plots"><i class="fa fa-check"></i><b>11.5</b> Low level plots</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="Plots.html"><a href="Plots.html#legends"><i class="fa fa-check"></i><b>11.5.1</b> Legends</a></li>
+<li class="chapter" data-level="11.5.2" data-path="Plots.html"><a href="Plots.html#arrow"><i class="fa fa-check"></i><b>11.5.2</b> Arrow</a></li>
+<li class="chapter" data-level="11.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>11.5.3</b> panel.first</a></li>
+<li class="chapter" data-level="11.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>11.5.4</b> Area under curve</a></li>
+</ul></li>
 <li class="chapter" data-level="11.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>11.6</b> Plot empty</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>12</b> Interactive Plots</a></li>
@@ -379,17 +386,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="format" class="section level2">
 <h2><span class="header-section-number">13.1</span> Format</h2>
 <p>Always and exactly 2 places after comma</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" title="1">x &lt;-<span class="st"> </span><span class="fl">0.1234567</span></a>
-<a class="sourceLine" id="cb110-2" title="2"><span class="kw">format</span>(<span class="kw">round</span>(x, <span class="dv">2</span>), <span class="dt">nsmall =</span> <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" title="1">x &lt;-<span class="st"> </span><span class="fl">0.1234567</span></a>
+<a class="sourceLine" id="cb115-2" title="2"><span class="kw">format</span>(<span class="kw">round</span>(x, <span class="dv">2</span>), <span class="dt">nsmall =</span> <span class="dv">2</span>)</a></code></pre></div>
 <pre><code>[1] &quot;0.12&quot;</code></pre>
 </div>
 <div id="new-lines" class="section level2">
 <h2><span class="header-section-number">13.2</span> New lines</h2>
 <p>Plot text with line break</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" title="1"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb112-2" title="2"><span class="kw">plot</span>(<span class="dv">1</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>)</a>
-<a class="sourceLine" id="cb112-3" title="3"><span class="kw">text</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dt">labels =</span> <span class="st">&quot;text </span><span class="ch">\n</span><span class="st"> and more text&quot;</span>)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-93-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" title="1"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb117-2" title="2"><span class="kw">plot</span>(<span class="dv">1</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>)</a>
+<a class="sourceLine" id="cb117-3" title="3"><span class="kw">text</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dt">labels =</span> <span class="st">&quot;text </span><span class="ch">\n</span><span class="st"> and more text&quot;</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-102-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
 </div>

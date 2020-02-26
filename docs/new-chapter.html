@@ -262,8 +262,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3" data-path="Plots.html"><a href="Plots.html#mathematical-annotation"><i class="fa fa-check"></i><b>11.3</b> Mathematical annotation</a></li>
 <li class="chapter" data-level="11.4" data-path="Plots.html"><a href="Plots.html#high-level-plots"><i class="fa fa-check"></i><b>11.4</b> High level plots</a><ul>
 <li class="chapter" data-level="11.4.1" data-path="Plots.html"><a href="Plots.html#plot-function"><i class="fa fa-check"></i><b>11.4.1</b> Plot function</a></li>
+<li class="chapter" data-level="11.4.2" data-path="Plots.html"><a href="Plots.html#example-barplot"><i class="fa fa-check"></i><b>11.4.2</b> Example: Barplot</a></li>
+<li class="chapter" data-level="11.4.3" data-path="Plots.html"><a href="Plots.html#example-matplot"><i class="fa fa-check"></i><b>11.4.3</b> Example: Matplot</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="Plots.html"><a href="Plots.html#low-level-plots"><i class="fa fa-check"></i><b>11.5</b> Low level plots</a></li>
+<li class="chapter" data-level="11.5" data-path="Plots.html"><a href="Plots.html#low-level-plots"><i class="fa fa-check"></i><b>11.5</b> Low level plots</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="Plots.html"><a href="Plots.html#legends"><i class="fa fa-check"></i><b>11.5.1</b> Legends</a></li>
+<li class="chapter" data-level="11.5.2" data-path="Plots.html"><a href="Plots.html#arrow"><i class="fa fa-check"></i><b>11.5.2</b> Arrow</a></li>
+<li class="chapter" data-level="11.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>11.5.3</b> panel.first</a></li>
+<li class="chapter" data-level="11.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>11.5.4</b> Area under curve</a></li>
+</ul></li>
 <li class="chapter" data-level="11.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>11.6</b> Plot empty</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>12</b> Interactive Plots</a></li>
@@ -402,35 +409,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">23.1.1</span> Common tasks</h3>
 <div id="create-a-new-repository-on-the-command-line" class="section level5 unnumbered">
 <h5>create a new repository on the command line</h5>
-<div class="sourceCode" id="cb165"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb165-1" title="1"><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</a>
-<a class="sourceLine" id="cb165-2" title="2"><span class="fu">git</span> init</a>
-<a class="sourceLine" id="cb165-3" title="3"><span class="fu">git</span> add README.md</a>
-<a class="sourceLine" id="cb165-4" title="4"><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></a>
-<a class="sourceLine" id="cb165-5" title="5"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb165-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb170-1" title="1"><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</a>
+<a class="sourceLine" id="cb170-2" title="2"><span class="fu">git</span> init</a>
+<a class="sourceLine" id="cb170-3" title="3"><span class="fu">git</span> add README.md</a>
+<a class="sourceLine" id="cb170-4" title="4"><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></a>
+<a class="sourceLine" id="cb170-5" title="5"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb170-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 </div>
 <div id="push-an-existing-repository-from-the-command-line" class="section level5 unnumbered">
 <h5>push an existing repository from the command line</h5>
-<div class="sourceCode" id="cb166"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb166-1" title="1"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb166-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb171-1" title="1"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb171-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 </div>
 <div id="clone-existing-repository-and-push-changes" class="section level5 unnumbered">
 <h5>clone existing repository and push changes</h5>
-<div class="sourceCode" id="cb167"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb167-1" title="1"><span class="fu">git</span> clone git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb167-2" title="2"><span class="bu">cd</span> test</a>
-<a class="sourceLine" id="cb167-3" title="3"><span class="fu">touch</span> README.md</a>
-<a class="sourceLine" id="cb167-4" title="4"><span class="fu">git</span> add README.md</a>
-<a class="sourceLine" id="cb167-5" title="5"><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></a>
-<a class="sourceLine" id="cb167-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb172-1" title="1"><span class="fu">git</span> clone git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb172-2" title="2"><span class="bu">cd</span> test</a>
+<a class="sourceLine" id="cb172-3" title="3"><span class="fu">touch</span> README.md</a>
+<a class="sourceLine" id="cb172-4" title="4"><span class="fu">git</span> add README.md</a>
+<a class="sourceLine" id="cb172-5" title="5"><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></a>
+<a class="sourceLine" id="cb172-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 </div>
 <div id="push-existing-folder-to-origin" class="section level5 unnumbered">
 <h5>push existing folder to origin</h5>
-<div class="sourceCode" id="cb168"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb168-1" title="1"><span class="bu">cd</span> existing_folder</a>
-<a class="sourceLine" id="cb168-2" title="2"><span class="fu">git</span> init</a>
-<a class="sourceLine" id="cb168-3" title="3"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb168-4" title="4"><span class="fu">git</span> add .</a>
-<a class="sourceLine" id="cb168-5" title="5"><span class="fu">git</span> commit</a>
-<a class="sourceLine" id="cb168-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb173-1" title="1"><span class="bu">cd</span> existing_folder</a>
+<a class="sourceLine" id="cb173-2" title="2"><span class="fu">git</span> init</a>
+<a class="sourceLine" id="cb173-3" title="3"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb173-4" title="4"><span class="fu">git</span> add .</a>
+<a class="sourceLine" id="cb173-5" title="5"><span class="fu">git</span> commit</a>
+<a class="sourceLine" id="cb173-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 
 </div>
 </div>

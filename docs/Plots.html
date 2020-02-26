@@ -262,8 +262,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3" data-path="Plots.html"><a href="Plots.html#mathematical-annotation"><i class="fa fa-check"></i><b>11.3</b> Mathematical annotation</a></li>
 <li class="chapter" data-level="11.4" data-path="Plots.html"><a href="Plots.html#high-level-plots"><i class="fa fa-check"></i><b>11.4</b> High level plots</a><ul>
 <li class="chapter" data-level="11.4.1" data-path="Plots.html"><a href="Plots.html#plot-function"><i class="fa fa-check"></i><b>11.4.1</b> Plot function</a></li>
+<li class="chapter" data-level="11.4.2" data-path="Plots.html"><a href="Plots.html#example-barplot"><i class="fa fa-check"></i><b>11.4.2</b> Example: Barplot</a></li>
+<li class="chapter" data-level="11.4.3" data-path="Plots.html"><a href="Plots.html#example-matplot"><i class="fa fa-check"></i><b>11.4.3</b> Example: Matplot</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="Plots.html"><a href="Plots.html#low-level-plots"><i class="fa fa-check"></i><b>11.5</b> Low level plots</a></li>
+<li class="chapter" data-level="11.5" data-path="Plots.html"><a href="Plots.html#low-level-plots"><i class="fa fa-check"></i><b>11.5</b> Low level plots</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="Plots.html"><a href="Plots.html#legends"><i class="fa fa-check"></i><b>11.5.1</b> Legends</a></li>
+<li class="chapter" data-level="11.5.2" data-path="Plots.html"><a href="Plots.html#arrow"><i class="fa fa-check"></i><b>11.5.2</b> Arrow</a></li>
+<li class="chapter" data-level="11.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>11.5.3</b> panel.first</a></li>
+<li class="chapter" data-level="11.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>11.5.4</b> Area under curve</a></li>
+</ul></li>
 <li class="chapter" data-level="11.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>11.6</b> Plot empty</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>12</b> Interactive Plots</a></li>
@@ -1084,6 +1091,12 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 </div>
 <div id="high-level-plots" class="section level2">
 <h2><span class="header-section-number">11.4</span> High level plots</h2>
+<p>Links:</p>
+<ul>
+<li><a href="https://www.r-graph-gallery.com/">R Graph Gallery</a></li>
+<li><a href="https://www.harding.edu/fmccown/r/">Simple graphs</a></li>
+<li><a href="http://pj.freefaculty.org/guides/Rcourse/plot-3d/plots-3d.pdf">3D plots</a></li>
+</ul>
 <p>Common high level plot functions</p>
 <ul>
 <li>1D continuous
@@ -1092,6 +1105,7 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <li><code>hist()</code></li>
 <li><code>stripchart()</code></li>
 <li><code>dotchart()</code></li>
+<li><code>beeswarm::beeswarm()</code></li>
 </ul></li>
 <li>1D discrete
 <ul>
@@ -1112,18 +1126,21 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <li><code>stripchart()</code></li>
 <li><code>dotchart()</code></li>
 <li><code>barplot()</code></li>
+<li><code>beeswarm::beeswarm()</code></li>
 <li><code>spineplot()</code></li>
 <li><code>pie()</code></li>
 </ul></li>
 <li>2D discrete - discrete
 <ul>
-<li><code>mosaicplot()</code></li>
+<li><code>mosaicplot()</code> / <code>vcd::mosaic()</code></li>
 </ul></li>
 <li>3D
 <ul>
 <li><code>contour()</code></li>
 <li><code>filled.contour()</code></li>
 <li><code>image()</code></li>
+<li><code>persp()</code></li>
+<li><code>rgl::plot3d()</code></li>
 </ul></li>
 <li>ANOVA
 <ul>
@@ -1134,29 +1151,65 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <ul>
 <li><code>pairs()</code></li>
 <li>Bubble Plot</li>
-<li>Conditioning Plot</li>
-<li>Segment Plot</li>
+<li><code>coplot()</code></li>
+<li><code>stars()</code></li>
 <li><code>mosaicplot()</code></li>
 </ul></li>
 <li>Distribution
 <ul>
 <li><code>qqplot()</code></li>
 </ul></li>
+<li>Interactive
+<ul>
+<li><code>identify()</code></li>
+<li>plot.ly (interactive plots)</li>
+<li>shiny (interactive web apps)</li>
+</ul></li>
 </ul>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-1.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-2.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-3.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-4.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-5.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-6.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-7.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-8.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-9.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-10.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-11.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-12.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-13.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-14.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-15.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-16.png" width="30%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-1.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-2.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-3.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-4.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-5.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-6.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-7.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-8.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-9.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-10.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-11.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-12.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-13.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-14.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-15.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-16.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-17.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-18.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-19.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-20.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-21.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-22.png" width="30%" /></p>
+<p><img src="figures/plots/vcd_mosaic.png" width="30%" /><img src="figures/plots/beeswarm.png" width="30%" /><img src="figures/plots/circular.png" width="30%" /><img src="figures/plots/radarchart.png" width="30%" /></p>
 <div id="plot-function" class="section level3">
 <h3><span class="header-section-number">11.4.1</span> Plot function</h3>
 <p>Type argument</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">3</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>))</a>
-<a class="sourceLine" id="cb107-2" title="2">type_letters &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;p&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;h&quot;</span>, <span class="st">&quot;s&quot;</span>, <span class="st">&quot;S&quot;</span>, <span class="st">&quot;n&quot;</span>)</a>
-<a class="sourceLine" id="cb107-3" title="3"><span class="cf">for</span> (i <span class="cf">in</span> type_letters) {</a>
-<a class="sourceLine" id="cb107-4" title="4">    <span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">type =</span> i, <span class="dt">ann =</span> <span class="ot">FALSE</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb107-5" title="5">    <span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">2</span>, <span class="dt">y =</span> <span class="dv">8</span>, <span class="dt">labels =</span> i, <span class="dt">cex =</span> <span class="dv">3</span>, <span class="dt">family =</span> <span class="st">&quot;mono&quot;</span>)</a>
-<a class="sourceLine" id="cb107-6" title="6">    <span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;type =&quot;</span>, <span class="dt">outer =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb107-7" title="7">    <span class="kw">box</span>()</a>
-<a class="sourceLine" id="cb107-8" title="8">}</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-89-1.png" width="80%" style="display: block; margin: auto auto auto 0;" /></p>
-<p>For pmf use <code>type = h</code> and for cdf use <code>type = s</code></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-90-1.png" width="80%" style="display: block; margin: auto auto auto 0;" /></p>
+<p>For pmf use <code>type = "h"</code> and for cdf use <code>type = "s"</code></p>
+</div>
+<div id="example-barplot" class="section level3">
+<h3><span class="header-section-number">11.4.2</span> Example: Barplot</h3>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" title="1">myData &lt;-<span class="st"> </span><span class="kw">aggregate</span>(mtcars<span class="op">$</span>mpg, <span class="dt">by =</span> <span class="kw">list</span>(<span class="dt">cyl =</span> mtcars<span class="op">$</span>cyl, <span class="dt">gears =</span> mtcars<span class="op">$</span>gear), </a>
+<a class="sourceLine" id="cb107-2" title="2">    <span class="dt">FUN =</span> <span class="cf">function</span>(x) <span class="kw">c</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(x), <span class="dt">sd =</span> <span class="kw">sd</span>(x), <span class="dt">n =</span> <span class="kw">length</span>(x)))</a>
+<a class="sourceLine" id="cb107-3" title="3">myData &lt;-<span class="st"> </span><span class="kw">do.call</span>(data.frame, myData)</a>
+<a class="sourceLine" id="cb107-4" title="4">myData<span class="op">$</span>se &lt;-<span class="st"> </span>myData<span class="op">$</span>x.sd<span class="op">/</span><span class="kw">sqrt</span>(myData<span class="op">$</span>x.n)</a>
+<a class="sourceLine" id="cb107-5" title="5"><span class="kw">colnames</span>(myData) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;gears&quot;</span>, <span class="st">&quot;mean&quot;</span>, <span class="st">&quot;sd&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="st">&quot;se&quot;</span>)</a>
+<a class="sourceLine" id="cb107-6" title="6">myData<span class="op">$</span>names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">paste</span>(myData<span class="op">$</span>cyl, <span class="st">&quot;cyl /&quot;</span>, myData<span class="op">$</span>gears, <span class="st">&quot; gear&quot;</span>))</a>
+<a class="sourceLine" id="cb107-7" title="7"></a>
+<a class="sourceLine" id="cb107-8" title="8"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
+<a class="sourceLine" id="cb107-9" title="9"></a>
+<a class="sourceLine" id="cb107-10" title="10">plotTop &lt;-<span class="st"> </span><span class="kw">max</span>(myData<span class="op">$</span>mean) <span class="op">+</span><span class="st"> </span>myData[myData<span class="op">$</span>mean <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(myData<span class="op">$</span>mean), <span class="dv">6</span>] <span class="op">*</span><span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb107-11" title="11"></a>
+<a class="sourceLine" id="cb107-12" title="12">barCenters &lt;-<span class="st"> </span><span class="kw">barplot</span>(<span class="dt">height =</span> myData<span class="op">$</span>mean, <span class="dt">names.arg =</span> myData<span class="op">$</span>names, <span class="dt">beside =</span> true, </a>
+<a class="sourceLine" id="cb107-13" title="13">    <span class="dt">las =</span> <span class="dv">2</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, plotTop), <span class="dt">cex.names =</span> <span class="fl">0.75</span>, <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Mileage by No. Cylinders and No. Gears&quot;</span>, </a>
+<a class="sourceLine" id="cb107-14" title="14">    <span class="dt">ylab =</span> <span class="st">&quot;Miles per Gallon&quot;</span>, <span class="dt">border =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb107-15" title="15"></a>
+<a class="sourceLine" id="cb107-16" title="16"><span class="kw">text</span>(<span class="dt">x =</span> barCenters, <span class="dt">y =</span> <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">3</span>] <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">srt =</span> <span class="dv">45</span>, <span class="dt">adj =</span> <span class="dv">1</span>, <span class="dt">labels =</span> myData<span class="op">$</span>names, </a>
+<a class="sourceLine" id="cb107-17" title="17">    <span class="dt">xpd =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb107-18" title="18"></a>
+<a class="sourceLine" id="cb107-19" title="19"><span class="kw">arrows</span>(barCenters, myData<span class="op">$</span>mean <span class="op">-</span><span class="st"> </span>myData<span class="op">$</span>se, barCenters, myData<span class="op">$</span>mean <span class="op">+</span><span class="st"> </span>myData<span class="op">$</span>se, </a>
+<a class="sourceLine" id="cb107-20" title="20">    <span class="dt">lwd =</span> <span class="fl">1.5</span>, <span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">code =</span> <span class="dv">3</span>, <span class="dt">length =</span> <span class="fl">0.05</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-91-1.png" width="80%" style="display: block; margin: auto auto auto 0;" /></p>
+</div>
+<div id="example-matplot" class="section level3">
+<h3><span class="header-section-number">11.4.3</span> Example: Matplot</h3>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" title="1">den.df &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">:</span><span class="dv">20</span></a>
+<a class="sourceLine" id="cb108-2" title="2">num.df &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">:</span><span class="dv">20</span></a>
+<a class="sourceLine" id="cb108-3" title="3">mq &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow =</span> <span class="kw">length</span>(den.df), <span class="dt">ncol =</span> <span class="kw">length</span>(num.df))</a>
+<a class="sourceLine" id="cb108-4" title="4"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(den.df)) {</a>
+<a class="sourceLine" id="cb108-5" title="5">    mq[i, ] &lt;-<span class="st"> </span><span class="kw">qf</span>(<span class="fl">0.95</span>, num.df, den.df[i])</a>
+<a class="sourceLine" id="cb108-6" title="6">}</a>
+<a class="sourceLine" id="cb108-7" title="7"><span class="co">## den.df: x coordinates of lines (recycled in this case) mq: y coordinates of</span></a>
+<a class="sourceLine" id="cb108-8" title="8"><span class="co">## lines, here: matrix each column give y coordinate of one line</span></a>
+<a class="sourceLine" id="cb108-9" title="9"><span class="kw">matplot</span>(den.df, mq, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;den.df&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;95%-quantile&quot;</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-92-1.png" width="80%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
 <div id="low-level-plots" class="section level2">
@@ -1190,25 +1243,101 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <li><code>axis()</code></li>
 <li><code>box()</code></li>
 </ul></li>
+<li>Add-ons
+<ul>
+<li><code>grid()</code> grid behind plot</li>
+<li><code>rug()</code> small ticks at bottom of e.g. <code>hist()</code></li>
+<li><code>axis.break()</code></li>
+<li><code>plotrix::axis.break()</code> break of axis</li>
+</ul></li>
 </ul>
+
+<div class="rmdtip">
+Useful function for text: <code>strwidth()</code>. Returns width or height of strings in user coordinates.
+</div>
+
+<div id="legends" class="section level3">
+<h3><span class="header-section-number">11.5.1</span> Legends</h3>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" title="1"><span class="kw">plot</span>(<span class="dv">1</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;legend position&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>)</a>
+<a class="sourceLine" id="cb109-2" title="2">mypos &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;bottomleft&quot;</span>, <span class="st">&quot;bottom&quot;</span>, <span class="st">&quot;bottomright&quot;</span>, <span class="st">&quot;right&quot;</span>, <span class="st">&quot;left&quot;</span>, <span class="st">&quot;center&quot;</span>, <span class="st">&quot;right&quot;</span>, <span class="st">&quot;topleft&quot;</span>, <span class="st">&quot;top&quot;</span>)</a>
+<a class="sourceLine" id="cb109-3" title="3"><span class="cf">for</span>(i <span class="cf">in</span> mypos){</a>
+<a class="sourceLine" id="cb109-4" title="4">  <span class="kw">legend</span>(i, <span class="dt">legend =</span> <span class="st">&quot;&quot;</span>, <span class="dt">title =</span> i)</a>
+<a class="sourceLine" id="cb109-5" title="5">}</a>
+<a class="sourceLine" id="cb109-6" title="6"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">legend =</span> <span class="st">&quot;&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;topright, inset = 0.05&quot;</span>, <span class="dt">inset =</span> <span class="fl">0.05</span>)</a>
+<a class="sourceLine" id="cb109-7" title="7"></a>
+<a class="sourceLine" id="cb109-8" title="8"></a>
+<a class="sourceLine" id="cb109-9" title="9"><span class="kw">plot</span>(<span class="dv">1</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>)</a>
+<a class="sourceLine" id="cb109-10" title="10"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb109-11" title="11"><span class="kw">legend</span>(<span class="st">&quot;left&quot;</span>,</a>
+<a class="sourceLine" id="cb109-12" title="12">       <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;treat&quot;</span>, <span class="st">&quot;cont&quot;</span>, <span class="st">&quot;cont2&quot;</span>),</a>
+<a class="sourceLine" id="cb109-13" title="13">       <span class="dt">lty =</span> <span class="kw">c</span>(<span class="ot">NA</span>, <span class="dv">1</span>, <span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb109-14" title="14">       <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">21</span>,<span class="ot">NA</span>, <span class="dv">22</span>),</a>
+<a class="sourceLine" id="cb109-15" title="15">       <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>),</a>
+<a class="sourceLine" id="cb109-16" title="16">       <span class="dt">pt.bg =</span> <span class="kw">c</span>(<span class="st">&quot;lightblue&quot;</span>, <span class="ot">NA</span>,  <span class="st">&quot;lightgreen&quot;</span>))</a>
+<a class="sourceLine" id="cb109-17" title="17"><span class="kw">par</span>(<span class="dt">lend =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb109-18" title="18">col1 &lt;-<span class="st"> &quot;slateblue4&quot;</span></a>
+<a class="sourceLine" id="cb109-19" title="19">col2 &lt;-<span class="st"> &quot;firebrick3&quot;</span></a>
+<a class="sourceLine" id="cb109-20" title="20"><span class="kw">legend</span>(<span class="st">&quot;right&quot;</span>,</a>
+<a class="sourceLine" id="cb109-21" title="21">       <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>,  <span class="co"># draw no box</span></a>
+<a class="sourceLine" id="cb109-22" title="22">       <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;historical&quot;</span>, <span class="st">&quot;RCP2.6&quot;</span>, <span class="st">&quot;RCP8.5&quot;</span>),</a>
+<a class="sourceLine" id="cb109-23" title="23">       <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">col =</span> ggplot2<span class="op">::</span><span class="kw">alpha</span>(<span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, col1, col2),<span class="fl">0.4</span>),</a>
+<a class="sourceLine" id="cb109-24" title="24">       <span class="dt">lwd =</span> <span class="dv">15</span>)</a>
+<a class="sourceLine" id="cb109-25" title="25"><span class="kw">legend</span>(<span class="st">&quot;right&quot;</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>,</a>
+<a class="sourceLine" id="cb109-26" title="26">       <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;historical&quot;</span>, <span class="st">&quot;RCP2.6&quot;</span>, <span class="st">&quot;RCP8.5&quot;</span>),</a>
+<a class="sourceLine" id="cb109-27" title="27">       <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black &quot;</span>, col1, col2),</a>
+<a class="sourceLine" id="cb109-28" title="28">       <span class="dt">lwd =</span> <span class="dv">1</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-94-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-94-2.png" width="50%" /></p>
+</div>
+<div id="arrow" class="section level3">
+<h3><span class="header-section-number">11.5.2</span> Arrow</h3>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" title="1"><span class="kw">arrows</span>(x0, y0, <span class="dt">x1 =</span> x0, <span class="dt">y1 =</span> y0,</a>
+<a class="sourceLine" id="cb110-2" title="2">       <span class="dt">length =</span> <span class="fl">0.25</span>,</a>
+<a class="sourceLine" id="cb110-3" title="3">       <span class="dt">angle =</span> <span class="dv">30</span>,</a>
+<a class="sourceLine" id="cb110-4" title="4">       <span class="dt">code =</span> <span class="dv">2</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-96-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-96-2.png" width="50%" /></p>
+</div>
+<div id="panel.first" class="section level3">
+<h3><span class="header-section-number">11.5.3</span> panel.first</h3>
+<p>plot something behind actual plot</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" title="1"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">panel.first =</span> <span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">seq</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">2</span>), <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>))</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-97-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+</div>
+<div id="area-under-curve" class="section level3">
+<h3><span class="header-section-number">11.5.4</span> Area under curve</h3>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" title="1">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb112-2" title="2">y &lt;-<span class="st"> </span><span class="kw">dnorm</span>(x)</a>
+<a class="sourceLine" id="cb112-3" title="3"><span class="kw">plot</span>(y <span class="op">~</span><span class="st"> </span>x, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>)</a>
+<a class="sourceLine" id="cb112-4" title="4"></a>
+<a class="sourceLine" id="cb112-5" title="5">upper_bond &lt;-<span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb112-6" title="6">lower_bond &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb112-7" title="7"></a>
+<a class="sourceLine" id="cb112-8" title="8">auswahl &lt;-<span class="st"> </span>x <span class="op">&lt;=</span><span class="st"> </span>upper_bond <span class="op">&amp;</span><span class="st"> </span>x <span class="op">&gt;=</span><span class="st"> </span>lower_bond</a>
+<a class="sourceLine" id="cb112-9" title="9">x_polygon &lt;-<span class="st"> </span>x[auswahl]</a>
+<a class="sourceLine" id="cb112-10" title="10">y_polygon &lt;-<span class="st"> </span>y[auswahl]</a>
+<a class="sourceLine" id="cb112-11" title="11"></a>
+<a class="sourceLine" id="cb112-12" title="12"><span class="kw">polygon</span>(<span class="kw">c</span>(lower_bond, x_polygon, upper_bond), <span class="kw">c</span>(<span class="dv">0</span>, y_polygon, <span class="dv">0</span>), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">border =</span> <span class="ot">NA</span>)</a>
+<a class="sourceLine" id="cb112-13" title="13"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb112-14" title="14"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">2</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-98-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+</div>
 </div>
 <div id="plot-empty" class="section level2">
 <h2><span class="header-section-number">11.6</span> Plot empty</h2>
 <div id="plot-without-axisbox" class="section level5 unnumbered">
 <h5>Plot without axis/box</h5>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" title="1"><span class="kw">par</span>(<span class="dt">ann =</span> <span class="ot">FALSE</span>  <span class="co"># no titles</span></a>
-<a class="sourceLine" id="cb108-2" title="2">, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no box</span></a>
-<a class="sourceLine" id="cb108-3" title="3">, <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no x axis</span></a>
-<a class="sourceLine" id="cb108-4" title="4">, <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no y axis</span></a>
-<a class="sourceLine" id="cb108-5" title="5">)</a></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" title="1"><span class="kw">par</span>(<span class="dt">ann =</span> <span class="ot">FALSE</span>  <span class="co"># no titles</span></a>
+<a class="sourceLine" id="cb113-2" title="2">, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no box</span></a>
+<a class="sourceLine" id="cb113-3" title="3">, <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no x axis</span></a>
+<a class="sourceLine" id="cb113-4" title="4">, <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no y axis</span></a>
+<a class="sourceLine" id="cb113-5" title="5">)</a></code></pre></div>
 </div>
 <div id="plot-empty-1" class="section level5 unnumbered">
 <h5>Plot empty</h5>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" title="1"><span class="co"># Perfect</span></a>
-<a class="sourceLine" id="cb109-2" title="2"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb109-3" title="3"></a>
-<a class="sourceLine" id="cb109-4" title="4"><span class="co"># Good</span></a>
-<a class="sourceLine" id="cb109-5" title="5"><span class="kw">plot</span>(<span class="dv">0</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" title="1"><span class="co"># Perfect</span></a>
+<a class="sourceLine" id="cb114-2" title="2"><span class="kw">plot.new</span>()</a>
+<a class="sourceLine" id="cb114-3" title="3"></a>
+<a class="sourceLine" id="cb114-4" title="4"><span class="co"># Good</span></a>
+<a class="sourceLine" id="cb114-5" title="5"><span class="kw">plot</span>(<span class="dv">0</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 
 </div>
 </div>
