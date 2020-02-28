@@ -1,0 +1,83 @@
+# Data handling
+
+## Atomic vectors
+
+
+### Basic operations
+
+|  | Arithmetic |   | Comparison |   | Logical |
+|:-|:-----------|:--|:-----------|:--|:--------|
+|`+`| Addition | `<` | less than | `!x` | logical NOT |
+|`-`| Subtraction | `>` | greater than | `x & y` | logical AND (vectorized)|
+|`*`| Multiplication | `<=` | less or equal | `x && y` | logical AND (single value)
+|`/`| Division | `>=` | greater or equal | `x | y` | logical OR (vectoriyed) |
+|`^`| Power of | `==` | equal | `x || y` | logical OR (single value) |
+|`%%`| Modulo | `!=` | unequal | `xor(x,y)` | logical exclusive OR |
+|`%/%`| Integer division | | | | |
+
+
+### Factors
+
+Also see chapter \@ref(vec-factors)
+
+* `levels()` print or overwrite labels of factor levels
+* `relevel()` The levels of a factor are re-ordered so that the level specified by `ref` is first and the others are moved down.
+* `reorder()` Reorder the factor levels according to another variable
+
+```{r, out.width='50%'}
+# Make level B the first level (reference value)
+InsectSprays$spray <- relevel(InsectSprays$spray, ref = "B")
+
+# Reorder levels of spray by median of count (first class should have lowest count median)
+InsectSprays$spray <- reorder(InsectSprays$spray, InsectSprays$count, FUN = median)
+boxplot(count ~ spray, data = InsectSprays)
+```
+
+
+##### forcats package {-}
+
+* `fct_reorder()`  Reorder the factor levels according to another variable
+* `fct_reorder2()`  Reorder the factors according to last value of x axis
+* `fct_inorder()`  Reorder factors levels by first appearance or frequency
+* `fct_relevel()`  Set a certain level first or last (or at certain position)
+* `fct_infreq()`  Reorder levels by the frequency in which they appear in the data (highest frequency first)
+* `fct_rev()`     Reverse order of factor levels
+* `fct_lump()`    Combine some factor levels to new factor level
+
+```{r}
+
+```
+
+
+<a href="figures/03_pdf/lubridate.pdf" target="_blank">Test</a>
+
+
+
+
+### Time
+
+
+### Strings
+
+| Function | Action |
+|:----------------|:------------------------------|
+| `nchar(x)` | Number of letters |
+| `gsub('Peter', 'Pete', x)` | Replaces all Peter with Pete |
+| `sub('Peter', 'Pete', x)` | Replaces first Peter with Pete |
+| `grep('Pete', x)` | Which entry in a vector contain 'Pete' (returns rownumber) |
+| `strsplit(x, '_')` | Splits strings at '_' and makes list out of them |
+| `substr(x, 1, 1)` | Extract or replace substrings in a character vector (from start to stop, here: first letter) |
+| `match()` | Returns a vector of the positions of (first) matches |
+| `%in%` | Similar to match, returns a logical vector |
+| `toupper(x)` | Makes all letters uppercase |
+| `tolower(x)` | Makes all letters lowercase |
+
+
+
+## Lists
+
+### Apply familiy
+
+### Long and wide format
+
+### sQL joins

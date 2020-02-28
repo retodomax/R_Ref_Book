@@ -1,0 +1,75 @@
+# ggplot
+
+[Reference page](https://ggplot2.tidyverse.org/reference/)
+
+Overall structure
+
+```{r, eval=FALSE}
+ggplot(data = <DATA>) +
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
+
+Detailed structure
+
+```{r, eval=FALSE}
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(
+     mapping = aes(<MAPPINGS>),
+     stat = <STAT>, 
+     position = <POSITION>
+  ) +
+  <COORDINATE_FUNCTION> +
+  <FACET_FUNCTION>
+```
+
+
+
+
+* `ggplot()` creates a coordinate system where you can add layers
+* `geom_point()` scatterplot layer
+
+## Aesthetic mappings `aes`
+
+`aes`: variable => visual properties
+
+* `x` x-axis
+* `y` y-axis
+* `color` color of points
+* `alpha` transparency of points
+* `fill` fill color if shape `21:25`
+* `shape` shape of points
+* `size` size of points
+* `stroke` lwd of line arround point
+
+```{block2, type='rmdwarning'}
+Only visual properties which map a variable are in `aes()`. Visual properties which affect all points are outsied (example below: col is outside because it affects all points).
+```
+
+```{r, out.width='50%'}
+require(ggplot2)
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy), col = "blue")
+```
+
+
+* `facet_wrap()`  split plot according to factor
+* `facet_grid()`  split plot according to 2 factors
+
+
+## Goemetric objects `geoms`
+
+`geom`: geometrical object that a plot uses to represent data.
+
+Examples:
+
+* `geom_point()`
+* `geom_line()`
+* `geom_boxplot()`
+* `geom_histogram()`
+
+
+## Statistical transformations `stat`
+
+`stat`: algorithm to calculate new values for a graph
+
+Check default value of `stat` argument in each `geom`

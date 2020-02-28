@@ -1,0 +1,106 @@
+# ANOVA
+
+## Idea
+
+```{r, echo=FALSE}
+arr <- function(x0, x1=x0, y0, y1=y0, col = 1){
+  arrows(x0 = x0, y0 = y0, x1 = x1, y1 = y1, length = 0.1, angle = 12, col = col, lwd = 1.7)
+}
+data <- data.frame(Genotype = as.factor(c(1,1,2,2)),
+                    Block = as.factor(c("a","b","a","b")),
+                    Yield = c(6.3, 5.7, 4.7, 3.3))
+options(contrasts = c("contr.sum", "contr.poly"))
+fit <- aov(Yield ~ Genotype + Block, data = data)
+myc <- coef(fit)
+mu <- myc[1]
+ef1 <- myc[2]
+ef2 <- myc[3]
+pred <- predict(fit)
+ss <- 0.15
+sm <- 0.2
+sl <- 0.25
+mycols <- gray.colors(n = 4, start = 0, end = 0.8)
+mycols <- c(mycols, "darkorchid", "darkorange4")
+palette(mycols)
+
+layout(mat = matrix(c(1,2,3,3), ncol = 4))
+par(oma = c(0,5,0,2))
+par(mar = c(5,0.3,4,0.3))
+plot(Yield ~ as.numeric(Genotype), data = data, pch = 16, col = 1:4, las = 1,
+     ylim = c(3,7), xlim = c(0.2, 2.8), xaxt = "n", xlab = "Genotype", cex = 1.5)
+axis(1, at = c(1,2))
+abline(h = mu, col = "red", lwd = 2)
+segments(x0 = 1-sm, y0 = mu+ef1, x1 = 1+sm, lwd = 2, col = 5)
+segments(x0 = 2-sm, y0 = mu-ef1, x1 = 2+sm, lwd = 2, col = 5)
+arr(x0 = 1+ss, y0 = mu, y1 = mu+ef1, col = 5)
+arr(x0 = 2+ss, y0 = mu, y1 = mu-ef1, col = 5)
+
+plot(Yield ~ as.numeric(Block), data = data, pch = 16, col = 1:4, las = 1,
+     ylim = c(3,7), xlim = c(0.2, 2.8),
+     xaxt = "n", yaxt = "n", xlab = "Block", cex = 1.5)
+axis(1, at = c(1,2), labels = c("a", "b"))
+abline(h = mu, col = "red", lwd = 2)
+segments(x0 = 1-sm, y0 = mu+ef2, x1 = 1+sm, lwd = 2, col = 6)
+segments(x0 = 2-sm, y0 = mu-ef2, x1 = 2+sm, lwd = 2, col = 6)
+arr(x0 = 1+ss, y0 = mu, y1 = mu+ef2, col = 6)
+arr(x0 = 2+ss, y0 = mu, y1 = mu-ef2, col = 6)
+
+plot(1:4, data$Yield, pch = 16, col = 1:4, las = 1,
+     ylim = c(3,7), xlim = c(0.2, 4.8), xlab = "Observation",
+     yaxt = "n", cex = 1.5)
+abline(h = mu, col = "red", lwd = 2)
+segments(x0 = 1-sl, y0 = pred[1], x1 = 1+sl, lwd = 2, col = 1)
+segments(x0 = 2-sl, y0 = pred[2], x1 = 2+sl, lwd = 2, col = 2)
+segments(x0 = 3-sl, y0 = pred[3], x1 = 3+sl, lwd = 2, col = 3)
+segments(x0 = 4-sl, y0 = pred[4], x1 = 4+sl, lwd = 2, col = 4)
+arr(x0 = 1+ss, y0 = mu, y1 = mu+ef1, col = 5)
+arr(x0 = 2+ss, y0 = mu, y1 = mu+ef1, col = 5)
+arr(x0 = 3+ss, y0 = mu, y1 = mu-ef1, col = 5)
+arr(x0 = 4+ss, y0 = mu, y1 = mu-ef1, col = 5)
+arr(x0 = 1+sm, y0 = mu+ef1, y1 = pred[1], col = 6)
+arr(x0 = 2+sm, y0 = mu+ef1, y1 = pred[2], col = 6)
+arr(x0 = 3+sm, y0 = mu-ef1, y1 = pred[3], col = 6)
+arr(x0 = 4+sm, y0 = mu-ef1, y1 = pred[4], col = 6)
+mtext("Yield", 2, line = 3,  outer = TRUE)
+palette("default")
+```
+
+
+## Example
+
+```{r, collapse=TRUE}
+fit <- aov(Yield ~ Genotype + Block, data = data)
+anova(fit)          #Anova table
+coef(fit)           #Effect of different Factors
+predict(fit)        #Predict the fixed effect
+residuals(fit)       #Actual yield - predicted fixed effect
+par(mfrow = c(2,2))
+plot(fit)
+```
+
+
+
+## Tukey's HSD
+
+### Example
+
+```{r, out.width='50%'}
+subCO2 <- CO2[CO2$conc == 1000,]
+subCO2$tret <- interaction(subCO2$Type, subCO2$Treatment)
+fit <- aov(uptake ~ tret, data = subCO2)
+
+# Tukey's HSD
+library(multcomp)
+tuk <- glht(fit, linfct = mcp(tret = 'Tukey'))
+summary(tuk)
+
+# compact letter display
+tuk.cld <- cld(tuk)
+par(mar = c(5,4,6,2))
+plot(tuk.cld)
+```
+
+```{block2, type='rmdwarning'}
+Letters will not be displayed if treatment names contain a space (e.g. `Quebec nonchilled` instead of `Quebec.nonchilled`).
+```
+

@@ -32,12 +32,12 @@ All vectores can be described using 4 properties
 
 Within atomic vectors there are 6 vector types
 
-* Logical
-* Integer
-* Double
-* Character
-* Complex
-* Raw
+* Logical  (`TRUE`)
+* Integer  (`1L`)
+* Double   (`3.14`)
+* Character (`"Hello"`)
+* Complex  (`2+5i`)
+* Raw      (`48 65 6c 6c 6f` bits)
 
 | Action      | R command                  |
 |:------------|:-----------------------------------------------------------|
@@ -85,7 +85,7 @@ Three attributes  are **not** lost when object is modified
 
 
 
-## Factors
+## Factors {#vec-factors}
 
 Factors
 

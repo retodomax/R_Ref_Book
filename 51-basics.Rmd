@@ -1,0 +1,58 @@
+# Basics
+
+## Distributions
+
+* `d` Density (pdf, pmf)
+* `p` Probability (cdf)
+* `q` Quantile
+* `r` Random
+
+
+```{r, echo=FALSE, fig.show='hold', fig.align='default', out.width='24%', fig.width=4, fig.height=5}
+curve(dnorm, from = -5, to = 5)
+legend('topleft', legend = bquote(phi(x)), cex = 2, bty = 'n')
+
+curve(pnorm, from = -5, to = 5)
+legend('topleft', legend = bquote(Phi(x)), cex = 2, bty = 'n')
+
+curve(qnorm, from = 0.0000001, to = 0.99999999, n = 10000, ylim = c(-5,5))
+legend('topleft', legend = bquote(Phi^{-1} * (x)), cex = 2, bty = 'n')
+
+set.seed(1)
+stripchart(x = rnorm(100), xlim = c(-5, 5), xlab = 'rnorm()')
+```
+
+
+
+##### Continuous {-}
+
+* `dbeta` Beta
+* `dbinom` Binomial
+* `dcauchy` Cauchy
+* `dchisq` Chi-Square
+* `dexp` Exponential
+* `df` F
+* `dgamma` Gamma
+* `dgeom` Geometric
+* `dhyper` Hypergeometric
+* `dlogis` Logistic
+* `dlnorm` Log Normal
+* `dnbinom` Negative Binomial
+* `dnorm` Normal
+* `dpois` Poisson
+* `dt` Student t
+* `dtukey` Studentized Range
+* `dunif` Uniform
+* `dweibull` Weibull
+* `dwilcox` Wilcoxon Rank Sum Statistic
+* `dsignrank` Wilcoxon Signed Rank Statistic
+
+##### Discrete {-}
+
+* `dbinom` Binomial
+* `dgeom` Geometric
+* `dhyper` Hypergeometric
+* `dbinom` Negative Binomial
+* `dpois` Poisson
+
+

@@ -1,0 +1,26 @@
+# Regression
+
+
+## Plot regression
+
+```{r, out.width='50%'}
+set.seed(1)
+x <- rnorm(50, mean = 10, sd = 2)
+y <- x + rnorm(50, sd = 2)
+plot(y ~ x)
+fit <- lm(y ~ x)
+abline(fit)
+x_cor <- grconvertX(0.1, from = 'npc')
+y_cor <- grconvertY(0.9, from = 'npc')
+fit_eq <- format(coef(fit), digits = 2)
+fit_r_sq <- format(summary(fit)$adj.r.squared, digits = 2)
+fit_cor <- format(cor(x = x, y = y), digits = 2)
+
+text(x = x_cor, y = y_cor, pos = 4,
+     labels = bquote(y == .(fit_eq[2]) * x + .(fit_eq[1])))
+text(x = x_cor, y = y_cor-1, pos = 4,
+     labels = bquote(R[adj]^2 == .(fit_r_sq)))
+text(x = x_cor, y = y_cor-2, pos = 4,
+     labels = bquote(cor == .(fit_cor)))
+```
+

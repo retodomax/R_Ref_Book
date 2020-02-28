@@ -19,7 +19,6 @@
 * Communication
     - Inkscape
     - Gimp
-    - Twitter
 
 
 ## Chronology

@@ -144,6 +144,92 @@ eval(parse(text = "a"))  # eval: evaluates an expression, parse: convert string 
 ```
 
 
+### Formulas
+
+[Helppage](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/formula.html), [Tutorial](https://www.datacamp.com/community/tutorials/r-formula-tutorial)
+
+
+* Formulas contain a `~` and at least one predictor variable
+* Formulas are
+    - unevaluated expressions
+    - attributes
+        + class `formula`
+        + environment
+* The additional environment attribute is what separates them from expressions
+    - makes sure that terms in formula can later be associated with vectors of values.
+
+```{r, collapse=TRUE}
+form1 <- ~x
+class(form1)
+attributes(form1)
+length(form1)
+
+form2 <- y ~ x + I(x^2) + x:z
+class(form2)
+length(form2)
+form2[[1]]
+form2[[2]]
+form2[[3]]
+```
+
+| Action      | R command                            |
+|:------------|:-------------------------------------|
+| Create      | `formula()` or just type it (automatically detected based on `~`)|
+| Check       | `plyr::is.formula()`                 |
+| Coerce      | `as.formula()`                       |
+
+
+Functions to inspect/change formulas
+
+* `terms()`
+* `all.vars()`
+* `update()`
+
+
+Formula syntax is a way to specify linear models.
+
+* `y ~ model`: response y is modeled by linear predictor
+* `model` consists of terms separated by `+`
+* Single terms consist of variable/factor names separated by `:`
+* Such a term is interpreted as the interaction of all the variables and factors appearing in the term.
+
+
+|Symbol  |  Example  |  Meaning                                                 |
+|:-------|:----------|:---------------------------------------------------------|
+|`~`     |`Y ~ X`    | Y is response variable, X is predictor|
+|`+`     |`+ X`      | Add X to linear predictor|
+|`-`     |`- X`      | Remove X from linear predictor|
+|`:`     |`X:Z`      | Interaction between X and Z|
+|`*`     |`X*Y`      | X + Y + X:Y |
+|`^`     |`(X+Y+Z)^3`| All terms and all interaction up to tree way interaction|
+|`|`     |`X|Z`      | conditioning: X given Z|
+|`I`     |`I(X*Z)`   | as is (escape formula meaning of `*`), product of X and Z|
+|`log()` |`log(X)`   | log(X), not necessary to escape because `log()` has no special formula interpretation|
+|`1`     |`X - 1`    | Intercept: remove intercept which is automatically included|
+|`/`     |`X/Z`      | X + X:Z  (Z as nested factor in X)|
+|`%in%`  |`X + Z %in% X`| X + X:Z (Z as nested factor in X)|
+|`poly()`|`poly(x,2)`| Orthogonal polynomials up to degree 2|
+|`Error()`|`Error(X)`| Additional error term determined by factor X|
+|`.`     |`Y ~ .`    | Two interpretations. 1) Model fitting: all columns not otherwise in the formula, 2) `update.formula()`: what was previously in this part of the formula|
+
+Check if formula constructs your expected model with `model.matrix()`
+
+
+Formula examples:
+
+```r
+Yield ~ Genotype*Nitrogen + Error(Block)
+# Effect and interaction of Genotype and Nitrogen
+# Block effect as random effect
+
+y ~ .^2
+# all remaining columns with all possible 2 ways interactions
+```
+
+
+
+
+
 
 ### Not understand yet
 * `parse()`

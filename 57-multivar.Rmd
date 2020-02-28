@@ -1,5 +1,3 @@
-# (PART) R Statistics {-} 
-
 # Multivariate Statistics {#MultivarStat}
 
 
