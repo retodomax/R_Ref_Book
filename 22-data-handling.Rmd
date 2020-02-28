@@ -36,6 +36,14 @@ boxplot(count ~ spray, data = InsectSprays)
 
 ##### forcats package {-}
 
+<a href="figures/03_pdf/factors.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/factors.jpg')
+```
+</a>
+
+
+
 * `fct_reorder()`  Reorder the factor levels according to another variable
 * `fct_reorder2()`  Reorder the factors according to last value of x axis
 * `fct_inorder()`  Reorder factors levels by first appearance or frequency
@@ -44,17 +52,58 @@ boxplot(count ~ spray, data = InsectSprays)
 * `fct_rev()`     Reverse order of factor levels
 * `fct_lump()`    Combine some factor levels to new factor level
 
-```{r}
 
+### Date Time
+
+R has 3 formates to store Date-Time
+
+* `POSIXct` seconds since UNIX epoch 01.01.1970 00:00:00
+* `POSIXlt` list with year, month, day, ...
+* `Date` String in form "YYYY-MM-DD"
+
+##### Transform between string and Date-Time format {-}
+
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/Date_time.png')
 ```
 
 
-<a href="figures/03_pdf/lubridate.pdf" target="_blank">Test</a>
+* From string to Date-Time
+    - `strptime()`
+    - `format()`
+    - `as.POSIXct()`
+    - `as.POSIXlt()`
+    - `as.Date()` does not specify the time
+* From Date-Time to string
+    - `strftime()`
+
+|      |  Meaning        |      | Meaning             |
+|:-----|:----------------|:-----|:--------------------|
+| `%Y` | Year (2004)     | `%y` | Year (04)           |
+| `%m` | Month (01-12)   | `%B` | Month (May)         |
+| `%d` | Day (01-31)     | `%H` | Hours (00-23)       |
+| `%M` | Minute (00-59)  | `%S` | Second (00-61)      |
+| `%j` | DOY (001-366)   | `%V` | WOY (00 - 53)       |
+
+All conversion specification can be found [here](https://stat.ethz.ch/R-manual/R-devel/library/base/html/strptime.html)
 
 
+##### Functions {-}
+
+* `Sys.Date()`			get current Date
+* `Sys.time()`			get current Date-Time
+* `as.POSIXlt(x, tz = "America/Denver")` 		change timezone
+* `difftime()`			Time intervals / differences
+* `weekdays()`			returns e.g. "Saturday"
 
 
-### Time
+##### lubridate package {-}
+
+<a href="figures/03_pdf/lubridate.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/lubridate.jpg')
+```
+</a>
 
 
 ### Strings
@@ -73,11 +122,104 @@ boxplot(count ~ spray, data = InsectSprays)
 | `tolower(x)` | Makes all letters lowercase |
 
 
+##### stringr package {-}
+
+<a href="figures/03_pdf/strings.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/strings.jpg')
+```
+</a>
+
 
 ## Lists
 
+* `split()` split vector into list separated by factor
+* `unlist()` unite list into one vector
+
 ### Apply familiy
+
+```{r, eval=FALSE}
+apply(x, c(1,2), FUN)	  # apply function on one or several dimension of array
+                        # 1: row, 2: col, c(1,2) both, 3: third dim in array
+lapply(x, FUN, …)		    # apply on list, return list
+sapply(x, FUN)		      # apply on list, return simplified list (array, matrix, vector)
+tapply(x, factor, FUN)	# apply function separately for different factor levels
+by(x, index, FUN, …)		# x can be whole data.frame
+```
+
 
 ### Long and wide format
 
-### sQL joins
+`reshape()`
+
+```{r}
+long <- Indometh 	#Data
+wide <- reshape(Indometh, v.names = "conc", idvar = "Subject",
+                timevar = "time", direction = "wide")
+long <- reshape(wide, v.names = "conc", idvar = "Subject",
+                timevar = "time", direction = "long")
+head(long)
+head(wide)
+```
+
+
+##### dplyer version {-}
+
+* `pivot_longer()`
+* `pivot_wider()`
+
+
+### Aggregate
+
+```{r, eval=FALSE}
+myData <- aggregate(# 1) Object to aggregate
+                    mtcars$mpg,
+                    # 2) Factors for bilding subgroups
+                    by = list(cyl = mtcars$cyl, gears = mtcars$gear),
+                    # 3) Functions of aggregation
+                    FUN = function(x) c(mean = mean(x), sd = sd(x),
+                                        n = length(x)))
+myData <- do.call(data.frame, myData)       #reshape output to data frame
+
+## Also possible to aggregate several variables at once
+aggregate(cbind(var1, var2, var3) ~  grouping1 + grouping2,
+          data = x,
+          FUN = function(x) c(mean = mean(x), var = var(x), n = length(x)))
+```
+
+
+### SQL joins
+
+```{r, echo=FALSE}
+knitr::include_graphics('figures/sql_joins.jpg')
+```
+
+
+```{r, eval=FALSE}
+# Inner join:
+merge(x = df1, y = df2, by = "CustomerId")
+# Outer join:
+merge(x = df1, y = df2, by = "CustomerId", all = TRUE)
+# Left outer:
+merge(x = df1, y = df2, by = "CustomerId", all.x = TRUE)
+# Right outer:
+merge(x = df1, y = df2, by = "CustomerId", all.y = TRUE)
+# Cross join:
+merge(x = df1, y = df2, by = NULL)
+```
+
+More explanations [here](https://stackoverflow.com/questions/1299871/how-to-join-merge-data-frames-inner-outer-left-right)
+
+
+
+
+##### dplyr joins {-}
+
+See [here](http://127.0.0.1:23111/library/dplyr/html/join.html)
+
+```{r, eval=FALSE}
+dplyr::left_join()
+dplyr::inner_join()
+```
+
+

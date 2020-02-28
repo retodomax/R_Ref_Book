@@ -155,7 +155,7 @@ Plot from code chunks or insert via `knitr::include_graphics()`
 e.g.
 
 ````markdown
-`r ''````{r, out.width='25%', fig.align='center', fig.cap='...'}
+`r ''````{r, echo = FALSE, out.width='25%', fig.align='center', fig.cap='...'}
 knitr::include_graphics('figures/hex-rmarkdown.png')
 ```
 ````
@@ -195,6 +195,21 @@ knitr::include_graphics('figures/hex-rmarkdown.png')
 ## this seems necessary for correct source code displaying...
 ``` --> 
 
+
+##### Include figure which serves as a link {-}
+
+````markdown
+<a href="figures/03_pdf/lubridate.pdf" target="_blank"> 
+`r ''````{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/lubridate.jpg')
+```
+</a>
+````
+<!-- 
+## this seems necessary for correct source code displaying...
+``` --> 
+
+`target="_blank"` makes sure that the browser opens the pdf in a new tab. 
 
 
 ## Tables

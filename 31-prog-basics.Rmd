@@ -1,0 +1,163 @@
+# (PART) R Programming {-} 
+
+# Basics
+
+## Objects in Enviornment
+
+```{r, eval=FALSE}
+ls()      # list all objects in environment
+rm()			# remove specific objects
+rm(list=ls())                  # remove all Objects
+rm(list=setdiff(ls(), "keep")) # keep only one object
+```
+
+
+## Functions
+
+* `function()`  Define function
+* `...`         Ellipsis, placeholder for some arguments within a function
+* `stop()`			interrupts function
+* `print()`			print object (Within functions, R is not autoprinting)
+* `return()`		specify explicit what to return (otherwise last object called)
+* `invisible()`	returns invisible (just for assignment `<-`)
+* `missing()`		returns `TRUE` if an argument has not been specified explicitly. 
+
+##### Examples {-}
+
+```{r, eval=FALSE}
+FunNew <- function(x = 1, y = "lalala", ...){
+  if(x > 10){
+    stop("`x` bigger than 10")  # function stoped with error
+  }
+  print(y)
+  return(x+1)
+  x+2
+}
+```
+
+
+### Function debugging
+
+* `traceback()` stack of functions called before error occured
+* `browser()` enters browser mode if called within function
+    - Within brower mode, you can interact with objects in function environment
+    - Hit Q => exit browser mode
+    - Hit Enter => evaluate next line of function
+    - In RStudio
+        + Browser mode starts automatically if error occures
+        + Set Breakpoints/`browser()` by clicking in script panel on code number (signaled by red dot)
+
+
+## Control structures
+
+### Conditional statements
+
+```{r, eval=FALSE}
+## if else
+if (condition) {
+  # do that
+} else if (condition2) {
+  # do something else
+} else {
+  # 
+}
+
+## Vectorized
+ifelse(condition, yes, no)
+```
+
+For condition use `TRUE`, `FALSE`, `>`, `<`, `is.na()`, `!`, `%in%`, `||`, `&&`, ...
+
+as soon as `||` sees the first `TRUE` it returns `TRUE` without computing anything else. As soon as `&&` sees the first `FALSE` it returns `FALSE`.
+
+
+```{r, eval=FALSE}
+# cut() splits vector into factor groups
+# instead of: if(x < -3) {x <- “low”} else …
+x <- rnorm(100)
+cut(x, breaks = -3:3)
+
+# switch() jumpes to certain operation (e.g. plus, minus, …)
+switch_fun <- function(x, y, op) {
+  switch(op,
+         plus = x + y,
+         minus = x - y,
+         stop("Unknown op!")
+  )
+}
+```
+
+
+### Loops
+
+##### Types of loops {-}
+
+* `for(i in 1:10) {}` for-loop, most useful
+* `while(cond) {}`		while-loop, most general
+* `repeat {}`     		repeat-loop, needs somewhere  `if(cond){break}` to leave loop
+
+##### Components {-}
+
+1. **Output** Before you start the loop, you have to allocate sufficient space for the output
+    - `output <- vector("list", length(x))`
+    - instead of `list` use `"integer"`, `"double"`, `"character"`, `"logical"`
+    - instead of `length(x)` use `nrow()`, `ncol()`
+2. **Sequence** Loop over numeric indices
+    - `i in seq_along(x)`
+    - Alternative
+        + loop over names		`(i in names(x))`
+        + loop over elements	`(i in x)`
+        + problematic for NA and not unique names/elements
+3. **Body**
+    - `output[[i]] <- my_function(x[[i]])`
+
+
+##### Preallocation {-}
+
+
+```{r, eval=FALSE}
+## Preallocation
+out <- vector(mode = "integer", length = 10)
+for(i in 1:10){
+  out[i] <- i^2
+}
+
+## Never use growing output (slow)
+Output <- NULL
+for(i in 1:10){
+  x <- i^2
+  Output <- c(Output, x)
+}
+```
+
+
+Unknown output length
+
+* Save it in a list and vectorise it later 		`unlist()`
+* Save it in a list and combine it later 		`cbind()`, `rbind()`
+* Save it in a character vector and paste it later	`str_c()`
+
+```{r, eval=FALSE}
+means <- c(1,50,100)
+out <- vector("list", length(means))
+for (i in seq_along(means)) {
+  n <- sample(100, 1)
+  out[[i]] <- rnorm(n, means[[i]])
+}
+unlist(out)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

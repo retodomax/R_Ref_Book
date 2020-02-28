@@ -1,0 +1,136 @@
+# (PART) Appendix {-} 
+
+# Cheat Sheets
+
+* Data pipeline
+    - Data import
+    - Data transformation
+    - Data visualization
+* Special types
+    - Factors
+    - Lubridate
+    - Strings
+    - Regex
+    - Purrr
+    - Tidyeval
+* Framework
+    - R Studio
+    - R markdown
+    - Shiny
+    - Package development
+* Machine learning
+    - Reticulate
+    - Keras
+    - Sparklyr
+
+## Data import
+<a href="figures/03_pdf/data-import.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/data-import.jpg')
+```
+</a>
+
+## Data transformation
+<a href="figures/03_pdf/data-transformation.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/data-transformation.jpg')
+```
+</a>
+
+## Data visualization
+<a href="figures/03_pdf/data-visualization-2.1.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/data-visualization-2.1.jpg')
+```
+</a>
+
+## Factors
+<a href="figures/03_pdf/factors.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/factors.jpg')
+```
+</a>
+
+## Lubridate
+<a href="figures/03_pdf/lubridate.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/lubridate.jpg')
+```
+</a>
+
+## Strings
+<a href="figures/03_pdf/strings.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/strings.jpg')
+```
+</a>
+
+## Regex
+<a href="figures/03_pdf/regex.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/regex.jpg')
+```
+</a>
+
+## Purrr
+<a href="figures/03_pdf/purrr.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/purrr.jpg')
+```
+</a>
+
+## Tidyeval
+<a href="figures/03_pdf/tidyeval.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/tidyeval.jpg')
+```
+</a>
+
+## R Studio
+<a href="figures/03_pdf/rstudio-ide.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/rstudio-ide.jpg')
+```
+</a>
+
+## R markdown
+<a href="figures/03_pdf/rmarkdown-2.0.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/rmarkdown-2.0.jpg')
+```
+</a>
+
+## Shiny
+<a href="figures/03_pdf/shiny.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/shiny.jpg')
+```
+</a>
+
+## Package development
+<a href="figures/03_pdf/package-development.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/package-development.jpg')
+```
+</a>
+
+## Reticulate
+<a href="figures/03_pdf/reticulate.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/reticulate.jpg')
+```
+</a>
+
+## Keras
+<a href="figures/03_pdf/keras.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/keras.jpg')
+```
+</a>
+
+## Sparklyr
+<a href="figures/03_pdf/sparklyr.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/sparklyr.jpg')
+```
+</a>
