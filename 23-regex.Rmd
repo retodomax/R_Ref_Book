@@ -1,11 +1,11 @@
 # Regular Expressions
 
 
-(ref:RegExCheat) Cheat sheet for regex
-
-```{r RegExCheat, echo = FALSE, out.width='100%', fig.cap='(ref:RegExCheat)'}
-knitr::include_graphics("figures/regex.png")
+<a href="figures/03_pdf/regex.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/regex.jpg')
 ```
+</a>
 
 
 * string input &rarr; regexp &rarr; match

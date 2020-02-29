@@ -136,3 +136,8 @@ git push -u origin master
 3. `git clone LINK`
     - --LINK can be found at "Clone or download" button of the github project (e.g. https://github.com/Stanimir-Ivanov/stats-lab.git)
 
+
+## Version Control in RStudio
+
+See this <a href="figures/03_pdf/version_control_in_RStudio.pdf.pdf" target="_blank">pdf</a>
+

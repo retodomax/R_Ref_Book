@@ -14,6 +14,7 @@
 * `str()`: struction of object, get unsystematic overview
 * `typeof()`: "low-level" type of an object
 * `mode()`: storage mode of an object
+    - Determines how an object is stored
 * `class()`: "high-level" class of object
     - Determines what method is applied when passed to generic functions
 
@@ -60,19 +61,23 @@ knitr::kable(mytab, format="pandoc")
 
 
 
-## Hirarchy
+## Classifications
 
 Objects can be ordered in a hirarchical structure
 
+```{r, echo = FALSE, out.width='50%'}
+knitr::include_graphics('figures/r_object.png')
+```
+
 * Vector
-    + Atomic vector
-        - Matrix
-        - Array
-    + List
-        - Data frame
+    - Atomic vector
+        + Matrix
+        + Array
+    - List
+        + Data frame
 * Function
-    + Primitive
-    + Closure
+    - Primitive
+    - Closure
 * Environment
 * Symbol
 * Call

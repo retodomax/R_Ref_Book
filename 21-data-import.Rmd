@@ -40,7 +40,7 @@ dir('mydirectory/', pattern = '//.csv$', full.names = TRUE)
 * `read.table()` most general case `sep = ""`
 * `read.csv()` different default value `sep = ","`
 * `read.csv2()` different default value `sep = ";"`
-* `read.delim()` different default value `sep = "\t"
+* `read.delim()` different default value `sep = "\t"`
 
 Functions of package `readr`
 

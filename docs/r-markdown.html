@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 25 R Markdown | R Reference book</title>
+  <title>Chapter 27 R Markdown | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 25 R Markdown | R Reference book" />
+  <meta property="og:title" content="Chapter 27 R Markdown | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 25 R Markdown | R Reference book" />
+  <meta name="twitter:title" content="Chapter 27 R Markdown | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -24,14 +24,14 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-02-28" />
+<meta name="date" content="2020-02-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
-<link rel="prev" href="reproducible-research.html"/>
+<link rel="prev" href="r-studio.html"/>
 <link rel="next" href="bookdown.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -150,7 +150,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>I R Language</b></span></li>
 <li class="chapter" data-level="1" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>1</b> Objects</a><ul>
 <li class="chapter" data-level="1.1" data-path="objects.html"><a href="objects.html#inspect-object"><i class="fa fa-check"></i><b>1.1</b> Inspect object</a></li>
-<li class="chapter" data-level="1.2" data-path="objects.html"><a href="objects.html#hirarchy"><i class="fa fa-check"></i><b>1.2</b> Hirarchy</a></li>
+<li class="chapter" data-level="1.2" data-path="objects.html"><a href="objects.html#classifications"><i class="fa fa-check"></i><b>1.2</b> Classifications</a></li>
 <li class="chapter" data-level="1.3" data-path="objects.html"><a href="objects.html#basic-objects"><i class="fa fa-check"></i><b>1.3</b> Basic Objects</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="objects.html"><a href="objects.html#vectors-functions-and-environments"><i class="fa fa-check"></i><b>1.3.1</b> Vectors, functions and environments</a></li>
 <li class="chapter" data-level="1.3.2" data-path="objects.html"><a href="objects.html#symbols"><i class="fa fa-check"></i><b>1.3.2</b> Symbols</a></li>
@@ -164,13 +164,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="vec.html"><a href="vec.html#type"><i class="fa fa-check"></i><b>2.1</b> Type</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="vec.html"><a href="vec.html#atomic"><i class="fa fa-check"></i><b>2.1.1</b> Atomic</a></li>
 <li class="chapter" data-level="2.1.2" data-path="vec.html"><a href="vec.html#list"><i class="fa fa-check"></i><b>2.1.2</b> List</a></li>
+<li class="chapter" data-level="2.1.3" data-path="vec.html"><a href="vec.html#check-type-of-vector"><i class="fa fa-check"></i><b>2.1.3</b> Check type of vector</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="vec.html"><a href="vec.html#length"><i class="fa fa-check"></i><b>2.2</b> Length</a></li>
 <li class="chapter" data-level="2.3" data-path="vec.html"><a href="vec.html#attributes"><i class="fa fa-check"></i><b>2.3</b> Attributes</a></li>
 <li class="chapter" data-level="2.4" data-path="vec.html"><a href="vec.html#vec-factors"><i class="fa fa-check"></i><b>2.4</b> Factors</a></li>
 <li class="chapter" data-level="2.5" data-path="vec.html"><a href="vec.html#matricesarrays"><i class="fa fa-check"></i><b>2.5</b> Matrices/Arrays</a></li>
 <li class="chapter" data-level="2.6" data-path="vec.html"><a href="vec.html#data-frames"><i class="fa fa-check"></i><b>2.6</b> Data frames</a></li>
-<li class="chapter" data-level="2.7" data-path="vec.html"><a href="vec.html#missing-values"><i class="fa fa-check"></i><b>2.7</b> Missing values</a></li>
+<li class="chapter" data-level="2.7" data-path="vec.html"><a href="vec.html#special-values"><i class="fa fa-check"></i><b>2.7</b> Special values</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="vec.html"><a href="vec.html#missing-values"><i class="fa fa-check"></i><b>2.7.1</b> Missing values</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="fun.html"><a href="fun.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
 <li class="chapter" data-level="3.1" data-path="fun.html"><a href="fun.html#FunTypes"><i class="fa fa-check"></i><b>3.1</b> Types</a><ul>
@@ -208,226 +211,236 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.3" data-path="env.html"><a href="env.html#example-3-change-package-function"><i class="fa fa-check"></i><b>4.4.3</b> Example 3: Change package function</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="miscellaneous.html"><a href="miscellaneous.html"><i class="fa fa-check"></i><b>5</b> Miscellaneous</a><ul>
-<li class="chapter" data-level="5.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-does-r-save-numbers"><i class="fa fa-check"></i><b>5.1</b> How does R save numbers</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-to-avoid-problems-with-doubles"><i class="fa fa-check"></i><b>5.1.1</b> How to avoid problems with doubles</a></li>
-<li class="chapter" data-level="5.1.2" data-path="miscellaneous.html"><a href="miscellaneous.html#more-interesting-information-about-double-representation"><i class="fa fa-check"></i><b>5.1.2</b> More interesting information about double representation</a></li>
+<li class="chapter" data-level="5" data-path="settings.html"><a href="settings.html"><i class="fa fa-check"></i><b>5</b> Settings</a></li>
+<li class="chapter" data-level="6" data-path="miscellaneous.html"><a href="miscellaneous.html"><i class="fa fa-check"></i><b>6</b> Miscellaneous</a><ul>
+<li class="chapter" data-level="6.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-does-r-save-numbers"><i class="fa fa-check"></i><b>6.1</b> How does R save numbers</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-to-avoid-problems-with-doubles"><i class="fa fa-check"></i><b>6.1.1</b> How to avoid problems with doubles</a></li>
+<li class="chapter" data-level="6.1.2" data-path="miscellaneous.html"><a href="miscellaneous.html#more-interesting-information-about-double-representation"><i class="fa fa-check"></i><b>6.1.2</b> More interesting information about double representation</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="miscellaneous.html"><a href="miscellaneous.html#how-packages-can-exist"><i class="fa fa-check"></i><b>5.2</b> How packages can exist</a></li>
+<li class="chapter" data-level="6.2" data-path="miscellaneous.html"><a href="miscellaneous.html#how-packages-can-exist"><i class="fa fa-check"></i><b>6.2</b> How packages can exist</a></li>
 </ul></li>
 <li class="part"><span><b>II R Basics</b></span></li>
-<li class="chapter" data-level="6" data-path="data-importexport.html"><a href="data-importexport.html"><i class="fa fa-check"></i><b>6</b> Data Import/Export</a><ul>
-<li class="chapter" data-level="6.1" data-path="data-importexport.html"><a href="data-importexport.html#directories"><i class="fa fa-check"></i><b>6.1</b> Directories</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="data-importexport.html"><a href="data-importexport.html#functions"><i class="fa fa-check"></i><b>6.1.1</b> Functions</a></li>
-<li class="chapter" data-level="6.1.2" data-path="data-importexport.html"><a href="data-importexport.html#path-to-your-file"><i class="fa fa-check"></i><b>6.1.2</b> Path to your file</a></li>
+<li class="chapter" data-level="7" data-path="data-importexport.html"><a href="data-importexport.html"><i class="fa fa-check"></i><b>7</b> Data Import/Export</a><ul>
+<li class="chapter" data-level="7.1" data-path="data-importexport.html"><a href="data-importexport.html#directories"><i class="fa fa-check"></i><b>7.1</b> Directories</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="data-importexport.html"><a href="data-importexport.html#functions"><i class="fa fa-check"></i><b>7.1.1</b> Functions</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-importexport.html"><a href="data-importexport.html#path-to-your-file"><i class="fa fa-check"></i><b>7.1.2</b> Path to your file</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="data-importexport.html"><a href="data-importexport.html#read-data"><i class="fa fa-check"></i><b>6.2</b> Read data</a></li>
-<li class="chapter" data-level="6.3" data-path="data-importexport.html"><a href="data-importexport.html#clipboard"><i class="fa fa-check"></i><b>6.3</b> Clipboard</a></li>
-<li class="chapter" data-level="6.4" data-path="data-importexport.html"><a href="data-importexport.html#github"><i class="fa fa-check"></i><b>6.4</b> Github</a></li>
-<li class="chapter" data-level="6.5" data-path="data-importexport.html"><a href="data-importexport.html#simulate-data"><i class="fa fa-check"></i><b>6.5</b> Simulate data</a></li>
+<li class="chapter" data-level="7.2" data-path="data-importexport.html"><a href="data-importexport.html#read-data"><i class="fa fa-check"></i><b>7.2</b> Read data</a></li>
+<li class="chapter" data-level="7.3" data-path="data-importexport.html"><a href="data-importexport.html#clipboard"><i class="fa fa-check"></i><b>7.3</b> Clipboard</a></li>
+<li class="chapter" data-level="7.4" data-path="data-importexport.html"><a href="data-importexport.html#github"><i class="fa fa-check"></i><b>7.4</b> Github</a></li>
+<li class="chapter" data-level="7.5" data-path="data-importexport.html"><a href="data-importexport.html#simulate-data"><i class="fa fa-check"></i><b>7.5</b> Simulate data</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-handling.html"><a href="data-handling.html"><i class="fa fa-check"></i><b>7</b> Data handling</a><ul>
-<li class="chapter" data-level="7.1" data-path="data-handling.html"><a href="data-handling.html#atomic-vectors"><i class="fa fa-check"></i><b>7.1</b> Atomic vectors</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="data-handling.html"><a href="data-handling.html#basic-operations"><i class="fa fa-check"></i><b>7.1.1</b> Basic operations</a></li>
-<li class="chapter" data-level="7.1.2" data-path="data-handling.html"><a href="data-handling.html#factors"><i class="fa fa-check"></i><b>7.1.2</b> Factors</a></li>
-<li class="chapter" data-level="7.1.3" data-path="data-handling.html"><a href="data-handling.html#date-time"><i class="fa fa-check"></i><b>7.1.3</b> Date Time</a></li>
-<li class="chapter" data-level="7.1.4" data-path="data-handling.html"><a href="data-handling.html#strings"><i class="fa fa-check"></i><b>7.1.4</b> Strings</a></li>
+<li class="chapter" data-level="8" data-path="data-handling.html"><a href="data-handling.html"><i class="fa fa-check"></i><b>8</b> Data handling</a><ul>
+<li class="chapter" data-level="8.1" data-path="data-handling.html"><a href="data-handling.html#atomic-vectors"><i class="fa fa-check"></i><b>8.1</b> Atomic vectors</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="data-handling.html"><a href="data-handling.html#basic-operations"><i class="fa fa-check"></i><b>8.1.1</b> Basic operations</a></li>
+<li class="chapter" data-level="8.1.2" data-path="data-handling.html"><a href="data-handling.html#factors"><i class="fa fa-check"></i><b>8.1.2</b> Factors</a></li>
+<li class="chapter" data-level="8.1.3" data-path="data-handling.html"><a href="data-handling.html#date-time"><i class="fa fa-check"></i><b>8.1.3</b> Date Time</a></li>
+<li class="chapter" data-level="8.1.4" data-path="data-handling.html"><a href="data-handling.html#strings"><i class="fa fa-check"></i><b>8.1.4</b> Strings</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="data-handling.html"><a href="data-handling.html#lists"><i class="fa fa-check"></i><b>7.2</b> Lists</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="data-handling.html"><a href="data-handling.html#apply-familiy"><i class="fa fa-check"></i><b>7.2.1</b> Apply familiy</a></li>
-<li class="chapter" data-level="7.2.2" data-path="data-handling.html"><a href="data-handling.html#long-and-wide-format"><i class="fa fa-check"></i><b>7.2.2</b> Long and wide format</a></li>
-<li class="chapter" data-level="7.2.3" data-path="data-handling.html"><a href="data-handling.html#aggregate"><i class="fa fa-check"></i><b>7.2.3</b> Aggregate</a></li>
-<li class="chapter" data-level="7.2.4" data-path="data-handling.html"><a href="data-handling.html#sql-joins"><i class="fa fa-check"></i><b>7.2.4</b> SQL joins</a></li>
+<li class="chapter" data-level="8.2" data-path="data-handling.html"><a href="data-handling.html#lists"><i class="fa fa-check"></i><b>8.2</b> Lists</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="data-handling.html"><a href="data-handling.html#apply-familiy"><i class="fa fa-check"></i><b>8.2.1</b> Apply familiy</a></li>
+<li class="chapter" data-level="8.2.2" data-path="data-handling.html"><a href="data-handling.html#long-and-wide-format"><i class="fa fa-check"></i><b>8.2.2</b> Long and wide format</a></li>
+<li class="chapter" data-level="8.2.3" data-path="data-handling.html"><a href="data-handling.html#aggregate"><i class="fa fa-check"></i><b>8.2.3</b> Aggregate</a></li>
+<li class="chapter" data-level="8.2.4" data-path="data-handling.html"><a href="data-handling.html#sql-joins"><i class="fa fa-check"></i><b>8.2.4</b> SQL joins</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="regular-expressions.html"><a href="regular-expressions.html"><i class="fa fa-check"></i><b>8</b> Regular Expressions</a></li>
+<li class="chapter" data-level="9" data-path="regular-expressions.html"><a href="regular-expressions.html"><i class="fa fa-check"></i><b>9</b> Regular Expressions</a></li>
 <li class="part"><span><b>III R Programming</b></span></li>
-<li class="chapter" data-level="9" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>9</b> Basics</a><ul>
-<li class="chapter" data-level="9.1" data-path="basics.html"><a href="basics.html#objects-in-enviornment"><i class="fa fa-check"></i><b>9.1</b> Objects in Enviornment</a></li>
-<li class="chapter" data-level="9.2" data-path="basics.html"><a href="basics.html#functions-2"><i class="fa fa-check"></i><b>9.2</b> Functions</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="basics.html"><a href="basics.html#function-debugging"><i class="fa fa-check"></i><b>9.2.1</b> Function debugging</a></li>
+<li class="chapter" data-level="10" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>10</b> Basics</a><ul>
+<li class="chapter" data-level="10.1" data-path="basics.html"><a href="basics.html#objects-in-enviornment"><i class="fa fa-check"></i><b>10.1</b> Objects in Enviornment</a></li>
+<li class="chapter" data-level="10.2" data-path="basics.html"><a href="basics.html#functions-2"><i class="fa fa-check"></i><b>10.2</b> Functions</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="basics.html"><a href="basics.html#function-debugging"><i class="fa fa-check"></i><b>10.2.1</b> Function debugging</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="basics.html"><a href="basics.html#control-structures"><i class="fa fa-check"></i><b>9.3</b> Control structures</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="basics.html"><a href="basics.html#conditional-statements"><i class="fa fa-check"></i><b>9.3.1</b> Conditional statements</a></li>
-<li class="chapter" data-level="9.3.2" data-path="basics.html"><a href="basics.html#loops"><i class="fa fa-check"></i><b>9.3.2</b> Loops</a></li>
+<li class="chapter" data-level="10.3" data-path="basics.html"><a href="basics.html#control-structures"><i class="fa fa-check"></i><b>10.3</b> Control structures</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="basics.html"><a href="basics.html#conditional-statements"><i class="fa fa-check"></i><b>10.3.1</b> Conditional statements</a></li>
+<li class="chapter" data-level="10.3.2" data-path="basics.html"><a href="basics.html#loops"><i class="fa fa-check"></i><b>10.3.2</b> Loops</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="performance.html"><a href="performance.html"><i class="fa fa-check"></i><b>10</b> Performance</a><ul>
-<li class="chapter" data-level="10.1" data-path="performance.html"><a href="performance.html#in-general"><i class="fa fa-check"></i><b>10.1</b> In general</a></li>
-<li class="chapter" data-level="10.2" data-path="performance.html"><a href="performance.html#profiling"><i class="fa fa-check"></i><b>10.2</b> Profiling</a></li>
-<li class="chapter" data-level="10.3" data-path="performance.html"><a href="performance.html#microbenchmark"><i class="fa fa-check"></i><b>10.3</b> Microbenchmark</a></li>
-<li class="chapter" data-level="10.4" data-path="performance.html"><a href="performance.html#use-package-compiler"><i class="fa fa-check"></i><b>10.4</b> Use package compiler</a></li>
-<li class="chapter" data-level="10.5" data-path="performance.html"><a href="performance.html#parallelise"><i class="fa fa-check"></i><b>10.5</b> Parallelise</a></li>
+<li class="chapter" data-level="11" data-path="performance.html"><a href="performance.html"><i class="fa fa-check"></i><b>11</b> Performance</a><ul>
+<li class="chapter" data-level="11.1" data-path="performance.html"><a href="performance.html#in-general"><i class="fa fa-check"></i><b>11.1</b> In general</a></li>
+<li class="chapter" data-level="11.2" data-path="performance.html"><a href="performance.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
+<li class="chapter" data-level="11.3" data-path="performance.html"><a href="performance.html#microbenchmark"><i class="fa fa-check"></i><b>11.3</b> Microbenchmark</a></li>
+<li class="chapter" data-level="11.4" data-path="performance.html"><a href="performance.html#use-package-compiler"><i class="fa fa-check"></i><b>11.4</b> Use package compiler</a></li>
+<li class="chapter" data-level="11.5" data-path="performance.html"><a href="performance.html#parallelise"><i class="fa fa-check"></i><b>11.5</b> Parallelise</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>11</b> Functional programming</a><ul>
-<li class="chapter" data-level="11.1" data-path="functional-programming.html"><a href="functional-programming.html#FunProgClosures"><i class="fa fa-check"></i><b>11.1</b> Closures</a></li>
-<li class="chapter" data-level="11.2" data-path="functional-programming.html"><a href="functional-programming.html#lists-of-functions"><i class="fa fa-check"></i><b>11.2</b> Lists of functions</a></li>
+<li class="chapter" data-level="12" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>12</b> Functional programming</a><ul>
+<li class="chapter" data-level="12.1" data-path="functional-programming.html"><a href="functional-programming.html#FunProgClosures"><i class="fa fa-check"></i><b>12.1</b> Closures</a></li>
+<li class="chapter" data-level="12.2" data-path="functional-programming.html"><a href="functional-programming.html#lists-of-functions"><i class="fa fa-check"></i><b>12.2</b> Lists of functions</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="r-from-the-shell.html"><a href="r-from-the-shell.html"><i class="fa fa-check"></i><b>12</b> R from the Shell</a></li>
+<li class="chapter" data-level="13" data-path="r-from-the-shell.html"><a href="r-from-the-shell.html"><i class="fa fa-check"></i><b>13</b> R from the Shell</a></li>
 <li class="part"><span><b>IV R Plots</b></span></li>
-<li class="chapter" data-level="13" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>13</b> Plots</a><ul>
-<li class="chapter" data-level="13.1" data-path="Plots.html"><a href="Plots.html#graphical-parameters-par"><i class="fa fa-check"></i><b>13.1</b> Graphical parameters <code>par()</code></a><ul>
-<li class="chapter" data-level="13.1.1" data-path="Plots.html"><a href="Plots.html#set-graphical-parameters"><i class="fa fa-check"></i><b>13.1.1</b> Set graphical parameters</a></li>
-<li class="chapter" data-level="13.1.2" data-path="Plots.html"><a href="Plots.html#default"><i class="fa fa-check"></i><b>13.1.2</b> Default</a></li>
-<li class="chapter" data-level="13.1.3" data-path="Plots.html"><a href="Plots.html#device"><i class="fa fa-check"></i><b>13.1.3</b> Device</a></li>
-<li class="chapter" data-level="13.1.4" data-path="Plots.html"><a href="Plots.html#device-region"><i class="fa fa-check"></i><b>13.1.4</b> Device region</a></li>
-<li class="chapter" data-level="13.1.5" data-path="Plots.html"><a href="Plots.html#coordinate-sytem"><i class="fa fa-check"></i><b>13.1.5</b> Coordinate sytem</a></li>
-<li class="chapter" data-level="13.1.6" data-path="Plots.html"><a href="Plots.html#define-device-regions"><i class="fa fa-check"></i><b>13.1.6</b> Define device regions</a></li>
-<li class="chapter" data-level="13.1.7" data-path="Plots.html"><a href="Plots.html#user-coordinates-limits"><i class="fa fa-check"></i><b>13.1.7</b> User coordinates limits</a></li>
-<li class="chapter" data-level="13.1.8" data-path="Plots.html"><a href="Plots.html#general-appearence"><i class="fa fa-check"></i><b>13.1.8</b> General appearence</a></li>
-<li class="chapter" data-level="13.1.9" data-path="Plots.html"><a href="Plots.html#symbols-1"><i class="fa fa-check"></i><b>13.1.9</b> Symbols</a></li>
-<li class="chapter" data-level="13.1.10" data-path="Plots.html"><a href="Plots.html#lines"><i class="fa fa-check"></i><b>13.1.10</b> Lines</a></li>
-<li class="chapter" data-level="13.1.11" data-path="Plots.html"><a href="Plots.html#text"><i class="fa fa-check"></i><b>13.1.11</b> Text</a></li>
-<li class="chapter" data-level="13.1.12" data-path="Plots.html"><a href="Plots.html#axis-labels"><i class="fa fa-check"></i><b>13.1.12</b> Axis labels</a></li>
-<li class="chapter" data-level="13.1.13" data-path="Plots.html"><a href="Plots.html#axis"><i class="fa fa-check"></i><b>13.1.13</b> Axis</a></li>
-<li class="chapter" data-level="13.1.14" data-path="Plots.html"><a href="Plots.html#ticks"><i class="fa fa-check"></i><b>13.1.14</b> Ticks</a></li>
-<li class="chapter" data-level="13.1.15" data-path="Plots.html"><a href="Plots.html#box"><i class="fa fa-check"></i><b>13.1.15</b> Box</a></li>
-<li class="chapter" data-level="13.1.16" data-path="Plots.html"><a href="Plots.html#title"><i class="fa fa-check"></i><b>13.1.16</b> Title</a></li>
-<li class="chapter" data-level="13.1.17" data-path="Plots.html"><a href="Plots.html#r.o.-read-only"><i class="fa fa-check"></i><b>13.1.17</b> R.O. (Read only)</a></li>
-<li class="chapter" data-level="13.1.18" data-path="Plots.html"><a href="Plots.html#useless"><i class="fa fa-check"></i><b>13.1.18</b> Useless</a></li>
+<li class="chapter" data-level="14" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>14</b> Plots</a><ul>
+<li class="chapter" data-level="14.1" data-path="Plots.html"><a href="Plots.html#graphical-parameters-par"><i class="fa fa-check"></i><b>14.1</b> Graphical parameters <code>par()</code></a><ul>
+<li class="chapter" data-level="14.1.1" data-path="Plots.html"><a href="Plots.html#set-graphical-parameters"><i class="fa fa-check"></i><b>14.1.1</b> Set graphical parameters</a></li>
+<li class="chapter" data-level="14.1.2" data-path="Plots.html"><a href="Plots.html#default"><i class="fa fa-check"></i><b>14.1.2</b> Default</a></li>
+<li class="chapter" data-level="14.1.3" data-path="Plots.html"><a href="Plots.html#device"><i class="fa fa-check"></i><b>14.1.3</b> Device</a></li>
+<li class="chapter" data-level="14.1.4" data-path="Plots.html"><a href="Plots.html#device-region"><i class="fa fa-check"></i><b>14.1.4</b> Device region</a></li>
+<li class="chapter" data-level="14.1.5" data-path="Plots.html"><a href="Plots.html#coordinate-sytem"><i class="fa fa-check"></i><b>14.1.5</b> Coordinate sytem</a></li>
+<li class="chapter" data-level="14.1.6" data-path="Plots.html"><a href="Plots.html#define-device-regions"><i class="fa fa-check"></i><b>14.1.6</b> Define device regions</a></li>
+<li class="chapter" data-level="14.1.7" data-path="Plots.html"><a href="Plots.html#user-coordinates-limits"><i class="fa fa-check"></i><b>14.1.7</b> User coordinates limits</a></li>
+<li class="chapter" data-level="14.1.8" data-path="Plots.html"><a href="Plots.html#general-appearence"><i class="fa fa-check"></i><b>14.1.8</b> General appearence</a></li>
+<li class="chapter" data-level="14.1.9" data-path="Plots.html"><a href="Plots.html#symbols-1"><i class="fa fa-check"></i><b>14.1.9</b> Symbols</a></li>
+<li class="chapter" data-level="14.1.10" data-path="Plots.html"><a href="Plots.html#lines"><i class="fa fa-check"></i><b>14.1.10</b> Lines</a></li>
+<li class="chapter" data-level="14.1.11" data-path="Plots.html"><a href="Plots.html#text"><i class="fa fa-check"></i><b>14.1.11</b> Text</a></li>
+<li class="chapter" data-level="14.1.12" data-path="Plots.html"><a href="Plots.html#axis-labels"><i class="fa fa-check"></i><b>14.1.12</b> Axis labels</a></li>
+<li class="chapter" data-level="14.1.13" data-path="Plots.html"><a href="Plots.html#axis"><i class="fa fa-check"></i><b>14.1.13</b> Axis</a></li>
+<li class="chapter" data-level="14.1.14" data-path="Plots.html"><a href="Plots.html#ticks"><i class="fa fa-check"></i><b>14.1.14</b> Ticks</a></li>
+<li class="chapter" data-level="14.1.15" data-path="Plots.html"><a href="Plots.html#box"><i class="fa fa-check"></i><b>14.1.15</b> Box</a></li>
+<li class="chapter" data-level="14.1.16" data-path="Plots.html"><a href="Plots.html#title"><i class="fa fa-check"></i><b>14.1.16</b> Title</a></li>
+<li class="chapter" data-level="14.1.17" data-path="Plots.html"><a href="Plots.html#r.o.-read-only"><i class="fa fa-check"></i><b>14.1.17</b> R.O. (Read only)</a></li>
+<li class="chapter" data-level="14.1.18" data-path="Plots.html"><a href="Plots.html#useless"><i class="fa fa-check"></i><b>14.1.18</b> Useless</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="Plots.html"><a href="Plots.html#colors"><i class="fa fa-check"></i><b>13.2</b> Colors</a><ul>
-<li class="chapter" data-level="13.2.1" data-path="Plots.html"><a href="Plots.html#convert-fromto-different-color-specification"><i class="fa fa-check"></i><b>13.2.1</b> Convert from/to different color specification</a></li>
-<li class="chapter" data-level="13.2.2" data-path="Plots.html"><a href="Plots.html#make-new-palettes"><i class="fa fa-check"></i><b>13.2.2</b> Make new palettes</a></li>
-<li class="chapter" data-level="13.2.3" data-path="Plots.html"><a href="Plots.html#partially-transparent-colors"><i class="fa fa-check"></i><b>13.2.3</b> Partially transparent colors</a></li>
+<li class="chapter" data-level="14.2" data-path="Plots.html"><a href="Plots.html#colors"><i class="fa fa-check"></i><b>14.2</b> Colors</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="Plots.html"><a href="Plots.html#convert-fromto-different-color-specification"><i class="fa fa-check"></i><b>14.2.1</b> Convert from/to different color specification</a></li>
+<li class="chapter" data-level="14.2.2" data-path="Plots.html"><a href="Plots.html#make-new-palettes"><i class="fa fa-check"></i><b>14.2.2</b> Make new palettes</a></li>
+<li class="chapter" data-level="14.2.3" data-path="Plots.html"><a href="Plots.html#partially-transparent-colors"><i class="fa fa-check"></i><b>14.2.3</b> Partially transparent colors</a></li>
 </ul></li>
-<li class="chapter" data-level="13.3" data-path="Plots.html"><a href="Plots.html#mathematical-annotation"><i class="fa fa-check"></i><b>13.3</b> Mathematical annotation</a></li>
-<li class="chapter" data-level="13.4" data-path="Plots.html"><a href="Plots.html#high-level-plots"><i class="fa fa-check"></i><b>13.4</b> High level plots</a><ul>
-<li class="chapter" data-level="13.4.1" data-path="Plots.html"><a href="Plots.html#plot-function"><i class="fa fa-check"></i><b>13.4.1</b> Plot function</a></li>
-<li class="chapter" data-level="13.4.2" data-path="Plots.html"><a href="Plots.html#example-barplot"><i class="fa fa-check"></i><b>13.4.2</b> Example: Barplot</a></li>
-<li class="chapter" data-level="13.4.3" data-path="Plots.html"><a href="Plots.html#example-matplot"><i class="fa fa-check"></i><b>13.4.3</b> Example: Matplot</a></li>
+<li class="chapter" data-level="14.3" data-path="Plots.html"><a href="Plots.html#mathematical-annotation"><i class="fa fa-check"></i><b>14.3</b> Mathematical annotation</a></li>
+<li class="chapter" data-level="14.4" data-path="Plots.html"><a href="Plots.html#high-level-plots"><i class="fa fa-check"></i><b>14.4</b> High level plots</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="Plots.html"><a href="Plots.html#plot-function"><i class="fa fa-check"></i><b>14.4.1</b> Plot function</a></li>
+<li class="chapter" data-level="14.4.2" data-path="Plots.html"><a href="Plots.html#example-barplot"><i class="fa fa-check"></i><b>14.4.2</b> Example: Barplot</a></li>
+<li class="chapter" data-level="14.4.3" data-path="Plots.html"><a href="Plots.html#example-matplot"><i class="fa fa-check"></i><b>14.4.3</b> Example: Matplot</a></li>
 </ul></li>
-<li class="chapter" data-level="13.5" data-path="Plots.html"><a href="Plots.html#low-level-plots"><i class="fa fa-check"></i><b>13.5</b> Low level plots</a><ul>
-<li class="chapter" data-level="13.5.1" data-path="Plots.html"><a href="Plots.html#legends"><i class="fa fa-check"></i><b>13.5.1</b> Legends</a></li>
-<li class="chapter" data-level="13.5.2" data-path="Plots.html"><a href="Plots.html#arrow"><i class="fa fa-check"></i><b>13.5.2</b> Arrow</a></li>
-<li class="chapter" data-level="13.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>13.5.3</b> panel.first</a></li>
-<li class="chapter" data-level="13.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>13.5.4</b> Area under curve</a></li>
+<li class="chapter" data-level="14.5" data-path="Plots.html"><a href="Plots.html#low-level-plots"><i class="fa fa-check"></i><b>14.5</b> Low level plots</a><ul>
+<li class="chapter" data-level="14.5.1" data-path="Plots.html"><a href="Plots.html#legends"><i class="fa fa-check"></i><b>14.5.1</b> Legends</a></li>
+<li class="chapter" data-level="14.5.2" data-path="Plots.html"><a href="Plots.html#arrow"><i class="fa fa-check"></i><b>14.5.2</b> Arrow</a></li>
+<li class="chapter" data-level="14.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>14.5.3</b> panel.first</a></li>
+<li class="chapter" data-level="14.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>14.5.4</b> Area under curve</a></li>
 </ul></li>
-<li class="chapter" data-level="13.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>13.6</b> Plot empty</a></li>
+<li class="chapter" data-level="14.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>14.6</b> Plot empty</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>14</b> Interactive Plots</a></li>
-<li class="chapter" data-level="15" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>15</b> ggplot</a><ul>
-<li class="chapter" data-level="15.1" data-path="ggplot.html"><a href="ggplot.html#aesthetic-mappings-aes"><i class="fa fa-check"></i><b>15.1</b> Aesthetic mappings <code>aes</code></a></li>
-<li class="chapter" data-level="15.2" data-path="ggplot.html"><a href="ggplot.html#goemetric-objects-geoms"><i class="fa fa-check"></i><b>15.2</b> Goemetric objects <code>geoms</code></a></li>
-<li class="chapter" data-level="15.3" data-path="ggplot.html"><a href="ggplot.html#statistical-transformations-stat"><i class="fa fa-check"></i><b>15.3</b> Statistical transformations <code>stat</code></a></li>
+<li class="chapter" data-level="15" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>15</b> Interactive Plots</a></li>
+<li class="chapter" data-level="16" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>16</b> ggplot</a><ul>
+<li class="chapter" data-level="16.1" data-path="ggplot.html"><a href="ggplot.html#aesthetic-mappings-aes"><i class="fa fa-check"></i><b>16.1</b> Aesthetic mappings <code>aes</code></a></li>
+<li class="chapter" data-level="16.2" data-path="ggplot.html"><a href="ggplot.html#goemetric-objects-geoms"><i class="fa fa-check"></i><b>16.2</b> Goemetric objects <code>geoms</code></a></li>
+<li class="chapter" data-level="16.3" data-path="ggplot.html"><a href="ggplot.html#statistical-transformations-stat"><i class="fa fa-check"></i><b>16.3</b> Statistical transformations <code>stat</code></a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="text-output.html"><a href="text-output.html"><i class="fa fa-check"></i><b>16</b> Text output</a><ul>
-<li class="chapter" data-level="16.1" data-path="text-output.html"><a href="text-output.html#format"><i class="fa fa-check"></i><b>16.1</b> Format</a></li>
-<li class="chapter" data-level="16.2" data-path="text-output.html"><a href="text-output.html#new-lines"><i class="fa fa-check"></i><b>16.2</b> New lines</a></li>
+<li class="chapter" data-level="17" data-path="text-output.html"><a href="text-output.html"><i class="fa fa-check"></i><b>17</b> Text output</a><ul>
+<li class="chapter" data-level="17.1" data-path="text-output.html"><a href="text-output.html#format"><i class="fa fa-check"></i><b>17.1</b> Format</a></li>
+<li class="chapter" data-level="17.2" data-path="text-output.html"><a href="text-output.html#new-lines"><i class="fa fa-check"></i><b>17.2</b> New lines</a></li>
 </ul></li>
 <li class="part"><span><b>V R Statistics</b></span></li>
-<li class="chapter" data-level="17" data-path="topics.html"><a href="topics.html"><i class="fa fa-check"></i><b>17</b> Topics</a></li>
-<li class="chapter" data-level="18" data-path="basics-1.html"><a href="basics-1.html"><i class="fa fa-check"></i><b>18</b> Basics</a><ul>
-<li class="chapter" data-level="18.1" data-path="basics-1.html"><a href="basics-1.html#distributions"><i class="fa fa-check"></i><b>18.1</b> Distributions</a></li>
+<li class="chapter" data-level="18" data-path="topics.html"><a href="topics.html"><i class="fa fa-check"></i><b>18</b> Topics</a></li>
+<li class="chapter" data-level="19" data-path="basics-1.html"><a href="basics-1.html"><i class="fa fa-check"></i><b>19</b> Basics</a><ul>
+<li class="chapter" data-level="19.1" data-path="basics-1.html"><a href="basics-1.html#distributions"><i class="fa fa-check"></i><b>19.1</b> Distributions</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>19</b> Regression</a><ul>
-<li class="chapter" data-level="19.1" data-path="regression.html"><a href="regression.html#plot-regression"><i class="fa fa-check"></i><b>19.1</b> Plot regression</a></li>
+<li class="chapter" data-level="20" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>20</b> Regression</a><ul>
+<li class="chapter" data-level="20.1" data-path="regression.html"><a href="regression.html#plot-regression"><i class="fa fa-check"></i><b>20.1</b> Plot regression</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>20</b> ANOVA</a><ul>
-<li class="chapter" data-level="20.1" data-path="anova.html"><a href="anova.html#idea"><i class="fa fa-check"></i><b>20.1</b> Idea</a></li>
-<li class="chapter" data-level="20.2" data-path="anova.html"><a href="anova.html#example-1"><i class="fa fa-check"></i><b>20.2</b> Example</a></li>
-<li class="chapter" data-level="20.3" data-path="anova.html"><a href="anova.html#tukeys-hsd"><i class="fa fa-check"></i><b>20.3</b> Tukey’s HSD</a><ul>
-<li class="chapter" data-level="20.3.1" data-path="anova.html"><a href="anova.html#example-2"><i class="fa fa-check"></i><b>20.3.1</b> Example</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="21" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>21</b> Multivariate Statistics</a><ul>
-<li class="chapter" data-level="21.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>21.1</b> Data sets</a></li>
-<li class="chapter" data-level="21.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>21.2</b> Some functions</a><ul>
-<li class="chapter" data-level="21.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization"><i class="fa fa-check"></i><b>21.2.1</b> Visualization</a></li>
+<li class="chapter" data-level="21" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>21</b> ANOVA</a><ul>
+<li class="chapter" data-level="21.1" data-path="anova.html"><a href="anova.html#idea"><i class="fa fa-check"></i><b>21.1</b> Idea</a></li>
+<li class="chapter" data-level="21.2" data-path="anova.html"><a href="anova.html#example-1"><i class="fa fa-check"></i><b>21.2</b> Example</a></li>
+<li class="chapter" data-level="21.3" data-path="anova.html"><a href="anova.html#tukeys-hsd"><i class="fa fa-check"></i><b>21.3</b> Tukey’s HSD</a><ul>
+<li class="chapter" data-level="21.3.1" data-path="anova.html"><a href="anova.html#example-2"><i class="fa fa-check"></i><b>21.3.1</b> Example</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>22</b> Time series</a><ul>
-<li class="chapter" data-level="22.1" data-path="TimeSeries.html"><a href="TimeSeries.html#data-sets-1"><i class="fa fa-check"></i><b>22.1</b> Data sets</a></li>
-<li class="chapter" data-level="22.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-and-time"><i class="fa fa-check"></i><b>22.2</b> Date and Time</a><ul>
-<li class="chapter" data-level="22.2.1" data-path="TimeSeries.html"><a href="TimeSeries.html#date"><i class="fa fa-check"></i><b>22.2.1</b> Date</a></li>
-<li class="chapter" data-level="22.2.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-time-1"><i class="fa fa-check"></i><b>22.2.2</b> Date-Time</a></li>
+<li class="chapter" data-level="22" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>22</b> Multivariate Statistics</a><ul>
+<li class="chapter" data-level="22.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>22.1</b> Data sets</a></li>
+<li class="chapter" data-level="22.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>22.2</b> Some functions</a><ul>
+<li class="chapter" data-level="22.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization"><i class="fa fa-check"></i><b>22.2.1</b> Visualization</a></li>
 </ul></li>
-<li class="chapter" data-level="22.3" data-path="TimeSeries.html"><a href="TimeSeries.html#time-series-classes"><i class="fa fa-check"></i><b>22.3</b> Time series classes</a><ul>
-<li class="chapter" data-level="22.3.1" data-path="TimeSeries.html"><a href="TimeSeries.html#ts"><i class="fa fa-check"></i><b>22.3.1</b> ts</a></li>
-<li class="chapter" data-level="22.3.2" data-path="TimeSeries.html"><a href="TimeSeries.html#zoo"><i class="fa fa-check"></i><b>22.3.2</b> zoo</a></li>
-<li class="chapter" data-level="22.3.3" data-path="TimeSeries.html"><a href="TimeSeries.html#futher-classes"><i class="fa fa-check"></i><b>22.3.3</b> futher classes</a></li>
 </ul></li>
-<li class="chapter" data-level="22.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>22.4</b> Differencing</a></li>
+<li class="chapter" data-level="23" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>23</b> Time series</a><ul>
+<li class="chapter" data-level="23.1" data-path="TimeSeries.html"><a href="TimeSeries.html#data-sets-1"><i class="fa fa-check"></i><b>23.1</b> Data sets</a></li>
+<li class="chapter" data-level="23.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-and-time"><i class="fa fa-check"></i><b>23.2</b> Date and Time</a><ul>
+<li class="chapter" data-level="23.2.1" data-path="TimeSeries.html"><a href="TimeSeries.html#date"><i class="fa fa-check"></i><b>23.2.1</b> Date</a></li>
+<li class="chapter" data-level="23.2.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-time-1"><i class="fa fa-check"></i><b>23.2.2</b> Date-Time</a></li>
 </ul></li>
-<li class="chapter" data-level="23" data-path="nonparametric-and-resampling-methodes.html"><a href="nonparametric-and-resampling-methodes.html"><i class="fa fa-check"></i><b>23</b> Nonparametric and Resampling Methodes</a><ul>
-<li class="chapter" data-level="23.1" data-path="nonparametric-and-resampling-methodes.html"><a href="nonparametric-and-resampling-methodes.html#bootstrap"><i class="fa fa-check"></i><b>23.1</b> Bootstrap</a></li>
+<li class="chapter" data-level="23.3" data-path="TimeSeries.html"><a href="TimeSeries.html#time-series-classes"><i class="fa fa-check"></i><b>23.3</b> Time series classes</a><ul>
+<li class="chapter" data-level="23.3.1" data-path="TimeSeries.html"><a href="TimeSeries.html#ts"><i class="fa fa-check"></i><b>23.3.1</b> ts</a></li>
+<li class="chapter" data-level="23.3.2" data-path="TimeSeries.html"><a href="TimeSeries.html#zoo"><i class="fa fa-check"></i><b>23.3.2</b> zoo</a></li>
+<li class="chapter" data-level="23.3.3" data-path="TimeSeries.html"><a href="TimeSeries.html#futher-classes"><i class="fa fa-check"></i><b>23.3.3</b> futher classes</a></li>
+</ul></li>
+<li class="chapter" data-level="23.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>23.4</b> Differencing</a></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="nonparametric-and-resampling-methodes.html"><a href="nonparametric-and-resampling-methodes.html"><i class="fa fa-check"></i><b>24</b> Nonparametric and Resampling Methodes</a><ul>
+<li class="chapter" data-level="24.1" data-path="nonparametric-and-resampling-methodes.html"><a href="nonparametric-and-resampling-methodes.html#bootstrap"><i class="fa fa-check"></i><b>24.1</b> Bootstrap</a></li>
 </ul></li>
 <li class="part"><span><b>VI R Workflow</b></span></li>
-<li class="chapter" data-level="24" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>24</b> Reproducible Research</a><ul>
-<li class="chapter" data-level="24.1" data-path="reproducible-research.html"><a href="reproducible-research.html#tasks"><i class="fa fa-check"></i><b>24.1</b> Tasks</a></li>
-<li class="chapter" data-level="24.2" data-path="reproducible-research.html"><a href="reproducible-research.html#chronology"><i class="fa fa-check"></i><b>24.2</b> Chronology</a></li>
+<li class="chapter" data-level="25" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>25</b> Reproducible Research</a><ul>
+<li class="chapter" data-level="25.1" data-path="reproducible-research.html"><a href="reproducible-research.html#tasks"><i class="fa fa-check"></i><b>25.1</b> Tasks</a></li>
+<li class="chapter" data-level="25.2" data-path="reproducible-research.html"><a href="reproducible-research.html#chronology"><i class="fa fa-check"></i><b>25.2</b> Chronology</a></li>
 </ul></li>
-<li class="chapter" data-level="25" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>25</b> R Markdown</a><ul>
-<li class="chapter" data-level="25.1" data-path="r-markdown.html"><a href="r-markdown.html#literate-programming"><i class="fa fa-check"></i><b>25.1</b> Literate programming</a><ul>
-<li class="chapter" data-level="25.1.1" data-path="r-markdown.html"><a href="r-markdown.html#sweave"><i class="fa fa-check"></i><b>25.1.1</b> Sweave</a></li>
-<li class="chapter" data-level="25.1.2" data-path="r-markdown.html"><a href="r-markdown.html#knitr"><i class="fa fa-check"></i><b>25.1.2</b> Knitr</a></li>
-<li class="chapter" data-level="25.1.3" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown-1"><i class="fa fa-check"></i><b>25.1.3</b> R Markdown</a></li>
+<li class="chapter" data-level="26" data-path="r-studio.html"><a href="r-studio.html"><i class="fa fa-check"></i><b>26</b> R Studio</a><ul>
+<li class="chapter" data-level="26.1" data-path="r-studio.html"><a href="r-studio.html#shortcuts"><i class="fa fa-check"></i><b>26.1</b> Shortcuts</a></li>
+<li class="chapter" data-level="26.2" data-path="r-studio.html"><a href="r-studio.html#version-control-in-rstudio"><i class="fa fa-check"></i><b>26.2</b> Version Control in RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="25.2" data-path="r-markdown.html"><a href="r-markdown.html#components-1"><i class="fa fa-check"></i><b>25.2</b> Components</a><ul>
-<li class="chapter" data-level="25.2.1" data-path="r-markdown.html"><a href="r-markdown.html#yaml-frontmatter"><i class="fa fa-check"></i><b>25.2.1</b> YAML frontmatter</a></li>
-<li class="chapter" data-level="25.2.2" data-path="r-markdown.html"><a href="r-markdown.html#text-1"><i class="fa fa-check"></i><b>25.2.2</b> Text</a></li>
-<li class="chapter" data-level="25.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>25.2.3</b> Code</a></li>
+<li class="chapter" data-level="27" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>27</b> R Markdown</a><ul>
+<li class="chapter" data-level="27.1" data-path="r-markdown.html"><a href="r-markdown.html#literate-programming"><i class="fa fa-check"></i><b>27.1</b> Literate programming</a><ul>
+<li class="chapter" data-level="27.1.1" data-path="r-markdown.html"><a href="r-markdown.html#sweave"><i class="fa fa-check"></i><b>27.1.1</b> Sweave</a></li>
+<li class="chapter" data-level="27.1.2" data-path="r-markdown.html"><a href="r-markdown.html#knitr"><i class="fa fa-check"></i><b>27.1.2</b> Knitr</a></li>
+<li class="chapter" data-level="27.1.3" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown-1"><i class="fa fa-check"></i><b>27.1.3</b> R Markdown</a></li>
 </ul></li>
-<li class="chapter" data-level="25.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>25.3</b> Figures</a></li>
-<li class="chapter" data-level="25.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>25.4</b> Tables</a><ul>
-<li class="chapter" data-level="25.4.1" data-path="r-markdown.html"><a href="r-markdown.html#html-tables"><i class="fa fa-check"></i><b>25.4.1</b> HTML tables</a></li>
+<li class="chapter" data-level="27.2" data-path="r-markdown.html"><a href="r-markdown.html#components-1"><i class="fa fa-check"></i><b>27.2</b> Components</a><ul>
+<li class="chapter" data-level="27.2.1" data-path="r-markdown.html"><a href="r-markdown.html#yaml-frontmatter"><i class="fa fa-check"></i><b>27.2.1</b> YAML frontmatter</a></li>
+<li class="chapter" data-level="27.2.2" data-path="r-markdown.html"><a href="r-markdown.html#text-1"><i class="fa fa-check"></i><b>27.2.2</b> Text</a></li>
+<li class="chapter" data-level="27.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>27.2.3</b> Code</a></li>
 </ul></li>
-<li class="chapter" data-level="25.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>25.5</b> Sepecial characters</a></li>
-<li class="chapter" data-level="25.6" data-path="r-markdown.html"><a href="r-markdown.html#section-folding"><i class="fa fa-check"></i><b>25.6</b> Section folding</a></li>
-<li class="chapter" data-level="25.7" data-path="r-markdown.html"><a href="r-markdown.html#add-box"><i class="fa fa-check"></i><b>25.7</b> Add box</a></li>
-<li class="chapter" data-level="25.8" data-path="r-markdown.html"><a href="r-markdown.html#template"><i class="fa fa-check"></i><b>25.8</b> Template</a></li>
-<li class="chapter" data-level="25.9" data-path="r-markdown.html"><a href="r-markdown.html#basic-elements"><i class="fa fa-check"></i><b>25.9</b> Basic Elements</a></li>
+<li class="chapter" data-level="27.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>27.3</b> Figures</a></li>
+<li class="chapter" data-level="27.4" data-path="r-markdown.html"><a href="r-markdown.html#tables"><i class="fa fa-check"></i><b>27.4</b> Tables</a><ul>
+<li class="chapter" data-level="27.4.1" data-path="r-markdown.html"><a href="r-markdown.html#html-tables"><i class="fa fa-check"></i><b>27.4.1</b> HTML tables</a></li>
 </ul></li>
-<li class="chapter" data-level="26" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>26</b> Bookdown</a><ul>
-<li class="chapter" data-level="26.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>26.1</b> Configuration</a><ul>
-<li class="chapter" data-level="26.1.1" data-path="bookdown.html"><a href="bookdown.html#bookdown.yml"><i class="fa fa-check"></i><b>26.1.1</b> <code>_bookdown.yml</code></a></li>
-<li class="chapter" data-level="26.1.2" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>26.1.2</b> <code>_output.yml</code></a></li>
-<li class="chapter" data-level="26.1.3" data-path="bookdown.html"><a href="bookdown.html#yaml-header"><i class="fa fa-check"></i><b>26.1.3</b> yaml header</a></li>
+<li class="chapter" data-level="27.5" data-path="r-markdown.html"><a href="r-markdown.html#sepecial-characters"><i class="fa fa-check"></i><b>27.5</b> Sepecial characters</a></li>
+<li class="chapter" data-level="27.6" data-path="r-markdown.html"><a href="r-markdown.html#section-folding"><i class="fa fa-check"></i><b>27.6</b> Section folding</a></li>
+<li class="chapter" data-level="27.7" data-path="r-markdown.html"><a href="r-markdown.html#add-box"><i class="fa fa-check"></i><b>27.7</b> Add box</a></li>
+<li class="chapter" data-level="27.8" data-path="r-markdown.html"><a href="r-markdown.html#template"><i class="fa fa-check"></i><b>27.8</b> Template</a></li>
+<li class="chapter" data-level="27.9" data-path="r-markdown.html"><a href="r-markdown.html#basic-elements"><i class="fa fa-check"></i><b>27.9</b> Basic Elements</a></li>
 </ul></li>
-<li class="chapter" data-level="26.2" data-path="bookdown.html"><a href="bookdown.html#NewBookdownProject"><i class="fa fa-check"></i><b>26.2</b> Create new project</a></li>
+<li class="chapter" data-level="28" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>28</b> Bookdown</a><ul>
+<li class="chapter" data-level="28.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>28.1</b> Configuration</a><ul>
+<li class="chapter" data-level="28.1.1" data-path="bookdown.html"><a href="bookdown.html#bookdown.yml"><i class="fa fa-check"></i><b>28.1.1</b> <code>_bookdown.yml</code></a></li>
+<li class="chapter" data-level="28.1.2" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>28.1.2</b> <code>_output.yml</code></a></li>
+<li class="chapter" data-level="28.1.3" data-path="bookdown.html"><a href="bookdown.html#yaml-header"><i class="fa fa-check"></i><b>28.1.3</b> yaml header</a></li>
 </ul></li>
-<li class="chapter" data-level="27" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>27</b> Reference management</a><ul>
-<li class="chapter" data-level="27.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>27.1</b> Literature</a><ul>
-<li class="chapter" data-level="27.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>27.1.1</b> Recommended: Using Zotero</a></li>
+<li class="chapter" data-level="28.2" data-path="bookdown.html"><a href="bookdown.html#NewBookdownProject"><i class="fa fa-check"></i><b>28.2</b> Create new project</a></li>
 </ul></li>
-<li class="chapter" data-level="27.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>27.2</b> Cross-References</a></li>
+<li class="chapter" data-level="29" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>29</b> Reference management</a><ul>
+<li class="chapter" data-level="29.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>29.1</b> Literature</a><ul>
+<li class="chapter" data-level="29.1.1" data-path="reference-management.html"><a href="reference-management.html#recommended-using-zotero"><i class="fa fa-check"></i><b>29.1.1</b> Recommended: Using Zotero</a></li>
 </ul></li>
-<li class="chapter" data-level="28" data-path="git-version-control.html"><a href="git-version-control.html"><i class="fa fa-check"></i><b>28</b> Git Version control</a><ul>
-<li class="chapter" data-level="28.1" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>28.1</b> Git basics</a></li>
-<li class="chapter" data-level="28.2" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>28.2</b> Single user</a><ul>
-<li class="chapter" data-level="28.2.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>28.2.1</b> Regular workflow</a></li>
-<li class="chapter" data-level="28.2.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>28.2.2</b> Troubleshooting</a></li>
+<li class="chapter" data-level="29.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>29.2</b> Cross-References</a></li>
 </ul></li>
-<li class="chapter" data-level="28.3" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>28.3</b> Multiple users</a><ul>
-<li class="chapter" data-level="28.3.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>28.3.1</b> get foreign respository (fork)</a></li>
+<li class="chapter" data-level="30" data-path="git-version-control.html"><a href="git-version-control.html"><i class="fa fa-check"></i><b>30</b> Git Version control</a><ul>
+<li class="chapter" data-level="30.1" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>30.1</b> Git basics</a></li>
+<li class="chapter" data-level="30.2" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>30.2</b> Single user</a><ul>
+<li class="chapter" data-level="30.2.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>30.2.1</b> Regular workflow</a></li>
+<li class="chapter" data-level="30.2.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>30.2.2</b> Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="30.3" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>30.3</b> Multiple users</a><ul>
+<li class="chapter" data-level="30.3.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>30.3.1</b> get foreign respository (fork)</a></li>
+</ul></li>
+<li class="chapter" data-level="30.4" data-path="git-version-control.html"><a href="git-version-control.html#version-control-in-rstudio-1"><i class="fa fa-check"></i><b>30.4</b> Version Control in RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="git2.html"><a href="git2.html"><i class="fa fa-check"></i><b>31</b> git2</a><ul>
+<li class="chapter" data-level="31.1" data-path="git2.html"><a href="git2.html#git-basics-1"><i class="fa fa-check"></i><b>31.1</b> Git basics</a><ul>
+<li class="chapter" data-level="31.1.1" data-path="git2.html"><a href="git2.html#common-tasks"><i class="fa fa-check"></i><b>31.1.1</b> Common tasks</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="29" data-path="git2.html"><a href="git2.html"><i class="fa fa-check"></i><b>29</b> git2</a><ul>
-<li class="chapter" data-level="29.1" data-path="git2.html"><a href="git2.html#git-basics-1"><i class="fa fa-check"></i><b>29.1</b> Git basics</a><ul>
-<li class="chapter" data-level="29.1.1" data-path="git2.html"><a href="git2.html#common-tasks"><i class="fa fa-check"></i><b>29.1.1</b> Common tasks</a></li>
-</ul></li>
+<li class="chapter" data-level="32" data-path="packages-1.html"><a href="packages-1.html"><i class="fa fa-check"></i><b>32</b> Packages</a><ul>
+<li class="chapter" data-level="32.1" data-path="packages-1.html"><a href="packages-1.html#package-environment-1"><i class="fa fa-check"></i><b>32.1</b> Package environment</a></li>
+<li class="chapter" data-level="32.2" data-path="packages-1.html"><a href="packages-1.html#useful-packages"><i class="fa fa-check"></i><b>32.2</b> Useful packages</a></li>
 </ul></li>
 <li class="part"><span><b>VII Appendix</b></span></li>
-<li class="chapter" data-level="30" data-path="cheat-sheets.html"><a href="cheat-sheets.html"><i class="fa fa-check"></i><b>30</b> Cheat Sheets</a><ul>
-<li class="chapter" data-level="30.1" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-import"><i class="fa fa-check"></i><b>30.1</b> Data import</a></li>
-<li class="chapter" data-level="30.2" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-transformation"><i class="fa fa-check"></i><b>30.2</b> Data transformation</a></li>
-<li class="chapter" data-level="30.3" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-visualization"><i class="fa fa-check"></i><b>30.3</b> Data visualization</a></li>
-<li class="chapter" data-level="30.4" data-path="cheat-sheets.html"><a href="cheat-sheets.html#factors-1"><i class="fa fa-check"></i><b>30.4</b> Factors</a></li>
-<li class="chapter" data-level="30.5" data-path="cheat-sheets.html"><a href="cheat-sheets.html#lubridate"><i class="fa fa-check"></i><b>30.5</b> Lubridate</a></li>
-<li class="chapter" data-level="30.6" data-path="cheat-sheets.html"><a href="cheat-sheets.html#strings-1"><i class="fa fa-check"></i><b>30.6</b> Strings</a></li>
-<li class="chapter" data-level="30.7" data-path="cheat-sheets.html"><a href="cheat-sheets.html#regex"><i class="fa fa-check"></i><b>30.7</b> Regex</a></li>
-<li class="chapter" data-level="30.8" data-path="cheat-sheets.html"><a href="cheat-sheets.html#purrr"><i class="fa fa-check"></i><b>30.8</b> Purrr</a></li>
-<li class="chapter" data-level="30.9" data-path="cheat-sheets.html"><a href="cheat-sheets.html#tidyeval"><i class="fa fa-check"></i><b>30.9</b> Tidyeval</a></li>
-<li class="chapter" data-level="30.10" data-path="cheat-sheets.html"><a href="cheat-sheets.html#r-studio"><i class="fa fa-check"></i><b>30.10</b> R Studio</a></li>
-<li class="chapter" data-level="30.11" data-path="cheat-sheets.html"><a href="cheat-sheets.html#r-markdown-2"><i class="fa fa-check"></i><b>30.11</b> R markdown</a></li>
-<li class="chapter" data-level="30.12" data-path="cheat-sheets.html"><a href="cheat-sheets.html#shiny"><i class="fa fa-check"></i><b>30.12</b> Shiny</a></li>
-<li class="chapter" data-level="30.13" data-path="cheat-sheets.html"><a href="cheat-sheets.html#package-development"><i class="fa fa-check"></i><b>30.13</b> Package development</a></li>
-<li class="chapter" data-level="30.14" data-path="cheat-sheets.html"><a href="cheat-sheets.html#reticulate"><i class="fa fa-check"></i><b>30.14</b> Reticulate</a></li>
-<li class="chapter" data-level="30.15" data-path="cheat-sheets.html"><a href="cheat-sheets.html#keras"><i class="fa fa-check"></i><b>30.15</b> Keras</a></li>
-<li class="chapter" data-level="30.16" data-path="cheat-sheets.html"><a href="cheat-sheets.html#sparklyr"><i class="fa fa-check"></i><b>30.16</b> Sparklyr</a></li>
+<li class="chapter" data-level="33" data-path="cheat-sheets.html"><a href="cheat-sheets.html"><i class="fa fa-check"></i><b>33</b> Cheat Sheets</a><ul>
+<li class="chapter" data-level="33.1" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-import"><i class="fa fa-check"></i><b>33.1</b> Data import</a></li>
+<li class="chapter" data-level="33.2" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-transformation"><i class="fa fa-check"></i><b>33.2</b> Data transformation</a></li>
+<li class="chapter" data-level="33.3" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-visualization"><i class="fa fa-check"></i><b>33.3</b> Data visualization</a></li>
+<li class="chapter" data-level="33.4" data-path="cheat-sheets.html"><a href="cheat-sheets.html#factors-1"><i class="fa fa-check"></i><b>33.4</b> Factors</a></li>
+<li class="chapter" data-level="33.5" data-path="cheat-sheets.html"><a href="cheat-sheets.html#lubridate"><i class="fa fa-check"></i><b>33.5</b> Lubridate</a></li>
+<li class="chapter" data-level="33.6" data-path="cheat-sheets.html"><a href="cheat-sheets.html#strings-1"><i class="fa fa-check"></i><b>33.6</b> Strings</a></li>
+<li class="chapter" data-level="33.7" data-path="cheat-sheets.html"><a href="cheat-sheets.html#regex"><i class="fa fa-check"></i><b>33.7</b> Regex</a></li>
+<li class="chapter" data-level="33.8" data-path="cheat-sheets.html"><a href="cheat-sheets.html#purrr"><i class="fa fa-check"></i><b>33.8</b> Purrr</a></li>
+<li class="chapter" data-level="33.9" data-path="cheat-sheets.html"><a href="cheat-sheets.html#tidyeval"><i class="fa fa-check"></i><b>33.9</b> Tidyeval</a></li>
+<li class="chapter" data-level="33.10" data-path="cheat-sheets.html"><a href="cheat-sheets.html#r-studio-1"><i class="fa fa-check"></i><b>33.10</b> R Studio</a></li>
+<li class="chapter" data-level="33.11" data-path="cheat-sheets.html"><a href="cheat-sheets.html#r-markdown-2"><i class="fa fa-check"></i><b>33.11</b> R markdown</a></li>
+<li class="chapter" data-level="33.12" data-path="cheat-sheets.html"><a href="cheat-sheets.html#shiny"><i class="fa fa-check"></i><b>33.12</b> Shiny</a></li>
+<li class="chapter" data-level="33.13" data-path="cheat-sheets.html"><a href="cheat-sheets.html#package-development"><i class="fa fa-check"></i><b>33.13</b> Package development</a></li>
+<li class="chapter" data-level="33.14" data-path="cheat-sheets.html"><a href="cheat-sheets.html#reticulate"><i class="fa fa-check"></i><b>33.14</b> Reticulate</a></li>
+<li class="chapter" data-level="33.15" data-path="cheat-sheets.html"><a href="cheat-sheets.html#keras"><i class="fa fa-check"></i><b>33.15</b> Keras</a></li>
+<li class="chapter" data-level="33.16" data-path="cheat-sheets.html"><a href="cheat-sheets.html#sparklyr"><i class="fa fa-check"></i><b>33.16</b> Sparklyr</a></li>
 </ul></li>
-<li class="chapter" data-level="31" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>31</b> Test</a></li>
-<li class="chapter" data-level="32" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>32</b> Stuff still to include</a></li>
+<li class="chapter" data-level="34" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>34</b> Test</a></li>
+<li class="chapter" data-level="35" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>35</b> Stuff still to include</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -450,19 +463,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="r-markdown" class="section level1">
-<h1><span class="header-section-number">Chapter 25</span> R Markdown</h1>
+<h1><span class="header-section-number">Chapter 27</span> R Markdown</h1>
 <div id="literate-programming" class="section level2">
-<h2><span class="header-section-number">25.1</span> Literate programming</h2>
+<h2><span class="header-section-number">27.1</span> Literate programming</h2>
 <p>Sweave, Knitr and R markdown all based on Donald Knuth’s <a href="https://en.wikipedia.org/wiki/Literate_programming">Literate programming</a>. Text and code are in a common file and the code follows the structure of the text.</p>
 <div id="sweave" class="section level3">
-<h3><span class="header-section-number">25.1.1</span> Sweave</h3>
+<h3><span class="header-section-number">27.1.1</span> Sweave</h3>
 <ul>
 <li>Takes text in latex formate and R/S code chunks to generate (weave) one tex file.</li>
 <li>Included in R standard library (utils package)</li>
 </ul>
 </div>
 <div id="knitr" class="section level3">
-<h3><span class="header-section-number">25.1.2</span> Knitr</h3>
+<h3><span class="header-section-number">27.1.2</span> Knitr</h3>
 <ul>
 <li>Takes several imputs for text (Latex, Markdown, HTML, AsciiDoc, reStructuredText, and Textile) and code (R, Python, …)</li>
 <li>R package</li>
@@ -470,7 +483,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="r-markdown-1" class="section level3">
-<h3><span class="header-section-number">25.1.3</span> R Markdown</h3>
+<h3><span class="header-section-number">27.1.3</span> R Markdown</h3>
 <p>Combination of Knitr and Pandoc</p>
 <ul>
 <li>Knitr: executes the computer code embedded in Markdown, and converts R Markdown to Markdown</li>
@@ -488,7 +501,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="components-1" class="section level2">
-<h2><span class="header-section-number">25.2</span> Components</h2>
+<h2><span class="header-section-number">27.2</span> Components</h2>
 <ul>
 <li>Three basic components of an R Markdown document
 <ul>
@@ -498,7 +511,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <div id="yaml-frontmatter" class="section level3">
-<h3><span class="header-section-number">25.2.1</span> YAML frontmatter</h3>
+<h3><span class="header-section-number">27.2.1</span> YAML frontmatter</h3>
 <p>The information of the YAML frontmatter is passed to the output function when the document is rendered. To see <strong>all possible options</strong> go to the help page of the output function (e.g. <code>?rmarkdown::html_document</code> or <code>?bookdown::gitbook</code>). Some options are passed to kniter and some are passed to pandoc.</p>
 <p>All output functions:</p>
 <ul>
@@ -527,7 +540,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="text-1" class="section level3">
-<h3><span class="header-section-number">25.2.2</span> Text</h3>
+<h3><span class="header-section-number">27.2.2</span> Text</h3>
 <p>The syntax for text (also known as prose or narratives) is Markdown. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents.</p>
 <p>Find all formatting syntax in detail in the <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc Manual</a> e.g. </p>
 <ul>
@@ -554,9 +567,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>My favourit html_document themes: flatly, spacelab, lumen and sandstone</p>
 </div>
 <div id="code" class="section level3">
-<h3><span class="header-section-number">25.2.3</span> Code</h3>
+<h3><span class="header-section-number">27.2.3</span> Code</h3>
 <div id="types" class="section level4">
-<h4><span class="header-section-number">25.2.3.1</span> Types</h4>
+<h4><span class="header-section-number">27.2.3.1</span> Types</h4>
 <p>Two types of code</p>
 <ul>
 <li>A code chunk starts with three backticks like <code>```{r}</code> where <code>r</code> indicates the language name, and ends with three backticks. You can write chunk options in the curly braces (e.g., set the figure height to 5 inches: <code>```{r, fig.height=5}</code>).</li>
@@ -564,7 +577,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="chunck-ouput" class="section level4">
-<h4><span class="header-section-number">25.2.3.2</span> Chunck Ouput</h4>
+<h4><span class="header-section-number">27.2.3.2</span> Chunck Ouput</h4>
 <ul>
 <li>Text</li>
 <li>Tables</li>
@@ -572,7 +585,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="chunck-options" class="section level4">
-<h4><span class="header-section-number">25.2.3.3</span> Chunck options</h4>
+<h4><span class="header-section-number">27.2.3.3</span> Chunck options</h4>
 <p>All chunk options can be found in the <a href="https://yihui.name/knitr/options/">Knitr Manual</a></p>
 <p>Most important chunck options:</p>
 <ul>
@@ -593,12 +606,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>child</code>: You can include a child document in the main document. This option takes a path to an external file.</li>
 </ul>
 <p>Set chunk option globally:</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb156-1" title="1"><span class="bn">```{r, setup, include=FALSE}</span></a>
-<a class="sourceLine" id="cb156-2" title="2"><span class="bn">knitr::opts_chunk$set(comment = &quot;#&gt;&quot;,</span></a>
-<a class="sourceLine" id="cb156-3" title="3"><span class="bn">                      tidy = TRUE,</span></a>
-<a class="sourceLine" id="cb156-4" title="4"><span class="bn">                      fig.align = &quot;center&quot;,</span></a>
-<a class="sourceLine" id="cb156-5" title="5"><span class="bn">                      out.width = &quot;80%&quot;)</span></a>
-<a class="sourceLine" id="cb156-6" title="6"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb160-1" title="1"><span class="bn">```{r, setup, include=FALSE}</span></a>
+<a class="sourceLine" id="cb160-2" title="2"><span class="bn">knitr::opts_chunk$set(comment = &quot;#&gt;&quot;,</span></a>
+<a class="sourceLine" id="cb160-3" title="3"><span class="bn">                      tidy = TRUE,</span></a>
+<a class="sourceLine" id="cb160-4" title="4"><span class="bn">                      fig.align = &quot;center&quot;,</span></a>
+<a class="sourceLine" id="cb160-5" title="5"><span class="bn">                      out.width = &quot;80%&quot;)</span></a>
+<a class="sourceLine" id="cb160-6" title="6"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -606,25 +619,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="figures" class="section level2">
-<h2><span class="header-section-number">25.3</span> Figures</h2>
+<h2><span class="header-section-number">27.3</span> Figures</h2>
 <p>Plot from code chunks or insert via <code>knitr::include_graphics()</code></p>
 <p>e.g.</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb157-1" title="1"><span class="bn">```{r, echo = FALSE, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></a>
-<a class="sourceLine" id="cb157-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
-<a class="sourceLine" id="cb157-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb161-1" title="1"><span class="bn">```{r, echo = FALSE, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></a>
+<a class="sourceLine" id="cb161-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
+<a class="sourceLine" id="cb161-3" title="3"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
 <div class="figure" style="text-align: center"><span id="fig:include-graphics"></span>
 <img src="figures/hex-rmarkdown.png" alt="The R Markdown hex logo." width="25%" />
 <p class="caption">
-Figure 25.1: The R Markdown hex logo.
+Figure 27.1: The R Markdown hex logo.
 </p>
 </div>
 <p>Chunk options</p>
 <ul>
 <li><code>fig.cap = "text"</code> Figure captation text or text reference</li>
-<li><code>fig.show='hold'</code> Show figures next to each other (if out.width &lt; 50%)
+<li><code>out.width &lt; '50%', fig.show='hold', fig.align='default'</code> Show figures next to each other
 <ul>
 <li>Possible Bug: figures often are on top of each other</li>
 <li>Always include <code>fig.align='default'</code> and it should work</li>
@@ -642,20 +655,20 @@ Figure 25.1: The R Markdown hex logo.
 <div id="wrap-text-arround-plot" class="section level5 unnumbered">
 <h5>Wrap text arround plot</h5>
 <p>Plots can be placed on right side with text wraped arround it. Use the following chunk options:</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb158-1" title="1"><span class="bn">```{r, out.width=&#39;25%&#39;, echo = FALSE, out.extra=&#39;style=&quot;float:right; padding:5px&quot;&#39;}</span></a>
-<a class="sourceLine" id="cb158-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
-<a class="sourceLine" id="cb158-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb162-1" title="1"><span class="bn">```{r, out.width=&#39;25%&#39;, echo = FALSE, out.extra=&#39;style=&quot;float:right; padding:5px&quot;&#39;}</span></a>
+<a class="sourceLine" id="cb162-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
+<a class="sourceLine" id="cb162-3" title="3"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
 </div>
 <div id="include-figure-which-serves-as-a-link" class="section level5 unnumbered">
 <h5>Include figure which serves as a link</h5>
-<div class="sourceCode" id="cb159"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb159-1" title="1">&lt;a href=&quot;figures/03_pdf/lubridate.pdf&quot; target=&quot;_blank&quot;&gt; </a>
-<a class="sourceLine" id="cb159-2" title="2"><span class="bn">```{r, echo=FALSE, out.width=&#39;50%&#39;}</span></a>
-<a class="sourceLine" id="cb159-3" title="3"><span class="bn">knitr::include_graphics(&#39;figures/03_pdf/lubridate.jpg&#39;)</span></a>
-<a class="sourceLine" id="cb159-4" title="4"><span class="bn">```</span></a>
-<a class="sourceLine" id="cb159-5" title="5">&lt;/a&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb163-1" title="1">&lt;a href=&quot;figures/03_pdf/lubridate.pdf&quot; target=&quot;_blank&quot;&gt; </a>
+<a class="sourceLine" id="cb163-2" title="2"><span class="bn">```{r, echo=FALSE, out.width=&#39;50%&#39;}</span></a>
+<a class="sourceLine" id="cb163-3" title="3"><span class="bn">knitr::include_graphics(&#39;figures/03_pdf/lubridate.jpg&#39;)</span></a>
+<a class="sourceLine" id="cb163-4" title="4"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb163-5" title="5">&lt;/a&gt;</a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -663,7 +676,7 @@ Figure 25.1: The R Markdown hex logo.
 </div>
 </div>
 <div id="tables" class="section level2">
-<h2><span class="header-section-number">25.4</span> Tables</h2>
+<h2><span class="header-section-number">27.4</span> Tables</h2>
 <ul>
 <li>For data in R use <code>knitr::kable()</code> (See <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">Kable Manual</a>)</li>
 <li>For text use <a href="https://pandoc.org/MANUAL.html#tables">Pandoc tables</a>
@@ -688,45 +701,45 @@ Without using a header, the formated table is reduced to an unformatted html tab
 </div>
 
 <div id="html-tables" class="section level3">
-<h3><span class="header-section-number">25.4.1</span> HTML tables</h3>
+<h3><span class="header-section-number">27.4.1</span> HTML tables</h3>
 <p>Tables can be formatted in CSS if we are only interested in HTML output. Add the following internal <code>&lt;style&gt;</code> element (in document between <code>&lt;style&gt;</code> and <code>&lt;/style&gt;</code> tag) or use an external CSS file (<code>style.css</code>).</p>
 <div id="definition-tables" class="section level5 unnumbered">
 <h5>Definition tables</h5>
-<div class="sourceCode" id="cb160"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb160-1" title="1"><span class="co">/* definition tables (RZ) */</span></a>
-<a class="sourceLine" id="cb160-2" title="2"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></a>
-<a class="sourceLine" id="cb160-3" title="3"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></a>
-<a class="sourceLine" id="cb160-4" title="4"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</a>
-<a class="sourceLine" id="cb160-5" title="5">{</a>
-<a class="sourceLine" id="cb160-6" title="6">  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb160-7" title="7">  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb160-8" title="8">  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb160-9" title="9">}</a>
-<a class="sourceLine" id="cb160-10" title="10"></a>
-<a class="sourceLine" id="cb160-11" title="11"><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</a>
-<a class="sourceLine" id="cb160-12" title="12">  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb160-13" title="13">  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb160-14" title="14">}</a>
-<a class="sourceLine" id="cb160-15" title="15"><span class="fu">.deftab</span> th {</a>
-<a class="sourceLine" id="cb160-16" title="16">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></a>
-<a class="sourceLine" id="cb160-17" title="17">}</a>
-<a class="sourceLine" id="cb160-18" title="18"><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</a>
-<a class="sourceLine" id="cb160-19" title="19">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></a>
-<a class="sourceLine" id="cb160-20" title="20">}</a></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb164-1" title="1"><span class="co">/* definition tables (RZ) */</span></a>
+<a class="sourceLine" id="cb164-2" title="2"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></a>
+<a class="sourceLine" id="cb164-3" title="3"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></a>
+<a class="sourceLine" id="cb164-4" title="4"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</a>
+<a class="sourceLine" id="cb164-5" title="5">{</a>
+<a class="sourceLine" id="cb164-6" title="6">  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb164-7" title="7">  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb164-8" title="8">  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb164-9" title="9">}</a>
+<a class="sourceLine" id="cb164-10" title="10"></a>
+<a class="sourceLine" id="cb164-11" title="11"><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</a>
+<a class="sourceLine" id="cb164-12" title="12">  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb164-13" title="13">  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb164-14" title="14">}</a>
+<a class="sourceLine" id="cb164-15" title="15"><span class="fu">.deftab</span> th {</a>
+<a class="sourceLine" id="cb164-16" title="16">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></a>
+<a class="sourceLine" id="cb164-17" title="17">}</a>
+<a class="sourceLine" id="cb164-18" title="18"><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</a>
+<a class="sourceLine" id="cb164-19" title="19">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></a>
+<a class="sourceLine" id="cb164-20" title="20">}</a></code></pre></div>
 <p>Afterwards we can use HTML tags to create the table</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb161-1" title="1"><span class="kw">&lt;table</span><span class="ot"> class</span> <span class="ot">=</span> <span class="st">&quot;deftab&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb161-2" title="2">  <span class="kw">&lt;tr&gt;</span></a>
-<a class="sourceLine" id="cb161-3" title="3">    <span class="kw">&lt;td&gt;</span>**Doe**<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb161-4" title="4">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb161-5" title="5">  <span class="kw">&lt;/tr&gt;</span></a>
-<a class="sourceLine" id="cb161-6" title="6">  <span class="kw">&lt;tr&gt;</span></a>
-<a class="sourceLine" id="cb161-7" title="7">    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb161-8" title="8">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb161-9" title="9">  <span class="kw">&lt;/tr&gt;</span></a>
-<a class="sourceLine" id="cb161-10" title="10">  <span class="kw">&lt;tr&gt;</span></a>
-<a class="sourceLine" id="cb161-11" title="11">    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb161-12" title="12">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
-<a class="sourceLine" id="cb161-13" title="13">  <span class="kw">&lt;/tr&gt;</span></a>
-<a class="sourceLine" id="cb161-14" title="14"><span class="kw">&lt;/table&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb165-1" title="1"><span class="kw">&lt;table</span><span class="ot"> class</span> <span class="ot">=</span> <span class="st">&quot;deftab&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb165-2" title="2">  <span class="kw">&lt;tr&gt;</span></a>
+<a class="sourceLine" id="cb165-3" title="3">    <span class="kw">&lt;td&gt;</span>**Doe**<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb165-4" title="4">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb165-5" title="5">  <span class="kw">&lt;/tr&gt;</span></a>
+<a class="sourceLine" id="cb165-6" title="6">  <span class="kw">&lt;tr&gt;</span></a>
+<a class="sourceLine" id="cb165-7" title="7">    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb165-8" title="8">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb165-9" title="9">  <span class="kw">&lt;/tr&gt;</span></a>
+<a class="sourceLine" id="cb165-10" title="10">  <span class="kw">&lt;tr&gt;</span></a>
+<a class="sourceLine" id="cb165-11" title="11">    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb165-12" title="12">    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb165-13" title="13">  <span class="kw">&lt;/tr&gt;</span></a>
+<a class="sourceLine" id="cb165-14" title="14"><span class="kw">&lt;/table&gt;</span></a></code></pre></div>
 <p>Results in</p>
 <table class = "deftab">
 <tr>
@@ -758,7 +771,7 @@ John
 </div>
 </div>
 <div id="sepecial-characters" class="section level2">
-<h2><span class="header-section-number">25.5</span> Sepecial characters</h2>
+<h2><span class="header-section-number">27.5</span> Sepecial characters</h2>
 <ul>
 <li>Mathematical stuff with Latex
 <ul>
@@ -800,7 +813,7 @@ John
 </ul>
 </div>
 <div id="section-folding" class="section level2">
-<h2><span class="header-section-number">25.6</span> Section folding</h2>
+<h2><span class="header-section-number">27.6</span> Section folding</h2>
 <p>Section folding is only available for HTML documents. There are two good options</p>
 <ul>
 <li>Global code folding</li>
@@ -809,41 +822,41 @@ John
 <div id="global-code-folding" class="section level5 unnumbered">
 <h5>Global code folding</h5>
 <p>Well explained <a href="https://bookdown.org/yihui/rmarkdown/html-document.html#code-folding">here</a>. Put the line <code>code_folding: hide</code> in the YAML header</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb162-1" title="1"><span class="ot">---</span></a>
-<a class="sourceLine" id="cb162-2" title="2"><span class="fu">title:</span><span class="at"> </span><span class="st">&quot;My Document&quot;</span></a>
-<a class="sourceLine" id="cb162-3" title="3"><span class="fu">output:</span></a>
-<a class="sourceLine" id="cb162-4" title="4">  <span class="fu">html_document:</span></a>
-<a class="sourceLine" id="cb162-5" title="5">    <span class="fu">code_folding:</span><span class="at"> hide</span></a>
-<a class="sourceLine" id="cb162-6" title="6"><span class="ot">---</span></a></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb166-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb166-2" title="2"><span class="fu">title:</span><span class="at"> </span><span class="st">&quot;My Document&quot;</span></a>
+<a class="sourceLine" id="cb166-3" title="3"><span class="fu">output:</span></a>
+<a class="sourceLine" id="cb166-4" title="4">  <span class="fu">html_document:</span></a>
+<a class="sourceLine" id="cb166-5" title="5">    <span class="fu">code_folding:</span><span class="at"> hide</span></a>
+<a class="sourceLine" id="cb166-6" title="6"><span class="ot">---</span></a></code></pre></div>
 <p>You can specify <code>code_folding: show</code> to still show all R code by default but then allow users to hide the code if they wish.</p>
 </div>
 <div id="local-section-folding" class="section level5 unnumbered">
 <h5>Local section folding</h5>
 <p>Good ideas can be found <a href="https://stackoverflow.com/questions/52576626/rmarkdown-collapsible-panel">here</a>. Here we describe a methode with HTML/CSS buttons.</p>
 <ol style="list-style-type: decimal">
-<li>Add HTML code for button at beginning of your document. Alternatively you make a separate html file. Find button code and how to make separate HTML file in Chapter <a href="bookdown.html#NewBookdownProject">26.2</a></li>
+<li>Add HTML code for button at beginning of your document. Alternatively you make a separate html file. Find button code and how to make separate HTML file in Chapter <a href="bookdown.html#NewBookdownProject">28.2</a></li>
 <li>Add this HTML code at the place were you want the button.</li>
 </ol>
-<div class="sourceCode" id="cb163"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb163-1" title="1"><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction(&#39;new_identifier&#39;)&quot;</span><span class="kw">&gt;</span>Text on button<span class="kw">&lt;/button&gt;</span></a>
-<a class="sourceLine" id="cb163-2" title="2"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;new_identifier&quot;</span><span class="ot"> style=</span><span class="st">&quot;display: none&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb163-3" title="3"></a>
-<a class="sourceLine" id="cb163-4" title="4">Blabla.</a>
-<a class="sourceLine" id="cb163-5" title="5"></a>
-<a class="sourceLine" id="cb163-6" title="6"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb167-1" title="1"><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction(&#39;new_identifier&#39;)&quot;</span><span class="kw">&gt;</span>Text on button<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb167-2" title="2"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;new_identifier&quot;</span><span class="ot"> style=</span><span class="st">&quot;display: none&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb167-3" title="3"></a>
+<a class="sourceLine" id="cb167-4" title="4">Blabla.</a>
+<a class="sourceLine" id="cb167-5" title="5"></a>
+<a class="sourceLine" id="cb167-6" title="6"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
 <p>Replace <code>new_identifier</code> with unique identifier for that section. Replace <code>Text on button</code> and <code>Blabla</code></p>
 </div>
 </div>
 <div id="add-box" class="section level2">
-<h2><span class="header-section-number">25.7</span> Add box</h2>
+<h2><span class="header-section-number">27.7</span> Add box</h2>
 <p>These type of boxes are only available for HTML documents.
 There is a good implementation to add boxes for caution, important, note, tip and waring</p>
 <ol style="list-style-type: decimal">
-<li>Add CSS code for button at beginning of your document. Alternatively you make a separate CSS style file. Find button code and how to make separate CSS style file in Chapter <a href="bookdown.html#NewBookdownProject">26.2</a></li>
+<li>Add CSS code for button at beginning of your document. Alternatively you make a separate CSS style file. Find button code and how to make separate CSS style file in Chapter <a href="bookdown.html#NewBookdownProject">28.2</a></li>
 <li>Add this code at the place were you want the button.</li>
 </ol>
-<div class="sourceCode" id="cb164"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb164-1" title="1"><span class="bn">```{block2, type=&#39;rmdcaution&#39;}</span></a>
-<a class="sourceLine" id="cb164-2" title="2"><span class="bn">Text</span></a>
-<a class="sourceLine" id="cb164-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb168-1" title="1"><span class="bn">```{block2, type=&#39;rmdcaution&#39;}</span></a>
+<a class="sourceLine" id="cb168-2" title="2"><span class="bn">Text</span></a>
+<a class="sourceLine" id="cb168-3" title="3"><span class="bn">```</span></a></code></pre></div>
 <p>Replace <code>rmdcaution</code> with <code>rmdimportant</code>, <code>rmdnote</code>, <code>rmdtip</code> and <code>rmdwarning</code>. Note that the code chunk always needs to be taged as <code>block2</code>.</p>
 <p>Here how they look like</p>
 
@@ -873,134 +886,134 @@ Warning
 
 </div>
 <div id="template" class="section level2">
-<h2><span class="header-section-number">25.8</span> Template</h2>
+<h2><span class="header-section-number">27.8</span> Template</h2>
 <p>This is a template containing structure, equations, references, cross-references, figures and tables with caption. The rendered output of the template can be found <a href="https://retodomax.github.io/R_Ref_Book/template.html">here</a>.
 To get the the template in pdf, replace the <code>output</code> section in the YAML header with</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb165-1" title="1">  bookdown:<span class="fu">:pdf_document2:</span></a>
-<a class="sourceLine" id="cb165-2" title="2">    <span class="fu">toc:</span><span class="at"> </span><span class="ch">true</span></a>
-<a class="sourceLine" id="cb165-3" title="3">    <span class="fu">toc_depth:</span><span class="at"> </span><span class="dv">3</span></a>
-<a class="sourceLine" id="cb165-4" title="4">    <span class="fu">number_sections:</span><span class="at"> </span><span class="ch">true</span></a></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb169-1" title="1">  bookdown:<span class="fu">:pdf_document2:</span></a>
+<a class="sourceLine" id="cb169-2" title="2">    <span class="fu">toc:</span><span class="at"> </span><span class="ch">true</span></a>
+<a class="sourceLine" id="cb169-3" title="3">    <span class="fu">toc_depth:</span><span class="at"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb169-4" title="4">    <span class="fu">number_sections:</span><span class="at"> </span><span class="ch">true</span></a></code></pre></div>
 <button onclick="myFunction(&#39;markdown_template&#39;)">
 Show template
 </button>
 <div id="markdown_template" style="display: none">
-<div class="sourceCode" id="cb166"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb166-1" title="1">---</a>
-<a class="sourceLine" id="cb166-2" title="2">project: CompSkills    #################################################</a>
-<a class="sourceLine" id="cb166-3" title="3">title:   Template</a>
-<a class="sourceLine" id="cb166-4" title="4">author:  &quot;<span class="ot">[Reto Zihlmann](https://retodomax.github.io/)</span>&quot;</a>
-<a class="sourceLine" id="cb166-5" title="5">date:    &quot;2020-02-28&quot;</a>
-<a class="sourceLine" id="cb166-6" title="6">output:</a>
-<a class="sourceLine" id="cb166-7" title="7">  bookdown::html_document2:</a>
-<a class="sourceLine" id="cb166-8" title="8"><span class="bn">    toc: true</span></a>
-<a class="sourceLine" id="cb166-9" title="9"><span class="bn">    toc_depth: 3</span></a>
-<a class="sourceLine" id="cb166-10" title="10"><span class="bn">    toc_float: true</span></a>
-<a class="sourceLine" id="cb166-11" title="11">bibliography: [bib_zotero.bib, bib_packages.bib]</a>
-<a class="sourceLine" id="cb166-12" title="12">link-citations: true</a>
-<a class="sourceLine" id="cb166-13" title="13">---</a>
-<a class="sourceLine" id="cb166-14" title="14"></a>
-<a class="sourceLine" id="cb166-15" title="15"><span class="bn">```{r, setup, include=FALSE}</span></a>
-<a class="sourceLine" id="cb166-16" title="16"><span class="bn">knitr::opts_chunk$set(comment = &quot;&quot;,</span></a>
-<a class="sourceLine" id="cb166-17" title="17"><span class="bn">                      tidy = TRUE,</span></a>
-<a class="sourceLine" id="cb166-18" title="18"><span class="bn">                      fig.align = &quot;left&quot;,</span></a>
-<a class="sourceLine" id="cb166-19" title="19"><span class="bn">                      out.width = &quot;100%&quot;,</span></a>
-<a class="sourceLine" id="cb166-20" title="20"><span class="bn">                      echo = FALSE,</span></a>
-<a class="sourceLine" id="cb166-21" title="21"><span class="bn">                      warning = FALSE,</span></a>
-<a class="sourceLine" id="cb166-22" title="22"><span class="bn">                      message = FALSE,</span></a>
-<a class="sourceLine" id="cb166-23" title="23"><span class="bn">                      error = FALSE)</span></a>
-<a class="sourceLine" id="cb166-24" title="24"><span class="bn">```</span></a>
-<a class="sourceLine" id="cb166-25" title="25"></a>
-<a class="sourceLine" id="cb166-26" title="26"><span class="bn">```{r, package-bib, include=FALSE}</span></a>
-<a class="sourceLine" id="cb166-27" title="27"><span class="bn"># automatically create a bib database for R packages</span></a>
-<a class="sourceLine" id="cb166-28" title="28"><span class="bn">knitr::write_bib(c(</span></a>
-<a class="sourceLine" id="cb166-29" title="29"><span class="bn">  .packages(), &#39;bookdown&#39;, &#39;knitr&#39;, &#39;rmarkdown&#39;, &quot;mgcv&quot;</span></a>
-<a class="sourceLine" id="cb166-30" title="30"><span class="bn">), &#39;bib_packages.bib&#39;)</span></a>
-<a class="sourceLine" id="cb166-31" title="31"><span class="bn">```</span></a>
-<a class="sourceLine" id="cb166-32" title="32"></a>
-<a class="sourceLine" id="cb166-33" title="33"></a>
-<a class="sourceLine" id="cb166-34" title="34">&lt;!--<span class="co"> CSS Stype for Figure caption --&gt;</span></a>
-<a class="sourceLine" id="cb166-35" title="35">&lt;style&gt;</a>
-<a class="sourceLine" id="cb166-36" title="36">p.caption {</a>
-<a class="sourceLine" id="cb166-37" title="37">  color: gray;</a>
-<a class="sourceLine" id="cb166-38" title="38">  font-size: 0.7em;</a>
-<a class="sourceLine" id="cb166-39" title="39">  padding-bottom: 30px;</a>
-<a class="sourceLine" id="cb166-40" title="40">}</a>
-<a class="sourceLine" id="cb166-41" title="41">&lt;/style&gt;</a>
-<a class="sourceLine" id="cb166-42" title="42"></a>
-<a class="sourceLine" id="cb166-43" title="43"></a>
-<a class="sourceLine" id="cb166-44" title="44"><span class="fu"># Abstract {-}</span></a>
-<a class="sourceLine" id="cb166-45" title="45"></a>
-<a class="sourceLine" id="cb166-46" title="46">Here is some small abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb166-47" title="47"></a>
-<a class="sourceLine" id="cb166-48" title="48"></a>
-<a class="sourceLine" id="cb166-49" title="49"><span class="fu"># Introduction {#intro}</span></a>
-<a class="sourceLine" id="cb166-50" title="50"></a>
-<a class="sourceLine" id="cb166-51" title="51">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb166-52" title="52"></a>
-<a class="sourceLine" id="cb166-53" title="53">1. <span class="fl">What is the first research question?</span></a>
-<a class="sourceLine" id="cb166-54" title="54"><span class="fl">2. How should we answer it?</span></a>
-<a class="sourceLine" id="cb166-55" title="55"><span class="fl">3. What is the third research question?</span></a>
-<a class="sourceLine" id="cb166-56" title="56"></a>
-<a class="sourceLine" id="cb166-57" title="57"></a>
-<a class="sourceLine" id="cb166-58" title="58"><span class="fu"># Method {#method}</span></a>
-<a class="sourceLine" id="cb166-59" title="59"></a>
-<a class="sourceLine" id="cb166-60" title="60"><span class="fu">## Idea {#idea}</span></a>
-<a class="sourceLine" id="cb166-61" title="61"></a>
-<a class="sourceLine" id="cb166-62" title="62">Lorem ipsum dolor sit amet, consectetur adipiscing elit (see <span class="ot">[here](https://www.google.ch/))</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Some inline equation $h = f(x)$ in the middle of text. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb166-63" title="63"></a>
-<a class="sourceLine" id="cb166-64" title="64">$$</a>
-<a class="sourceLine" id="cb166-65" title="65">a^2 + b^2 = c^2</a>
-<a class="sourceLine" id="cb166-66" title="66">(\#eq:pythagoras)</a>
-<a class="sourceLine" id="cb166-67" title="67">$$</a>
-<a class="sourceLine" id="cb166-68" title="68"></a>
-<a class="sourceLine" id="cb166-69" title="69">As you can see in Equation \@ref(eq:pythagoras), lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb166-70" title="70"></a>
-<a class="sourceLine" id="cb166-71" title="71"></a>
-<a class="sourceLine" id="cb166-72" title="72"><span class="bn">```{r, someCalculations, echo = T}</span></a>
-<a class="sourceLine" id="cb166-73" title="73"><span class="bn">x &lt;- 5.012345678901234567890</span></a>
-<a class="sourceLine" id="cb166-74" title="74"><span class="bn">y &lt;- 1:20</span></a>
-<a class="sourceLine" id="cb166-75" title="75"><span class="bn">```</span></a>
-<a class="sourceLine" id="cb166-76" title="76"></a>
-<a class="sourceLine" id="cb166-77" title="77"></a>
-<a class="sourceLine" id="cb166-78" title="78">In this text we use the variable $x$ and write it  8.747, 10.367,  8.329, 13.191, 10.659,  8.359, 10.975, 11.477, 11.152,  9.389, 13.024, 10.780,  8.758,  5.571, 12.250,  9.910,  9.968, 11.888, 11.642, 11.188, 11.838, 11.564, 10.149,  6.021, 11.240,  9.888,  9.688,  7.058,  9.044, 10.836, 12.717,  9.794, 10.775,  9.892,  7.246,  9.170,  9.211,  9.881, 12.200, 11.526,  9.671,  9.493, 11.394, 11.113,  8.622,  8.585, 10.729, 11.537,  9.775, 11.762 inline in text. Now a picture</a>
-<a class="sourceLine" id="cb166-79" title="79"></a>
-<a class="sourceLine" id="cb166-80" title="80"></a>
-<a class="sourceLine" id="cb166-81" title="81">(ref:resPr3) This is the figure caption. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure.</a>
-<a class="sourceLine" id="cb166-82" title="82"></a>
-<a class="sourceLine" id="cb166-83" title="83"><span class="fu">## Calcultion {#calc}</span></a>
-<a class="sourceLine" id="cb166-84" title="84"></a>
-<a class="sourceLine" id="cb166-85" title="85"><span class="bn">```{r, figPoints, fig.cap=&quot;(ref:resPr3)&quot;}</span></a>
-<a class="sourceLine" id="cb166-86" title="86"><span class="bn">plot(1:10)</span></a>
-<a class="sourceLine" id="cb166-87" title="87"><span class="bn">```</span></a>
-<a class="sourceLine" id="cb166-88" title="88"></a>
-<a class="sourceLine" id="cb166-89" title="89"></a>
-<a class="sourceLine" id="cb166-90" title="90"></a>
-<a class="sourceLine" id="cb166-91" title="91">Now we continue with some text. As you can see in Figure \@ref(fig:figPoints) there are 10 points. The same was also decribed in Section \@ref(intro) or in Equation \@ref(eq:pythagoras) or in the package <span class="bn">`rmarkdown`</span> [see @R-bookdown]. The second way to make References [@R-mgcv]. For the third way see @R-knitr.</a>
-<a class="sourceLine" id="cb166-92" title="92"></a>
-<a class="sourceLine" id="cb166-93" title="93"></a>
-<a class="sourceLine" id="cb166-94" title="94"><span class="fu"># Discussion {#disc}</span></a>
-<a class="sourceLine" id="cb166-95" title="95"></a>
-<a class="sourceLine" id="cb166-96" title="96">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb166-97" title="97"></a>
-<a class="sourceLine" id="cb166-98" title="98">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
-<a class="sourceLine" id="cb166-99" title="99"></a>
-<a class="sourceLine" id="cb166-100" title="100"><span class="bn">```{r}</span></a>
-<a class="sourceLine" id="cb166-101" title="101"><span class="bn">library(magrittr)</span></a>
-<a class="sourceLine" id="cb166-102" title="102"><span class="bn">library(kableExtra)</span></a>
-<a class="sourceLine" id="cb166-103" title="103"><span class="bn">dt &lt;- mtcars[1:5, 1:6]</span></a>
-<a class="sourceLine" id="cb166-104" title="104"><span class="bn">kable(dt,</span></a>
-<a class="sourceLine" id="cb166-105" title="105"><span class="bn">      digits = 3,</span></a>
-<a class="sourceLine" id="cb166-106" title="106"><span class="bn">      caption = &quot;Estimated motor current and standard deviation for each impeller at the two operating points&quot;) %&gt;%</span></a>
-<a class="sourceLine" id="cb166-107" title="107"><span class="bn">  kable_styling(&quot;striped&quot;,</span></a>
-<a class="sourceLine" id="cb166-108" title="108"><span class="bn">                full_width = F,</span></a>
-<a class="sourceLine" id="cb166-109" title="109"><span class="bn">                position = &quot;left&quot;) %&gt;%</span></a>
-<a class="sourceLine" id="cb166-110" title="110"><span class="bn">  add_header_above(c(&quot; &quot; = 1, &quot;Group 1&quot; = 2, &quot;Group 2&quot; = 2, &quot;Group 3&quot; = 2))</span></a>
-<a class="sourceLine" id="cb166-111" title="111"><span class="bn">```</span></a>
-<a class="sourceLine" id="cb166-112" title="112"></a>
-<a class="sourceLine" id="cb166-113" title="113"></a>
-<a class="sourceLine" id="cb166-114" title="114"></a>
-<a class="sourceLine" id="cb166-115" title="115"></a>
-<a class="sourceLine" id="cb166-116" title="116"></a>
-<a class="sourceLine" id="cb166-117" title="117"><span class="fu"># References {#ref}</span></a></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb170-1" title="1">---</a>
+<a class="sourceLine" id="cb170-2" title="2">project: CompSkills    #################################################</a>
+<a class="sourceLine" id="cb170-3" title="3">title:   Template</a>
+<a class="sourceLine" id="cb170-4" title="4">author:  &quot;<span class="ot">[Reto Zihlmann](https://retodomax.github.io/)</span>&quot;</a>
+<a class="sourceLine" id="cb170-5" title="5">date:    &quot;2020-02-29&quot;</a>
+<a class="sourceLine" id="cb170-6" title="6">output:</a>
+<a class="sourceLine" id="cb170-7" title="7">  bookdown::html_document2:</a>
+<a class="sourceLine" id="cb170-8" title="8"><span class="bn">    toc: true</span></a>
+<a class="sourceLine" id="cb170-9" title="9"><span class="bn">    toc_depth: 3</span></a>
+<a class="sourceLine" id="cb170-10" title="10"><span class="bn">    toc_float: true</span></a>
+<a class="sourceLine" id="cb170-11" title="11">bibliography: [bib_zotero.bib, bib_packages.bib]</a>
+<a class="sourceLine" id="cb170-12" title="12">link-citations: true</a>
+<a class="sourceLine" id="cb170-13" title="13">---</a>
+<a class="sourceLine" id="cb170-14" title="14"></a>
+<a class="sourceLine" id="cb170-15" title="15"><span class="bn">```{r, setup, include=FALSE}</span></a>
+<a class="sourceLine" id="cb170-16" title="16"><span class="bn">knitr::opts_chunk$set(comment = &quot;&quot;,</span></a>
+<a class="sourceLine" id="cb170-17" title="17"><span class="bn">                      tidy = TRUE,</span></a>
+<a class="sourceLine" id="cb170-18" title="18"><span class="bn">                      fig.align = &quot;left&quot;,</span></a>
+<a class="sourceLine" id="cb170-19" title="19"><span class="bn">                      out.width = &quot;100%&quot;,</span></a>
+<a class="sourceLine" id="cb170-20" title="20"><span class="bn">                      echo = FALSE,</span></a>
+<a class="sourceLine" id="cb170-21" title="21"><span class="bn">                      warning = FALSE,</span></a>
+<a class="sourceLine" id="cb170-22" title="22"><span class="bn">                      message = FALSE,</span></a>
+<a class="sourceLine" id="cb170-23" title="23"><span class="bn">                      error = FALSE)</span></a>
+<a class="sourceLine" id="cb170-24" title="24"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb170-25" title="25"></a>
+<a class="sourceLine" id="cb170-26" title="26"><span class="bn">```{r, package-bib, include=FALSE}</span></a>
+<a class="sourceLine" id="cb170-27" title="27"><span class="bn"># automatically create a bib database for R packages</span></a>
+<a class="sourceLine" id="cb170-28" title="28"><span class="bn">knitr::write_bib(c(</span></a>
+<a class="sourceLine" id="cb170-29" title="29"><span class="bn">  .packages(), &#39;bookdown&#39;, &#39;knitr&#39;, &#39;rmarkdown&#39;, &quot;mgcv&quot;</span></a>
+<a class="sourceLine" id="cb170-30" title="30"><span class="bn">), &#39;bib_packages.bib&#39;)</span></a>
+<a class="sourceLine" id="cb170-31" title="31"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb170-32" title="32"></a>
+<a class="sourceLine" id="cb170-33" title="33"></a>
+<a class="sourceLine" id="cb170-34" title="34">&lt;!--<span class="co"> CSS Stype for Figure caption --&gt;</span></a>
+<a class="sourceLine" id="cb170-35" title="35">&lt;style&gt;</a>
+<a class="sourceLine" id="cb170-36" title="36">p.caption {</a>
+<a class="sourceLine" id="cb170-37" title="37">  color: gray;</a>
+<a class="sourceLine" id="cb170-38" title="38">  font-size: 0.7em;</a>
+<a class="sourceLine" id="cb170-39" title="39">  padding-bottom: 30px;</a>
+<a class="sourceLine" id="cb170-40" title="40">}</a>
+<a class="sourceLine" id="cb170-41" title="41">&lt;/style&gt;</a>
+<a class="sourceLine" id="cb170-42" title="42"></a>
+<a class="sourceLine" id="cb170-43" title="43"></a>
+<a class="sourceLine" id="cb170-44" title="44"><span class="fu"># Abstract {-}</span></a>
+<a class="sourceLine" id="cb170-45" title="45"></a>
+<a class="sourceLine" id="cb170-46" title="46">Here is some small abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb170-47" title="47"></a>
+<a class="sourceLine" id="cb170-48" title="48"></a>
+<a class="sourceLine" id="cb170-49" title="49"><span class="fu"># Introduction {#intro}</span></a>
+<a class="sourceLine" id="cb170-50" title="50"></a>
+<a class="sourceLine" id="cb170-51" title="51">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb170-52" title="52"></a>
+<a class="sourceLine" id="cb170-53" title="53">1. <span class="fl">What is the first research question?</span></a>
+<a class="sourceLine" id="cb170-54" title="54"><span class="fl">2. How should we answer it?</span></a>
+<a class="sourceLine" id="cb170-55" title="55"><span class="fl">3. What is the third research question?</span></a>
+<a class="sourceLine" id="cb170-56" title="56"></a>
+<a class="sourceLine" id="cb170-57" title="57"></a>
+<a class="sourceLine" id="cb170-58" title="58"><span class="fu"># Method {#method}</span></a>
+<a class="sourceLine" id="cb170-59" title="59"></a>
+<a class="sourceLine" id="cb170-60" title="60"><span class="fu">## Idea {#idea}</span></a>
+<a class="sourceLine" id="cb170-61" title="61"></a>
+<a class="sourceLine" id="cb170-62" title="62">Lorem ipsum dolor sit amet, consectetur adipiscing elit (see <span class="ot">[here](https://www.google.ch/))</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Some inline equation $h = f(x)$ in the middle of text. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb170-63" title="63"></a>
+<a class="sourceLine" id="cb170-64" title="64">$$</a>
+<a class="sourceLine" id="cb170-65" title="65">a^2 + b^2 = c^2</a>
+<a class="sourceLine" id="cb170-66" title="66">(\#eq:pythagoras)</a>
+<a class="sourceLine" id="cb170-67" title="67">$$</a>
+<a class="sourceLine" id="cb170-68" title="68"></a>
+<a class="sourceLine" id="cb170-69" title="69">As you can see in Equation \@ref(eq:pythagoras), lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb170-70" title="70"></a>
+<a class="sourceLine" id="cb170-71" title="71"></a>
+<a class="sourceLine" id="cb170-72" title="72"><span class="bn">```{r, someCalculations, echo = T}</span></a>
+<a class="sourceLine" id="cb170-73" title="73"><span class="bn">x &lt;- 5.012345678901234567890</span></a>
+<a class="sourceLine" id="cb170-74" title="74"><span class="bn">y &lt;- 1:20</span></a>
+<a class="sourceLine" id="cb170-75" title="75"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb170-76" title="76"></a>
+<a class="sourceLine" id="cb170-77" title="77"></a>
+<a class="sourceLine" id="cb170-78" title="78">In this text we use the variable $x$ and write it  8.747, 10.367,  8.329, 13.191, 10.659,  8.359, 10.975, 11.477, 11.152,  9.389, 13.024, 10.780,  8.758,  5.571, 12.250,  9.910,  9.968, 11.888, 11.642, 11.188, 11.838, 11.564, 10.149,  6.021, 11.240,  9.888,  9.688,  7.058,  9.044, 10.836, 12.717,  9.794, 10.775,  9.892,  7.246,  9.170,  9.211,  9.881, 12.200, 11.526,  9.671,  9.493, 11.394, 11.113,  8.622,  8.585, 10.729, 11.537,  9.775, 11.762 inline in text. Now a picture</a>
+<a class="sourceLine" id="cb170-79" title="79"></a>
+<a class="sourceLine" id="cb170-80" title="80"></a>
+<a class="sourceLine" id="cb170-81" title="81">(ref:resPr3) This is the figure caption. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure.</a>
+<a class="sourceLine" id="cb170-82" title="82"></a>
+<a class="sourceLine" id="cb170-83" title="83"><span class="fu">## Calcultion {#calc}</span></a>
+<a class="sourceLine" id="cb170-84" title="84"></a>
+<a class="sourceLine" id="cb170-85" title="85"><span class="bn">```{r, figPoints, fig.cap=&quot;(ref:resPr3)&quot;}</span></a>
+<a class="sourceLine" id="cb170-86" title="86"><span class="bn">plot(1:10)</span></a>
+<a class="sourceLine" id="cb170-87" title="87"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb170-88" title="88"></a>
+<a class="sourceLine" id="cb170-89" title="89"></a>
+<a class="sourceLine" id="cb170-90" title="90"></a>
+<a class="sourceLine" id="cb170-91" title="91">Now we continue with some text. As you can see in Figure \@ref(fig:figPoints) there are 10 points. The same was also decribed in Section \@ref(intro) or in Equation \@ref(eq:pythagoras) or in the package <span class="bn">`rmarkdown`</span> [see @R-bookdown]. The second way to make References [@R-mgcv]. For the third way see @R-knitr.</a>
+<a class="sourceLine" id="cb170-92" title="92"></a>
+<a class="sourceLine" id="cb170-93" title="93"></a>
+<a class="sourceLine" id="cb170-94" title="94"><span class="fu"># Discussion {#disc}</span></a>
+<a class="sourceLine" id="cb170-95" title="95"></a>
+<a class="sourceLine" id="cb170-96" title="96">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb170-97" title="97"></a>
+<a class="sourceLine" id="cb170-98" title="98">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+<a class="sourceLine" id="cb170-99" title="99"></a>
+<a class="sourceLine" id="cb170-100" title="100"><span class="bn">```{r}</span></a>
+<a class="sourceLine" id="cb170-101" title="101"><span class="bn">library(magrittr)</span></a>
+<a class="sourceLine" id="cb170-102" title="102"><span class="bn">library(kableExtra)</span></a>
+<a class="sourceLine" id="cb170-103" title="103"><span class="bn">dt &lt;- mtcars[1:5, 1:6]</span></a>
+<a class="sourceLine" id="cb170-104" title="104"><span class="bn">kable(dt,</span></a>
+<a class="sourceLine" id="cb170-105" title="105"><span class="bn">      digits = 3,</span></a>
+<a class="sourceLine" id="cb170-106" title="106"><span class="bn">      caption = &quot;Estimated motor current and standard deviation for each impeller at the two operating points&quot;) %&gt;%</span></a>
+<a class="sourceLine" id="cb170-107" title="107"><span class="bn">  kable_styling(&quot;striped&quot;,</span></a>
+<a class="sourceLine" id="cb170-108" title="108"><span class="bn">                full_width = F,</span></a>
+<a class="sourceLine" id="cb170-109" title="109"><span class="bn">                position = &quot;left&quot;) %&gt;%</span></a>
+<a class="sourceLine" id="cb170-110" title="110"><span class="bn">  add_header_above(c(&quot; &quot; = 1, &quot;Group 1&quot; = 2, &quot;Group 2&quot; = 2, &quot;Group 3&quot; = 2))</span></a>
+<a class="sourceLine" id="cb170-111" title="111"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb170-112" title="112"></a>
+<a class="sourceLine" id="cb170-113" title="113"></a>
+<a class="sourceLine" id="cb170-114" title="114"></a>
+<a class="sourceLine" id="cb170-115" title="115"></a>
+<a class="sourceLine" id="cb170-116" title="116"></a>
+<a class="sourceLine" id="cb170-117" title="117"><span class="fu"># References {#ref}</span></a></code></pre></div>
 </div>
 <p>Good resources for additional tips/templates</p>
 <ul>
@@ -1009,7 +1022,7 @@ Show template
 </ul>
 </div>
 <div id="basic-elements" class="section level2">
-<h2><span class="header-section-number">25.9</span> Basic Elements</h2>
+<h2><span class="header-section-number">27.9</span> Basic Elements</h2>
 <table class = "comtab">
 <col width="20%">
 <col width="40%">
@@ -1096,8 +1109,8 @@ Superscript<sup>2</sup>
 <del>Strikethrough</del>
 </td>
 <td>
-<div class="sourceCode" id="cb167"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb167-1" title="1">\usepackage{ulem}</a>
-<a class="sourceLine" id="cb167-2" title="2">\sout{Strikethrough}</a></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb171-1" title="1">\usepackage{ulem}</a>
+<a class="sourceLine" id="cb171-2" title="2">\sout{Strikethrough}</a></code></pre></div>
 </td>
 <td>
 <code>~~strikethrough~~</code>
@@ -1185,10 +1198,10 @@ Inline eqation <span class="math inline">\(A = \pi*r^2\)</span>
 Equation block
 </td>
 <td>
-<div class="sourceCode" id="cb168"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb168-1" title="1">\usepackage{amsmath}</a>
-<a class="sourceLine" id="cb168-2" title="2">\begin{align*} </a>
-<a class="sourceLine" id="cb168-3" title="3"><span class="bn">    E=mc^2</span></a>
-<a class="sourceLine" id="cb168-4" title="4">\end{align*}</a></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb172-1" title="1">\usepackage{amsmath}</a>
+<a class="sourceLine" id="cb172-2" title="2">\begin{align*} </a>
+<a class="sourceLine" id="cb172-3" title="3"><span class="bn">    E=mc^2</span></a>
+<a class="sourceLine" id="cb172-4" title="4">\end{align*}</a></code></pre></div>
 </td>
 <td>
 <code>$$E=mc^2$$</code>
@@ -1199,20 +1212,20 @@ Equation block
 Equation block with number
 <span class="math display" id="eq:pythagoras">\[
 a^2 + b^2 = c^2
-\tag{25.1}
+\tag{27.1}
 \]</span>
 </td>
 <td>
-<div class="sourceCode" id="cb169"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb169-1" title="1">\usepackage{amsmath}</a>
-<a class="sourceLine" id="cb169-2" title="2">\begin{align} </a>
-<a class="sourceLine" id="cb169-3" title="3"><span class="bn">    a^2 + b^2 = c^2</span></a>
-<a class="sourceLine" id="cb169-4" title="4">\end{align}</a></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb173-1" title="1">\usepackage{amsmath}</a>
+<a class="sourceLine" id="cb173-2" title="2">\begin{align} </a>
+<a class="sourceLine" id="cb173-3" title="3"><span class="bn">    a^2 + b^2 = c^2</span></a>
+<a class="sourceLine" id="cb173-4" title="4">\end{align}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb170"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb170-1" title="1">$$</a>
-<a class="sourceLine" id="cb170-2" title="2">a^2 + b^2 = c^2</a>
-<a class="sourceLine" id="cb170-3" title="3">(\#eq:pythagoras)</a>
-<a class="sourceLine" id="cb170-4" title="4">$$</a></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb174-1" title="1">$$</a>
+<a class="sourceLine" id="cb174-2" title="2">a^2 + b^2 = c^2</a>
+<a class="sourceLine" id="cb174-3" title="3">(\#eq:pythagoras)</a>
+<a class="sourceLine" id="cb174-4" title="4">$$</a></code></pre></div>
 </td>
 </tr>
 <tr>
@@ -1253,10 +1266,10 @@ Comments
 Multiline comment
 </td>
 <td>
-<div class="sourceCode" id="cb171"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb171-1" title="1">\usepackage{verbatim}</a>
-<a class="sourceLine" id="cb171-2" title="2">\begin{comment}</a>
-<a class="sourceLine" id="cb171-3" title="3"><span class="bn">    comment</span></a>
-<a class="sourceLine" id="cb171-4" title="4">\end{comment}</a></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb175-1" title="1">\usepackage{verbatim}</a>
+<a class="sourceLine" id="cb175-2" title="2">\begin{comment}</a>
+<a class="sourceLine" id="cb175-3" title="3"><span class="bn">    comment</span></a>
+<a class="sourceLine" id="cb175-4" title="4">\end{comment}</a></code></pre></div>
 </td>
 <td>
 <code>&lt;!--comment</code> <br>
@@ -1294,12 +1307,12 @@ Multiline comment
 </td>
 <td></li>
 </ul>
-<div class="sourceCode" id="cb172"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb172-1" title="1">\begin{itemize}</a>
-<a class="sourceLine" id="cb172-2" title="2">  \item Unordered list</a>
-<a class="sourceLine" id="cb172-3" title="3">  \begin{itemize}</a>
-<a class="sourceLine" id="cb172-4" title="4"><span class="bn">      \item Second level</span></a>
-<a class="sourceLine" id="cb172-5" title="5">  \end{itemize}</a>
-<a class="sourceLine" id="cb172-6" title="6">\end{itemize}</a></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb176-1" title="1">\begin{itemize}</a>
+<a class="sourceLine" id="cb176-2" title="2">  \item Unordered list</a>
+<a class="sourceLine" id="cb176-3" title="3">  \begin{itemize}</a>
+<a class="sourceLine" id="cb176-4" title="4"><span class="bn">      \item Second level</span></a>
+<a class="sourceLine" id="cb176-5" title="5">  \end{itemize}</a>
+<a class="sourceLine" id="cb176-6" title="6">\end{itemize}</a></code></pre></div>
 </td>
 <td>
 <code>* Unordered list</code> <br>
@@ -1313,9 +1326,9 @@ Multiline comment
 </td>
 <td></li>
 </ol>
-<div class="sourceCode" id="cb173"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb173-1" title="1">\begin{enumerate}</a>
-<a class="sourceLine" id="cb173-2" title="2">  \item Ordered list</a>
-<a class="sourceLine" id="cb173-3" title="3">\end{enumerate}</a></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb177-1" title="1">\begin{enumerate}</a>
+<a class="sourceLine" id="cb177-2" title="2">  \item Ordered list</a>
+<a class="sourceLine" id="cb177-3" title="3">\end{enumerate}</a></code></pre></div>
 </td>
 <td>
 <code>1. Ordered list</code>
@@ -1328,9 +1341,9 @@ block quote
 </td>
 <td>
 </blockquote>
-<div class="sourceCode" id="cb174"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb174-1" title="1">\begin{quote}</a>
-<a class="sourceLine" id="cb174-2" title="2">Text</a>
-<a class="sourceLine" id="cb174-3" title="3">\end{quote}</a></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb178-1" title="1">\begin{quote}</a>
+<a class="sourceLine" id="cb178-2" title="2">Text</a>
+<a class="sourceLine" id="cb178-3" title="3">\end{quote}</a></code></pre></div>
 </td>
 <td>
 <code>&gt; Text</code>
@@ -1352,8 +1365,8 @@ Horizontal line
 Small image <img src="figures/R_logo2.png" />
 </td>
 <td>
-<div class="sourceCode" id="cb175"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb175-1" title="1">\usepackage{graphicx}</a>
-<a class="sourceLine" id="cb175-2" title="2">\includegraphics{R_logo2}</a></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb179-1" title="1">\usepackage{graphicx}</a>
+<a class="sourceLine" id="cb179-2" title="2">\includegraphics{R_logo2}</a></code></pre></div>
 </td>
 <td>
 <code>![](R_logo2.png)</code>
@@ -1364,18 +1377,18 @@ Small image <img src="figures/R_logo2.png" />
 Formal image <img src="figures/R_logo2.png" />
 </td>
 <td>
-<div class="sourceCode" id="cb176"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb176-1" title="1">\usepackage{graphicx}</a>
-<a class="sourceLine" id="cb176-2" title="2">\begin{figure}</a>
-<a class="sourceLine" id="cb176-3" title="3">\centering</a>
-<a class="sourceLine" id="cb176-4" title="4">\includegraphics[width=0.25\textwidth]{R_logo2}</a>
-<a class="sourceLine" id="cb176-5" title="5">\caption{Figure caption}</a>
-<a class="sourceLine" id="cb176-6" title="6">\label{fig:mesh1}</a>
-<a class="sourceLine" id="cb176-7" title="7">\end{figure}</a></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb180-1" title="1">\usepackage{graphicx}</a>
+<a class="sourceLine" id="cb180-2" title="2">\begin{figure}</a>
+<a class="sourceLine" id="cb180-3" title="3">\centering</a>
+<a class="sourceLine" id="cb180-4" title="4">\includegraphics[width=0.25\textwidth]{R_logo2}</a>
+<a class="sourceLine" id="cb180-5" title="5">\caption{Figure caption}</a>
+<a class="sourceLine" id="cb180-6" title="6">\label{fig:mesh1}</a>
+<a class="sourceLine" id="cb180-7" title="7">\end{figure}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb177"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb177-1" title="1"><span class="bn">```{r, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></a>
-<a class="sourceLine" id="cb177-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/R_logo2.png&#39;)</span></a>
-<a class="sourceLine" id="cb177-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb181-1" title="1"><span class="bn">```{r, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></a>
+<a class="sourceLine" id="cb181-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/R_logo2.png&#39;)</span></a>
+<a class="sourceLine" id="cb181-3" title="3"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -1397,16 +1410,16 @@ Label section
 Label equation
 </td>
 <td>
-<div class="sourceCode" id="cb178"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb178-1" title="1">\begin{align}</a>
-<a class="sourceLine" id="cb178-2" title="2">  a^2 + b^2 = c^2</a>
-<a class="sourceLine" id="cb178-3" title="3">  \label{eq:1}</a>
-<a class="sourceLine" id="cb178-4" title="4">\end{align}</a></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb182-1" title="1">\begin{align}</a>
+<a class="sourceLine" id="cb182-2" title="2">  a^2 + b^2 = c^2</a>
+<a class="sourceLine" id="cb182-3" title="3">  \label{eq:1}</a>
+<a class="sourceLine" id="cb182-4" title="4">\end{align}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb179"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb179-1" title="1">$$</a>
-<a class="sourceLine" id="cb179-2" title="2">a^2 + b^2 = c^2</a>
-<a class="sourceLine" id="cb179-3" title="3">(\#eq:pythagoras)</a>
-<a class="sourceLine" id="cb179-4" title="4">$$</a></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb183-1" title="1">$$</a>
+<a class="sourceLine" id="cb183-2" title="2">a^2 + b^2 = c^2</a>
+<a class="sourceLine" id="cb183-3" title="3">(\#eq:pythagoras)</a>
+<a class="sourceLine" id="cb183-4" title="4">$$</a></code></pre></div>
 </td>
 </tr>
 <tr>
@@ -1414,15 +1427,15 @@ Label equation
 Label figure
 </td>
 <td>
-<div class="sourceCode" id="cb180"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb180-1" title="1">\begin{figure}</a>
-<a class="sourceLine" id="cb180-2" title="2">...</a>
-<a class="sourceLine" id="cb180-3" title="3">\label{fig:meshy}</a>
-<a class="sourceLine" id="cb180-4" title="4">\end{figure}</a></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb184-1" title="1">\begin{figure}</a>
+<a class="sourceLine" id="cb184-2" title="2">...</a>
+<a class="sourceLine" id="cb184-3" title="3">\label{fig:meshy}</a>
+<a class="sourceLine" id="cb184-4" title="4">\end{figure}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb181"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb181-1" title="1"><span class="bn">```{r, label, fig.cap=&#39;...&#39;}</span></a>
-<a class="sourceLine" id="cb181-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
-<a class="sourceLine" id="cb181-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb185-1" title="1"><span class="bn">```{r, label, fig.cap=&#39;...&#39;}</span></a>
+<a class="sourceLine" id="cb185-2" title="2"><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></a>
+<a class="sourceLine" id="cb185-3" title="3"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -1433,15 +1446,15 @@ Label figure
 Label table
 </td>
 <td>
-<div class="sourceCode" id="cb182"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb182-1" title="1">\begin{longtable}[]{@{}lll@{}}</a>
-<a class="sourceLine" id="cb182-2" title="2">...</a>
-<a class="sourceLine" id="cb182-3" title="3">\label{tab:pros}</a>
-<a class="sourceLine" id="cb182-4" title="4">\end{longtable}</a></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb186-1" title="1">\begin{longtable}[]{@{}lll@{}}</a>
+<a class="sourceLine" id="cb186-2" title="2">...</a>
+<a class="sourceLine" id="cb186-3" title="3">\label{tab:pros}</a>
+<a class="sourceLine" id="cb186-4" title="4">\end{longtable}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb183"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb183-1" title="1"><span class="bn">```{r, label}</span></a>
-<a class="sourceLine" id="cb183-2" title="2"><span class="bn">kableExtra::kable(...)</span></a>
-<a class="sourceLine" id="cb183-3" title="3"><span class="bn">```</span></a></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb187-1" title="1"><span class="bn">```{r, label}</span></a>
+<a class="sourceLine" id="cb187-2" title="2"><span class="bn">kableExtra::kable(...)</span></a>
+<a class="sourceLine" id="cb187-3" title="3"><span class="bn">```</span></a></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -1496,20 +1509,20 @@ Cross ref table
 Bibliography
 </td>
 <td>
-<div class="sourceCode" id="cb184"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb184-1" title="1">\usepackage{biblatex}</a>
-<a class="sourceLine" id="cb184-2" title="2">\addbibresource{sample.bib}</a>
-<a class="sourceLine" id="cb184-3" title="3">\begin{document}</a>
-<a class="sourceLine" id="cb184-4" title="4">...</a>
-<a class="sourceLine" id="cb184-5" title="5">\printbibliography</a>
-<a class="sourceLine" id="cb184-6" title="6">\end{document}</a></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb188-1" title="1">\usepackage{biblatex}</a>
+<a class="sourceLine" id="cb188-2" title="2">\addbibresource{sample.bib}</a>
+<a class="sourceLine" id="cb188-3" title="3">\begin{document}</a>
+<a class="sourceLine" id="cb188-4" title="4">...</a>
+<a class="sourceLine" id="cb188-5" title="5">\printbibliography</a>
+<a class="sourceLine" id="cb188-6" title="6">\end{document}</a></code></pre></div>
 </td>
 <td>
-<div class="sourceCode" id="cb185"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb185-1" title="1">---</a>
-<a class="sourceLine" id="cb185-2" title="2">title: Thesis</a>
-<a class="sourceLine" id="cb185-3" title="3">author: &quot;Reto Zihlmann&quot;</a>
-<a class="sourceLine" id="cb185-4" title="4">bibliography: [retoMT2018.bib]</a>
-<a class="sourceLine" id="cb185-5" title="5">...</a>
-<a class="sourceLine" id="cb185-6" title="6">---</a></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb189-1" title="1">---</a>
+<a class="sourceLine" id="cb189-2" title="2">title: Thesis</a>
+<a class="sourceLine" id="cb189-3" title="3">author: &quot;Reto Zihlmann&quot;</a>
+<a class="sourceLine" id="cb189-4" title="4">bibliography: [retoMT2018.bib]</a>
+<a class="sourceLine" id="cb189-5" title="5">...</a>
+<a class="sourceLine" id="cb189-6" title="6">---</a></code></pre></div>
 </td>
 </tr>
 <tr>
@@ -1544,17 +1557,17 @@ text <code>(ref:label)</code> text
 Tables
 </td>
 <td>
-<div class="sourceCode" id="cb186"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb186-1" title="1">\begin{longtable}[]{@{}lll@{}}</a>
-<a class="sourceLine" id="cb186-2" title="2">\caption{The caption}\\</a>
-<a class="sourceLine" id="cb186-3" title="3">\toprule</a>
-<a class="sourceLine" id="cb186-4" title="4">col1 &amp; col2 &amp; col3\\</a>
-<a class="sourceLine" id="cb186-5" title="5">\midrule</a>
-<a class="sourceLine" id="cb186-6" title="6">\endhead</a>
-<a class="sourceLine" id="cb186-7" title="7">1 &amp; 2 &amp; 3\\</a>
-<a class="sourceLine" id="cb186-8" title="8">1 &amp; 2 &amp; 3\\</a>
-<a class="sourceLine" id="cb186-9" title="9">\bottomrule</a>
-<a class="sourceLine" id="cb186-10" title="10">\label{tab:pros}</a>
-<a class="sourceLine" id="cb186-11" title="11">\end{longtable}</a></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb190-1" title="1">\begin{longtable}[]{@{}lll@{}}</a>
+<a class="sourceLine" id="cb190-2" title="2">\caption{The caption}\\</a>
+<a class="sourceLine" id="cb190-3" title="3">\toprule</a>
+<a class="sourceLine" id="cb190-4" title="4">col1 &amp; col2 &amp; col3\\</a>
+<a class="sourceLine" id="cb190-5" title="5">\midrule</a>
+<a class="sourceLine" id="cb190-6" title="6">\endhead</a>
+<a class="sourceLine" id="cb190-7" title="7">1 &amp; 2 &amp; 3\\</a>
+<a class="sourceLine" id="cb190-8" title="8">1 &amp; 2 &amp; 3\\</a>
+<a class="sourceLine" id="cb190-9" title="9">\bottomrule</a>
+<a class="sourceLine" id="cb190-10" title="10">\label{tab:pros}</a>
+<a class="sourceLine" id="cb190-11" title="11">\end{longtable}</a></code></pre></div>
 </td>
 <td>
 Rmarkdown
@@ -1581,7 +1594,7 @@ Rmarkdown
           </div>
         </div>
       </div>
-<a href="reproducible-research.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-studio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="bookdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -1613,7 +1626,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/R_Ref_Book/edit/master/62-writing.Rmd",
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/63-writing.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -1,5 +1,15 @@
 # Vectors {#vec}
 
+
+```{r, echo = FALSE, out.width='50%', fig.show='hold', fig.align='default'}
+knitr::include_graphics('figures/r_object2.png')
+knitr::include_graphics('figures/data-structures-overview.png')
+knitr::include_graphics('figures/vector_types.png')
+```
+
+
+vector_types.png
+
 Almost all data in R is stored in vectors. Most famous vector types are listed below
 
 |Vectors        |Description                                        |
@@ -39,6 +49,11 @@ Within atomic vectors there are 6 vector types
 * Complex  (`2+5i`)
 * Raw      (`48 65 6c 6c 6f` bits)
 
+```{block2, type='rmdcaution'}
+By default numbers are of type double. If you really want integers put `L` at end e.g. `typeof(1)` vs `typeof(1L)`.
+```
+
+
 | Action      | R command                  |
 |:------------|:-----------------------------------------------------------|
 | Create      | Create a vector with `c()`. The output of function `c()` is of a certain type. The type is determined by the following hierarchy (so called coercian = "Zwang") <br> NULL < raw < logical < integer < double < complex < character < list < expression|
@@ -54,6 +69,29 @@ Within atomic vectors there are 6 vector types
 | Check       | `is.list()`                          |
 | Coerce      | `as.list()`                          |
 | Unlist      | Make atomic vector out of list: `unlist()` |
+
+##### Subsetting lists
+
+* `[` extracts a sub-list, the result will always be a list
+* `[[` extracts a single component from a list
+* `$` is shorthand for extracting named elements of a list
+
+
+### Check type of vector
+
+* `typeof()`
+* `is_*()`
+
+|                  | lgl | int | dbl | chr | list |
+|------------------|-----|-----|-----|-----|------|
+| `is_logical()`   |  x  |     |     |     |      |
+| `is_integer()`   |     |  x  |     |     |      |
+| `is_double()`    |     |     |  x  |     |      |
+| `is_numeric()`   |     |  x  |  x  |     |      |
+| `is_character()` |     |     |     |  x  |      |
+| `is_atomic()`    |  x  |  x  |  x  |  x  |      |
+| `is_list()`      |     |     |     |     |  x   |
+| `is_vector()`    |  x  |  x  |  x  |  x  |  x   |
 
 
 ## Length {#length}
@@ -74,7 +112,19 @@ x
 attributes(x)
 ```
 
-set and change them with `names()`, `dim()`, `class()`, `unname()`, ... 
+Set and change them with
+
+* All at once
+    - `structure()`
+* Specific ones
+    - `names()` / `unname()`
+    - `dim()`
+    - `class()`
+
+```{r}
+x <- structure(1:10, names=letters[1:10], foo="bar", class="myclass")
+x
+```
 
 
 Three attributes  are **not** lost when object is modified
@@ -149,13 +199,23 @@ Higher dimensional generalization of `length()`, `names()` and `c()`
 
 Data frame columns can also contain lists and matrices, but it is better to use lists for this purpose.
 
-## Missing values
+
+
+
+## Special values
+
+|                  |  0  | Inf | NA  | NaN |
+|------------------|-----|-----|-----|-----|
+| `is.finite()`    |  x  |     |     |     |
+| `is.infinite()`  |     |  x  |     |     |
+| `is.na()`        |     |     |  x  |  x  |
+| `is.nan()`       |     |     |     |  x  |
+
+
+### Missing values
 
 Different types of `NA`
 
 * `NA_real_` (double)
 * `NA_integer_`
 * `NA_character_`
-
-
-

@@ -1,0 +1,107 @@
+# R Studio
+
+<a href="figures/03_pdf/rstudio-ide.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/rstudio-ide.jpg')
+```
+</a>
+
+
+## Shortcuts
+
+<table class = "deftab">
+  <tr>
+    <td>Execute line</td>
+    <td>Ctrl + Enter</td>
+  </tr>
+  <tr>
+    <td>Restart R session</td>
+    <td>Ctrl + Shift + F10</td>
+  </tr>
+  <tr>
+    <td>Clear workspace **(RZ)**</td>
+    <td>Ctrl + Shift + F8</td>
+  </tr>
+    <tr>
+    <td>Clear all plots **(RZ)**</td>
+    <td>Ctrl + Shift + F9</td>
+  </tr>
+  <tr>
+    <td>Go to script panel</td>
+    <td>Ctrl + 1</td>
+  </tr>
+  <tr>
+    <td>Go to console panel</td>
+    <td>Ctrl + 2</td>
+  </tr>
+  <tr>
+    <td>Clear console</td>
+    <td>Ctrl + L</td>
+  </tr>
+  <tr>
+    <td>Comment</td>
+    <td>Ctrl + Shift + C</td>
+  </tr>
+  <tr>
+    <td>Pipe</td>
+    <td>Ctrl + Shift + M</td>
+  </tr>
+  <tr>
+    <td>Assignment operator</td>
+    <td>Alt + -</td>
+  </tr>
+  <tr>
+    <td>Help</td>
+    <td>F1</td>
+  </tr>
+  <tr>
+    <td>**Sections**</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>New section</td>
+    <td>Ctrl + Shift + R</td>
+  </tr>
+  <tr>
+    <td>Fold all</td>
+    <td>Alt + O</td>
+  </tr>
+  <tr>
+    <td>Unfold all</td>
+    <td>Shift + Alt + O</td>
+  </tr>
+  <tr>
+    <td>**Mark**</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Mark</td>
+    <td>Shift + Left/Right/Up/Down</td>
+  </tr>
+  <tr>
+    <td>Mark all</td>
+    <td>Ctrl + Shift + Left/Right</td>
+  </tr>
+  <tr>
+    <td>**Markdown**</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Knit</td>
+    <td>Ctrl + Shift + K</td>
+  </tr>
+  <tr>
+    <td>Insert chunk</td>
+    <td>Ctrl + Alt + i</td>
+  </tr>
+</table>
+
+Shortcuts which are modified are marked with **(RZ)**
+
+Find all shortcuts [here](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
+
+
+## Version Control in RStudio
+
+See this <a href="figures/03_pdf/version_control_in_RStudio.pdf.pdf" target="_blank">pdf</a>
+

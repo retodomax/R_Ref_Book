@@ -170,7 +170,7 @@ knitr::include_graphics('figures/hex-rmarkdown.png')
 Chunk options
 
 * `fig.cap = "text"` Figure captation text or text reference
-* `fig.show='hold'` Show figures next to each other (if out.width < 50%)
+* `out.width < '50%', fig.show='hold', fig.align='default'` Show figures next to each other
     - Possible Bug: figures often are on top of each other
     - Always include `fig.align='default'` and it should work
 

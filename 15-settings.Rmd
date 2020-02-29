@@ -1,0 +1,14 @@
+# Settings
+
+* `options()` set and query global options which affect the way in which R computes and displays its results
+* `Sys.setenv()` set or unset environment variables
+* `sessionInfo()` print information about current R session
+* `par()` graphical parameters
+* `palette()` Current color palette
+
+
+```{r, eval=FALSE}
+options(digits = 3)          # by default 7 digits are printed
+Sys.setenv(LANGUAGE = "en")  # setting error language to english
+```
+

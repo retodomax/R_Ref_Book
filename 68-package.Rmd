@@ -1,0 +1,28 @@
+# Packages
+
+* `install.packages()` install package
+* `require()` load package for current R session
+* `library()` load package for current R session
+* `update.packages()` update packages
+* `citation()` cite R or packages
+
+## Package environment
+
+Each package has its own environment, which is added to the search path if the package is loaded
+
+* `search()` returns search path
+* `ls()` list object in certain environment
+* `find()` the environment from which a certain function comes
+
+```{r, eval=FALSE}
+search()      # returns search path
+ls(pos = 2)   # object contained in environment nr 2
+find("print") # Environment in which function "print" is defined
+```
+
+
+
+## Useful packages
+
+* `beepr` let computer beep
+

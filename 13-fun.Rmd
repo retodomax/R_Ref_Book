@@ -251,9 +251,18 @@ function_that_might_return_null() %||% default value
 ## Generic functions
 
 * Depending on the class of the first argument, different **methods** of a function are called by `UseMethod()`
-* All available methods of a functionname can be shown with `methods()`.
-* methods ending with an asterisks `*` are not exported in the namespace, meaning they should not explicitly be called by the user.
-    - get their source code with `getAnywhere()`
+
+* `class()` determines class of object
+* `is.*()` logic, if object is of class `*`
+* `methods()` return all available methods for a certain functionname **or** a certain class
+    - Methods ending with an asterisks `*` are not exported in the namespace, meaning they should not explicitly be called by the user.
+    - Get their source code with `getAnywhere()`
+
+```{r, eval = FALSE}
+methods(print)            # all methods for function name print
+methods(class = "matrix") # all methods for class matrix
+```
+
 ```{r}
 print
 head(methods(print))

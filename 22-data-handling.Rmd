@@ -10,7 +10,7 @@
 |`+`| Addition | `<` | less than | `!x` | logical NOT |
 |`-`| Subtraction | `>` | greater than | `x & y` | logical AND (vectorized)|
 |`*`| Multiplication | `<=` | less or equal | `x && y` | logical AND (single value)
-|`/`| Division | `>=` | greater or equal | `x | y` | logical OR (vectoriyed) |
+|`/`| Division | `>=` | greater or equal | `x | y` | logical OR (vectorized) |
 |`^`| Power of | `==` | equal | `x || y` | logical OR (single value) |
 |`%%`| Modulo | `!=` | unequal | `xor(x,y)` | logical exclusive OR |
 |`%/%`| Integer division | | | | |
@@ -83,7 +83,7 @@ knitr::include_graphics('figures/Date_time.png')
 | `%m` | Month (01-12)   | `%B` | Month (May)         |
 | `%d` | Day (01-31)     | `%H` | Hours (00-23)       |
 | `%M` | Minute (00-59)  | `%S` | Second (00-61)      |
-| `%j` | DOY (001-366)   | `%V` | WOY (00 - 53)       |
+| `%j` | DOY (001-366)   | `%V` | WOY (00-53)         |
 
 All conversion specification can be found [here](https://stat.ethz.ch/R-manual/R-devel/library/base/html/strptime.html)
 
@@ -139,12 +139,12 @@ knitr::include_graphics('figures/03_pdf/strings.jpg')
 ### Apply familiy
 
 ```{r, eval=FALSE}
-apply(x, c(1,2), FUN)	  # apply function on one or several dimension of array
+apply(x, c(1,2), FUN)	# apply function on one or several dimension of array
                         # 1: row, 2: col, c(1,2) both, 3: third dim in array
-lapply(x, FUN, …)		    # apply on list, return list
-sapply(x, FUN)		      # apply on list, return simplified list (array, matrix, vector)
+lapply(x, FUN, …)		# apply on list, return list
+sapply(x, FUN)		    # apply on list, return simplified list (array, matrix, vector)
 tapply(x, factor, FUN)	# apply function separately for different factor levels
-by(x, index, FUN, …)		# x can be whole data.frame
+by(x, index, FUN, …)	# x can be whole data.frame
 ```
 
 
