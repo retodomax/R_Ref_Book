@@ -18,9 +18,9 @@ favicon: "figures/00_icon/icon2.ico"
 
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(comment = "",
-                      tidy = TRUE,
+                      tidy = FALSE,
                       fig.align = "left",
-                      out.width = "80%",
+                      out.width = "50%",
                       echo = TRUE,
                       warning = FALSE,
                       message = FALSE,

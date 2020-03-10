@@ -219,6 +219,13 @@ Formula syntax is a way to specify linear models.
 
 Check if formula constructs your expected model with `model.matrix()`
 
+Update formulas with the `update()` function
+
+```{r, eval=FALSE}
+fit2 <- update(fit, .~. + X2)
+```
+
+
 
 Formula examples:
 

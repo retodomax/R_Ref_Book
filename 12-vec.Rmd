@@ -7,9 +7,6 @@ knitr::include_graphics('figures/data-structures-overview.png')
 knitr::include_graphics('figures/vector_types.png')
 ```
 
-
-vector_types.png
-
 Almost all data in R is stored in vectors. Most famous vector types are listed below
 
 |Vectors        |Description                                        |

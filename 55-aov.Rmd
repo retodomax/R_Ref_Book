@@ -1,5 +1,26 @@
 # ANOVA
 
+Load data sets of this chapter
+
+```{r}
+data("meat", package = "DataRZ")
+data("snails", package = "DataRZ")
+data("pine", package = "DataRZ")
+data("cheddar", package = "DataRZ")
+data("grasses", package = "DataRZ")
+data("animals", package = "DataRZ")
+data("trigly", package = "DataRZ")
+data("ergoStool", package = "DataRZ")
+data("Machines", package = "DataRZ")
+data("cheese.data", package = "DataRZ")
+data("dish", package = "DataRZ")
+
+data("PlantGrowth")
+data("Pastes", package = "lme4")
+data("oats", package = "MASS")
+```
+
+
 ## Idea
 
 ```{r, echo=FALSE}
@@ -9,7 +30,7 @@ arr <- function(x0, x1=x0, y0, y1=y0, col = 1){
 data <- data.frame(Genotype = as.factor(c(1,1,2,2)),
                     Block = as.factor(c("a","b","a","b")),
                     Yield = c(6.3, 5.7, 4.7, 3.3))
-options(contrasts = c("contr.sum", "contr.poly"))
+oopt <- options(contrasts = c("contr.sum", "contr.poly"))
 fit <- aov(Yield ~ Genotype + Block, data = data)
 myc <- coef(fit)
 mu <- myc[1]
@@ -63,6 +84,7 @@ arr(x0 = 3+sm, y0 = mu-ef1, y1 = pred[3], col = 6)
 arr(x0 = 4+sm, y0 = mu-ef1, y1 = pred[4], col = 6)
 mtext("Yield", 2, line = 3,  outer = TRUE)
 palette("default")
+options(oopt)
 ```
 
 
@@ -73,18 +95,329 @@ fit <- aov(Yield ~ Genotype + Block, data = data)
 anova(fit)          #Anova table
 coef(fit)           #Effect of different Factors
 predict(fit)        #Predict the fixed effect
-residuals(fit)       #Actual yield - predicted fixed effect
+residuals(fit)      #Actual yield - predicted fixed effect
 par(mfrow = c(2,2))
 plot(fit)
 ```
 
 
 
-## Tukey's HSD
+## Simulate data
 
-### Example
+* `rep()`
+* `seq()`
+* `rnorm()`
+* `factor()`
+* `gl()`
+* `expand.grid()` Cross prodict
+* `combn()`
+* `interaction()`
 
-```{r, out.width='50%'}
+```{r, collapse=TRUE}
+## rep() with arguments times, each, length.out
+rep(1:2, times = 2)
+rep(1:2, each = 2)
+rep(1:2, length.out = 5)
+
+## gl() is a shortcut for factor(rep())
+gl(2,3, labels = c("Control", "Treat"))
+factor(rep(c("Control", "Treat"), each = 3)) # same output
+
+## expand.grid() and interaction()
+(df <- expand.grid(Block = LETTERS[1:2], Treat = 1:3))
+interaction(df$Block, df$Treat)
+
+## combn()
+combn(1:4, 2) # Combinatorics: combine each element with every other element
+combn(1:3, 3) # Make all possible 3-fold combinations (4 choose 3 combinations)
+```
+
+### Randomization
+
+* `sample()`
+* `agricolae::design.lsd()` Lattin square design
+
+```{r}
+treat.ord <- rep(c("A", "B", "C", "D"), each = 5)
+sample(treat.ord, replace = FALSE)
+```
+
+
+## Visualization
+
+### Stripchart
+
+```{r, fig.align='default', fig.show='hold'}
+stripchart(weight ~ group, vertical = TRUE, data = PlantGrowth)
+library(ggplot2)
+ggplot(Pastes, aes (y = cask, x = strength)) + geom_point () + facet_grid (batch ~ .)
+```
+
+### Boxplot
+
+```{r}
+boxplot(weight ~ group, data = PlantGrowth)
+```
+
+### Interaction plot
+
+```{r, fig.align='default', fig.show='hold'}
+with(snails, interaction.plot(x.factor = density, trace.factor = season, response = y))
+ggplot(Machines, aes (x = Machine, y = score, group = Worker, col = Worker)) +
+  geom_point() + stat_summary(fun.y = mean, geom = "line")
+```
+
+### Summary plot
+
+```{r}
+plot.design(y ~ location + exposure, data = pine)
+```
+
+
+## Fit model
+
+### Identifiability
+
+```{r}
+options("contrasts") # Default
+```
+
+* Unordered: Unordered factors (nominal scale)
+* Ordered: Ordered factors (ordinal scale)
+
+```{r, eval=FALSE}
+options(contrasts = c("contr.treatment", "contr.poly"))
+options(contrasts = c("contr.sum", "contr.poly"))
+```
+
+
+| Name  |  Side-constraint  |  Interpretation of $\mu$ | `R`  |
+|:-----------------|:-------------------|:--------------------------|:------|
+| weighted sum-to-zero | $$\sum_{i=1}^g n_i \alpha_i = 0$$ | $$\mu = \frac{1}{N} \sum_{i=1}^g n_i \mu_i$$ | |
+| sum-to-zero          | $$\sum_{i=1}^g \alpha_i = 0$$ | $$\mu = \frac{1}{g}\sum_{i=1}^g\mu_i$$ | `contr.sum` |
+| reference group      | $$\alpha_1=0$$ | $$\mu=\mu_1$$ | `contr.treatment` |
+
+
+
+
+### Fitting
+
+```{r}
+# One way ANOVA
+fit <- aov(weight ~ group, data = PlantGrowth)
+# Two way ANOVA
+fit.cheddar <- aov(acids ~ R50 + R21, data = cheddar)
+# With subset of data
+fit.spring <- aov(y ~ density, data = subset(snails, season == "Spring"))
+```
+
+```{block2, type='rmdnote'}
+`lm()` vs `aov()`
+
+fits the same model but (i) `aov()` returns object of class `aov`, `lm()` returns object of class `lm` (ii) `print.aov()` and `summary.aov()` will not evaluate each factor level separately but an entire factor at once (similar to `drop1()`) 
+```
+
+
+## ANOVA table
+
+* `summary(fit)`
+    - ANOVA table including F-test
+    - Reports Type I Sum of Squares
+* `anova(fit)`
+    - ANOVA table including F-test
+    - Reports Type I Sum of Squares
+    - identical output as `summary(fit)` for objects of class `aov`
+* `drop1(fit, scope = ~., test = "F")`
+    - ANOVA table including F-test
+    - Reports Type III Sum of Squares
+    - Technical issue! necessary to set `options(contrasts = c("contr.sum", "contr.sum"))`
+    - Tests in hirarchical order if scope is not set (does not test main factor if interaction is included). `scope = ~.` means that each term is tested.
+* `anova(fit, fit2)`
+    - ANOVA table which compares RSS of two nested models
+
+
+### Types of Sum of Sqares
+
+Sum of Squares do only differ if the data is unbalanced.
+
+* Type I
+    - `summary(fit)`
+* Type II
+    - `car::Anova(fit, type = "II", data = df)`
+* Type III
+    - `drop1(fit, scope = ~., test = "F", data = df)`
+    - necessary to set `options(contrsts = c("contr.sum", "contr.sum"))`
+
+
+## Model comparison
+
+##### Different in 1 model term {-}
+
+```{r, eval = FALSE}
+# Type I Sum of Squares
+summary(fit)
+
+# Type III Sum of Sqares
+drop1(fit, test = "F")
+add1(fit, scope = ~pred, test = "F")
+```
+
+##### Different in >1 model term {-}
+
+```{r, eval = FALSE}
+anova(fit, fit2)
+```
+
+
+```{block2, type='rmdnote'}
+Interpretation of significance in `anova()` always in favour of larger model no matter if `anova(fit, fit2)` or `anova(fit2, fit)`
+```
+
+
+## Coefficients
+
+* `coef()` Levels which are shown depends on parameterization (contrast option)
+* `dummy.coef()`
+    - All levels are shown
+    - Coef name according to factor level name
+
+```{r, collapse=TRUE}
+coef(fit)
+dummy.coef(fit)
+```
+
+
+## Tests and CI for coeficients
+
+* `summary.lm(fit)`
+    - Estimates effect $\hat{\alpha}_i$ and p-value for each factor level
+    - p-values not useful because we should not drop single factor levels but entire factors (`drop1()`)
+* `confint()`
+    - CI for each coefficient
+
+```{r}
+summary.lm(fit)
+confint(fit)
+```
+
+
+## Predict
+
+```{r}
+predict(fit, newdata = data.frame(group = c("ctrl", "trt1", "trt2")))
+```
+
+`newdata` has to be a `data.frame` with all predictor variables in columns with the same name as the original predictor in the model (here `y ~ group`)
+
+
+## Diagnostic plots
+```{r,eval=FALSE}
+plot(fit, which = 1) # Tukey-Anscombe plot
+plot(fit, which = 2) # QQ-plot
+```
+
+### Simulations
+
+Simulations can help to see if the observed pattern is far away from the assumptions. If our data is fine, the observed pattern should look similar to the simulated one (which fulfilles the assumptions).
+
+Simulations for QQ plot
+```{r, eval=FALSE}
+qqnorm(rnorm(nrow(df)))
+```
+
+Simulations for Tukey-Anscombe plot
+```{r}
+df <- PlantGrowth
+df.sim <- df
+set.seed(12)
+par(mfrow = c(4, 5))
+for(i in 1:20){
+  df.sim[, "y"] <- simulate(fit)
+  fit.sim <- update(fit, data = df.sim)  
+  plot(fit.sim, which = 1)
+}
+```
+
+### QQ plot in mixed models
+
+Normal QQ plot for each random variable
+```{r, eval = FALSE}
+fit.lme <- lmer(y ~ (1 | day) + (1 | machine) + (1 | machine:day), data = trigly)
+qqnorm(ranef(fit.lme)$day[,1], main = "day")
+qqnorm(ranef(fit.lme)$machine[,1], main = "machine")
+qqnorm(ranef(fit.lme)$'machine:day'[,1], main = "machine:day")
+qqnorm(resid(fit.lme), main = "residuals")
+```
+
+
+
+## Contrasts
+
+```{r, tidy=FALSE}
+library(multcomp)
+
+## manual contrast
+fit.gh <- glht(fit, linfct = mcp(group = c(1, -1/2, -1/2)))
+
+## several manual contrasts
+K <- rbind(mycontr1 = c(1, -1/2, -1/2), # ctrl vs. average of trt1 and trt2
+           mycontr2 = c(1, -1, 0))      # ctrl vs. trt1
+fit.man <- glht(fit, linfct = mcp(group = K))
+
+## predefined contrasts
+fit.gh <- glht(fit, linfct = mcp(group = "Tukey"))
+fit.gh <- glht(fit, linfct = mcp(group = "Dunnett"))
+```
+
+* `K` has to be a matrix where each row is a contrast
+* `TukeyHSD(fit)` does the same as `fit.gh <- glht(fit, linfct = mcp(group = "Tukey"))`
+
+### Test contrast
+
+```{r}
+summary(fit.man, test = adjusted("none"))
+```
+
+
+## Multiple comparison
+
+### Bonferroni Holm (Planned contrasts)
+
+```{r, eval=FALSE}
+summary(fit.man) # takes defalut option which is single-step
+summary(fit.man, test = adjusted("single-step"))  
+summary(fit.man, test = adjusted("none"))
+summary(fit.man, test = adjusted("bonferroni"))
+summary(fit.man, test = adjusted("holm"))
+```
+
+### Scheffe (Unplanned contrasts)
+
+```{r}
+fit.scheffe <- glht(fit, linfct = mcp(group = c(1/2, -1, 1/2)))
+
+## p-value according to Scheffe => do it manually
+## calculate F value with nom-df = g-1 and denom-df = N-g
+## in our case g-1 = 2, N-g = 27
+
+pf((summary(fit.scheffe)$test$tstat)^2 / 2, 2, 27, lower.tail = FALSE)
+```
+
+* `summary(fit.sheffe)$test$tstat` returns t-value of glht t-test
+* `^2` Squared => F-Test
+* `/2` Divide by 2, don't know why
+
+### Tukey HSD (All pairwise comparisons)
+
+```{r}
+fit.tukey <- glht(fit, linfct = mcp(group = "Tukey"))
+summary(fit.tukey)
+plot(confint(glht(fit.tukey)))
+```
+
+Example with compact letter display
+
+```{r, out.width='50%', eval=FALSE}
 subCO2 <- CO2[CO2$conc == 1000,]
 subCO2$tret <- interaction(subCO2$Type, subCO2$Treatment)
 fit <- aov(uptake ~ tret, data = subCO2)
@@ -104,3 +437,208 @@ plot(tuk.cld)
 Letters will not be displayed if treatment names contain a space (e.g. `Quebec nonchilled` instead of `Quebec.nonchilled`).
 ```
 
+### Dunnett (Comparison with control)
+
+```{r}
+## fitst level is set as control
+fit.dunnett <- glht(fit, linfct = mcp(group = "Dunnett"))
+summary(fit.dunnett)
+```
+
+
+
+## Designs
+
+### Factorial design
+
+* `xtabs()` to count observations per treatment combination
+* `interaction.plot()` to visualize interaction between factors
+
+#### Test with significant interaction
+
+##### Hyper factor {-}
+```{r, eval=FALSE}
+snails$dens_seas <- interaction(snails$density, snails$season)
+fit <- aov(y ~ dens_seas, data = snails)
+summary(fit)
+```
+
+
+##### Individual analysis {-}
+```{r}
+## detect significant interation? Yes…
+# 1) fit single model for each factor level (here: "season", also for "density" possible)
+fit.spring <- aov(y ~ density, data = subset(snails, season == "Spring"))
+
+# 2) extract mean square of factor "density"
+MSS_dens <- summary(fit.spring) [[1]]["density","Mean Sq"]
+
+# 3) extract mean square of Error from full model
+MSS_er <- summary(fit)[[1]]["Residuals", "Mean Sq"]
+
+# 3) calculate F value and p value
+F_value <- MSS_dens/MSS_er
+pf(F_value, 2, 12, lower.tail = FALSE)
+# 2: df of "density, 12: df of residuals
+```
+
+
+### Mixed models
+
+* packages
+    - `lme4` original
+    - `lmerTest` more features
+* `lmer()` fits mixed effects model
+* `summary()` returns estimates of variance components and fixed effects
+* `fixef()` fixed effects
+* Tests
+    - `anova()` and `drop1()`
+    - `drop1()` considers hirarchy (only drops terms which are allowed to be droped) => make sense
+    - with `lmer` objects **no longer possible** to extend range with `range = ~.`
+* `confint()` CI of random and fixed effects
+
+```{r, echo=FALSE}
+library(lmerTest)
+```
+
+```{r}
+## Random effects models
+fit.lme <- lmer(weight ~ (1 | sire), data = animals)
+fit.lme <- lmer(y ~ (1 | day) + (1 | machine) + (1 | machine:day), data = trigly)
+
+## Mixed effects models
+fit.lme <- lmer(effort ~ Type + (1 | Subject), data = ergoStool)
+fit.lme2 <- lmer(score ~ Machine + (1 | Worker) + (1 | Worker:Machine), data = Machines)
+
+## Old
+fit <- aov(score ~ Machine + Error(Worker + Machine:Worker), data = Machines)
+```
+
+Old approach using `Error()` does **not** estimate standard deviations of error terms.  But the F value of machine is now computed correctly ($MS_{Machine}$ is devided by $MS_{Machine:Worker}$ and not by $MS_E$)
+
+```{r}
+summary(fit.lme)
+```
+
+```{block2, type='rmdwarning'}
+At section `Random effects`, the `Std.Dev` is simply the square root of the `Variance` **not** the standard error
+```
+
+#### Fixed effects
+
+Estimates
+
+```{r}
+fixef(fit.lme)
+```
+
+Tests
+
+```{r}
+drop1(fit.lme)
+```
+
+CI (random and fixed effects)
+
+```{r}
+confint(fit.lme, oldNames = FALSE)
+```
+
+
+#### Random effects
+
+Estimates $\sigma_W^2$, $\sigma_{W:M}^2$, $\sigma_E^2$
+
+```{r}
+unlist(VarCorr(fit.lme))
+sigma(fit.lme)^2
+```
+
+```{block2, type='rmdwarning'}
+`VarCorr()` automatically prints standard deviation $\sigma$ but stores variance $\sigma^2$ if assigned or unlisted
+```
+
+Estimates $\alpha_i$, $\beta_j$, $(\alpha\beta)_{ij}$
+
+```{r}
+ranef(fit.lme)
+```
+
+Estimates $E(\mu_i | \alpha_i)$
+
+```{r}
+coef(fit.lme)
+```
+
+Tests
+
+```{r, eval=FALSE}
+## approximate
+ranova(fit.lme)
+
+## exact
+library(RLRsim)
+```
+
+CI
+```{r, eval=FALSE}
+## approximate
+confint(fit.lme, oldNames = FALSE)
+
+## exact
+library(RLRsim)
+```
+
+
+### Nested model
+
+```{r, eval = FALSE}
+## All equal, different options to specify the nesting
+lmer(strength ~ (1 | batch) + (1 | sample), Pastes)
+lmer(strength ~ (1 | batch) + (1 | cask:batch), data = Pastes)
+lmer(strength ~ (1 | batch/cask), data = Pastes)
+
+## nested as fixed effect
+aov(strength ~ batch + cask %in% batch, data = Pastes)
+```
+
+Nested factors are typically random
+
+### Split plot
+
+Add main plot as random term. R will automatically recognize across which experimental unit V and N were randomized and test against the correct MS
+
+```{r}
+# Example
+## Y yield
+## B block
+## V variety (randomized among main plot)
+## N nitrogen (randomized among sub plot)
+## B:V main plot
+fit.lme <- lmer(Y ~ B + V*N + (1 | B:V), data = oats)
+```
+
+### Incomplete Block designs
+
+#### Find randomization
+
+* Unreduced BIBDs (one block for all possible treatment combinations)
+    - `choose()`
+    - `combn()`
+* Any BIBDs
+    - `crossdes::find.BIB()`
+    - `ibd::ibd()`
+
+#### Fit model
+
+```{r, eval=FALSE}
+fit <- aov(dishes ~ session + detergent, data = dish)
+drop1(fit, test = "F") # make sure to use drop1() to get Type III MS not summary()
+```
+
+
+## Power Analysis
+
+* `power.anova.test()`
+* package `pwr`
+* simulations

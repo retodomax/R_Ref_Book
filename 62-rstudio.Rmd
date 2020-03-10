@@ -103,5 +103,5 @@ Find all shortcuts [here](https://support.rstudio.com/hc/en-us/articles/20071185
 
 ## Version Control in RStudio
 
-See this <a href="figures/03_pdf/version_control_in_RStudio.pdf.pdf" target="_blank">pdf</a>
+See this <a href="figures/03_pdf/version_control_in_RStudio.pdf" target="_blank">pdf</a>
 

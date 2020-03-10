@@ -1,7 +1,106 @@
 # Regression
 
+Load data sets of this chapter
+
+```{r}
+data("apm", package = "DataRZ")
+data("unique2010", package = "DataRZ")
+data("baby", package = "DataRZ")
+
+data("iris")
+data("Leinhardt", package = "carData")
+data("Prestige", package = "carData")
+data("gala", package = "faraway")
+```
+
+## Preperation
+
+##### Plot predictors {-}
+
+```{r}
+library(FunRZ)
+pairs(iris, lower.panel = panel.smooth, diag.panel = panel.hist,
+      upper.panel = panel.cor)
+```
+
+##### Transform and check for NA {-}
+
+```{r, eval=FALSE}
+any(is.na(iris$Sepal.length))
+iris$log_sepal <- log(iris$Sepal.length)
+```
+
+
+## Fit
+
+* `lm()` fit linear model
+* Extract values
+    - `residuals()` raw residuals
+    - `rstandard()` standardized residuals
+    - `rstudent()` studentized residuals
+    - `sigma()` residual standard deviation $\sigma_E$ (alternative `summary(fit)$sigma`)
+
+## Inference
+
+* `summary()` estimates, std. error, p values, multiple R-squared
+* `confint()` CI
+
+```{r}
+fit <- lm(Pax ~ ATM, data = unique2010)
+```
+
+Automatic testing $H_0: \beta_j = 0$
+```{r}
+summary(fit)
+```
+
+Manual testing $H_0: \beta_j = b$
+```{r, eval=FALSE}
+b <- 5  # for example
+mycoef <- summary(fit)$coefficients
+t_val <- (mycoef["(Intercept)","Estimate"]-b)/mycoef["(Intercept)","Std. Error"]
+(1-pt(abs(t_val), df))*2    ## df = degrees of freedom of residuals (find in summary)
+                            ## *2 two sided test
+```
+
+Automatic CI
+```{r, eval=FALSE}
+confint(fit, "ATM")
+confint(fit, "(Intercept)")
+```
+
+Manual CI
+```{r, eval=FALSE}
+mycoef <- summary(fit)$coefficients
+mycoef["(Intercept)","Estimate"] + qt(c(0.025,0.975), df)*mycoef["(Intercept)","Std. Error"] ## df = degrees of freedom of residuals
+```
+
+## Prediction
+
+* `fitted()` fitted values
+* `predict()` predict for any predictor value
+    - `newdata` needs to be a `data.frame` with same colomn name as predictors
+
+```{r}
+## Predict values for any predictor values
+dat <- data.frame(ATM=c(24000))
+predict(fit, newdata=dat)
+
+## CI for regression line
+dat <- data.frame(ATM=seq(18000, 26000, length=200))
+ci <- predict(fit, newdata=dat, interval="confidence")
+
+## PI for regression line
+dat <- data.frame(ATM=seq(18000, 26000, length=200))
+pi <- predict(fit, newdata=dat, interval="prediction")
+```
+
+
+
 
 ## Plot regression
+
+Include regression formula
 
 ```{r, out.width='50%'}
 set.seed(1)
@@ -22,5 +121,319 @@ text(x = x_cor, y = y_cor-1, pos = 4,
      labels = bquote(R[adj]^2 == .(fit_r_sq)))
 text(x = x_cor, y = y_cor-2, pos = 4,
      labels = bquote(cor == .(fit_cor)))
+```
+
+Include CI and PI
+
+```{r}
+fit <- lm(Pax ~ ATM, data = unique2010)
+dat <- data.frame(ATM=seq(18000, 26000, length=200))
+ci <- predict(fit, newdata=dat, interval="confidence")
+pi <- predict(fit, newdata=dat, interval="prediction")
+plot(Pax ~ ATM, data=unique2010, pch=20)
+
+lines(dat$ATM, ci[,2], col="green")
+lines(dat$ATM, ci[,3], col="green")
+lines(dat$ATM, pi[,2], col="blue")
+lines(dat$ATM, pi[,3], col="blue")
+abline(fit, col="red", lwd=2)
+```
+
+Regression line with log transformation
+
+
+```{r}
+fit <- lm(log(infant) ~ log(income), data = Leinhardt)
+plot(infant ~ income, data = Leinhardt)
+my_pre <- data.frame(income = seq(min(Leinhardt$income), max(Leinhardt$income), length.out = 200))
+my_pre$infant <- exp(predict(fit, newdata = my_pre))
+lines(my_pre$income, my_pre$infant)
+```
+
+
+## Model comparison
+
+* Gobal F-test `summary()`
+* Partial F-test
+    - `anova()`
+        + perfect but both models need to be specified
+        + significance means evidence against the simpler model
+    - `drop1()`
+        + drops only single terms
+        + correctly handles factors/interactions
+            * no testing of single factor levels (factor as a whole is tested)
+            * hirarchical structure is considered (first drop interaction before droping main factor)
+    - `summary()`
+        + drops only single parameters
+        + wrong handling of factors/interactions
+
+
+## Diagnostic plots
+
+```{r,echo=FALSE}
+library(FunRZ)
+
+# cross_check function ----------------------------------------------------
+cross_check <- function(check = TRUE){
+  if(check){
+    text(x = grconvertX(0.05, from = "npc"),
+         y = grconvertY(0.99, from = "npc"),
+         labels = "\U2713",
+         cex = 4,
+         adj = c(0,1),
+         col = "lightgreen")
+  } else {
+    text(x = grconvertX(0.05, from = "npc"),
+         y = grconvertY(0.99, from = "npc"),
+         labels = "x",
+         cex = 4,
+         adj = c(0,1),
+         col = "red")
+  }
+}
+```
+
+
+### Tukey-Anscombe plot
+```{r, echo=FALSE, out.width = '50%', fig.show='hold', fig.align='default'}
+set.seed(1)
+x <- 1:100
+y <- rnorm(100, x + 10, 10)
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 1, change_mfrow = F, plot_title = F)
+title("Gaussian iid Residuals")
+cross_check(T)
+
+set.seed(3)
+x <- 1:100
+y <- rnorm(100, x + 10, 10)
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 1, change_mfrow = F, plot_title = F)
+title("Gaussian iid Residuals")
+cross_check(T)
+
+set.seed(10)
+x <- 1:100
+y <- rnorm(100, x + 10, x)
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 1, change_mfrow = F, plot_title = F)
+title("Heteroskedasticity")
+cross_check(F)
+
+set.seed(1)
+x <- 1:100
+y <- rnorm(100, x^1.3, 10)
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 1, change_mfrow = F, plot_title = F)
+title("Systematic Error")
+cross_check(F)
+```
+
+
+### Normal QQ plot
+```{r, echo=FALSE, out.width = '50%', fig.show='hold', fig.align='default'}
+set.seed(1)
+x <- 1:100
+y <- rnorm(100, x + 10, 10)
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 2, change_mfrow = F, plot_title = F)
+title("Normal")
+cross_check(T)
+
+set.seed(1)
+x <- 1:100
+y <- 10 + x + rexp(100)
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 2, change_mfrow = F, plot_title = F)
+title("Right-Skewed")
+cross_check(F)
+
+set.seed(9)
+x <- 1:100
+y <- 10 + x + rnorm(100)^3
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 2, change_mfrow = F, plot_title = F)
+title("Long-Tailed")
+cross_check(F)
+
+set.seed(2)
+x <- 1:100
+y <- 10 + x + sqrt(abs(rnorm(100)))*c(-1,1)
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 2, change_mfrow = F, plot_title = F)
+title("Short-Tailed")
+cross_check(T)
+```
+
+
+### Scale-Location plot
+```{r, echo=FALSE, out.width = '50%', fig.show='hold', fig.align='default'}
+set.seed(10)
+x <- 1:100
+y <- rnorm(100, x + 10, 10)
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 3, change_mfrow = F, plot_title = F)
+title("Homoskedasticity")
+cross_check(T)
+
+set.seed(10)
+x <- 1:100
+y <- rnorm(100, x + 10, x)
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 3, change_mfrow = F, plot_title = F)
+title("Heteroskedasticity")
+cross_check(F)
+```
+
+
+### Leverage plot
+```{r, echo=FALSE, out.width = '50%', fig.show='hold', fig.align='default'}
+set.seed(10)
+x <- 1:100
+y <- rnorm(100, x + 10, 10)
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 4, change_mfrow = F, plot_title = F)
+title("No Outliers")
+cross_check(T)
+
+set.seed(10)
+x <- c(1:100, 130)
+y <- c(rnorm(100, x + 10, 10), 100)
+mymod <- lm(y ~ x)
+FunResplot(mymod, plots = 4, change_mfrow = F, plot_title = F)
+title("Outlier with Leverage")
+cross_check(F)
+```
+
+
+### Residuals vs any
+```{r, echo=FALSE, out.width = '50%', fig.show='hold', fig.align='default'}
+set.seed(2)
+plot(1:30, rnorm(30), pch = 20, ylab = "residuals", xlab = "any variable (e.g. time)")
+abline(h = 0, lty = 2)
+title("Independant")
+cross_check(T)
+
+set.seed(2)
+plot(1:30, rnorm(30)+10*sin(c(1:30)*0.2),
+     pch = 20, ylab = "residuals", xlab = "any variable, (e.g. time)")
+abline(h = 0, lty = 2)
+title("Autocorrelated")
+cross_check(F)
+```
+
+
+### Partial residual plot
+```{r, echo=FALSE, out.width = '50%', fig.show='hold', fig.align='default'}
+## data
+set.seed(1)
+x1 <- 1:100
+x2 <- rnorm(100, 3, 1)
+
+############## good example (linear)
+y <- x1 - x2*10 + rnorm(100, 0, 2)
+fit <- lm(y~x1 + x2)
+myres <- residuals(fit, type = "partial")
+mycof <- fit$coefficients
+
+plot(myres[,"x1"] ~ x1,
+     ylab = "partial resiudals of x1")
+title("Linear relationship")
+abline(a = -mycof["x1"]*mean(x1), b = mycof["x1"])
+lines(loess.smooth(x1,myres[,"x1"]), col = "red")
+
+############## bad example (non-linear)
+y <- sqrt(x1)*10 - x2*10 + rnorm(100, 0, 2)
+fit <- lm(y~x1 + x2)
+myres <- residuals(fit, type = "partial")
+mycof <- fit$coefficients
+
+plot(myres[,"x1"] ~ x1,
+     ylab = "partial resiudals of x1")
+title("Non-linear relationship")
+abline(a = -mycof["x1"]*mean(x1), b = mycof["x1"])
+lines(loess.smooth(x1,myres[,"x1"]), col = "red")
+```
+
+
+
+
+
+
+## Smoothing
+
+```{r}
+plot(unique2010$ATM, unique2010$Pax, xlab = "ATM", ylab = "PAX")
+polygon(x = seq(19000, 25000, 1),
+        y = (dunif(seq(19000, 25000, 1), min = 20000, max = 21000)*6*10^8+par("usr")[3]),
+        col = "#f7fcb9")
+polygon(x = seq(19000, 25000, 1),
+        y = (dnorm(seq(19000, 25000, 1), mean = 23000, sd = 1000*0.37065)*6*10^8+par("usr")[3]),
+        col = "#addd8e")
+
+points(unique2010$ATM, unique2010$Pax)
+
+# FunAxis(xtitle = "ATM", ytitle = "PAX")
+
+points(ksmooth(unique2010$ATM, unique2010$Pax, kernel = "box", bandwidth = 1000, x.points = 20500),
+       cex = 1.5, pch = 16)
+points(ksmooth(unique2010$ATM, unique2010$Pax, kernel = "normal", bandwidth = 1000, x.points = 23000),
+       cex = 1.5, pch = 16)
+
+
+segments(x0 = 20750, y0 = 0, y1 = 2100000, lty = 2)
+segments(x0 = qnorm(0.75, mean = 23000, sd = 1000*0.37065), y0 = 0, y1 = 2100000, lty = 2)
+
+text(x = c(20750, qnorm(0.75, mean = 23000, sd = 1000*0.37065)),
+     y = 2150000,
+     labels = "Q 75%")
+```
+
+### Running mean (yellow box)
+
+```{r, tidy=FALSE}
+fit <- ksmooth(unique2010$ATM,unique2010$Pax,  # Data
+               kernel = "box",                 # weighting of points
+               bandwidth = 1000,               # spread of weighting function
+               n.points = 24,                  # number of points which should be evaluated
+               x.points = unique2010$ATM)      # where they should be evaluated
+plot(unique2010$ATM, unique2010$Pax)
+lines(fit)
+```
+
+\begin{align*}
+    && 0.25 \cdot \text{bandwith} &= Q_{75\%} \\
+    \Rightarrow && \text{bandwith} &= \text{complete width of box}
+\end{align*}
+
+
+### Gaussian kernel estimate (green gaussian)
+
+```{r}
+fit <- ksmooth(unique2010$ATM,unique2010$Pax,
+		  kernel = "normal",
+		  bandwidth = 1000,
+		  n.points = 1000)
+plot(unique2010$ATM, unique2010$Pax)
+lines(fit)
+```
+
+\begin{align*}
+ && P(X \leq 0.25 \cdot \text{bandwith}) &= 0.75 \\
+ \Rightarrow && P\left(Z \leq \frac{0.25 \cdot \text{bandwith}}{\sigma}\right) &= 0.75 \\
+ \Rightarrow && \frac{0.25 \cdot \text{bandwith}}{\sigma} &= \Phi^{-1}(0.75) \\
+ \Rightarrow && \text{bandwith} &= \frac{\Phi^{-1}(0.75)}{0.25}\sigma
+\end{align*}
+
+### LOESS smoother
+
+```{r}
+smoo <- loess.smooth(unique2010$ATM,unique2010$Pax,  # Data
+                     span = 2/3,                     # smoothing parameter (smaller => smoother)
+                     degree = 1,                     # 1: local linear regr, 2: local polynomial regr
+                     family = "symmetric")           # "symmetric": robust fitting, "gaussian": least squares fitting
+
+plot(unique2010$ATM, unique2010$Pax)
+lines(fit)
 ```
 

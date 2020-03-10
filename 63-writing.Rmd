@@ -209,7 +209,7 @@ knitr::include_graphics('figures/03_pdf/lubridate.jpg')
 ## this seems necessary for correct source code displaying...
 ``` --> 
 
-`target="_blank"` makes sure that the browser opens the pdf in a new tab. 
+`target="_blank"` makes sure that the browser opens the pdf in a new tab. To include a pdf without figure, just replace the R chunk part with some words.
 
 
 ## Tables
