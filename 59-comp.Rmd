@@ -1,4 +1,8 @@
-# Nonparametric and Resampling Methodes
+# Computational Statistics
+
+## Cross validation
+
+
 
 ## Bootstrap
 

@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-03-10" />
+<meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -338,10 +338,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="20.7.5" data-path="regression.html"><a href="regression.html#residuals-vs-any"><i class="fa fa-check"></i><b>20.7.5</b> Residuals vs any</a></li>
 <li class="chapter" data-level="20.7.6" data-path="regression.html"><a href="regression.html#partial-residual-plot"><i class="fa fa-check"></i><b>20.7.6</b> Partial residual plot</a></li>
 </ul></li>
-<li class="chapter" data-level="20.8" data-path="regression.html"><a href="regression.html#smoothing"><i class="fa fa-check"></i><b>20.8</b> Smoothing</a><ul>
-<li class="chapter" data-level="20.8.1" data-path="regression.html"><a href="regression.html#running-mean-yellow-box"><i class="fa fa-check"></i><b>20.8.1</b> Running mean (yellow box)</a></li>
-<li class="chapter" data-level="20.8.2" data-path="regression.html"><a href="regression.html#gaussian-kernel-estimate-green-gaussian"><i class="fa fa-check"></i><b>20.8.2</b> Gaussian kernel estimate (green gaussian)</a></li>
-<li class="chapter" data-level="20.8.3" data-path="regression.html"><a href="regression.html#loess-smoother"><i class="fa fa-check"></i><b>20.8.3</b> LOESS smoother</a></li>
+<li class="chapter" data-level="20.8" data-path="regression.html"><a href="regression.html#model-improvement"><i class="fa fa-check"></i><b>20.8</b> Model improvement</a><ul>
+<li class="chapter" data-level="20.8.1" data-path="regression.html"><a href="regression.html#multicollinearity"><i class="fa fa-check"></i><b>20.8.1</b> Multicollinearity</a></li>
+<li class="chapter" data-level="20.8.2" data-path="regression.html"><a href="regression.html#aicbic"><i class="fa fa-check"></i><b>20.8.2</b> AIC/BIC</a></li>
+<li class="chapter" data-level="20.8.3" data-path="regression.html"><a href="regression.html#variable-selection"><i class="fa fa-check"></i><b>20.8.3</b> Variable selection</a></li>
+<li class="chapter" data-level="20.8.4" data-path="regression.html"><a href="regression.html#predictor-relevance"><i class="fa fa-check"></i><b>20.8.4</b> Predictor relevance</a></li>
+</ul></li>
+<li class="chapter" data-level="20.9" data-path="regression.html"><a href="regression.html#ridge-regression"><i class="fa fa-check"></i><b>20.9</b> Ridge Regression</a></li>
+<li class="chapter" data-level="20.10" data-path="regression.html"><a href="regression.html#smoothing"><i class="fa fa-check"></i><b>20.10</b> Smoothing</a><ul>
+<li class="chapter" data-level="20.10.1" data-path="regression.html"><a href="regression.html#running-mean-yellow-box"><i class="fa fa-check"></i><b>20.10.1</b> Running mean (yellow box)</a></li>
+<li class="chapter" data-level="20.10.2" data-path="regression.html"><a href="regression.html#gaussian-kernel-estimate-green-gaussian"><i class="fa fa-check"></i><b>20.10.2</b> Gaussian kernel estimate (green gaussian)</a></li>
+<li class="chapter" data-level="20.10.3" data-path="regression.html"><a href="regression.html#loess-smoother"><i class="fa fa-check"></i><b>20.10.3</b> LOESS smoother</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>21</b> ANOVA</a><ul>
@@ -408,8 +415,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="23.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>23.4</b> Differencing</a></li>
 </ul></li>
-<li class="chapter" data-level="24" data-path="nonparametric-and-resampling-methodes.html"><a href="nonparametric-and-resampling-methodes.html"><i class="fa fa-check"></i><b>24</b> Nonparametric and Resampling Methodes</a><ul>
-<li class="chapter" data-level="24.1" data-path="nonparametric-and-resampling-methodes.html"><a href="nonparametric-and-resampling-methodes.html#bootstrap"><i class="fa fa-check"></i><b>24.1</b> Bootstrap</a></li>
+<li class="chapter" data-level="24" data-path="computational-statistics.html"><a href="computational-statistics.html"><i class="fa fa-check"></i><b>24</b> Computational Statistics</a><ul>
+<li class="chapter" data-level="24.1" data-path="computational-statistics.html"><a href="computational-statistics.html#cross-validation"><i class="fa fa-check"></i><b>24.1</b> Cross validation</a></li>
+<li class="chapter" data-level="24.2" data-path="computational-statistics.html"><a href="computational-statistics.html#bootstrap"><i class="fa fa-check"></i><b>24.2</b> Bootstrap</a></li>
 </ul></li>
 <li class="part"><span><b>VI R Workflow</b></span></li>
 <li class="chapter" data-level="25" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>25</b> Reproducible Research</a><ul>
@@ -545,35 +553,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">31.1.1</span> Common tasks</h3>
 <div id="create-a-new-repository-on-the-command-line" class="section level5 unnumbered">
 <h5>create a new repository on the command line</h5>
-<div class="sourceCode" id="cb282"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb282-1" title="1"><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</a>
-<a class="sourceLine" id="cb282-2" title="2"><span class="fu">git</span> init</a>
-<a class="sourceLine" id="cb282-3" title="3"><span class="fu">git</span> add README.md</a>
-<a class="sourceLine" id="cb282-4" title="4"><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></a>
-<a class="sourceLine" id="cb282-5" title="5"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb282-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb296"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb296-1" title="1"><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</a>
+<a class="sourceLine" id="cb296-2" title="2"><span class="fu">git</span> init</a>
+<a class="sourceLine" id="cb296-3" title="3"><span class="fu">git</span> add README.md</a>
+<a class="sourceLine" id="cb296-4" title="4"><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></a>
+<a class="sourceLine" id="cb296-5" title="5"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb296-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 </div>
 <div id="push-an-existing-repository-from-the-command-line" class="section level5 unnumbered">
 <h5>push an existing repository from the command line</h5>
-<div class="sourceCode" id="cb283"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb283-1" title="1"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb283-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb297-1" title="1"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb297-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 </div>
 <div id="clone-existing-repository-and-push-changes" class="section level5 unnumbered">
 <h5>clone existing repository and push changes</h5>
-<div class="sourceCode" id="cb284"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb284-1" title="1"><span class="fu">git</span> clone git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb284-2" title="2"><span class="bu">cd</span> test</a>
-<a class="sourceLine" id="cb284-3" title="3"><span class="fu">touch</span> README.md</a>
-<a class="sourceLine" id="cb284-4" title="4"><span class="fu">git</span> add README.md</a>
-<a class="sourceLine" id="cb284-5" title="5"><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></a>
-<a class="sourceLine" id="cb284-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb298"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb298-1" title="1"><span class="fu">git</span> clone git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb298-2" title="2"><span class="bu">cd</span> test</a>
+<a class="sourceLine" id="cb298-3" title="3"><span class="fu">touch</span> README.md</a>
+<a class="sourceLine" id="cb298-4" title="4"><span class="fu">git</span> add README.md</a>
+<a class="sourceLine" id="cb298-5" title="5"><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></a>
+<a class="sourceLine" id="cb298-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 </div>
 <div id="push-existing-folder-to-origin" class="section level5 unnumbered">
 <h5>push existing folder to origin</h5>
-<div class="sourceCode" id="cb285"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb285-1" title="1"><span class="bu">cd</span> existing_folder</a>
-<a class="sourceLine" id="cb285-2" title="2"><span class="fu">git</span> init</a>
-<a class="sourceLine" id="cb285-3" title="3"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
-<a class="sourceLine" id="cb285-4" title="4"><span class="fu">git</span> add .</a>
-<a class="sourceLine" id="cb285-5" title="5"><span class="fu">git</span> commit</a>
-<a class="sourceLine" id="cb285-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb299-1" title="1"><span class="bu">cd</span> existing_folder</a>
+<a class="sourceLine" id="cb299-2" title="2"><span class="fu">git</span> init</a>
+<a class="sourceLine" id="cb299-3" title="3"><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</a>
+<a class="sourceLine" id="cb299-4" title="4"><span class="fu">git</span> add .</a>
+<a class="sourceLine" id="cb299-5" title="5"><span class="fu">git</span> commit</a>
+<a class="sourceLine" id="cb299-6" title="6"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 
 </div>
 </div>

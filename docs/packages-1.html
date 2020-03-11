@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-03-10" />
+<meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -338,10 +338,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="20.7.5" data-path="regression.html"><a href="regression.html#residuals-vs-any"><i class="fa fa-check"></i><b>20.7.5</b> Residuals vs any</a></li>
 <li class="chapter" data-level="20.7.6" data-path="regression.html"><a href="regression.html#partial-residual-plot"><i class="fa fa-check"></i><b>20.7.6</b> Partial residual plot</a></li>
 </ul></li>
-<li class="chapter" data-level="20.8" data-path="regression.html"><a href="regression.html#smoothing"><i class="fa fa-check"></i><b>20.8</b> Smoothing</a><ul>
-<li class="chapter" data-level="20.8.1" data-path="regression.html"><a href="regression.html#running-mean-yellow-box"><i class="fa fa-check"></i><b>20.8.1</b> Running mean (yellow box)</a></li>
-<li class="chapter" data-level="20.8.2" data-path="regression.html"><a href="regression.html#gaussian-kernel-estimate-green-gaussian"><i class="fa fa-check"></i><b>20.8.2</b> Gaussian kernel estimate (green gaussian)</a></li>
-<li class="chapter" data-level="20.8.3" data-path="regression.html"><a href="regression.html#loess-smoother"><i class="fa fa-check"></i><b>20.8.3</b> LOESS smoother</a></li>
+<li class="chapter" data-level="20.8" data-path="regression.html"><a href="regression.html#model-improvement"><i class="fa fa-check"></i><b>20.8</b> Model improvement</a><ul>
+<li class="chapter" data-level="20.8.1" data-path="regression.html"><a href="regression.html#multicollinearity"><i class="fa fa-check"></i><b>20.8.1</b> Multicollinearity</a></li>
+<li class="chapter" data-level="20.8.2" data-path="regression.html"><a href="regression.html#aicbic"><i class="fa fa-check"></i><b>20.8.2</b> AIC/BIC</a></li>
+<li class="chapter" data-level="20.8.3" data-path="regression.html"><a href="regression.html#variable-selection"><i class="fa fa-check"></i><b>20.8.3</b> Variable selection</a></li>
+<li class="chapter" data-level="20.8.4" data-path="regression.html"><a href="regression.html#predictor-relevance"><i class="fa fa-check"></i><b>20.8.4</b> Predictor relevance</a></li>
+</ul></li>
+<li class="chapter" data-level="20.9" data-path="regression.html"><a href="regression.html#ridge-regression"><i class="fa fa-check"></i><b>20.9</b> Ridge Regression</a></li>
+<li class="chapter" data-level="20.10" data-path="regression.html"><a href="regression.html#smoothing"><i class="fa fa-check"></i><b>20.10</b> Smoothing</a><ul>
+<li class="chapter" data-level="20.10.1" data-path="regression.html"><a href="regression.html#running-mean-yellow-box"><i class="fa fa-check"></i><b>20.10.1</b> Running mean (yellow box)</a></li>
+<li class="chapter" data-level="20.10.2" data-path="regression.html"><a href="regression.html#gaussian-kernel-estimate-green-gaussian"><i class="fa fa-check"></i><b>20.10.2</b> Gaussian kernel estimate (green gaussian)</a></li>
+<li class="chapter" data-level="20.10.3" data-path="regression.html"><a href="regression.html#loess-smoother"><i class="fa fa-check"></i><b>20.10.3</b> LOESS smoother</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>21</b> ANOVA</a><ul>
@@ -408,8 +415,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="23.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>23.4</b> Differencing</a></li>
 </ul></li>
-<li class="chapter" data-level="24" data-path="nonparametric-and-resampling-methodes.html"><a href="nonparametric-and-resampling-methodes.html"><i class="fa fa-check"></i><b>24</b> Nonparametric and Resampling Methodes</a><ul>
-<li class="chapter" data-level="24.1" data-path="nonparametric-and-resampling-methodes.html"><a href="nonparametric-and-resampling-methodes.html#bootstrap"><i class="fa fa-check"></i><b>24.1</b> Bootstrap</a></li>
+<li class="chapter" data-level="24" data-path="computational-statistics.html"><a href="computational-statistics.html"><i class="fa fa-check"></i><b>24</b> Computational Statistics</a><ul>
+<li class="chapter" data-level="24.1" data-path="computational-statistics.html"><a href="computational-statistics.html#cross-validation"><i class="fa fa-check"></i><b>24.1</b> Cross validation</a></li>
+<li class="chapter" data-level="24.2" data-path="computational-statistics.html"><a href="computational-statistics.html#bootstrap"><i class="fa fa-check"></i><b>24.2</b> Bootstrap</a></li>
 </ul></li>
 <li class="part"><span><b>VI R Workflow</b></span></li>
 <li class="chapter" data-level="25" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>25</b> Reproducible Research</a><ul>
@@ -534,9 +542,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>ls()</code> list object in certain environment</li>
 <li><code>find()</code> the environment from which a certain function comes</li>
 </ul>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb286-1" title="1"><span class="kw">search</span>()      <span class="co"># returns search path</span></a>
-<a class="sourceLine" id="cb286-2" title="2"><span class="kw">ls</span>(<span class="dt">pos =</span> <span class="dv">2</span>)   <span class="co"># object contained in environment nr 2</span></a>
-<a class="sourceLine" id="cb286-3" title="3"><span class="kw">find</span>(<span class="st">&quot;print&quot;</span>) <span class="co"># Environment in which function &quot;print&quot; is defined</span></a></code></pre></div>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb300-1" title="1"><span class="kw">search</span>()      <span class="co"># returns search path</span></a>
+<a class="sourceLine" id="cb300-2" title="2"><span class="kw">ls</span>(<span class="dt">pos =</span> <span class="dv">2</span>)   <span class="co"># object contained in environment nr 2</span></a>
+<a class="sourceLine" id="cb300-3" title="3"><span class="kw">find</span>(<span class="st">&quot;print&quot;</span>) <span class="co"># Environment in which function &quot;print&quot; is defined</span></a></code></pre></div>
 </div>
 <div id="useful-packages" class="section level2">
 <h2><span class="header-section-number">32.2</span> Useful packages</h2>

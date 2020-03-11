@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-03-10" />
+<meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -338,10 +338,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="20.7.5" data-path="regression.html"><a href="regression.html#residuals-vs-any"><i class="fa fa-check"></i><b>20.7.5</b> Residuals vs any</a></li>
 <li class="chapter" data-level="20.7.6" data-path="regression.html"><a href="regression.html#partial-residual-plot"><i class="fa fa-check"></i><b>20.7.6</b> Partial residual plot</a></li>
 </ul></li>
-<li class="chapter" data-level="20.8" data-path="regression.html"><a href="regression.html#smoothing"><i class="fa fa-check"></i><b>20.8</b> Smoothing</a><ul>
-<li class="chapter" data-level="20.8.1" data-path="regression.html"><a href="regression.html#running-mean-yellow-box"><i class="fa fa-check"></i><b>20.8.1</b> Running mean (yellow box)</a></li>
-<li class="chapter" data-level="20.8.2" data-path="regression.html"><a href="regression.html#gaussian-kernel-estimate-green-gaussian"><i class="fa fa-check"></i><b>20.8.2</b> Gaussian kernel estimate (green gaussian)</a></li>
-<li class="chapter" data-level="20.8.3" data-path="regression.html"><a href="regression.html#loess-smoother"><i class="fa fa-check"></i><b>20.8.3</b> LOESS smoother</a></li>
+<li class="chapter" data-level="20.8" data-path="regression.html"><a href="regression.html#model-improvement"><i class="fa fa-check"></i><b>20.8</b> Model improvement</a><ul>
+<li class="chapter" data-level="20.8.1" data-path="regression.html"><a href="regression.html#multicollinearity"><i class="fa fa-check"></i><b>20.8.1</b> Multicollinearity</a></li>
+<li class="chapter" data-level="20.8.2" data-path="regression.html"><a href="regression.html#aicbic"><i class="fa fa-check"></i><b>20.8.2</b> AIC/BIC</a></li>
+<li class="chapter" data-level="20.8.3" data-path="regression.html"><a href="regression.html#variable-selection"><i class="fa fa-check"></i><b>20.8.3</b> Variable selection</a></li>
+<li class="chapter" data-level="20.8.4" data-path="regression.html"><a href="regression.html#predictor-relevance"><i class="fa fa-check"></i><b>20.8.4</b> Predictor relevance</a></li>
+</ul></li>
+<li class="chapter" data-level="20.9" data-path="regression.html"><a href="regression.html#ridge-regression"><i class="fa fa-check"></i><b>20.9</b> Ridge Regression</a></li>
+<li class="chapter" data-level="20.10" data-path="regression.html"><a href="regression.html#smoothing"><i class="fa fa-check"></i><b>20.10</b> Smoothing</a><ul>
+<li class="chapter" data-level="20.10.1" data-path="regression.html"><a href="regression.html#running-mean-yellow-box"><i class="fa fa-check"></i><b>20.10.1</b> Running mean (yellow box)</a></li>
+<li class="chapter" data-level="20.10.2" data-path="regression.html"><a href="regression.html#gaussian-kernel-estimate-green-gaussian"><i class="fa fa-check"></i><b>20.10.2</b> Gaussian kernel estimate (green gaussian)</a></li>
+<li class="chapter" data-level="20.10.3" data-path="regression.html"><a href="regression.html#loess-smoother"><i class="fa fa-check"></i><b>20.10.3</b> LOESS smoother</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>21</b> ANOVA</a><ul>
@@ -408,8 +415,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="23.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>23.4</b> Differencing</a></li>
 </ul></li>
-<li class="chapter" data-level="24" data-path="nonparametric-and-resampling-methodes.html"><a href="nonparametric-and-resampling-methodes.html"><i class="fa fa-check"></i><b>24</b> Nonparametric and Resampling Methodes</a><ul>
-<li class="chapter" data-level="24.1" data-path="nonparametric-and-resampling-methodes.html"><a href="nonparametric-and-resampling-methodes.html#bootstrap"><i class="fa fa-check"></i><b>24.1</b> Bootstrap</a></li>
+<li class="chapter" data-level="24" data-path="computational-statistics.html"><a href="computational-statistics.html"><i class="fa fa-check"></i><b>24</b> Computational Statistics</a><ul>
+<li class="chapter" data-level="24.1" data-path="computational-statistics.html"><a href="computational-statistics.html#cross-validation"><i class="fa fa-check"></i><b>24.1</b> Cross validation</a></li>
+<li class="chapter" data-level="24.2" data-path="computational-statistics.html"><a href="computational-statistics.html#bootstrap"><i class="fa fa-check"></i><b>24.2</b> Bootstrap</a></li>
 </ul></li>
 <li class="part"><span><b>VI R Workflow</b></span></li>
 <li class="chapter" data-level="25" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>25</b> Reproducible Research</a><ul>
@@ -536,54 +544,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Example with all possible default options</p>
 <div id="bookdown.yml" class="section level3">
 <h3><span class="header-section-number">28.1.1</span> <code>_bookdown.yml</code></h3>
-<div class="sourceCode" id="cb264"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb264-1" title="1"><span class="fu">book_filename:</span><span class="at"> </span><span class="st">&quot;myBookname&quot;</span></a>
-<a class="sourceLine" id="cb264-2" title="2"><span class="fu">delete_merged_file:</span><span class="at"> </span><span class="ch">true</span></a>
-<a class="sourceLine" id="cb264-3" title="3"><span class="fu">language:</span></a>
-<a class="sourceLine" id="cb264-4" title="4">  <span class="fu">ui:</span></a>
-<a class="sourceLine" id="cb264-5" title="5">    <span class="fu">chapter_name:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></a>
-<a class="sourceLine" id="cb264-6" title="6"><span class="fu">chapter_name:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></a>
-<a class="sourceLine" id="cb264-7" title="7"><span class="fu">repo:</span><span class="at"> https://github.com/seankross/bookdown-start</span></a>
-<a class="sourceLine" id="cb264-8" title="8"><span class="fu">output_dir:</span><span class="at"> docs</span></a>
-<a class="sourceLine" id="cb264-9" title="9"><span class="fu">rmd_files:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span> <span class="st">&quot;01-Introduction.Rmd&quot;</span><span class="kw">,</span> <span class="st">&quot;02-Diving-In.Rmd&quot;</span><span class="kw">]</span></a>
-<a class="sourceLine" id="cb264-10" title="10"><span class="fu">clean:</span><span class="at"> </span><span class="kw">[</span>packages.bib<span class="kw">,</span> bookdown.bbl<span class="kw">]</span></a>
-<a class="sourceLine" id="cb264-11" title="11"><span class="fu">new_session:</span><span class="at"> </span><span class="ch">yes</span></a></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb278-1" title="1"><span class="fu">book_filename:</span><span class="at"> </span><span class="st">&quot;myBookname&quot;</span></a>
+<a class="sourceLine" id="cb278-2" title="2"><span class="fu">delete_merged_file:</span><span class="at"> </span><span class="ch">true</span></a>
+<a class="sourceLine" id="cb278-3" title="3"><span class="fu">language:</span></a>
+<a class="sourceLine" id="cb278-4" title="4">  <span class="fu">ui:</span></a>
+<a class="sourceLine" id="cb278-5" title="5">    <span class="fu">chapter_name:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></a>
+<a class="sourceLine" id="cb278-6" title="6"><span class="fu">chapter_name:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></a>
+<a class="sourceLine" id="cb278-7" title="7"><span class="fu">repo:</span><span class="at"> https://github.com/seankross/bookdown-start</span></a>
+<a class="sourceLine" id="cb278-8" title="8"><span class="fu">output_dir:</span><span class="at"> docs</span></a>
+<a class="sourceLine" id="cb278-9" title="9"><span class="fu">rmd_files:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span> <span class="st">&quot;01-Introduction.Rmd&quot;</span><span class="kw">,</span> <span class="st">&quot;02-Diving-In.Rmd&quot;</span><span class="kw">]</span></a>
+<a class="sourceLine" id="cb278-10" title="10"><span class="fu">clean:</span><span class="at"> </span><span class="kw">[</span>packages.bib<span class="kw">,</span> bookdown.bbl<span class="kw">]</span></a>
+<a class="sourceLine" id="cb278-11" title="11"><span class="fu">new_session:</span><span class="at"> </span><span class="ch">yes</span></a></code></pre></div>
 <p>Here: add explanation to each option</p>
 </div>
 <div id="output.yml" class="section level3">
 <h3><span class="header-section-number">28.1.2</span> <code>_output.yml</code></h3>
-<div class="sourceCode" id="cb265"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb265-1" title="1">bookdown:<span class="fu">:gitbook:</span></a>
-<a class="sourceLine" id="cb265-2" title="2">  <span class="fu">css:</span><span class="at"> style.css</span></a>
-<a class="sourceLine" id="cb265-3" title="3">  <span class="fu">split_by:</span><span class="at"> chapter</span></a>
-<a class="sourceLine" id="cb265-4" title="4">  <span class="fu">config:</span></a>
-<a class="sourceLine" id="cb265-5" title="5">    <span class="fu">toc:</span></a>
-<a class="sourceLine" id="cb265-6" title="6">      <span class="fu">collapse:</span><span class="at"> subsection</span></a>
-<a class="sourceLine" id="cb265-7" title="7"><span class="fu">      before:</span> <span class="st">|</span></a>
-<a class="sourceLine" id="cb265-8" title="8">        &lt;li&gt;&lt;a href=&quot;./&quot;&gt;A Minimal Bookdown Book&lt;/a&gt;&lt;/li&gt;</a>
-<a class="sourceLine" id="cb265-9" title="9"><span class="fu">      after:</span> <span class="st">|</span></a>
-<a class="sourceLine" id="cb265-10" title="10">        &lt;li&gt;&lt;a href=&quot;https://github.com/rstudio/bookdown&quot; target=&quot;blank&quot;&gt;Published with bookdown&lt;/a&gt;&lt;/li&gt;</a>
-<a class="sourceLine" id="cb265-11" title="11">bookdown:<span class="fu">:pdf_book:</span></a>
-<a class="sourceLine" id="cb265-12" title="12">  <span class="fu">includes:</span></a>
-<a class="sourceLine" id="cb265-13" title="13">    <span class="fu">in_header:</span><span class="at"> preamble.tex</span></a>
-<a class="sourceLine" id="cb265-14" title="14">  <span class="fu">latex_engine:</span><span class="at"> xelatex</span></a>
-<a class="sourceLine" id="cb265-15" title="15">  <span class="fu">citation_package:</span><span class="at"> natbib</span></a>
-<a class="sourceLine" id="cb265-16" title="16">bookdown:<span class="fu">:epub_book:</span></a>
-<a class="sourceLine" id="cb265-17" title="17">  <span class="fu">stylesheet:</span><span class="at"> style.css</span></a></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb279-1" title="1">bookdown:<span class="fu">:gitbook:</span></a>
+<a class="sourceLine" id="cb279-2" title="2">  <span class="fu">css:</span><span class="at"> style.css</span></a>
+<a class="sourceLine" id="cb279-3" title="3">  <span class="fu">split_by:</span><span class="at"> chapter</span></a>
+<a class="sourceLine" id="cb279-4" title="4">  <span class="fu">config:</span></a>
+<a class="sourceLine" id="cb279-5" title="5">    <span class="fu">toc:</span></a>
+<a class="sourceLine" id="cb279-6" title="6">      <span class="fu">collapse:</span><span class="at"> subsection</span></a>
+<a class="sourceLine" id="cb279-7" title="7"><span class="fu">      before:</span> <span class="st">|</span></a>
+<a class="sourceLine" id="cb279-8" title="8">        &lt;li&gt;&lt;a href=&quot;./&quot;&gt;A Minimal Bookdown Book&lt;/a&gt;&lt;/li&gt;</a>
+<a class="sourceLine" id="cb279-9" title="9"><span class="fu">      after:</span> <span class="st">|</span></a>
+<a class="sourceLine" id="cb279-10" title="10">        &lt;li&gt;&lt;a href=&quot;https://github.com/rstudio/bookdown&quot; target=&quot;blank&quot;&gt;Published with bookdown&lt;/a&gt;&lt;/li&gt;</a>
+<a class="sourceLine" id="cb279-11" title="11">bookdown:<span class="fu">:pdf_book:</span></a>
+<a class="sourceLine" id="cb279-12" title="12">  <span class="fu">includes:</span></a>
+<a class="sourceLine" id="cb279-13" title="13">    <span class="fu">in_header:</span><span class="at"> preamble.tex</span></a>
+<a class="sourceLine" id="cb279-14" title="14">  <span class="fu">latex_engine:</span><span class="at"> xelatex</span></a>
+<a class="sourceLine" id="cb279-15" title="15">  <span class="fu">citation_package:</span><span class="at"> natbib</span></a>
+<a class="sourceLine" id="cb279-16" title="16">bookdown:<span class="fu">:epub_book:</span></a>
+<a class="sourceLine" id="cb279-17" title="17">  <span class="fu">stylesheet:</span><span class="at"> style.css</span></a></code></pre></div>
 </div>
 <div id="yaml-header" class="section level3">
 <h3><span class="header-section-number">28.1.3</span> yaml header</h3>
-<div class="sourceCode" id="cb266"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb266-1" title="1"><span class="ot">---</span></a>
-<a class="sourceLine" id="cb266-2" title="2"><span class="fu">title:</span><span class="at"> </span><span class="st">&quot;A Minimal Bookdown Book&quot;</span></a>
-<a class="sourceLine" id="cb266-3" title="3"><span class="fu">author:</span><span class="at"> </span><span class="st">&quot;Sean Kross&quot;</span></a>
-<a class="sourceLine" id="cb266-4" title="4"><span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2016-12-02&quot;</span></a>
-<a class="sourceLine" id="cb266-5" title="5"><span class="fu">site:</span><span class="at"> bookdown::bookdown_site</span></a>
-<a class="sourceLine" id="cb266-6" title="6"><span class="fu">documentclass:</span><span class="at"> book</span></a>
-<a class="sourceLine" id="cb266-7" title="7"><span class="fu">bibliography:</span><span class="at"> </span><span class="kw">[</span>book.bib<span class="kw">]</span></a>
-<a class="sourceLine" id="cb266-8" title="8"><span class="fu">biblio-style:</span><span class="at"> apalike</span></a>
-<a class="sourceLine" id="cb266-9" title="9"><span class="fu">link-citations:</span><span class="at"> </span><span class="ch">yes</span></a>
-<a class="sourceLine" id="cb266-10" title="10"><span class="fu">github-repo:</span><span class="at"> seankross/bookdown-start</span></a>
-<a class="sourceLine" id="cb266-11" title="11"><span class="fu">url:</span><span class="at"> </span><span class="st">&#39;http\://seankross.com/bookdown-start/&#39;</span></a>
-<a class="sourceLine" id="cb266-12" title="12"><span class="fu">description:</span><span class="at"> </span><span class="st">&quot;Everything you need (and nothing more) to start a bookdown book.&quot;</span></a>
-<a class="sourceLine" id="cb266-13" title="13"><span class="ot">---</span></a></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb280-1" title="1"><span class="ot">---</span></a>
+<a class="sourceLine" id="cb280-2" title="2"><span class="fu">title:</span><span class="at"> </span><span class="st">&quot;A Minimal Bookdown Book&quot;</span></a>
+<a class="sourceLine" id="cb280-3" title="3"><span class="fu">author:</span><span class="at"> </span><span class="st">&quot;Sean Kross&quot;</span></a>
+<a class="sourceLine" id="cb280-4" title="4"><span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2016-12-02&quot;</span></a>
+<a class="sourceLine" id="cb280-5" title="5"><span class="fu">site:</span><span class="at"> bookdown::bookdown_site</span></a>
+<a class="sourceLine" id="cb280-6" title="6"><span class="fu">documentclass:</span><span class="at"> book</span></a>
+<a class="sourceLine" id="cb280-7" title="7"><span class="fu">bibliography:</span><span class="at"> </span><span class="kw">[</span>book.bib<span class="kw">]</span></a>
+<a class="sourceLine" id="cb280-8" title="8"><span class="fu">biblio-style:</span><span class="at"> apalike</span></a>
+<a class="sourceLine" id="cb280-9" title="9"><span class="fu">link-citations:</span><span class="at"> </span><span class="ch">yes</span></a>
+<a class="sourceLine" id="cb280-10" title="10"><span class="fu">github-repo:</span><span class="at"> seankross/bookdown-start</span></a>
+<a class="sourceLine" id="cb280-11" title="11"><span class="fu">url:</span><span class="at"> </span><span class="st">&#39;http\://seankross.com/bookdown-start/&#39;</span></a>
+<a class="sourceLine" id="cb280-12" title="12"><span class="fu">description:</span><span class="at"> </span><span class="st">&quot;Everything you need (and nothing more) to start a bookdown book.&quot;</span></a>
+<a class="sourceLine" id="cb280-13" title="13"><span class="ot">---</span></a></code></pre></div>
 </div>
 </div>
 <div id="NewBookdownProject" class="section level2">
@@ -604,77 +612,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Delete <code>download: ["pdf", "epub"]</code></li>
 <li>Add these lines</li>
 </ol>
-<div class="sourceCode" id="cb267"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb267-1" title="1"><span class="fu">config:</span></a>
-<a class="sourceLine" id="cb267-2" title="2">  <span class="fu">fontsettings:</span></a>
-<a class="sourceLine" id="cb267-3" title="3"> <span class="fu">theme:</span><span class="at"> white</span></a>
-<a class="sourceLine" id="cb267-4" title="4"> <span class="fu">family:</span><span class="at"> sans</span></a>
-<a class="sourceLine" id="cb267-5" title="5"> <span class="fu">size:</span><span class="at"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb267-6" title="6">  <span class="fu">edit:</span><span class="at"> https://github.com/retodomax/R_Ref_Book/edit/master/%s</span></a>
-<a class="sourceLine" id="cb267-7" title="7"><span class="fu">includes:</span></a>
-<a class="sourceLine" id="cb267-8" title="8">  <span class="fu">in_header:</span><span class="at"> header.html</span></a></code></pre></div></li>
+<div class="sourceCode" id="cb281"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb281-1" title="1"><span class="fu">config:</span></a>
+<a class="sourceLine" id="cb281-2" title="2">  <span class="fu">fontsettings:</span></a>
+<a class="sourceLine" id="cb281-3" title="3"> <span class="fu">theme:</span><span class="at"> white</span></a>
+<a class="sourceLine" id="cb281-4" title="4"> <span class="fu">family:</span><span class="at"> sans</span></a>
+<a class="sourceLine" id="cb281-5" title="5"> <span class="fu">size:</span><span class="at"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb281-6" title="6">  <span class="fu">edit:</span><span class="at"> https://github.com/retodomax/R_Ref_Book/edit/master/%s</span></a>
+<a class="sourceLine" id="cb281-7" title="7"><span class="fu">includes:</span></a>
+<a class="sourceLine" id="cb281-8" title="8">  <span class="fu">in_header:</span><span class="at"> header.html</span></a></code></pre></div></li>
 <li>Go to <code>index.Rmd</code>, add these lines</li>
 </ol>
-<div class="sourceCode" id="cb268"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb268-1" title="1"><span class="fu">github-repo:</span><span class="at"> </span><span class="st">&quot;retodomax/R_Ref_Book&quot;</span></a>
-<a class="sourceLine" id="cb268-2" title="2"><span class="fu">cover-image:</span><span class="at"> </span><span class="st">&quot;figures/01_cover/Cover.svg&quot;</span></a>
-<a class="sourceLine" id="cb268-3" title="3"><span class="fu">favicon:</span><span class="at"> </span><span class="st">&quot;figures/00_icon/icon.ico&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb282-1" title="1"><span class="fu">github-repo:</span><span class="at"> </span><span class="st">&quot;retodomax/R_Ref_Book&quot;</span></a>
+<a class="sourceLine" id="cb282-2" title="2"><span class="fu">cover-image:</span><span class="at"> </span><span class="st">&quot;figures/01_cover/Cover.svg&quot;</span></a>
+<a class="sourceLine" id="cb282-3" title="3"><span class="fu">favicon:</span><span class="at"> </span><span class="st">&quot;figures/00_icon/icon.ico&quot;</span></a></code></pre></div>
 <ol start="7" style="list-style-type: decimal">
 <li>Add <code>header.html</code> file with following content: (hide button)</li>
 </ol>
-<div class="sourceCode" id="cb269"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb269-1" title="1"><span class="kw">&lt;script&gt;</span></a>
-<a class="sourceLine" id="cb269-2" title="2"><span class="kw">function</span> <span class="at">myFunction</span>(myid) <span class="op">{</span></a>
-<a class="sourceLine" id="cb269-3" title="3">  <span class="kw">var</span> x <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(myid)<span class="op">;</span></a>
-<a class="sourceLine" id="cb269-4" title="4">  <span class="cf">if</span> (<span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">===</span> <span class="st">&quot;none&quot;</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb269-5" title="5">    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;block&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb269-6" title="6">  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb269-7" title="7">    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;none&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb269-8" title="8">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb269-9" title="9"><span class="op">}</span></a>
-<a class="sourceLine" id="cb269-10" title="10"><span class="kw">&lt;/script&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb283-1" title="1"><span class="kw">&lt;script&gt;</span></a>
+<a class="sourceLine" id="cb283-2" title="2"><span class="kw">function</span> <span class="at">myFunction</span>(myid) <span class="op">{</span></a>
+<a class="sourceLine" id="cb283-3" title="3">  <span class="kw">var</span> x <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(myid)<span class="op">;</span></a>
+<a class="sourceLine" id="cb283-4" title="4">  <span class="cf">if</span> (<span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">===</span> <span class="st">&quot;none&quot;</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb283-5" title="5">    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;block&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb283-6" title="6">  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb283-7" title="7">    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;none&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb283-8" title="8">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb283-9" title="9"><span class="op">}</span></a>
+<a class="sourceLine" id="cb283-10" title="10"><span class="kw">&lt;/script&gt;</span></a></code></pre></div>
 <ol start="8" style="list-style-type: decimal">
 <li>Go to <code>styles.css</code>, add these lines</li>
 </ol>
-<div class="sourceCode" id="cb270"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb270-1" title="1"><span class="co">/* definition tables (RZ) */</span></a>
-<a class="sourceLine" id="cb270-2" title="2"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></a>
-<a class="sourceLine" id="cb270-3" title="3"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></a>
-<a class="sourceLine" id="cb270-4" title="4"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</a>
-<a class="sourceLine" id="cb270-5" title="5">{</a>
-<a class="sourceLine" id="cb270-6" title="6">  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-7" title="7">  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-8" title="8">  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-9" title="9">}</a>
-<a class="sourceLine" id="cb270-10" title="10"></a>
-<a class="sourceLine" id="cb270-11" title="11"><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</a>
-<a class="sourceLine" id="cb270-12" title="12">  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-13" title="13">  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-14" title="14">}</a>
-<a class="sourceLine" id="cb270-15" title="15"><span class="fu">.deftab</span> th {</a>
-<a class="sourceLine" id="cb270-16" title="16">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></a>
-<a class="sourceLine" id="cb270-17" title="17">}</a>
-<a class="sourceLine" id="cb270-18" title="18"><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</a>
-<a class="sourceLine" id="cb270-19" title="19">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></a>
-<a class="sourceLine" id="cb270-20" title="20">}</a>
-<a class="sourceLine" id="cb270-21" title="21"></a>
-<a class="sourceLine" id="cb270-22" title="22"><span class="co">/* boxes with warnings, notes, tips,... */</span></a>
-<a class="sourceLine" id="cb270-23" title="23"><span class="fu">.rmdcaution</span><span class="op">,</span> <span class="fu">.rmdimportant</span><span class="op">,</span> <span class="fu">.rmdnote</span><span class="op">,</span> <span class="fu">.rmdtip</span><span class="op">,</span> <span class="fu">.rmdwarning</span> {</a>
-<a class="sourceLine" id="cb270-24" title="24">  <span class="kw">padding</span>: <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">4</span><span class="dt">em</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-25" title="25">  <span class="kw">margin-bottom</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-26" title="26">  <span class="kw">background</span>: <span class="cn">#f5f5f5</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">center</span>/<span class="dv">3</span><span class="dt">em</span> <span class="dv">no-repeat</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-27" title="27">}</a>
-<a class="sourceLine" id="cb270-28" title="28"><span class="fu">.rmdcaution</span> {</a>
-<a class="sourceLine" id="cb270-29" title="29">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/caution.png&quot;</span><span class="fu">)</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-30" title="30">}</a>
-<a class="sourceLine" id="cb270-31" title="31"><span class="fu">.rmdimportant</span> {</a>
-<a class="sourceLine" id="cb270-32" title="32">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/important.png&quot;</span><span class="fu">)</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-33" title="33">}</a>
-<a class="sourceLine" id="cb270-34" title="34"><span class="fu">.rmdnote</span> {</a>
-<a class="sourceLine" id="cb270-35" title="35">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/note.png&quot;</span><span class="fu">)</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-36" title="36">}</a>
-<a class="sourceLine" id="cb270-37" title="37"><span class="fu">.rmdtip</span> {</a>
-<a class="sourceLine" id="cb270-38" title="38">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/tip.png&quot;</span><span class="fu">)</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-39" title="39">}</a>
-<a class="sourceLine" id="cb270-40" title="40"><span class="fu">.rmdwarning</span> {</a>
-<a class="sourceLine" id="cb270-41" title="41">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/warning.png&quot;</span><span class="fu">)</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb270-42" title="42">}</a></code></pre></div>
+<div class="sourceCode" id="cb284"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb284-1" title="1"><span class="co">/* definition tables (RZ) */</span></a>
+<a class="sourceLine" id="cb284-2" title="2"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></a>
+<a class="sourceLine" id="cb284-3" title="3"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></a>
+<a class="sourceLine" id="cb284-4" title="4"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</a>
+<a class="sourceLine" id="cb284-5" title="5">{</a>
+<a class="sourceLine" id="cb284-6" title="6">  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-7" title="7">  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-8" title="8">  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-9" title="9">}</a>
+<a class="sourceLine" id="cb284-10" title="10"></a>
+<a class="sourceLine" id="cb284-11" title="11"><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</a>
+<a class="sourceLine" id="cb284-12" title="12">  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-13" title="13">  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-14" title="14">}</a>
+<a class="sourceLine" id="cb284-15" title="15"><span class="fu">.deftab</span> th {</a>
+<a class="sourceLine" id="cb284-16" title="16">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></a>
+<a class="sourceLine" id="cb284-17" title="17">}</a>
+<a class="sourceLine" id="cb284-18" title="18"><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</a>
+<a class="sourceLine" id="cb284-19" title="19">  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></a>
+<a class="sourceLine" id="cb284-20" title="20">}</a>
+<a class="sourceLine" id="cb284-21" title="21"></a>
+<a class="sourceLine" id="cb284-22" title="22"><span class="co">/* boxes with warnings, notes, tips,... */</span></a>
+<a class="sourceLine" id="cb284-23" title="23"><span class="fu">.rmdcaution</span><span class="op">,</span> <span class="fu">.rmdimportant</span><span class="op">,</span> <span class="fu">.rmdnote</span><span class="op">,</span> <span class="fu">.rmdtip</span><span class="op">,</span> <span class="fu">.rmdwarning</span> {</a>
+<a class="sourceLine" id="cb284-24" title="24">  <span class="kw">padding</span>: <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">4</span><span class="dt">em</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-25" title="25">  <span class="kw">margin-bottom</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-26" title="26">  <span class="kw">background</span>: <span class="cn">#f5f5f5</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">center</span>/<span class="dv">3</span><span class="dt">em</span> <span class="dv">no-repeat</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-27" title="27">}</a>
+<a class="sourceLine" id="cb284-28" title="28"><span class="fu">.rmdcaution</span> {</a>
+<a class="sourceLine" id="cb284-29" title="29">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/caution.png&quot;</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-30" title="30">}</a>
+<a class="sourceLine" id="cb284-31" title="31"><span class="fu">.rmdimportant</span> {</a>
+<a class="sourceLine" id="cb284-32" title="32">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/important.png&quot;</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-33" title="33">}</a>
+<a class="sourceLine" id="cb284-34" title="34"><span class="fu">.rmdnote</span> {</a>
+<a class="sourceLine" id="cb284-35" title="35">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/note.png&quot;</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-36" title="36">}</a>
+<a class="sourceLine" id="cb284-37" title="37"><span class="fu">.rmdtip</span> {</a>
+<a class="sourceLine" id="cb284-38" title="38">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/tip.png&quot;</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-39" title="39">}</a>
+<a class="sourceLine" id="cb284-40" title="40"><span class="fu">.rmdwarning</span> {</a>
+<a class="sourceLine" id="cb284-41" title="41">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/warning.png&quot;</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb284-42" title="42">}</a></code></pre></div>
 <ol start="9" style="list-style-type: decimal">
 <li>Add folder <code>figures</code> with following subfolders (containing png files)
 <ul>

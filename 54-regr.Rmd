@@ -229,6 +229,21 @@ title("Systematic Error")
 cross_check(F)
 ```
 
+```{r, eval=FALSE}
+# Automatic
+plot(fit, which = 1)
+
+# Manual
+plot(fitted(fit), residuals(fit))
+abline(h = 0)
+lines(loess.smooth(fitted(fit), residuals(fit)),
+      col = "red")
+
+# Resampling
+FunRZ::FunResplot(fit, plot = 1)
+
+```
+
 
 ### Normal QQ plot
 ```{r, echo=FALSE, out.width = '50%', fig.show='hold', fig.align='default'}
@@ -265,6 +280,19 @@ title("Short-Tailed")
 cross_check(T)
 ```
 
+```{r, eval=FALSE}
+# Automatic
+plot(fit, which = 2)
+
+# Manual
+qqnorm(rstandard(fit))
+qqline(rstandard(fit))
+
+# Resampling
+FunRZ::FunResplot(fit, plot = 2)
+
+```
+
 
 ### Scale-Location plot
 ```{r, echo=FALSE, out.width = '50%', fig.show='hold', fig.align='default'}
@@ -283,6 +311,20 @@ mymod <- lm(y ~ x)
 FunResplot(mymod, plots = 3, change_mfrow = F, plot_title = F)
 title("Heteroskedasticity")
 cross_check(F)
+```
+
+```{r, eval=FALSE}
+# Automatic
+plot(fit, which = 3)
+
+# Manual
+res <- sqrt(abs((rstandard(fit))))
+plot(fitted(fit), res)
+lines(loess.smooth(fitted(fit), res),
+      col="red")
+
+# Resampling
+FunRZ::FunResplot(fit, plot = 3)
 ```
 
 
@@ -305,6 +347,11 @@ title("Outlier with Leverage")
 cross_check(F)
 ```
 
+```{r, eval=FALSE}
+# Automatic
+plot(fit, which = 4)
+```
+
 
 ### Residuals vs any
 ```{r, echo=FALSE, out.width = '50%', fig.show='hold', fig.align='default'}
@@ -320,6 +367,18 @@ plot(1:30, rnorm(30)+10*sin(c(1:30)*0.2),
 abline(h = 0, lty = 2)
 title("Autocorrelated")
 cross_check(F)
+```
+
+```{r, eval=FALSE}
+# vs Predictors
+plot(residuals(fit) ~ ., data = df)
+
+# vs Possible predictors
+plot(residuals(fit) ~ ., data = df)
+
+# vs Temporal/Spatial information
+plot(residuals(fit))  ## against Index
+plot(residuals(fit) ~ Time-Space-Variable)
 ```
 
 
@@ -355,6 +414,184 @@ abline(a = -mycof["x1"]*mean(x1), b = mycof["x1"])
 lines(loess.smooth(x1,myres[,"x1"]), col = "red")
 ```
 
+```{r, eval=FALSE}
+# Automatic
+car::crPlots(fit)
+car::crPlot(fit, variable = x1)
+
+# Manual
+myres <- residuals(fit, type = "partial")
+mycof <- fit$coefficients
+## for target variable x1
+plot(myres[,"x1"] ~ x1)
+abline(a = -mycof["x1"]*mean(x1), b = mycof["x1"])
+lines(loess.smooth(x1, myres[,"x1"]), col = "red")
+```
+
+
+
+## Model improvement
+
+### Multicollinearity
+
+The variance inflation factor $\text{VIF}$ quantifies the multicollinearity between predictor variables.
+
+* Fit contains only numerical predictors: $\text{VIF} > 5$ critically
+* Fit contains also factorial predictors: `GVIF^(1/(2*Df))` $> 5$ critically
+
+```{r, collapse=TRUE}
+## Only numerical predictors
+fit <- lm(Pax ~ ATM + Cargo, data = unique2010)
+car::vif(fit)
+
+## Contains fatorial predictor
+fit <- lm(Sepal.Length ~ Sepal.Width + Species, data = iris)
+car::vif(fit)
+```
+
+### AIC/BIC
+
+\begin{align*}
+\text{AIC} &= -2\log(\text{L}) + 2p \\
+\text{BIC} &= -2\log(\text{L}) + \log(n)p
+\end{align*}
+
+where $\log(\text{L})$ is the log likelihood, $p$ is the number of estimated parameters and $n$ is the number of observations.
+
+* `AIC()` Akaike information criterion
+* `BIC()` Bayesian information criterion
+
+Interpretation
+
+* Smaller is better
+* BIC usually stronger penalization for numbers of parameters
+* Evidence ($\Delta \text{AIC}$, $\Delta \text{BIC}$)
+    - 0-2 Weak
+    - 2-6 Positive
+    - 6-10 Strong
+    - >10 Very strong
+
+### Variable selection
+
+#### Backward elimination
+```{r, eval=FALSE}
+## Manual
+fit01 <- lm(Mortality ~ JanTemp + JulyTemp + RelHum + 
+	    Rain + Educ + Dens + NonWhite + WhiteCollar +
+	    log(Pop) + House + Income + log(HC) +
+	    log(NOx) + log(SO2), data=apm) # full model
+
+drop1(fit01, test = "F")
+fit02 <- update(fit, .~. – House ) # remove predictor with highest p-value / highest AIC/BIC
+drop1(fit02, test = "F")
+# ...
+
+## Automatic
+fit01 <- lm(Mortality ~ JanTemp + JulyTemp + RelHum +
+	    Rain + Educ + Dens + NonWhite + WhiteCollar +
+	    log(Pop) + House + Income + log(HC) +
+	    log(NOx) + log(SO2), data=apm)
+fit02 <- step(fit01, direction = "backward", k = 2) # k defines selection criterion (AIC, BIC)
+```
+
+#### Forward selection
+```{r, eval=FALSE}
+## Manual
+fit01 <- lm(Mortality ~ 1, data = apm)
+f_full <- lm(Mortality ~ JanTemp + JulyTemp + RelHum +
+	      Rain + Educ + Dens + NonWhite + WhiteCollar +
+	      log(Pop) + House + Income + log(HC) +
+	      log(NOx) + log(SO2), data=apm)
+add1(fit01, scope = f_full, test = "F")
+fit02 <- update(fit01, .~. + NonWhite ) # add predictor with lowest p-value / lowest AIC/BIC
+add1(fit02, scope = f_full, test = "F")
+# ...
+
+## Automatic
+f_full <- lm(Mortality ~ JanTemp + JulyTemp + RelHum +
+		Rain + Educ + Dens + NonWhite + WhiteCollar +
+		log(Pop) + House + Income + log(HC) +
+		log(NOx) + log(SO2), data=apm)
+f_null <- lm(Mortality ~ 1, data = apm)
+sc <- list(lower = f_null, upper = f_full)
+fit02 <- step(f_null, scope = sc, direction = "forward", k = 2) # k defines selection criterion (AIC, BIC)
+```
+
+#### Both directions
+```{r, eval=FALSE}
+f_full <- lm(Mortality ~ JanTemp + JulyTemp + RelHum +
+		Rain + Educ + Dens + NonWhite + WhiteCollar +
+		log(Pop) + House + Income + log(HC) +
+		log(NOx) + log(SO2), data=apm)
+fit02 <- step(f_full, direction = "both", k = 2) # k defines selection criterion (AIC, BIC)
+```
+
+#### All possible models
+```{r}
+f_full <- lm(Mortality ~ JanTemp + JulyTemp + RelHum +
+		Rain + Educ + Dens + NonWhite + WhiteCollar +
+		log(Pop) + House + Income + log(HC) +
+		log(NOx) + log(SO2), data=apm)
+fit02 <- leaps::regsubsets(formula(f_full), nbest = 1, dat = apm, nvmax = 14)
+plot(fit02) # black predictors are included in the model
+```
+
+```{block2, type='rmdcaution'}
+`leaps::regsubsets` cannot deal correctly with factor variables and interaction terms
+(removes single factor levels instead of entire factor, removes main term even if interaction is still included)
+```
+
+#### Select model with lowest predictive MSE
+```{r, eval=FALSE}
+## Automatic (not recommended)
+DAAG::CVlm(data, formula, fold.number, ...)
+
+
+## Manual (this code only test one possible model)
+dat <- apm
+
+# Randomly shuffle the data
+dat <- dat[sample(nrow(dat)), ]
+
+# Create 10 equally size folds
+f <- 10
+folds <- cut(seq(1, nrow(dat)), breaks = f, labels = FALSE)
+
+# Perform 10 fold cross validation
+SE <- vector("numeric", f)
+for(i in 1:f){
+  #Segement your data by fold using the which() function
+  testIndexes <- which(folds==i,arr.ind=TRUE)
+  testData <- dat[testIndexes, ]
+  trainData <- dat[-testIndexes, ]
+  
+  #Use the test and train data partitions to check one model
+  fit <- lm(Mortality ~ NonWhite, data = trainData)
+  pred <- predict(fit, newdata = testData)
+  SE[i] <- mean((testData$Mortality - pred)^2)
+}
+mean(SE)
+```
+
+### Predictor relevance
+
+significance $\neq$ relevance
+
+```{r, eval=FALSE}
+## Standardized coefficients
+lelaimpo::calc.relim(fit, type = "betasq", rela = TRUE)
+
+## LMG criterion
+lelaimpo::calc.relim(fit, type = "lmg", rela = TRUE)
+```
+
+
+
+## Ridge Regression
+
+```{r}
+# HIER WEITER MACHEN!!!!!!
+```
 
 
 
