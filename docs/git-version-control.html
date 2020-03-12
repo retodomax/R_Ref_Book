@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-03-11" />
+<meta name="date" content="2020-03-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -344,11 +344,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="20.8.3" data-path="regression.html"><a href="regression.html#variable-selection"><i class="fa fa-check"></i><b>20.8.3</b> Variable selection</a></li>
 <li class="chapter" data-level="20.8.4" data-path="regression.html"><a href="regression.html#predictor-relevance"><i class="fa fa-check"></i><b>20.8.4</b> Predictor relevance</a></li>
 </ul></li>
-<li class="chapter" data-level="20.9" data-path="regression.html"><a href="regression.html#ridge-regression"><i class="fa fa-check"></i><b>20.9</b> Ridge Regression</a></li>
+<li class="chapter" data-level="20.9" data-path="regression.html"><a href="regression.html#shrinkage"><i class="fa fa-check"></i><b>20.9</b> Shrinkage</a></li>
 <li class="chapter" data-level="20.10" data-path="regression.html"><a href="regression.html#smoothing"><i class="fa fa-check"></i><b>20.10</b> Smoothing</a><ul>
 <li class="chapter" data-level="20.10.1" data-path="regression.html"><a href="regression.html#running-mean-yellow-box"><i class="fa fa-check"></i><b>20.10.1</b> Running mean (yellow box)</a></li>
 <li class="chapter" data-level="20.10.2" data-path="regression.html"><a href="regression.html#gaussian-kernel-estimate-green-gaussian"><i class="fa fa-check"></i><b>20.10.2</b> Gaussian kernel estimate (green gaussian)</a></li>
 <li class="chapter" data-level="20.10.3" data-path="regression.html"><a href="regression.html#loess-smoother"><i class="fa fa-check"></i><b>20.10.3</b> LOESS smoother</a></li>
+</ul></li>
+<li class="chapter" data-level="20.11" data-path="regression.html"><a href="regression.html#gam"><i class="fa fa-check"></i><b>20.11</b> GAM</a></li>
+<li class="chapter" data-level="20.12" data-path="regression.html"><a href="regression.html#glm"><i class="fa fa-check"></i><b>20.12</b> GLM</a><ul>
+<li class="chapter" data-level="20.12.1" data-path="regression.html"><a href="regression.html#logistic-regression"><i class="fa fa-check"></i><b>20.12.1</b> Logistic Regression</a></li>
+<li class="chapter" data-level="20.12.2" data-path="regression.html"><a href="regression.html#poisson-regression"><i class="fa fa-check"></i><b>20.12.2</b> Poisson Regression</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>21</b> ANOVA</a><ul>
@@ -357,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="21.3" data-path="anova.html"><a href="anova.html#simulate-data"><i class="fa fa-check"></i><b>21.3</b> Simulate data</a><ul>
 <li class="chapter" data-level="21.3.1" data-path="anova.html"><a href="anova.html#randomization"><i class="fa fa-check"></i><b>21.3.1</b> Randomization</a></li>
 </ul></li>
-<li class="chapter" data-level="21.4" data-path="anova.html"><a href="anova.html#visualization"><i class="fa fa-check"></i><b>21.4</b> Visualization</a><ul>
+<li class="chapter" data-level="21.4" data-path="anova.html"><a href="anova.html#visualization-2"><i class="fa fa-check"></i><b>21.4</b> Visualization</a><ul>
 <li class="chapter" data-level="21.4.1" data-path="anova.html"><a href="anova.html#stripchart"><i class="fa fa-check"></i><b>21.4.1</b> Stripchart</a></li>
 <li class="chapter" data-level="21.4.2" data-path="anova.html"><a href="anova.html#boxplot"><i class="fa fa-check"></i><b>21.4.2</b> Boxplot</a></li>
 <li class="chapter" data-level="21.4.3" data-path="anova.html"><a href="anova.html#interaction-plot"><i class="fa fa-check"></i><b>21.4.3</b> Interaction plot</a></li>
@@ -365,12 +370,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="21.5" data-path="anova.html"><a href="anova.html#fit-model"><i class="fa fa-check"></i><b>21.5</b> Fit model</a><ul>
 <li class="chapter" data-level="21.5.1" data-path="anova.html"><a href="anova.html#identifiability"><i class="fa fa-check"></i><b>21.5.1</b> Identifiability</a></li>
-<li class="chapter" data-level="21.5.2" data-path="anova.html"><a href="anova.html#fitting"><i class="fa fa-check"></i><b>21.5.2</b> Fitting</a></li>
+<li class="chapter" data-level="21.5.2" data-path="anova.html"><a href="anova.html#fitting-2"><i class="fa fa-check"></i><b>21.5.2</b> Fitting</a></li>
 </ul></li>
 <li class="chapter" data-level="21.6" data-path="anova.html"><a href="anova.html#anova-table"><i class="fa fa-check"></i><b>21.6</b> ANOVA table</a><ul>
 <li class="chapter" data-level="21.6.1" data-path="anova.html"><a href="anova.html#types-of-sum-of-sqares"><i class="fa fa-check"></i><b>21.6.1</b> Types of Sum of Sqares</a></li>
 </ul></li>
-<li class="chapter" data-level="21.7" data-path="anova.html"><a href="anova.html#model-comparison-1"><i class="fa fa-check"></i><b>21.7</b> Model comparison</a></li>
+<li class="chapter" data-level="21.7" data-path="anova.html"><a href="anova.html#model-comparison-2"><i class="fa fa-check"></i><b>21.7</b> Model comparison</a></li>
 <li class="chapter" data-level="21.8" data-path="anova.html"><a href="anova.html#coefficients"><i class="fa fa-check"></i><b>21.8</b> Coefficients</a></li>
 <li class="chapter" data-level="21.9" data-path="anova.html"><a href="anova.html#tests-and-ci-for-coeficients"><i class="fa fa-check"></i><b>21.9</b> Tests and CI for coeficients</a></li>
 <li class="chapter" data-level="21.10" data-path="anova.html"><a href="anova.html#predict"><i class="fa fa-check"></i><b>21.10</b> Predict</a></li>
@@ -399,7 +404,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>22</b> Multivariate Statistics</a><ul>
 <li class="chapter" data-level="22.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>22.1</b> Data sets</a></li>
 <li class="chapter" data-level="22.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>22.2</b> Some functions</a><ul>
-<li class="chapter" data-level="22.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization-1"><i class="fa fa-check"></i><b>22.2.1</b> Visualization</a></li>
+<li class="chapter" data-level="22.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization-3"><i class="fa fa-check"></i><b>22.2.1</b> Visualization</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="23" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>23</b> Time series</a><ul>
@@ -415,9 +420,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="23.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>23.4</b> Differencing</a></li>
 </ul></li>
-<li class="chapter" data-level="24" data-path="computational-statistics.html"><a href="computational-statistics.html"><i class="fa fa-check"></i><b>24</b> Computational Statistics</a><ul>
-<li class="chapter" data-level="24.1" data-path="computational-statistics.html"><a href="computational-statistics.html#cross-validation"><i class="fa fa-check"></i><b>24.1</b> Cross validation</a></li>
-<li class="chapter" data-level="24.2" data-path="computational-statistics.html"><a href="computational-statistics.html#bootstrap"><i class="fa fa-check"></i><b>24.2</b> Bootstrap</a></li>
+<li class="chapter" data-level="24" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html"><i class="fa fa-check"></i><b>24</b> Computational Statistics</a><ul>
+<li class="chapter" data-level="24.1" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html#cross-validation"><i class="fa fa-check"></i><b>24.1</b> Cross validation</a></li>
+<li class="chapter" data-level="24.2" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html#bootstrap"><i class="fa fa-check"></i><b>24.2</b> Bootstrap</a></li>
 </ul></li>
 <li class="part"><span><b>VI R Workflow</b></span></li>
 <li class="chapter" data-level="25" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>25</b> Reproducible Research</a><ul>
@@ -547,9 +552,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="set-global-config-variables" class="section level5 unnumbered">
 <h5>Set global config variables</h5>
-<div class="sourceCode" id="cb286"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb286-1" title="1"><span class="fu">git</span> config --global user.name <span class="st">&#39;Reto Zihlmann&#39;</span></a>
-<a class="sourceLine" id="cb286-2" title="2"><span class="fu">git</span> config --global user.email <span class="st">&#39;retozihlmann@outlook.com&#39;</span></a>
-<a class="sourceLine" id="cb286-3" title="3"><span class="fu">git</span> config --global --list</a></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb317-1" title="1"><span class="fu">git</span> config --global user.name <span class="st">&#39;Reto Zihlmann&#39;</span></a>
+<a class="sourceLine" id="cb317-2" title="2"><span class="fu">git</span> config --global user.email <span class="st">&#39;retozihlmann@outlook.com&#39;</span></a>
+<a class="sourceLine" id="cb317-3" title="3"><span class="fu">git</span> config --global --list</a></code></pre></div>
 <ul>
 <li>user.email should be the same as used for your server (otherwise your commits appear as if they were done by someone else)
 <ul>
@@ -562,11 +567,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="clone-repo-to-your-local-computer" class="section level5 unnumbered">
 <h5>Clone repo to your local computer</h5>
-<div class="sourceCode" id="cb287"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb287-1" title="1"><span class="fu">git</span> clone https://github.com/retodomax/YOUR-REPOSITORY.git</a></code></pre></div>
+<div class="sourceCode" id="cb318"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb318-1" title="1"><span class="fu">git</span> clone https://github.com/retodomax/YOUR-REPOSITORY.git</a></code></pre></div>
 </div>
 <div id="conect-with-remote-respository" class="section level5 unnumbered">
 <h5>Conect with remote respository</h5>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-238"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-253"></span>
 <img src="figures/git_remote.png" alt="..." width="100%" />
 <p class="caption">
 Figure 30.1: …
@@ -575,21 +580,21 @@ Figure 30.1: …
 </div>
 <div id="show-origin-variable" class="section level5 unnumbered">
 <h5>Show origin variable</h5>
-<div class="sourceCode" id="cb288"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb288-1" title="1"><span class="fu">git</span> remote show origin</a></code></pre></div>
+<div class="sourceCode" id="cb319"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb319-1" title="1"><span class="fu">git</span> remote show origin</a></code></pre></div>
 <p>or shorter</p>
-<div class="sourceCode" id="cb289"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb289-1" title="1"><span class="fu">git</span> remote -v</a></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb320-1" title="1"><span class="fu">git</span> remote -v</a></code></pre></div>
 </div>
 <div id="show-branch-we-are-traking" class="section level5 unnumbered">
 <h5>Show branch we are traking</h5>
-<div class="sourceCode" id="cb290"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb290-1" title="1"><span class="fu">git</span> branch -vv</a></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb321-1" title="1"><span class="fu">git</span> branch -vv</a></code></pre></div>
 </div>
 <div id="list-existing-keys" class="section level5 unnumbered">
 <h5>list existing keys</h5>
-<div class="sourceCode" id="cb291"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb291-1" title="1"><span class="fu">ls</span> -al ~/.ssh/</a></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb322-1" title="1"><span class="fu">ls</span> -al ~/.ssh/</a></code></pre></div>
 </div>
 <div id="generate-new-key" class="section level5 unnumbered">
 <h5>generate new key</h5>
-<div class="sourceCode" id="cb292"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb292-1" title="1"><span class="fu">ssh-keygen</span> -t rsa -b 4096 -C <span class="st">&quot;retozihlmann@outlook.com Lenovo&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb323-1" title="1"><span class="fu">ssh-keygen</span> -t rsa -b 4096 -C <span class="st">&quot;retozihlmann@outlook.com Lenovo&quot;</span></a></code></pre></div>
 <ul>
 <li>text at end of command should be something to recognize a computer</li>
 <li>only generate new keys if you have non</li>
@@ -598,9 +603,9 @@ Figure 30.1: …
 <li>after you generated your keys they have to be added to the <strong>ssh-agent</strong> and to the server</li>
 </ul>
 <p>Check if agent is running</p>
-<div class="sourceCode" id="cb293"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb293-1" title="1"><span class="bu">eval</span> <span class="va">$(</span><span class="fu">ssh-agent</span> -s<span class="va">)</span></a></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb324-1" title="1"><span class="bu">eval</span> <span class="va">$(</span><span class="fu">ssh-agent</span> -s<span class="va">)</span></a></code></pre></div>
 <p>Add keys to agent</p>
-<div class="sourceCode" id="cb294"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb294-1" title="1"><span class="fu">ssh-add</span> ~/.ssh/id_rsa</a></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb325-1" title="1"><span class="fu">ssh-add</span> ~/.ssh/id_rsa</a></code></pre></div>
 <p>Add keys to server</p>
 <p><a href="www.github.com">github.com</a> -&gt; Settings -&gt; SSH</p>
 </div>
@@ -618,8 +623,8 @@ Figure 30.1: …
 <ul>
 <li>use https or ssh link</li>
 </ul>
-<div class="sourceCode" id="cb295"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb295-1" title="1"><span class="fu">git</span> remote add origin https://github.com/retodomax/My_project.git</a>
-<a class="sourceLine" id="cb295-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb326-1" title="1"><span class="fu">git</span> remote add origin https://github.com/retodomax/My_project.git</a>
+<a class="sourceLine" id="cb326-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>paste commands in in Git Bash opend in the project folder
 <ul>

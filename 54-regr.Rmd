@@ -586,20 +586,14 @@ lelaimpo::calc.relim(fit, type = "lmg", rela = TRUE)
 ```
 
 
+## Shrinkage
 
-## Ridge Regression
-
-```{r}
-# HIER WEITER MACHEN!!!!!!
-```
-
-
-
+See chapter\ \@ref(Computational-Statistics)
 
 
 ## Smoothing
 
-```{r}
+```{r, echo=FALSE}
 plot(unique2010$ATM, unique2010$Pax, xlab = "ATM", ylab = "PAX")
 polygon(x = seq(19000, 25000, 1),
         y = (dunif(seq(19000, 25000, 1), min = 20000, max = 21000)*6*10^8+par("usr")[3]),
@@ -609,8 +603,6 @@ polygon(x = seq(19000, 25000, 1),
         col = "#addd8e")
 
 points(unique2010$ATM, unique2010$Pax)
-
-# FunAxis(xtitle = "ATM", ytitle = "PAX")
 
 points(ksmooth(unique2010$ATM, unique2010$Pax, kernel = "box", bandwidth = 1000, x.points = 20500),
        cex = 1.5, pch = 16)
@@ -672,5 +664,226 @@ smoo <- loess.smooth(unique2010$ATM,unique2010$Pax,  # Data
 
 plot(unique2010$ATM, unique2010$Pax)
 lines(fit)
+```
+
+
+## GAM
+
+Use package `mgcv` and have a look into the book of Wood.
+
+* `mgcv::s()` smooth spline
+* `mgcv::te()` interaction between two predictors
+* `mgcv::ti()`
+* `mgcv::t2()`
+* `splines::ns()` natural spline
+* `gam::lo()` loess
+
+
+
+```{r}
+x <- 1:30
+y <- rnorm(30)+10*sin(c(1:30)*0.2)
+plot(x, y)
+library(mgcv)
+fit <- gam(y ~ s(x))
+lines(x, fitted(fit))
+summary(fit)
+```
+
+* `edf` Empirical degrees of freedom
+* `Ref.df` Alternative way to calculate df
+* `GCV` Generalized cross validation score
+* `Deviance explained` Equivalent to $R^2$ 
+* `Scale est.` estimate of $\sigma_E^2$
+
+Deviance explained:	Equivalent to R2 (not adjusted)
+Scale est.:			estimate of 𝜎_𝐸^2
+
+##### Options {-}
+
+```{r, eval=FALSE}
+s(x1, bs = "tp") # tp: thin plate, cr: cubic spline
+s(x1, df = 3)    # prespecify the df (instead of determine it by CV)
+```
+
+##### Diagnostics {-}
+```{r}
+fit <- gam(Mortality ~ s(Educ), data = apm)
+gam.check(fit)
+```
+
+* low `p-value` and `k-index` < 1 indicate that actual fit might need more flexibility
+    - increase k-value manually
+    - `gam(Mortality ~ s(Educ, k = 50), data = apm)`
+
+##### Visualization {-}
+
+```{r, fig.align='default', fig.show='hold'}
+## Partial residual plot
+fit_gam <- gam(prestige ~ s(income) + s(education), data = Prestige)
+plot(fit_gam, shade = T, residuals = T, main = "GAM Partial Residual Plot", pch = 20)
+
+## 3D plot (only with exactly two s() terms)
+vis.gam(fit_gam, theta = 45, phi = 30) # rotation arround vertical (theta) and horizontal (phi) axis
+
+## Interaction spline
+fit_gam <- gam(prestige ~ te(income, education), data = Prestige)
+plot(fit_gam)
+```
+
+##### Model comparison {-}
+```{r}
+fit_ols <- lm(prestige ~ income + education, data = Prestige)
+fit_gam <- gam(prestige ~ s(income) + s(education), data = Prestige)
+anova(fit_ols, fit_gam, test = "Chisq")
+```
+
+In our case clear evidence for the more complex GAM model.
+
+
+
+##### Alternatives {-}
+
+* `smooth.spline()` only one dimensional splines
+* package `gam`
+* package `earth`
+
+
+## GLM
+
+### Logistic Regression
+
+##### Fitting {-}
+
+```{r}
+fit <- glm(survival ~ log10(weight) + age, data = baby, family=binomial)
+```
+
+Possible warning messages of fitting
+
+```
+Warning message:
+glm.fit: algorithm did not converge
+```
+Numerical optimization failed, coefficients are not trustworthy 
+
+
+```
+Warning message:
+glm.fit: fitted probabilities numerically 0 or 1 occured
+```
+
+Perfect separation between binary response options, possible to continue… 
+
+##### Inference {-}
+
+* `summary()`
+* `drop1()`
+
+Both should yield in similar results. `drop1()` might be better suited for factorial predictors and interactions (drops only terms which can be dropped).
+
+
+```{r}
+summary(fit)
+drop1(fit, test = "Chisq")
+```
+
+A p-value for a "global F-test" can be manually computed
+
+```{r}
+1-pchisq(fit$null.deviance-fit$deviance, df=(fit$df.null-fit$df.res))
+```
+
+**CI**
+
+```{r}
+## Automatic (slightly different (better) than manual CI)
+confint(fit, "log10(weight)")
+confint(fit, "(Intercept)")
+
+## Manual
+mycoef <- summary(fit)$coefficients
+mycoef["(Intercept)","Estimate"] + qnorm(c(0.025, 0.975))*mycoef["(Intercept)","Std. Error"]
+```
+
+**Coefficient of determination** $R^2$
+
+```{r}
+fit_dev <- fit$deviance
+fit_null <- fit$null.deviance
+n <- length(baby$weight)
+R_2 <- (1-exp((fit_dev-fit_null)/n))/(1-exp(-fit_null/n))
+```
+
+##### Visualization {-}
+
+```{r}
+## Bernoulli probability
+lin_pred <- predict(fit, type="link")       ## linear predictor
+bern_prob <- predict(fit, type="response")  ## bernoulli probability
+plot(lin_pred, baby$survival, type="n", xlab="linear predictor")
+points(lin_pred[baby$survival==0], baby$survival[baby$survival==0], pch = 16, col = "red")
+points(lin_pred[baby$survival==1], baby$survival[baby$survival==1], pch = 17)
+lines(sort(lin_pred), sort(bern_prob), lty=3)
+title("Survival vs. Linear Predictor")
+
+## Predictor space (only if exactly two predictors)
+plot(age ~ weight, data=baby, type="n")
+points(age ~ weight, subset=(survival==0), data=baby, pch = 16, col = "red")
+points(age ~ weight, subset=(survival==1), data=baby, pch = 17)
+title("Survival after Premature Birth")
+```
+
+##### Diagnostics {-}
+
+Different types of residuals
+
+```{r, eval=FALSE}
+resid(fit, type = "pearson")
+resid(fit, type = "deviance")
+```
+
+Tukey-Anscombe plot should be done manually because we need a non-robust smoother
+
+```{r}
+xx <- predict(fit, type="link")
+yy <- residuals(fit, type="deviance")
+plot(xx, yy, pch=20, main="Tukey-Anscombe Plot")
+lines(loess.smooth(xx, yy, family="gaussian"), col="red")
+abline(h=0, lty=3, col="grey")
+```
+
+
+### Poisson Regression
+
+##### Fitting {-}
+
+```{r}
+fit <- glm(Species ~ log(Area) + log(Elevation) + log(Nearest) +
+             I(log(Scruz+0.4)) + log(Adjacent), data = gala, family = poisson)
+```
+
+##### Inference {-}
+
+```{r}
+summary(fit)
+```
+
+##### Diagnostics {-}
+
+Residuals should lie within range $[-2, 2]$, this would not be fulfilled in our example:
+
+```{r}
+xx <- predict(fit, type="link")
+yy <- resid(fit, type="pearson")
+plot(xx, yy, main="Tukey-Anscombe Plot",
+     xlab = "Linear Predictor",
+     ylab = "Pearson Residuals",
+     ylim = c(-10, 10))
+smoo <- loess.smooth(xx, yy)
+abline(h=0, col="grey")
+abline(h = c(-2,2), col = "gray", lty = 2)
+lines(smoo, col="red")
+
 ```
 

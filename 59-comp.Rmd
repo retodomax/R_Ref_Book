@@ -1,4 +1,4 @@
-# Computational Statistics
+# Computational Statistics {#Computational-Statistics}
 
 ## Cross validation
 

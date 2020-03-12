@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-03-11" />
+<meta name="date" content="2020-03-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -344,11 +344,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="20.8.3" data-path="regression.html"><a href="regression.html#variable-selection"><i class="fa fa-check"></i><b>20.8.3</b> Variable selection</a></li>
 <li class="chapter" data-level="20.8.4" data-path="regression.html"><a href="regression.html#predictor-relevance"><i class="fa fa-check"></i><b>20.8.4</b> Predictor relevance</a></li>
 </ul></li>
-<li class="chapter" data-level="20.9" data-path="regression.html"><a href="regression.html#ridge-regression"><i class="fa fa-check"></i><b>20.9</b> Ridge Regression</a></li>
+<li class="chapter" data-level="20.9" data-path="regression.html"><a href="regression.html#shrinkage"><i class="fa fa-check"></i><b>20.9</b> Shrinkage</a></li>
 <li class="chapter" data-level="20.10" data-path="regression.html"><a href="regression.html#smoothing"><i class="fa fa-check"></i><b>20.10</b> Smoothing</a><ul>
 <li class="chapter" data-level="20.10.1" data-path="regression.html"><a href="regression.html#running-mean-yellow-box"><i class="fa fa-check"></i><b>20.10.1</b> Running mean (yellow box)</a></li>
 <li class="chapter" data-level="20.10.2" data-path="regression.html"><a href="regression.html#gaussian-kernel-estimate-green-gaussian"><i class="fa fa-check"></i><b>20.10.2</b> Gaussian kernel estimate (green gaussian)</a></li>
 <li class="chapter" data-level="20.10.3" data-path="regression.html"><a href="regression.html#loess-smoother"><i class="fa fa-check"></i><b>20.10.3</b> LOESS smoother</a></li>
+</ul></li>
+<li class="chapter" data-level="20.11" data-path="regression.html"><a href="regression.html#gam"><i class="fa fa-check"></i><b>20.11</b> GAM</a></li>
+<li class="chapter" data-level="20.12" data-path="regression.html"><a href="regression.html#glm"><i class="fa fa-check"></i><b>20.12</b> GLM</a><ul>
+<li class="chapter" data-level="20.12.1" data-path="regression.html"><a href="regression.html#logistic-regression"><i class="fa fa-check"></i><b>20.12.1</b> Logistic Regression</a></li>
+<li class="chapter" data-level="20.12.2" data-path="regression.html"><a href="regression.html#poisson-regression"><i class="fa fa-check"></i><b>20.12.2</b> Poisson Regression</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>21</b> ANOVA</a><ul>
@@ -357,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="21.3" data-path="anova.html"><a href="anova.html#simulate-data"><i class="fa fa-check"></i><b>21.3</b> Simulate data</a><ul>
 <li class="chapter" data-level="21.3.1" data-path="anova.html"><a href="anova.html#randomization"><i class="fa fa-check"></i><b>21.3.1</b> Randomization</a></li>
 </ul></li>
-<li class="chapter" data-level="21.4" data-path="anova.html"><a href="anova.html#visualization"><i class="fa fa-check"></i><b>21.4</b> Visualization</a><ul>
+<li class="chapter" data-level="21.4" data-path="anova.html"><a href="anova.html#visualization-2"><i class="fa fa-check"></i><b>21.4</b> Visualization</a><ul>
 <li class="chapter" data-level="21.4.1" data-path="anova.html"><a href="anova.html#stripchart"><i class="fa fa-check"></i><b>21.4.1</b> Stripchart</a></li>
 <li class="chapter" data-level="21.4.2" data-path="anova.html"><a href="anova.html#boxplot"><i class="fa fa-check"></i><b>21.4.2</b> Boxplot</a></li>
 <li class="chapter" data-level="21.4.3" data-path="anova.html"><a href="anova.html#interaction-plot"><i class="fa fa-check"></i><b>21.4.3</b> Interaction plot</a></li>
@@ -365,12 +370,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="21.5" data-path="anova.html"><a href="anova.html#fit-model"><i class="fa fa-check"></i><b>21.5</b> Fit model</a><ul>
 <li class="chapter" data-level="21.5.1" data-path="anova.html"><a href="anova.html#identifiability"><i class="fa fa-check"></i><b>21.5.1</b> Identifiability</a></li>
-<li class="chapter" data-level="21.5.2" data-path="anova.html"><a href="anova.html#fitting"><i class="fa fa-check"></i><b>21.5.2</b> Fitting</a></li>
+<li class="chapter" data-level="21.5.2" data-path="anova.html"><a href="anova.html#fitting-2"><i class="fa fa-check"></i><b>21.5.2</b> Fitting</a></li>
 </ul></li>
 <li class="chapter" data-level="21.6" data-path="anova.html"><a href="anova.html#anova-table"><i class="fa fa-check"></i><b>21.6</b> ANOVA table</a><ul>
 <li class="chapter" data-level="21.6.1" data-path="anova.html"><a href="anova.html#types-of-sum-of-sqares"><i class="fa fa-check"></i><b>21.6.1</b> Types of Sum of Sqares</a></li>
 </ul></li>
-<li class="chapter" data-level="21.7" data-path="anova.html"><a href="anova.html#model-comparison-1"><i class="fa fa-check"></i><b>21.7</b> Model comparison</a></li>
+<li class="chapter" data-level="21.7" data-path="anova.html"><a href="anova.html#model-comparison-2"><i class="fa fa-check"></i><b>21.7</b> Model comparison</a></li>
 <li class="chapter" data-level="21.8" data-path="anova.html"><a href="anova.html#coefficients"><i class="fa fa-check"></i><b>21.8</b> Coefficients</a></li>
 <li class="chapter" data-level="21.9" data-path="anova.html"><a href="anova.html#tests-and-ci-for-coeficients"><i class="fa fa-check"></i><b>21.9</b> Tests and CI for coeficients</a></li>
 <li class="chapter" data-level="21.10" data-path="anova.html"><a href="anova.html#predict"><i class="fa fa-check"></i><b>21.10</b> Predict</a></li>
@@ -399,7 +404,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>22</b> Multivariate Statistics</a><ul>
 <li class="chapter" data-level="22.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>22.1</b> Data sets</a></li>
 <li class="chapter" data-level="22.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>22.2</b> Some functions</a><ul>
-<li class="chapter" data-level="22.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization-1"><i class="fa fa-check"></i><b>22.2.1</b> Visualization</a></li>
+<li class="chapter" data-level="22.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization-3"><i class="fa fa-check"></i><b>22.2.1</b> Visualization</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="23" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>23</b> Time series</a><ul>
@@ -415,9 +420,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="23.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>23.4</b> Differencing</a></li>
 </ul></li>
-<li class="chapter" data-level="24" data-path="computational-statistics.html"><a href="computational-statistics.html"><i class="fa fa-check"></i><b>24</b> Computational Statistics</a><ul>
-<li class="chapter" data-level="24.1" data-path="computational-statistics.html"><a href="computational-statistics.html#cross-validation"><i class="fa fa-check"></i><b>24.1</b> Cross validation</a></li>
-<li class="chapter" data-level="24.2" data-path="computational-statistics.html"><a href="computational-statistics.html#bootstrap"><i class="fa fa-check"></i><b>24.2</b> Bootstrap</a></li>
+<li class="chapter" data-level="24" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html"><i class="fa fa-check"></i><b>24</b> Computational Statistics</a><ul>
+<li class="chapter" data-level="24.1" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html#cross-validation"><i class="fa fa-check"></i><b>24.1</b> Cross validation</a></li>
+<li class="chapter" data-level="24.2" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html#bootstrap"><i class="fa fa-check"></i><b>24.2</b> Bootstrap</a></li>
 </ul></li>
 <li class="part"><span><b>VI R Workflow</b></span></li>
 <li class="chapter" data-level="25" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>25</b> Reproducible Research</a><ul>
@@ -528,48 +533,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="anova" class="section level1">
 <h1><span class="header-section-number">Chapter 21</span> ANOVA</h1>
 <p>Load data sets of this chapter</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" title="1"><span class="kw">data</span>(<span class="st">&quot;meat&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
-<a class="sourceLine" id="cb179-2" title="2"><span class="kw">data</span>(<span class="st">&quot;snails&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
-<a class="sourceLine" id="cb179-3" title="3"><span class="kw">data</span>(<span class="st">&quot;pine&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
-<a class="sourceLine" id="cb179-4" title="4"><span class="kw">data</span>(<span class="st">&quot;cheddar&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
-<a class="sourceLine" id="cb179-5" title="5"><span class="kw">data</span>(<span class="st">&quot;grasses&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
-<a class="sourceLine" id="cb179-6" title="6"><span class="kw">data</span>(<span class="st">&quot;animals&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
-<a class="sourceLine" id="cb179-7" title="7"><span class="kw">data</span>(<span class="st">&quot;trigly&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
-<a class="sourceLine" id="cb179-8" title="8"><span class="kw">data</span>(<span class="st">&quot;ergoStool&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
-<a class="sourceLine" id="cb179-9" title="9"><span class="kw">data</span>(<span class="st">&quot;Machines&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
-<a class="sourceLine" id="cb179-10" title="10"><span class="kw">data</span>(<span class="st">&quot;cheese.data&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
-<a class="sourceLine" id="cb179-11" title="11"><span class="kw">data</span>(<span class="st">&quot;dish&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
-<a class="sourceLine" id="cb179-12" title="12"></a>
-<a class="sourceLine" id="cb179-13" title="13"><span class="kw">data</span>(<span class="st">&quot;PlantGrowth&quot;</span>)</a>
-<a class="sourceLine" id="cb179-14" title="14"><span class="kw">data</span>(<span class="st">&quot;Pastes&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;lme4&quot;</span>)</a>
-<a class="sourceLine" id="cb179-15" title="15"><span class="kw">data</span>(<span class="st">&quot;oats&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;MASS&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb210-1" title="1"><span class="kw">data</span>(<span class="st">&quot;meat&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
+<a class="sourceLine" id="cb210-2" title="2"><span class="kw">data</span>(<span class="st">&quot;snails&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
+<a class="sourceLine" id="cb210-3" title="3"><span class="kw">data</span>(<span class="st">&quot;pine&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
+<a class="sourceLine" id="cb210-4" title="4"><span class="kw">data</span>(<span class="st">&quot;cheddar&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
+<a class="sourceLine" id="cb210-5" title="5"><span class="kw">data</span>(<span class="st">&quot;grasses&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
+<a class="sourceLine" id="cb210-6" title="6"><span class="kw">data</span>(<span class="st">&quot;animals&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
+<a class="sourceLine" id="cb210-7" title="7"><span class="kw">data</span>(<span class="st">&quot;trigly&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
+<a class="sourceLine" id="cb210-8" title="8"><span class="kw">data</span>(<span class="st">&quot;ergoStool&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
+<a class="sourceLine" id="cb210-9" title="9"><span class="kw">data</span>(<span class="st">&quot;Machines&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
+<a class="sourceLine" id="cb210-10" title="10"><span class="kw">data</span>(<span class="st">&quot;cheese.data&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
+<a class="sourceLine" id="cb210-11" title="11"><span class="kw">data</span>(<span class="st">&quot;dish&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</a>
+<a class="sourceLine" id="cb210-12" title="12"></a>
+<a class="sourceLine" id="cb210-13" title="13"><span class="kw">data</span>(<span class="st">&quot;PlantGrowth&quot;</span>)</a>
+<a class="sourceLine" id="cb210-14" title="14"><span class="kw">data</span>(<span class="st">&quot;Pastes&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;lme4&quot;</span>)</a>
+<a class="sourceLine" id="cb210-15" title="15"><span class="kw">data</span>(<span class="st">&quot;oats&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;MASS&quot;</span>)</a></code></pre></div>
 <div id="idea" class="section level2">
 <h2><span class="header-section-number">21.1</span> Idea</h2>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-177-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-192-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="example-1" class="section level2">
 <h2><span class="header-section-number">21.2</span> Example</h2>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(Yield <span class="op">~</span><span class="st"> </span>Genotype <span class="op">+</span><span class="st"> </span>Block, <span class="dt">data =</span> data)</a>
-<a class="sourceLine" id="cb180-2" title="2"><span class="kw">anova</span>(fit)          <span class="co">#Anova table</span></a>
-<a class="sourceLine" id="cb180-3" title="3">Analysis of Variance Table</a>
-<a class="sourceLine" id="cb180-4" title="4"></a>
-<a class="sourceLine" id="cb180-5" title="5">Response<span class="op">:</span><span class="st"> </span>Yield</a>
-<a class="sourceLine" id="cb180-6" title="6">          Df Sum Sq Mean Sq F value <span class="kw">Pr</span>(<span class="op">&gt;</span>F)</a>
-<a class="sourceLine" id="cb180-7" title="7">Genotype   <span class="dv">1</span>   <span class="fl">4.00</span>    <span class="fl">4.00</span>   <span class="fl">25.00</span> <span class="fl">0.1257</span></a>
-<a class="sourceLine" id="cb180-8" title="8">Block      <span class="dv">1</span>   <span class="fl">1.00</span>    <span class="fl">1.00</span>    <span class="fl">6.25</span> <span class="fl">0.2422</span></a>
-<a class="sourceLine" id="cb180-9" title="9">Residuals  <span class="dv">1</span>   <span class="fl">0.16</span>    <span class="fl">0.16</span>               </a>
-<a class="sourceLine" id="cb180-10" title="10"><span class="kw">coef</span>(fit)           <span class="co">#Effect of different Factors</span></a>
-<a class="sourceLine" id="cb180-11" title="11">(Intercept)   Genotype2      Blockb </a>
-<a class="sourceLine" id="cb180-12" title="12">        <span class="fl">6.5</span>        <span class="fl">-2.0</span>        <span class="fl">-1.0</span> </a>
-<a class="sourceLine" id="cb180-13" title="13"><span class="kw">predict</span>(fit)        <span class="co">#Predict the fixed effect</span></a>
-<a class="sourceLine" id="cb180-14" title="14">  <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span>   <span class="dv">4</span> </a>
-<a class="sourceLine" id="cb180-15" title="15"><span class="fl">6.5</span> <span class="fl">5.5</span> <span class="fl">4.5</span> <span class="fl">3.5</span> </a>
-<a class="sourceLine" id="cb180-16" title="16"><span class="kw">residuals</span>(fit)      <span class="co">#Actual yield - predicted fixed effect</span></a>
-<a class="sourceLine" id="cb180-17" title="17">   <span class="dv">1</span>    <span class="dv">2</span>    <span class="dv">3</span>    <span class="dv">4</span> </a>
-<a class="sourceLine" id="cb180-18" title="18"><span class="fl">-0.2</span>  <span class="fl">0.2</span>  <span class="fl">0.2</span> <span class="fl">-0.2</span> </a>
-<a class="sourceLine" id="cb180-19" title="19"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb180-20" title="20"><span class="kw">plot</span>(fit)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-178-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb211-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(Yield <span class="op">~</span><span class="st"> </span>Genotype <span class="op">+</span><span class="st"> </span>Block, <span class="dt">data =</span> data)</a>
+<a class="sourceLine" id="cb211-2" title="2"><span class="kw">anova</span>(fit)          <span class="co">#Anova table</span></a>
+<a class="sourceLine" id="cb211-3" title="3">Analysis of Variance Table</a>
+<a class="sourceLine" id="cb211-4" title="4"></a>
+<a class="sourceLine" id="cb211-5" title="5">Response<span class="op">:</span><span class="st"> </span>Yield</a>
+<a class="sourceLine" id="cb211-6" title="6">          Df Sum Sq Mean Sq F value <span class="kw">Pr</span>(<span class="op">&gt;</span>F)</a>
+<a class="sourceLine" id="cb211-7" title="7">Genotype   <span class="dv">1</span>   <span class="fl">4.00</span>    <span class="fl">4.00</span>   <span class="fl">25.00</span> <span class="fl">0.1257</span></a>
+<a class="sourceLine" id="cb211-8" title="8">Block      <span class="dv">1</span>   <span class="fl">1.00</span>    <span class="fl">1.00</span>    <span class="fl">6.25</span> <span class="fl">0.2422</span></a>
+<a class="sourceLine" id="cb211-9" title="9">Residuals  <span class="dv">1</span>   <span class="fl">0.16</span>    <span class="fl">0.16</span>               </a>
+<a class="sourceLine" id="cb211-10" title="10"><span class="kw">coef</span>(fit)           <span class="co">#Effect of different Factors</span></a>
+<a class="sourceLine" id="cb211-11" title="11">(Intercept)   Genotype2      Blockb </a>
+<a class="sourceLine" id="cb211-12" title="12">        <span class="fl">6.5</span>        <span class="fl">-2.0</span>        <span class="fl">-1.0</span> </a>
+<a class="sourceLine" id="cb211-13" title="13"><span class="kw">predict</span>(fit)        <span class="co">#Predict the fixed effect</span></a>
+<a class="sourceLine" id="cb211-14" title="14">  <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span>   <span class="dv">4</span> </a>
+<a class="sourceLine" id="cb211-15" title="15"><span class="fl">6.5</span> <span class="fl">5.5</span> <span class="fl">4.5</span> <span class="fl">3.5</span> </a>
+<a class="sourceLine" id="cb211-16" title="16"><span class="kw">residuals</span>(fit)      <span class="co">#Actual yield - predicted fixed effect</span></a>
+<a class="sourceLine" id="cb211-17" title="17">   <span class="dv">1</span>    <span class="dv">2</span>    <span class="dv">3</span>    <span class="dv">4</span> </a>
+<a class="sourceLine" id="cb211-18" title="18"><span class="fl">-0.2</span>  <span class="fl">0.2</span>  <span class="fl">0.2</span> <span class="fl">-0.2</span> </a>
+<a class="sourceLine" id="cb211-19" title="19"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb211-20" title="20"><span class="kw">plot</span>(fit)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-193-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="simulate-data" class="section level2">
 <h2><span class="header-section-number">21.3</span> Simulate data</h2>
@@ -583,89 +588,89 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>combn()</code></li>
 <li><code>interaction()</code></li>
 </ul>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" title="1"><span class="co">## rep() with arguments times, each, length.out</span></a>
-<a class="sourceLine" id="cb181-2" title="2"><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">times =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb181-3" title="3">[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">1</span> <span class="dv">2</span></a>
-<a class="sourceLine" id="cb181-4" title="4"><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">each =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb181-5" title="5">[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">2</span></a>
-<a class="sourceLine" id="cb181-6" title="6"><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">length.out =</span> <span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb181-7" title="7">[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb181-8" title="8"></a>
-<a class="sourceLine" id="cb181-9" title="9"><span class="co">## gl() is a shortcut for factor(rep())</span></a>
-<a class="sourceLine" id="cb181-10" title="10"><span class="kw">gl</span>(<span class="dv">2</span>,<span class="dv">3</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Treat&quot;</span>))</a>
-<a class="sourceLine" id="cb181-11" title="11">[<span class="dv">1</span>] Control Control Control Treat   Treat   Treat  </a>
-<a class="sourceLine" id="cb181-12" title="12">Levels<span class="op">:</span><span class="st"> </span>Control Treat</a>
-<a class="sourceLine" id="cb181-13" title="13"><span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Treat&quot;</span>), <span class="dt">each =</span> <span class="dv">3</span>)) <span class="co"># same output</span></a>
-<a class="sourceLine" id="cb181-14" title="14">[<span class="dv">1</span>] Control Control Control Treat   Treat   Treat  </a>
-<a class="sourceLine" id="cb181-15" title="15">Levels<span class="op">:</span><span class="st"> </span>Control Treat</a>
-<a class="sourceLine" id="cb181-16" title="16"></a>
-<a class="sourceLine" id="cb181-17" title="17"><span class="co">## expand.grid() and interaction()</span></a>
-<a class="sourceLine" id="cb181-18" title="18">(df &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">Block =</span> LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>], <span class="dt">Treat =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb181-19" title="19">  Block Treat</a>
-<a class="sourceLine" id="cb181-20" title="20"><span class="dv">1</span>     A     <span class="dv">1</span></a>
-<a class="sourceLine" id="cb181-21" title="21"><span class="dv">2</span>     B     <span class="dv">1</span></a>
-<a class="sourceLine" id="cb181-22" title="22"><span class="dv">3</span>     A     <span class="dv">2</span></a>
-<a class="sourceLine" id="cb181-23" title="23"><span class="dv">4</span>     B     <span class="dv">2</span></a>
-<a class="sourceLine" id="cb181-24" title="24"><span class="dv">5</span>     A     <span class="dv">3</span></a>
-<a class="sourceLine" id="cb181-25" title="25"><span class="dv">6</span>     B     <span class="dv">3</span></a>
-<a class="sourceLine" id="cb181-26" title="26"><span class="kw">interaction</span>(df<span class="op">$</span>Block, df<span class="op">$</span>Treat)</a>
-<a class="sourceLine" id="cb181-27" title="27">[<span class="dv">1</span>] A<span class="fl">.1</span> B<span class="fl">.1</span> A<span class="fl">.2</span> B<span class="fl">.2</span> A<span class="fl">.3</span> B<span class="fl">.3</span></a>
-<a class="sourceLine" id="cb181-28" title="28">Levels<span class="op">:</span><span class="st"> </span>A<span class="fl">.1</span> B<span class="fl">.1</span> A<span class="fl">.2</span> B<span class="fl">.2</span> A<span class="fl">.3</span> B<span class="fl">.3</span></a>
-<a class="sourceLine" id="cb181-29" title="29"></a>
-<a class="sourceLine" id="cb181-30" title="30"><span class="co">## combn()</span></a>
-<a class="sourceLine" id="cb181-31" title="31"><span class="kw">combn</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dv">2</span>) <span class="co"># Combinatorics: combine each element with every other element</span></a>
-<a class="sourceLine" id="cb181-32" title="32">     [,<span class="dv">1</span>] [,<span class="dv">2</span>] [,<span class="dv">3</span>] [,<span class="dv">4</span>] [,<span class="dv">5</span>] [,<span class="dv">6</span>]</a>
-<a class="sourceLine" id="cb181-33" title="33">[<span class="dv">1</span>,]    <span class="dv">1</span>    <span class="dv">1</span>    <span class="dv">1</span>    <span class="dv">2</span>    <span class="dv">2</span>    <span class="dv">3</span></a>
-<a class="sourceLine" id="cb181-34" title="34">[<span class="dv">2</span>,]    <span class="dv">2</span>    <span class="dv">3</span>    <span class="dv">4</span>    <span class="dv">3</span>    <span class="dv">4</span>    <span class="dv">4</span></a>
-<a class="sourceLine" id="cb181-35" title="35"><span class="kw">combn</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">3</span>) <span class="co"># Make all possible 3-fold combinations (4 choose 3 combinations)</span></a>
-<a class="sourceLine" id="cb181-36" title="36">     [,<span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb181-37" title="37">[<span class="dv">1</span>,]    <span class="dv">1</span></a>
-<a class="sourceLine" id="cb181-38" title="38">[<span class="dv">2</span>,]    <span class="dv">2</span></a>
-<a class="sourceLine" id="cb181-39" title="39">[<span class="dv">3</span>,]    <span class="dv">3</span></a></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb212-1" title="1"><span class="co">## rep() with arguments times, each, length.out</span></a>
+<a class="sourceLine" id="cb212-2" title="2"><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">times =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb212-3" title="3">[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">1</span> <span class="dv">2</span></a>
+<a class="sourceLine" id="cb212-4" title="4"><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">each =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb212-5" title="5">[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">2</span></a>
+<a class="sourceLine" id="cb212-6" title="6"><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">length.out =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb212-7" title="7">[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb212-8" title="8"></a>
+<a class="sourceLine" id="cb212-9" title="9"><span class="co">## gl() is a shortcut for factor(rep())</span></a>
+<a class="sourceLine" id="cb212-10" title="10"><span class="kw">gl</span>(<span class="dv">2</span>,<span class="dv">3</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Treat&quot;</span>))</a>
+<a class="sourceLine" id="cb212-11" title="11">[<span class="dv">1</span>] Control Control Control Treat   Treat   Treat  </a>
+<a class="sourceLine" id="cb212-12" title="12">Levels<span class="op">:</span><span class="st"> </span>Control Treat</a>
+<a class="sourceLine" id="cb212-13" title="13"><span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Treat&quot;</span>), <span class="dt">each =</span> <span class="dv">3</span>)) <span class="co"># same output</span></a>
+<a class="sourceLine" id="cb212-14" title="14">[<span class="dv">1</span>] Control Control Control Treat   Treat   Treat  </a>
+<a class="sourceLine" id="cb212-15" title="15">Levels<span class="op">:</span><span class="st"> </span>Control Treat</a>
+<a class="sourceLine" id="cb212-16" title="16"></a>
+<a class="sourceLine" id="cb212-17" title="17"><span class="co">## expand.grid() and interaction()</span></a>
+<a class="sourceLine" id="cb212-18" title="18">(df &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">Block =</span> LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>], <span class="dt">Treat =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb212-19" title="19">  Block Treat</a>
+<a class="sourceLine" id="cb212-20" title="20"><span class="dv">1</span>     A     <span class="dv">1</span></a>
+<a class="sourceLine" id="cb212-21" title="21"><span class="dv">2</span>     B     <span class="dv">1</span></a>
+<a class="sourceLine" id="cb212-22" title="22"><span class="dv">3</span>     A     <span class="dv">2</span></a>
+<a class="sourceLine" id="cb212-23" title="23"><span class="dv">4</span>     B     <span class="dv">2</span></a>
+<a class="sourceLine" id="cb212-24" title="24"><span class="dv">5</span>     A     <span class="dv">3</span></a>
+<a class="sourceLine" id="cb212-25" title="25"><span class="dv">6</span>     B     <span class="dv">3</span></a>
+<a class="sourceLine" id="cb212-26" title="26"><span class="kw">interaction</span>(df<span class="op">$</span>Block, df<span class="op">$</span>Treat)</a>
+<a class="sourceLine" id="cb212-27" title="27">[<span class="dv">1</span>] A<span class="fl">.1</span> B<span class="fl">.1</span> A<span class="fl">.2</span> B<span class="fl">.2</span> A<span class="fl">.3</span> B<span class="fl">.3</span></a>
+<a class="sourceLine" id="cb212-28" title="28">Levels<span class="op">:</span><span class="st"> </span>A<span class="fl">.1</span> B<span class="fl">.1</span> A<span class="fl">.2</span> B<span class="fl">.2</span> A<span class="fl">.3</span> B<span class="fl">.3</span></a>
+<a class="sourceLine" id="cb212-29" title="29"></a>
+<a class="sourceLine" id="cb212-30" title="30"><span class="co">## combn()</span></a>
+<a class="sourceLine" id="cb212-31" title="31"><span class="kw">combn</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dv">2</span>) <span class="co"># Combinatorics: combine each element with every other element</span></a>
+<a class="sourceLine" id="cb212-32" title="32">     [,<span class="dv">1</span>] [,<span class="dv">2</span>] [,<span class="dv">3</span>] [,<span class="dv">4</span>] [,<span class="dv">5</span>] [,<span class="dv">6</span>]</a>
+<a class="sourceLine" id="cb212-33" title="33">[<span class="dv">1</span>,]    <span class="dv">1</span>    <span class="dv">1</span>    <span class="dv">1</span>    <span class="dv">2</span>    <span class="dv">2</span>    <span class="dv">3</span></a>
+<a class="sourceLine" id="cb212-34" title="34">[<span class="dv">2</span>,]    <span class="dv">2</span>    <span class="dv">3</span>    <span class="dv">4</span>    <span class="dv">3</span>    <span class="dv">4</span>    <span class="dv">4</span></a>
+<a class="sourceLine" id="cb212-35" title="35"><span class="kw">combn</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">3</span>) <span class="co"># Make all possible 3-fold combinations (4 choose 3 combinations)</span></a>
+<a class="sourceLine" id="cb212-36" title="36">     [,<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb212-37" title="37">[<span class="dv">1</span>,]    <span class="dv">1</span></a>
+<a class="sourceLine" id="cb212-38" title="38">[<span class="dv">2</span>,]    <span class="dv">2</span></a>
+<a class="sourceLine" id="cb212-39" title="39">[<span class="dv">3</span>,]    <span class="dv">3</span></a></code></pre></div>
 <div id="randomization" class="section level3">
 <h3><span class="header-section-number">21.3.1</span> Randomization</h3>
 <ul>
 <li><code>sample()</code></li>
 <li><code>agricolae::design.lsd()</code> Lattin square design</li>
 </ul>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" title="1">treat.ord &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>), <span class="dt">each =</span> <span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb182-2" title="2"><span class="kw">sample</span>(treat.ord, <span class="dt">replace =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
-<pre><code> [1] &quot;D&quot; &quot;A&quot; &quot;A&quot; &quot;D&quot; &quot;C&quot; &quot;A&quot; &quot;B&quot; &quot;D&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;A&quot; &quot;B&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot;
-[20] &quot;A&quot;</code></pre>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb213-1" title="1">treat.ord &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>), <span class="dt">each =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb213-2" title="2"><span class="kw">sample</span>(treat.ord, <span class="dt">replace =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code> [1] &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;D&quot; &quot;D&quot; &quot;A&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot;
+[20] &quot;C&quot;</code></pre>
 </div>
 </div>
-<div id="visualization" class="section level2">
+<div id="visualization-2" class="section level2">
 <h2><span class="header-section-number">21.4</span> Visualization</h2>
 <div id="stripchart" class="section level3">
 <h3><span class="header-section-number">21.4.1</span> Stripchart</h3>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" title="1"><span class="kw">stripchart</span>(weight <span class="op">~</span><span class="st"> </span>group, <span class="dt">vertical =</span> <span class="ot">TRUE</span>, <span class="dt">data =</span> PlantGrowth)</a>
-<a class="sourceLine" id="cb184-2" title="2"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb184-3" title="3"><span class="kw">ggplot</span>(Pastes, <span class="kw">aes</span> (<span class="dt">y =</span> cask, <span class="dt">x =</span> strength)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span> () <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span> (batch <span class="op">~</span><span class="st"> </span>.)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-181-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-181-2.png" width="50%" /></p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb215-1" title="1"><span class="kw">stripchart</span>(weight <span class="op">~</span><span class="st"> </span>group, <span class="dt">vertical =</span> <span class="ot">TRUE</span>, <span class="dt">data =</span> PlantGrowth)</a>
+<a class="sourceLine" id="cb215-2" title="2"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb215-3" title="3"><span class="kw">ggplot</span>(Pastes, <span class="kw">aes</span> (<span class="dt">y =</span> cask, <span class="dt">x =</span> strength)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span> () <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span> (batch <span class="op">~</span><span class="st"> </span>.)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-196-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-196-2.png" width="50%" /></p>
 </div>
 <div id="boxplot" class="section level3">
 <h3><span class="header-section-number">21.4.2</span> Boxplot</h3>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" title="1"><span class="kw">boxplot</span>(weight <span class="op">~</span><span class="st"> </span>group, <span class="dt">data =</span> PlantGrowth)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-182-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb216-1" title="1"><span class="kw">boxplot</span>(weight <span class="op">~</span><span class="st"> </span>group, <span class="dt">data =</span> PlantGrowth)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-197-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="interaction-plot" class="section level3">
 <h3><span class="header-section-number">21.4.3</span> Interaction plot</h3>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb186-1" title="1"><span class="kw">with</span>(snails, <span class="kw">interaction.plot</span>(<span class="dt">x.factor =</span> density, <span class="dt">trace.factor =</span> season, <span class="dt">response =</span> y))</a>
-<a class="sourceLine" id="cb186-2" title="2"><span class="kw">ggplot</span>(Machines, <span class="kw">aes</span> (<span class="dt">x =</span> Machine, <span class="dt">y =</span> score, <span class="dt">group =</span> Worker, <span class="dt">col =</span> Worker)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb186-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">stat_summary</span>(<span class="dt">fun.y =</span> mean, <span class="dt">geom =</span> <span class="st">&quot;line&quot;</span>)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-183-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-183-2.png" width="50%" /></p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb217-1" title="1"><span class="kw">with</span>(snails, <span class="kw">interaction.plot</span>(<span class="dt">x.factor =</span> density, <span class="dt">trace.factor =</span> season, <span class="dt">response =</span> y))</a>
+<a class="sourceLine" id="cb217-2" title="2"><span class="kw">ggplot</span>(Machines, <span class="kw">aes</span> (<span class="dt">x =</span> Machine, <span class="dt">y =</span> score, <span class="dt">group =</span> Worker, <span class="dt">col =</span> Worker)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb217-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">stat_summary</span>(<span class="dt">fun.y =</span> mean, <span class="dt">geom =</span> <span class="st">&quot;line&quot;</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-198-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-198-2.png" width="50%" /></p>
 </div>
 <div id="summary-plot" class="section level3">
 <h3><span class="header-section-number">21.4.4</span> Summary plot</h3>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb187-1" title="1"><span class="kw">plot.design</span>(y <span class="op">~</span><span class="st"> </span>location <span class="op">+</span><span class="st"> </span>exposure, <span class="dt">data =</span> pine)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-184-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" title="1"><span class="kw">plot.design</span>(y <span class="op">~</span><span class="st"> </span>location <span class="op">+</span><span class="st"> </span>exposure, <span class="dt">data =</span> pine)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-199-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
 <div id="fit-model" class="section level2">
 <h2><span class="header-section-number">21.5</span> Fit model</h2>
 <div id="identifiability" class="section level3">
 <h3><span class="header-section-number">21.5.1</span> Identifiability</h3>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb188-1" title="1"><span class="kw">options</span>(<span class="st">&quot;contrasts&quot;</span>) <span class="co"># Default</span></a></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb219-1" title="1"><span class="kw">options</span>(<span class="st">&quot;contrasts&quot;</span>) <span class="co"># Default</span></a></code></pre></div>
 <pre><code>$contrasts
         unordered           ordered 
 &quot;contr.treatment&quot;      &quot;contr.poly&quot; </code></pre>
@@ -673,8 +678,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Unordered: Unordered factors (nominal scale)</li>
 <li>Ordered: Ordered factors (ordinal scale)</li>
 </ul>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" title="1"><span class="kw">options</span>(<span class="dt">contrasts =</span> <span class="kw">c</span>(<span class="st">&quot;contr.treatment&quot;</span>, <span class="st">&quot;contr.poly&quot;</span>))</a>
-<a class="sourceLine" id="cb190-2" title="2"><span class="kw">options</span>(<span class="dt">contrasts =</span> <span class="kw">c</span>(<span class="st">&quot;contr.sum&quot;</span>, <span class="st">&quot;contr.poly&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb221-1" title="1"><span class="kw">options</span>(<span class="dt">contrasts =</span> <span class="kw">c</span>(<span class="st">&quot;contr.treatment&quot;</span>, <span class="st">&quot;contr.poly&quot;</span>))</a>
+<a class="sourceLine" id="cb221-2" title="2"><span class="kw">options</span>(<span class="dt">contrasts =</span> <span class="kw">c</span>(<span class="st">&quot;contr.sum&quot;</span>, <span class="st">&quot;contr.poly&quot;</span>))</a></code></pre></div>
 <table>
 <colgroup>
 <col width="25%" />
@@ -712,14 +717,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 </div>
-<div id="fitting" class="section level3">
+<div id="fitting-2" class="section level3">
 <h3><span class="header-section-number">21.5.2</span> Fitting</h3>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb191-1" title="1"><span class="co"># One way ANOVA</span></a>
-<a class="sourceLine" id="cb191-2" title="2">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(weight <span class="op">~</span><span class="st"> </span>group, <span class="dt">data =</span> PlantGrowth)</a>
-<a class="sourceLine" id="cb191-3" title="3"><span class="co"># Two way ANOVA</span></a>
-<a class="sourceLine" id="cb191-4" title="4">fit.cheddar &lt;-<span class="st"> </span><span class="kw">aov</span>(acids <span class="op">~</span><span class="st"> </span>R50 <span class="op">+</span><span class="st"> </span>R21, <span class="dt">data =</span> cheddar)</a>
-<a class="sourceLine" id="cb191-5" title="5"><span class="co"># With subset of data</span></a>
-<a class="sourceLine" id="cb191-6" title="6">fit.spring &lt;-<span class="st"> </span><span class="kw">aov</span>(y <span class="op">~</span><span class="st"> </span>density, <span class="dt">data =</span> <span class="kw">subset</span>(snails, season <span class="op">==</span><span class="st"> &quot;Spring&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb222-1" title="1"><span class="co"># One way ANOVA</span></a>
+<a class="sourceLine" id="cb222-2" title="2">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(weight <span class="op">~</span><span class="st"> </span>group, <span class="dt">data =</span> PlantGrowth)</a>
+<a class="sourceLine" id="cb222-3" title="3"><span class="co"># Two way ANOVA</span></a>
+<a class="sourceLine" id="cb222-4" title="4">fit.cheddar &lt;-<span class="st"> </span><span class="kw">aov</span>(acids <span class="op">~</span><span class="st"> </span>R50 <span class="op">+</span><span class="st"> </span>R21, <span class="dt">data =</span> cheddar)</a>
+<a class="sourceLine" id="cb222-5" title="5"><span class="co"># With subset of data</span></a>
+<a class="sourceLine" id="cb222-6" title="6">fit.spring &lt;-<span class="st"> </span><span class="kw">aov</span>(y <span class="op">~</span><span class="st"> </span>density, <span class="dt">data =</span> <span class="kw">subset</span>(snails, season <span class="op">==</span><span class="st"> &quot;Spring&quot;</span>))</a></code></pre></div>
 
 <div class="rmdnote">
 <p><code>lm()</code> vs <code>aov()</code></p>
@@ -774,20 +779,20 @@ fits the same model but (i) <code>aov()</code> returns object of class <code>aov
 </ul>
 </div>
 </div>
-<div id="model-comparison-1" class="section level2">
+<div id="model-comparison-2" class="section level2">
 <h2><span class="header-section-number">21.7</span> Model comparison</h2>
 <div id="different-in-1-model-term" class="section level5 unnumbered">
 <h5>Different in 1 model term</h5>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" title="1"><span class="co"># Type I Sum of Squares</span></a>
-<a class="sourceLine" id="cb192-2" title="2"><span class="kw">summary</span>(fit)</a>
-<a class="sourceLine" id="cb192-3" title="3"></a>
-<a class="sourceLine" id="cb192-4" title="4"><span class="co"># Type III Sum of Sqares</span></a>
-<a class="sourceLine" id="cb192-5" title="5"><span class="kw">drop1</span>(fit, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</a>
-<a class="sourceLine" id="cb192-6" title="6"><span class="kw">add1</span>(fit, <span class="dt">scope =</span> <span class="op">~</span>pred, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb223-1" title="1"><span class="co"># Type I Sum of Squares</span></a>
+<a class="sourceLine" id="cb223-2" title="2"><span class="kw">summary</span>(fit)</a>
+<a class="sourceLine" id="cb223-3" title="3"></a>
+<a class="sourceLine" id="cb223-4" title="4"><span class="co"># Type III Sum of Sqares</span></a>
+<a class="sourceLine" id="cb223-5" title="5"><span class="kw">drop1</span>(fit, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</a>
+<a class="sourceLine" id="cb223-6" title="6"><span class="kw">add1</span>(fit, <span class="dt">scope =</span> <span class="op">~</span>pred, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</a></code></pre></div>
 </div>
 <div id="different-in-1-model-term-1" class="section level5 unnumbered">
 <h5>Different in &gt;1 model term</h5>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" title="1"><span class="kw">anova</span>(fit, fit2)</a></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb224-1" title="1"><span class="kw">anova</span>(fit, fit2)</a></code></pre></div>
 
 <div class="rmdnote">
 Interpretation of significance in <code>anova()</code> always in favour of larger model no matter if <code>anova(fit, fit2)</code> or <code>anova(fit2, fit)</code>
@@ -805,15 +810,15 @@ Interpretation of significance in <code>anova()</code> always in favour of large
 <li>Coef name according to factor level name</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" title="1"><span class="kw">coef</span>(fit)</a>
-<a class="sourceLine" id="cb194-2" title="2">(Intercept)   grouptrt1   grouptrt2 </a>
-<a class="sourceLine" id="cb194-3" title="3">      <span class="fl">5.032</span>      <span class="fl">-0.371</span>       <span class="fl">0.494</span> </a>
-<a class="sourceLine" id="cb194-4" title="4"><span class="kw">dummy.coef</span>(fit)</a>
-<a class="sourceLine" id="cb194-5" title="5">Full coefficients are </a>
-<a class="sourceLine" id="cb194-6" title="6">                                    </a>
-<a class="sourceLine" id="cb194-7" title="7">(Intercept)<span class="op">:</span><span class="st">     </span><span class="fl">5.032</span>              </a>
-<a class="sourceLine" id="cb194-8" title="8">group<span class="op">:</span><span class="st">            </span>ctrl   trt1   trt2</a>
-<a class="sourceLine" id="cb194-9" title="9">                 <span class="fl">0.000</span> <span class="fl">-0.371</span>  <span class="fl">0.494</span></a></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb225-1" title="1"><span class="kw">coef</span>(fit)</a>
+<a class="sourceLine" id="cb225-2" title="2">(Intercept)   grouptrt1   grouptrt2 </a>
+<a class="sourceLine" id="cb225-3" title="3">      <span class="fl">5.032</span>      <span class="fl">-0.371</span>       <span class="fl">0.494</span> </a>
+<a class="sourceLine" id="cb225-4" title="4"><span class="kw">dummy.coef</span>(fit)</a>
+<a class="sourceLine" id="cb225-5" title="5">Full coefficients are </a>
+<a class="sourceLine" id="cb225-6" title="6">                                    </a>
+<a class="sourceLine" id="cb225-7" title="7">(Intercept)<span class="op">:</span><span class="st">     </span><span class="fl">5.032</span>              </a>
+<a class="sourceLine" id="cb225-8" title="8">group<span class="op">:</span><span class="st">            </span>ctrl   trt1   trt2</a>
+<a class="sourceLine" id="cb225-9" title="9">                 <span class="fl">0.000</span> <span class="fl">-0.371</span>  <span class="fl">0.494</span></a></code></pre></div>
 </div>
 <div id="tests-and-ci-for-coeficients" class="section level2">
 <h2><span class="header-section-number">21.9</span> Tests and CI for coeficients</h2>
@@ -828,7 +833,7 @@ Interpretation of significance in <code>anova()</code> always in favour of large
 <li>CI for each coefficient</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb195-1" title="1"><span class="kw">summary.lm</span>(fit)</a></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb226-1" title="1"><span class="kw">summary.lm</span>(fit)</a></code></pre></div>
 <pre><code>
 Call:
 aov(formula = weight ~ group, data = PlantGrowth)
@@ -848,7 +853,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 Residual standard error: 0.6234 on 27 degrees of freedom
 Multiple R-squared:  0.2641,    Adjusted R-squared:  0.2096 
 F-statistic: 4.846 on 2 and 27 DF,  p-value: 0.01591</code></pre>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" title="1"><span class="kw">confint</span>(fit)</a></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb228-1" title="1"><span class="kw">confint</span>(fit)</a></code></pre></div>
 <pre><code>                  2.5 %    97.5 %
 (Intercept)  4.62752600 5.4364740
 grouptrt1   -0.94301261 0.2010126
@@ -856,64 +861,64 @@ grouptrt2   -0.07801261 1.0660126</code></pre>
 </div>
 <div id="predict" class="section level2">
 <h2><span class="header-section-number">21.10</span> Predict</h2>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" title="1"><span class="kw">predict</span>(fit, <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">group =</span> <span class="kw">c</span>(<span class="st">&quot;ctrl&quot;</span>, <span class="st">&quot;trt1&quot;</span>, <span class="st">&quot;trt2&quot;</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" title="1"><span class="kw">predict</span>(fit, <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">group =</span> <span class="kw">c</span>(<span class="st">&quot;ctrl&quot;</span>, <span class="st">&quot;trt1&quot;</span>, <span class="st">&quot;trt2&quot;</span>)))</a></code></pre></div>
 <pre><code>    1     2     3 
 5.032 4.661 5.526 </code></pre>
 <p><code>newdata</code> has to be a <code>data.frame</code> with all predictor variables in columns with the same name as the original predictor in the model (here <code>y ~ group</code>)</p>
 </div>
 <div id="diagnostic-plots-1" class="section level2">
 <h2><span class="header-section-number">21.11</span> Diagnostic plots</h2>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" title="1"><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">1</span>) <span class="co"># Tukey-Anscombe plot</span></a>
-<a class="sourceLine" id="cb201-2" title="2"><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">2</span>) <span class="co"># QQ-plot</span></a></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb232-1" title="1"><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">1</span>) <span class="co"># Tukey-Anscombe plot</span></a>
+<a class="sourceLine" id="cb232-2" title="2"><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">2</span>) <span class="co"># QQ-plot</span></a></code></pre></div>
 <div id="simulations" class="section level3">
 <h3><span class="header-section-number">21.11.1</span> Simulations</h3>
 <p>Simulations can help to see if the observed pattern is far away from the assumptions. If our data is fine, the observed pattern should look similar to the simulated one (which fulfilles the assumptions).</p>
 <p>Simulations for QQ plot</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" title="1"><span class="kw">qqnorm</span>(<span class="kw">rnorm</span>(<span class="kw">nrow</span>(df)))</a></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb233-1" title="1"><span class="kw">qqnorm</span>(<span class="kw">rnorm</span>(<span class="kw">nrow</span>(df)))</a></code></pre></div>
 <p>Simulations for Tukey-Anscombe plot</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb203-1" title="1">df &lt;-<span class="st"> </span>PlantGrowth</a>
-<a class="sourceLine" id="cb203-2" title="2">df.sim &lt;-<span class="st"> </span>df</a>
-<a class="sourceLine" id="cb203-3" title="3"><span class="kw">set.seed</span>(<span class="dv">12</span>)</a>
-<a class="sourceLine" id="cb203-4" title="4"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>))</a>
-<a class="sourceLine" id="cb203-5" title="5"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>){</a>
-<a class="sourceLine" id="cb203-6" title="6">  df.sim[, <span class="st">&quot;y&quot;</span>] &lt;-<span class="st"> </span><span class="kw">simulate</span>(fit)</a>
-<a class="sourceLine" id="cb203-7" title="7">  fit.sim &lt;-<span class="st"> </span><span class="kw">update</span>(fit, <span class="dt">data =</span> df.sim)  </a>
-<a class="sourceLine" id="cb203-8" title="8">  <span class="kw">plot</span>(fit.sim, <span class="dt">which =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb203-9" title="9">}</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-197-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb234-1" title="1">df &lt;-<span class="st"> </span>PlantGrowth</a>
+<a class="sourceLine" id="cb234-2" title="2">df.sim &lt;-<span class="st"> </span>df</a>
+<a class="sourceLine" id="cb234-3" title="3"><span class="kw">set.seed</span>(<span class="dv">12</span>)</a>
+<a class="sourceLine" id="cb234-4" title="4"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb234-5" title="5"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>){</a>
+<a class="sourceLine" id="cb234-6" title="6">  df.sim[, <span class="st">&quot;y&quot;</span>] &lt;-<span class="st"> </span><span class="kw">simulate</span>(fit)</a>
+<a class="sourceLine" id="cb234-7" title="7">  fit.sim &lt;-<span class="st"> </span><span class="kw">update</span>(fit, <span class="dt">data =</span> df.sim)  </a>
+<a class="sourceLine" id="cb234-8" title="8">  <span class="kw">plot</span>(fit.sim, <span class="dt">which =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb234-9" title="9">}</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-212-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="qq-plot-in-mixed-models" class="section level3">
 <h3><span class="header-section-number">21.11.2</span> QQ plot in mixed models</h3>
 <p>Normal QQ plot for each random variable</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" title="1">fit.lme &lt;-<span class="st"> </span><span class="kw">lmer</span>(y <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>day) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>machine) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>machine<span class="op">:</span>day), <span class="dt">data =</span> trigly)</a>
-<a class="sourceLine" id="cb204-2" title="2"><span class="kw">qqnorm</span>(<span class="kw">ranef</span>(fit.lme)<span class="op">$</span>day[,<span class="dv">1</span>], <span class="dt">main =</span> <span class="st">&quot;day&quot;</span>)</a>
-<a class="sourceLine" id="cb204-3" title="3"><span class="kw">qqnorm</span>(<span class="kw">ranef</span>(fit.lme)<span class="op">$</span>machine[,<span class="dv">1</span>], <span class="dt">main =</span> <span class="st">&quot;machine&quot;</span>)</a>
-<a class="sourceLine" id="cb204-4" title="4"><span class="kw">qqnorm</span>(<span class="kw">ranef</span>(fit.lme)<span class="op">$</span><span class="st">&#39;machine:day&#39;</span>[,<span class="dv">1</span>], <span class="dt">main =</span> <span class="st">&quot;machine:day&quot;</span>)</a>
-<a class="sourceLine" id="cb204-5" title="5"><span class="kw">qqnorm</span>(<span class="kw">resid</span>(fit.lme), <span class="dt">main =</span> <span class="st">&quot;residuals&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb235-1" title="1">fit.lme &lt;-<span class="st"> </span><span class="kw">lmer</span>(y <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>day) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>machine) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>machine<span class="op">:</span>day), <span class="dt">data =</span> trigly)</a>
+<a class="sourceLine" id="cb235-2" title="2"><span class="kw">qqnorm</span>(<span class="kw">ranef</span>(fit.lme)<span class="op">$</span>day[,<span class="dv">1</span>], <span class="dt">main =</span> <span class="st">&quot;day&quot;</span>)</a>
+<a class="sourceLine" id="cb235-3" title="3"><span class="kw">qqnorm</span>(<span class="kw">ranef</span>(fit.lme)<span class="op">$</span>machine[,<span class="dv">1</span>], <span class="dt">main =</span> <span class="st">&quot;machine&quot;</span>)</a>
+<a class="sourceLine" id="cb235-4" title="4"><span class="kw">qqnorm</span>(<span class="kw">ranef</span>(fit.lme)<span class="op">$</span><span class="st">&#39;machine:day&#39;</span>[,<span class="dv">1</span>], <span class="dt">main =</span> <span class="st">&quot;machine:day&quot;</span>)</a>
+<a class="sourceLine" id="cb235-5" title="5"><span class="kw">qqnorm</span>(<span class="kw">resid</span>(fit.lme), <span class="dt">main =</span> <span class="st">&quot;residuals&quot;</span>)</a></code></pre></div>
 </div>
 </div>
 <div id="contrasts" class="section level2">
 <h2><span class="header-section-number">21.12</span> Contrasts</h2>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb205-1" title="1"><span class="kw">library</span>(multcomp)</a>
-<a class="sourceLine" id="cb205-2" title="2"></a>
-<a class="sourceLine" id="cb205-3" title="3"><span class="co">## manual contrast</span></a>
-<a class="sourceLine" id="cb205-4" title="4">fit.gh &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">-1</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">-1</span><span class="op">/</span><span class="dv">2</span>)))</a>
-<a class="sourceLine" id="cb205-5" title="5"></a>
-<a class="sourceLine" id="cb205-6" title="6"><span class="co">## several manual contrasts</span></a>
-<a class="sourceLine" id="cb205-7" title="7">K &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="dt">mycontr1 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">-1</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">-1</span><span class="op">/</span><span class="dv">2</span>), <span class="co"># ctrl vs. average of trt1 and trt2</span></a>
-<a class="sourceLine" id="cb205-8" title="8">           <span class="dt">mycontr2 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">-1</span>, <span class="dv">0</span>))      <span class="co"># ctrl vs. trt1</span></a>
-<a class="sourceLine" id="cb205-9" title="9">fit.man &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> K))</a>
-<a class="sourceLine" id="cb205-10" title="10"></a>
-<a class="sourceLine" id="cb205-11" title="11"><span class="co">## predefined contrasts</span></a>
-<a class="sourceLine" id="cb205-12" title="12">fit.gh &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="st">&quot;Tukey&quot;</span>))</a>
-<a class="sourceLine" id="cb205-13" title="13">fit.gh &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="st">&quot;Dunnett&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb236-1" title="1"><span class="kw">library</span>(multcomp)</a>
+<a class="sourceLine" id="cb236-2" title="2"></a>
+<a class="sourceLine" id="cb236-3" title="3"><span class="co">## manual contrast</span></a>
+<a class="sourceLine" id="cb236-4" title="4">fit.gh &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">-1</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">-1</span><span class="op">/</span><span class="dv">2</span>)))</a>
+<a class="sourceLine" id="cb236-5" title="5"></a>
+<a class="sourceLine" id="cb236-6" title="6"><span class="co">## several manual contrasts</span></a>
+<a class="sourceLine" id="cb236-7" title="7">K &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="dt">mycontr1 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">-1</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">-1</span><span class="op">/</span><span class="dv">2</span>), <span class="co"># ctrl vs. average of trt1 and trt2</span></a>
+<a class="sourceLine" id="cb236-8" title="8">           <span class="dt">mycontr2 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">-1</span>, <span class="dv">0</span>))      <span class="co"># ctrl vs. trt1</span></a>
+<a class="sourceLine" id="cb236-9" title="9">fit.man &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> K))</a>
+<a class="sourceLine" id="cb236-10" title="10"></a>
+<a class="sourceLine" id="cb236-11" title="11"><span class="co">## predefined contrasts</span></a>
+<a class="sourceLine" id="cb236-12" title="12">fit.gh &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="st">&quot;Tukey&quot;</span>))</a>
+<a class="sourceLine" id="cb236-13" title="13">fit.gh &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="st">&quot;Dunnett&quot;</span>))</a></code></pre></div>
 <ul>
 <li><code>K</code> has to be a matrix where each row is a contrast</li>
 <li><code>TukeyHSD(fit)</code> does the same as <code>fit.gh &lt;- glht(fit, linfct = mcp(group = "Tukey"))</code></li>
 </ul>
 <div id="test-contrast" class="section level3">
 <h3><span class="header-section-number">21.12.1</span> Test contrast</h3>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" title="1"><span class="kw">summary</span>(fit.man, <span class="dt">test =</span> <span class="kw">adjusted</span>(<span class="st">&quot;none&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb237-1" title="1"><span class="kw">summary</span>(fit.man, <span class="dt">test =</span> <span class="kw">adjusted</span>(<span class="st">&quot;none&quot;</span>))</a></code></pre></div>
 <pre><code>
      Simultaneous Tests for General Linear Hypotheses
 
@@ -933,21 +938,21 @@ mycontr2 == 0   0.3710     0.2788   1.331    0.194
 <h2><span class="header-section-number">21.13</span> Multiple comparison</h2>
 <div id="bonferroni-holm-planned-contrasts" class="section level3">
 <h3><span class="header-section-number">21.13.1</span> Bonferroni Holm (Planned contrasts)</h3>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb208-1" title="1"><span class="kw">summary</span>(fit.man) <span class="co"># takes defalut option which is single-step</span></a>
-<a class="sourceLine" id="cb208-2" title="2"><span class="kw">summary</span>(fit.man, <span class="dt">test =</span> <span class="kw">adjusted</span>(<span class="st">&quot;single-step&quot;</span>))  </a>
-<a class="sourceLine" id="cb208-3" title="3"><span class="kw">summary</span>(fit.man, <span class="dt">test =</span> <span class="kw">adjusted</span>(<span class="st">&quot;none&quot;</span>))</a>
-<a class="sourceLine" id="cb208-4" title="4"><span class="kw">summary</span>(fit.man, <span class="dt">test =</span> <span class="kw">adjusted</span>(<span class="st">&quot;bonferroni&quot;</span>))</a>
-<a class="sourceLine" id="cb208-5" title="5"><span class="kw">summary</span>(fit.man, <span class="dt">test =</span> <span class="kw">adjusted</span>(<span class="st">&quot;holm&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb239-1" title="1"><span class="kw">summary</span>(fit.man) <span class="co"># takes defalut option which is single-step</span></a>
+<a class="sourceLine" id="cb239-2" title="2"><span class="kw">summary</span>(fit.man, <span class="dt">test =</span> <span class="kw">adjusted</span>(<span class="st">&quot;single-step&quot;</span>))  </a>
+<a class="sourceLine" id="cb239-3" title="3"><span class="kw">summary</span>(fit.man, <span class="dt">test =</span> <span class="kw">adjusted</span>(<span class="st">&quot;none&quot;</span>))</a>
+<a class="sourceLine" id="cb239-4" title="4"><span class="kw">summary</span>(fit.man, <span class="dt">test =</span> <span class="kw">adjusted</span>(<span class="st">&quot;bonferroni&quot;</span>))</a>
+<a class="sourceLine" id="cb239-5" title="5"><span class="kw">summary</span>(fit.man, <span class="dt">test =</span> <span class="kw">adjusted</span>(<span class="st">&quot;holm&quot;</span>))</a></code></pre></div>
 </div>
 <div id="scheffe-unplanned-contrasts" class="section level3">
 <h3><span class="header-section-number">21.13.2</span> Scheffe (Unplanned contrasts)</h3>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb209-1" title="1">fit.scheffe &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">-1</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)))</a>
-<a class="sourceLine" id="cb209-2" title="2"></a>
-<a class="sourceLine" id="cb209-3" title="3"><span class="co">## p-value according to Scheffe =&gt; do it manually</span></a>
-<a class="sourceLine" id="cb209-4" title="4"><span class="co">## calculate F value with nom-df = g-1 and denom-df = N-g</span></a>
-<a class="sourceLine" id="cb209-5" title="5"><span class="co">## in our case g-1 = 2, N-g = 27</span></a>
-<a class="sourceLine" id="cb209-6" title="6"></a>
-<a class="sourceLine" id="cb209-7" title="7"><span class="kw">pf</span>((<span class="kw">summary</span>(fit.scheffe)<span class="op">$</span>test<span class="op">$</span>tstat)<span class="op">^</span><span class="dv">2</span> <span class="op">/</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">27</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb240-1" title="1">fit.scheffe &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">-1</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)))</a>
+<a class="sourceLine" id="cb240-2" title="2"></a>
+<a class="sourceLine" id="cb240-3" title="3"><span class="co">## p-value according to Scheffe =&gt; do it manually</span></a>
+<a class="sourceLine" id="cb240-4" title="4"><span class="co">## calculate F value with nom-df = g-1 and denom-df = N-g</span></a>
+<a class="sourceLine" id="cb240-5" title="5"><span class="co">## in our case g-1 = 2, N-g = 27</span></a>
+<a class="sourceLine" id="cb240-6" title="6"></a>
+<a class="sourceLine" id="cb240-7" title="7"><span class="kw">pf</span>((<span class="kw">summary</span>(fit.scheffe)<span class="op">$</span>test<span class="op">$</span>tstat)<span class="op">^</span><span class="dv">2</span> <span class="op">/</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">27</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>         1 
 0.05323245 </code></pre>
 <ul>
@@ -958,8 +963,8 @@ mycontr2 == 0   0.3710     0.2788   1.331    0.194
 </div>
 <div id="tukey-hsd-all-pairwise-comparisons" class="section level3">
 <h3><span class="header-section-number">21.13.3</span> Tukey HSD (All pairwise comparisons)</h3>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb211-1" title="1">fit.tukey &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="st">&quot;Tukey&quot;</span>))</a>
-<a class="sourceLine" id="cb211-2" title="2"><span class="kw">summary</span>(fit.tukey)</a></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb242-1" title="1">fit.tukey &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="st">&quot;Tukey&quot;</span>))</a>
+<a class="sourceLine" id="cb242-2" title="2"><span class="kw">summary</span>(fit.tukey)</a></code></pre></div>
 <pre><code>
      Simultaneous Tests for General Linear Hypotheses
 
@@ -976,22 +981,22 @@ trt2 - trt1 == 0   0.8650     0.2788   3.103   0.0121 *
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 (Adjusted p values reported -- single-step method)</code></pre>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb213-1" title="1"><span class="kw">plot</span>(<span class="kw">confint</span>(<span class="kw">glht</span>(fit.tukey)))</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-203-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb244-1" title="1"><span class="kw">plot</span>(<span class="kw">confint</span>(<span class="kw">glht</span>(fit.tukey)))</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-218-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p>Example with compact letter display</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb214-1" title="1">subCO2 &lt;-<span class="st"> </span>CO2[CO2<span class="op">$</span>conc <span class="op">==</span><span class="st"> </span><span class="dv">1000</span>,]</a>
-<a class="sourceLine" id="cb214-2" title="2">subCO2<span class="op">$</span>tret &lt;-<span class="st"> </span><span class="kw">interaction</span>(subCO2<span class="op">$</span>Type, subCO2<span class="op">$</span>Treatment)</a>
-<a class="sourceLine" id="cb214-3" title="3">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(uptake <span class="op">~</span><span class="st"> </span>tret, <span class="dt">data =</span> subCO2)</a>
-<a class="sourceLine" id="cb214-4" title="4"></a>
-<a class="sourceLine" id="cb214-5" title="5"><span class="co"># Tukey&#39;s HSD</span></a>
-<a class="sourceLine" id="cb214-6" title="6"><span class="kw">library</span>(multcomp)</a>
-<a class="sourceLine" id="cb214-7" title="7">tuk &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">tret =</span> <span class="st">&#39;Tukey&#39;</span>))</a>
-<a class="sourceLine" id="cb214-8" title="8"><span class="kw">summary</span>(tuk)</a>
-<a class="sourceLine" id="cb214-9" title="9"></a>
-<a class="sourceLine" id="cb214-10" title="10"><span class="co"># compact letter display</span></a>
-<a class="sourceLine" id="cb214-11" title="11">tuk.cld &lt;-<span class="st"> </span><span class="kw">cld</span>(tuk)</a>
-<a class="sourceLine" id="cb214-12" title="12"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb214-13" title="13"><span class="kw">plot</span>(tuk.cld)</a></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb245-1" title="1">subCO2 &lt;-<span class="st"> </span>CO2[CO2<span class="op">$</span>conc <span class="op">==</span><span class="st"> </span><span class="dv">1000</span>,]</a>
+<a class="sourceLine" id="cb245-2" title="2">subCO2<span class="op">$</span>tret &lt;-<span class="st"> </span><span class="kw">interaction</span>(subCO2<span class="op">$</span>Type, subCO2<span class="op">$</span>Treatment)</a>
+<a class="sourceLine" id="cb245-3" title="3">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(uptake <span class="op">~</span><span class="st"> </span>tret, <span class="dt">data =</span> subCO2)</a>
+<a class="sourceLine" id="cb245-4" title="4"></a>
+<a class="sourceLine" id="cb245-5" title="5"><span class="co"># Tukey&#39;s HSD</span></a>
+<a class="sourceLine" id="cb245-6" title="6"><span class="kw">library</span>(multcomp)</a>
+<a class="sourceLine" id="cb245-7" title="7">tuk &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">tret =</span> <span class="st">&#39;Tukey&#39;</span>))</a>
+<a class="sourceLine" id="cb245-8" title="8"><span class="kw">summary</span>(tuk)</a>
+<a class="sourceLine" id="cb245-9" title="9"></a>
+<a class="sourceLine" id="cb245-10" title="10"><span class="co"># compact letter display</span></a>
+<a class="sourceLine" id="cb245-11" title="11">tuk.cld &lt;-<span class="st"> </span><span class="kw">cld</span>(tuk)</a>
+<a class="sourceLine" id="cb245-12" title="12"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb245-13" title="13"><span class="kw">plot</span>(tuk.cld)</a></code></pre></div>
 
 <div class="rmdwarning">
 Letters will not be displayed if treatment names contain a space (e.g. <code>Quebec nonchilled</code> instead of <code>Quebec.nonchilled</code>).
@@ -1000,9 +1005,9 @@ Letters will not be displayed if treatment names contain a space (e.g. <code>Qu
 </div>
 <div id="dunnett-comparison-with-control" class="section level3">
 <h3><span class="header-section-number">21.13.4</span> Dunnett (Comparison with control)</h3>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb215-1" title="1"><span class="co">## fitst level is set as control</span></a>
-<a class="sourceLine" id="cb215-2" title="2">fit.dunnett &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="st">&quot;Dunnett&quot;</span>))</a>
-<a class="sourceLine" id="cb215-3" title="3"><span class="kw">summary</span>(fit.dunnett)</a></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb246-1" title="1"><span class="co">## fitst level is set as control</span></a>
+<a class="sourceLine" id="cb246-2" title="2">fit.dunnett &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="st">&quot;Dunnett&quot;</span>))</a>
+<a class="sourceLine" id="cb246-3" title="3"><span class="kw">summary</span>(fit.dunnett)</a></code></pre></div>
 <pre><code>
      Simultaneous Tests for General Linear Hypotheses
 
@@ -1030,27 +1035,27 @@ trt2 - ctrl == 0   0.4940     0.2788   1.772    0.153
 <h4><span class="header-section-number">21.14.1.1</span> Test with significant interaction</h4>
 <div id="hyper-factor" class="section level5 unnumbered">
 <h5>Hyper factor</h5>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb217-1" title="1">snails<span class="op">$</span>dens_seas &lt;-<span class="st"> </span><span class="kw">interaction</span>(snails<span class="op">$</span>density, snails<span class="op">$</span>season)</a>
-<a class="sourceLine" id="cb217-2" title="2">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(y <span class="op">~</span><span class="st"> </span>dens_seas, <span class="dt">data =</span> snails)</a>
-<a class="sourceLine" id="cb217-3" title="3"><span class="kw">summary</span>(fit)</a></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb248-1" title="1">snails<span class="op">$</span>dens_seas &lt;-<span class="st"> </span><span class="kw">interaction</span>(snails<span class="op">$</span>density, snails<span class="op">$</span>season)</a>
+<a class="sourceLine" id="cb248-2" title="2">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(y <span class="op">~</span><span class="st"> </span>dens_seas, <span class="dt">data =</span> snails)</a>
+<a class="sourceLine" id="cb248-3" title="3"><span class="kw">summary</span>(fit)</a></code></pre></div>
 </div>
 <div id="individual-analysis" class="section level5 unnumbered">
 <h5>Individual analysis</h5>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" title="1"><span class="co">## detect significant interation? Yes…</span></a>
-<a class="sourceLine" id="cb218-2" title="2"><span class="co"># 1) fit single model for each factor level (here: &quot;season&quot;, also for &quot;density&quot; possible)</span></a>
-<a class="sourceLine" id="cb218-3" title="3">fit.spring &lt;-<span class="st"> </span><span class="kw">aov</span>(y <span class="op">~</span><span class="st"> </span>density, <span class="dt">data =</span> <span class="kw">subset</span>(snails, season <span class="op">==</span><span class="st"> &quot;Spring&quot;</span>))</a>
-<a class="sourceLine" id="cb218-4" title="4"></a>
-<a class="sourceLine" id="cb218-5" title="5"><span class="co"># 2) extract mean square of factor &quot;density&quot;</span></a>
-<a class="sourceLine" id="cb218-6" title="6">MSS_dens &lt;-<span class="st"> </span><span class="kw">summary</span>(fit.spring) [[<span class="dv">1</span>]][<span class="st">&quot;density&quot;</span>,<span class="st">&quot;Mean Sq&quot;</span>]</a>
-<a class="sourceLine" id="cb218-7" title="7"></a>
-<a class="sourceLine" id="cb218-8" title="8"><span class="co"># 3) extract mean square of Error from full model</span></a>
-<a class="sourceLine" id="cb218-9" title="9">MSS_er &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)[[<span class="dv">1</span>]][<span class="st">&quot;Residuals&quot;</span>, <span class="st">&quot;Mean Sq&quot;</span>]</a>
-<a class="sourceLine" id="cb218-10" title="10"></a>
-<a class="sourceLine" id="cb218-11" title="11"><span class="co"># 3) calculate F value and p value</span></a>
-<a class="sourceLine" id="cb218-12" title="12">F_value &lt;-<span class="st"> </span>MSS_dens<span class="op">/</span>MSS_er</a>
-<a class="sourceLine" id="cb218-13" title="13"><span class="kw">pf</span>(F_value, <span class="dv">2</span>, <span class="dv">12</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb249-1" title="1"><span class="co">## detect significant interation? Yes…</span></a>
+<a class="sourceLine" id="cb249-2" title="2"><span class="co"># 1) fit single model for each factor level (here: &quot;season&quot;, also for &quot;density&quot; possible)</span></a>
+<a class="sourceLine" id="cb249-3" title="3">fit.spring &lt;-<span class="st"> </span><span class="kw">aov</span>(y <span class="op">~</span><span class="st"> </span>density, <span class="dt">data =</span> <span class="kw">subset</span>(snails, season <span class="op">==</span><span class="st"> &quot;Spring&quot;</span>))</a>
+<a class="sourceLine" id="cb249-4" title="4"></a>
+<a class="sourceLine" id="cb249-5" title="5"><span class="co"># 2) extract mean square of factor &quot;density&quot;</span></a>
+<a class="sourceLine" id="cb249-6" title="6">MSS_dens &lt;-<span class="st"> </span><span class="kw">summary</span>(fit.spring) [[<span class="dv">1</span>]][<span class="st">&quot;density&quot;</span>,<span class="st">&quot;Mean Sq&quot;</span>]</a>
+<a class="sourceLine" id="cb249-7" title="7"></a>
+<a class="sourceLine" id="cb249-8" title="8"><span class="co"># 3) extract mean square of Error from full model</span></a>
+<a class="sourceLine" id="cb249-9" title="9">MSS_er &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)[[<span class="dv">1</span>]][<span class="st">&quot;Residuals&quot;</span>, <span class="st">&quot;Mean Sq&quot;</span>]</a>
+<a class="sourceLine" id="cb249-10" title="10"></a>
+<a class="sourceLine" id="cb249-11" title="11"><span class="co"># 3) calculate F value and p value</span></a>
+<a class="sourceLine" id="cb249-12" title="12">F_value &lt;-<span class="st"> </span>MSS_dens<span class="op">/</span>MSS_er</a>
+<a class="sourceLine" id="cb249-13" title="13"><span class="kw">pf</span>(F_value, <span class="dv">2</span>, <span class="dv">12</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>[1] 0.6520635</code></pre>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb220-1" title="1"><span class="co"># 2: df of &quot;density, 12: df of residuals</span></a></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb251-1" title="1"><span class="co"># 2: df of &quot;density, 12: df of residuals</span></a></code></pre></div>
 </div>
 </div>
 </div>
@@ -1060,7 +1065,7 @@ trt2 - ctrl == 0   0.4940     0.2788   1.772    0.153
 <li>packages
 <ul>
 <li><code>lme4</code> original</li>
-<li><code>lmerTest</code> more features</li>
+<li><code>lmerTest</code> additional features</li>
 </ul></li>
 <li><code>lmer()</code> fits mixed effects model</li>
 <li><code>summary()</code> returns estimates of variance components and fixed effects</li>
@@ -1073,18 +1078,18 @@ trt2 - ctrl == 0   0.4940     0.2788   1.772    0.153
 </ul></li>
 <li><code>confint()</code> CI of random and fixed effects</li>
 </ul>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb221-1" title="1"><span class="co">## Random effects models</span></a>
-<a class="sourceLine" id="cb221-2" title="2">fit.lme &lt;-<span class="st"> </span><span class="kw">lmer</span>(weight <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>sire), <span class="dt">data =</span> animals)</a>
-<a class="sourceLine" id="cb221-3" title="3">fit.lme &lt;-<span class="st"> </span><span class="kw">lmer</span>(y <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>day) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>machine) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>machine<span class="op">:</span>day), <span class="dt">data =</span> trigly)</a>
-<a class="sourceLine" id="cb221-4" title="4"></a>
-<a class="sourceLine" id="cb221-5" title="5"><span class="co">## Mixed effects models</span></a>
-<a class="sourceLine" id="cb221-6" title="6">fit.lme &lt;-<span class="st"> </span><span class="kw">lmer</span>(effort <span class="op">~</span><span class="st"> </span>Type <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>Subject), <span class="dt">data =</span> ergoStool)</a>
-<a class="sourceLine" id="cb221-7" title="7">fit.lme2 &lt;-<span class="st"> </span><span class="kw">lmer</span>(score <span class="op">~</span><span class="st"> </span>Machine <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>Worker) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>Worker<span class="op">:</span>Machine), <span class="dt">data =</span> Machines)</a>
-<a class="sourceLine" id="cb221-8" title="8"></a>
-<a class="sourceLine" id="cb221-9" title="9"><span class="co">## Old</span></a>
-<a class="sourceLine" id="cb221-10" title="10">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(score <span class="op">~</span><span class="st"> </span>Machine <span class="op">+</span><span class="st"> </span><span class="kw">Error</span>(Worker <span class="op">+</span><span class="st"> </span>Machine<span class="op">:</span>Worker), <span class="dt">data =</span> Machines)</a></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb252-1" title="1"><span class="co">## Random effects models</span></a>
+<a class="sourceLine" id="cb252-2" title="2">fit.lme &lt;-<span class="st"> </span><span class="kw">lmer</span>(weight <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>sire), <span class="dt">data =</span> animals)</a>
+<a class="sourceLine" id="cb252-3" title="3">fit.lme &lt;-<span class="st"> </span><span class="kw">lmer</span>(y <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>day) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>machine) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>machine<span class="op">:</span>day), <span class="dt">data =</span> trigly)</a>
+<a class="sourceLine" id="cb252-4" title="4"></a>
+<a class="sourceLine" id="cb252-5" title="5"><span class="co">## Mixed effects models</span></a>
+<a class="sourceLine" id="cb252-6" title="6">fit.lme &lt;-<span class="st"> </span><span class="kw">lmer</span>(effort <span class="op">~</span><span class="st"> </span>Type <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>Subject), <span class="dt">data =</span> ergoStool)</a>
+<a class="sourceLine" id="cb252-7" title="7">fit.lme2 &lt;-<span class="st"> </span><span class="kw">lmer</span>(score <span class="op">~</span><span class="st"> </span>Machine <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>Worker) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>Worker<span class="op">:</span>Machine), <span class="dt">data =</span> Machines)</a>
+<a class="sourceLine" id="cb252-8" title="8"></a>
+<a class="sourceLine" id="cb252-9" title="9"><span class="co">## Old</span></a>
+<a class="sourceLine" id="cb252-10" title="10">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(score <span class="op">~</span><span class="st"> </span>Machine <span class="op">+</span><span class="st"> </span><span class="kw">Error</span>(Worker <span class="op">+</span><span class="st"> </span>Machine<span class="op">:</span>Worker), <span class="dt">data =</span> Machines)</a></code></pre></div>
 <p>Old approach using <code>Error()</code> does <strong>not</strong> estimate standard deviations of error terms. But the F value of machine is now computed correctly (<span class="math inline">\(MS_{Machine}\)</span> is devided by <span class="math inline">\(MS_{Machine:Worker}\)</span> and not by <span class="math inline">\(MS_E\)</span>)</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb222-1" title="1"><span class="kw">summary</span>(fit.lme)</a></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb253-1" title="1"><span class="kw">summary</span>(fit.lme)</a></code></pre></div>
 <pre><code>Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 lmerModLmerTest]
 Formula: effort ~ Type + (1 | Subject)
@@ -1124,11 +1129,11 @@ At section <code>Random effects</code>, the <code>Std.Dev</code> is simply the s
 <div id="fixed-effects" class="section level4">
 <h4><span class="header-section-number">21.14.2.1</span> Fixed effects</h4>
 <p>Estimates</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb224-1" title="1"><span class="kw">fixef</span>(fit.lme)</a></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb255-1" title="1"><span class="kw">fixef</span>(fit.lme)</a></code></pre></div>
 <pre><code>(Intercept)      TypeT2      TypeT3      TypeT4 
   8.5555556   3.8888889   2.2222222   0.6666667 </code></pre>
 <p>Tests</p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb226-1" title="1"><span class="kw">drop1</span>(fit.lme)</a></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb257-1" title="1"><span class="kw">drop1</span>(fit.lme)</a></code></pre></div>
 <pre><code>Single term deletions using Satterthwaite&#39;s method:
 
 Model:
@@ -1138,7 +1143,7 @@ Type 81.194  27.065     3    24  22.356 3.935e-07 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>CI (random and fixed effects)</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb228-1" title="1"><span class="kw">confint</span>(fit.lme, <span class="dt">oldNames =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb259-1" title="1"><span class="kw">confint</span>(fit.lme, <span class="dt">oldNames =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>                            2.5 %   97.5 %
 sd_(Intercept)|Subject  0.7342354 2.287261
 sigma                   0.8119798 1.390104
@@ -1150,10 +1155,10 @@ TypeT4                 -0.3269179 1.660251</code></pre>
 <div id="random-effects" class="section level4">
 <h4><span class="header-section-number">21.14.2.2</span> Random effects</h4>
 <p>Estimates <span class="math inline">\(\sigma_W^2\)</span>, <span class="math inline">\(\sigma_{W:M}^2\)</span>, <span class="math inline">\(\sigma_E^2\)</span></p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" title="1"><span class="kw">unlist</span>(<span class="kw">VarCorr</span>(fit.lme))</a></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb261-1" title="1"><span class="kw">unlist</span>(<span class="kw">VarCorr</span>(fit.lme))</a></code></pre></div>
 <pre><code> Subject 
 1.775471 </code></pre>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb232-1" title="1"><span class="kw">sigma</span>(fit.lme)<span class="op">^</span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb263-1" title="1"><span class="kw">sigma</span>(fit.lme)<span class="op">^</span><span class="dv">2</span></a></code></pre></div>
 <pre><code>[1] 1.210647</code></pre>
 
 <div class="rmdwarning">
@@ -1161,7 +1166,7 @@ TypeT4                 -0.3269179 1.660251</code></pre>
 </div>
 
 <p>Estimates <span class="math inline">\(\alpha_i\)</span>, <span class="math inline">\(\beta_j\)</span>, <span class="math inline">\((\alpha\beta)_{ij}\)</span></p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb234-1" title="1"><span class="kw">ranef</span>(fit.lme)</a></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb265-1" title="1"><span class="kw">ranef</span>(fit.lme)</a></code></pre></div>
 <pre><code>$Subject
     (Intercept)
 8 -1.708718e+00
@@ -1176,7 +1181,7 @@ TypeT4                 -0.3269179 1.660251</code></pre>
 
 with conditional variances for &quot;Subject&quot; </code></pre>
 <p>Estimates <span class="math inline">\(E(\mu_i | \alpha_i)\)</span></p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb236-1" title="1"><span class="kw">coef</span>(fit.lme)</a></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb267-1" title="1"><span class="kw">coef</span>(fit.lme)</a></code></pre></div>
 <pre><code>$Subject
   (Intercept)   TypeT2   TypeT3    TypeT4
 8    6.846838 3.888889 2.222222 0.6666667
@@ -1192,40 +1197,40 @@ with conditional variances for &quot;Subject&quot; </code></pre>
 attr(,&quot;class&quot;)
 [1] &quot;coef.mer&quot;</code></pre>
 <p>Tests</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb238-1" title="1"><span class="co">## approximate</span></a>
-<a class="sourceLine" id="cb238-2" title="2"><span class="kw">ranova</span>(fit.lme)</a>
-<a class="sourceLine" id="cb238-3" title="3"></a>
-<a class="sourceLine" id="cb238-4" title="4"><span class="co">## exact</span></a>
-<a class="sourceLine" id="cb238-5" title="5"><span class="kw">library</span>(RLRsim)</a></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb269-1" title="1"><span class="co">## approximate</span></a>
+<a class="sourceLine" id="cb269-2" title="2"><span class="kw">ranova</span>(fit.lme)</a>
+<a class="sourceLine" id="cb269-3" title="3"></a>
+<a class="sourceLine" id="cb269-4" title="4"><span class="co">## exact</span></a>
+<a class="sourceLine" id="cb269-5" title="5"><span class="kw">library</span>(RLRsim)</a></code></pre></div>
 <p>CI</p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb239-1" title="1"><span class="co">## approximate</span></a>
-<a class="sourceLine" id="cb239-2" title="2"><span class="kw">confint</span>(fit.lme, <span class="dt">oldNames =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb239-3" title="3"></a>
-<a class="sourceLine" id="cb239-4" title="4"><span class="co">## exact</span></a>
-<a class="sourceLine" id="cb239-5" title="5"><span class="kw">library</span>(RLRsim)</a></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb270-1" title="1"><span class="co">## approximate</span></a>
+<a class="sourceLine" id="cb270-2" title="2"><span class="kw">confint</span>(fit.lme, <span class="dt">oldNames =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb270-3" title="3"></a>
+<a class="sourceLine" id="cb270-4" title="4"><span class="co">## exact</span></a>
+<a class="sourceLine" id="cb270-5" title="5"><span class="kw">library</span>(RLRsim)</a></code></pre></div>
 </div>
 </div>
 <div id="nested-model" class="section level3">
 <h3><span class="header-section-number">21.14.3</span> Nested model</h3>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb240-1" title="1"><span class="co">## All equal, different options to specify the nesting</span></a>
-<a class="sourceLine" id="cb240-2" title="2"><span class="kw">lmer</span>(strength <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>batch) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>sample), Pastes)</a>
-<a class="sourceLine" id="cb240-3" title="3"><span class="kw">lmer</span>(strength <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>batch) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>cask<span class="op">:</span>batch), <span class="dt">data =</span> Pastes)</a>
-<a class="sourceLine" id="cb240-4" title="4"><span class="kw">lmer</span>(strength <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>batch<span class="op">/</span>cask), <span class="dt">data =</span> Pastes)</a>
-<a class="sourceLine" id="cb240-5" title="5"></a>
-<a class="sourceLine" id="cb240-6" title="6"><span class="co">## nested as fixed effect</span></a>
-<a class="sourceLine" id="cb240-7" title="7"><span class="kw">aov</span>(strength <span class="op">~</span><span class="st"> </span>batch <span class="op">+</span><span class="st"> </span>cask <span class="op">%in%</span><span class="st"> </span>batch, <span class="dt">data =</span> Pastes)</a></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb271-1" title="1"><span class="co">## All equal, different options to specify the nesting</span></a>
+<a class="sourceLine" id="cb271-2" title="2"><span class="kw">lmer</span>(strength <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>batch) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>sample), Pastes)</a>
+<a class="sourceLine" id="cb271-3" title="3"><span class="kw">lmer</span>(strength <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>batch) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>cask<span class="op">:</span>batch), <span class="dt">data =</span> Pastes)</a>
+<a class="sourceLine" id="cb271-4" title="4"><span class="kw">lmer</span>(strength <span class="op">~</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>batch<span class="op">/</span>cask), <span class="dt">data =</span> Pastes)</a>
+<a class="sourceLine" id="cb271-5" title="5"></a>
+<a class="sourceLine" id="cb271-6" title="6"><span class="co">## nested as fixed effect</span></a>
+<a class="sourceLine" id="cb271-7" title="7"><span class="kw">aov</span>(strength <span class="op">~</span><span class="st"> </span>batch <span class="op">+</span><span class="st"> </span>cask <span class="op">%in%</span><span class="st"> </span>batch, <span class="dt">data =</span> Pastes)</a></code></pre></div>
 <p>Nested factors are typically random</p>
 </div>
 <div id="split-plot" class="section level3">
 <h3><span class="header-section-number">21.14.4</span> Split plot</h3>
 <p>Add main plot as random term. R will automatically recognize across which experimental unit V and N were randomized and test against the correct MS</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb241-1" title="1"><span class="co"># Example</span></a>
-<a class="sourceLine" id="cb241-2" title="2"><span class="co">## Y yield</span></a>
-<a class="sourceLine" id="cb241-3" title="3"><span class="co">## B block</span></a>
-<a class="sourceLine" id="cb241-4" title="4"><span class="co">## V variety (randomized among main plot)</span></a>
-<a class="sourceLine" id="cb241-5" title="5"><span class="co">## N nitrogen (randomized among sub plot)</span></a>
-<a class="sourceLine" id="cb241-6" title="6"><span class="co">## B:V main plot</span></a>
-<a class="sourceLine" id="cb241-7" title="7">fit.lme &lt;-<span class="st"> </span><span class="kw">lmer</span>(Y <span class="op">~</span><span class="st"> </span>B <span class="op">+</span><span class="st"> </span>V<span class="op">*</span>N <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>B<span class="op">:</span>V), <span class="dt">data =</span> oats)</a></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb272-1" title="1"><span class="co"># Example</span></a>
+<a class="sourceLine" id="cb272-2" title="2"><span class="co">## Y yield</span></a>
+<a class="sourceLine" id="cb272-3" title="3"><span class="co">## B block</span></a>
+<a class="sourceLine" id="cb272-4" title="4"><span class="co">## V variety (randomized among main plot)</span></a>
+<a class="sourceLine" id="cb272-5" title="5"><span class="co">## N nitrogen (randomized among sub plot)</span></a>
+<a class="sourceLine" id="cb272-6" title="6"><span class="co">## B:V main plot</span></a>
+<a class="sourceLine" id="cb272-7" title="7">fit.lme &lt;-<span class="st"> </span><span class="kw">lmer</span>(Y <span class="op">~</span><span class="st"> </span>B <span class="op">+</span><span class="st"> </span>V<span class="op">*</span>N <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>B<span class="op">:</span>V), <span class="dt">data =</span> oats)</a></code></pre></div>
 </div>
 <div id="incomplete-block-designs" class="section level3">
 <h3><span class="header-section-number">21.14.5</span> Incomplete Block designs</h3>
@@ -1246,8 +1251,8 @@ attr(,&quot;class&quot;)
 </div>
 <div id="fit-model-1" class="section level4">
 <h4><span class="header-section-number">21.14.5.2</span> Fit model</h4>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb242-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(dishes <span class="op">~</span><span class="st"> </span>session <span class="op">+</span><span class="st"> </span>detergent, <span class="dt">data =</span> dish)</a>
-<a class="sourceLine" id="cb242-2" title="2"><span class="kw">drop1</span>(fit, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>) <span class="co"># make sure to use drop1() to get Type III MS not summary()</span></a></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb273-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">aov</span>(dishes <span class="op">~</span><span class="st"> </span>session <span class="op">+</span><span class="st"> </span>detergent, <span class="dt">data =</span> dish)</a>
+<a class="sourceLine" id="cb273-2" title="2"><span class="kw">drop1</span>(fit, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>) <span class="co"># make sure to use drop1() to get Type III MS not summary()</span></a></code></pre></div>
 </div>
 </div>
 </div>

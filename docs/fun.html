@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-03-11" />
+<meta name="date" content="2020-03-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -344,11 +344,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="20.8.3" data-path="regression.html"><a href="regression.html#variable-selection"><i class="fa fa-check"></i><b>20.8.3</b> Variable selection</a></li>
 <li class="chapter" data-level="20.8.4" data-path="regression.html"><a href="regression.html#predictor-relevance"><i class="fa fa-check"></i><b>20.8.4</b> Predictor relevance</a></li>
 </ul></li>
-<li class="chapter" data-level="20.9" data-path="regression.html"><a href="regression.html#ridge-regression"><i class="fa fa-check"></i><b>20.9</b> Ridge Regression</a></li>
+<li class="chapter" data-level="20.9" data-path="regression.html"><a href="regression.html#shrinkage"><i class="fa fa-check"></i><b>20.9</b> Shrinkage</a></li>
 <li class="chapter" data-level="20.10" data-path="regression.html"><a href="regression.html#smoothing"><i class="fa fa-check"></i><b>20.10</b> Smoothing</a><ul>
 <li class="chapter" data-level="20.10.1" data-path="regression.html"><a href="regression.html#running-mean-yellow-box"><i class="fa fa-check"></i><b>20.10.1</b> Running mean (yellow box)</a></li>
 <li class="chapter" data-level="20.10.2" data-path="regression.html"><a href="regression.html#gaussian-kernel-estimate-green-gaussian"><i class="fa fa-check"></i><b>20.10.2</b> Gaussian kernel estimate (green gaussian)</a></li>
 <li class="chapter" data-level="20.10.3" data-path="regression.html"><a href="regression.html#loess-smoother"><i class="fa fa-check"></i><b>20.10.3</b> LOESS smoother</a></li>
+</ul></li>
+<li class="chapter" data-level="20.11" data-path="regression.html"><a href="regression.html#gam"><i class="fa fa-check"></i><b>20.11</b> GAM</a></li>
+<li class="chapter" data-level="20.12" data-path="regression.html"><a href="regression.html#glm"><i class="fa fa-check"></i><b>20.12</b> GLM</a><ul>
+<li class="chapter" data-level="20.12.1" data-path="regression.html"><a href="regression.html#logistic-regression"><i class="fa fa-check"></i><b>20.12.1</b> Logistic Regression</a></li>
+<li class="chapter" data-level="20.12.2" data-path="regression.html"><a href="regression.html#poisson-regression"><i class="fa fa-check"></i><b>20.12.2</b> Poisson Regression</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>21</b> ANOVA</a><ul>
@@ -357,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="21.3" data-path="anova.html"><a href="anova.html#simulate-data"><i class="fa fa-check"></i><b>21.3</b> Simulate data</a><ul>
 <li class="chapter" data-level="21.3.1" data-path="anova.html"><a href="anova.html#randomization"><i class="fa fa-check"></i><b>21.3.1</b> Randomization</a></li>
 </ul></li>
-<li class="chapter" data-level="21.4" data-path="anova.html"><a href="anova.html#visualization"><i class="fa fa-check"></i><b>21.4</b> Visualization</a><ul>
+<li class="chapter" data-level="21.4" data-path="anova.html"><a href="anova.html#visualization-2"><i class="fa fa-check"></i><b>21.4</b> Visualization</a><ul>
 <li class="chapter" data-level="21.4.1" data-path="anova.html"><a href="anova.html#stripchart"><i class="fa fa-check"></i><b>21.4.1</b> Stripchart</a></li>
 <li class="chapter" data-level="21.4.2" data-path="anova.html"><a href="anova.html#boxplot"><i class="fa fa-check"></i><b>21.4.2</b> Boxplot</a></li>
 <li class="chapter" data-level="21.4.3" data-path="anova.html"><a href="anova.html#interaction-plot"><i class="fa fa-check"></i><b>21.4.3</b> Interaction plot</a></li>
@@ -365,12 +370,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="21.5" data-path="anova.html"><a href="anova.html#fit-model"><i class="fa fa-check"></i><b>21.5</b> Fit model</a><ul>
 <li class="chapter" data-level="21.5.1" data-path="anova.html"><a href="anova.html#identifiability"><i class="fa fa-check"></i><b>21.5.1</b> Identifiability</a></li>
-<li class="chapter" data-level="21.5.2" data-path="anova.html"><a href="anova.html#fitting"><i class="fa fa-check"></i><b>21.5.2</b> Fitting</a></li>
+<li class="chapter" data-level="21.5.2" data-path="anova.html"><a href="anova.html#fitting-2"><i class="fa fa-check"></i><b>21.5.2</b> Fitting</a></li>
 </ul></li>
 <li class="chapter" data-level="21.6" data-path="anova.html"><a href="anova.html#anova-table"><i class="fa fa-check"></i><b>21.6</b> ANOVA table</a><ul>
 <li class="chapter" data-level="21.6.1" data-path="anova.html"><a href="anova.html#types-of-sum-of-sqares"><i class="fa fa-check"></i><b>21.6.1</b> Types of Sum of Sqares</a></li>
 </ul></li>
-<li class="chapter" data-level="21.7" data-path="anova.html"><a href="anova.html#model-comparison-1"><i class="fa fa-check"></i><b>21.7</b> Model comparison</a></li>
+<li class="chapter" data-level="21.7" data-path="anova.html"><a href="anova.html#model-comparison-2"><i class="fa fa-check"></i><b>21.7</b> Model comparison</a></li>
 <li class="chapter" data-level="21.8" data-path="anova.html"><a href="anova.html#coefficients"><i class="fa fa-check"></i><b>21.8</b> Coefficients</a></li>
 <li class="chapter" data-level="21.9" data-path="anova.html"><a href="anova.html#tests-and-ci-for-coeficients"><i class="fa fa-check"></i><b>21.9</b> Tests and CI for coeficients</a></li>
 <li class="chapter" data-level="21.10" data-path="anova.html"><a href="anova.html#predict"><i class="fa fa-check"></i><b>21.10</b> Predict</a></li>
@@ -399,7 +404,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>22</b> Multivariate Statistics</a><ul>
 <li class="chapter" data-level="22.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>22.1</b> Data sets</a></li>
 <li class="chapter" data-level="22.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>22.2</b> Some functions</a><ul>
-<li class="chapter" data-level="22.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization-1"><i class="fa fa-check"></i><b>22.2.1</b> Visualization</a></li>
+<li class="chapter" data-level="22.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization-3"><i class="fa fa-check"></i><b>22.2.1</b> Visualization</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="23" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>23</b> Time series</a><ul>
@@ -415,9 +420,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="23.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>23.4</b> Differencing</a></li>
 </ul></li>
-<li class="chapter" data-level="24" data-path="computational-statistics.html"><a href="computational-statistics.html"><i class="fa fa-check"></i><b>24</b> Computational Statistics</a><ul>
-<li class="chapter" data-level="24.1" data-path="computational-statistics.html"><a href="computational-statistics.html#cross-validation"><i class="fa fa-check"></i><b>24.1</b> Cross validation</a></li>
-<li class="chapter" data-level="24.2" data-path="computational-statistics.html"><a href="computational-statistics.html#bootstrap"><i class="fa fa-check"></i><b>24.2</b> Bootstrap</a></li>
+<li class="chapter" data-level="24" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html"><i class="fa fa-check"></i><b>24</b> Computational Statistics</a><ul>
+<li class="chapter" data-level="24.1" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html#cross-validation"><i class="fa fa-check"></i><b>24.1</b> Cross validation</a></li>
+<li class="chapter" data-level="24.2" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html#bootstrap"><i class="fa fa-check"></i><b>24.2</b> Bootstrap</a></li>
 </ul></li>
 <li class="part"><span><b>VI R Workflow</b></span></li>
 <li class="chapter" data-level="25" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>25</b> Reproducible Research</a><ul>
@@ -849,7 +854,7 @@ Use <code>missing()</code> to check if a formal argument has been manually set.<
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1">print</a></code></pre></div>
 <pre><code>function (x, ...) 
 UseMethod(&quot;print&quot;)
-&lt;bytecode: 0x00000000159859b0&gt;
+&lt;bytecode: 0x000000000deb6068&gt;
 &lt;environment: namespace:base&gt;</code></pre>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">head</span>(<span class="kw">methods</span>(print))</a></code></pre></div>
 <pre><code>[1] &quot;print.acf&quot;     &quot;print.AES&quot;     &quot;print.anova&quot;   &quot;print.aov&quot;    

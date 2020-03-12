@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-03-11" />
+<meta name="date" content="2020-03-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -344,11 +344,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="20.8.3" data-path="regression.html"><a href="regression.html#variable-selection"><i class="fa fa-check"></i><b>20.8.3</b> Variable selection</a></li>
 <li class="chapter" data-level="20.8.4" data-path="regression.html"><a href="regression.html#predictor-relevance"><i class="fa fa-check"></i><b>20.8.4</b> Predictor relevance</a></li>
 </ul></li>
-<li class="chapter" data-level="20.9" data-path="regression.html"><a href="regression.html#ridge-regression"><i class="fa fa-check"></i><b>20.9</b> Ridge Regression</a></li>
+<li class="chapter" data-level="20.9" data-path="regression.html"><a href="regression.html#shrinkage"><i class="fa fa-check"></i><b>20.9</b> Shrinkage</a></li>
 <li class="chapter" data-level="20.10" data-path="regression.html"><a href="regression.html#smoothing"><i class="fa fa-check"></i><b>20.10</b> Smoothing</a><ul>
 <li class="chapter" data-level="20.10.1" data-path="regression.html"><a href="regression.html#running-mean-yellow-box"><i class="fa fa-check"></i><b>20.10.1</b> Running mean (yellow box)</a></li>
 <li class="chapter" data-level="20.10.2" data-path="regression.html"><a href="regression.html#gaussian-kernel-estimate-green-gaussian"><i class="fa fa-check"></i><b>20.10.2</b> Gaussian kernel estimate (green gaussian)</a></li>
 <li class="chapter" data-level="20.10.3" data-path="regression.html"><a href="regression.html#loess-smoother"><i class="fa fa-check"></i><b>20.10.3</b> LOESS smoother</a></li>
+</ul></li>
+<li class="chapter" data-level="20.11" data-path="regression.html"><a href="regression.html#gam"><i class="fa fa-check"></i><b>20.11</b> GAM</a></li>
+<li class="chapter" data-level="20.12" data-path="regression.html"><a href="regression.html#glm"><i class="fa fa-check"></i><b>20.12</b> GLM</a><ul>
+<li class="chapter" data-level="20.12.1" data-path="regression.html"><a href="regression.html#logistic-regression"><i class="fa fa-check"></i><b>20.12.1</b> Logistic Regression</a></li>
+<li class="chapter" data-level="20.12.2" data-path="regression.html"><a href="regression.html#poisson-regression"><i class="fa fa-check"></i><b>20.12.2</b> Poisson Regression</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>21</b> ANOVA</a><ul>
@@ -357,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="21.3" data-path="anova.html"><a href="anova.html#simulate-data"><i class="fa fa-check"></i><b>21.3</b> Simulate data</a><ul>
 <li class="chapter" data-level="21.3.1" data-path="anova.html"><a href="anova.html#randomization"><i class="fa fa-check"></i><b>21.3.1</b> Randomization</a></li>
 </ul></li>
-<li class="chapter" data-level="21.4" data-path="anova.html"><a href="anova.html#visualization"><i class="fa fa-check"></i><b>21.4</b> Visualization</a><ul>
+<li class="chapter" data-level="21.4" data-path="anova.html"><a href="anova.html#visualization-2"><i class="fa fa-check"></i><b>21.4</b> Visualization</a><ul>
 <li class="chapter" data-level="21.4.1" data-path="anova.html"><a href="anova.html#stripchart"><i class="fa fa-check"></i><b>21.4.1</b> Stripchart</a></li>
 <li class="chapter" data-level="21.4.2" data-path="anova.html"><a href="anova.html#boxplot"><i class="fa fa-check"></i><b>21.4.2</b> Boxplot</a></li>
 <li class="chapter" data-level="21.4.3" data-path="anova.html"><a href="anova.html#interaction-plot"><i class="fa fa-check"></i><b>21.4.3</b> Interaction plot</a></li>
@@ -365,12 +370,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="21.5" data-path="anova.html"><a href="anova.html#fit-model"><i class="fa fa-check"></i><b>21.5</b> Fit model</a><ul>
 <li class="chapter" data-level="21.5.1" data-path="anova.html"><a href="anova.html#identifiability"><i class="fa fa-check"></i><b>21.5.1</b> Identifiability</a></li>
-<li class="chapter" data-level="21.5.2" data-path="anova.html"><a href="anova.html#fitting"><i class="fa fa-check"></i><b>21.5.2</b> Fitting</a></li>
+<li class="chapter" data-level="21.5.2" data-path="anova.html"><a href="anova.html#fitting-2"><i class="fa fa-check"></i><b>21.5.2</b> Fitting</a></li>
 </ul></li>
 <li class="chapter" data-level="21.6" data-path="anova.html"><a href="anova.html#anova-table"><i class="fa fa-check"></i><b>21.6</b> ANOVA table</a><ul>
 <li class="chapter" data-level="21.6.1" data-path="anova.html"><a href="anova.html#types-of-sum-of-sqares"><i class="fa fa-check"></i><b>21.6.1</b> Types of Sum of Sqares</a></li>
 </ul></li>
-<li class="chapter" data-level="21.7" data-path="anova.html"><a href="anova.html#model-comparison-1"><i class="fa fa-check"></i><b>21.7</b> Model comparison</a></li>
+<li class="chapter" data-level="21.7" data-path="anova.html"><a href="anova.html#model-comparison-2"><i class="fa fa-check"></i><b>21.7</b> Model comparison</a></li>
 <li class="chapter" data-level="21.8" data-path="anova.html"><a href="anova.html#coefficients"><i class="fa fa-check"></i><b>21.8</b> Coefficients</a></li>
 <li class="chapter" data-level="21.9" data-path="anova.html"><a href="anova.html#tests-and-ci-for-coeficients"><i class="fa fa-check"></i><b>21.9</b> Tests and CI for coeficients</a></li>
 <li class="chapter" data-level="21.10" data-path="anova.html"><a href="anova.html#predict"><i class="fa fa-check"></i><b>21.10</b> Predict</a></li>
@@ -399,7 +404,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>22</b> Multivariate Statistics</a><ul>
 <li class="chapter" data-level="22.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>22.1</b> Data sets</a></li>
 <li class="chapter" data-level="22.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>22.2</b> Some functions</a><ul>
-<li class="chapter" data-level="22.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization-1"><i class="fa fa-check"></i><b>22.2.1</b> Visualization</a></li>
+<li class="chapter" data-level="22.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization-3"><i class="fa fa-check"></i><b>22.2.1</b> Visualization</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="23" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>23</b> Time series</a><ul>
@@ -415,9 +420,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="23.4" data-path="TimeSeries.html"><a href="TimeSeries.html#differencing"><i class="fa fa-check"></i><b>23.4</b> Differencing</a></li>
 </ul></li>
-<li class="chapter" data-level="24" data-path="computational-statistics.html"><a href="computational-statistics.html"><i class="fa fa-check"></i><b>24</b> Computational Statistics</a><ul>
-<li class="chapter" data-level="24.1" data-path="computational-statistics.html"><a href="computational-statistics.html#cross-validation"><i class="fa fa-check"></i><b>24.1</b> Cross validation</a></li>
-<li class="chapter" data-level="24.2" data-path="computational-statistics.html"><a href="computational-statistics.html#bootstrap"><i class="fa fa-check"></i><b>24.2</b> Bootstrap</a></li>
+<li class="chapter" data-level="24" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html"><i class="fa fa-check"></i><b>24</b> Computational Statistics</a><ul>
+<li class="chapter" data-level="24.1" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html#cross-validation"><i class="fa fa-check"></i><b>24.1</b> Cross validation</a></li>
+<li class="chapter" data-level="24.2" data-path="Computational-Statistics.html"><a href="Computational-Statistics.html#bootstrap"><i class="fa fa-check"></i><b>24.2</b> Bootstrap</a></li>
 </ul></li>
 <li class="part"><span><b>VI R Workflow</b></span></li>
 <li class="chapter" data-level="25" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>25</b> Reproducible Research</a><ul>
@@ -935,47 +940,23 @@ F-statistic: 407.1 on 1 and 22 DF,  p-value: 1.11e-15</code></pre>
 <a class="sourceLine" id="cb173-5" title="5">lelaimpo<span class="op">::</span><span class="kw">calc.relim</span>(fit, <span class="dt">type =</span> <span class="st">&quot;lmg&quot;</span>, <span class="dt">rela =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 </div>
 </div>
-<div id="ridge-regression" class="section level2">
-<h2><span class="header-section-number">20.9</span> Ridge Regression</h2>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" title="1"><span class="co"># HIER WEITER MACHEN!!!!!!</span></a></code></pre></div>
+<div id="shrinkage" class="section level2">
+<h2><span class="header-section-number">20.9</span> Shrinkage</h2>
+<p>See chapter <a href="Computational-Statistics.html#Computational-Statistics">24</a></p>
 </div>
 <div id="smoothing" class="section level2">
 <h2><span class="header-section-number">20.10</span> Smoothing</h2>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" title="1"><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax, <span class="dt">xlab =</span> <span class="st">&quot;ATM&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;PAX&quot;</span>)</a>
-<a class="sourceLine" id="cb175-2" title="2"><span class="kw">polygon</span>(<span class="dt">x =</span> <span class="kw">seq</span>(<span class="dv">19000</span>, <span class="dv">25000</span>, <span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb175-3" title="3">        <span class="dt">y =</span> (<span class="kw">dunif</span>(<span class="kw">seq</span>(<span class="dv">19000</span>, <span class="dv">25000</span>, <span class="dv">1</span>), <span class="dt">min =</span> <span class="dv">20000</span>, <span class="dt">max =</span> <span class="dv">21000</span>)<span class="op">*</span><span class="dv">6</span><span class="op">*</span><span class="dv">10</span><span class="op">^</span><span class="dv">8</span><span class="op">+</span><span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">3</span>]),</a>
-<a class="sourceLine" id="cb175-4" title="4">        <span class="dt">col =</span> <span class="st">&quot;#f7fcb9&quot;</span>)</a>
-<a class="sourceLine" id="cb175-5" title="5"><span class="kw">polygon</span>(<span class="dt">x =</span> <span class="kw">seq</span>(<span class="dv">19000</span>, <span class="dv">25000</span>, <span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb175-6" title="6">        <span class="dt">y =</span> (<span class="kw">dnorm</span>(<span class="kw">seq</span>(<span class="dv">19000</span>, <span class="dv">25000</span>, <span class="dv">1</span>), <span class="dt">mean =</span> <span class="dv">23000</span>, <span class="dt">sd =</span> <span class="dv">1000</span><span class="op">*</span><span class="fl">0.37065</span>)<span class="op">*</span><span class="dv">6</span><span class="op">*</span><span class="dv">10</span><span class="op">^</span><span class="dv">8</span><span class="op">+</span><span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">3</span>]),</a>
-<a class="sourceLine" id="cb175-7" title="7">        <span class="dt">col =</span> <span class="st">&quot;#addd8e&quot;</span>)</a>
-<a class="sourceLine" id="cb175-8" title="8"></a>
-<a class="sourceLine" id="cb175-9" title="9"><span class="kw">points</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</a>
-<a class="sourceLine" id="cb175-10" title="10"></a>
-<a class="sourceLine" id="cb175-11" title="11"><span class="co"># FunAxis(xtitle = &quot;ATM&quot;, ytitle = &quot;PAX&quot;)</span></a>
-<a class="sourceLine" id="cb175-12" title="12"></a>
-<a class="sourceLine" id="cb175-13" title="13"><span class="kw">points</span>(<span class="kw">ksmooth</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax, <span class="dt">kernel =</span> <span class="st">&quot;box&quot;</span>, <span class="dt">bandwidth =</span> <span class="dv">1000</span>, <span class="dt">x.points =</span> <span class="dv">20500</span>),</a>
-<a class="sourceLine" id="cb175-14" title="14">       <span class="dt">cex =</span> <span class="fl">1.5</span>, <span class="dt">pch =</span> <span class="dv">16</span>)</a>
-<a class="sourceLine" id="cb175-15" title="15"><span class="kw">points</span>(<span class="kw">ksmooth</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax, <span class="dt">kernel =</span> <span class="st">&quot;normal&quot;</span>, <span class="dt">bandwidth =</span> <span class="dv">1000</span>, <span class="dt">x.points =</span> <span class="dv">23000</span>),</a>
-<a class="sourceLine" id="cb175-16" title="16">       <span class="dt">cex =</span> <span class="fl">1.5</span>, <span class="dt">pch =</span> <span class="dv">16</span>)</a>
-<a class="sourceLine" id="cb175-17" title="17"></a>
-<a class="sourceLine" id="cb175-18" title="18"></a>
-<a class="sourceLine" id="cb175-19" title="19"><span class="kw">segments</span>(<span class="dt">x0 =</span> <span class="dv">20750</span>, <span class="dt">y0 =</span> <span class="dv">0</span>, <span class="dt">y1 =</span> <span class="dv">2100000</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb175-20" title="20"><span class="kw">segments</span>(<span class="dt">x0 =</span> <span class="kw">qnorm</span>(<span class="fl">0.75</span>, <span class="dt">mean =</span> <span class="dv">23000</span>, <span class="dt">sd =</span> <span class="dv">1000</span><span class="op">*</span><span class="fl">0.37065</span>), <span class="dt">y0 =</span> <span class="dv">0</span>, <span class="dt">y1 =</span> <span class="dv">2100000</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb175-21" title="21"></a>
-<a class="sourceLine" id="cb175-22" title="22"><span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">20750</span>, <span class="kw">qnorm</span>(<span class="fl">0.75</span>, <span class="dt">mean =</span> <span class="dv">23000</span>, <span class="dt">sd =</span> <span class="dv">1000</span><span class="op">*</span><span class="fl">0.37065</span>)),</a>
-<a class="sourceLine" id="cb175-23" title="23">     <span class="dt">y =</span> <span class="dv">2150000</span>,</a>
-<a class="sourceLine" id="cb175-24" title="24">     <span class="dt">labels =</span> <span class="st">&quot;Q 75%&quot;</span>)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-172-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-171-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <div id="running-mean-yellow-box" class="section level3">
 <h3><span class="header-section-number">20.10.1</span> Running mean (yellow box)</h3>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">ksmooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,  <span class="co"># Data</span></a>
-<a class="sourceLine" id="cb176-2" title="2">               <span class="dt">kernel =</span> <span class="st">&quot;box&quot;</span>,                 <span class="co"># weighting of points</span></a>
-<a class="sourceLine" id="cb176-3" title="3">               <span class="dt">bandwidth =</span> <span class="dv">1000</span>,               <span class="co"># spread of weighting function</span></a>
-<a class="sourceLine" id="cb176-4" title="4">               <span class="dt">n.points =</span> <span class="dv">24</span>,                  <span class="co"># number of points which should be evaluated</span></a>
-<a class="sourceLine" id="cb176-5" title="5">               <span class="dt">x.points =</span> unique2010<span class="op">$</span>ATM)      <span class="co"># where they should be evaluated</span></a>
-<a class="sourceLine" id="cb176-6" title="6"><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</a>
-<a class="sourceLine" id="cb176-7" title="7"><span class="kw">lines</span>(fit)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-173-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">ksmooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,  <span class="co"># Data</span></a>
+<a class="sourceLine" id="cb174-2" title="2">               <span class="dt">kernel =</span> <span class="st">&quot;box&quot;</span>,                 <span class="co"># weighting of points</span></a>
+<a class="sourceLine" id="cb174-3" title="3">               <span class="dt">bandwidth =</span> <span class="dv">1000</span>,               <span class="co"># spread of weighting function</span></a>
+<a class="sourceLine" id="cb174-4" title="4">               <span class="dt">n.points =</span> <span class="dv">24</span>,                  <span class="co"># number of points which should be evaluated</span></a>
+<a class="sourceLine" id="cb174-5" title="5">               <span class="dt">x.points =</span> unique2010<span class="op">$</span>ATM)      <span class="co"># where they should be evaluated</span></a>
+<a class="sourceLine" id="cb174-6" title="6"><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</a>
+<a class="sourceLine" id="cb174-7" title="7"><span class="kw">lines</span>(fit)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-172-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p><span class="math display">\[\begin{align*}
     &amp;&amp; 0.25 \cdot \text{bandwith} &amp;= Q_{75\%} \\
     \Rightarrow &amp;&amp; \text{bandwith} &amp;= \text{complete width of box}
@@ -983,13 +964,13 @@ F-statistic: 407.1 on 1 and 22 DF,  p-value: 1.11e-15</code></pre>
 </div>
 <div id="gaussian-kernel-estimate-green-gaussian" class="section level3">
 <h3><span class="header-section-number">20.10.2</span> Gaussian kernel estimate (green gaussian)</h3>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">ksmooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,</a>
-<a class="sourceLine" id="cb177-2" title="2">          <span class="dt">kernel =</span> <span class="st">&quot;normal&quot;</span>,</a>
-<a class="sourceLine" id="cb177-3" title="3">          <span class="dt">bandwidth =</span> <span class="dv">1000</span>,</a>
-<a class="sourceLine" id="cb177-4" title="4">          <span class="dt">n.points =</span> <span class="dv">1000</span>)</a>
-<a class="sourceLine" id="cb177-5" title="5"><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</a>
-<a class="sourceLine" id="cb177-6" title="6"><span class="kw">lines</span>(fit)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-174-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">ksmooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,</a>
+<a class="sourceLine" id="cb175-2" title="2">          <span class="dt">kernel =</span> <span class="st">&quot;normal&quot;</span>,</a>
+<a class="sourceLine" id="cb175-3" title="3">          <span class="dt">bandwidth =</span> <span class="dv">1000</span>,</a>
+<a class="sourceLine" id="cb175-4" title="4">          <span class="dt">n.points =</span> <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb175-5" title="5"><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</a>
+<a class="sourceLine" id="cb175-6" title="6"><span class="kw">lines</span>(fit)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-173-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p><span class="math display">\[\begin{align*}
  &amp;&amp; P(X \leq 0.25 \cdot \text{bandwith}) &amp;= 0.75 \\
  \Rightarrow &amp;&amp; P\left(Z \leq \frac{0.25 \cdot \text{bandwith}}{\sigma}\right) &amp;= 0.75 \\
@@ -999,15 +980,297 @@ F-statistic: 407.1 on 1 and 22 DF,  p-value: 1.11e-15</code></pre>
 </div>
 <div id="loess-smoother" class="section level3">
 <h3><span class="header-section-number">20.10.3</span> LOESS smoother</h3>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" title="1">smoo &lt;-<span class="st"> </span><span class="kw">loess.smooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,  <span class="co"># Data</span></a>
-<a class="sourceLine" id="cb178-2" title="2">                     <span class="dt">span =</span> <span class="dv">2</span><span class="op">/</span><span class="dv">3</span>,                     <span class="co"># smoothing parameter (smaller =&gt; smoother)</span></a>
-<a class="sourceLine" id="cb178-3" title="3">                     <span class="dt">degree =</span> <span class="dv">1</span>,                     <span class="co"># 1: local linear regr, 2: local polynomial regr</span></a>
-<a class="sourceLine" id="cb178-4" title="4">                     <span class="dt">family =</span> <span class="st">&quot;symmetric&quot;</span>)           <span class="co"># &quot;symmetric&quot;: robust fitting, &quot;gaussian&quot;: least squares fitting</span></a>
-<a class="sourceLine" id="cb178-5" title="5"></a>
-<a class="sourceLine" id="cb178-6" title="6"><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</a>
-<a class="sourceLine" id="cb178-7" title="7"><span class="kw">lines</span>(fit)</a></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" title="1">smoo &lt;-<span class="st"> </span><span class="kw">loess.smooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,  <span class="co"># Data</span></a>
+<a class="sourceLine" id="cb176-2" title="2">                     <span class="dt">span =</span> <span class="dv">2</span><span class="op">/</span><span class="dv">3</span>,                     <span class="co"># smoothing parameter (smaller =&gt; smoother)</span></a>
+<a class="sourceLine" id="cb176-3" title="3">                     <span class="dt">degree =</span> <span class="dv">1</span>,                     <span class="co"># 1: local linear regr, 2: local polynomial regr</span></a>
+<a class="sourceLine" id="cb176-4" title="4">                     <span class="dt">family =</span> <span class="st">&quot;symmetric&quot;</span>)           <span class="co"># &quot;symmetric&quot;: robust fitting, &quot;gaussian&quot;: least squares fitting</span></a>
+<a class="sourceLine" id="cb176-5" title="5"></a>
+<a class="sourceLine" id="cb176-6" title="6"><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</a>
+<a class="sourceLine" id="cb176-7" title="7"><span class="kw">lines</span>(fit)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-174-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+</div>
+</div>
+<div id="gam" class="section level2">
+<h2><span class="header-section-number">20.11</span> GAM</h2>
+<p>Use package <code>mgcv</code> and have a look into the book of Wood.</p>
+<ul>
+<li><code>mgcv::s()</code> smooth spline</li>
+<li><code>mgcv::te()</code> interaction between two predictors</li>
+<li><code>mgcv::ti()</code></li>
+<li><code>mgcv::t2()</code></li>
+<li><code>splines::ns()</code> natural spline</li>
+<li><code>gam::lo()</code> loess</li>
+</ul>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" title="1">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">30</span></a>
+<a class="sourceLine" id="cb177-2" title="2">y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">30</span>)<span class="op">+</span><span class="dv">10</span><span class="op">*</span><span class="kw">sin</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>)<span class="op">*</span><span class="fl">0.2</span>)</a>
+<a class="sourceLine" id="cb177-3" title="3"><span class="kw">plot</span>(x, y)</a>
+<a class="sourceLine" id="cb177-4" title="4"><span class="kw">library</span>(mgcv)</a>
+<a class="sourceLine" id="cb177-5" title="5">fit &lt;-<span class="st"> </span><span class="kw">gam</span>(y <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(x))</a>
+<a class="sourceLine" id="cb177-6" title="6"><span class="kw">lines</span>(x, <span class="kw">fitted</span>(fit))</a></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-175-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" title="1"><span class="kw">summary</span>(fit)</a></code></pre></div>
+<pre><code>
+Family: gaussian 
+Link function: identity 
 
+Formula:
+y ~ s(x)
+
+Parametric coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)   0.2373     0.1850   1.283    0.212
+
+Approximate significance of smooth terms:
+       edf Ref.df     F p-value    
+s(x) 5.958  7.117 219.2  &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+R-sq.(adj) =  0.982   Deviance explained = 98.6%
+GCV = 1.3369  Scale est. = 1.0268    n = 30</code></pre>
+<ul>
+<li><code>edf</code> Empirical degrees of freedom</li>
+<li><code>Ref.df</code> Alternative way to calculate df</li>
+<li><code>GCV</code> Generalized cross validation score</li>
+<li><code>Deviance explained</code> Equivalent to <span class="math inline">\(R^2\)</span></li>
+<li><code>Scale est.</code> estimate of <span class="math inline">\(\sigma_E^2\)</span></li>
+</ul>
+<p>Deviance explained: Equivalent to R2 (not adjusted)
+Scale est.: estimate of 𝜎_𝐸^2</p>
+<div id="options" class="section level5 unnumbered">
+<h5>Options</h5>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" title="1"><span class="kw">s</span>(x1, <span class="dt">bs =</span> <span class="st">&quot;tp&quot;</span>) <span class="co"># tp: thin plate, cr: cubic spline</span></a>
+<a class="sourceLine" id="cb180-2" title="2"><span class="kw">s</span>(x1, <span class="dt">df =</span> <span class="dv">3</span>)    <span class="co"># prespecify the df (instead of determine it by CV)</span></a></code></pre></div>
+</div>
+<div id="diagnostics" class="section level5 unnumbered">
+<h5>Diagnostics</h5>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">gam</span>(Mortality <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(Educ), <span class="dt">data =</span> apm)</a>
+<a class="sourceLine" id="cb181-2" title="2"><span class="kw">gam.check</span>(fit)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-177-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<pre><code>
+Method: GCV   Optimizer: magic
+Smoothing parameter selection converged after 5 iterations.
+The RMS GCV score gradient at convergence was 0.0003494895 .
+The Hessian was positive definite.
+Model rank =  10 / 10 
+
+Basis dimension (k) checking results. Low p-value (k-index&lt;1) may
+indicate that k is too low, especially if edf is close to k&#39;.
+
+         k&#39; edf k-index p-value
+s(Educ) 9.0 2.1    1.03    0.54</code></pre>
+<ul>
+<li>low <code>p-value</code> and <code>k-index</code> &lt; 1 indicate that actual fit might need more flexibility
+<ul>
+<li>increase k-value manually</li>
+<li><code>gam(Mortality ~ s(Educ, k = 50), data = apm)</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="visualization" class="section level5 unnumbered">
+<h5>Visualization</h5>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" title="1"><span class="co">## Partial residual plot</span></a>
+<a class="sourceLine" id="cb183-2" title="2">fit_gam &lt;-<span class="st"> </span><span class="kw">gam</span>(prestige <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(income) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(education), <span class="dt">data =</span> Prestige)</a>
+<a class="sourceLine" id="cb183-3" title="3"><span class="kw">plot</span>(fit_gam, <span class="dt">shade =</span> T, <span class="dt">residuals =</span> T, <span class="dt">main =</span> <span class="st">&quot;GAM Partial Residual Plot&quot;</span>, <span class="dt">pch =</span> <span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb183-4" title="4"></a>
+<a class="sourceLine" id="cb183-5" title="5"><span class="co">## 3D plot (only with exactly two s() terms)</span></a>
+<a class="sourceLine" id="cb183-6" title="6"><span class="kw">vis.gam</span>(fit_gam, <span class="dt">theta =</span> <span class="dv">45</span>, <span class="dt">phi =</span> <span class="dv">30</span>) <span class="co"># rotation arround vertical (theta) and horizontal (phi) axis</span></a>
+<a class="sourceLine" id="cb183-7" title="7"></a>
+<a class="sourceLine" id="cb183-8" title="8"><span class="co">## Interaction spline</span></a>
+<a class="sourceLine" id="cb183-9" title="9">fit_gam &lt;-<span class="st"> </span><span class="kw">gam</span>(prestige <span class="op">~</span><span class="st"> </span><span class="kw">te</span>(income, education), <span class="dt">data =</span> Prestige)</a>
+<a class="sourceLine" id="cb183-10" title="10"><span class="kw">plot</span>(fit_gam)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-178-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-178-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-178-3.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-178-4.png" width="50%" /></p>
+</div>
+<div id="model-comparison-1" class="section level5 unnumbered">
+<h5>Model comparison</h5>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" title="1">fit_ols &lt;-<span class="st"> </span><span class="kw">lm</span>(prestige <span class="op">~</span><span class="st"> </span>income <span class="op">+</span><span class="st"> </span>education, <span class="dt">data =</span> Prestige)</a>
+<a class="sourceLine" id="cb184-2" title="2">fit_gam &lt;-<span class="st"> </span><span class="kw">gam</span>(prestige <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(income) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(education), <span class="dt">data =</span> Prestige)</a>
+<a class="sourceLine" id="cb184-3" title="3"><span class="kw">anova</span>(fit_ols, fit_gam, <span class="dt">test =</span> <span class="st">&quot;Chisq&quot;</span>)</a></code></pre></div>
+<pre><code>Analysis of Variance Table
+
+Model 1: prestige ~ income + education
+Model 2: prestige ~ s(income) + s(education)
+  Res.Df    RSS     Df Sum of Sq  Pr(&gt;Chi)    
+1 99.000 6038.9                               
+2 94.705 4585.0 4.2951    1453.9 6.783e-06 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>In our case clear evidence for the more complex GAM model.</p>
+</div>
+<div id="alternatives" class="section level5 unnumbered">
+<h5>Alternatives</h5>
+<ul>
+<li><code>smooth.spline()</code> only one dimensional splines</li>
+<li>package <code>gam</code></li>
+<li>package <code>earth</code></li>
+</ul>
+</div>
+</div>
+<div id="glm" class="section level2">
+<h2><span class="header-section-number">20.12</span> GLM</h2>
+<div id="logistic-regression" class="section level3">
+<h3><span class="header-section-number">20.12.1</span> Logistic Regression</h3>
+<div id="fitting" class="section level5 unnumbered">
+<h5>Fitting</h5>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb186-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">glm</span>(survival <span class="op">~</span><span class="st"> </span><span class="kw">log10</span>(weight) <span class="op">+</span><span class="st"> </span>age, <span class="dt">data =</span> baby, <span class="dt">family=</span>binomial)</a></code></pre></div>
+<p>Possible warning messages of fitting</p>
+<pre><code>Warning message:
+glm.fit: algorithm did not converge</code></pre>
+<p>Numerical optimization failed, coefficients are not trustworthy</p>
+<pre><code>Warning message:
+glm.fit: fitted probabilities numerically 0 or 1 occured</code></pre>
+<p>Perfect separation between binary response options, possible to continue…</p>
+</div>
+<div id="inference-1" class="section level5 unnumbered">
+<h5>Inference</h5>
+<ul>
+<li><code>summary()</code></li>
+<li><code>drop1()</code></li>
+</ul>
+<p>Both should yield in similar results. <code>drop1()</code> might be better suited for factorial predictors and interactions (drops only terms which can be dropped).</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb189-1" title="1"><span class="kw">summary</span>(fit)</a></code></pre></div>
+<pre><code>
+Call:
+glm(formula = survival ~ log10(weight) + age, family = binomial, 
+    data = baby)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.2694  -0.7032   0.3813   0.6899   2.2186  
+
+Coefficients:
+               Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)   -42.81347    7.40864  -5.779 7.52e-09 ***
+log10(weight)  12.87954    2.72022   4.735 2.19e-06 ***
+age             0.15187    0.08857   1.715   0.0864 .  
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 230.79  on 166  degrees of freedom
+Residual deviance: 158.56  on 164  degrees of freedom
+AIC: 164.56
+
+Number of Fisher Scoring iterations: 5</code></pre>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb191-1" title="1"><span class="kw">drop1</span>(fit, <span class="dt">test =</span> <span class="st">&quot;Chisq&quot;</span>)</a></code></pre></div>
+<pre><code>Single term deletions
+
+Model:
+survival ~ log10(weight) + age
+              Df Deviance    AIC     LRT  Pr(&gt;Chi)    
+&lt;none&gt;             158.56 164.56                      
+log10(weight)  1   188.70 192.70 30.1382 4.023e-08 ***
+age            1   161.58 165.58  3.0182   0.08234 .  
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>A p-value for a “global F-test” can be manually computed</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" title="1"><span class="dv">1</span><span class="op">-</span><span class="kw">pchisq</span>(fit<span class="op">$</span>null.deviance<span class="op">-</span>fit<span class="op">$</span>deviance, <span class="dt">df=</span>(fit<span class="op">$</span>df.null<span class="op">-</span>fit<span class="op">$</span>df.res))</a></code></pre></div>
+<pre><code>[1] 2.220446e-16</code></pre>
+<p><strong>CI</strong></p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb195-1" title="1"><span class="co">## Automatic (slightly different (better) than manual CI)</span></a>
+<a class="sourceLine" id="cb195-2" title="2"><span class="kw">confint</span>(fit, <span class="st">&quot;log10(weight)&quot;</span>)</a></code></pre></div>
+<pre><code>    2.5 %    97.5 % 
+ 7.868942 18.592123 </code></pre>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" title="1"><span class="kw">confint</span>(fit, <span class="st">&quot;(Intercept)&quot;</span>)</a></code></pre></div>
+<pre><code>    2.5 %    97.5 % 
+-58.49314 -29.29536 </code></pre>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" title="1"><span class="co">## Manual</span></a>
+<a class="sourceLine" id="cb199-2" title="2">mycoef &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)<span class="op">$</span>coefficients</a>
+<a class="sourceLine" id="cb199-3" title="3">mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Estimate&quot;</span>] <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))<span class="op">*</span>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Std. Error&quot;</span>]</a></code></pre></div>
+<pre><code>[1] -57.33414 -28.29280</code></pre>
+<p><strong>Coefficient of determination</strong> <span class="math inline">\(R^2\)</span></p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" title="1">fit_dev &lt;-<span class="st"> </span>fit<span class="op">$</span>deviance</a>
+<a class="sourceLine" id="cb201-2" title="2">fit_null &lt;-<span class="st"> </span>fit<span class="op">$</span>null.deviance</a>
+<a class="sourceLine" id="cb201-3" title="3">n &lt;-<span class="st"> </span><span class="kw">length</span>(baby<span class="op">$</span>weight)</a>
+<a class="sourceLine" id="cb201-4" title="4">R_<span class="dv">2</span> &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">-</span><span class="kw">exp</span>((fit_dev<span class="op">-</span>fit_null)<span class="op">/</span>n))<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">exp</span>(<span class="op">-</span>fit_null<span class="op">/</span>n))</a></code></pre></div>
+</div>
+<div id="visualization-1" class="section level5 unnumbered">
+<h5>Visualization</h5>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" title="1"><span class="co">## Bernoulli probability</span></a>
+<a class="sourceLine" id="cb202-2" title="2">lin_pred &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)       <span class="co">## linear predictor</span></a>
+<a class="sourceLine" id="cb202-3" title="3">bern_prob &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;response&quot;</span>)  <span class="co">## bernoulli probability</span></a>
+<a class="sourceLine" id="cb202-4" title="4"><span class="kw">plot</span>(lin_pred, baby<span class="op">$</span>survival, <span class="dt">type=</span><span class="st">&quot;n&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;linear predictor&quot;</span>)</a>
+<a class="sourceLine" id="cb202-5" title="5"><span class="kw">points</span>(lin_pred[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">0</span>], baby<span class="op">$</span>survival[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">0</span>], <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb202-6" title="6"><span class="kw">points</span>(lin_pred[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">1</span>], baby<span class="op">$</span>survival[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">1</span>], <span class="dt">pch =</span> <span class="dv">17</span>)</a>
+<a class="sourceLine" id="cb202-7" title="7"><span class="kw">lines</span>(<span class="kw">sort</span>(lin_pred), <span class="kw">sort</span>(bern_prob), <span class="dt">lty=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb202-8" title="8"><span class="kw">title</span>(<span class="st">&quot;Survival vs. Linear Predictor&quot;</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-185-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb203-1" title="1"><span class="co">## Predictor space (only if exactly two predictors)</span></a>
+<a class="sourceLine" id="cb203-2" title="2"><span class="kw">plot</span>(age <span class="op">~</span><span class="st"> </span>weight, <span class="dt">data=</span>baby, <span class="dt">type=</span><span class="st">&quot;n&quot;</span>)</a>
+<a class="sourceLine" id="cb203-3" title="3"><span class="kw">points</span>(age <span class="op">~</span><span class="st"> </span>weight, <span class="dt">subset=</span>(survival<span class="op">==</span><span class="dv">0</span>), <span class="dt">data=</span>baby, <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb203-4" title="4"><span class="kw">points</span>(age <span class="op">~</span><span class="st"> </span>weight, <span class="dt">subset=</span>(survival<span class="op">==</span><span class="dv">1</span>), <span class="dt">data=</span>baby, <span class="dt">pch =</span> <span class="dv">17</span>)</a>
+<a class="sourceLine" id="cb203-5" title="5"><span class="kw">title</span>(<span class="st">&quot;Survival after Premature Birth&quot;</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-185-2.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+</div>
+<div id="diagnostics-1" class="section level5 unnumbered">
+<h5>Diagnostics</h5>
+<p>Different types of residuals</p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" title="1"><span class="kw">resid</span>(fit, <span class="dt">type =</span> <span class="st">&quot;pearson&quot;</span>)</a>
+<a class="sourceLine" id="cb204-2" title="2"><span class="kw">resid</span>(fit, <span class="dt">type =</span> <span class="st">&quot;deviance&quot;</span>)</a></code></pre></div>
+<p>Tukey-Anscombe plot should be done manually because we need a non-robust smoother</p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb205-1" title="1">xx &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)</a>
+<a class="sourceLine" id="cb205-2" title="2">yy &lt;-<span class="st"> </span><span class="kw">residuals</span>(fit, <span class="dt">type=</span><span class="st">&quot;deviance&quot;</span>)</a>
+<a class="sourceLine" id="cb205-3" title="3"><span class="kw">plot</span>(xx, yy, <span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">main=</span><span class="st">&quot;Tukey-Anscombe Plot&quot;</span>)</a>
+<a class="sourceLine" id="cb205-4" title="4"><span class="kw">lines</span>(<span class="kw">loess.smooth</span>(xx, yy, <span class="dt">family=</span><span class="st">&quot;gaussian&quot;</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb205-5" title="5"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>, <span class="dt">lty=</span><span class="dv">3</span>, <span class="dt">col=</span><span class="st">&quot;grey&quot;</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-187-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+</div>
+</div>
+<div id="poisson-regression" class="section level3">
+<h3><span class="header-section-number">20.12.2</span> Poisson Regression</h3>
+<div id="fitting-1" class="section level5 unnumbered">
+<h5>Fitting</h5>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">glm</span>(Species <span class="op">~</span><span class="st"> </span><span class="kw">log</span>(Area) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(Elevation) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(Nearest) <span class="op">+</span></a>
+<a class="sourceLine" id="cb206-2" title="2"><span class="st">             </span><span class="kw">I</span>(<span class="kw">log</span>(Scruz<span class="fl">+0.4</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(Adjacent), <span class="dt">data =</span> gala, <span class="dt">family =</span> poisson)</a></code></pre></div>
+</div>
+<div id="inference-2" class="section level5 unnumbered">
+<h5>Inference</h5>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb207-1" title="1"><span class="kw">summary</span>(fit)</a></code></pre></div>
+<pre><code>
+Call:
+glm(formula = Species ~ log(Area) + log(Elevation) + log(Nearest) + 
+    I(log(Scruz + 0.4)) + log(Adjacent), family = poisson, data = gala)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-5.4226  -2.7223  -0.4634   2.5587   8.3320  
+
+Coefficients:
+                     Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)          3.323245   0.286430  11.602  &lt; 2e-16 ***
+log(Area)            0.350370   0.018005  19.459  &lt; 2e-16 ***
+log(Elevation)       0.033108   0.057034   0.580  0.56158    
+log(Nearest)        -0.040153   0.014071  -2.854  0.00432 ** 
+I(log(Scruz + 0.4)) -0.035848   0.013207  -2.714  0.00664 ** 
+log(Adjacent)       -0.089452   0.006944 -12.882  &lt; 2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 3510.73  on 29  degrees of freedom
+Residual deviance:  359.94  on 24  degrees of freedom
+AIC: 532.77
+
+Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+<div id="diagnostics-2" class="section level5 unnumbered">
+<h5>Diagnostics</h5>
+<p>Residuals should lie within range <span class="math inline">\([-2, 2]\)</span>, this would not be fulfilled in our example:</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb209-1" title="1">xx &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)</a>
+<a class="sourceLine" id="cb209-2" title="2">yy &lt;-<span class="st"> </span><span class="kw">resid</span>(fit, <span class="dt">type=</span><span class="st">&quot;pearson&quot;</span>)</a>
+<a class="sourceLine" id="cb209-3" title="3"><span class="kw">plot</span>(xx, yy, <span class="dt">main=</span><span class="st">&quot;Tukey-Anscombe Plot&quot;</span>,</a>
+<a class="sourceLine" id="cb209-4" title="4">     <span class="dt">xlab =</span> <span class="st">&quot;Linear Predictor&quot;</span>,</a>
+<a class="sourceLine" id="cb209-5" title="5">     <span class="dt">ylab =</span> <span class="st">&quot;Pearson Residuals&quot;</span>,</a>
+<a class="sourceLine" id="cb209-6" title="6">     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>))</a>
+<a class="sourceLine" id="cb209-7" title="7">smoo &lt;-<span class="st"> </span><span class="kw">loess.smooth</span>(xx, yy)</a>
+<a class="sourceLine" id="cb209-8" title="8"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>, <span class="dt">col=</span><span class="st">&quot;grey&quot;</span>)</a>
+<a class="sourceLine" id="cb209-9" title="9"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb209-10" title="10"><span class="kw">lines</span>(smoo, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-190-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
 </div>
 </div>
 </div>
