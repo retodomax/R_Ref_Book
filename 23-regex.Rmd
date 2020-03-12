@@ -1,4 +1,4 @@
-# Regular Expressions
+# Regular expressions
 
 
 <a href="figures/03_pdf/regex.pdf" target="_blank"> 

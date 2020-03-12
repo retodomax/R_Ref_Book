@@ -71,7 +71,7 @@ people <- tibble::tribble(
 
 ```{r, eval=FALSE}
 write.table(mytable, "clipboard", sep = "\t", row.names = FALSE)
-mytable <- read.table(file = "clipboard", sep = "/t", header = TRUE)
+mytable <- read.table(file = "clipboard", sep = "\t", header = TRUE)
 ```
 
 

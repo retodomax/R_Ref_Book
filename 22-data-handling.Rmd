@@ -15,6 +15,17 @@
 |`%%`| Modulo | `!=` | unequal | `xor(x,y)` | logical exclusive OR |
 |`%/%`| Integer division | | | | |
 
+##### Examples {-}
+
+```{r, collapse=TRUE}
+7 %% 2    # remainder
+7 %/% 2   # floor of division
+```
+
+```{r, echo = FALSE, fig.cap='...'}
+knitr::include_graphics('figures/logic_gates.png')
+```
+
 
 ### Factors
 
@@ -190,8 +201,12 @@ aggregate(cbind(var1, var2, var3) ~  grouping1 + grouping2,
 
 ### SQL joins
 
-```{r, echo=FALSE}
-knitr::include_graphics('figures/sql_joins.jpg')
+```{r, echo=FALSE, fig.align='default', fig.show='hold'}
+knitr::include_graphics('figures/joins0.png')
+knitr::include_graphics('figures/joins1.png')
+knitr::include_graphics('figures/joins2.png')
+knitr::include_graphics('figures/joins3.png')
+knitr::include_graphics('figures/joins4.png')
 ```
 
 
@@ -215,11 +230,23 @@ More explanations [here](https://stackoverflow.com/questions/1299871/how-to-join
 
 ##### dplyr joins {-}
 
-See [here](http://127.0.0.1:23111/library/dplyr/html/join.html)
+See [here](https://dplyr.tidyverse.org/reference/join.html)
 
 ```{r, eval=FALSE}
-dplyr::left_join()
 dplyr::inner_join()
+dplyr::left_join()
+dplyr::right_join()
+dplyr::full_join()
+dplyr::semi_join()
+dplyr::nest_join()
+dplyr::anti_join()
 ```
+
+
+<a href="figures/03_pdf/data-transformation.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/data-transformation.jpg')
+```
+</a>
 
 

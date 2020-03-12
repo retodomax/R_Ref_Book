@@ -1,31 +1,41 @@
 # Table of content {-}
 
-- R language
+* R Language
     - Objects
     - Vectors
     - Functions
     - Environments
-    - Misc
-- R basics
+    - Settings
+    - Miscellaneous
+* R Basics
     - Data import/export
     - Data handling
-    - Regex
-- R Programming
-    - Basics (loop, if, ...)
+    - Regular expressions
+* R Programming
+    - Basics
     - Performance
     - Functional programming
-- R Plots
-    - Standard
+    - R from the shell
+* R Output
+    - Base graphics
     - ggplot
     - Interactive plots
-- R Statistics
-    - Anova
+    - Text output
+* R Statistics
+    - Basics
     - Regression
-    - Timeseries
+    - ANOVA
     - Multivariate
-- R Workflow
-    - Markdown
-- Misc
-    - R packages
+    - Time series
+    - Computational statistics
+* R Workflow
+    - Reproducible Research
     - R Studio
-    - R settings
+    - R Markdown
+    - Bookdown
+    - Reference management
+    - Git version control
+    - Packages
+* Misc
+    - Cheat sheets
+* References

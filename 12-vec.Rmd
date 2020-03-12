@@ -67,7 +67,7 @@ By default numbers are of type double. If you really want integers put `L` at en
 | Coerce      | `as.list()`                          |
 | Unlist      | Make atomic vector out of list: `unlist()` |
 
-##### Subsetting lists
+##### Subsetting lists {-}
 
 * `[` extracts a sub-list, the result will always be a list
 * `[[` extracts a single component from a list
@@ -80,7 +80,7 @@ By default numbers are of type double. If you really want integers put `L` at en
 * `is_*()`
 
 |                  | lgl | int | dbl | chr | list |
-|------------------|-----|-----|-----|-----|------|
+|:-----------------|:----|:----|:----|:----|:-----|
 | `is_logical()`   |  x  |     |     |     |      |
 | `is_integer()`   |     |  x  |     |     |      |
 | `is_double()`    |     |     |  x  |     |      |
@@ -202,7 +202,7 @@ Data frame columns can also contain lists and matrices, but it is better to use 
 ## Special values
 
 |                  |  0  | Inf | NA  | NaN |
-|------------------|-----|-----|-----|-----|
+|:-----------------|:----|:----|:----|:----|
 | `is.finite()`    |  x  |     |     |     |
 | `is.infinite()`  |     |  x  |     |     |
 | `is.na()`        |     |     |  x  |  x  |

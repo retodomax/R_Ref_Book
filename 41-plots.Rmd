@@ -1,6 +1,6 @@
-# (PART) R Plots {-} 
+# (PART) R Output {-} 
 
-# Plots {#Plots}
+# Base graphics {#Plots}
 
 
 

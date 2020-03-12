@@ -1,4 +1,4 @@
-# R from the Shell
+# R from the shell
 
 Execute single commands
 

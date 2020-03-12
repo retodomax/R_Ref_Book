@@ -1,6 +1,6 @@
 # (PART) Appendix {-} 
 
-# Cheat Sheets
+# Cheat sheets
 
 * Data pipeline
     - Data import
