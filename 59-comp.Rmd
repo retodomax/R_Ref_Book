@@ -2,6 +2,28 @@
 
 ## Cross validation
 
+```{r, eval=FALSE}
+#Randomly shuffle the data
+dat<-dat[sample(nrow(dat)),]
+
+#Create 10 equally size folds
+folds <- cut(seq(1,nrow(dat)),breaks=10,labels=FALSE)
+
+#Perform 10 fold cross validation
+for(i in 1:10){
+  #Segement your data by fold using the which() function 
+  testIndexes <- which(folds==i,arr.ind=TRUE)
+  testData <- dat[testIndexes, ]
+  trainData <- dat[-testIndexes, ]
+  #Use the test and train data partitions however you desire...
+}
+```
+
+## k nearest neighbor
+```{r, eval=FALSE}
+fit <- kknn(y ~ ., dfTrain, dfTest, k = 8)
+pred <- predict(fit)
+```
 
 
 ## Bootstrap
