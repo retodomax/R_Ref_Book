@@ -56,3 +56,23 @@ stripchart(x = rnorm(100), xlim = c(-5, 5), xlab = 'rnorm()')
 * `dpois` Poisson
 
 
+
+### Relationships between distributions
+
+$$
+\text{Standard Norm}:\quad Z
+$$
+
+$$
+\chi_n^2:\quad X = (Z_1^2 + Z_2^2 + \cdot + Z_n^2)/n
+$$
+
+
+$$
+F_{n,m}:\quad F = \frac{X_n^2}{X_m^2}
+$$
+
+$$
+t_m:\quad \frac{Z}{\sqrt{\frac{X_m^2}{m}}}
+$$
+Cauchy: Special case of $t$ distribution
