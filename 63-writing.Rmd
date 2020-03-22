@@ -8,12 +8,16 @@ Sweave, Knitr and R markdown all based on Donald Knuth's [Literate programming](
 
 * Takes text in latex formate and R/S code chunks to generate (weave) one tex file.
 * Included in R standard library (utils package)
+* File extention `.Rnw` (R noweb)
 
 ### Knitr
 
 * Takes several imputs for text (Latex, Markdown, HTML, AsciiDoc, reStructuredText, and Textile) and code (R, Python, ...)
 * R package
 * See: [Knitr Homepage](https://yihui.name/knitr)
+* Knitr can knit two types of files
+    - `.Rmd` files (R Markdown)
+    - `.Rnw` files (R noweb)
 
 ### R Markdown
 
