@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 Performance | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 Performance | R Reference book" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-03-13" />
+<meta name="date" content="2020-04-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -211,7 +211,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.3" data-path="env.html"><a href="env.html#example-3-change-package-function"><i class="fa fa-check"></i><b>4.4.3</b> Example 3: Change package function</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="settings.html"><a href="settings.html"><i class="fa fa-check"></i><b>5</b> Settings</a></li>
+<li class="chapter" data-level="5" data-path="settings.html"><a href="settings.html"><i class="fa fa-check"></i><b>5</b> Settings</a><ul>
+<li class="chapter" data-level="5.1" data-path="settings.html"><a href="settings.html#error-language"><i class="fa fa-check"></i><b>5.1</b> Error language</a></li>
+<li class="chapter" data-level="5.2" data-path="settings.html"><a href="settings.html#local"><i class="fa fa-check"></i><b>5.2</b> Local</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="miscellaneous.html"><a href="miscellaneous.html"><i class="fa fa-check"></i><b>6</b> Miscellaneous</a><ul>
 <li class="chapter" data-level="6.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-does-r-save-numbers"><i class="fa fa-check"></i><b>6.1</b> How does R save numbers</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-to-avoid-problems-with-doubles"><i class="fa fa-check"></i><b>6.1.1</b> How to avoid problems with doubles</a></li>
@@ -321,7 +324,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>V R Statistics</b></span></li>
 <li class="chapter" data-level="18" data-path="topics.html"><a href="topics.html"><i class="fa fa-check"></i><b>18</b> Topics</a></li>
 <li class="chapter" data-level="19" data-path="basics-1.html"><a href="basics-1.html"><i class="fa fa-check"></i><b>19</b> Basics</a><ul>
-<li class="chapter" data-level="19.1" data-path="basics-1.html"><a href="basics-1.html#distributions"><i class="fa fa-check"></i><b>19.1</b> Distributions</a></li>
+<li class="chapter" data-level="19.1" data-path="basics-1.html"><a href="basics-1.html#distributions"><i class="fa fa-check"></i><b>19.1</b> Distributions</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="basics-1.html"><a href="basics-1.html#relationships-between-distributions"><i class="fa fa-check"></i><b>19.1.1</b> Relationships between distributions</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>20</b> Regression</a><ul>
 <li class="chapter" data-level="20.1" data-path="regression.html"><a href="regression.html#preperation"><i class="fa fa-check"></i><b>20.1</b> Preperation</a></li>
@@ -470,20 +475,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="29.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>29.2</b> Cross-References</a></li>
 </ul></li>
 <li class="chapter" data-level="30" data-path="git-version-control.html"><a href="git-version-control.html"><i class="fa fa-check"></i><b>30</b> Git version control</a><ul>
-<li class="chapter" data-level="30.1" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>30.1</b> Git basics</a></li>
-<li class="chapter" data-level="30.2" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>30.2</b> Single user</a><ul>
-<li class="chapter" data-level="30.2.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>30.2.1</b> Regular workflow</a></li>
-<li class="chapter" data-level="30.2.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>30.2.2</b> Troubleshooting</a></li>
+<li class="chapter" data-level="30.1" data-path="git-version-control.html"><a href="git-version-control.html#bash-basics"><i class="fa fa-check"></i><b>30.1</b> Bash basics</a></li>
+<li class="chapter" data-level="30.2" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>30.2</b> Git basics</a></li>
+<li class="chapter" data-level="30.3" data-path="git-version-control.html"><a href="git-version-control.html#global-config"><i class="fa fa-check"></i><b>30.3</b> Global config</a></li>
+<li class="chapter" data-level="30.4" data-path="git-version-control.html"><a href="git-version-control.html#ssh-keys"><i class="fa fa-check"></i><b>30.4</b> SSH keys</a></li>
+<li class="chapter" data-level="30.5" data-path="git-version-control.html"><a href="git-version-control.html#common-tasks"><i class="fa fa-check"></i><b>30.5</b> Common tasks</a></li>
+<li class="chapter" data-level="30.6" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>30.6</b> Single user</a><ul>
+<li class="chapter" data-level="30.6.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>30.6.1</b> Regular workflow</a></li>
+<li class="chapter" data-level="30.6.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>30.6.2</b> Troubleshooting</a></li>
 </ul></li>
-<li class="chapter" data-level="30.3" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>30.3</b> Multiple users</a><ul>
-<li class="chapter" data-level="30.3.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>30.3.1</b> get foreign respository (fork)</a></li>
+<li class="chapter" data-level="30.7" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>30.7</b> Multiple users</a><ul>
+<li class="chapter" data-level="30.7.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>30.7.1</b> get foreign respository (fork)</a></li>
 </ul></li>
-<li class="chapter" data-level="30.4" data-path="git-version-control.html"><a href="git-version-control.html#version-control-in-rstudio-1"><i class="fa fa-check"></i><b>30.4</b> Version Control in RStudio</a></li>
+<li class="chapter" data-level="30.8" data-path="git-version-control.html"><a href="git-version-control.html#version-control-in-rstudio-1"><i class="fa fa-check"></i><b>30.8</b> Version Control in RStudio</a></li>
 </ul></li>
 <li class="chapter" data-level="31" data-path="git2.html"><a href="git2.html"><i class="fa fa-check"></i><b>31</b> git2</a><ul>
-<li class="chapter" data-level="31.1" data-path="git2.html"><a href="git2.html#git-basics-1"><i class="fa fa-check"></i><b>31.1</b> Git basics</a><ul>
-<li class="chapter" data-level="31.1.1" data-path="git2.html"><a href="git2.html#common-tasks"><i class="fa fa-check"></i><b>31.1.1</b> Common tasks</a></li>
-</ul></li>
+<li class="chapter" data-level="31.1" data-path="git2.html"><a href="git2.html#common-tasks-1"><i class="fa fa-check"></i><b>31.1</b> Common tasks</a></li>
 </ul></li>
 <li class="chapter" data-level="32" data-path="packages-1.html"><a href="packages-1.html"><i class="fa fa-check"></i><b>32</b> Packages</a><ul>
 <li class="chapter" data-level="32.1" data-path="packages-1.html"><a href="packages-1.html#package-environment-1"><i class="fa fa-check"></i><b>32.1</b> Package environment</a></li>
@@ -570,24 +577,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Stop profiling</li>
 <li>Analyze the functions run during profiling</li>
 </ol>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" title="1"><span class="kw">Rprof</span>(<span class="st">&quot;dumkoll.Rprof&quot;</span>, <span class="dt">interval =</span> <span class="fl">0.005</span>) <span class="co"># start profiling</span></a>
-<a class="sourceLine" id="cb83-2" title="2">dd &lt;-<span class="st"> </span><span class="kw">dumkoll</span>(<span class="dv">50000</span>, <span class="dt">df=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb83-3" title="3"><span class="kw">Rprof</span>(<span class="ot">NULL</span>) <span class="co"># stop profiling</span></a>
-<a class="sourceLine" id="cb83-4" title="4">sr &lt;-<span class="st"> </span><span class="kw">summaryRprof</span>(<span class="st">&quot;dumkoll.Rprof&quot;</span>)</a>
-<a class="sourceLine" id="cb83-5" title="5">sr</a></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1"><span class="kw">Rprof</span>(<span class="st">&quot;dumkoll.Rprof&quot;</span>, <span class="dt">interval =</span> <span class="fl">0.005</span>) <span class="co"># start profiling</span></a>
+<a class="sourceLine" id="cb85-2" title="2">dd &lt;-<span class="st"> </span><span class="kw">dumkoll</span>(<span class="dv">50000</span>, <span class="dt">df=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb85-3" title="3"><span class="kw">Rprof</span>(<span class="ot">NULL</span>) <span class="co"># stop profiling</span></a>
+<a class="sourceLine" id="cb85-4" title="4">sr &lt;-<span class="st"> </span><span class="kw">summaryRprof</span>(<span class="st">&quot;dumkoll.Rprof&quot;</span>)</a>
+<a class="sourceLine" id="cb85-5" title="5">sr</a></code></pre></div>
 </div>
 <div id="microbenchmark" class="section level2">
 <h2><span class="header-section-number">11.3</span> Microbenchmark</h2>
 <p>Compare small pieces of code (here function1, function2, function3)</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" title="1"><span class="kw">library</span>(microbenchmark)</a>
-<a class="sourceLine" id="cb84-2" title="2">mbd &lt;-<span class="st"> </span><span class="kw">microbenchmark</span>(<span class="kw">function1</span>(n), <span class="kw">function2</span>(n), <span class="kw">function3</span>(n))</a></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" title="1"><span class="kw">library</span>(microbenchmark)</a>
+<a class="sourceLine" id="cb86-2" title="2">mbd &lt;-<span class="st"> </span><span class="kw">microbenchmark</span>(<span class="kw">function1</span>(n), <span class="kw">function2</span>(n), <span class="kw">function3</span>(n))</a></code></pre></div>
 </div>
 <div id="use-package-compiler" class="section level2">
 <h2><span class="header-section-number">11.4</span> Use package compiler</h2>
 <p>First compile a function before you apply it to data</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1"><span class="kw">library</span>(compiler)</a>
-<a class="sourceLine" id="cb85-2" title="2">dumkoll2 &lt;-<span class="st"> </span><span class="kw">cmpfun</span>(dumkoll)</a>
-<a class="sourceLine" id="cb85-3" title="3"><span class="kw">dumkoll2</span>(<span class="op">&lt;</span>data<span class="op">&gt;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" title="1"><span class="kw">library</span>(compiler)</a>
+<a class="sourceLine" id="cb87-2" title="2">dumkoll2 &lt;-<span class="st"> </span><span class="kw">cmpfun</span>(dumkoll)</a>
+<a class="sourceLine" id="cb87-3" title="3"><span class="kw">dumkoll2</span>(<span class="op">&lt;</span>data<span class="op">&gt;</span>)</a></code></pre></div>
 </div>
 <div id="parallelise" class="section level2">
 <h2><span class="header-section-number">11.5</span> Parallelise</h2>
@@ -597,8 +604,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>doParallel</li>
 </ul>
 <p>Example:</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" title="1"><span class="kw">library</span>(doParallel)</a>
-<a class="sourceLine" id="cb86-2" title="2"><span class="kw">detectCores</span>() <span class="co"># How many cores are available on my machine</span></a></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" title="1"><span class="kw">library</span>(doParallel)</a>
+<a class="sourceLine" id="cb88-2" title="2"><span class="kw">detectCores</span>() <span class="co"># How many cores are available on my machine</span></a></code></pre></div>
 <pre><code>[1] 4</code></pre>
 
 </div>

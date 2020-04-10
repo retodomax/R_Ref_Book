@@ -2,6 +2,7 @@
 
 * `options()` set and query global options which affect the way in which R computes and displays its results
 * `Sys.setenv()` set or unset environment variables
+* `Sys.setlocale()` set locale
 * `sessionInfo()` print information about current R session
 * `par()` graphical parameters
 * `palette()` Current color palette
@@ -9,6 +10,39 @@
 
 ```{r, eval=FALSE}
 options(digits = 3)          # by default 7 digits are printed
-Sys.setenv(LANGUAGE = "en")  # setting error language to english
+```
+
+
+## Error language
+
+```{r, error=TRUE, collapse=TRUE}
+## default error language  operating system 
+Sys.getenv("LANG")
+not_existing_object
+
+## error language on German (Seems NOT to work in R Markdown)
+Sys.setenv(LANG="de")
+not_existing_object
+
+## error language on English
+Sys.setenv(LANG="en")
+not_existing_object
+```
+
+
+## Local
+```{r, collapse=TRUE}
+x <- strptime(x = "10.05.1993", format = "%d.%m.%Y")
+
+## default local of operating system
+format(x = x, "%B")
+
+## local German_Switzerland
+Sys.setlocale("LC_ALL", "German_Switzerland")
+format(x = x, "%B")
+
+## local English
+Sys.setlocale("LC_ALL", "English")
+format(x = x, "%B")
 ```
 

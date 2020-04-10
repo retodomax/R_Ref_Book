@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Data handling | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Data handling | R Reference book" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-03-13" />
+<meta name="date" content="2020-04-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -211,7 +211,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.3" data-path="env.html"><a href="env.html#example-3-change-package-function"><i class="fa fa-check"></i><b>4.4.3</b> Example 3: Change package function</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="settings.html"><a href="settings.html"><i class="fa fa-check"></i><b>5</b> Settings</a></li>
+<li class="chapter" data-level="5" data-path="settings.html"><a href="settings.html"><i class="fa fa-check"></i><b>5</b> Settings</a><ul>
+<li class="chapter" data-level="5.1" data-path="settings.html"><a href="settings.html#error-language"><i class="fa fa-check"></i><b>5.1</b> Error language</a></li>
+<li class="chapter" data-level="5.2" data-path="settings.html"><a href="settings.html#local"><i class="fa fa-check"></i><b>5.2</b> Local</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="miscellaneous.html"><a href="miscellaneous.html"><i class="fa fa-check"></i><b>6</b> Miscellaneous</a><ul>
 <li class="chapter" data-level="6.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-does-r-save-numbers"><i class="fa fa-check"></i><b>6.1</b> How does R save numbers</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-to-avoid-problems-with-doubles"><i class="fa fa-check"></i><b>6.1.1</b> How to avoid problems with doubles</a></li>
@@ -321,7 +324,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>V R Statistics</b></span></li>
 <li class="chapter" data-level="18" data-path="topics.html"><a href="topics.html"><i class="fa fa-check"></i><b>18</b> Topics</a></li>
 <li class="chapter" data-level="19" data-path="basics-1.html"><a href="basics-1.html"><i class="fa fa-check"></i><b>19</b> Basics</a><ul>
-<li class="chapter" data-level="19.1" data-path="basics-1.html"><a href="basics-1.html#distributions"><i class="fa fa-check"></i><b>19.1</b> Distributions</a></li>
+<li class="chapter" data-level="19.1" data-path="basics-1.html"><a href="basics-1.html#distributions"><i class="fa fa-check"></i><b>19.1</b> Distributions</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="basics-1.html"><a href="basics-1.html#relationships-between-distributions"><i class="fa fa-check"></i><b>19.1.1</b> Relationships between distributions</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>20</b> Regression</a><ul>
 <li class="chapter" data-level="20.1" data-path="regression.html"><a href="regression.html#preperation"><i class="fa fa-check"></i><b>20.1</b> Preperation</a></li>
@@ -470,20 +475,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="29.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>29.2</b> Cross-References</a></li>
 </ul></li>
 <li class="chapter" data-level="30" data-path="git-version-control.html"><a href="git-version-control.html"><i class="fa fa-check"></i><b>30</b> Git version control</a><ul>
-<li class="chapter" data-level="30.1" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>30.1</b> Git basics</a></li>
-<li class="chapter" data-level="30.2" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>30.2</b> Single user</a><ul>
-<li class="chapter" data-level="30.2.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>30.2.1</b> Regular workflow</a></li>
-<li class="chapter" data-level="30.2.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>30.2.2</b> Troubleshooting</a></li>
+<li class="chapter" data-level="30.1" data-path="git-version-control.html"><a href="git-version-control.html#bash-basics"><i class="fa fa-check"></i><b>30.1</b> Bash basics</a></li>
+<li class="chapter" data-level="30.2" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>30.2</b> Git basics</a></li>
+<li class="chapter" data-level="30.3" data-path="git-version-control.html"><a href="git-version-control.html#global-config"><i class="fa fa-check"></i><b>30.3</b> Global config</a></li>
+<li class="chapter" data-level="30.4" data-path="git-version-control.html"><a href="git-version-control.html#ssh-keys"><i class="fa fa-check"></i><b>30.4</b> SSH keys</a></li>
+<li class="chapter" data-level="30.5" data-path="git-version-control.html"><a href="git-version-control.html#common-tasks"><i class="fa fa-check"></i><b>30.5</b> Common tasks</a></li>
+<li class="chapter" data-level="30.6" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>30.6</b> Single user</a><ul>
+<li class="chapter" data-level="30.6.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>30.6.1</b> Regular workflow</a></li>
+<li class="chapter" data-level="30.6.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>30.6.2</b> Troubleshooting</a></li>
 </ul></li>
-<li class="chapter" data-level="30.3" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>30.3</b> Multiple users</a><ul>
-<li class="chapter" data-level="30.3.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>30.3.1</b> get foreign respository (fork)</a></li>
+<li class="chapter" data-level="30.7" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>30.7</b> Multiple users</a><ul>
+<li class="chapter" data-level="30.7.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>30.7.1</b> get foreign respository (fork)</a></li>
 </ul></li>
-<li class="chapter" data-level="30.4" data-path="git-version-control.html"><a href="git-version-control.html#version-control-in-rstudio-1"><i class="fa fa-check"></i><b>30.4</b> Version Control in RStudio</a></li>
+<li class="chapter" data-level="30.8" data-path="git-version-control.html"><a href="git-version-control.html#version-control-in-rstudio-1"><i class="fa fa-check"></i><b>30.8</b> Version Control in RStudio</a></li>
 </ul></li>
 <li class="chapter" data-level="31" data-path="git2.html"><a href="git2.html"><i class="fa fa-check"></i><b>31</b> git2</a><ul>
-<li class="chapter" data-level="31.1" data-path="git2.html"><a href="git2.html#git-basics-1"><i class="fa fa-check"></i><b>31.1</b> Git basics</a><ul>
-<li class="chapter" data-level="31.1.1" data-path="git2.html"><a href="git2.html#common-tasks"><i class="fa fa-check"></i><b>31.1.1</b> Common tasks</a></li>
-</ul></li>
+<li class="chapter" data-level="31.1" data-path="git2.html"><a href="git2.html#common-tasks-1"><i class="fa fa-check"></i><b>31.1</b> Common tasks</a></li>
 </ul></li>
 <li class="chapter" data-level="32" data-path="packages-1.html"><a href="packages-1.html"><i class="fa fa-check"></i><b>32</b> Packages</a><ul>
 <li class="chapter" data-level="32.1" data-path="packages-1.html"><a href="packages-1.html#package-environment-1"><i class="fa fa-check"></i><b>32.1</b> Package environment</a></li>
@@ -609,11 +616,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <div id="examples-1" class="section level5 unnumbered">
 <h5>Examples</h5>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1"><span class="dv">7</span> <span class="op">%%</span><span class="st"> </span><span class="dv">2</span>    <span class="co"># remainder</span></a>
-<a class="sourceLine" id="cb67-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb67-3" title="3"><span class="dv">7</span> <span class="op">%/%</span><span class="st"> </span><span class="dv">2</span>   <span class="co"># floor of division</span></a>
-<a class="sourceLine" id="cb67-4" title="4">[<span class="dv">1</span>] <span class="dv">3</span></a></code></pre></div>
-<div class="figure" style="text-align: left"><span id="fig:unnamed-chunk-47"></span>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1"><span class="dv">7</span> <span class="op">%%</span><span class="st"> </span><span class="dv">2</span>    <span class="co"># remainder</span></a>
+<a class="sourceLine" id="cb69-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb69-3" title="3"><span class="dv">7</span> <span class="op">%/%</span><span class="st"> </span><span class="dv">2</span>   <span class="co"># floor of division</span></a>
+<a class="sourceLine" id="cb69-4" title="4">[<span class="dv">1</span>] <span class="dv">3</span></a></code></pre></div>
+<div class="figure" style="text-align: left"><span id="fig:unnamed-chunk-49"></span>
 <img src="figures/logic_gates.png" alt="..." width="50%" />
 <p class="caption">
 Figure 8.1: …
@@ -629,13 +636,13 @@ Figure 8.1: …
 <li><code>relevel()</code> The levels of a factor are re-ordered so that the level specified by <code>ref</code> is first and the others are moved down.</li>
 <li><code>reorder()</code> Reorder the factor levels according to another variable</li>
 </ul>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" title="1"><span class="co"># Make level B the first level (reference value)</span></a>
-<a class="sourceLine" id="cb68-2" title="2">InsectSprays<span class="op">$</span>spray &lt;-<span class="st"> </span><span class="kw">relevel</span>(InsectSprays<span class="op">$</span>spray, <span class="dt">ref =</span> <span class="st">&quot;B&quot;</span>)</a>
-<a class="sourceLine" id="cb68-3" title="3"></a>
-<a class="sourceLine" id="cb68-4" title="4"><span class="co"># Reorder levels of spray by median of count (first class should have lowest count median)</span></a>
-<a class="sourceLine" id="cb68-5" title="5">InsectSprays<span class="op">$</span>spray &lt;-<span class="st"> </span><span class="kw">reorder</span>(InsectSprays<span class="op">$</span>spray, InsectSprays<span class="op">$</span>count, <span class="dt">FUN =</span> median)</a>
-<a class="sourceLine" id="cb68-6" title="6"><span class="kw">boxplot</span>(count <span class="op">~</span><span class="st"> </span>spray, <span class="dt">data =</span> InsectSprays)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-48-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" title="1"><span class="co"># Make level B the first level (reference value)</span></a>
+<a class="sourceLine" id="cb70-2" title="2">InsectSprays<span class="op">$</span>spray &lt;-<span class="st"> </span><span class="kw">relevel</span>(InsectSprays<span class="op">$</span>spray, <span class="dt">ref =</span> <span class="st">&quot;B&quot;</span>)</a>
+<a class="sourceLine" id="cb70-3" title="3"></a>
+<a class="sourceLine" id="cb70-4" title="4"><span class="co"># Reorder levels of spray by median of count (first class should have lowest count median)</span></a>
+<a class="sourceLine" id="cb70-5" title="5">InsectSprays<span class="op">$</span>spray &lt;-<span class="st"> </span><span class="kw">reorder</span>(InsectSprays<span class="op">$</span>spray, InsectSprays<span class="op">$</span>count, <span class="dt">FUN =</span> median)</a>
+<a class="sourceLine" id="cb70-6" title="6"><span class="kw">boxplot</span>(count <span class="op">~</span><span class="st"> </span>spray, <span class="dt">data =</span> InsectSprays)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-50-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <div id="forcats-package" class="section level5 unnumbered">
 <h5>forcats package</h5>
 <p><a href="figures/03_pdf/factors.pdf" target="_blank">
@@ -810,22 +817,22 @@ Figure 8.1: …
 </ul>
 <div id="apply-familiy" class="section level3">
 <h3><span class="header-section-number">8.2.1</span> Apply familiy</h3>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1"><span class="kw">apply</span>(x, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), FUN)   <span class="co"># apply function on one or several dimension of array</span></a>
-<a class="sourceLine" id="cb69-2" title="2">                        <span class="co"># 1: row, 2: col, c(1,2) both, 3: third dim in array</span></a>
-<a class="sourceLine" id="cb69-3" title="3"><span class="kw">lapply</span>(x, FUN, …)       <span class="co"># apply on list, return list</span></a>
-<a class="sourceLine" id="cb69-4" title="4"><span class="kw">sapply</span>(x, FUN)          <span class="co"># apply on list, return simplified list (array, matrix, vector)</span></a>
-<a class="sourceLine" id="cb69-5" title="5"><span class="kw">tapply</span>(x, factor, FUN)  <span class="co"># apply function separately for different factor levels</span></a>
-<a class="sourceLine" id="cb69-6" title="6"><span class="kw">by</span>(x, index, FUN, …)    <span class="co"># x can be whole data.frame</span></a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" title="1"><span class="kw">apply</span>(x, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), FUN)   <span class="co"># apply function on one or several dimension of array</span></a>
+<a class="sourceLine" id="cb71-2" title="2">                        <span class="co"># 1: row, 2: col, c(1,2) both, 3: third dim in array</span></a>
+<a class="sourceLine" id="cb71-3" title="3"><span class="kw">lapply</span>(x, FUN, …)       <span class="co"># apply on list, return list</span></a>
+<a class="sourceLine" id="cb71-4" title="4"><span class="kw">sapply</span>(x, FUN)          <span class="co"># apply on list, return simplified list (array, matrix, vector)</span></a>
+<a class="sourceLine" id="cb71-5" title="5"><span class="kw">tapply</span>(x, factor, FUN)  <span class="co"># apply function separately for different factor levels</span></a>
+<a class="sourceLine" id="cb71-6" title="6"><span class="kw">by</span>(x, index, FUN, …)    <span class="co"># x can be whole data.frame</span></a></code></pre></div>
 </div>
 <div id="long-and-wide-format" class="section level3">
 <h3><span class="header-section-number">8.2.2</span> Long and wide format</h3>
 <p><code>reshape()</code></p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" title="1">long &lt;-<span class="st"> </span>Indometh    <span class="co">#Data</span></a>
-<a class="sourceLine" id="cb70-2" title="2">wide &lt;-<span class="st"> </span><span class="kw">reshape</span>(Indometh, <span class="dt">v.names =</span> <span class="st">&quot;conc&quot;</span>, <span class="dt">idvar =</span> <span class="st">&quot;Subject&quot;</span>,</a>
-<a class="sourceLine" id="cb70-3" title="3">                <span class="dt">timevar =</span> <span class="st">&quot;time&quot;</span>, <span class="dt">direction =</span> <span class="st">&quot;wide&quot;</span>)</a>
-<a class="sourceLine" id="cb70-4" title="4">long &lt;-<span class="st"> </span><span class="kw">reshape</span>(wide, <span class="dt">v.names =</span> <span class="st">&quot;conc&quot;</span>, <span class="dt">idvar =</span> <span class="st">&quot;Subject&quot;</span>,</a>
-<a class="sourceLine" id="cb70-5" title="5">                <span class="dt">timevar =</span> <span class="st">&quot;time&quot;</span>, <span class="dt">direction =</span> <span class="st">&quot;long&quot;</span>)</a>
-<a class="sourceLine" id="cb70-6" title="6"><span class="kw">head</span>(long)</a></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" title="1">long &lt;-<span class="st"> </span>Indometh    <span class="co">#Data</span></a>
+<a class="sourceLine" id="cb72-2" title="2">wide &lt;-<span class="st"> </span><span class="kw">reshape</span>(Indometh, <span class="dt">v.names =</span> <span class="st">&quot;conc&quot;</span>, <span class="dt">idvar =</span> <span class="st">&quot;Subject&quot;</span>,</a>
+<a class="sourceLine" id="cb72-3" title="3">                <span class="dt">timevar =</span> <span class="st">&quot;time&quot;</span>, <span class="dt">direction =</span> <span class="st">&quot;wide&quot;</span>)</a>
+<a class="sourceLine" id="cb72-4" title="4">long &lt;-<span class="st"> </span><span class="kw">reshape</span>(wide, <span class="dt">v.names =</span> <span class="st">&quot;conc&quot;</span>, <span class="dt">idvar =</span> <span class="st">&quot;Subject&quot;</span>,</a>
+<a class="sourceLine" id="cb72-5" title="5">                <span class="dt">timevar =</span> <span class="st">&quot;time&quot;</span>, <span class="dt">direction =</span> <span class="st">&quot;long&quot;</span>)</a>
+<a class="sourceLine" id="cb72-6" title="6"><span class="kw">head</span>(long)</a></code></pre></div>
 <pre><code>       Subject time conc
 1.0.25       1 0.25 1.50
 2.0.25       2 0.25 2.03
@@ -833,7 +840,7 @@ Figure 8.1: …
 4.0.25       4 0.25 1.85
 5.0.25       5 0.25 2.05
 6.0.25       6 0.25 2.31</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" title="1"><span class="kw">head</span>(wide)</a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" title="1"><span class="kw">head</span>(wide)</a></code></pre></div>
 <pre><code>   Subject conc.0.25 conc.0.5 conc.0.75 conc.1 conc.1.25 conc.2 conc.3 conc.4
 1        1      1.50     0.94      0.78   0.48      0.37   0.19   0.12   0.11
 12       2      2.03     1.63      0.71   0.70      0.64   0.36   0.32   0.20
@@ -858,44 +865,44 @@ Figure 8.1: …
 </div>
 <div id="aggregate" class="section level3">
 <h3><span class="header-section-number">8.2.3</span> Aggregate</h3>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" title="1">myData &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="co"># 1) Object to aggregate</span></a>
-<a class="sourceLine" id="cb74-2" title="2">                    mtcars<span class="op">$</span>mpg,</a>
-<a class="sourceLine" id="cb74-3" title="3">                    <span class="co"># 2) Factors for bilding subgroups</span></a>
-<a class="sourceLine" id="cb74-4" title="4">                    <span class="dt">by =</span> <span class="kw">list</span>(<span class="dt">cyl =</span> mtcars<span class="op">$</span>cyl, <span class="dt">gears =</span> mtcars<span class="op">$</span>gear),</a>
-<a class="sourceLine" id="cb74-5" title="5">                    <span class="co"># 3) Functions of aggregation</span></a>
-<a class="sourceLine" id="cb74-6" title="6">                    <span class="dt">FUN =</span> <span class="cf">function</span>(x) <span class="kw">c</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(x), <span class="dt">sd =</span> <span class="kw">sd</span>(x),</a>
-<a class="sourceLine" id="cb74-7" title="7">                                        <span class="dt">n =</span> <span class="kw">length</span>(x)))</a>
-<a class="sourceLine" id="cb74-8" title="8">myData &lt;-<span class="st"> </span><span class="kw">do.call</span>(data.frame, myData)       <span class="co">#reshape output to data frame</span></a>
-<a class="sourceLine" id="cb74-9" title="9"></a>
-<a class="sourceLine" id="cb74-10" title="10"><span class="co">## Also possible to aggregate several variables at once</span></a>
-<a class="sourceLine" id="cb74-11" title="11"><span class="kw">aggregate</span>(<span class="kw">cbind</span>(var1, var2, var3) <span class="op">~</span><span class="st">  </span>grouping1 <span class="op">+</span><span class="st"> </span>grouping2,</a>
-<a class="sourceLine" id="cb74-12" title="12">          <span class="dt">data =</span> x,</a>
-<a class="sourceLine" id="cb74-13" title="13">          <span class="dt">FUN =</span> <span class="cf">function</span>(x) <span class="kw">c</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(x), <span class="dt">var =</span> <span class="kw">var</span>(x), <span class="dt">n =</span> <span class="kw">length</span>(x)))</a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" title="1">myData &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="co"># 1) Object to aggregate</span></a>
+<a class="sourceLine" id="cb76-2" title="2">                    mtcars<span class="op">$</span>mpg,</a>
+<a class="sourceLine" id="cb76-3" title="3">                    <span class="co"># 2) Factors for bilding subgroups</span></a>
+<a class="sourceLine" id="cb76-4" title="4">                    <span class="dt">by =</span> <span class="kw">list</span>(<span class="dt">cyl =</span> mtcars<span class="op">$</span>cyl, <span class="dt">gears =</span> mtcars<span class="op">$</span>gear),</a>
+<a class="sourceLine" id="cb76-5" title="5">                    <span class="co"># 3) Functions of aggregation</span></a>
+<a class="sourceLine" id="cb76-6" title="6">                    <span class="dt">FUN =</span> <span class="cf">function</span>(x) <span class="kw">c</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(x), <span class="dt">sd =</span> <span class="kw">sd</span>(x),</a>
+<a class="sourceLine" id="cb76-7" title="7">                                        <span class="dt">n =</span> <span class="kw">length</span>(x)))</a>
+<a class="sourceLine" id="cb76-8" title="8">myData &lt;-<span class="st"> </span><span class="kw">do.call</span>(data.frame, myData)       <span class="co">#reshape output to data frame</span></a>
+<a class="sourceLine" id="cb76-9" title="9"></a>
+<a class="sourceLine" id="cb76-10" title="10"><span class="co">## Also possible to aggregate several variables at once</span></a>
+<a class="sourceLine" id="cb76-11" title="11"><span class="kw">aggregate</span>(<span class="kw">cbind</span>(var1, var2, var3) <span class="op">~</span><span class="st">  </span>grouping1 <span class="op">+</span><span class="st"> </span>grouping2,</a>
+<a class="sourceLine" id="cb76-12" title="12">          <span class="dt">data =</span> x,</a>
+<a class="sourceLine" id="cb76-13" title="13">          <span class="dt">FUN =</span> <span class="cf">function</span>(x) <span class="kw">c</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(x), <span class="dt">var =</span> <span class="kw">var</span>(x), <span class="dt">n =</span> <span class="kw">length</span>(x)))</a></code></pre></div>
 </div>
 <div id="sql-joins" class="section level3">
 <h3><span class="header-section-number">8.2.4</span> SQL joins</h3>
 <p><img src="figures/joins0.png" width="50%" /><img src="figures/joins1.png" width="50%" /><img src="figures/joins2.png" width="50%" /><img src="figures/joins3.png" width="50%" /><img src="figures/joins4.png" width="50%" /></p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1"><span class="co"># Inner join:</span></a>
-<a class="sourceLine" id="cb75-2" title="2"><span class="kw">merge</span>(<span class="dt">x =</span> df1, <span class="dt">y =</span> df2, <span class="dt">by =</span> <span class="st">&quot;CustomerId&quot;</span>)</a>
-<a class="sourceLine" id="cb75-3" title="3"><span class="co"># Outer join:</span></a>
-<a class="sourceLine" id="cb75-4" title="4"><span class="kw">merge</span>(<span class="dt">x =</span> df1, <span class="dt">y =</span> df2, <span class="dt">by =</span> <span class="st">&quot;CustomerId&quot;</span>, <span class="dt">all =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb75-5" title="5"><span class="co"># Left outer:</span></a>
-<a class="sourceLine" id="cb75-6" title="6"><span class="kw">merge</span>(<span class="dt">x =</span> df1, <span class="dt">y =</span> df2, <span class="dt">by =</span> <span class="st">&quot;CustomerId&quot;</span>, <span class="dt">all.x =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb75-7" title="7"><span class="co"># Right outer:</span></a>
-<a class="sourceLine" id="cb75-8" title="8"><span class="kw">merge</span>(<span class="dt">x =</span> df1, <span class="dt">y =</span> df2, <span class="dt">by =</span> <span class="st">&quot;CustomerId&quot;</span>, <span class="dt">all.y =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb75-9" title="9"><span class="co"># Cross join:</span></a>
-<a class="sourceLine" id="cb75-10" title="10"><span class="kw">merge</span>(<span class="dt">x =</span> df1, <span class="dt">y =</span> df2, <span class="dt">by =</span> <span class="ot">NULL</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" title="1"><span class="co"># Inner join:</span></a>
+<a class="sourceLine" id="cb77-2" title="2"><span class="kw">merge</span>(<span class="dt">x =</span> df1, <span class="dt">y =</span> df2, <span class="dt">by =</span> <span class="st">&quot;CustomerId&quot;</span>)</a>
+<a class="sourceLine" id="cb77-3" title="3"><span class="co"># Outer join:</span></a>
+<a class="sourceLine" id="cb77-4" title="4"><span class="kw">merge</span>(<span class="dt">x =</span> df1, <span class="dt">y =</span> df2, <span class="dt">by =</span> <span class="st">&quot;CustomerId&quot;</span>, <span class="dt">all =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb77-5" title="5"><span class="co"># Left outer:</span></a>
+<a class="sourceLine" id="cb77-6" title="6"><span class="kw">merge</span>(<span class="dt">x =</span> df1, <span class="dt">y =</span> df2, <span class="dt">by =</span> <span class="st">&quot;CustomerId&quot;</span>, <span class="dt">all.x =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb77-7" title="7"><span class="co"># Right outer:</span></a>
+<a class="sourceLine" id="cb77-8" title="8"><span class="kw">merge</span>(<span class="dt">x =</span> df1, <span class="dt">y =</span> df2, <span class="dt">by =</span> <span class="st">&quot;CustomerId&quot;</span>, <span class="dt">all.y =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb77-9" title="9"><span class="co"># Cross join:</span></a>
+<a class="sourceLine" id="cb77-10" title="10"><span class="kw">merge</span>(<span class="dt">x =</span> df1, <span class="dt">y =</span> df2, <span class="dt">by =</span> <span class="ot">NULL</span>)</a></code></pre></div>
 <p>More explanations <a href="https://stackoverflow.com/questions/1299871/how-to-join-merge-data-frames-inner-outer-left-right">here</a></p>
 <div id="dplyr-joins" class="section level5 unnumbered">
 <h5>dplyr joins</h5>
 <p>See <a href="https://dplyr.tidyverse.org/reference/join.html">here</a></p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" title="1">dplyr<span class="op">::</span><span class="kw">inner_join</span>()</a>
-<a class="sourceLine" id="cb76-2" title="2">dplyr<span class="op">::</span><span class="kw">left_join</span>()</a>
-<a class="sourceLine" id="cb76-3" title="3">dplyr<span class="op">::</span><span class="kw">right_join</span>()</a>
-<a class="sourceLine" id="cb76-4" title="4">dplyr<span class="op">::</span><span class="kw">full_join</span>()</a>
-<a class="sourceLine" id="cb76-5" title="5">dplyr<span class="op">::</span><span class="kw">semi_join</span>()</a>
-<a class="sourceLine" id="cb76-6" title="6">dplyr<span class="op">::</span><span class="kw">nest_join</span>()</a>
-<a class="sourceLine" id="cb76-7" title="7">dplyr<span class="op">::</span><span class="kw">anti_join</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" title="1">dplyr<span class="op">::</span><span class="kw">inner_join</span>()</a>
+<a class="sourceLine" id="cb78-2" title="2">dplyr<span class="op">::</span><span class="kw">left_join</span>()</a>
+<a class="sourceLine" id="cb78-3" title="3">dplyr<span class="op">::</span><span class="kw">right_join</span>()</a>
+<a class="sourceLine" id="cb78-4" title="4">dplyr<span class="op">::</span><span class="kw">full_join</span>()</a>
+<a class="sourceLine" id="cb78-5" title="5">dplyr<span class="op">::</span><span class="kw">semi_join</span>()</a>
+<a class="sourceLine" id="cb78-6" title="6">dplyr<span class="op">::</span><span class="kw">nest_join</span>()</a>
+<a class="sourceLine" id="cb78-7" title="7">dplyr<span class="op">::</span><span class="kw">anti_join</span>()</a></code></pre></div>
 <p><a href="figures/03_pdf/data-transformation.pdf" target="_blank">
 <img src="figures/03_pdf/data-transformation.jpg" width="50%" style="display: block; margin: auto auto auto 0;" />
 </a></p>

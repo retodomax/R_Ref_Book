@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 23 Time series | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 23 Time series | R Reference book" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-03-13" />
+<meta name="date" content="2020-04-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -211,7 +211,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.3" data-path="env.html"><a href="env.html#example-3-change-package-function"><i class="fa fa-check"></i><b>4.4.3</b> Example 3: Change package function</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="settings.html"><a href="settings.html"><i class="fa fa-check"></i><b>5</b> Settings</a></li>
+<li class="chapter" data-level="5" data-path="settings.html"><a href="settings.html"><i class="fa fa-check"></i><b>5</b> Settings</a><ul>
+<li class="chapter" data-level="5.1" data-path="settings.html"><a href="settings.html#error-language"><i class="fa fa-check"></i><b>5.1</b> Error language</a></li>
+<li class="chapter" data-level="5.2" data-path="settings.html"><a href="settings.html#local"><i class="fa fa-check"></i><b>5.2</b> Local</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="miscellaneous.html"><a href="miscellaneous.html"><i class="fa fa-check"></i><b>6</b> Miscellaneous</a><ul>
 <li class="chapter" data-level="6.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-does-r-save-numbers"><i class="fa fa-check"></i><b>6.1</b> How does R save numbers</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="miscellaneous.html"><a href="miscellaneous.html#how-to-avoid-problems-with-doubles"><i class="fa fa-check"></i><b>6.1.1</b> How to avoid problems with doubles</a></li>
@@ -321,7 +324,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>V R Statistics</b></span></li>
 <li class="chapter" data-level="18" data-path="topics.html"><a href="topics.html"><i class="fa fa-check"></i><b>18</b> Topics</a></li>
 <li class="chapter" data-level="19" data-path="basics-1.html"><a href="basics-1.html"><i class="fa fa-check"></i><b>19</b> Basics</a><ul>
-<li class="chapter" data-level="19.1" data-path="basics-1.html"><a href="basics-1.html#distributions"><i class="fa fa-check"></i><b>19.1</b> Distributions</a></li>
+<li class="chapter" data-level="19.1" data-path="basics-1.html"><a href="basics-1.html#distributions"><i class="fa fa-check"></i><b>19.1</b> Distributions</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="basics-1.html"><a href="basics-1.html#relationships-between-distributions"><i class="fa fa-check"></i><b>19.1.1</b> Relationships between distributions</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>20</b> Regression</a><ul>
 <li class="chapter" data-level="20.1" data-path="regression.html"><a href="regression.html#preperation"><i class="fa fa-check"></i><b>20.1</b> Preperation</a></li>
@@ -470,20 +475,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="29.2" data-path="reference-management.html"><a href="reference-management.html#cross-references"><i class="fa fa-check"></i><b>29.2</b> Cross-References</a></li>
 </ul></li>
 <li class="chapter" data-level="30" data-path="git-version-control.html"><a href="git-version-control.html"><i class="fa fa-check"></i><b>30</b> Git version control</a><ul>
-<li class="chapter" data-level="30.1" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>30.1</b> Git basics</a></li>
-<li class="chapter" data-level="30.2" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>30.2</b> Single user</a><ul>
-<li class="chapter" data-level="30.2.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>30.2.1</b> Regular workflow</a></li>
-<li class="chapter" data-level="30.2.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>30.2.2</b> Troubleshooting</a></li>
+<li class="chapter" data-level="30.1" data-path="git-version-control.html"><a href="git-version-control.html#bash-basics"><i class="fa fa-check"></i><b>30.1</b> Bash basics</a></li>
+<li class="chapter" data-level="30.2" data-path="git-version-control.html"><a href="git-version-control.html#git-basics"><i class="fa fa-check"></i><b>30.2</b> Git basics</a></li>
+<li class="chapter" data-level="30.3" data-path="git-version-control.html"><a href="git-version-control.html#global-config"><i class="fa fa-check"></i><b>30.3</b> Global config</a></li>
+<li class="chapter" data-level="30.4" data-path="git-version-control.html"><a href="git-version-control.html#ssh-keys"><i class="fa fa-check"></i><b>30.4</b> SSH keys</a></li>
+<li class="chapter" data-level="30.5" data-path="git-version-control.html"><a href="git-version-control.html#common-tasks"><i class="fa fa-check"></i><b>30.5</b> Common tasks</a></li>
+<li class="chapter" data-level="30.6" data-path="git-version-control.html"><a href="git-version-control.html#single-user"><i class="fa fa-check"></i><b>30.6</b> Single user</a><ul>
+<li class="chapter" data-level="30.6.1" data-path="git-version-control.html"><a href="git-version-control.html#regular-workflow"><i class="fa fa-check"></i><b>30.6.1</b> Regular workflow</a></li>
+<li class="chapter" data-level="30.6.2" data-path="git-version-control.html"><a href="git-version-control.html#troubleshooting"><i class="fa fa-check"></i><b>30.6.2</b> Troubleshooting</a></li>
 </ul></li>
-<li class="chapter" data-level="30.3" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>30.3</b> Multiple users</a><ul>
-<li class="chapter" data-level="30.3.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>30.3.1</b> get foreign respository (fork)</a></li>
+<li class="chapter" data-level="30.7" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>30.7</b> Multiple users</a><ul>
+<li class="chapter" data-level="30.7.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>30.7.1</b> get foreign respository (fork)</a></li>
 </ul></li>
-<li class="chapter" data-level="30.4" data-path="git-version-control.html"><a href="git-version-control.html#version-control-in-rstudio-1"><i class="fa fa-check"></i><b>30.4</b> Version Control in RStudio</a></li>
+<li class="chapter" data-level="30.8" data-path="git-version-control.html"><a href="git-version-control.html#version-control-in-rstudio-1"><i class="fa fa-check"></i><b>30.8</b> Version Control in RStudio</a></li>
 </ul></li>
 <li class="chapter" data-level="31" data-path="git2.html"><a href="git2.html"><i class="fa fa-check"></i><b>31</b> git2</a><ul>
-<li class="chapter" data-level="31.1" data-path="git2.html"><a href="git2.html#git-basics-1"><i class="fa fa-check"></i><b>31.1</b> Git basics</a><ul>
-<li class="chapter" data-level="31.1.1" data-path="git2.html"><a href="git2.html#common-tasks"><i class="fa fa-check"></i><b>31.1.1</b> Common tasks</a></li>
-</ul></li>
+<li class="chapter" data-level="31.1" data-path="git2.html"><a href="git2.html#common-tasks-1"><i class="fa fa-check"></i><b>31.1</b> Common tasks</a></li>
 </ul></li>
 <li class="chapter" data-level="32" data-path="packages-1.html"><a href="packages-1.html"><i class="fa fa-check"></i><b>32</b> Packages</a><ul>
 <li class="chapter" data-level="32.1" data-path="packages-1.html"><a href="packages-1.html#package-environment-1"><i class="fa fa-check"></i><b>32.1</b> Package environment</a></li>
@@ -535,11 +542,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 23</span> Time series</h1>
 <div id="data-sets-1" class="section level2">
 <h2><span class="header-section-number">23.1</span> Data sets</h2>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb275-1" title="1"><span class="kw">data</span>(<span class="st">&quot;AirPassengers&quot;</span>)     <span class="co"># Air passengers </span></a>
-<a class="sourceLine" id="cb275-2" title="2"><span class="kw">data</span>(<span class="st">&quot;lynx&quot;</span>)              <span class="co"># Lynx Trappings</span></a>
-<a class="sourceLine" id="cb275-3" title="3"><span class="kw">data</span>(<span class="st">&quot;lh&quot;</span>)                <span class="co"># Luteinizing Hormone</span></a>
-<a class="sourceLine" id="cb275-4" title="4"><span class="kw">data</span>(<span class="st">&quot;EuStockMarkets&quot;</span>)    <span class="co"># Eu Stock Markets</span></a>
-<a class="sourceLine" id="cb275-5" title="5"><span class="kw">data</span>(<span class="st">&quot;co2&quot;</span>)               <span class="co"># Mauna Loa CO2</span></a></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb277-1" title="1"><span class="kw">data</span>(<span class="st">&quot;AirPassengers&quot;</span>)     <span class="co"># Air passengers </span></a>
+<a class="sourceLine" id="cb277-2" title="2"><span class="kw">data</span>(<span class="st">&quot;lynx&quot;</span>)              <span class="co"># Lynx Trappings</span></a>
+<a class="sourceLine" id="cb277-3" title="3"><span class="kw">data</span>(<span class="st">&quot;lh&quot;</span>)                <span class="co"># Luteinizing Hormone</span></a>
+<a class="sourceLine" id="cb277-4" title="4"><span class="kw">data</span>(<span class="st">&quot;EuStockMarkets&quot;</span>)    <span class="co"># Eu Stock Markets</span></a>
+<a class="sourceLine" id="cb277-5" title="5"><span class="kw">data</span>(<span class="st">&quot;co2&quot;</span>)               <span class="co"># Mauna Loa CO2</span></a></code></pre></div>
 </div>
 <div id="date-and-time" class="section level2">
 <h2><span class="header-section-number">23.2</span> Date and Time</h2>
@@ -587,31 +594,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>time()</code> vector of times at which a time series was sampled</li>
 <li><code>window()</code> subsetting ts objects</li>
 </ul>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb276-1" title="1">myts &lt;-<span class="st"> </span><span class="kw">ts</span>(<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">13</span>,<span class="dv">12</span>,<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">15</span>,<span class="dv">23</span>,<span class="dv">25</span>,<span class="dv">27</span>), <span class="dt">start=</span><span class="dv">2004</span>, <span class="dt">freq=</span><span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb276-2" title="2">myts</a>
-<a class="sourceLine" id="cb276-3" title="3">     Qtr1 Qtr2 Qtr3 Qtr4</a>
-<a class="sourceLine" id="cb276-4" title="4"><span class="dv">2004</span>   <span class="dv">10</span>   <span class="dv">12</span>   <span class="dv">14</span>   <span class="dv">13</span></a>
-<a class="sourceLine" id="cb276-5" title="5"><span class="dv">2005</span>   <span class="dv">12</span>   <span class="dv">10</span>    <span class="dv">5</span>    <span class="dv">2</span></a>
-<a class="sourceLine" id="cb276-6" title="6"><span class="dv">2006</span>   <span class="dv">15</span>   <span class="dv">23</span>   <span class="dv">25</span>   <span class="dv">27</span></a>
-<a class="sourceLine" id="cb276-7" title="7"><span class="kw">start</span>(myts)</a>
-<a class="sourceLine" id="cb276-8" title="8">[<span class="dv">1</span>] <span class="dv">2004</span>    <span class="dv">1</span></a>
-<a class="sourceLine" id="cb276-9" title="9"><span class="kw">end</span>(myts)</a>
-<a class="sourceLine" id="cb276-10" title="10">[<span class="dv">1</span>] <span class="dv">2006</span>    <span class="dv">4</span></a>
-<a class="sourceLine" id="cb276-11" title="11"><span class="kw">frequency</span>(myts)</a>
-<a class="sourceLine" id="cb276-12" title="12">[<span class="dv">1</span>] <span class="dv">4</span></a>
-<a class="sourceLine" id="cb276-13" title="13"><span class="kw">deltat</span>(ts)</a>
-<a class="sourceLine" id="cb276-14" title="14">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb276-15" title="15"><span class="kw">time</span>(myts)</a>
-<a class="sourceLine" id="cb276-16" title="16">        Qtr1    Qtr2    Qtr3    Qtr4</a>
-<a class="sourceLine" id="cb276-17" title="17"><span class="dv">2004</span> <span class="fl">2004.00</span> <span class="fl">2004.25</span> <span class="fl">2004.50</span> <span class="fl">2004.75</span></a>
-<a class="sourceLine" id="cb276-18" title="18"><span class="dv">2005</span> <span class="fl">2005.00</span> <span class="fl">2005.25</span> <span class="fl">2005.50</span> <span class="fl">2005.75</span></a>
-<a class="sourceLine" id="cb276-19" title="19"><span class="dv">2006</span> <span class="fl">2006.00</span> <span class="fl">2006.25</span> <span class="fl">2006.50</span> <span class="fl">2006.75</span></a>
-<a class="sourceLine" id="cb276-20" title="20"><span class="kw">window</span>(myts, <span class="dt">start=</span><span class="dv">2005</span>, <span class="dt">end=</span><span class="dv">2006</span>)</a>
-<a class="sourceLine" id="cb276-21" title="21">     Qtr1 Qtr2 Qtr3 Qtr4</a>
-<a class="sourceLine" id="cb276-22" title="22"><span class="dv">2005</span>   <span class="dv">12</span>   <span class="dv">10</span>    <span class="dv">5</span>    <span class="dv">2</span></a>
-<a class="sourceLine" id="cb276-23" title="23"><span class="dv">2006</span>   <span class="dv">15</span>               </a>
-<a class="sourceLine" id="cb276-24" title="24"><span class="kw">plot</span>(myts)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-244-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb278-1" title="1">myts &lt;-<span class="st"> </span><span class="kw">ts</span>(<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">13</span>,<span class="dv">12</span>,<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">15</span>,<span class="dv">23</span>,<span class="dv">25</span>,<span class="dv">27</span>), <span class="dt">start=</span><span class="dv">2004</span>, <span class="dt">freq=</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb278-2" title="2">myts</a>
+<a class="sourceLine" id="cb278-3" title="3">     Qtr1 Qtr2 Qtr3 Qtr4</a>
+<a class="sourceLine" id="cb278-4" title="4"><span class="dv">2004</span>   <span class="dv">10</span>   <span class="dv">12</span>   <span class="dv">14</span>   <span class="dv">13</span></a>
+<a class="sourceLine" id="cb278-5" title="5"><span class="dv">2005</span>   <span class="dv">12</span>   <span class="dv">10</span>    <span class="dv">5</span>    <span class="dv">2</span></a>
+<a class="sourceLine" id="cb278-6" title="6"><span class="dv">2006</span>   <span class="dv">15</span>   <span class="dv">23</span>   <span class="dv">25</span>   <span class="dv">27</span></a>
+<a class="sourceLine" id="cb278-7" title="7"><span class="kw">start</span>(myts)</a>
+<a class="sourceLine" id="cb278-8" title="8">[<span class="dv">1</span>] <span class="dv">2004</span>    <span class="dv">1</span></a>
+<a class="sourceLine" id="cb278-9" title="9"><span class="kw">end</span>(myts)</a>
+<a class="sourceLine" id="cb278-10" title="10">[<span class="dv">1</span>] <span class="dv">2006</span>    <span class="dv">4</span></a>
+<a class="sourceLine" id="cb278-11" title="11"><span class="kw">frequency</span>(myts)</a>
+<a class="sourceLine" id="cb278-12" title="12">[<span class="dv">1</span>] <span class="dv">4</span></a>
+<a class="sourceLine" id="cb278-13" title="13"><span class="kw">deltat</span>(ts)</a>
+<a class="sourceLine" id="cb278-14" title="14">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb278-15" title="15"><span class="kw">time</span>(myts)</a>
+<a class="sourceLine" id="cb278-16" title="16">        Qtr1    Qtr2    Qtr3    Qtr4</a>
+<a class="sourceLine" id="cb278-17" title="17"><span class="dv">2004</span> <span class="fl">2004.00</span> <span class="fl">2004.25</span> <span class="fl">2004.50</span> <span class="fl">2004.75</span></a>
+<a class="sourceLine" id="cb278-18" title="18"><span class="dv">2005</span> <span class="fl">2005.00</span> <span class="fl">2005.25</span> <span class="fl">2005.50</span> <span class="fl">2005.75</span></a>
+<a class="sourceLine" id="cb278-19" title="19"><span class="dv">2006</span> <span class="fl">2006.00</span> <span class="fl">2006.25</span> <span class="fl">2006.50</span> <span class="fl">2006.75</span></a>
+<a class="sourceLine" id="cb278-20" title="20"><span class="kw">window</span>(myts, <span class="dt">start=</span><span class="dv">2005</span>, <span class="dt">end=</span><span class="dv">2006</span>)</a>
+<a class="sourceLine" id="cb278-21" title="21">     Qtr1 Qtr2 Qtr3 Qtr4</a>
+<a class="sourceLine" id="cb278-22" title="22"><span class="dv">2005</span>   <span class="dv">12</span>   <span class="dv">10</span>    <span class="dv">5</span>    <span class="dv">2</span></a>
+<a class="sourceLine" id="cb278-23" title="23"><span class="dv">2006</span>   <span class="dv">15</span>               </a>
+<a class="sourceLine" id="cb278-24" title="24"><span class="kw">plot</span>(myts)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-246-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
 <div id="zoo" class="section level3">
