@@ -1,24 +1,7 @@
 # git2
 
-## Git basics
 
-##### basic bash commands {-}
-
-* `cd` change directory
-* `ls` list all files within directory
-* `head` show head of file
-* `rm` remove file
-
-##### basic git commands {-}
-
-* `git config` change global/local variables (name, email, ...)
-* `git init` initialize git respository
-* `git add` add file to staged area, "stage file"
-* `git commit` commit staged files
-* `git push` push your branch to origin
-* `git pull` pull newest branch to your local
-
-### Common tasks
+## Common tasks
 
 ##### create a new repository on the command line {-}
 

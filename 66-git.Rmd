@@ -1,5 +1,14 @@
 # Git version control
 
+## Bash basics
+
+* `pwd` print working directory
+* `cd` change directory
+* `ls` list all files within directory
+* `head` show head of file
+* `rm` remove file
+* `touch` create empty file, change timestamps of a file
+
 
 ## Git basics
 
@@ -12,14 +21,18 @@ Download Git: [here](https://git-scm.com/downloads)
 
 Recommended: do your first steps with a Git client (GUI) to get a feeling for the workflow. Good clients are [SourceTree](https://www.sourcetreeapp.com/), [GitKraken](https://www.gitkraken.com/) but there are many more [here](https://git-scm.com/downloads/guis)
 
-##### Important bash commands {-}
 
-* `cd` change directory
-* `ls` list all files within directory
-* `head` show head of file
-* `rm` remove file
+##### basic git commands {-}
 
-##### Set global config variables {-}
+* `git config` change global/local variables (name, email, ...)
+* `git init` initialize git respository
+* `git add` add file to staged area, "stage file"
+* `git commit` commit staged files
+* `git push` push your branch to origin
+* `git pull` pull newest branch to your local
+
+
+## Global config
 
 ``` bash
 git config --global user.name 'Reto Zihlmann'
@@ -33,6 +46,42 @@ git config --global --list
 - in Windows `~` often corresponds to `C:\Users\Reto`
 
 
+## SSH keys
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "retozihlmann@outlook.com Lenovo"
+```
+
+- text at end of command should be something to recognize a computer
+- only generate new keys if you have non
+- find them in `~/.ssh`
+- keygen will open dialog (always leave empty and press enter)
+- after you generated your keys they have to be added to the **ssh-agent** and to the server
+
+Check if agent is running
+
+``` bash
+eval $(ssh-agent -s)
+```
+
+Add keys to agent
+
+``` bash
+ssh-add ~/.ssh/id_rsa
+```
+
+Add keys to server
+
+[github.com](www.github.com) -> Settings -> SSH
+
+##### list existing keys {-}
+``` bash
+ls -al ~/.ssh/
+```
+
+
+
+## Common tasks
 
 ##### Clone repo to your local computer {-}
 
@@ -64,41 +113,6 @@ git remote -v
 git branch -vv
 ```
 
-
-
-##### list existing keys {-}
-``` bash
-ls -al ~/.ssh/
-```
-
-
-##### generate new key {-}
-
-```bash
-ssh-keygen -t rsa -b 4096 -C "retozihlmann@outlook.com Lenovo"
-```
-
-- text at end of command should be something to recognize a computer
-- only generate new keys if you have non
-- find them in `~/.ssh`
-- keygen will open dialog (always leave empty and press enter)
-- after you generated your keys they have to be added to the **ssh-agent** and to the server
-
-Check if agent is running
-
-``` bash
-eval $(ssh-agent -s)
-```
-
-Add keys to agent
-
-``` bash
-ssh-add ~/.ssh/id_rsa
-```
-
-Add keys to server
-
-[github.com](www.github.com) -> Settings -> SSH
 
 
 
