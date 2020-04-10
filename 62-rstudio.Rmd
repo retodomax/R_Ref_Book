@@ -96,7 +96,7 @@ knitr::include_graphics('figures/03_pdf/rstudio-ide.jpg')
   </tr>
 </table>
 
-Shortcuts which are modified are marked with **(RZ)**
+Shortcuts which are modified are marked with **(RZ)**. You can define your own Shortcuts in RStudio at Tools > Modify Keyboard Shortcuts...
 
 Find all shortcuts [here](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
 
