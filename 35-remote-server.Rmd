@@ -1,0 +1,71 @@
+# Remote Servers
+
+## UZH Thinlinc
+
+* Make IMATH account https://www.math.uzh.ch/li/index.php?id=1794
+* Install Thinlinc client https://www.math.uzh.ch/li/?thinlinc
+* Setup SSH keys https://wiki.math.uzh.ch/public/ssh
+
+
+
+## ETH Euler
+
+https://scicomp.ethz.ch/wiki/Getting_started_with_clusters
+
+## Renkulab
+
+https://renkulab.io/
+
+
+## Get notification when finished
+
+* `beepr::beep()`
+* Mail notification
+
+### Mail notification
+
+* Package `mail`
+    - Very simple
+    - No need for mail account
+    - Often does not work
+* Package `gmailr`
+    - More tricky but much better
+    - Many resources
+        + https://github.com/r-lib/gmailr/blob/master/README.md
+        + https://github.com/jennybc/send-email-with-r/blob/master/README.md
+        + https://blog.mailtrap.io/r-send-email/
+
+##### Set up `gmailr` {-}
+
+* Enable the Gmail API [here](https://developers.google.com/gmail/api/quickstart/python)
+* Download and save credentials
+* Run
+
+```{r, eval=FALSE}
+library(gmailr)
+gm_auth_configure(path = "C:/Users/Reto/scripts/credentials_R_gmailr.json")
+gm_auth()
+```
+
+##### Send Mails {-}
+
+```{r, eval=FALSE}
+library(gmailr)
+gm_auth_configure(path = "C:/Users/Reto/scripts/credentials_R_gmailr.json")
+
+alert_mail <- gm_mime() %>%
+  gm_to("PUT_A_VALID_EMAIL_ADDRESS_THAT_YOU_CAN_CHECK_HERE") %>%
+  gm_from("PUT_THE_GMAIL_ADDRESS_ASSOCIATED_WITH_YOUR_GOOGLE_ACCOUNT_HERE") %>%
+  gm_subject("RZ Alert") %>%
+  gm_text_body("Computation on IMATH finished")
+
+gm_send_message(alert_mail)
+```
+
+##### Allow notifications {-}
+
+Allow notifications for mails with subject RZ Alert
+
+* Thunderbird Add-on `Mailbox Alert`
+* Manage message filters
+* Add rule that allows notification for specific mails

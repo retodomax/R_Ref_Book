@@ -85,6 +85,17 @@ switch_fun <- function(x, y, op) {
          stop("Unknown op!")
   )
 }
+
+# switch() with itegers
+switch (1,
+  print("first case"),
+  print("second case")
+)
+### NOT
+switch (1,
+  1 = print("first case"),
+  2 = print("second case")
+) ## results in error
 ```
 
 

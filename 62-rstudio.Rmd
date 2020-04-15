@@ -54,6 +54,14 @@ knitr::include_graphics('figures/03_pdf/rstudio-ide.jpg')
     <td>Help</td>
     <td>F1</td>
   </tr>
+    <tr>
+    <td>Undo</td>
+    <td>Ctrl + Z</td>
+  </tr>
+    <tr>
+    <td>Redo</td>
+    <td>Ctrl + Shift + Z</td>
+  </tr>
   <tr>
     <td>**Sections**</td>
     <td></td>
