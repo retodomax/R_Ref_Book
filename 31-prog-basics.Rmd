@@ -25,13 +25,17 @@ rm(list=setdiff(ls(), "keep")) # keep only one object
 ##### Examples {-}
 
 ```{r, eval=FALSE}
-FunNew <- function(x = 1, y = "lalala", ...){
+FunNew <- function(x = 1, y = "lalala", z,  ...){
+  stopifnot(is.numeric(x), is.character(y))  # function stopes with error
   if(x > 10){
-    stop("`x` bigger than 10")  # function stoped with error
+    stop("`x` bigger than 10")               # function stoped with error
   }
+  if (missing(z)) {z <- "z not defined"}
+  print(x+1)
   print(y)
-  return(x+1)
-  x+2
+  return(z)
+  print(x)   # will not be printed
+  x+2        # will not be returned
 }
 ```
 
