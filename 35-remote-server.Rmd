@@ -44,7 +44,7 @@ https://renkulab.io/
 ```{r, eval=FALSE}
 library(gmailr)
 gm_auth_configure(path = "C:/Users/Reto/scripts/credentials_R_gmailr.json")
-gm_auth()
+gm_auth("reto93@gmail.com")
 ```
 
 ##### Send Mails {-}
@@ -52,6 +52,7 @@ gm_auth()
 ```{r, eval=FALSE}
 library(gmailr)
 gm_auth_configure(path = "C:/Users/Reto/scripts/credentials_R_gmailr.json")
+gm_auth("PUT_THE_GMAIL_ADDRESS_ASSOCIATED_WITH_YOUR_GOOGLE_ACCOUNT_HERE")
 
 alert_mail <- gm_mime() %>%
   gm_to("PUT_A_VALID_EMAIL_ADDRESS_THAT_YOU_CAN_CHECK_HERE") %>%
