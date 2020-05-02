@@ -256,7 +256,7 @@ function_that_might_return_null() %||% default value
 * `is.*()` logic, if object is of class `*`
 * `methods()` return all available methods for a certain functionname **or** a certain class
     - Methods ending with an asterisks `*` are not exported in the namespace, meaning they should not explicitly be called by the user.
-    - Get their source code with `getAnywhere()`
+    - Get their source code with `getAnywhere()` or with 3 columns e.g. `lme4:::getOptfun`
 
 ```{r, eval = FALSE}
 methods(print)            # all methods for function name print
