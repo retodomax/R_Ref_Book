@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-04-12" />
+<meta name="date" content="2020-05-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -274,6 +274,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1" data-path="remote-servers.html"><a href="remote-servers.html#uzh-thinlinc"><i class="fa fa-check"></i><b>14.1</b> UZH Thinlinc</a></li>
 <li class="chapter" data-level="14.2" data-path="remote-servers.html"><a href="remote-servers.html#eth-euler"><i class="fa fa-check"></i><b>14.2</b> ETH Euler</a></li>
 <li class="chapter" data-level="14.3" data-path="remote-servers.html"><a href="remote-servers.html#renkulab"><i class="fa fa-check"></i><b>14.3</b> Renkulab</a></li>
+<li class="chapter" data-level="14.4" data-path="remote-servers.html"><a href="remote-servers.html#get-notification-when-finished"><i class="fa fa-check"></i><b>14.4</b> Get notification when finished</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="remote-servers.html"><a href="remote-servers.html#mail-notification"><i class="fa fa-check"></i><b>14.4.1</b> Mail notification</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>IV R Output</b></span></li>
 <li class="chapter" data-level="15" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>15</b> Base graphics</a><ul>
@@ -548,17 +551,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="format" class="section level2">
 <h2><span class="header-section-number">18.1</span> Format</h2>
 <p>Always and exactly 2 places after comma</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" title="1">x &lt;-<span class="st"> </span><span class="fl">0.1234567</span></a>
-<a class="sourceLine" id="cb146-2" title="2"><span class="kw">format</span>(<span class="kw">round</span>(x, <span class="dv">2</span>), <span class="dt">nsmall =</span> <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" title="1">x &lt;-<span class="st"> </span><span class="fl">0.1234567</span></a>
+<a class="sourceLine" id="cb148-2" title="2"><span class="kw">format</span>(<span class="kw">round</span>(x, <span class="dv">2</span>), <span class="dt">nsmall =</span> <span class="dv">2</span>)</a></code></pre></div>
 <pre><code>[1] &quot;0.12&quot;</code></pre>
 </div>
 <div id="new-lines" class="section level2">
 <h2><span class="header-section-number">18.2</span> New lines</h2>
 <p>Plot text with line break</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" title="1"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)<span class="op">+</span><span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb148-2" title="2"><span class="kw">plot</span>(<span class="dv">1</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>)</a>
-<a class="sourceLine" id="cb148-3" title="3"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">1</span>, <span class="dt">labels =</span> <span class="st">&quot;text </span><span class="ch">\n</span><span class="st"> and more text&quot;</span>)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-141-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" title="1"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)<span class="op">+</span><span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb150-2" title="2"><span class="kw">plot</span>(<span class="dv">1</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>)</a>
+<a class="sourceLine" id="cb150-3" title="3"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">1</span>, <span class="dt">labels =</span> <span class="st">&quot;text </span><span class="ch">\n</span><span class="st"> and more text&quot;</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-143-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
 </div>

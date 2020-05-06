@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-04-12" />
+<meta name="date" content="2020-05-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -274,6 +274,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1" data-path="remote-servers.html"><a href="remote-servers.html#uzh-thinlinc"><i class="fa fa-check"></i><b>14.1</b> UZH Thinlinc</a></li>
 <li class="chapter" data-level="14.2" data-path="remote-servers.html"><a href="remote-servers.html#eth-euler"><i class="fa fa-check"></i><b>14.2</b> ETH Euler</a></li>
 <li class="chapter" data-level="14.3" data-path="remote-servers.html"><a href="remote-servers.html#renkulab"><i class="fa fa-check"></i><b>14.3</b> Renkulab</a></li>
+<li class="chapter" data-level="14.4" data-path="remote-servers.html"><a href="remote-servers.html#get-notification-when-finished"><i class="fa fa-check"></i><b>14.4</b> Get notification when finished</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="remote-servers.html"><a href="remote-servers.html#mail-notification"><i class="fa fa-check"></i><b>14.4.1</b> Mail notification</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>IV R Output</b></span></li>
 <li class="chapter" data-level="15" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>15</b> Base graphics</a><ul>
@@ -859,7 +862,7 @@ Use <code>missing()</code> to check if a formal argument has been manually set.<
 <li><p><code>methods()</code> return all available methods for a certain functionname <strong>or</strong> a certain class</p>
 <ul>
 <li>Methods ending with an asterisks <code>*</code> are not exported in the namespace, meaning they should not explicitly be called by the user.</li>
-<li>Get their source code with <code>getAnywhere()</code></li>
+<li>Get their source code with <code>getAnywhere()</code> or with 3 columns e.g. <code>lme4:::getOptfun</code></li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">methods</span>(print)            <span class="co"># all methods for function name print</span></a>
@@ -867,7 +870,7 @@ Use <code>missing()</code> to check if a formal argument has been manually set.<
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1">print</a></code></pre></div>
 <pre><code>function (x, ...) 
 UseMethod(&quot;print&quot;)
-&lt;bytecode: 0x0000000010c9cd80&gt;
+&lt;bytecode: 0x0000000014c93ed0&gt;
 &lt;environment: namespace:base&gt;</code></pre>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">head</span>(<span class="kw">methods</span>(print))</a></code></pre></div>
 <pre><code>[1] &quot;print.acf&quot;     &quot;print.AES&quot;     &quot;print.anova&quot;   &quot;print.aov&quot;    

@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-04-12" />
+<meta name="date" content="2020-05-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -274,6 +274,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1" data-path="remote-servers.html"><a href="remote-servers.html#uzh-thinlinc"><i class="fa fa-check"></i><b>14.1</b> UZH Thinlinc</a></li>
 <li class="chapter" data-level="14.2" data-path="remote-servers.html"><a href="remote-servers.html#eth-euler"><i class="fa fa-check"></i><b>14.2</b> ETH Euler</a></li>
 <li class="chapter" data-level="14.3" data-path="remote-servers.html"><a href="remote-servers.html#renkulab"><i class="fa fa-check"></i><b>14.3</b> Renkulab</a></li>
+<li class="chapter" data-level="14.4" data-path="remote-servers.html"><a href="remote-servers.html#get-notification-when-finished"><i class="fa fa-check"></i><b>14.4</b> Get notification when finished</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="remote-servers.html"><a href="remote-servers.html#mail-notification"><i class="fa fa-check"></i><b>14.4.1</b> Mail notification</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>IV R Output</b></span></li>
 <li class="chapter" data-level="15" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>15</b> Base graphics</a><ul>
@@ -556,17 +559,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="set-graphical-parameters" class="section level3">
 <h3><span class="header-section-number">15.1.1</span> Set graphical parameters</h3>
 <p>Change global option</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" title="1"><span class="kw">par</span>(<span class="dt">xlog =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" title="1"><span class="kw">par</span>(<span class="dt">xlog =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p>change for local plot</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" title="1"><span class="kw">plot</span>(..., <span class="dt">xlog =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" title="1"><span class="kw">plot</span>(..., <span class="dt">xlog =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p>When parameters are set, their previous values are returned in an invisible named list. Such a list can be passed as an argument to par to restore the parameter values.</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" title="1">opar &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">xlog =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb101-2" title="2"><span class="kw">plot</span>(...)</a>
-<a class="sourceLine" id="cb101-3" title="3"><span class="kw">par</span>(opar)</a></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" title="1">opar &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">xlog =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb103-2" title="2"><span class="kw">plot</span>(...)</a>
+<a class="sourceLine" id="cb103-3" title="3"><span class="kw">par</span>(opar)</a></code></pre></div>
 <p>reset default</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" title="1"><span class="kw">dev.off</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" title="1"><span class="kw">dev.off</span>()</a></code></pre></div>
 <p>check current parameter</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" title="1"><span class="kw">par</span>(<span class="st">&quot;xlog&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" title="1"><span class="kw">par</span>(<span class="st">&quot;xlog&quot;</span>)</a></code></pre></div>
 <pre><code>[1] FALSE</code></pre>
 <p>The parameters are defined for the currently active device</p>
 <ul>
@@ -585,7 +588,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Show default par() options
 </button>
 <div id="default_par" style="display: none">
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" title="1"><span class="kw">par</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" title="1"><span class="kw">par</span>()</a></code></pre></div>
 <pre><code>$xlog
 [1] FALSE
 
@@ -805,20 +808,20 @@ $ylbias
 </div>
 <div id="device" class="section level3">
 <h3><span class="header-section-number">15.1.3</span> Device</h3>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" title="1"><span class="kw">par</span>(<span class="st">&quot;ask&quot;</span>)  <span class="co"># asks user before new figure is drawn</span></a>
-<a class="sourceLine" id="cb107-2" title="2">[<span class="dv">1</span>] <span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb107-3" title="3"><span class="kw">par</span>(<span class="st">&quot;new&quot;</span>)  <span class="co"># if TRUE, plots next high-level plot above previous</span></a>
-<a class="sourceLine" id="cb107-4" title="4">[<span class="dv">1</span>] <span class="ot">FALSE</span></a></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" title="1"><span class="kw">par</span>(<span class="st">&quot;ask&quot;</span>)  <span class="co"># asks user before new figure is drawn</span></a>
+<a class="sourceLine" id="cb109-2" title="2">[<span class="dv">1</span>] <span class="ot">FALSE</span></a>
+<a class="sourceLine" id="cb109-3" title="3"><span class="kw">par</span>(<span class="st">&quot;new&quot;</span>)  <span class="co"># if TRUE, plots next high-level plot above previous</span></a>
+<a class="sourceLine" id="cb109-4" title="4">[<span class="dv">1</span>] <span class="ot">FALSE</span></a></code></pre></div>
 </div>
 <div id="device-region" class="section level3">
 <h3><span class="header-section-number">15.1.4</span> Device region</h3>
 <!-- ![figure margines](C:/Users/Reto/Downloads/fig_margins.jpg){width=50%} -->
 <!-- <img style="float: right;" src="C:/Users/Reto/Downloads/fig_margins.jpg" width=400> -->
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-82-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-84-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <div id="plot-outside-plotting-region" class="section level5 unnumbered">
 <h5>Plot outside plotting region</h5>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" title="1"><span class="kw">par</span>(<span class="st">&quot;xpd&quot;</span>)</a>
-<a class="sourceLine" id="cb108-2" title="2">[<span class="dv">1</span>] <span class="ot">FALSE</span></a></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" title="1"><span class="kw">par</span>(<span class="st">&quot;xpd&quot;</span>)</a>
+<a class="sourceLine" id="cb110-2" title="2">[<span class="dv">1</span>] <span class="ot">FALSE</span></a></code></pre></div>
 <p><code>FALSE</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the plot regions<br />
 <code>TRUE</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the figure region<br />
 <code>NA</code> <span class="math inline">\(\Rightarrow\)</span> clipped to the device region</p>
@@ -850,8 +853,8 @@ $ylbias
 <li><code>npc</code> normalized plot coordinates</li>
 </ul></li>
 </ul>
-<div class="figure" style="text-align: left"><span id="fig:unnamed-chunk-84"></span>
-<img src="R_Ref_Book_files/figure-html/unnamed-chunk-84-1.png" alt="Interval [0, 1] for different normalized coordinate systems" width="50%" />
+<div class="figure" style="text-align: left"><span id="fig:unnamed-chunk-86"></span>
+<img src="R_Ref_Book_files/figure-html/unnamed-chunk-86-1.png" alt="Interval [0, 1] for different normalized coordinate systems" width="50%" />
 <p class="caption">
 Figure 15.1: Interval [0, 1] for different normalized coordinate systems
 </p>
@@ -862,8 +865,8 @@ Figure 15.1: Interval [0, 1] for different normalized coordinate systems
 </div>
 <div id="define-lines-coordinate-system" class="section level5 unnumbered">
 <h5>Define <code>lines</code> coordinate system</h5>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" title="1"><span class="kw">par</span>(<span class="st">&quot;mex&quot;</span>)   <span class="co"># defines lines coordinate system from point size of text, &quot;height&quot; of one line (e.g. space between Line 0 and Line 1)</span></a>
-<a class="sourceLine" id="cb109-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" title="1"><span class="kw">par</span>(<span class="st">&quot;mex&quot;</span>)   <span class="co"># defines lines coordinate system from point size of text, &quot;height&quot; of one line (e.g. space between Line 0 and Line 1)</span></a>
+<a class="sourceLine" id="cb111-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a></code></pre></div>
 </div>
 </div>
 <div id="define-device-regions" class="section level3">
@@ -885,146 +888,146 @@ Figure 15.1: Interval [0, 1] for different normalized coordinate systems
 </ul>
 <div id="example-for-copy-paste" class="section level5 unnumbered">
 <h5>Example for copy paste</h5>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># 2-by-2 grid of plots</span></a>
-<a class="sourceLine" id="cb110-2" title="2"><span class="kw">par</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">0</span>)) <span class="co"># make room (i.e. the 4&#39;s) for the overall x and y axis titles</span></a>
-<a class="sourceLine" id="cb110-3" title="3"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># make the plots be closer together</span></a>
-<a class="sourceLine" id="cb110-4" title="4"></a>
-<a class="sourceLine" id="cb110-5" title="5"><span class="co"># now plot the graphs with the appropriate axes removed (via xaxt and yaxt),</span></a>
-<a class="sourceLine" id="cb110-6" title="6"><span class="co"># remove axis labels (so that they are not redundant with overall labels,</span></a>
-<a class="sourceLine" id="cb110-7" title="7"><span class="co"># and set some other nice choices for graphics parameters</span></a>
-<a class="sourceLine" id="cb110-8" title="8"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb110-9" title="9"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb110-10" title="10"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb110-11" title="11"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb110-12" title="12"></a>
-<a class="sourceLine" id="cb110-13" title="13"><span class="co"># print the overall labels</span></a>
-<a class="sourceLine" id="cb110-14" title="14"><span class="kw">mtext</span>(<span class="st">&#39;x-axis title&#39;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">outer =</span> <span class="ot">TRUE</span>, <span class="dt">line =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb110-15" title="15"><span class="kw">mtext</span>(<span class="st">&#39;y-axis title&#39;</span>, <span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">outer =</span> <span class="ot">TRUE</span>, <span class="dt">line =</span> <span class="dv">2</span>)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-86-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># 2-by-2 grid of plots</span></a>
+<a class="sourceLine" id="cb112-2" title="2"><span class="kw">par</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">0</span>)) <span class="co"># make room (i.e. the 4&#39;s) for the overall x and y axis titles</span></a>
+<a class="sourceLine" id="cb112-3" title="3"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># make the plots be closer together</span></a>
+<a class="sourceLine" id="cb112-4" title="4"></a>
+<a class="sourceLine" id="cb112-5" title="5"><span class="co"># now plot the graphs with the appropriate axes removed (via xaxt and yaxt),</span></a>
+<a class="sourceLine" id="cb112-6" title="6"><span class="co"># remove axis labels (so that they are not redundant with overall labels,</span></a>
+<a class="sourceLine" id="cb112-7" title="7"><span class="co"># and set some other nice choices for graphics parameters</span></a>
+<a class="sourceLine" id="cb112-8" title="8"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb112-9" title="9"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb112-10" title="10"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb112-11" title="11"><span class="kw">plot</span>(<span class="kw">runif</span>(<span class="dv">10</span>), <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb112-12" title="12"></a>
+<a class="sourceLine" id="cb112-13" title="13"><span class="co"># print the overall labels</span></a>
+<a class="sourceLine" id="cb112-14" title="14"><span class="kw">mtext</span>(<span class="st">&#39;x-axis title&#39;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">outer =</span> <span class="ot">TRUE</span>, <span class="dt">line =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb112-15" title="15"><span class="kw">mtext</span>(<span class="st">&#39;y-axis title&#39;</span>, <span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">outer =</span> <span class="ot">TRUE</span>, <span class="dt">line =</span> <span class="dv">2</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="useful-helper-function" class="section level5 unnumbered">
 <h5>Useful helper function</h5>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" title="1">FunNewPar &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb111-2" title="2">                      <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">0</span>),</a>
-<a class="sourceLine" id="cb111-3" title="3">                      <span class="dt">tcl =</span> <span class="fl">-0.3</span>,</a>
-<a class="sourceLine" id="cb111-4" title="4">                      <span class="dt">mgp =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="fl">0.5</span>,<span class="dv">0</span>),</a>
-<a class="sourceLine" id="cb111-5" title="5">                      <span class="dt">cex.axis =</span> <span class="fl">0.7</span>,</a>
-<a class="sourceLine" id="cb111-6" title="6">                      <span class="dt">ps =</span> <span class="dv">10</span>,</a>
-<a class="sourceLine" id="cb111-7" title="7">                      <span class="dt">xpd =</span> <span class="ot">NA</span>){</a>
-<a class="sourceLine" id="cb111-8" title="8">  x &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">oma =</span> oma,</a>
-<a class="sourceLine" id="cb111-9" title="9">           <span class="dt">mar =</span> mar,</a>
-<a class="sourceLine" id="cb111-10" title="10">           <span class="dt">tcl =</span> tcl,</a>
-<a class="sourceLine" id="cb111-11" title="11">           <span class="dt">mgp =</span> mgp,</a>
-<a class="sourceLine" id="cb111-12" title="12">           <span class="dt">cex.axis =</span> cex.axis,</a>
-<a class="sourceLine" id="cb111-13" title="13">           <span class="dt">ps =</span> ps,</a>
-<a class="sourceLine" id="cb111-14" title="14">           <span class="dt">xpd =</span> xpd)</a>
-<a class="sourceLine" id="cb111-15" title="15">  <span class="kw">invisible</span>(x)</a>
-<a class="sourceLine" id="cb111-16" title="16">}</a></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" title="1">FunNewPar &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb113-2" title="2">                      <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">0</span>),</a>
+<a class="sourceLine" id="cb113-3" title="3">                      <span class="dt">tcl =</span> <span class="fl">-0.3</span>,</a>
+<a class="sourceLine" id="cb113-4" title="4">                      <span class="dt">mgp =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="fl">0.5</span>,<span class="dv">0</span>),</a>
+<a class="sourceLine" id="cb113-5" title="5">                      <span class="dt">cex.axis =</span> <span class="fl">0.7</span>,</a>
+<a class="sourceLine" id="cb113-6" title="6">                      <span class="dt">ps =</span> <span class="dv">10</span>,</a>
+<a class="sourceLine" id="cb113-7" title="7">                      <span class="dt">xpd =</span> <span class="ot">NA</span>){</a>
+<a class="sourceLine" id="cb113-8" title="8">  x &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">oma =</span> oma,</a>
+<a class="sourceLine" id="cb113-9" title="9">           <span class="dt">mar =</span> mar,</a>
+<a class="sourceLine" id="cb113-10" title="10">           <span class="dt">tcl =</span> tcl,</a>
+<a class="sourceLine" id="cb113-11" title="11">           <span class="dt">mgp =</span> mgp,</a>
+<a class="sourceLine" id="cb113-12" title="12">           <span class="dt">cex.axis =</span> cex.axis,</a>
+<a class="sourceLine" id="cb113-13" title="13">           <span class="dt">ps =</span> ps,</a>
+<a class="sourceLine" id="cb113-14" title="14">           <span class="dt">xpd =</span> xpd)</a>
+<a class="sourceLine" id="cb113-15" title="15">  <span class="kw">invisible</span>(x)</a>
+<a class="sourceLine" id="cb113-16" title="16">}</a></code></pre></div>
 <p>Multiple plots with everything</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" title="1"><span class="kw">FunNewPar</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" title="1"><span class="kw">FunNewPar</span>()</a></code></pre></div>
 <p>Multiple plots without axis title</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" title="1"><span class="kw">FunNewPar</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb113-2" title="2">          <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" title="1"><span class="kw">FunNewPar</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb115-2" title="2">          <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>))</a></code></pre></div>
 <p>Multiple plots without axis</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" title="1"><span class="kw">FunNewPar</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb114-2" title="2">          <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>))</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-91-1.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-91-2.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-91-3.png" width="30%" /></p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" title="1"><span class="kw">FunNewPar</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb116-2" title="2">          <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>))</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-93-1.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-93-2.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-93-3.png" width="30%" /></p>
 </div>
 </div>
 <div id="margins" class="section level4">
 <h4><span class="header-section-number">15.1.6.2</span> Margins</h4>
 <p>Define margine area using <code>lines</code> coordinate system</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" title="1"><span class="kw">par</span>(<span class="st">&quot;oma&quot;</span>) <span class="co"># Outer Margin Area</span></a>
-<a class="sourceLine" id="cb115-2" title="2">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb115-3" title="3"><span class="kw">par</span>(<span class="st">&quot;mar&quot;</span>) <span class="co"># Margine Area</span></a>
-<a class="sourceLine" id="cb115-4" title="4">[<span class="dv">1</span>] <span class="fl">5.1</span> <span class="fl">4.1</span> <span class="fl">4.1</span> <span class="fl">2.1</span></a></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" title="1"><span class="kw">par</span>(<span class="st">&quot;oma&quot;</span>) <span class="co"># Outer Margin Area</span></a>
+<a class="sourceLine" id="cb117-2" title="2">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb117-3" title="3"><span class="kw">par</span>(<span class="st">&quot;mar&quot;</span>) <span class="co"># Margine Area</span></a>
+<a class="sourceLine" id="cb117-4" title="4">[<span class="dv">1</span>] <span class="fl">5.1</span> <span class="fl">4.1</span> <span class="fl">4.1</span> <span class="fl">2.1</span></a></code></pre></div>
 <p>Define margine area using <code>inches</code> coordinate system</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" title="1"><span class="kw">par</span>(<span class="st">&quot;omi&quot;</span>) <span class="co"># Outer Margin Area</span></a>
-<a class="sourceLine" id="cb116-2" title="2">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb116-3" title="3"><span class="kw">par</span>(<span class="st">&quot;mai&quot;</span>) <span class="co"># Margine Area</span></a>
-<a class="sourceLine" id="cb116-4" title="4">[<span class="dv">1</span>] <span class="fl">1.02</span> <span class="fl">0.82</span> <span class="fl">0.82</span> <span class="fl">0.42</span></a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-94-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
-<p>Define margine area using <code>ndc</code>/<code>nfc</code> coordinate system</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" title="1"><span class="kw">par</span>(<span class="st">&quot;omd&quot;</span>) <span class="co"># Start and endpoint of inner region  c(x1, x2, y1, y2)</span></a>
-<a class="sourceLine" id="cb117-2" title="2">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb117-3" title="3"><span class="kw">par</span>(<span class="st">&quot;fig&quot;</span>) <span class="co"># Start and endpoint of figure region c(x1, x2, y1, y2)</span></a>
-<a class="sourceLine" id="cb117-4" title="4">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb117-5" title="5"><span class="kw">par</span>(<span class="st">&quot;plt&quot;</span>) <span class="co"># Start and endpoint of plot region   c(x1, x2, y1, y2)</span></a>
-<a class="sourceLine" id="cb117-6" title="6">[<span class="dv">1</span>] <span class="fl">0.1171429</span> <span class="fl">0.9400000</span> <span class="fl">0.2040000</span> <span class="fl">0.8360000</span></a></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" title="1"><span class="kw">par</span>(<span class="st">&quot;omi&quot;</span>) <span class="co"># Outer Margin Area</span></a>
+<a class="sourceLine" id="cb118-2" title="2">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb118-3" title="3"><span class="kw">par</span>(<span class="st">&quot;mai&quot;</span>) <span class="co"># Margine Area</span></a>
+<a class="sourceLine" id="cb118-4" title="4">[<span class="dv">1</span>] <span class="fl">1.02</span> <span class="fl">0.82</span> <span class="fl">0.82</span> <span class="fl">0.42</span></a></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-96-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
-<p>Define region dimensions in <code>inches</code></p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" title="1"><span class="kw">par</span>(<span class="st">&quot;fin&quot;</span>)  <span class="co"># Figure dimensions, (width, height)</span></a>
-<a class="sourceLine" id="cb118-2" title="2">[<span class="dv">1</span>] <span class="fl">6.999999</span> <span class="fl">4.999999</span></a>
-<a class="sourceLine" id="cb118-3" title="3"><span class="kw">par</span>(<span class="st">&quot;pin&quot;</span>)  <span class="co"># Plot dimensions, (width, height)</span></a>
-<a class="sourceLine" id="cb118-4" title="4">[<span class="dv">1</span>] <span class="fl">5.759999</span> <span class="fl">3.159999</span></a></code></pre></div>
+<p>Define margine area using <code>ndc</code>/<code>nfc</code> coordinate system</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" title="1"><span class="kw">par</span>(<span class="st">&quot;omd&quot;</span>) <span class="co"># Start and endpoint of inner region  c(x1, x2, y1, y2)</span></a>
+<a class="sourceLine" id="cb119-2" title="2">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb119-3" title="3"><span class="kw">par</span>(<span class="st">&quot;fig&quot;</span>) <span class="co"># Start and endpoint of figure region c(x1, x2, y1, y2)</span></a>
+<a class="sourceLine" id="cb119-4" title="4">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb119-5" title="5"><span class="kw">par</span>(<span class="st">&quot;plt&quot;</span>) <span class="co"># Start and endpoint of plot region   c(x1, x2, y1, y2)</span></a>
+<a class="sourceLine" id="cb119-6" title="6">[<span class="dv">1</span>] <span class="fl">0.1171429</span> <span class="fl">0.9400000</span> <span class="fl">0.2040000</span> <span class="fl">0.8360000</span></a></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-98-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p>Define region dimensions in <code>inches</code></p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" title="1"><span class="kw">par</span>(<span class="st">&quot;fin&quot;</span>)  <span class="co"># Figure dimensions, (width, height)</span></a>
+<a class="sourceLine" id="cb120-2" title="2">[<span class="dv">1</span>] <span class="fl">6.999999</span> <span class="fl">4.999999</span></a>
+<a class="sourceLine" id="cb120-3" title="3"><span class="kw">par</span>(<span class="st">&quot;pin&quot;</span>)  <span class="co"># Plot dimensions, (width, height)</span></a>
+<a class="sourceLine" id="cb120-4" title="4">[<span class="dv">1</span>] <span class="fl">5.759999</span> <span class="fl">3.159999</span></a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-100-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="square-plot" class="section level4">
 <h4><span class="header-section-number">15.1.6.3</span> Square plot</h4>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" title="1"><span class="kw">par</span>(<span class="st">&quot;pty&quot;</span>) <span class="co"># pty = &quot;m&quot;: maximum,  pty = &quot;s&quot;: square</span></a>
-<a class="sourceLine" id="cb119-2" title="2">[<span class="dv">1</span>] <span class="st">&quot;m&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" title="1"><span class="kw">par</span>(<span class="st">&quot;pty&quot;</span>) <span class="co"># pty = &quot;m&quot;: maximum,  pty = &quot;s&quot;: square</span></a>
+<a class="sourceLine" id="cb121-2" title="2">[<span class="dv">1</span>] <span class="st">&quot;m&quot;</span></a></code></pre></div>
 </div>
 </div>
 <div id="user-coordinates-limits" class="section level3">
 <h3><span class="header-section-number">15.1.7</span> User coordinates limits</h3>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" title="1"><span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)  <span class="co"># extremes of the user coordinate system (xmin, xmax, ymin, ymax)</span></a>
-<a class="sourceLine" id="cb120-2" title="2">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb120-3" title="3"><span class="kw">par</span>(<span class="st">&quot;xaxs&quot;</span>) <span class="co"># &quot;r&quot;: xlim +/- 4%, &quot;i&quot;: xlim</span></a>
-<a class="sourceLine" id="cb120-4" title="4">[<span class="dv">1</span>] <span class="st">&quot;r&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" title="1"><span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)  <span class="co"># extremes of the user coordinate system (xmin, xmax, ymin, ymax)</span></a>
+<a class="sourceLine" id="cb122-2" title="2">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb122-3" title="3"><span class="kw">par</span>(<span class="st">&quot;xaxs&quot;</span>) <span class="co"># &quot;r&quot;: xlim +/- 4%, &quot;i&quot;: xlim</span></a>
+<a class="sourceLine" id="cb122-4" title="4">[<span class="dv">1</span>] <span class="st">&quot;r&quot;</span></a></code></pre></div>
 </div>
 <div id="general-appearence" class="section level3">
 <h3><span class="header-section-number">15.1.8</span> General appearence</h3>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" title="1"><span class="kw">par</span>(<span class="st">&quot;bg&quot;</span>)  <span class="co"># color for the background of the device region. NA =&gt; transparent</span></a>
-<a class="sourceLine" id="cb121-2" title="2">[<span class="dv">1</span>] <span class="st">&quot;white&quot;</span></a>
-<a class="sourceLine" id="cb121-3" title="3"><span class="kw">par</span>(<span class="st">&quot;fg&quot;</span>)  <span class="co"># color for the foreground (axes, boxes, plotting)</span></a>
-<a class="sourceLine" id="cb121-4" title="4">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" title="1"><span class="kw">par</span>(<span class="st">&quot;bg&quot;</span>)  <span class="co"># color for the background of the device region. NA =&gt; transparent</span></a>
+<a class="sourceLine" id="cb123-2" title="2">[<span class="dv">1</span>] <span class="st">&quot;white&quot;</span></a>
+<a class="sourceLine" id="cb123-3" title="3"><span class="kw">par</span>(<span class="st">&quot;fg&quot;</span>)  <span class="co"># color for the foreground (axes, boxes, plotting)</span></a>
+<a class="sourceLine" id="cb123-4" title="4">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a></code></pre></div>
 </div>
 <div id="symbols-1" class="section level3">
 <h3><span class="header-section-number">15.1.9</span> Symbols</h3>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" title="1"><span class="kw">par</span>(<span class="st">&quot;pch&quot;</span>) <span class="co"># symbol</span></a>
-<a class="sourceLine" id="cb122-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb122-3" title="3"><span class="kw">par</span>(<span class="st">&quot;cex&quot;</span>) <span class="co"># magnifies text/symbols relative to default</span></a>
-<a class="sourceLine" id="cb122-4" title="4">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb122-5" title="5"><span class="kw">par</span>(<span class="st">&quot;col&quot;</span>) <span class="co"># symbol color</span></a>
-<a class="sourceLine" id="cb122-6" title="6">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-103-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" title="1"><span class="kw">par</span>(<span class="st">&quot;pch&quot;</span>) <span class="co"># symbol</span></a>
+<a class="sourceLine" id="cb124-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb124-3" title="3"><span class="kw">par</span>(<span class="st">&quot;cex&quot;</span>) <span class="co"># magnifies text/symbols relative to default</span></a>
+<a class="sourceLine" id="cb124-4" title="4">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb124-5" title="5"><span class="kw">par</span>(<span class="st">&quot;col&quot;</span>) <span class="co"># symbol color</span></a>
+<a class="sourceLine" id="cb124-6" title="6">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-105-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="lines" class="section level3">
 <h3><span class="header-section-number">15.1.10</span> Lines</h3>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" title="1"><span class="kw">par</span>(<span class="st">&quot;lty&quot;</span>)    <span class="co"># line type</span></a>
-<a class="sourceLine" id="cb123-2" title="2">[<span class="dv">1</span>] <span class="st">&quot;solid&quot;</span></a>
-<a class="sourceLine" id="cb123-3" title="3"><span class="kw">par</span>(<span class="st">&quot;lwd&quot;</span>)    <span class="co"># line width</span></a>
-<a class="sourceLine" id="cb123-4" title="4">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb123-5" title="5"><span class="kw">par</span>(<span class="st">&quot;col&quot;</span>)    <span class="co"># line color</span></a>
-<a class="sourceLine" id="cb123-6" title="6">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
-<a class="sourceLine" id="cb123-7" title="7"><span class="kw">par</span>(<span class="st">&quot;lend&quot;</span>)   <span class="co"># line end type</span></a>
-<a class="sourceLine" id="cb123-8" title="8">[<span class="dv">1</span>] <span class="st">&quot;round&quot;</span></a>
-<a class="sourceLine" id="cb123-9" title="9"><span class="kw">par</span>(<span class="st">&quot;ljoin&quot;</span>)  <span class="co"># line join style</span></a>
-<a class="sourceLine" id="cb123-10" title="10">[<span class="dv">1</span>] <span class="st">&quot;round&quot;</span></a>
-<a class="sourceLine" id="cb123-11" title="11"><span class="kw">par</span>(<span class="st">&quot;lmitre&quot;</span>) <span class="co"># detail to ljoin option &quot;mitre&quot;</span></a>
-<a class="sourceLine" id="cb123-12" title="12">[<span class="dv">1</span>] <span class="dv">10</span></a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-105-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-105-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-105-3.png" width="50%" /></p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" title="1"><span class="kw">par</span>(<span class="st">&quot;lty&quot;</span>)    <span class="co"># line type</span></a>
+<a class="sourceLine" id="cb125-2" title="2">[<span class="dv">1</span>] <span class="st">&quot;solid&quot;</span></a>
+<a class="sourceLine" id="cb125-3" title="3"><span class="kw">par</span>(<span class="st">&quot;lwd&quot;</span>)    <span class="co"># line width</span></a>
+<a class="sourceLine" id="cb125-4" title="4">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb125-5" title="5"><span class="kw">par</span>(<span class="st">&quot;col&quot;</span>)    <span class="co"># line color</span></a>
+<a class="sourceLine" id="cb125-6" title="6">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
+<a class="sourceLine" id="cb125-7" title="7"><span class="kw">par</span>(<span class="st">&quot;lend&quot;</span>)   <span class="co"># line end type</span></a>
+<a class="sourceLine" id="cb125-8" title="8">[<span class="dv">1</span>] <span class="st">&quot;round&quot;</span></a>
+<a class="sourceLine" id="cb125-9" title="9"><span class="kw">par</span>(<span class="st">&quot;ljoin&quot;</span>)  <span class="co"># line join style</span></a>
+<a class="sourceLine" id="cb125-10" title="10">[<span class="dv">1</span>] <span class="st">&quot;round&quot;</span></a>
+<a class="sourceLine" id="cb125-11" title="11"><span class="kw">par</span>(<span class="st">&quot;lmitre&quot;</span>) <span class="co"># detail to ljoin option &quot;mitre&quot;</span></a>
+<a class="sourceLine" id="cb125-12" title="12">[<span class="dv">1</span>] <span class="dv">10</span></a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-107-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-107-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-107-3.png" width="50%" /></p>
 </div>
 <div id="text" class="section level3">
 <h3><span class="header-section-number">15.1.11</span> Text</h3>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" title="1"><span class="kw">par</span>(<span class="st">&quot;font&quot;</span>)    <span class="co"># text font</span></a>
-<a class="sourceLine" id="cb124-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb124-3" title="3"><span class="kw">par</span>(<span class="st">&quot;family&quot;</span>)  <span class="co"># text font family</span></a>
-<a class="sourceLine" id="cb124-4" title="4">[<span class="dv">1</span>] <span class="st">&quot;&quot;</span></a>
-<a class="sourceLine" id="cb124-5" title="5"><span class="kw">par</span>(<span class="st">&quot;cex&quot;</span>)     <span class="co"># magnifies text/symbols relative to default</span></a>
-<a class="sourceLine" id="cb124-6" title="6">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb124-7" title="7"><span class="kw">par</span>(<span class="st">&quot;ps&quot;</span>)      <span class="co"># text pointsize</span></a>
-<a class="sourceLine" id="cb124-8" title="8">[<span class="dv">1</span>] <span class="dv">12</span></a>
-<a class="sourceLine" id="cb124-9" title="9"><span class="kw">par</span>(<span class="st">&quot;col&quot;</span>)     <span class="co"># text color</span></a>
-<a class="sourceLine" id="cb124-10" title="10">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
-<a class="sourceLine" id="cb124-11" title="11"><span class="kw">par</span>(<span class="st">&quot;srt&quot;</span>)     <span class="co"># string rotation in degrees (°)</span></a>
-<a class="sourceLine" id="cb124-12" title="12">[<span class="dv">1</span>] <span class="dv">0</span></a>
-<a class="sourceLine" id="cb124-13" title="13"><span class="kw">par</span>(<span class="st">&quot;lheight&quot;</span>) <span class="co"># vertical spacing in multi-line text</span></a>
-<a class="sourceLine" id="cb124-14" title="14">[<span class="dv">1</span>] <span class="dv">1</span></a></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" title="1"><span class="kw">par</span>(<span class="st">&quot;font&quot;</span>)    <span class="co"># text font</span></a>
+<a class="sourceLine" id="cb126-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb126-3" title="3"><span class="kw">par</span>(<span class="st">&quot;family&quot;</span>)  <span class="co"># text font family</span></a>
+<a class="sourceLine" id="cb126-4" title="4">[<span class="dv">1</span>] <span class="st">&quot;&quot;</span></a>
+<a class="sourceLine" id="cb126-5" title="5"><span class="kw">par</span>(<span class="st">&quot;cex&quot;</span>)     <span class="co"># magnifies text/symbols relative to default</span></a>
+<a class="sourceLine" id="cb126-6" title="6">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb126-7" title="7"><span class="kw">par</span>(<span class="st">&quot;ps&quot;</span>)      <span class="co"># text pointsize</span></a>
+<a class="sourceLine" id="cb126-8" title="8">[<span class="dv">1</span>] <span class="dv">12</span></a>
+<a class="sourceLine" id="cb126-9" title="9"><span class="kw">par</span>(<span class="st">&quot;col&quot;</span>)     <span class="co"># text color</span></a>
+<a class="sourceLine" id="cb126-10" title="10">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
+<a class="sourceLine" id="cb126-11" title="11"><span class="kw">par</span>(<span class="st">&quot;srt&quot;</span>)     <span class="co"># string rotation in degrees (°)</span></a>
+<a class="sourceLine" id="cb126-12" title="12">[<span class="dv">1</span>] <span class="dv">0</span></a>
+<a class="sourceLine" id="cb126-13" title="13"><span class="kw">par</span>(<span class="st">&quot;lheight&quot;</span>) <span class="co"># vertical spacing in multi-line text</span></a>
+<a class="sourceLine" id="cb126-14" title="14">[<span class="dv">1</span>] <span class="dv">1</span></a></code></pre></div>
 <p>Point size of text = <code>ps</code> * <code>cex</code></p>
 <p>Point size of title = <code>ps</code> * <code>cex</code> * <code>cex.main</code></p>
 <p>Size of “lines” (coordinate system) = constant * <code>cex</code> * <code>mex</code></p>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-107-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-107-2.png" width="50%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-109-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-109-2.png" width="50%" /></p>
 <p>Get new text families with packet extrafont (see <a href="http://blog.revolutionanalytics.com/2012/09/how-to-use-your-favorite-fonts-in-r-charts.html">here</a>)</p>
 
 <div class="rmdwarning">
@@ -1034,100 +1037,100 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 </div>
 <div id="axis-labels" class="section level3">
 <h3><span class="header-section-number">15.1.12</span> Axis labels</h3>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" title="1"><span class="kw">par</span>(<span class="st">&quot;font.lab&quot;</span>)</a>
-<a class="sourceLine" id="cb125-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb125-3" title="3"><span class="kw">par</span>(<span class="st">&quot;cex.lab&quot;</span>)</a>
-<a class="sourceLine" id="cb125-4" title="4">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb125-5" title="5"><span class="kw">par</span>(<span class="st">&quot;col.lab&quot;</span>)</a>
-<a class="sourceLine" id="cb125-6" title="6">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
-<a class="sourceLine" id="cb125-7" title="7"><span class="kw">par</span>(<span class="st">&quot;ann&quot;</span>)   <span class="co"># should there be any annotations (title, axis title)</span></a>
-<a class="sourceLine" id="cb125-8" title="8">[<span class="dv">1</span>] <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb125-9" title="9"><span class="kw">par</span>(<span class="st">&quot;adj&quot;</span>)   <span class="co"># axis title position (0: left, 1: right)</span></a>
-<a class="sourceLine" id="cb125-10" title="10">[<span class="dv">1</span>] <span class="fl">0.5</span></a>
-<a class="sourceLine" id="cb125-11" title="11"><span class="kw">par</span>(<span class="st">&quot;mgp&quot;</span>)   <span class="co"># position of 1) labels, 2) tick-mark labels, 3) tick marks (in lines)</span></a>
-<a class="sourceLine" id="cb125-12" title="12">[<span class="dv">1</span>] <span class="dv">3</span> <span class="dv">1</span> <span class="dv">0</span></a></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" title="1"><span class="kw">par</span>(<span class="st">&quot;font.lab&quot;</span>)</a>
+<a class="sourceLine" id="cb127-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb127-3" title="3"><span class="kw">par</span>(<span class="st">&quot;cex.lab&quot;</span>)</a>
+<a class="sourceLine" id="cb127-4" title="4">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb127-5" title="5"><span class="kw">par</span>(<span class="st">&quot;col.lab&quot;</span>)</a>
+<a class="sourceLine" id="cb127-6" title="6">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
+<a class="sourceLine" id="cb127-7" title="7"><span class="kw">par</span>(<span class="st">&quot;ann&quot;</span>)   <span class="co"># should there be any annotations (title, axis title)</span></a>
+<a class="sourceLine" id="cb127-8" title="8">[<span class="dv">1</span>] <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb127-9" title="9"><span class="kw">par</span>(<span class="st">&quot;adj&quot;</span>)   <span class="co"># axis title position (0: left, 1: right)</span></a>
+<a class="sourceLine" id="cb127-10" title="10">[<span class="dv">1</span>] <span class="fl">0.5</span></a>
+<a class="sourceLine" id="cb127-11" title="11"><span class="kw">par</span>(<span class="st">&quot;mgp&quot;</span>)   <span class="co"># position of 1) labels, 2) tick-mark labels, 3) tick marks (in lines)</span></a>
+<a class="sourceLine" id="cb127-12" title="12">[<span class="dv">1</span>] <span class="dv">3</span> <span class="dv">1</span> <span class="dv">0</span></a></code></pre></div>
 </div>
 <div id="axis" class="section level3">
 <h3><span class="header-section-number">15.1.13</span> Axis</h3>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" title="1"><span class="kw">par</span>(<span class="st">&quot;font.axis&quot;</span>)</a>
-<a class="sourceLine" id="cb126-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb126-3" title="3"><span class="kw">par</span>(<span class="st">&quot;cex.axis&quot;</span>)</a>
-<a class="sourceLine" id="cb126-4" title="4">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb126-5" title="5"><span class="kw">par</span>(<span class="st">&quot;col.axis&quot;</span>)</a>
-<a class="sourceLine" id="cb126-6" title="6">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
-<a class="sourceLine" id="cb126-7" title="7"><span class="kw">par</span>(<span class="st">&quot;xaxt&quot;</span>) <span class="co"># should there be an axis (&quot;n&quot; suppresses axis)</span></a>
-<a class="sourceLine" id="cb126-8" title="8">[<span class="dv">1</span>] <span class="st">&quot;s&quot;</span></a>
-<a class="sourceLine" id="cb126-9" title="9"><span class="kw">par</span>(<span class="st">&quot;las&quot;</span>)  <span class="co"># orientation of tick-mark labels (0: parallel, 1: horizontal, 2: perpendicular, 3: vertical)</span></a>
-<a class="sourceLine" id="cb126-10" title="10">[<span class="dv">1</span>] <span class="dv">0</span></a>
-<a class="sourceLine" id="cb126-11" title="11"><span class="kw">par</span>(<span class="st">&quot;mgp&quot;</span>)  <span class="co"># position of 1) labels, 2) tick-mark labels, 3) tick marks (in lines)</span></a>
-<a class="sourceLine" id="cb126-12" title="12">[<span class="dv">1</span>] <span class="dv">3</span> <span class="dv">1</span> <span class="dv">0</span></a></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" title="1"><span class="kw">par</span>(<span class="st">&quot;font.axis&quot;</span>)</a>
+<a class="sourceLine" id="cb128-2" title="2">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb128-3" title="3"><span class="kw">par</span>(<span class="st">&quot;cex.axis&quot;</span>)</a>
+<a class="sourceLine" id="cb128-4" title="4">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb128-5" title="5"><span class="kw">par</span>(<span class="st">&quot;col.axis&quot;</span>)</a>
+<a class="sourceLine" id="cb128-6" title="6">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
+<a class="sourceLine" id="cb128-7" title="7"><span class="kw">par</span>(<span class="st">&quot;xaxt&quot;</span>) <span class="co"># should there be an axis (&quot;n&quot; suppresses axis)</span></a>
+<a class="sourceLine" id="cb128-8" title="8">[<span class="dv">1</span>] <span class="st">&quot;s&quot;</span></a>
+<a class="sourceLine" id="cb128-9" title="9"><span class="kw">par</span>(<span class="st">&quot;las&quot;</span>)  <span class="co"># orientation of tick-mark labels (0: parallel, 1: horizontal, 2: perpendicular, 3: vertical)</span></a>
+<a class="sourceLine" id="cb128-10" title="10">[<span class="dv">1</span>] <span class="dv">0</span></a>
+<a class="sourceLine" id="cb128-11" title="11"><span class="kw">par</span>(<span class="st">&quot;mgp&quot;</span>)  <span class="co"># position of 1) labels, 2) tick-mark labels, 3) tick marks (in lines)</span></a>
+<a class="sourceLine" id="cb128-12" title="12">[<span class="dv">1</span>] <span class="dv">3</span> <span class="dv">1</span> <span class="dv">0</span></a></code></pre></div>
 </div>
 <div id="ticks" class="section level3">
 <h3><span class="header-section-number">15.1.14</span> Ticks</h3>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" title="1"><span class="kw">par</span>(<span class="st">&quot;mgp&quot;</span>)  <span class="co"># position of 1) labels, 2) tick-mark labels, 3) tick marks (in lines)</span></a>
-<a class="sourceLine" id="cb127-2" title="2">[<span class="dv">1</span>] <span class="dv">3</span> <span class="dv">1</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb127-3" title="3"><span class="kw">par</span>(<span class="st">&quot;tck&quot;</span>)  <span class="co"># length of tick marks (in npc), 1 =&gt; grid lines</span></a>
-<a class="sourceLine" id="cb127-4" title="4">[<span class="dv">1</span>] <span class="ot">NA</span></a>
-<a class="sourceLine" id="cb127-5" title="5"><span class="kw">par</span>(<span class="st">&quot;tcl&quot;</span>)  <span class="co"># length of tick marks (in chars), negative =&gt; look outside plot</span></a>
-<a class="sourceLine" id="cb127-6" title="6">[<span class="dv">1</span>] <span class="fl">-0.5</span></a>
-<a class="sourceLine" id="cb127-7" title="7"><span class="kw">par</span>(<span class="st">&quot;lab&quot;</span>)  <span class="co"># ≈ number of ticks per axis (x-axis, y-axis, unimplementent)</span></a>
-<a class="sourceLine" id="cb127-8" title="8">[<span class="dv">1</span>] <span class="dv">5</span> <span class="dv">5</span> <span class="dv">7</span></a>
-<a class="sourceLine" id="cb127-9" title="9"><span class="kw">par</span>(<span class="st">&quot;xaxp&quot;</span>) <span class="co"># look where ticks are plotted (lower xlim, upper xlim, nr of ticks minus 1)</span></a>
-<a class="sourceLine" id="cb127-10" title="10">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">1</span> <span class="dv">5</span></a>
-<a class="sourceLine" id="cb127-11" title="11"><span class="kw">par</span>(<span class="st">&quot;xaxs&quot;</span>) <span class="co"># &quot;r&quot;: xlim +/- 4%, &quot;i&quot;: xlim</span></a>
-<a class="sourceLine" id="cb127-12" title="12">[<span class="dv">1</span>] <span class="st">&quot;r&quot;</span></a>
-<a class="sourceLine" id="cb127-13" title="13"><span class="kw">par</span>(<span class="st">&quot;xlog&quot;</span>) <span class="co"># log x axis</span></a>
-<a class="sourceLine" id="cb127-14" title="14">[<span class="dv">1</span>] <span class="ot">FALSE</span></a></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" title="1"><span class="kw">par</span>(<span class="st">&quot;mgp&quot;</span>)  <span class="co"># position of 1) labels, 2) tick-mark labels, 3) tick marks (in lines)</span></a>
+<a class="sourceLine" id="cb129-2" title="2">[<span class="dv">1</span>] <span class="dv">3</span> <span class="dv">1</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb129-3" title="3"><span class="kw">par</span>(<span class="st">&quot;tck&quot;</span>)  <span class="co"># length of tick marks (in npc), 1 =&gt; grid lines</span></a>
+<a class="sourceLine" id="cb129-4" title="4">[<span class="dv">1</span>] <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb129-5" title="5"><span class="kw">par</span>(<span class="st">&quot;tcl&quot;</span>)  <span class="co"># length of tick marks (in chars), negative =&gt; look outside plot</span></a>
+<a class="sourceLine" id="cb129-6" title="6">[<span class="dv">1</span>] <span class="fl">-0.5</span></a>
+<a class="sourceLine" id="cb129-7" title="7"><span class="kw">par</span>(<span class="st">&quot;lab&quot;</span>)  <span class="co"># ≈ number of ticks per axis (x-axis, y-axis, unimplementent)</span></a>
+<a class="sourceLine" id="cb129-8" title="8">[<span class="dv">1</span>] <span class="dv">5</span> <span class="dv">5</span> <span class="dv">7</span></a>
+<a class="sourceLine" id="cb129-9" title="9"><span class="kw">par</span>(<span class="st">&quot;xaxp&quot;</span>) <span class="co"># look where ticks are plotted (lower xlim, upper xlim, nr of ticks minus 1)</span></a>
+<a class="sourceLine" id="cb129-10" title="10">[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">1</span> <span class="dv">5</span></a>
+<a class="sourceLine" id="cb129-11" title="11"><span class="kw">par</span>(<span class="st">&quot;xaxs&quot;</span>) <span class="co"># &quot;r&quot;: xlim +/- 4%, &quot;i&quot;: xlim</span></a>
+<a class="sourceLine" id="cb129-12" title="12">[<span class="dv">1</span>] <span class="st">&quot;r&quot;</span></a>
+<a class="sourceLine" id="cb129-13" title="13"><span class="kw">par</span>(<span class="st">&quot;xlog&quot;</span>) <span class="co"># log x axis</span></a>
+<a class="sourceLine" id="cb129-14" title="14">[<span class="dv">1</span>] <span class="ot">FALSE</span></a></code></pre></div>
 </div>
 <div id="box" class="section level3">
 <h3><span class="header-section-number">15.1.15</span> Box</h3>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" title="1"><span class="kw">par</span>(<span class="st">&quot;bty&quot;</span>)  <span class="co"># one of  &quot;o&quot;, &quot;l&quot;, &quot;7&quot;, &quot;c&quot;, &quot;u&quot;, &quot;]&quot;, no box: &quot;n&quot;</span></a>
-<a class="sourceLine" id="cb128-2" title="2">[<span class="dv">1</span>] <span class="st">&quot;o&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" title="1"><span class="kw">par</span>(<span class="st">&quot;bty&quot;</span>)  <span class="co"># one of  &quot;o&quot;, &quot;l&quot;, &quot;7&quot;, &quot;c&quot;, &quot;u&quot;, &quot;]&quot;, no box: &quot;n&quot;</span></a>
+<a class="sourceLine" id="cb130-2" title="2">[<span class="dv">1</span>] <span class="st">&quot;o&quot;</span></a></code></pre></div>
 </div>
 <div id="title" class="section level3">
 <h3><span class="header-section-number">15.1.16</span> Title</h3>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" title="1"><span class="kw">par</span>(<span class="st">&quot;font.main&quot;</span>)</a>
-<a class="sourceLine" id="cb129-2" title="2">[<span class="dv">1</span>] <span class="dv">2</span></a>
-<a class="sourceLine" id="cb129-3" title="3"><span class="kw">par</span>(<span class="st">&quot;cex.main&quot;</span>)</a>
-<a class="sourceLine" id="cb129-4" title="4">[<span class="dv">1</span>] <span class="fl">1.2</span></a>
-<a class="sourceLine" id="cb129-5" title="5"><span class="kw">par</span>(<span class="st">&quot;col.main&quot;</span>)</a>
-<a class="sourceLine" id="cb129-6" title="6">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
-<a class="sourceLine" id="cb129-7" title="7"><span class="kw">par</span>(<span class="st">&quot;font.sub&quot;</span>)</a>
-<a class="sourceLine" id="cb129-8" title="8">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb129-9" title="9"><span class="kw">par</span>(<span class="st">&quot;cex.sub&quot;</span>)</a>
-<a class="sourceLine" id="cb129-10" title="10">[<span class="dv">1</span>] <span class="dv">1</span></a>
-<a class="sourceLine" id="cb129-11" title="11"><span class="kw">par</span>(<span class="st">&quot;col.sub&quot;</span>)</a>
-<a class="sourceLine" id="cb129-12" title="12">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
-<a class="sourceLine" id="cb129-13" title="13"><span class="kw">par</span>(<span class="st">&quot;ann&quot;</span>)     <span class="co"># should there be any annotations (title, axis title)</span></a>
-<a class="sourceLine" id="cb129-14" title="14">[<span class="dv">1</span>] <span class="ot">TRUE</span></a></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" title="1"><span class="kw">par</span>(<span class="st">&quot;font.main&quot;</span>)</a>
+<a class="sourceLine" id="cb131-2" title="2">[<span class="dv">1</span>] <span class="dv">2</span></a>
+<a class="sourceLine" id="cb131-3" title="3"><span class="kw">par</span>(<span class="st">&quot;cex.main&quot;</span>)</a>
+<a class="sourceLine" id="cb131-4" title="4">[<span class="dv">1</span>] <span class="fl">1.2</span></a>
+<a class="sourceLine" id="cb131-5" title="5"><span class="kw">par</span>(<span class="st">&quot;col.main&quot;</span>)</a>
+<a class="sourceLine" id="cb131-6" title="6">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
+<a class="sourceLine" id="cb131-7" title="7"><span class="kw">par</span>(<span class="st">&quot;font.sub&quot;</span>)</a>
+<a class="sourceLine" id="cb131-8" title="8">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb131-9" title="9"><span class="kw">par</span>(<span class="st">&quot;cex.sub&quot;</span>)</a>
+<a class="sourceLine" id="cb131-10" title="10">[<span class="dv">1</span>] <span class="dv">1</span></a>
+<a class="sourceLine" id="cb131-11" title="11"><span class="kw">par</span>(<span class="st">&quot;col.sub&quot;</span>)</a>
+<a class="sourceLine" id="cb131-12" title="12">[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></a>
+<a class="sourceLine" id="cb131-13" title="13"><span class="kw">par</span>(<span class="st">&quot;ann&quot;</span>)     <span class="co"># should there be any annotations (title, axis title)</span></a>
+<a class="sourceLine" id="cb131-14" title="14">[<span class="dv">1</span>] <span class="ot">TRUE</span></a></code></pre></div>
 </div>
 <div id="r.o.-read-only" class="section level3">
 <h3><span class="header-section-number">15.1.17</span> R.O. (Read only)</h3>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" title="1"><span class="kw">par</span>(<span class="st">&quot;cin&quot;</span>)  <span class="co"># character size (width, height) in inches</span></a>
-<a class="sourceLine" id="cb130-2" title="2">[<span class="dv">1</span>] <span class="fl">0.15</span> <span class="fl">0.20</span></a>
-<a class="sourceLine" id="cb130-3" title="3"><span class="kw">par</span>(<span class="st">&quot;cra&quot;</span>)  <span class="co"># character size (width, height) in pixels</span></a>
-<a class="sourceLine" id="cb130-4" title="4">[<span class="dv">1</span>] <span class="fl">28.8</span> <span class="fl">38.4</span></a>
-<a class="sourceLine" id="cb130-5" title="5"><span class="kw">par</span>(<span class="st">&quot;csi&quot;</span>)  <span class="co"># same as par(&quot;cin&quot;)[2]</span></a>
-<a class="sourceLine" id="cb130-6" title="6">[<span class="dv">1</span>] <span class="fl">0.2</span></a>
-<a class="sourceLine" id="cb130-7" title="7"><span class="kw">par</span>(<span class="st">&quot;cxy&quot;</span>)  <span class="co"># character size (width, height) in user coordinate system</span></a>
-<a class="sourceLine" id="cb130-8" title="8">[<span class="dv">1</span>] <span class="fl">0.02604167</span> <span class="fl">0.06329115</span></a>
-<a class="sourceLine" id="cb130-9" title="9"><span class="kw">par</span>(<span class="st">&quot;din&quot;</span>)  <span class="co"># device dimensions (width, height) in inches</span></a>
-<a class="sourceLine" id="cb130-10" title="10">[<span class="dv">1</span>] <span class="fl">6.999999</span> <span class="fl">4.999999</span></a>
-<a class="sourceLine" id="cb130-11" title="11"><span class="kw">par</span>(<span class="st">&quot;page&quot;</span>) <span class="co"># A boolean value indicating whether the next call to plot.new is going to start a new page</span></a>
-<a class="sourceLine" id="cb130-12" title="12">[<span class="dv">1</span>] <span class="ot">TRUE</span></a></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" title="1"><span class="kw">par</span>(<span class="st">&quot;cin&quot;</span>)  <span class="co"># character size (width, height) in inches</span></a>
+<a class="sourceLine" id="cb132-2" title="2">[<span class="dv">1</span>] <span class="fl">0.15</span> <span class="fl">0.20</span></a>
+<a class="sourceLine" id="cb132-3" title="3"><span class="kw">par</span>(<span class="st">&quot;cra&quot;</span>)  <span class="co"># character size (width, height) in pixels</span></a>
+<a class="sourceLine" id="cb132-4" title="4">[<span class="dv">1</span>] <span class="fl">28.8</span> <span class="fl">38.4</span></a>
+<a class="sourceLine" id="cb132-5" title="5"><span class="kw">par</span>(<span class="st">&quot;csi&quot;</span>)  <span class="co"># same as par(&quot;cin&quot;)[2]</span></a>
+<a class="sourceLine" id="cb132-6" title="6">[<span class="dv">1</span>] <span class="fl">0.2</span></a>
+<a class="sourceLine" id="cb132-7" title="7"><span class="kw">par</span>(<span class="st">&quot;cxy&quot;</span>)  <span class="co"># character size (width, height) in user coordinate system</span></a>
+<a class="sourceLine" id="cb132-8" title="8">[<span class="dv">1</span>] <span class="fl">0.02604167</span> <span class="fl">0.06329115</span></a>
+<a class="sourceLine" id="cb132-9" title="9"><span class="kw">par</span>(<span class="st">&quot;din&quot;</span>)  <span class="co"># device dimensions (width, height) in inches</span></a>
+<a class="sourceLine" id="cb132-10" title="10">[<span class="dv">1</span>] <span class="fl">6.999999</span> <span class="fl">4.999999</span></a>
+<a class="sourceLine" id="cb132-11" title="11"><span class="kw">par</span>(<span class="st">&quot;page&quot;</span>) <span class="co"># A boolean value indicating whether the next call to plot.new is going to start a new page</span></a>
+<a class="sourceLine" id="cb132-12" title="12">[<span class="dv">1</span>] <span class="ot">TRUE</span></a></code></pre></div>
 </div>
 <div id="useless" class="section level3">
 <h3><span class="header-section-number">15.1.18</span> Useless</h3>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" title="1"><span class="kw">par</span>(<span class="st">&quot;crt&quot;</span>)    <span class="co"># rotate single characters, does NOT work on most devices.</span></a>
-<a class="sourceLine" id="cb131-2" title="2">[<span class="dv">1</span>] <span class="dv">0</span></a>
-<a class="sourceLine" id="cb131-3" title="3"><span class="kw">par</span>(<span class="st">&quot;ylbias&quot;</span>) <span class="co"># used in positioning of text in margin (no effect?)</span></a>
-<a class="sourceLine" id="cb131-4" title="4">[<span class="dv">1</span>] <span class="fl">0.2</span></a>
-<a class="sourceLine" id="cb131-5" title="5"><span class="kw">par</span>(<span class="st">&quot;err&quot;</span>)    <span class="co"># unimplemented</span></a>
-<a class="sourceLine" id="cb131-6" title="6">[<span class="dv">1</span>] <span class="dv">0</span></a>
-<a class="sourceLine" id="cb131-7" title="7"><span class="kw">par</span>(<span class="st">&quot;mkh&quot;</span>)    <span class="co"># unimplemented</span></a>
-<a class="sourceLine" id="cb131-8" title="8">[<span class="dv">1</span>] <span class="fl">0.001</span></a>
-<a class="sourceLine" id="cb131-9" title="9"><span class="kw">par</span>(<span class="st">&quot;smo&quot;</span>)    <span class="co"># unimplemented</span></a>
-<a class="sourceLine" id="cb131-10" title="10">[<span class="dv">1</span>] <span class="dv">1</span></a></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" title="1"><span class="kw">par</span>(<span class="st">&quot;crt&quot;</span>)    <span class="co"># rotate single characters, does NOT work on most devices.</span></a>
+<a class="sourceLine" id="cb133-2" title="2">[<span class="dv">1</span>] <span class="dv">0</span></a>
+<a class="sourceLine" id="cb133-3" title="3"><span class="kw">par</span>(<span class="st">&quot;ylbias&quot;</span>) <span class="co"># used in positioning of text in margin (no effect?)</span></a>
+<a class="sourceLine" id="cb133-4" title="4">[<span class="dv">1</span>] <span class="fl">0.2</span></a>
+<a class="sourceLine" id="cb133-5" title="5"><span class="kw">par</span>(<span class="st">&quot;err&quot;</span>)    <span class="co"># unimplemented</span></a>
+<a class="sourceLine" id="cb133-6" title="6">[<span class="dv">1</span>] <span class="dv">0</span></a>
+<a class="sourceLine" id="cb133-7" title="7"><span class="kw">par</span>(<span class="st">&quot;mkh&quot;</span>)    <span class="co"># unimplemented</span></a>
+<a class="sourceLine" id="cb133-8" title="8">[<span class="dv">1</span>] <span class="fl">0.001</span></a>
+<a class="sourceLine" id="cb133-9" title="9"><span class="kw">par</span>(<span class="st">&quot;smo&quot;</span>)    <span class="co"># unimplemented</span></a>
+<a class="sourceLine" id="cb133-10" title="10">[<span class="dv">1</span>] <span class="dv">1</span></a></code></pre></div>
 </div>
 </div>
 <div id="colors" class="section level2">
@@ -1158,12 +1161,12 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 </ul></li>
 </ul>
 <p>Default palette:</p>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-116-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-118-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p>Change palette</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" title="1">mycols &lt;-<span class="st"> </span><span class="kw">gray.colors</span>(<span class="dt">n =</span> <span class="dv">4</span>, <span class="dt">start =</span> <span class="dv">0</span>, <span class="dt">end =</span> <span class="fl">0.8</span>)</a>
-<a class="sourceLine" id="cb132-2" title="2"><span class="kw">palette</span>(mycols)       <span class="co"># change palette</span></a>
-<a class="sourceLine" id="cb132-3" title="3"><span class="kw">plot</span>(..., <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)  <span class="co"># make plots using indices for colors</span></a>
-<a class="sourceLine" id="cb132-4" title="4"><span class="kw">palette</span>(<span class="st">&quot;default&quot;</span>)    <span class="co"># restore default palette</span></a></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" title="1">mycols &lt;-<span class="st"> </span><span class="kw">gray.colors</span>(<span class="dt">n =</span> <span class="dv">4</span>, <span class="dt">start =</span> <span class="dv">0</span>, <span class="dt">end =</span> <span class="fl">0.8</span>)</a>
+<a class="sourceLine" id="cb134-2" title="2"><span class="kw">palette</span>(mycols)       <span class="co"># change palette</span></a>
+<a class="sourceLine" id="cb134-3" title="3"><span class="kw">plot</span>(..., <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)  <span class="co"># make plots using indices for colors</span></a>
+<a class="sourceLine" id="cb134-4" title="4"><span class="kw">palette</span>(<span class="st">&quot;default&quot;</span>)    <span class="co"># restore default palette</span></a></code></pre></div>
 <div id="convert-fromto-different-color-specification" class="section level3">
 <h3><span class="header-section-number">15.2.1</span> Convert from/to different color specification</h3>
 <div id="rgb" class="section level5 unnumbered">
@@ -1191,13 +1194,13 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <div id="make-new-palettes" class="section level3">
 <h3><span class="header-section-number">15.2.2</span> Make new palettes</h3>
 <p>Create a vector of <span class="math inline">\(n\)</span> continuous colors. All of them (except for <code>gray.colors</code>) have additionally an argument <code>alpha</code> for transparency.</p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" title="1"><span class="kw">gray.colors</span>(n)</a>
-<a class="sourceLine" id="cb133-2" title="2"><span class="kw">heat.colors</span>(n)</a>
-<a class="sourceLine" id="cb133-3" title="3"><span class="kw">cm.colors</span>(n)</a>
-<a class="sourceLine" id="cb133-4" title="4"><span class="kw">terrain.colors</span>(n)</a>
-<a class="sourceLine" id="cb133-5" title="5"><span class="kw">topo.colors</span>(n)</a>
-<a class="sourceLine" id="cb133-6" title="6"><span class="kw">rainbow</span>(n)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-119-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" title="1"><span class="kw">gray.colors</span>(n)</a>
+<a class="sourceLine" id="cb135-2" title="2"><span class="kw">heat.colors</span>(n)</a>
+<a class="sourceLine" id="cb135-3" title="3"><span class="kw">cm.colors</span>(n)</a>
+<a class="sourceLine" id="cb135-4" title="4"><span class="kw">terrain.colors</span>(n)</a>
+<a class="sourceLine" id="cb135-5" title="5"><span class="kw">topo.colors</span>(n)</a>
+<a class="sourceLine" id="cb135-6" title="6"><span class="kw">rainbow</span>(n)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-121-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <div id="further-palettes" class="section level5 unnumbered">
 <h5>Further palettes</h5>
 <ul>
@@ -1221,8 +1224,8 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 </ul></li>
 <li>Use <code>alpha()</code> function of package <code>ggplot2</code></li>
 </ul>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" title="1"><span class="kw">require</span>(ggplot2)</a>
-<a class="sourceLine" id="cb134-2" title="2"><span class="kw">plot</span>(..., <span class="dt">col =</span> <span class="kw">alpha</span>(gray, <span class="fl">0.5</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" title="1"><span class="kw">require</span>(ggplot2)</a>
+<a class="sourceLine" id="cb136-2" title="2"><span class="kw">plot</span>(..., <span class="dt">col =</span> <span class="kw">alpha</span>(gray, <span class="fl">0.5</span>))</a></code></pre></div>
 </div>
 </div>
 <div id="mathematical-annotation" class="section level2">
@@ -1245,16 +1248,16 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <li><code>[]</code> subscript</li>
 </ul>
 <p>An extensive overview can be found in the following tables. The columns of grey text show sample R expressions, and the columns of black text show the resulting output.</p>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-121-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-121-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-121-3.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-121-4.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-121-5.png" width="50%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-3.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-4.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-5.png" width="50%" /></p>
 <div id="example" class="section level5 unnumbered">
 <h5>Example</h5>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" title="1">a &lt;-<span class="st"> </span><span class="fl">1.34</span></a>
-<a class="sourceLine" id="cb135-2" title="2">label1 &lt;-<span class="st"> </span><span class="kw">bquote</span>(R[adj]<span class="op">^</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="er">~</span><span class="st"> </span>.(a) <span class="op">~</span><span class="st"> &quot;[&quot;</span> <span class="op">*</span><span class="st"> </span>mu <span class="op">*</span><span class="st"> </span>mol <span class="op">%.%</span><span class="st"> </span>s<span class="op">^-</span><span class="dv">1</span> <span class="op">%.%</span><span class="st"> </span>m<span class="op">^-</span><span class="dv">2</span> <span class="op">*</span><span class="st"> &quot;]&quot;</span> <span class="op">%=&gt;%</span><span class="st"> </span>supi <span class="op">~</span><span class="st"> </span><span class="kw">hat</span>(x) <span class="op">~</span><span class="st"> </span><span class="kw">sum</span>(x[i], i <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, n))</a>
-<a class="sourceLine" id="cb135-3" title="3"></a>
-<a class="sourceLine" id="cb135-4" title="4"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)<span class="op">+</span><span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb135-5" title="5"><span class="kw">plot</span>(<span class="dv">1</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>)</a>
-<a class="sourceLine" id="cb135-6" title="6"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">1</span>, <span class="dt">labels =</span> label1, <span class="dt">cex =</span> <span class="fl">1.5</span>)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-122-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" title="1">a &lt;-<span class="st"> </span><span class="fl">1.34</span></a>
+<a class="sourceLine" id="cb137-2" title="2">label1 &lt;-<span class="st"> </span><span class="kw">bquote</span>(R[adj]<span class="op">^</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="er">~</span><span class="st"> </span>.(a) <span class="op">~</span><span class="st"> &quot;[&quot;</span> <span class="op">*</span><span class="st"> </span>mu <span class="op">*</span><span class="st"> </span>mol <span class="op">%.%</span><span class="st"> </span>s<span class="op">^-</span><span class="dv">1</span> <span class="op">%.%</span><span class="st"> </span>m<span class="op">^-</span><span class="dv">2</span> <span class="op">*</span><span class="st"> &quot;]&quot;</span> <span class="op">%=&gt;%</span><span class="st"> </span>supi <span class="op">~</span><span class="st"> </span><span class="kw">hat</span>(x) <span class="op">~</span><span class="st"> </span><span class="kw">sum</span>(x[i], i <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, n))</a>
+<a class="sourceLine" id="cb137-3" title="3"></a>
+<a class="sourceLine" id="cb137-4" title="4"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)<span class="op">+</span><span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb137-5" title="5"><span class="kw">plot</span>(<span class="dv">1</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>)</a>
+<a class="sourceLine" id="cb137-6" title="6"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">1</span>, <span class="dt">labels =</span> label1, <span class="dt">cex =</span> <span class="fl">1.5</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-124-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
 <div id="high-level-plots" class="section level2">
@@ -1334,60 +1337,60 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <li>shiny (interactive web apps)</li>
 </ul></li>
 </ul>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-1.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-2.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-3.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-4.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-5.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-6.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-7.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-8.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-9.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-10.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-11.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-12.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-13.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-14.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-15.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-16.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-17.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-18.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-19.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-20.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-21.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-22.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-123-23.png" width="30%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-1.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-2.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-3.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-4.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-5.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-6.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-7.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-8.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-9.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-10.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-11.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-12.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-13.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-14.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-15.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-16.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-17.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-18.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-19.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-20.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-21.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-22.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-23.png" width="30%" /></p>
 <p><img src="figures/plots/vcd_mosaic.png" width="30%" /><img src="figures/plots/beeswarm.png" width="30%" /><img src="figures/plots/circular.png" width="30%" /><img src="figures/plots/radarchart.png" width="30%" /></p>
 <div id="plot-function" class="section level3">
 <h3><span class="header-section-number">15.4.1</span> Plot function</h3>
 <p>Type argument</p>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-127-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p>For pmf use <code>type = "h"</code> and for cdf use <code>type = "s"</code></p>
 </div>
 <div id="example-barplot" class="section level3">
 <h3><span class="header-section-number">15.4.2</span> Example: Barplot</h3>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" title="1">myData &lt;-<span class="st"> </span><span class="kw">aggregate</span>(mtcars<span class="op">$</span>mpg,</a>
-<a class="sourceLine" id="cb136-2" title="2">                    <span class="dt">by =</span> <span class="kw">list</span>(<span class="dt">cyl =</span> mtcars<span class="op">$</span>cyl, <span class="dt">gears =</span> mtcars<span class="op">$</span>gear),</a>
-<a class="sourceLine" id="cb136-3" title="3">                    <span class="dt">FUN =</span> <span class="cf">function</span>(x) <span class="kw">c</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(x), <span class="dt">sd =</span> <span class="kw">sd</span>(x),</a>
-<a class="sourceLine" id="cb136-4" title="4">                                        <span class="dt">n =</span> <span class="kw">length</span>(x)))</a>
-<a class="sourceLine" id="cb136-5" title="5">myData &lt;-<span class="st"> </span><span class="kw">do.call</span>(data.frame, myData)</a>
-<a class="sourceLine" id="cb136-6" title="6">myData<span class="op">$</span>se &lt;-<span class="st"> </span>myData<span class="op">$</span>x.sd <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(myData<span class="op">$</span>x.n)</a>
-<a class="sourceLine" id="cb136-7" title="7"><span class="kw">colnames</span>(myData) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;gears&quot;</span>, <span class="st">&quot;mean&quot;</span>, <span class="st">&quot;sd&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="st">&quot;se&quot;</span>)</a>
-<a class="sourceLine" id="cb136-8" title="8">myData<span class="op">$</span>names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">paste</span>(myData<span class="op">$</span>cyl, <span class="st">&quot;cyl /&quot;</span>, myData<span class="op">$</span>gears, <span class="st">&quot; gear&quot;</span>))</a>
-<a class="sourceLine" id="cb136-9" title="9"></a>
-<a class="sourceLine" id="cb136-10" title="10"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
-<a class="sourceLine" id="cb136-11" title="11"></a>
-<a class="sourceLine" id="cb136-12" title="12">plotTop &lt;-<span class="st"> </span><span class="kw">max</span>(myData<span class="op">$</span>mean) <span class="op">+</span></a>
-<a class="sourceLine" id="cb136-13" title="13"><span class="st">  </span>myData[myData<span class="op">$</span>mean <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(myData<span class="op">$</span>mean), <span class="dv">6</span>] <span class="op">*</span><span class="st"> </span><span class="dv">3</span></a>
-<a class="sourceLine" id="cb136-14" title="14"></a>
-<a class="sourceLine" id="cb136-15" title="15">barCenters &lt;-<span class="st"> </span><span class="kw">barplot</span>(<span class="dt">height =</span> myData<span class="op">$</span>mean,</a>
-<a class="sourceLine" id="cb136-16" title="16">                      <span class="dt">names.arg =</span> myData<span class="op">$</span>names,</a>
-<a class="sourceLine" id="cb136-17" title="17">                      <span class="dt">beside =</span> true, <span class="dt">las =</span> <span class="dv">2</span>,</a>
-<a class="sourceLine" id="cb136-18" title="18">                      <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, plotTop),</a>
-<a class="sourceLine" id="cb136-19" title="19">                      <span class="dt">cex.names =</span> <span class="fl">0.75</span>, <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>,</a>
-<a class="sourceLine" id="cb136-20" title="20">                      <span class="dt">main =</span> <span class="st">&quot;barplot()&quot;</span>,</a>
-<a class="sourceLine" id="cb136-21" title="21">                      <span class="dt">ylab =</span> <span class="st">&quot;Miles per Gallon&quot;</span>,</a>
-<a class="sourceLine" id="cb136-22" title="22">                      <span class="dt">border =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb136-23" title="23"></a>
-<a class="sourceLine" id="cb136-24" title="24"><span class="kw">text</span>(<span class="dt">x =</span> barCenters, <span class="dt">y =</span> <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">3</span>] <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">srt =</span> <span class="dv">45</span>,</a>
-<a class="sourceLine" id="cb136-25" title="25">     <span class="dt">adj =</span> <span class="dv">1</span>, <span class="dt">labels =</span> myData<span class="op">$</span>names, <span class="dt">xpd =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb136-26" title="26"></a>
-<a class="sourceLine" id="cb136-27" title="27"><span class="kw">arrows</span>(barCenters, myData<span class="op">$</span>mean <span class="op">-</span><span class="st"> </span>myData<span class="op">$</span>se, barCenters,</a>
-<a class="sourceLine" id="cb136-28" title="28">       myData<span class="op">$</span>mean <span class="op">+</span><span class="st"> </span>myData<span class="op">$</span>se, <span class="dt">lwd =</span> <span class="fl">1.5</span>, <span class="dt">angle =</span> <span class="dv">90</span>,</a>
-<a class="sourceLine" id="cb136-29" title="29">       <span class="dt">code =</span> <span class="dv">3</span>, <span class="dt">length =</span> <span class="fl">0.05</span>)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-126-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" title="1">myData &lt;-<span class="st"> </span><span class="kw">aggregate</span>(mtcars<span class="op">$</span>mpg,</a>
+<a class="sourceLine" id="cb138-2" title="2">                    <span class="dt">by =</span> <span class="kw">list</span>(<span class="dt">cyl =</span> mtcars<span class="op">$</span>cyl, <span class="dt">gears =</span> mtcars<span class="op">$</span>gear),</a>
+<a class="sourceLine" id="cb138-3" title="3">                    <span class="dt">FUN =</span> <span class="cf">function</span>(x) <span class="kw">c</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(x), <span class="dt">sd =</span> <span class="kw">sd</span>(x),</a>
+<a class="sourceLine" id="cb138-4" title="4">                                        <span class="dt">n =</span> <span class="kw">length</span>(x)))</a>
+<a class="sourceLine" id="cb138-5" title="5">myData &lt;-<span class="st"> </span><span class="kw">do.call</span>(data.frame, myData)</a>
+<a class="sourceLine" id="cb138-6" title="6">myData<span class="op">$</span>se &lt;-<span class="st"> </span>myData<span class="op">$</span>x.sd <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(myData<span class="op">$</span>x.n)</a>
+<a class="sourceLine" id="cb138-7" title="7"><span class="kw">colnames</span>(myData) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;gears&quot;</span>, <span class="st">&quot;mean&quot;</span>, <span class="st">&quot;sd&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="st">&quot;se&quot;</span>)</a>
+<a class="sourceLine" id="cb138-8" title="8">myData<span class="op">$</span>names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">paste</span>(myData<span class="op">$</span>cyl, <span class="st">&quot;cyl /&quot;</span>, myData<span class="op">$</span>gears, <span class="st">&quot; gear&quot;</span>))</a>
+<a class="sourceLine" id="cb138-9" title="9"></a>
+<a class="sourceLine" id="cb138-10" title="10"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
+<a class="sourceLine" id="cb138-11" title="11"></a>
+<a class="sourceLine" id="cb138-12" title="12">plotTop &lt;-<span class="st"> </span><span class="kw">max</span>(myData<span class="op">$</span>mean) <span class="op">+</span></a>
+<a class="sourceLine" id="cb138-13" title="13"><span class="st">  </span>myData[myData<span class="op">$</span>mean <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(myData<span class="op">$</span>mean), <span class="dv">6</span>] <span class="op">*</span><span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb138-14" title="14"></a>
+<a class="sourceLine" id="cb138-15" title="15">barCenters &lt;-<span class="st"> </span><span class="kw">barplot</span>(<span class="dt">height =</span> myData<span class="op">$</span>mean,</a>
+<a class="sourceLine" id="cb138-16" title="16">                      <span class="dt">names.arg =</span> myData<span class="op">$</span>names,</a>
+<a class="sourceLine" id="cb138-17" title="17">                      <span class="dt">beside =</span> true, <span class="dt">las =</span> <span class="dv">2</span>,</a>
+<a class="sourceLine" id="cb138-18" title="18">                      <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, plotTop),</a>
+<a class="sourceLine" id="cb138-19" title="19">                      <span class="dt">cex.names =</span> <span class="fl">0.75</span>, <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>,</a>
+<a class="sourceLine" id="cb138-20" title="20">                      <span class="dt">main =</span> <span class="st">&quot;barplot()&quot;</span>,</a>
+<a class="sourceLine" id="cb138-21" title="21">                      <span class="dt">ylab =</span> <span class="st">&quot;Miles per Gallon&quot;</span>,</a>
+<a class="sourceLine" id="cb138-22" title="22">                      <span class="dt">border =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb138-23" title="23"></a>
+<a class="sourceLine" id="cb138-24" title="24"><span class="kw">text</span>(<span class="dt">x =</span> barCenters, <span class="dt">y =</span> <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">3</span>] <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">srt =</span> <span class="dv">45</span>,</a>
+<a class="sourceLine" id="cb138-25" title="25">     <span class="dt">adj =</span> <span class="dv">1</span>, <span class="dt">labels =</span> myData<span class="op">$</span>names, <span class="dt">xpd =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb138-26" title="26"></a>
+<a class="sourceLine" id="cb138-27" title="27"><span class="kw">arrows</span>(barCenters, myData<span class="op">$</span>mean <span class="op">-</span><span class="st"> </span>myData<span class="op">$</span>se, barCenters,</a>
+<a class="sourceLine" id="cb138-28" title="28">       myData<span class="op">$</span>mean <span class="op">+</span><span class="st"> </span>myData<span class="op">$</span>se, <span class="dt">lwd =</span> <span class="fl">1.5</span>, <span class="dt">angle =</span> <span class="dv">90</span>,</a>
+<a class="sourceLine" id="cb138-29" title="29">       <span class="dt">code =</span> <span class="dv">3</span>, <span class="dt">length =</span> <span class="fl">0.05</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="example-matplot" class="section level3">
 <h3><span class="header-section-number">15.4.3</span> Example: Matplot</h3>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" title="1">den.df &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">:</span><span class="dv">20</span></a>
-<a class="sourceLine" id="cb137-2" title="2">num.df &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">:</span><span class="dv">20</span></a>
-<a class="sourceLine" id="cb137-3" title="3">mq &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow =</span> <span class="kw">length</span>(den.df), <span class="dt">ncol =</span> <span class="kw">length</span>(num.df))</a>
-<a class="sourceLine" id="cb137-4" title="4"><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_along</span>(den.df)){</a>
-<a class="sourceLine" id="cb137-5" title="5">  mq[i,] &lt;-<span class="st"> </span><span class="kw">qf</span>(<span class="fl">0.95</span>, num.df, den.df[i])</a>
-<a class="sourceLine" id="cb137-6" title="6">}</a>
-<a class="sourceLine" id="cb137-7" title="7"><span class="co">## den.df: x coordinates of lines (recycled in this case)</span></a>
-<a class="sourceLine" id="cb137-8" title="8"><span class="co">## mq: y coordinates of lines, here: matrix</span></a>
-<a class="sourceLine" id="cb137-9" title="9"><span class="co">##     each column give y coordinate of one line</span></a>
-<a class="sourceLine" id="cb137-10" title="10"><span class="kw">matplot</span>(den.df, mq, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;den.df&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;95%-quantile&quot;</span>)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-127-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" title="1">den.df &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">:</span><span class="dv">20</span></a>
+<a class="sourceLine" id="cb139-2" title="2">num.df &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">:</span><span class="dv">20</span></a>
+<a class="sourceLine" id="cb139-3" title="3">mq &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow =</span> <span class="kw">length</span>(den.df), <span class="dt">ncol =</span> <span class="kw">length</span>(num.df))</a>
+<a class="sourceLine" id="cb139-4" title="4"><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_along</span>(den.df)){</a>
+<a class="sourceLine" id="cb139-5" title="5">  mq[i,] &lt;-<span class="st"> </span><span class="kw">qf</span>(<span class="fl">0.95</span>, num.df, den.df[i])</a>
+<a class="sourceLine" id="cb139-6" title="6">}</a>
+<a class="sourceLine" id="cb139-7" title="7"><span class="co">## den.df: x coordinates of lines (recycled in this case)</span></a>
+<a class="sourceLine" id="cb139-8" title="8"><span class="co">## mq: y coordinates of lines, here: matrix</span></a>
+<a class="sourceLine" id="cb139-9" title="9"><span class="co">##     each column give y coordinate of one line</span></a>
+<a class="sourceLine" id="cb139-10" title="10"><span class="kw">matplot</span>(den.df, mq, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;den.df&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;95%-quantile&quot;</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
 <div id="low-level-plots" class="section level2">
@@ -1436,62 +1439,62 @@ Useful function for text: <code>strwidth()</code>. Returns width or height of st
 
 <div id="legends" class="section level3">
 <h3><span class="header-section-number">15.5.1</span> Legends</h3>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-2.png" width="50%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-131-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-131-2.png" width="50%" /></p>
 </div>
 <div id="arrow" class="section level3">
 <h3><span class="header-section-number">15.5.2</span> Arrow</h3>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" title="1"><span class="kw">arrows</span>(x0, y0, <span class="dt">x1 =</span> x0, <span class="dt">y1 =</span> y0,</a>
-<a class="sourceLine" id="cb138-2" title="2">       <span class="dt">length =</span> <span class="fl">0.25</span>,</a>
-<a class="sourceLine" id="cb138-3" title="3">       <span class="dt">angle =</span> <span class="dv">30</span>,</a>
-<a class="sourceLine" id="cb138-4" title="4">       <span class="dt">code =</span> <span class="dv">2</span>)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-131-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-131-2.png" width="50%" /></p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" title="1"><span class="kw">arrows</span>(x0, y0, <span class="dt">x1 =</span> x0, <span class="dt">y1 =</span> y0,</a>
+<a class="sourceLine" id="cb140-2" title="2">       <span class="dt">length =</span> <span class="fl">0.25</span>,</a>
+<a class="sourceLine" id="cb140-3" title="3">       <span class="dt">angle =</span> <span class="dv">30</span>,</a>
+<a class="sourceLine" id="cb140-4" title="4">       <span class="dt">code =</span> <span class="dv">2</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-133-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-133-2.png" width="50%" /></p>
 </div>
 <div id="panel.first" class="section level3">
 <h3><span class="header-section-number">15.5.3</span> panel.first</h3>
 <p>plot something behind actual plot</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" title="1"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">pch =</span> <span class="dv">16</span>,</a>
-<a class="sourceLine" id="cb139-2" title="2">     <span class="dt">panel.first =</span> <span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">seq</span>(<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb139-3" title="3">                          <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>))</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-132-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" title="1"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">pch =</span> <span class="dv">16</span>,</a>
+<a class="sourceLine" id="cb141-2" title="2">     <span class="dt">panel.first =</span> <span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">seq</span>(<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb141-3" title="3">                          <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>))</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-134-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="area-under-curve" class="section level3">
 <h3><span class="header-section-number">15.5.4</span> Area under curve</h3>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" title="1">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="fl">0.01</span>)</a>
-<a class="sourceLine" id="cb140-2" title="2">y &lt;-<span class="st"> </span><span class="kw">dnorm</span>(x)</a>
-<a class="sourceLine" id="cb140-3" title="3"><span class="kw">plot</span>(y <span class="op">~</span><span class="st"> </span>x, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>)</a>
-<a class="sourceLine" id="cb140-4" title="4"></a>
-<a class="sourceLine" id="cb140-5" title="5">upper_bond &lt;-<span class="st"> </span><span class="dv">4</span></a>
-<a class="sourceLine" id="cb140-6" title="6">lower_bond &lt;-<span class="st"> </span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb140-7" title="7"></a>
-<a class="sourceLine" id="cb140-8" title="8">auswahl &lt;-<span class="st"> </span>x <span class="op">&lt;=</span><span class="st"> </span>upper_bond <span class="op">&amp;</span><span class="st"> </span>x <span class="op">&gt;=</span><span class="st"> </span>lower_bond</a>
-<a class="sourceLine" id="cb140-9" title="9">x_polygon &lt;-<span class="st"> </span>x[auswahl]</a>
-<a class="sourceLine" id="cb140-10" title="10">y_polygon &lt;-<span class="st"> </span>y[auswahl]</a>
-<a class="sourceLine" id="cb140-11" title="11"></a>
-<a class="sourceLine" id="cb140-12" title="12"><span class="kw">polygon</span>(<span class="kw">c</span>(lower_bond, x_polygon, upper_bond),</a>
-<a class="sourceLine" id="cb140-13" title="13">        <span class="kw">c</span>(<span class="dv">0</span>, y_polygon, <span class="dv">0</span>),</a>
-<a class="sourceLine" id="cb140-14" title="14">        <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">border =</span> <span class="ot">NA</span>)</a>
-<a class="sourceLine" id="cb140-15" title="15"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb140-16" title="16"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">2</span>)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-133-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" title="1">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb142-2" title="2">y &lt;-<span class="st"> </span><span class="kw">dnorm</span>(x)</a>
+<a class="sourceLine" id="cb142-3" title="3"><span class="kw">plot</span>(y <span class="op">~</span><span class="st"> </span>x, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>)</a>
+<a class="sourceLine" id="cb142-4" title="4"></a>
+<a class="sourceLine" id="cb142-5" title="5">upper_bond &lt;-<span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb142-6" title="6">lower_bond &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb142-7" title="7"></a>
+<a class="sourceLine" id="cb142-8" title="8">auswahl &lt;-<span class="st"> </span>x <span class="op">&lt;=</span><span class="st"> </span>upper_bond <span class="op">&amp;</span><span class="st"> </span>x <span class="op">&gt;=</span><span class="st"> </span>lower_bond</a>
+<a class="sourceLine" id="cb142-9" title="9">x_polygon &lt;-<span class="st"> </span>x[auswahl]</a>
+<a class="sourceLine" id="cb142-10" title="10">y_polygon &lt;-<span class="st"> </span>y[auswahl]</a>
+<a class="sourceLine" id="cb142-11" title="11"></a>
+<a class="sourceLine" id="cb142-12" title="12"><span class="kw">polygon</span>(<span class="kw">c</span>(lower_bond, x_polygon, upper_bond),</a>
+<a class="sourceLine" id="cb142-13" title="13">        <span class="kw">c</span>(<span class="dv">0</span>, y_polygon, <span class="dv">0</span>),</a>
+<a class="sourceLine" id="cb142-14" title="14">        <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">border =</span> <span class="ot">NA</span>)</a>
+<a class="sourceLine" id="cb142-15" title="15"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb142-16" title="16"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">2</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-135-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
 <div id="plot-empty" class="section level2">
 <h2><span class="header-section-number">15.6</span> Plot empty</h2>
 <div id="plot-without-axisbox" class="section level5 unnumbered">
 <h5>Plot without axis/box</h5>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" title="1"><span class="kw">par</span>( <span class="dt">ann =</span> <span class="ot">FALSE</span>      <span class="co"># no titles</span></a>
-<a class="sourceLine" id="cb141-2" title="2">    , <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>   <span class="co"># no box</span></a>
-<a class="sourceLine" id="cb141-3" title="3">    , <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no x axis</span></a>
-<a class="sourceLine" id="cb141-4" title="4">    , <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no y axis</span></a>
-<a class="sourceLine" id="cb141-5" title="5">    )</a></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" title="1"><span class="kw">par</span>( <span class="dt">ann =</span> <span class="ot">FALSE</span>      <span class="co"># no titles</span></a>
+<a class="sourceLine" id="cb143-2" title="2">    , <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>   <span class="co"># no box</span></a>
+<a class="sourceLine" id="cb143-3" title="3">    , <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no x axis</span></a>
+<a class="sourceLine" id="cb143-4" title="4">    , <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no y axis</span></a>
+<a class="sourceLine" id="cb143-5" title="5">    )</a></code></pre></div>
 </div>
 <div id="plot-empty-1" class="section level5 unnumbered">
 <h5>Plot empty</h5>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" title="1"><span class="co"># Perfect</span></a>
-<a class="sourceLine" id="cb142-2" title="2"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb142-3" title="3"></a>
-<a class="sourceLine" id="cb142-4" title="4"><span class="co"># Good</span></a>
-<a class="sourceLine" id="cb142-5" title="5"><span class="kw">plot</span>(<span class="dv">0</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" title="1"><span class="co"># Perfect</span></a>
+<a class="sourceLine" id="cb144-2" title="2"><span class="kw">plot.new</span>()</a>
+<a class="sourceLine" id="cb144-3" title="3"></a>
+<a class="sourceLine" id="cb144-4" title="4"><span class="co"># Good</span></a>
+<a class="sourceLine" id="cb144-5" title="5"><span class="kw">plot</span>(<span class="dv">0</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 
 </div>
 </div>

@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-04-12" />
+<meta name="date" content="2020-05-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -274,6 +274,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1" data-path="remote-servers.html"><a href="remote-servers.html#uzh-thinlinc"><i class="fa fa-check"></i><b>14.1</b> UZH Thinlinc</a></li>
 <li class="chapter" data-level="14.2" data-path="remote-servers.html"><a href="remote-servers.html#eth-euler"><i class="fa fa-check"></i><b>14.2</b> ETH Euler</a></li>
 <li class="chapter" data-level="14.3" data-path="remote-servers.html"><a href="remote-servers.html#renkulab"><i class="fa fa-check"></i><b>14.3</b> Renkulab</a></li>
+<li class="chapter" data-level="14.4" data-path="remote-servers.html"><a href="remote-servers.html#get-notification-when-finished"><i class="fa fa-check"></i><b>14.4</b> Get notification when finished</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="remote-servers.html"><a href="remote-servers.html#mail-notification"><i class="fa fa-check"></i><b>14.4.1</b> Mail notification</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>IV R Output</b></span></li>
 <li class="chapter" data-level="15" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>15</b> Base graphics</a><ul>
@@ -560,7 +563,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="renkulab" class="section level2">
 <h2><span class="header-section-number">14.3</span> Renkulab</h2>
 <p><a href="https://renkulab.io/" class="uri">https://renkulab.io/</a></p>
+</div>
+<div id="get-notification-when-finished" class="section level2">
+<h2><span class="header-section-number">14.4</span> Get notification when finished</h2>
+<ul>
+<li><code>beepr::beep()</code></li>
+<li>Mail notification</li>
+</ul>
+<div id="mail-notification" class="section level3">
+<h3><span class="header-section-number">14.4.1</span> Mail notification</h3>
+<ul>
+<li>Package <code>mail</code>
+<ul>
+<li>Very simple</li>
+<li>No need for mail account</li>
+<li>Often does not work</li>
+</ul></li>
+<li>Package <code>gmailr</code>
+<ul>
+<li>More tricky but much better</li>
+<li>Many resources
+<ul>
+<li><a href="https://github.com/r-lib/gmailr/blob/master/README.md" class="uri">https://github.com/r-lib/gmailr/blob/master/README.md</a></li>
+<li><a href="https://github.com/jennybc/send-email-with-r/blob/master/README.md" class="uri">https://github.com/jennybc/send-email-with-r/blob/master/README.md</a></li>
+<li><a href="https://blog.mailtrap.io/r-send-email/" class="uri">https://blog.mailtrap.io/r-send-email/</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<div id="set-up-gmailr" class="section level5 unnumbered">
+<h5>Set up <code>gmailr</code></h5>
+<ul>
+<li>Enable the Gmail API <a href="https://developers.google.com/gmail/api/quickstart/python">here</a></li>
+<li>Download and save credentials</li>
+<li>Run</li>
+</ul>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" title="1"><span class="kw">library</span>(gmailr)</a>
+<a class="sourceLine" id="cb99-2" title="2"><span class="kw">gm_auth_configure</span>(<span class="dt">path =</span> <span class="st">&quot;C:/Users/Reto/scripts/credentials_R_gmailr.json&quot;</span>)</a>
+<a class="sourceLine" id="cb99-3" title="3"><span class="kw">gm_auth</span>(<span class="st">&quot;reto93@gmail.com&quot;</span>)</a></code></pre></div>
+</div>
+<div id="send-mails" class="section level5 unnumbered">
+<h5>Send Mails</h5>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" title="1"><span class="kw">library</span>(gmailr)</a>
+<a class="sourceLine" id="cb100-2" title="2"><span class="kw">gm_auth_configure</span>(<span class="dt">path =</span> <span class="st">&quot;C:/Users/Reto/scripts/credentials_R_gmailr.json&quot;</span>)</a>
+<a class="sourceLine" id="cb100-3" title="3"><span class="kw">gm_auth</span>(<span class="st">&quot;PUT_THE_GMAIL_ADDRESS_ASSOCIATED_WITH_YOUR_GOOGLE_ACCOUNT_HERE&quot;</span>)</a>
+<a class="sourceLine" id="cb100-4" title="4"></a>
+<a class="sourceLine" id="cb100-5" title="5">alert_mail &lt;-<span class="st"> </span><span class="kw">gm_mime</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb100-6" title="6"><span class="st">  </span><span class="kw">gm_to</span>(<span class="st">&quot;PUT_A_VALID_EMAIL_ADDRESS_THAT_YOU_CAN_CHECK_HERE&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb100-7" title="7"><span class="st">  </span><span class="kw">gm_from</span>(<span class="st">&quot;PUT_THE_GMAIL_ADDRESS_ASSOCIATED_WITH_YOUR_GOOGLE_ACCOUNT_HERE&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb100-8" title="8"><span class="st">  </span><span class="kw">gm_subject</span>(<span class="st">&quot;RZ Alert&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb100-9" title="9"><span class="st">  </span><span class="kw">gm_text_body</span>(<span class="st">&quot;Computation on IMATH finished&quot;</span>)</a>
+<a class="sourceLine" id="cb100-10" title="10"></a>
+<a class="sourceLine" id="cb100-11" title="11"><span class="kw">gm_send_message</span>(alert_mail)</a></code></pre></div>
+</div>
+<div id="allow-notifications" class="section level5 unnumbered">
+<h5>Allow notifications</h5>
+<p>Allow notifications for mails with subject RZ Alert</p>
+<ul>
+<li>Thunderbird Add-on <code>Mailbox Alert</code></li>
+<li>Manage message filters</li>
+<li>Add rule that allows notification for specific mails</li>
+</ul>
 
+</div>
+</div>
 </div>
 </div>
 

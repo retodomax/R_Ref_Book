@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-04-12" />
+<meta name="date" content="2020-05-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -274,6 +274,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1" data-path="remote-servers.html"><a href="remote-servers.html#uzh-thinlinc"><i class="fa fa-check"></i><b>14.1</b> UZH Thinlinc</a></li>
 <li class="chapter" data-level="14.2" data-path="remote-servers.html"><a href="remote-servers.html#eth-euler"><i class="fa fa-check"></i><b>14.2</b> ETH Euler</a></li>
 <li class="chapter" data-level="14.3" data-path="remote-servers.html"><a href="remote-servers.html#renkulab"><i class="fa fa-check"></i><b>14.3</b> Renkulab</a></li>
+<li class="chapter" data-level="14.4" data-path="remote-servers.html"><a href="remote-servers.html#get-notification-when-finished"><i class="fa fa-check"></i><b>14.4</b> Get notification when finished</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="remote-servers.html"><a href="remote-servers.html#mail-notification"><i class="fa fa-check"></i><b>14.4.1</b> Mail notification</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>IV R Output</b></span></li>
 <li class="chapter" data-level="15" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>15</b> Base graphics</a><ul>
@@ -579,9 +582,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="global-config" class="section level2">
 <h2><span class="header-section-number">31.3</span> Global config</h2>
-<div class="sourceCode" id="cb323"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb323-1" title="1"><span class="fu">git</span> config --global user.name <span class="st">&#39;Reto Zihlmann&#39;</span></a>
-<a class="sourceLine" id="cb323-2" title="2"><span class="fu">git</span> config --global user.email <span class="st">&#39;retozihlmann@outlook.com&#39;</span></a>
-<a class="sourceLine" id="cb323-3" title="3"><span class="fu">git</span> config --global --list</a></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb325-1" title="1"><span class="fu">git</span> config --global user.name <span class="st">&#39;Reto Zihlmann&#39;</span></a>
+<a class="sourceLine" id="cb325-2" title="2"><span class="fu">git</span> config --global user.email <span class="st">&#39;retozihlmann@outlook.com&#39;</span></a>
+<a class="sourceLine" id="cb325-3" title="3"><span class="fu">git</span> config --global --list</a></code></pre></div>
 <ul>
 <li>user.email should be the same as used for your server (otherwise your commits appear as if they were done by someone else)
 <ul>
@@ -594,7 +597,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="ssh-keys" class="section level2">
 <h2><span class="header-section-number">31.4</span> SSH keys</h2>
-<div class="sourceCode" id="cb324"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb324-1" title="1"><span class="fu">ssh-keygen</span> -t rsa -b 4096 -C <span class="st">&quot;retozihlmann@outlook.com Lenovo&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb326-1" title="1"><span class="fu">ssh-keygen</span> -t rsa -b 4096 -C <span class="st">&quot;retozihlmann@outlook.com Lenovo&quot;</span></a></code></pre></div>
 <ul>
 <li>text at end of command should be something to recognize a computer</li>
 <li>only generate new keys if you have non</li>
@@ -603,25 +606,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>after you generated your keys they have to be added to the <strong>ssh-agent</strong> and to the server</li>
 </ul>
 <p>Check if agent is running</p>
-<div class="sourceCode" id="cb325"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb325-1" title="1"><span class="bu">eval</span> <span class="va">$(</span><span class="fu">ssh-agent</span> -s<span class="va">)</span></a></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb327-1" title="1"><span class="bu">eval</span> <span class="va">$(</span><span class="fu">ssh-agent</span> -s<span class="va">)</span></a></code></pre></div>
 <p>Add keys to agent</p>
-<div class="sourceCode" id="cb326"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb326-1" title="1"><span class="fu">ssh-add</span> ~/.ssh/id_rsa</a></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb328-1" title="1"><span class="fu">ssh-add</span> ~/.ssh/id_rsa</a></code></pre></div>
 <p>Add keys to server</p>
 <p><a href="www.github.com">github.com</a> -&gt; Settings -&gt; SSH</p>
 <div id="list-existing-keys" class="section level5 unnumbered">
 <h5>list existing keys</h5>
-<div class="sourceCode" id="cb327"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb327-1" title="1"><span class="fu">ls</span> -al ~/.ssh/</a></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb329-1" title="1"><span class="fu">ls</span> -al ~/.ssh/</a></code></pre></div>
 </div>
 </div>
 <div id="common-tasks" class="section level2">
 <h2><span class="header-section-number">31.5</span> Common tasks</h2>
 <div id="clone-repo-to-your-local-computer" class="section level5 unnumbered">
 <h5>Clone repo to your local computer</h5>
-<div class="sourceCode" id="cb328"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb328-1" title="1"><span class="fu">git</span> clone https://github.com/retodomax/YOUR-REPOSITORY.git</a></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb330-1" title="1"><span class="fu">git</span> clone https://github.com/retodomax/YOUR-REPOSITORY.git</a></code></pre></div>
 </div>
 <div id="conect-with-remote-respository" class="section level5 unnumbered">
 <h5>Conect with remote respository</h5>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-261"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-263"></span>
 <img src="figures/git_remote.png" alt="..." width="100%" />
 <p class="caption">
 Figure 31.1: …
@@ -630,13 +633,13 @@ Figure 31.1: …
 </div>
 <div id="show-origin-variable" class="section level5 unnumbered">
 <h5>Show origin variable</h5>
-<div class="sourceCode" id="cb329"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb329-1" title="1"><span class="fu">git</span> remote show origin</a></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb331-1" title="1"><span class="fu">git</span> remote show origin</a></code></pre></div>
 <p>or shorter</p>
-<div class="sourceCode" id="cb330"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb330-1" title="1"><span class="fu">git</span> remote -v</a></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb332-1" title="1"><span class="fu">git</span> remote -v</a></code></pre></div>
 </div>
 <div id="show-branch-we-are-traking" class="section level5 unnumbered">
 <h5>Show branch we are traking</h5>
-<div class="sourceCode" id="cb331"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb331-1" title="1"><span class="fu">git</span> branch -vv</a></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb333-1" title="1"><span class="fu">git</span> branch -vv</a></code></pre></div>
 </div>
 </div>
 <div id="single-user" class="section level2">
@@ -652,8 +655,8 @@ Figure 31.1: …
 <ul>
 <li>use https or ssh link</li>
 </ul>
-<div class="sourceCode" id="cb332"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb332-1" title="1"><span class="fu">git</span> remote add origin https://github.com/retodomax/My_project.git</a>
-<a class="sourceLine" id="cb332-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb334-1" title="1"><span class="fu">git</span> remote add origin https://github.com/retodomax/My_project.git</a>
+<a class="sourceLine" id="cb334-2" title="2"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>paste commands in in Git Bash opend in the project folder
 <ul>

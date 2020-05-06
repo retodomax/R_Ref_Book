@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-04-12" />
+<meta name="date" content="2020-05-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -274,6 +274,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1" data-path="remote-servers.html"><a href="remote-servers.html#uzh-thinlinc"><i class="fa fa-check"></i><b>14.1</b> UZH Thinlinc</a></li>
 <li class="chapter" data-level="14.2" data-path="remote-servers.html"><a href="remote-servers.html#eth-euler"><i class="fa fa-check"></i><b>14.2</b> ETH Euler</a></li>
 <li class="chapter" data-level="14.3" data-path="remote-servers.html"><a href="remote-servers.html#renkulab"><i class="fa fa-check"></i><b>14.3</b> Renkulab</a></li>
+<li class="chapter" data-level="14.4" data-path="remote-servers.html"><a href="remote-servers.html#get-notification-when-finished"><i class="fa fa-check"></i><b>14.4</b> Get notification when finished</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="remote-servers.html"><a href="remote-servers.html#mail-notification"><i class="fa fa-check"></i><b>14.4.1</b> Mail notification</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>IV R Output</b></span></li>
 <li class="chapter" data-level="15" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>15</b> Base graphics</a><ul>
@@ -565,14 +568,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div id="examples-2" class="section level5 unnumbered">
 <h5>Examples</h5>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" title="1">FunNew &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="st">&quot;lalala&quot;</span>, ...){</a>
-<a class="sourceLine" id="cb80-2" title="2">  <span class="cf">if</span>(x <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>){</a>
-<a class="sourceLine" id="cb80-3" title="3">    <span class="kw">stop</span>(<span class="st">&quot;`x` bigger than 10&quot;</span>)  <span class="co"># function stoped with error</span></a>
-<a class="sourceLine" id="cb80-4" title="4">  }</a>
-<a class="sourceLine" id="cb80-5" title="5">  <span class="kw">print</span>(y)</a>
-<a class="sourceLine" id="cb80-6" title="6">  <span class="kw">return</span>(x<span class="op">+</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb80-7" title="7">  x<span class="op">+</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb80-8" title="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" title="1">FunNew &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="st">&quot;lalala&quot;</span>, z,  ...){</a>
+<a class="sourceLine" id="cb80-2" title="2">  <span class="kw">stopifnot</span>(<span class="kw">is.numeric</span>(x), <span class="kw">is.character</span>(y))  <span class="co"># function stopes with error</span></a>
+<a class="sourceLine" id="cb80-3" title="3">  <span class="cf">if</span>(x <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>){</a>
+<a class="sourceLine" id="cb80-4" title="4">    <span class="kw">stop</span>(<span class="st">&quot;`x` bigger than 10&quot;</span>)               <span class="co"># function stoped with error</span></a>
+<a class="sourceLine" id="cb80-5" title="5">  }</a>
+<a class="sourceLine" id="cb80-6" title="6">  <span class="cf">if</span> (<span class="kw">missing</span>(z)) {z &lt;-<span class="st"> &quot;z not defined&quot;</span>}</a>
+<a class="sourceLine" id="cb80-7" title="7">  <span class="kw">print</span>(x<span class="op">+</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb80-8" title="8">  <span class="kw">print</span>(y)</a>
+<a class="sourceLine" id="cb80-9" title="9">  <span class="kw">return</span>(z)</a>
+<a class="sourceLine" id="cb80-10" title="10">  <span class="kw">print</span>(x)   <span class="co"># will not be printed</span></a>
+<a class="sourceLine" id="cb80-11" title="11">  x<span class="op">+</span><span class="dv">2</span>        <span class="co"># will not be returned</span></a>
+<a class="sourceLine" id="cb80-12" title="12">}</a></code></pre></div>
 </div>
 <div id="function-debugging" class="section level3">
 <h3><span class="header-section-number">10.2.1</span> Function debugging</h3>
@@ -621,7 +628,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb82-10" title="10">         <span class="dt">minus =</span> x <span class="op">-</span><span class="st"> </span>y,</a>
 <a class="sourceLine" id="cb82-11" title="11">         <span class="kw">stop</span>(<span class="st">&quot;Unknown op!&quot;</span>)</a>
 <a class="sourceLine" id="cb82-12" title="12">  )</a>
-<a class="sourceLine" id="cb82-13" title="13">}</a></code></pre></div>
+<a class="sourceLine" id="cb82-13" title="13">}</a>
+<a class="sourceLine" id="cb82-14" title="14"></a>
+<a class="sourceLine" id="cb82-15" title="15"><span class="co"># switch() with itegers</span></a>
+<a class="sourceLine" id="cb82-16" title="16"><span class="cf">switch</span> (<span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb82-17" title="17">  <span class="kw">print</span>(<span class="st">&quot;first case&quot;</span>),</a>
+<a class="sourceLine" id="cb82-18" title="18">  <span class="kw">print</span>(<span class="st">&quot;second case&quot;</span>)</a>
+<a class="sourceLine" id="cb82-19" title="19">)</a>
+<a class="sourceLine" id="cb82-20" title="20"><span class="co">### NOT</span></a>
+<a class="sourceLine" id="cb82-21" title="21"><span class="cf">switch</span> (<span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb82-22" title="22">  <span class="dv">1</span> =<span class="st"> </span><span class="kw">print</span>(<span class="st">&quot;first case&quot;</span>),</a>
+<a class="sourceLine" id="cb82-23" title="23">  <span class="dv">2</span> =<span class="st"> </span><span class="kw">print</span>(<span class="st">&quot;second case&quot;</span>)</a>
+<a class="sourceLine" id="cb82-24" title="24">) <span class="co">## results in error</span></a></code></pre></div>
 </div>
 <div id="loops" class="section level3">
 <h3><span class="header-section-number">10.3.2</span> Loops</h3>

@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-04-12" />
+<meta name="date" content="2020-05-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -274,6 +274,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1" data-path="remote-servers.html"><a href="remote-servers.html#uzh-thinlinc"><i class="fa fa-check"></i><b>14.1</b> UZH Thinlinc</a></li>
 <li class="chapter" data-level="14.2" data-path="remote-servers.html"><a href="remote-servers.html#eth-euler"><i class="fa fa-check"></i><b>14.2</b> ETH Euler</a></li>
 <li class="chapter" data-level="14.3" data-path="remote-servers.html"><a href="remote-servers.html#renkulab"><i class="fa fa-check"></i><b>14.3</b> Renkulab</a></li>
+<li class="chapter" data-level="14.4" data-path="remote-servers.html"><a href="remote-servers.html#get-notification-when-finished"><i class="fa fa-check"></i><b>14.4</b> Get notification when finished</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="remote-servers.html"><a href="remote-servers.html#mail-notification"><i class="fa fa-check"></i><b>14.4.1</b> Mail notification</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>IV R Output</b></span></li>
 <li class="chapter" data-level="15" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>15</b> Base graphics</a><ul>
@@ -547,17 +550,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 17</span> ggplot</h1>
 <p><a href="https://ggplot2.tidyverse.org/reference/">Reference page</a></p>
 <p>Overall structure</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb143-2" title="2"><span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb145-2" title="2"><span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>))</a></code></pre></div>
 <p>Detailed structure</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb144-2" title="2"><span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>(</a>
-<a class="sourceLine" id="cb144-3" title="3">     <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>),</a>
-<a class="sourceLine" id="cb144-4" title="4">     <span class="dt">stat =</span> <span class="op">&lt;</span>STAT<span class="op">&gt;</span>, </a>
-<a class="sourceLine" id="cb144-5" title="5">     <span class="dt">position =</span> <span class="op">&lt;</span>POSITION<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb144-6" title="6"><span class="st">  </span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb144-7" title="7"><span class="st">  </span><span class="er">&lt;</span>COORDINATE_FUNCTION<span class="op">&gt;</span><span class="st"> </span><span class="op">+</span></a>
-<a class="sourceLine" id="cb144-8" title="8"><span class="st">  </span><span class="er">&lt;</span>FACET_FUNCTION<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb146-2" title="2"><span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>(</a>
+<a class="sourceLine" id="cb146-3" title="3">     <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>),</a>
+<a class="sourceLine" id="cb146-4" title="4">     <span class="dt">stat =</span> <span class="op">&lt;</span>STAT<span class="op">&gt;</span>, </a>
+<a class="sourceLine" id="cb146-5" title="5">     <span class="dt">position =</span> <span class="op">&lt;</span>POSITION<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb146-6" title="6"><span class="st">  </span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb146-7" title="7"><span class="st">  </span><span class="er">&lt;</span>COORDINATE_FUNCTION<span class="op">&gt;</span><span class="st"> </span><span class="op">+</span></a>
+<a class="sourceLine" id="cb146-8" title="8"><span class="st">  </span><span class="er">&lt;</span>FACET_FUNCTION<span class="op">&gt;</span></a></code></pre></div>
 <ul>
 <li><code>ggplot()</code> creates a coordinate system where you can add layers</li>
 <li><code>geom_point()</code> scatterplot layer</li>
@@ -580,10 +583,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Only visual properties which map a variable are in <code>aes()</code>. Visual properties which affect all points are outsied (example below: col is outside because it affects all points).
 </div>
 
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" title="1"><span class="kw">require</span>(ggplot2)</a>
-<a class="sourceLine" id="cb145-2" title="2"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span></a>
-<a class="sourceLine" id="cb145-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-139-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" title="1"><span class="kw">require</span>(ggplot2)</a>
+<a class="sourceLine" id="cb147-2" title="2"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span></a>
+<a class="sourceLine" id="cb147-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-141-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <ul>
 <li><code>facet_wrap()</code> split plot according to factor</li>
 <li><code>facet_grid()</code> split plot according to 2 factors</li>

@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-04-12" />
+<meta name="date" content="2020-05-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -274,6 +274,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1" data-path="remote-servers.html"><a href="remote-servers.html#uzh-thinlinc"><i class="fa fa-check"></i><b>14.1</b> UZH Thinlinc</a></li>
 <li class="chapter" data-level="14.2" data-path="remote-servers.html"><a href="remote-servers.html#eth-euler"><i class="fa fa-check"></i><b>14.2</b> ETH Euler</a></li>
 <li class="chapter" data-level="14.3" data-path="remote-servers.html"><a href="remote-servers.html#renkulab"><i class="fa fa-check"></i><b>14.3</b> Renkulab</a></li>
+<li class="chapter" data-level="14.4" data-path="remote-servers.html"><a href="remote-servers.html#get-notification-when-finished"><i class="fa fa-check"></i><b>14.4</b> Get notification when finished</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="remote-servers.html"><a href="remote-servers.html#mail-notification"><i class="fa fa-check"></i><b>14.4.1</b> Mail notification</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>IV R Output</b></span></li>
 <li class="chapter" data-level="15" data-path="Plots.html"><a href="Plots.html"><i class="fa fa-check"></i><b>15</b> Base graphics</a><ul>
@@ -827,7 +830,10 @@ Figure 8.1: …
 <a class="sourceLine" id="cb71-3" title="3"><span class="kw">lapply</span>(x, FUN, …)       <span class="co"># apply on list, return list</span></a>
 <a class="sourceLine" id="cb71-4" title="4"><span class="kw">sapply</span>(x, FUN)          <span class="co"># apply on list, return simplified list (array, matrix, vector)</span></a>
 <a class="sourceLine" id="cb71-5" title="5"><span class="kw">tapply</span>(x, factor, FUN)  <span class="co"># apply function separately for different factor levels</span></a>
-<a class="sourceLine" id="cb71-6" title="6"><span class="kw">by</span>(x, index, FUN, …)    <span class="co"># x can be whole data.frame</span></a></code></pre></div>
+<a class="sourceLine" id="cb71-6" title="6"><span class="kw">mapply</span>(FUN, ...)        <span class="co"># apply function to multiple vectors</span></a>
+<a class="sourceLine" id="cb71-7" title="7">                        <span class="co">#   e.g. apply function on each row of data.frame</span></a>
+<a class="sourceLine" id="cb71-8" title="8">                        <span class="co">#   mapply(testFun, df$x, df$z)</span></a>
+<a class="sourceLine" id="cb71-9" title="9"><span class="kw">by</span>(x, index, FUN, …)    <span class="co"># x can be whole data.frame</span></a></code></pre></div>
 </div>
 <div id="long-and-wide-format" class="section level3">
 <h3><span class="header-section-number">8.2.2</span> Long and wide format</h3>
