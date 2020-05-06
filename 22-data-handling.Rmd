@@ -155,6 +155,9 @@ apply(x, c(1,2), FUN)	# apply function on one or several dimension of array
 lapply(x, FUN, …)		# apply on list, return list
 sapply(x, FUN)		    # apply on list, return simplified list (array, matrix, vector)
 tapply(x, factor, FUN)	# apply function separately for different factor levels
+mapply(FUN, ...)        # apply function to multiple vectors
+                        #   e.g. apply function on each row of data.frame
+                        #   mapply(testFun, df$x, df$z)
 by(x, index, FUN, …)	# x can be whole data.frame
 ```
 
