@@ -43,3 +43,8 @@ do
    Rscript -e "set.seed($seed); source('reto_script.R');save(a, file='reto_script_$seed.RData')" &
 done
 ```
+
+
+# Use R interactively in console (Linux)
+
+Go to shell and type R, hit Enter. Opens up interactive console.

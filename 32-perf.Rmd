@@ -72,7 +72,7 @@ Useful packages:
 
 Example:
 
-```{r}
+```{r, eval=FALSE}
 library(doParallel)
 detectCores() # How many cores are available on my machine
 ```

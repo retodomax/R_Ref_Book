@@ -52,3 +52,36 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+```{r include=FALSE}
+# automatically install necessary libraries
+
+
+
+pkgTest <- function(x) {
+    if (!require(x,character.only = TRUE))
+    {
+      install.packages(x,dep=TRUE)
+        if(!require(x,character.only = TRUE)) stop("Package not found")
+    }
+}
+
+pkgTest("carData")
+pkgTest("devtools")
+pkgTest("faraway")
+pkgTest("lme4")
+pkgTest("MASS")
+pkgTest("car")
+pkgTest("multcomp")
+pkgTest("lmerTest")
+
+
+
+if( !require("FunRZ", character.only = TRUE)){
+  devtools::install_git("https://github.com/retodomax/FunRZ")
+}
+if( !require("DataRZ", character.only = TRUE)){
+  devtools::install_git("https://github.com/retodomax/DataRZ")
+}
+```
+
