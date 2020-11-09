@@ -1,4 +1,4 @@
-# Basics
+# Basic Statistics
 
 ## Distributions
 
@@ -76,3 +76,4 @@ $$
 t_m:\quad \frac{Z}{\sqrt{\frac{X_m^2}{m}}}
 $$
 Cauchy: Special case of $t$ distribution
+

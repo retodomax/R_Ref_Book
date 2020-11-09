@@ -18,6 +18,11 @@
 dir('mydirectory/', pattern = '//.csv$', full.names = TRUE)
 ```
 
+```{r, eval=FALSE}
+## Source from github
+source("https://raw.githubusercontent.com/retodomax/reponame/master/foldername/filename.R")
+```
+
 
 ### Path to your file
 

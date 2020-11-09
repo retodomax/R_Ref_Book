@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 30 Bookdown | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 30 Bookdown | R Reference book" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-05-14" />
+<meta name="date" content="2020-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <!––JavaScript code for Show/Hide buttons––>
 <!––see: https://web.stanford.edu/~naras/post/toggle-visibility-of-solutions-in-bookdown/––>
 <!––and see: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp––>
@@ -67,9 +68,9 @@ function myFunction(myid) {
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -78,14 +79,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -94,9 +97,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -194,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="env.html"><a href="env.html"><i class="fa fa-check"></i><b>4</b> Environments</a><ul>
 <li class="chapter" data-level="4.1" data-path="env.html"><a href="env.html#general-properties"><i class="fa fa-check"></i><b>4.1</b> General properties</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="env.html"><a href="env.html#definition"><i class="fa fa-check"></i><b>4.1.1</b> Definition</a></li>
-<li class="chapter" data-level="4.1.2" data-path="env.html"><a href="env.html#attributes-1"><i class="fa fa-check"></i><b>4.1.2</b> Attributes</a></li>
+<li class="chapter" data-level="4.1.2" data-path="vec.html"><a href="vec.html#attributes"><i class="fa fa-check"></i><b>4.1.2</b> Attributes</a></li>
 <li class="chapter" data-level="4.1.3" data-path="env.html"><a href="env.html#special-environments"><i class="fa fa-check"></i><b>4.1.3</b> Special environments</a></li>
 <li class="chapter" data-level="4.1.4" data-path="env.html"><a href="env.html#search-path-and-search-list"><i class="fa fa-check"></i><b>4.1.4</b> Search path and search list</a></li>
 <li class="chapter" data-level="4.1.5" data-path="env.html"><a href="env.html#objects-within-the-environment"><i class="fa fa-check"></i><b>4.1.5</b> Objects within the environment</a></li>
@@ -250,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>III R Programming</b></span></li>
 <li class="chapter" data-level="10" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>10</b> Basics</a><ul>
 <li class="chapter" data-level="10.1" data-path="basics.html"><a href="basics.html#objects-in-enviornment"><i class="fa fa-check"></i><b>10.1</b> Objects in Enviornment</a></li>
-<li class="chapter" data-level="10.2" data-path="basics.html"><a href="basics.html#functions-2"><i class="fa fa-check"></i><b>10.2</b> Functions</a><ul>
+<li class="chapter" data-level="10.2" data-path="data-importexport.html"><a href="data-importexport.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions</a><ul>
 <li class="chapter" data-level="10.2.1" data-path="basics.html"><a href="basics.html#function-debugging"><i class="fa fa-check"></i><b>10.2.1</b> Function debugging</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="basics.html"><a href="basics.html#control-structures"><i class="fa fa-check"></i><b>10.3</b> Control structures</a><ul>
@@ -290,7 +293,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.1.6" data-path="Plots.html"><a href="Plots.html#define-device-regions"><i class="fa fa-check"></i><b>16.1.6</b> Define device regions</a></li>
 <li class="chapter" data-level="16.1.7" data-path="Plots.html"><a href="Plots.html#user-coordinates-limits"><i class="fa fa-check"></i><b>16.1.7</b> User coordinates limits</a></li>
 <li class="chapter" data-level="16.1.8" data-path="Plots.html"><a href="Plots.html#general-appearence"><i class="fa fa-check"></i><b>16.1.8</b> General appearence</a></li>
-<li class="chapter" data-level="16.1.9" data-path="Plots.html"><a href="Plots.html#symbols-1"><i class="fa fa-check"></i><b>16.1.9</b> Symbols</a></li>
+<li class="chapter" data-level="16.1.9" data-path="objects.html"><a href="objects.html#symbols"><i class="fa fa-check"></i><b>16.1.9</b> Symbols</a></li>
 <li class="chapter" data-level="16.1.10" data-path="Plots.html"><a href="Plots.html#lines"><i class="fa fa-check"></i><b>16.1.10</b> Lines</a></li>
 <li class="chapter" data-level="16.1.11" data-path="Plots.html"><a href="Plots.html#text"><i class="fa fa-check"></i><b>16.1.11</b> Text</a></li>
 <li class="chapter" data-level="16.1.12" data-path="Plots.html"><a href="Plots.html#axis-labels"><i class="fa fa-check"></i><b>16.1.12</b> Axis labels</a></li>
@@ -311,6 +314,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.4.1" data-path="Plots.html"><a href="Plots.html#plot-function"><i class="fa fa-check"></i><b>16.4.1</b> Plot function</a></li>
 <li class="chapter" data-level="16.4.2" data-path="Plots.html"><a href="Plots.html#example-barplot"><i class="fa fa-check"></i><b>16.4.2</b> Example: Barplot</a></li>
 <li class="chapter" data-level="16.4.3" data-path="Plots.html"><a href="Plots.html#example-matplot"><i class="fa fa-check"></i><b>16.4.3</b> Example: Matplot</a></li>
+<li class="chapter" data-level="16.4.4" data-path="Plots.html"><a href="Plots.html#example-image-and-contour-plot"><i class="fa fa-check"></i><b>16.4.4</b> Example: image and contour plot</a></li>
+<li class="chapter" data-level="16.4.5" data-path="Plots.html"><a href="Plots.html#example-boxplot"><i class="fa fa-check"></i><b>16.4.5</b> Example: Boxplot</a></li>
 </ul></li>
 <li class="chapter" data-level="16.5" data-path="Plots.html"><a href="Plots.html#low-level-plots"><i class="fa fa-check"></i><b>16.5</b> Low level plots</a><ul>
 <li class="chapter" data-level="16.5.1" data-path="Plots.html"><a href="Plots.html#legends"><i class="fa fa-check"></i><b>16.5.1</b> Legends</a></li>
@@ -332,9 +337,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>V R Statistics</b></span></li>
 <li class="chapter" data-level="20" data-path="topics.html"><a href="topics.html"><i class="fa fa-check"></i><b>20</b> Topics</a></li>
-<li class="chapter" data-level="21" data-path="basics-1.html"><a href="basics-1.html"><i class="fa fa-check"></i><b>21</b> Basics</a><ul>
-<li class="chapter" data-level="21.1" data-path="basics-1.html"><a href="basics-1.html#distributions"><i class="fa fa-check"></i><b>21.1</b> Distributions</a><ul>
-<li class="chapter" data-level="21.1.1" data-path="basics-1.html"><a href="basics-1.html#relationships-between-distributions"><i class="fa fa-check"></i><b>21.1.1</b> Relationships between distributions</a></li>
+<li class="chapter" data-level="21" data-path="basic-statistics.html"><a href="basic-statistics.html"><i class="fa fa-check"></i><b>21</b> Basic Statistics</a><ul>
+<li class="chapter" data-level="21.1" data-path="basic-statistics.html"><a href="basic-statistics.html#distributions"><i class="fa fa-check"></i><b>21.1</b> Distributions</a><ul>
+<li class="chapter" data-level="21.1.1" data-path="basic-statistics.html"><a href="basic-statistics.html#relationships-between-distributions"><i class="fa fa-check"></i><b>21.1.1</b> Relationships between distributions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>22</b> Regression</a><ul>
@@ -372,11 +377,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="23" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>23</b> ANOVA</a><ul>
 <li class="chapter" data-level="23.1" data-path="anova.html"><a href="anova.html#idea"><i class="fa fa-check"></i><b>23.1</b> Idea</a></li>
-<li class="chapter" data-level="23.2" data-path="anova.html"><a href="anova.html#example-1"><i class="fa fa-check"></i><b>23.2</b> Example</a></li>
+<li class="chapter" data-level="23.2" data-path="Plots.html"><a href="Plots.html#example"><i class="fa fa-check"></i><b>23.2</b> Example</a></li>
 <li class="chapter" data-level="23.3" data-path="anova.html"><a href="anova.html#simulate-data"><i class="fa fa-check"></i><b>23.3</b> Simulate data</a><ul>
 <li class="chapter" data-level="23.3.1" data-path="anova.html"><a href="anova.html#randomization"><i class="fa fa-check"></i><b>23.3.1</b> Randomization</a></li>
 </ul></li>
-<li class="chapter" data-level="23.4" data-path="anova.html"><a href="anova.html#visualization-2"><i class="fa fa-check"></i><b>23.4</b> Visualization</a><ul>
+<li class="chapter" data-level="23.4" data-path="regression.html"><a href="regression.html#visualization"><i class="fa fa-check"></i><b>23.4</b> Visualization</a><ul>
 <li class="chapter" data-level="23.4.1" data-path="anova.html"><a href="anova.html#stripchart"><i class="fa fa-check"></i><b>23.4.1</b> Stripchart</a></li>
 <li class="chapter" data-level="23.4.2" data-path="anova.html"><a href="anova.html#boxplot"><i class="fa fa-check"></i><b>23.4.2</b> Boxplot</a></li>
 <li class="chapter" data-level="23.4.3" data-path="anova.html"><a href="anova.html#interaction-plot"><i class="fa fa-check"></i><b>23.4.3</b> Interaction plot</a></li>
@@ -384,16 +389,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="23.5" data-path="anova.html"><a href="anova.html#fit-model"><i class="fa fa-check"></i><b>23.5</b> Fit model</a><ul>
 <li class="chapter" data-level="23.5.1" data-path="anova.html"><a href="anova.html#identifiability"><i class="fa fa-check"></i><b>23.5.1</b> Identifiability</a></li>
-<li class="chapter" data-level="23.5.2" data-path="anova.html"><a href="anova.html#fitting-2"><i class="fa fa-check"></i><b>23.5.2</b> Fitting</a></li>
+<li class="chapter" data-level="23.5.2" data-path="regression.html"><a href="regression.html#fitting"><i class="fa fa-check"></i><b>23.5.2</b> Fitting</a></li>
 </ul></li>
 <li class="chapter" data-level="23.6" data-path="anova.html"><a href="anova.html#anova-table"><i class="fa fa-check"></i><b>23.6</b> ANOVA table</a><ul>
 <li class="chapter" data-level="23.6.1" data-path="anova.html"><a href="anova.html#types-of-sum-of-sqares"><i class="fa fa-check"></i><b>23.6.1</b> Types of Sum of Sqares</a></li>
 </ul></li>
-<li class="chapter" data-level="23.7" data-path="anova.html"><a href="anova.html#model-comparison-2"><i class="fa fa-check"></i><b>23.7</b> Model comparison</a></li>
+<li class="chapter" data-level="23.7" data-path="regression.html"><a href="regression.html#model-comparison"><i class="fa fa-check"></i><b>23.7</b> Model comparison</a></li>
 <li class="chapter" data-level="23.8" data-path="anova.html"><a href="anova.html#coefficients"><i class="fa fa-check"></i><b>23.8</b> Coefficients</a></li>
 <li class="chapter" data-level="23.9" data-path="anova.html"><a href="anova.html#tests-and-ci-for-coeficients"><i class="fa fa-check"></i><b>23.9</b> Tests and CI for coeficients</a></li>
 <li class="chapter" data-level="23.10" data-path="anova.html"><a href="anova.html#predict"><i class="fa fa-check"></i><b>23.10</b> Predict</a></li>
-<li class="chapter" data-level="23.11" data-path="anova.html"><a href="anova.html#diagnostic-plots-1"><i class="fa fa-check"></i><b>23.11</b> Diagnostic plots</a><ul>
+<li class="chapter" data-level="23.11" data-path="regression.html"><a href="regression.html#diagnostic-plots"><i class="fa fa-check"></i><b>23.11</b> Diagnostic plots</a><ul>
 <li class="chapter" data-level="23.11.1" data-path="anova.html"><a href="anova.html#simulations"><i class="fa fa-check"></i><b>23.11.1</b> Simulations</a></li>
 <li class="chapter" data-level="23.11.2" data-path="anova.html"><a href="anova.html#qq-plot-in-mixed-models"><i class="fa fa-check"></i><b>23.11.2</b> QQ plot in mixed models</a></li>
 </ul></li>
@@ -418,14 +423,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="24" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>24</b> Multivariate Statistics</a><ul>
 <li class="chapter" data-level="24.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>24.1</b> Data sets</a></li>
 <li class="chapter" data-level="24.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>24.2</b> Some functions</a><ul>
-<li class="chapter" data-level="24.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization-3"><i class="fa fa-check"></i><b>24.2.1</b> Visualization</a></li>
+<li class="chapter" data-level="24.2.1" data-path="regression.html"><a href="regression.html#visualization"><i class="fa fa-check"></i><b>24.2.1</b> Visualization</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="25" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>25</b> Time series</a><ul>
-<li class="chapter" data-level="25.1" data-path="TimeSeries.html"><a href="TimeSeries.html#data-sets-1"><i class="fa fa-check"></i><b>25.1</b> Data sets</a></li>
+<li class="chapter" data-level="25.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>25.1</b> Data sets</a></li>
 <li class="chapter" data-level="25.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-and-time"><i class="fa fa-check"></i><b>25.2</b> Date and Time</a><ul>
 <li class="chapter" data-level="25.2.1" data-path="TimeSeries.html"><a href="TimeSeries.html#date"><i class="fa fa-check"></i><b>25.2.1</b> Date</a></li>
-<li class="chapter" data-level="25.2.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-time-1"><i class="fa fa-check"></i><b>25.2.2</b> Date-Time</a></li>
+<li class="chapter" data-level="25.2.2" data-path="data-handling.html"><a href="data-handling.html#date-time"><i class="fa fa-check"></i><b>25.2.2</b> Date-Time</a></li>
 </ul></li>
 <li class="chapter" data-level="25.3" data-path="TimeSeries.html"><a href="TimeSeries.html#time-series-classes"><i class="fa fa-check"></i><b>25.3</b> Time series classes</a><ul>
 <li class="chapter" data-level="25.3.1" data-path="TimeSeries.html"><a href="TimeSeries.html#ts"><i class="fa fa-check"></i><b>25.3.1</b> ts</a></li>
@@ -454,9 +459,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="29.1.2" data-path="r-markdown.html"><a href="r-markdown.html#knitr"><i class="fa fa-check"></i><b>29.1.2</b> Knitr</a></li>
 <li class="chapter" data-level="29.1.3" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown-1"><i class="fa fa-check"></i><b>29.1.3</b> R Markdown</a></li>
 </ul></li>
-<li class="chapter" data-level="29.2" data-path="r-markdown.html"><a href="r-markdown.html#components-1"><i class="fa fa-check"></i><b>29.2</b> Components</a><ul>
+<li class="chapter" data-level="29.2" data-path="basics.html"><a href="basics.html#components"><i class="fa fa-check"></i><b>29.2</b> Components</a><ul>
 <li class="chapter" data-level="29.2.1" data-path="r-markdown.html"><a href="r-markdown.html#yaml-frontmatter"><i class="fa fa-check"></i><b>29.2.1</b> YAML frontmatter</a></li>
-<li class="chapter" data-level="29.2.2" data-path="r-markdown.html"><a href="r-markdown.html#text-1"><i class="fa fa-check"></i><b>29.2.2</b> Text</a></li>
+<li class="chapter" data-level="29.2.2" data-path="Plots.html"><a href="Plots.html#text"><i class="fa fa-check"></i><b>29.2.2</b> Text</a></li>
 <li class="chapter" data-level="29.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>29.2.3</b> Code</a></li>
 </ul></li>
 <li class="chapter" data-level="29.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>29.3</b> Figures</a></li>
@@ -496,36 +501,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="32.7" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>32.7</b> Multiple users</a><ul>
 <li class="chapter" data-level="32.7.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>32.7.1</b> get foreign respository (fork)</a></li>
 </ul></li>
-<li class="chapter" data-level="32.8" data-path="git-version-control.html"><a href="git-version-control.html#version-control-in-rstudio-1"><i class="fa fa-check"></i><b>32.8</b> Version Control in RStudio</a></li>
+<li class="chapter" data-level="32.8" data-path="r-studio.html"><a href="r-studio.html#version-control-in-rstudio"><i class="fa fa-check"></i><b>32.8</b> Version Control in RStudio</a></li>
 </ul></li>
 <li class="chapter" data-level="33" data-path="git2.html"><a href="git2.html"><i class="fa fa-check"></i><b>33</b> git2</a><ul>
-<li class="chapter" data-level="33.1" data-path="git2.html"><a href="git2.html#common-tasks-1"><i class="fa fa-check"></i><b>33.1</b> Common tasks</a></li>
+<li class="chapter" data-level="33.1" data-path="git-version-control.html"><a href="git-version-control.html#common-tasks"><i class="fa fa-check"></i><b>33.1</b> Common tasks</a></li>
 </ul></li>
-<li class="chapter" data-level="34" data-path="packages-1.html"><a href="packages-1.html"><i class="fa fa-check"></i><b>34</b> Packages</a><ul>
-<li class="chapter" data-level="34.1" data-path="packages-1.html"><a href="packages-1.html#package-environment-1"><i class="fa fa-check"></i><b>34.1</b> Package environment</a></li>
-<li class="chapter" data-level="34.2" data-path="packages-1.html"><a href="packages-1.html#useful-packages"><i class="fa fa-check"></i><b>34.2</b> Useful packages</a></li>
+<li class="chapter" data-level="34" data-path="env.html"><a href="env.html#packages"><i class="fa fa-check"></i><b>34</b> Packages</a><ul>
+<li class="chapter" data-level="34.1" data-path="env.html"><a href="env.html#package-environment"><i class="fa fa-check"></i><b>34.1</b> Package environment</a></li>
+<li class="chapter" data-level="34.2" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>34.2</b> Useful packages</a></li>
+</ul></li>
+<li class="chapter" data-level="35" data-path="latex.html"><a href="latex.html"><i class="fa fa-check"></i><b>35</b> Latex</a><ul>
+<li class="chapter" data-level="35.1" data-path="objects.html"><a href="objects.html#symbols"><i class="fa fa-check"></i><b>35.1</b> Symbols</a></li>
+<li class="chapter" data-level="35.2" data-path="latex.html"><a href="latex.html#improtant"><i class="fa fa-check"></i><b>35.2</b> Improtant</a></li>
+<li class="chapter" data-level="35.3" data-path="latex.html"><a href="latex.html#reto-math"><i class="fa fa-check"></i><b>35.3</b> Reto Math</a></li>
+<li class="chapter" data-level="35.4" data-path="latex.html"><a href="latex.html#sfs"><i class="fa fa-check"></i><b>35.4</b> SfS</a></li>
+<li class="chapter" data-level="35.5" data-path="latex.html"><a href="latex.html#constructs"><i class="fa fa-check"></i><b>35.5</b> Constructs</a></li>
+<li class="chapter" data-level="35.6" data-path="latex.html"><a href="latex.html#text-format"><i class="fa fa-check"></i><b>35.6</b> Text format</a></li>
 </ul></li>
 <li class="part"><span><b>VII Appendix</b></span></li>
-<li class="chapter" data-level="35" data-path="cheat-sheets.html"><a href="cheat-sheets.html"><i class="fa fa-check"></i><b>35</b> Cheat sheets</a><ul>
-<li class="chapter" data-level="35.1" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-import"><i class="fa fa-check"></i><b>35.1</b> Data import</a></li>
-<li class="chapter" data-level="35.2" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-transformation"><i class="fa fa-check"></i><b>35.2</b> Data transformation</a></li>
-<li class="chapter" data-level="35.3" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-visualization"><i class="fa fa-check"></i><b>35.3</b> Data visualization</a></li>
-<li class="chapter" data-level="35.4" data-path="cheat-sheets.html"><a href="cheat-sheets.html#factors-1"><i class="fa fa-check"></i><b>35.4</b> Factors</a></li>
-<li class="chapter" data-level="35.5" data-path="cheat-sheets.html"><a href="cheat-sheets.html#lubridate"><i class="fa fa-check"></i><b>35.5</b> Lubridate</a></li>
-<li class="chapter" data-level="35.6" data-path="cheat-sheets.html"><a href="cheat-sheets.html#strings-1"><i class="fa fa-check"></i><b>35.6</b> Strings</a></li>
-<li class="chapter" data-level="35.7" data-path="cheat-sheets.html"><a href="cheat-sheets.html#regex"><i class="fa fa-check"></i><b>35.7</b> Regex</a></li>
-<li class="chapter" data-level="35.8" data-path="cheat-sheets.html"><a href="cheat-sheets.html#purrr"><i class="fa fa-check"></i><b>35.8</b> Purrr</a></li>
-<li class="chapter" data-level="35.9" data-path="cheat-sheets.html"><a href="cheat-sheets.html#tidyeval"><i class="fa fa-check"></i><b>35.9</b> Tidyeval</a></li>
-<li class="chapter" data-level="35.10" data-path="cheat-sheets.html"><a href="cheat-sheets.html#r-studio-1"><i class="fa fa-check"></i><b>35.10</b> R Studio</a></li>
-<li class="chapter" data-level="35.11" data-path="cheat-sheets.html"><a href="cheat-sheets.html#r-markdown-2"><i class="fa fa-check"></i><b>35.11</b> R markdown</a></li>
-<li class="chapter" data-level="35.12" data-path="cheat-sheets.html"><a href="cheat-sheets.html#shiny"><i class="fa fa-check"></i><b>35.12</b> Shiny</a></li>
-<li class="chapter" data-level="35.13" data-path="cheat-sheets.html"><a href="cheat-sheets.html#package-development"><i class="fa fa-check"></i><b>35.13</b> Package development</a></li>
-<li class="chapter" data-level="35.14" data-path="cheat-sheets.html"><a href="cheat-sheets.html#reticulate"><i class="fa fa-check"></i><b>35.14</b> Reticulate</a></li>
-<li class="chapter" data-level="35.15" data-path="cheat-sheets.html"><a href="cheat-sheets.html#keras"><i class="fa fa-check"></i><b>35.15</b> Keras</a></li>
-<li class="chapter" data-level="35.16" data-path="cheat-sheets.html"><a href="cheat-sheets.html#sparklyr"><i class="fa fa-check"></i><b>35.16</b> Sparklyr</a></li>
+<li class="chapter" data-level="36" data-path="cheat-sheets.html"><a href="cheat-sheets.html"><i class="fa fa-check"></i><b>36</b> Cheat sheets</a><ul>
+<li class="chapter" data-level="36.1" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-import"><i class="fa fa-check"></i><b>36.1</b> Data import</a></li>
+<li class="chapter" data-level="36.2" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-transformation"><i class="fa fa-check"></i><b>36.2</b> Data transformation</a></li>
+<li class="chapter" data-level="36.3" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-visualization"><i class="fa fa-check"></i><b>36.3</b> Data visualization</a></li>
+<li class="chapter" data-level="36.4" data-path="data-handling.html"><a href="data-handling.html#factors"><i class="fa fa-check"></i><b>36.4</b> Factors</a></li>
+<li class="chapter" data-level="36.5" data-path="cheat-sheets.html"><a href="cheat-sheets.html#lubridate"><i class="fa fa-check"></i><b>36.5</b> Lubridate</a></li>
+<li class="chapter" data-level="36.6" data-path="data-handling.html"><a href="data-handling.html#strings"><i class="fa fa-check"></i><b>36.6</b> Strings</a></li>
+<li class="chapter" data-level="36.7" data-path="cheat-sheets.html"><a href="cheat-sheets.html#regex"><i class="fa fa-check"></i><b>36.7</b> Regex</a></li>
+<li class="chapter" data-level="36.8" data-path="cheat-sheets.html"><a href="cheat-sheets.html#purrr"><i class="fa fa-check"></i><b>36.8</b> Purrr</a></li>
+<li class="chapter" data-level="36.9" data-path="cheat-sheets.html"><a href="cheat-sheets.html#tidyeval"><i class="fa fa-check"></i><b>36.9</b> Tidyeval</a></li>
+<li class="chapter" data-level="36.10" data-path="r-studio.html"><a href="r-studio.html#r-studio"><i class="fa fa-check"></i><b>36.10</b> R Studio</a></li>
+<li class="chapter" data-level="36.11" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown"><i class="fa fa-check"></i><b>36.11</b> R markdown</a></li>
+<li class="chapter" data-level="36.12" data-path="cheat-sheets.html"><a href="cheat-sheets.html#shiny"><i class="fa fa-check"></i><b>36.12</b> Shiny</a></li>
+<li class="chapter" data-level="36.13" data-path="cheat-sheets.html"><a href="cheat-sheets.html#package-development"><i class="fa fa-check"></i><b>36.13</b> Package development</a></li>
+<li class="chapter" data-level="36.14" data-path="cheat-sheets.html"><a href="cheat-sheets.html#reticulate"><i class="fa fa-check"></i><b>36.14</b> Reticulate</a></li>
+<li class="chapter" data-level="36.15" data-path="cheat-sheets.html"><a href="cheat-sheets.html#keras"><i class="fa fa-check"></i><b>36.15</b> Keras</a></li>
+<li class="chapter" data-level="36.16" data-path="cheat-sheets.html"><a href="cheat-sheets.html#sparklyr"><i class="fa fa-check"></i><b>36.16</b> Sparklyr</a></li>
 </ul></li>
-<li class="chapter" data-level="36" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>36</b> Test</a></li>
-<li class="chapter" data-level="37" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>37</b> Stuff still to include</a></li>
+<li class="chapter" data-level="37" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>37</b> Test</a></li>
+<li class="chapter" data-level="38" data-path="stuff-still-to-include.html"><a href="stuff-still-to-include.html"><i class="fa fa-check"></i><b>38</b> Stuff still to include</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -566,54 +579,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Example with all possible default options</p>
 <div id="bookdown.yml" class="section level3">
 <h3><span class="header-section-number">30.1.1</span> <code>_bookdown.yml</code></h3>
-<div class="sourceCode" id="cb316"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb316-1" data-line-number="1"><span class="fu">book_filename:</span><span class="at"> </span><span class="st">&quot;myBookname&quot;</span></a>
-<a class="sourceLine" id="cb316-2" data-line-number="2"><span class="fu">delete_merged_file:</span><span class="at"> true</span></a>
-<a class="sourceLine" id="cb316-3" data-line-number="3"><span class="fu">language:</span></a>
-<a class="sourceLine" id="cb316-4" data-line-number="4">  <span class="fu">ui:</span></a>
-<a class="sourceLine" id="cb316-5" data-line-number="5">    <span class="fu">chapter_name:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></a>
-<a class="sourceLine" id="cb316-6" data-line-number="6"><span class="fu">chapter_name:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></a>
-<a class="sourceLine" id="cb316-7" data-line-number="7"><span class="fu">repo:</span><span class="at"> https://github.com/seankross/bookdown-start</span></a>
-<a class="sourceLine" id="cb316-8" data-line-number="8"><span class="fu">output_dir:</span><span class="at"> docs</span></a>
-<a class="sourceLine" id="cb316-9" data-line-number="9"><span class="fu">rmd_files:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span> <span class="st">&quot;01-Introduction.Rmd&quot;</span><span class="kw">,</span> <span class="st">&quot;02-Diving-In.Rmd&quot;</span><span class="kw">]</span></a>
-<a class="sourceLine" id="cb316-10" data-line-number="10"><span class="fu">clean:</span><span class="at"> </span><span class="kw">[</span>packages.bib<span class="kw">,</span> bookdown.bbl<span class="kw">]</span></a>
-<a class="sourceLine" id="cb316-11" data-line-number="11"><span class="fu">new_session:</span><span class="at"> yes</span></a></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb324-1"><a href="bookdown.html#cb324-1"></a><span class="fu">book_filename</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;myBookname&quot;</span></span>
+<span id="cb324-2"><a href="bookdown.html#cb324-2"></a><span class="fu">delete_merged_file</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb324-3"><a href="bookdown.html#cb324-3"></a><span class="fu">language</span><span class="kw">:</span></span>
+<span id="cb324-4"><a href="bookdown.html#cb324-4"></a><span class="at">  </span><span class="fu">ui</span><span class="kw">:</span></span>
+<span id="cb324-5"><a href="bookdown.html#cb324-5"></a><span class="at">    </span><span class="fu">chapter_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></span>
+<span id="cb324-6"><a href="bookdown.html#cb324-6"></a><span class="fu">chapter_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></span>
+<span id="cb324-7"><a href="bookdown.html#cb324-7"></a><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/seankross/bookdown-start</span></span>
+<span id="cb324-8"><a href="bookdown.html#cb324-8"></a><span class="fu">output_dir</span><span class="kw">:</span><span class="at"> docs</span></span>
+<span id="cb324-9"><a href="bookdown.html#cb324-9"></a><span class="fu">rmd_files</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;01-Introduction.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;02-Diving-In.Rmd&quot;</span><span class="kw">]</span></span>
+<span id="cb324-10"><a href="bookdown.html#cb324-10"></a><span class="fu">clean</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">packages.bib</span><span class="kw">,</span><span class="at"> bookdown.bbl</span><span class="kw">]</span></span>
+<span id="cb324-11"><a href="bookdown.html#cb324-11"></a><span class="fu">new_session</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
 <p>Here: add explanation to each option</p>
 </div>
 <div id="output.yml" class="section level3">
 <h3><span class="header-section-number">30.1.2</span> <code>_output.yml</code></h3>
-<div class="sourceCode" id="cb317"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb317-1" data-line-number="1"><span class="fu">bookdown:</span><span class="at">:gitbook:</span></a>
-<a class="sourceLine" id="cb317-2" data-line-number="2">  <span class="fu">css:</span><span class="at"> style.css</span></a>
-<a class="sourceLine" id="cb317-3" data-line-number="3">  <span class="fu">split_by:</span><span class="at"> chapter</span></a>
-<a class="sourceLine" id="cb317-4" data-line-number="4">  <span class="fu">config:</span></a>
-<a class="sourceLine" id="cb317-5" data-line-number="5">    <span class="fu">toc:</span></a>
-<a class="sourceLine" id="cb317-6" data-line-number="6">      <span class="fu">collapse:</span><span class="at"> subsection</span></a>
-<a class="sourceLine" id="cb317-7" data-line-number="7">      <span class="fu">before:</span><span class="at"> |</span></a>
-<a class="sourceLine" id="cb317-8" data-line-number="8">        &lt;li&gt;&lt;a href=<span class="st">&quot;./&quot;</span>&gt;A Minimal Bookdown Book&lt;/a&gt;&lt;/li&gt;</a>
-<a class="sourceLine" id="cb317-9" data-line-number="9">      <span class="fu">after:</span><span class="at"> |</span></a>
-<a class="sourceLine" id="cb317-10" data-line-number="10">        <span class="fu">&lt;li&gt;&lt;a href=&quot;https:</span><span class="at">//github.com/rstudio/bookdown&quot; target=&quot;blank&quot;&gt;Published with bookdown&lt;/a&gt;&lt;/li&gt;</span></a>
-<a class="sourceLine" id="cb317-11" data-line-number="11"><span class="fu">bookdown:</span><span class="at">:pdf_book:</span></a>
-<a class="sourceLine" id="cb317-12" data-line-number="12">  <span class="fu">includes:</span></a>
-<a class="sourceLine" id="cb317-13" data-line-number="13">    <span class="fu">in_header:</span><span class="at"> preamble.tex</span></a>
-<a class="sourceLine" id="cb317-14" data-line-number="14">  <span class="fu">latex_engine:</span><span class="at"> xelatex</span></a>
-<a class="sourceLine" id="cb317-15" data-line-number="15">  <span class="fu">citation_package:</span><span class="at"> natbib</span></a>
-<a class="sourceLine" id="cb317-16" data-line-number="16"><span class="fu">bookdown:</span><span class="at">:epub_book:</span></a>
-<a class="sourceLine" id="cb317-17" data-line-number="17">  <span class="fu">stylesheet:</span><span class="at"> style.css</span></a></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb325-1"><a href="bookdown.html#cb325-1"></a><span class="at">bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
+<span id="cb325-2"><a href="bookdown.html#cb325-2"></a><span class="at">  </span><span class="fu">css</span><span class="kw">:</span><span class="at"> style.css</span></span>
+<span id="cb325-3"><a href="bookdown.html#cb325-3"></a><span class="at">  </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> chapter</span></span>
+<span id="cb325-4"><a href="bookdown.html#cb325-4"></a><span class="at">  </span><span class="fu">config</span><span class="kw">:</span></span>
+<span id="cb325-5"><a href="bookdown.html#cb325-5"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span></span>
+<span id="cb325-6"><a href="bookdown.html#cb325-6"></a><span class="at">      </span><span class="fu">collapse</span><span class="kw">:</span><span class="at"> subsection</span></span>
+<span id="cb325-7"><a href="bookdown.html#cb325-7"></a><span class="fu">      before</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb325-8"><a href="bookdown.html#cb325-8"></a>        &lt;li&gt;&lt;a href=&quot;./&quot;&gt;A Minimal Bookdown Book&lt;/a&gt;&lt;/li&gt;</span>
+<span id="cb325-9"><a href="bookdown.html#cb325-9"></a><span class="fu">      after</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb325-10"><a href="bookdown.html#cb325-10"></a>        &lt;li&gt;&lt;a href=&quot;https://github.com/rstudio/bookdown&quot; target=&quot;blank&quot;&gt;Published with bookdown&lt;/a&gt;&lt;/li&gt;</span>
+<span id="cb325-11"><a href="bookdown.html#cb325-11"></a><span class="at">bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>
+<span id="cb325-12"><a href="bookdown.html#cb325-12"></a><span class="at">  </span><span class="fu">includes</span><span class="kw">:</span></span>
+<span id="cb325-13"><a href="bookdown.html#cb325-13"></a><span class="at">    </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> preamble.tex</span></span>
+<span id="cb325-14"><a href="bookdown.html#cb325-14"></a><span class="at">  </span><span class="fu">latex_engine</span><span class="kw">:</span><span class="at"> xelatex</span></span>
+<span id="cb325-15"><a href="bookdown.html#cb325-15"></a><span class="at">  </span><span class="fu">citation_package</span><span class="kw">:</span><span class="at"> natbib</span></span>
+<span id="cb325-16"><a href="bookdown.html#cb325-16"></a><span class="at">bookdown:</span><span class="fu">:epub_book</span><span class="kw">:</span></span>
+<span id="cb325-17"><a href="bookdown.html#cb325-17"></a><span class="at">  </span><span class="fu">stylesheet</span><span class="kw">:</span><span class="at"> style.css</span></span></code></pre></div>
 </div>
 <div id="yaml-header" class="section level3">
 <h3><span class="header-section-number">30.1.3</span> yaml header</h3>
-<div class="sourceCode" id="cb318"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb318-1" data-line-number="1"><span class="ot">---</span></a>
-<a class="sourceLine" id="cb318-2" data-line-number="2"><span class="fu">title:</span><span class="at"> </span><span class="st">&quot;A Minimal Bookdown Book&quot;</span></a>
-<a class="sourceLine" id="cb318-3" data-line-number="3"><span class="fu">author:</span><span class="at"> </span><span class="st">&quot;Sean Kross&quot;</span></a>
-<a class="sourceLine" id="cb318-4" data-line-number="4"><span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2016-12-02&quot;</span></a>
-<a class="sourceLine" id="cb318-5" data-line-number="5"><span class="fu">site:</span><span class="at"> bookdown::bookdown_site</span></a>
-<a class="sourceLine" id="cb318-6" data-line-number="6"><span class="fu">documentclass:</span><span class="at"> book</span></a>
-<a class="sourceLine" id="cb318-7" data-line-number="7"><span class="fu">bibliography:</span><span class="at"> </span><span class="kw">[</span>book.bib<span class="kw">]</span></a>
-<a class="sourceLine" id="cb318-8" data-line-number="8"><span class="fu">biblio-style:</span><span class="at"> apalike</span></a>
-<a class="sourceLine" id="cb318-9" data-line-number="9"><span class="fu">link-citations:</span><span class="at"> yes</span></a>
-<a class="sourceLine" id="cb318-10" data-line-number="10"><span class="fu">github-repo:</span><span class="at"> seankross/bookdown-start</span></a>
-<a class="sourceLine" id="cb318-11" data-line-number="11"><span class="fu">url:</span><span class="at"> </span><span class="st">&#39;http\://seankross.com/bookdown-start/&#39;</span></a>
-<a class="sourceLine" id="cb318-12" data-line-number="12"><span class="fu">description:</span><span class="at"> </span><span class="st">&quot;Everything you need (and nothing more) to start a bookdown book.&quot;</span></a>
-<a class="sourceLine" id="cb318-13" data-line-number="13"><span class="ot">---</span></a></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb326-1"><a href="bookdown.html#cb326-1"></a><span class="pp">---</span></span>
+<span id="cb326-2"><a href="bookdown.html#cb326-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;A Minimal Bookdown Book&quot;</span></span>
+<span id="cb326-3"><a href="bookdown.html#cb326-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Sean Kross&quot;</span></span>
+<span id="cb326-4"><a href="bookdown.html#cb326-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2016-12-02&quot;</span></span>
+<span id="cb326-5"><a href="bookdown.html#cb326-5"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> bookdown::bookdown_site</span></span>
+<span id="cb326-6"><a href="bookdown.html#cb326-6"></a><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> book</span></span>
+<span id="cb326-7"><a href="bookdown.html#cb326-7"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">book.bib</span><span class="kw">]</span></span>
+<span id="cb326-8"><a href="bookdown.html#cb326-8"></a><span class="fu">biblio-style</span><span class="kw">:</span><span class="at"> apalike</span></span>
+<span id="cb326-9"><a href="bookdown.html#cb326-9"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb326-10"><a href="bookdown.html#cb326-10"></a><span class="fu">github-repo</span><span class="kw">:</span><span class="at"> seankross/bookdown-start</span></span>
+<span id="cb326-11"><a href="bookdown.html#cb326-11"></a><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;http\://seankross.com/bookdown-start/&#39;</span></span>
+<span id="cb326-12"><a href="bookdown.html#cb326-12"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Everything you need (and nothing more) to start a bookdown book.&quot;</span></span>
+<span id="cb326-13"><a href="bookdown.html#cb326-13"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 </div>
 <div id="NewBookdownProject" class="section level2">
@@ -631,80 +644,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Go to <code>_output.yml</code> file
 <ol style="list-style-type: lower-alpha">
 <li>Delete all pdf/ebook output</li>
-<li>Delete <code>download: [&quot;pdf&quot;, &quot;epub&quot;]</code></li>
+<li>Delete <code>download: ["pdf", "epub"]</code></li>
 <li>Add these lines</li>
 </ol>
-<div class="sourceCode" id="cb319"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb319-1" data-line-number="1"><span class="fu">config:</span></a>
-<a class="sourceLine" id="cb319-2" data-line-number="2">  <span class="fu">fontsettings:</span></a>
-<a class="sourceLine" id="cb319-3" data-line-number="3"> <span class="fu">theme:</span><span class="at"> white</span></a>
-<a class="sourceLine" id="cb319-4" data-line-number="4"> <span class="fu">family:</span><span class="at"> sans</span></a>
-<a class="sourceLine" id="cb319-5" data-line-number="5"> <span class="fu">size:</span><span class="at"> 1</span></a>
-<a class="sourceLine" id="cb319-6" data-line-number="6">  <span class="fu">edit:</span><span class="at"> https://github.com/retodomax/R_Ref_Book/edit/master/%s</span></a>
-<a class="sourceLine" id="cb319-7" data-line-number="7"><span class="fu">includes:</span></a>
-<a class="sourceLine" id="cb319-8" data-line-number="8">  <span class="fu">in_header:</span><span class="at"> header.html</span></a></code></pre></div></li>
+<div class="sourceCode" id="cb327"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb327-1"><a href="bookdown.html#cb327-1"></a><span class="fu">config</span><span class="kw">:</span></span>
+<span id="cb327-2"><a href="bookdown.html#cb327-2"></a><span class="at">  </span><span class="fu">fontsettings</span><span class="kw">:</span></span>
+<span id="cb327-3"><a href="bookdown.html#cb327-3"></a><span class="at"> </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> white</span></span>
+<span id="cb327-4"><a href="bookdown.html#cb327-4"></a><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> sans</span></span>
+<span id="cb327-5"><a href="bookdown.html#cb327-5"></a><span class="at"> </span><span class="fu">size</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb327-6"><a href="bookdown.html#cb327-6"></a><span class="at">  </span><span class="fu">edit</span><span class="kw">:</span><span class="at"> https://github.com/retodomax/R_Ref_Book/edit/master/%s</span></span>
+<span id="cb327-7"><a href="bookdown.html#cb327-7"></a><span class="fu">includes</span><span class="kw">:</span></span>
+<span id="cb327-8"><a href="bookdown.html#cb327-8"></a><span class="at">  </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> header.html</span></span></code></pre></div></li>
 <li>Go to <code>index.Rmd</code>, add these lines</li>
 </ol>
-<div class="sourceCode" id="cb320"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb320-1" data-line-number="1"><span class="fu">github-repo:</span><span class="at"> </span><span class="st">&quot;retodomax/R_Ref_Book&quot;</span></a>
-<a class="sourceLine" id="cb320-2" data-line-number="2"><span class="fu">cover-image:</span><span class="at"> </span><span class="st">&quot;figures/01_cover/Cover.svg&quot;</span></a>
-<a class="sourceLine" id="cb320-3" data-line-number="3"><span class="fu">favicon:</span><span class="at"> </span><span class="st">&quot;figures/00_icon/icon.ico&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb328-1"><a href="bookdown.html#cb328-1"></a><span class="fu">github-repo</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;retodomax/R_Ref_Book&quot;</span></span>
+<span id="cb328-2"><a href="bookdown.html#cb328-2"></a><span class="fu">cover-image</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;figures/01_cover/Cover.svg&quot;</span></span>
+<span id="cb328-3"><a href="bookdown.html#cb328-3"></a><span class="fu">favicon</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;figures/00_icon/icon.ico&quot;</span></span></code></pre></div>
 <ol start="7" style="list-style-type: decimal">
 <li>Add <code>header.html</code> file with following content: (hide button)</li>
 </ol>
-<div class="sourceCode" id="cb321"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb321-1" data-line-number="1"><span class="kw">&lt;script&gt;</span></a>
-<a class="sourceLine" id="cb321-2" data-line-number="2"><span class="kw">function</span> <span class="at">myFunction</span>(myid) <span class="op">{</span></a>
-<a class="sourceLine" id="cb321-3" data-line-number="3">  <span class="kw">var</span> x <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(myid)<span class="op">;</span></a>
-<a class="sourceLine" id="cb321-4" data-line-number="4">  <span class="cf">if</span> (<span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">===</span> <span class="st">&quot;none&quot;</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb321-5" data-line-number="5">    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;block&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb321-6" data-line-number="6">  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb321-7" data-line-number="7">    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;none&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb321-8" data-line-number="8">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb321-9" data-line-number="9"><span class="op">}</span></a>
-<a class="sourceLine" id="cb321-10" data-line-number="10"><span class="kw">&lt;/script&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb329-1"><a href="bookdown.html#cb329-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb329-2"><a href="bookdown.html#cb329-2"></a><span class="kw">function</span> <span class="at">myFunction</span>(myid) <span class="op">{</span></span>
+<span id="cb329-3"><a href="bookdown.html#cb329-3"></a>  <span class="kw">var</span> x <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(myid)<span class="op">;</span></span>
+<span id="cb329-4"><a href="bookdown.html#cb329-4"></a>  <span class="cf">if</span> (<span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">===</span> <span class="st">&quot;none&quot;</span>) <span class="op">{</span></span>
+<span id="cb329-5"><a href="bookdown.html#cb329-5"></a>    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;block&quot;</span><span class="op">;</span></span>
+<span id="cb329-6"><a href="bookdown.html#cb329-6"></a>  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb329-7"><a href="bookdown.html#cb329-7"></a>    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;none&quot;</span><span class="op">;</span></span>
+<span id="cb329-8"><a href="bookdown.html#cb329-8"></a>  <span class="op">}</span></span>
+<span id="cb329-9"><a href="bookdown.html#cb329-9"></a><span class="op">}</span></span>
+<span id="cb329-10"><a href="bookdown.html#cb329-10"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
 <ol start="8" style="list-style-type: decimal">
 <li>Go to <code>styles.css</code>, add these lines</li>
 </ol>
-<div class="sourceCode" id="cb322"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb322-1" data-line-number="1"><span class="co">/* definition tables (RZ) */</span></a>
-<a class="sourceLine" id="cb322-2" data-line-number="2"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td,</a>
-<a class="sourceLine" id="cb322-3" data-line-number="3"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th,</a>
-<a class="sourceLine" id="cb322-4" data-line-number="4"><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</a>
-<a class="sourceLine" id="cb322-5" data-line-number="5">{</a>
-<a class="sourceLine" id="cb322-6" data-line-number="6">  <span class="kw">padding</span>:<span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb322-7" data-line-number="7">  <span class="kw">border-style</span>: <span class="dv">hidden</span>;</a>
-<a class="sourceLine" id="cb322-8" data-line-number="8">  <span class="kw">background-color</span>: <span class="dv">white</span>;</a>
-<a class="sourceLine" id="cb322-9" data-line-number="9">}</a>
-<a class="sourceLine" id="cb322-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb322-11" data-line-number="11"><span class="fu">.deftab</span> th, <span class="fu">.deftab</span> td {</a>
-<a class="sourceLine" id="cb322-12" data-line-number="12">  <span class="kw">vertical-align</span>: <span class="dv">top</span>;</a>
-<a class="sourceLine" id="cb322-13" data-line-number="13">  <span class="kw">text-align</span>: <span class="dv">left</span>;</a>
-<a class="sourceLine" id="cb322-14" data-line-number="14">}</a>
-<a class="sourceLine" id="cb322-15" data-line-number="15"><span class="fu">.deftab</span> th {</a>
-<a class="sourceLine" id="cb322-16" data-line-number="16">  <span class="kw">width</span>: <span class="dv">20%</span>;       <span class="co">/* header cells are 20% width (first column) */</span></a>
-<a class="sourceLine" id="cb322-17" data-line-number="17">}</a>
-<a class="sourceLine" id="cb322-18" data-line-number="18"><span class="fu">.deftab</span> td<span class="in">:nth-child</span>(1) {</a>
-<a class="sourceLine" id="cb322-19" data-line-number="19">  <span class="kw">width</span>: <span class="dv">20%</span>;       <span class="co">/* first td cell also 20% width (first column) */</span></a>
-<a class="sourceLine" id="cb322-20" data-line-number="20">}</a>
-<a class="sourceLine" id="cb322-21" data-line-number="21"></a>
-<a class="sourceLine" id="cb322-22" data-line-number="22"><span class="co">/* boxes with warnings, notes, tips,... */</span></a>
-<a class="sourceLine" id="cb322-23" data-line-number="23"><span class="fu">.rmdcaution</span>, <span class="fu">.rmdimportant</span>, <span class="fu">.rmdnote</span>, <span class="fu">.rmdtip</span>, <span class="fu">.rmdwarning</span> {</a>
-<a class="sourceLine" id="cb322-24" data-line-number="24">  <span class="kw">padding</span>: <span class="dv">1em</span> <span class="dv">1em</span> <span class="dv">1em</span> <span class="dv">4em</span>;</a>
-<a class="sourceLine" id="cb322-25" data-line-number="25">  <span class="kw">margin-bottom</span>: <span class="dv">10px</span>;</a>
-<a class="sourceLine" id="cb322-26" data-line-number="26">  <span class="kw">background</span>: <span class="dv">#f5f5f5</span> <span class="dv">5px</span> <span class="dv">center</span>/<span class="dv">3em</span> <span class="dv">no-repeat</span>;</a>
-<a class="sourceLine" id="cb322-27" data-line-number="27">}</a>
-<a class="sourceLine" id="cb322-28" data-line-number="28"><span class="fu">.rmdcaution</span> {</a>
-<a class="sourceLine" id="cb322-29" data-line-number="29">  <span class="kw">background-image</span>: <span class="fu">url</span>(<span class="st">&quot;../figures/02_css/caution.png&quot;</span>);</a>
-<a class="sourceLine" id="cb322-30" data-line-number="30">}</a>
-<a class="sourceLine" id="cb322-31" data-line-number="31"><span class="fu">.rmdimportant</span> {</a>
-<a class="sourceLine" id="cb322-32" data-line-number="32">  <span class="kw">background-image</span>: <span class="fu">url</span>(<span class="st">&quot;../figures/02_css/important.png&quot;</span>);</a>
-<a class="sourceLine" id="cb322-33" data-line-number="33">}</a>
-<a class="sourceLine" id="cb322-34" data-line-number="34"><span class="fu">.rmdnote</span> {</a>
-<a class="sourceLine" id="cb322-35" data-line-number="35">  <span class="kw">background-image</span>: <span class="fu">url</span>(<span class="st">&quot;../figures/02_css/note.png&quot;</span>);</a>
-<a class="sourceLine" id="cb322-36" data-line-number="36">}</a>
-<a class="sourceLine" id="cb322-37" data-line-number="37"><span class="fu">.rmdtip</span> {</a>
-<a class="sourceLine" id="cb322-38" data-line-number="38">  <span class="kw">background-image</span>: <span class="fu">url</span>(<span class="st">&quot;../figures/02_css/tip.png&quot;</span>);</a>
-<a class="sourceLine" id="cb322-39" data-line-number="39">}</a>
-<a class="sourceLine" id="cb322-40" data-line-number="40"><span class="fu">.rmdwarning</span> {</a>
-<a class="sourceLine" id="cb322-41" data-line-number="41">  <span class="kw">background-image</span>: <span class="fu">url</span>(<span class="st">&quot;../figures/02_css/warning.png&quot;</span>);</a>
-<a class="sourceLine" id="cb322-42" data-line-number="42">}</a></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb330-1"><a href="bookdown.html#cb330-1"></a><span class="co">/* definition tables (RZ) */</span></span>
+<span id="cb330-2"><a href="bookdown.html#cb330-2"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></span>
+<span id="cb330-3"><a href="bookdown.html#cb330-3"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></span>
+<span id="cb330-4"><a href="bookdown.html#cb330-4"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</span>
+<span id="cb330-5"><a href="bookdown.html#cb330-5"></a>{</span>
+<span id="cb330-6"><a href="bookdown.html#cb330-6"></a>  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></span>
+<span id="cb330-7"><a href="bookdown.html#cb330-7"></a>  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></span>
+<span id="cb330-8"><a href="bookdown.html#cb330-8"></a>  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb330-9"><a href="bookdown.html#cb330-9"></a>}</span>
+<span id="cb330-10"><a href="bookdown.html#cb330-10"></a></span>
+<span id="cb330-11"><a href="bookdown.html#cb330-11"></a><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</span>
+<span id="cb330-12"><a href="bookdown.html#cb330-12"></a>  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></span>
+<span id="cb330-13"><a href="bookdown.html#cb330-13"></a>  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb330-14"><a href="bookdown.html#cb330-14"></a>}</span>
+<span id="cb330-15"><a href="bookdown.html#cb330-15"></a><span class="fu">.deftab</span> th {</span>
+<span id="cb330-16"><a href="bookdown.html#cb330-16"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></span>
+<span id="cb330-17"><a href="bookdown.html#cb330-17"></a>}</span>
+<span id="cb330-18"><a href="bookdown.html#cb330-18"></a><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</span>
+<span id="cb330-19"><a href="bookdown.html#cb330-19"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></span>
+<span id="cb330-20"><a href="bookdown.html#cb330-20"></a>}</span>
+<span id="cb330-21"><a href="bookdown.html#cb330-21"></a></span>
+<span id="cb330-22"><a href="bookdown.html#cb330-22"></a><span class="co">/* boxes with warnings, notes, tips,... */</span></span>
+<span id="cb330-23"><a href="bookdown.html#cb330-23"></a><span class="fu">.rmdcaution</span><span class="op">,</span> <span class="fu">.rmdimportant</span><span class="op">,</span> <span class="fu">.rmdnote</span><span class="op">,</span> <span class="fu">.rmdtip</span><span class="op">,</span> <span class="fu">.rmdwarning</span> {</span>
+<span id="cb330-24"><a href="bookdown.html#cb330-24"></a>  <span class="kw">padding</span>: <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">4</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb330-25"><a href="bookdown.html#cb330-25"></a>  <span class="kw">margin-bottom</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb330-26"><a href="bookdown.html#cb330-26"></a>  <span class="kw">background</span>: <span class="cn">#f5f5f5</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">center</span>/<span class="dv">3</span><span class="dt">em</span> <span class="dv">no-repeat</span><span class="op">;</span></span>
+<span id="cb330-27"><a href="bookdown.html#cb330-27"></a>}</span>
+<span id="cb330-28"><a href="bookdown.html#cb330-28"></a><span class="fu">.rmdcaution</span> {</span>
+<span id="cb330-29"><a href="bookdown.html#cb330-29"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/caution.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb330-30"><a href="bookdown.html#cb330-30"></a>}</span>
+<span id="cb330-31"><a href="bookdown.html#cb330-31"></a><span class="fu">.rmdimportant</span> {</span>
+<span id="cb330-32"><a href="bookdown.html#cb330-32"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/important.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb330-33"><a href="bookdown.html#cb330-33"></a>}</span>
+<span id="cb330-34"><a href="bookdown.html#cb330-34"></a><span class="fu">.rmdnote</span> {</span>
+<span id="cb330-35"><a href="bookdown.html#cb330-35"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/note.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb330-36"><a href="bookdown.html#cb330-36"></a>}</span>
+<span id="cb330-37"><a href="bookdown.html#cb330-37"></a><span class="fu">.rmdtip</span> {</span>
+<span id="cb330-38"><a href="bookdown.html#cb330-38"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/tip.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb330-39"><a href="bookdown.html#cb330-39"></a>}</span>
+<span id="cb330-40"><a href="bookdown.html#cb330-40"></a><span class="fu">.rmdwarning</span> {</span>
+<span id="cb330-41"><a href="bookdown.html#cb330-41"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/warning.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb330-42"><a href="bookdown.html#cb330-42"></a>}</span></code></pre></div>
 <ol start="9" style="list-style-type: decimal">
 <li>Add folder <code>figures</code> with following subfolders (containing png files)
 <ul>

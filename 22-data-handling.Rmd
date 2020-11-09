@@ -159,6 +159,7 @@ mapply(FUN, ...)        # apply function to multiple vectors
                         #   e.g. apply function on each row of data.frame
                         #   mapply(testFun, df$x, df$z)
 by(x, index, FUN, …)	# x can be whole data.frame
+outer()                 # get a matrix based on a function with two parameters
 ```
 
 

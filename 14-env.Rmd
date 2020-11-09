@@ -162,6 +162,7 @@ Functions are related with three environments
     * Environment property becomes enclosing environment of function environment (local environment created by calling the function)
     * Determines if the objects in the function are found
     * Get environment object with `environment(<function name>)`
+    * Change environment property with `environment(myfun) <- asNamespace('stats')`
 
 
 By default:

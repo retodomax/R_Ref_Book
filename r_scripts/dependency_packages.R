@@ -7,4 +7,5 @@ install.packages("MASS")
 install.packages("car")
 install.packages("faraway")
 install.packages("leaps")
+install.packages("lattice")
 

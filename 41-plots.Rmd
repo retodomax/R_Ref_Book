@@ -594,7 +594,7 @@ plot(1:3, ylim = c(4,0), type = "n", xlab = "", ylab = "", xaxt = "n", main = "f
 par(cex = 2)
 text(1,1,pos=4, family = "sans", "sans (= default)")
 text(1,2,pos=4, family = "serif", "serif")
-text(1,3,pos=4, family = "mono", "mono")
+text(1,3,pos=4, family = "Ubuntu mono", "(Ubuntu) mono")
 ```
 
 
@@ -1100,7 +1100,7 @@ par(mfrow = c(3,3), mar = c(1,1,1,1), oma = c(0,0,4,0))
 type_letters <- c("p", "l", "b", "c", "o", "h", "s", "S", "n")
 for(i in type_letters){
   plot(1:10, type = i, ann = FALSE, axes = FALSE)
-  text(x = 2, y = 8, labels = i, cex = 3, family = "mono")
+  text(x = 2, y = 8, labels = i, cex = 3, family = "Ubuntu mono")  # otherwise use "mono"
   title(main = "type =", outer = TRUE)
   box()
 }
@@ -1157,6 +1157,65 @@ for(i in seq_along(den.df)){
 ##     each column give y coordinate of one line
 matplot(den.df, mq, type = "l", xlab = "den.df", ylab = "95%-quantile")
 ```
+
+
+### Example: image and contour plot
+
+Be careful with `image()` and `contour()`
+
+1. matrix is transposed
+    - rows of matrix end up on x axis
+    - columns on y axis
+2. columns are flipped (first column is at bottom)
+
+```{r, }
+(m <- matrix(1:6, 3, 2))
+image(z = m)
+text(x = rep(0:2/2, 2), y = rep(0:1, each = 3))
+contour(z = m, levels = 1:6, add = TRUE)
+```
+
+
+```{r}
+library(MASS)
+fit <- lm(loss ~ tens + I(hard * tens) + I(hard^2) + I(tens^2) + I(hard^2 * tens) + I(tens^3) + I(hard^3), data = Rubber)
+
+reso <- 100
+x1_range <- range(Rubber$hard)
+x2_range <- range(Rubber$tens)
+x1 <- seq(x1_range[1], x1_range[2], length.out = 100)
+x2 <- seq(x2_range[1], x2_range[2], length.out = 100)
+grid <- expand.grid(hard = x1, tens = x2)
+
+grid$y <- predict(object = fit, newdata = grid)
+
+image(x = x1, y = x2, z = matrix(grid$y, reso, reso))
+contour(x = x1, y = x2, z = matrix(grid$y, reso, reso), xlab = "", add = TRUE)
+
+
+## easier lattice::contourplot() allows formula method (no matrix necessary)
+lattice::contourplot(y ~ hard + tens, data = grid, main = "lattice::contourplot()")
+```
+
+
+### Example: Boxplot
+
+Separately give datapoints for each box
+
+```{r}
+set.seed(1)
+boxplot(rnorm(10, 4), rnorm(10, 6), rnorm(10, 9))
+```
+
+Specify assignment to box with formula
+
+```{r}
+set.seed(1)
+dat <- data.frame(y = rnorm(100),
+                  x = sample(c("a","b"), size = 100, replace = TRUE))
+boxplot(y ~ x, data = dat)
+```
+
 
 
 

@@ -109,7 +109,7 @@ plot(fit)
 * `rnorm()`
 * `factor()`
 * `gl()`
-* `expand.grid()` Cross prodict
+* `expand.grid()` Cross product
 * `combn()`
 * `interaction()`
 
@@ -246,7 +246,7 @@ Sum of Squares do only differ if the data is unbalanced.
     - `car::Anova(fit, type = "II", data = df)`
 * Type III
     - `drop1(fit, scope = ~., test = "F", data = df)`
-    - necessary to set `options(contrsts = c("contr.sum", "contr.sum"))`
+    - necessary to set `options(contrasts = c("contr.sum", "contr.poly"))`
 
 
 ## Model comparison

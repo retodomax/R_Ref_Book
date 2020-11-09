@@ -1,0 +1,206 @@
+# Latex
+
+## Symbols
+
+[List of mathematical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
+
+
+<table class = "deftab">
+  <tr>
+    <td>**Space**</td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>space</td>
+    <td>`\hspace{35pt}`</td>
+  </tr>
+  <tr>
+    <td>space</td>
+    <td>`\qquad`</td>
+  </tr>
+  <tr>
+    <td>big space</td>
+    <td>`\;`</td>
+  </tr>
+  <tr>
+    <td>medium space</td>
+    <td>`\:`</td>
+  </tr>
+  <tr>
+    <td>small space</td>
+    <td>`\,`</td>
+  </tr>
+  <tr>
+    <td>negative space</td>
+    <td>`\!`</td>
+  </tr>
+  <tr>
+    <td>**Math**</td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>$\approx$</td>
+    <td>`\approx`</td>
+  </tr>
+  <tr>
+    <td>$\neq$</td>
+    <td>`\neq`</td>
+  </tr>
+  <tr>
+    <td>$\leq$</td>
+    <td>`\leq`</td>
+  </tr>
+  <tr>
+    <td>$\sim$</td>
+    <td>`\sim`</td>
+  </tr>
+  <tr>
+    <td>$\in$</td>
+    <td>`\in`</td>
+  </tr>
+  <tr>
+    <td>$\Rightarrow$</td>
+    <td>`\Rightarrow`</td>
+  </tr>
+  <tr>
+    <td>$\mid$</td>
+    <td>`\mid`</td>
+  </tr>
+  <tr>
+    <td>$\times$</td>
+    <td>`\times`</td>
+  </tr>
+  <tr>
+    <td>$\otimes$</td>
+    <td>`\otimes`</td>
+  </tr>
+  <tr>
+    <td>$\partial$</td>
+    <td>`\partial`</td>
+  </tr>
+  <tr>
+    <td>$\infty$</td>
+    <td>`\infty`</td>
+  </tr>
+  <tr>
+    <td>$\infty$</td>
+    <td>`\infty`</td>
+  </tr>
+  <tr>
+    <td>$\mathbb{R}$</td>
+    <td>`\mathbb{R}`</td>
+  </tr>
+    <tr>
+    <td>$\underbrace{\cdots}_{\cdots}$</td>
+    <td>`\underbrace{\cdots}_{\cdots}`</td>
+  </tr>
+  <tr>
+    <td>$\binom{n}{k}$</td>
+    <td>`\binom{n}{k}`</td>
+  </tr>
+</table>
+
+## Improtant
+
+```{block2, type='rmdcaution'}
+A dot which is not used as the end of a scentence has to be followed by a backslash (/). Otherwise there is too much space afterwards. Important for abbriviations like e.g., i.e., etc., et al., ...
+```
+
+
+## Reto Math
+
+```{block2, type='rmdcaution'}
+These are only working if the output is a pdf and the RetoMath.sty preamble is included
+```
+
+<table class = "deftab">
+  <tr>
+    <td>bold math</td>
+    <td>`\bm`</td>
+  </tr>
+  <tr>
+    <td>inverse</td>
+    <td>`\inv`</td>
+  </tr>
+  <tr>
+    <td>transpose</td>
+    <td>`\tr`</td>
+  </tr>
+</table>
+
+## SfS
+
+```{block2, type='rmdcaution'}
+These are only working if the output is a pdf and the RetoMath.sty preamble is included
+```
+
+<table class = "deftab">
+  <tr>
+    <td>R</td>
+    <td>`\Rp`</td>
+  </tr>
+  <tr>
+    <td>$E[\dots]$</td>
+    <td>`\ERW{}`</td>
+  </tr>
+  <tr>
+    <td>$\text{Var()}$</td>
+    <td>`\VAR{}`</td>
+  </tr>
+  <tr>
+    <td>$\hat{\text{Var}}()$</td>
+    <td>`VARH{}`</td>
+  </tr>
+  <tr>
+    <td>$\text{Cov()}$</td>
+    <td>`\COV{}`</td>
+  </tr>
+  <tr>
+    <td>$\hat{\text{Cov}}()$</td>
+    <td>`COVH{}`</td>
+  </tr>
+  <tr>
+    <td>$\text{P}[X = c]$</td>
+    <td>`\PR{}`</td>
+  </tr>
+  <tr>
+    <td>$\text{N}()$</td>
+    <td>`\Normal{}`</td>
+  </tr>
+  <tr>
+    <td>$\text{N}_n()$</td>
+    <td>`\Normali{n}{}`</td>
+  </tr>
+  <tr>
+    <td>$\text{B}()$</td>
+    <td>`\Binomial{}`</td>
+  </tr>
+  <tr>
+    <td>$\text{Bernoulli}()$</td>
+    <td>`\Bernoulli{}`</td>
+  </tr>
+  <tr>
+    <td>$\text{Exp}()$</td>
+    <td>`\Exponential{}`</td>
+  </tr>
+  <tr>
+    <td>$\text{Pois}()$</td>
+    <td>`\Poisson{}`</td>
+  </tr>
+</table>
+
+
+## Constructs
+
+<table class = "deftab">
+  <tr>
+    <td>$\begin{pmatrix} b_1 \\ \vdots \\ b_n \end{pmatrix}$</td>
+    <td>`\begin{pmatrix} b_1 \\ \vdots \\ b_n \end{pmatrix}`</td>
+  </tr>
+</table>
+
+## Text format
+
+Colored text
+
+`\textcolor{red}{...text...}`

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 34 Packages | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 34 Packages | R Reference book" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-05-14" />
+<meta name="date" content="2020-07-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -67,9 +67,9 @@ function myFunction(myid) {
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -78,14 +78,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -94,9 +96,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -564,9 +566,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>ls()</code> list object in certain environment</li>
 <li><code>find()</code> the environment from which a certain function comes</li>
 </ul>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb338-1" data-line-number="1"><span class="kw">search</span>()      <span class="co"># returns search path</span></a>
-<a class="sourceLine" id="cb338-2" data-line-number="2"><span class="kw">ls</span>(<span class="dt">pos =</span> <span class="dv">2</span>)   <span class="co"># object contained in environment nr 2</span></a>
-<a class="sourceLine" id="cb338-3" data-line-number="3"><span class="kw">find</span>(<span class="st">&quot;print&quot;</span>) <span class="co"># Environment in which function &quot;print&quot; is defined</span></a></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="packages-1.html#cb338-1"></a><span class="kw">search</span>()      <span class="co"># returns search path</span></span>
+<span id="cb338-2"><a href="packages-1.html#cb338-2"></a><span class="kw">ls</span>(<span class="dt">pos =</span> <span class="dv">2</span>)   <span class="co"># object contained in environment nr 2</span></span>
+<span id="cb338-3"><a href="packages-1.html#cb338-3"></a><span class="kw">find</span>(<span class="st">&quot;print&quot;</span>) <span class="co"># Environment in which function &quot;print&quot; is defined</span></span></code></pre></div>
 </div>
 <div id="useful-packages" class="section level2">
 <h2><span class="header-section-number">34.2</span> Useful packages</h2>
