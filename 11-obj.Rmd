@@ -212,10 +212,17 @@ Formula syntax is a way to specify linear models.
 |`log()` |`log(X)`   | log(X), not necessary to escape because `log()` has no special formula interpretation|
 |`1`     |`X - 1`    | Intercept: remove intercept which is automatically included|
 |`/`     |`X/Z`      | X + X:Z  (Z as nested factor in X)|
-|`%in%`  |`X + Z %in% X`| X + X:Z (Z as nested factor in X)|
+|`%in%`  |`Z %in% X` | X:Z (Z as nested factor in X, internally gets transformed to `:`, usually use upper notation because main X effect should also be included)|
 |`poly()`|`poly(x,2)`| Orthogonal polynomials up to degree 2|
 |`Error()`|`Error(X)`| Additional error term determined by factor X|
 |`.`     |`Y ~ .`    | Two interpretations. 1) Model fitting: all columns not otherwise in the formula, 2) `update.formula()`: what was previously in this part of the formula|
+
+
+Special cases in `lme4`:
+
+`(1 | batch/cask)` is equivalent to `(1 | batch) + (1 | batch:cask)`
+
+
 
 Check if formula constructs your expected model with `model.matrix()`
 
@@ -228,6 +235,7 @@ Update formulas with the `update()` function
 ```{r, eval=FALSE}
 fit2 <- update(fit, .~. + X2)
 ```
+
 
 
 
