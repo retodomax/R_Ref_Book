@@ -222,6 +222,10 @@ Special cases in `lme4`:
 
 `(1 | batch/cask)` is equivalent to `(1 | batch) + (1 | batch:cask)`
 
+```{r, echo = FALSE, out.width='75%', fig.align='center', fig.cap='lme4 formula syntax. From Bates et al. 2015'}
+knitr::include_graphics('figures/lme4_formula.png')
+```
+
 
 
 Check if formula constructs your expected model with `model.matrix()`

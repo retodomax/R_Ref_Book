@@ -468,11 +468,18 @@ knitr::write_bib(c(
 
 
 <!-- CSS Stype for Figure caption -->
+<!-- CSS Style for more space between headers -->
 <style>
 p.caption {
   color: gray;
   font-size: 0.7em;
   padding-bottom: 30px;
+}
+h1, .h1 {
+    margin-top: 84px;
+}
+h2, .h2, h3, .h3 {
+    margin-top: 42px;
 }
 </style>
 
@@ -560,6 +567,32 @@ Good resources for additional tips/templates
 
 * <https://holtzy.github.io/Pimp-my-rmd/> (Tips)
 * <https://github.com/juba/rmdformats> (Templates package)
+
+
+## Good output formats
+
+* lightweight: `rmarkdown::html_vignette`
+    - Details see [here](https://bookdown.org/yihui/rmarkdown/r-package-vignette.html)
+* full-featured: `bookdown::gitbook`
+    - Option `split_by: none` allows to get one long page
+    - Option `self_containd: true` allows that all css and figure are included in html output file
+* classic: `bookdown::html_document2`
+
+Options
+
+```yaml
+title:   Test
+author:  "[Reto Zihlmann](https://retodomax.github.io/)"
+date:    "2020-11-09"
+output:
+  bookdown::gitbook:
+    split_by: none
+    self_contained: true
+```
+
+```{block2, type='rmdwarning'}
+gitbook with option `self_containd: true` does currently not work with MathJax (Math not correcly displayed). For updates on this issue see [here](https://stackoverflow.com/questions/64760552/how-to-have-correctly-rendered-mathematical-equations-in-bookdowngitbook-when), [here](https://github.com/rstudio/bookdown/issues/915) and [here](https://github.com/rstudio/rmarkdown/issues/727).
+```
 
 
 

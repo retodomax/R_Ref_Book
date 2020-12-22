@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 16 Base graphics | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 16 Base graphics | R Reference book" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-11-09" />
+<meta name="date" content="2020-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <!––JavaScript code for Show/Hide buttons––>
 <!––see: https://web.stanford.edu/~naras/post/toggle-visibility-of-solutions-in-bookdown/––>
 <!––and see: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp––>
@@ -197,7 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="env.html"><a href="env.html"><i class="fa fa-check"></i><b>4</b> Environments</a><ul>
 <li class="chapter" data-level="4.1" data-path="env.html"><a href="env.html#general-properties"><i class="fa fa-check"></i><b>4.1</b> General properties</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="env.html"><a href="env.html#definition"><i class="fa fa-check"></i><b>4.1.1</b> Definition</a></li>
-<li class="chapter" data-level="4.1.2" data-path="vec.html"><a href="vec.html#attributes"><i class="fa fa-check"></i><b>4.1.2</b> Attributes</a></li>
+<li class="chapter" data-level="4.1.2" data-path="env.html"><a href="env.html#attributes-1"><i class="fa fa-check"></i><b>4.1.2</b> Attributes</a></li>
 <li class="chapter" data-level="4.1.3" data-path="env.html"><a href="env.html#special-environments"><i class="fa fa-check"></i><b>4.1.3</b> Special environments</a></li>
 <li class="chapter" data-level="4.1.4" data-path="env.html"><a href="env.html#search-path-and-search-list"><i class="fa fa-check"></i><b>4.1.4</b> Search path and search list</a></li>
 <li class="chapter" data-level="4.1.5" data-path="env.html"><a href="env.html#objects-within-the-environment"><i class="fa fa-check"></i><b>4.1.5</b> Objects within the environment</a></li>
@@ -253,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>III R Programming</b></span></li>
 <li class="chapter" data-level="10" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>10</b> Basics</a><ul>
 <li class="chapter" data-level="10.1" data-path="basics.html"><a href="basics.html#objects-in-enviornment"><i class="fa fa-check"></i><b>10.1</b> Objects in Enviornment</a></li>
-<li class="chapter" data-level="10.2" data-path="data-importexport.html"><a href="data-importexport.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions</a><ul>
+<li class="chapter" data-level="10.2" data-path="basics.html"><a href="basics.html#functions-2"><i class="fa fa-check"></i><b>10.2</b> Functions</a><ul>
 <li class="chapter" data-level="10.2.1" data-path="basics.html"><a href="basics.html#function-debugging"><i class="fa fa-check"></i><b>10.2.1</b> Function debugging</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="basics.html"><a href="basics.html#control-structures"><i class="fa fa-check"></i><b>10.3</b> Control structures</a><ul>
@@ -293,7 +295,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.1.6" data-path="Plots.html"><a href="Plots.html#define-device-regions"><i class="fa fa-check"></i><b>16.1.6</b> Define device regions</a></li>
 <li class="chapter" data-level="16.1.7" data-path="Plots.html"><a href="Plots.html#user-coordinates-limits"><i class="fa fa-check"></i><b>16.1.7</b> User coordinates limits</a></li>
 <li class="chapter" data-level="16.1.8" data-path="Plots.html"><a href="Plots.html#general-appearence"><i class="fa fa-check"></i><b>16.1.8</b> General appearence</a></li>
-<li class="chapter" data-level="16.1.9" data-path="objects.html"><a href="objects.html#symbols"><i class="fa fa-check"></i><b>16.1.9</b> Symbols</a></li>
+<li class="chapter" data-level="16.1.9" data-path="Plots.html"><a href="Plots.html#symbols-1"><i class="fa fa-check"></i><b>16.1.9</b> Symbols</a></li>
 <li class="chapter" data-level="16.1.10" data-path="Plots.html"><a href="Plots.html#lines"><i class="fa fa-check"></i><b>16.1.10</b> Lines</a></li>
 <li class="chapter" data-level="16.1.11" data-path="Plots.html"><a href="Plots.html#text"><i class="fa fa-check"></i><b>16.1.11</b> Text</a></li>
 <li class="chapter" data-level="16.1.12" data-path="Plots.html"><a href="Plots.html#axis-labels"><i class="fa fa-check"></i><b>16.1.12</b> Axis labels</a></li>
@@ -377,11 +379,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="23" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>23</b> ANOVA</a><ul>
 <li class="chapter" data-level="23.1" data-path="anova.html"><a href="anova.html#idea"><i class="fa fa-check"></i><b>23.1</b> Idea</a></li>
-<li class="chapter" data-level="23.2" data-path="Plots.html"><a href="Plots.html#example"><i class="fa fa-check"></i><b>23.2</b> Example</a></li>
+<li class="chapter" data-level="23.2" data-path="anova.html"><a href="anova.html#example-1"><i class="fa fa-check"></i><b>23.2</b> Example</a></li>
 <li class="chapter" data-level="23.3" data-path="anova.html"><a href="anova.html#simulate-data"><i class="fa fa-check"></i><b>23.3</b> Simulate data</a><ul>
 <li class="chapter" data-level="23.3.1" data-path="anova.html"><a href="anova.html#randomization"><i class="fa fa-check"></i><b>23.3.1</b> Randomization</a></li>
 </ul></li>
-<li class="chapter" data-level="23.4" data-path="regression.html"><a href="regression.html#visualization"><i class="fa fa-check"></i><b>23.4</b> Visualization</a><ul>
+<li class="chapter" data-level="23.4" data-path="anova.html"><a href="anova.html#visualization-2"><i class="fa fa-check"></i><b>23.4</b> Visualization</a><ul>
 <li class="chapter" data-level="23.4.1" data-path="anova.html"><a href="anova.html#stripchart"><i class="fa fa-check"></i><b>23.4.1</b> Stripchart</a></li>
 <li class="chapter" data-level="23.4.2" data-path="anova.html"><a href="anova.html#boxplot"><i class="fa fa-check"></i><b>23.4.2</b> Boxplot</a></li>
 <li class="chapter" data-level="23.4.3" data-path="anova.html"><a href="anova.html#interaction-plot"><i class="fa fa-check"></i><b>23.4.3</b> Interaction plot</a></li>
@@ -389,16 +391,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="23.5" data-path="anova.html"><a href="anova.html#fit-model"><i class="fa fa-check"></i><b>23.5</b> Fit model</a><ul>
 <li class="chapter" data-level="23.5.1" data-path="anova.html"><a href="anova.html#identifiability"><i class="fa fa-check"></i><b>23.5.1</b> Identifiability</a></li>
-<li class="chapter" data-level="23.5.2" data-path="regression.html"><a href="regression.html#fitting"><i class="fa fa-check"></i><b>23.5.2</b> Fitting</a></li>
+<li class="chapter" data-level="23.5.2" data-path="anova.html"><a href="anova.html#fitting-2"><i class="fa fa-check"></i><b>23.5.2</b> Fitting</a></li>
 </ul></li>
 <li class="chapter" data-level="23.6" data-path="anova.html"><a href="anova.html#anova-table"><i class="fa fa-check"></i><b>23.6</b> ANOVA table</a><ul>
 <li class="chapter" data-level="23.6.1" data-path="anova.html"><a href="anova.html#types-of-sum-of-sqares"><i class="fa fa-check"></i><b>23.6.1</b> Types of Sum of Sqares</a></li>
 </ul></li>
-<li class="chapter" data-level="23.7" data-path="regression.html"><a href="regression.html#model-comparison"><i class="fa fa-check"></i><b>23.7</b> Model comparison</a></li>
+<li class="chapter" data-level="23.7" data-path="anova.html"><a href="anova.html#model-comparison-2"><i class="fa fa-check"></i><b>23.7</b> Model comparison</a></li>
 <li class="chapter" data-level="23.8" data-path="anova.html"><a href="anova.html#coefficients"><i class="fa fa-check"></i><b>23.8</b> Coefficients</a></li>
 <li class="chapter" data-level="23.9" data-path="anova.html"><a href="anova.html#tests-and-ci-for-coeficients"><i class="fa fa-check"></i><b>23.9</b> Tests and CI for coeficients</a></li>
 <li class="chapter" data-level="23.10" data-path="anova.html"><a href="anova.html#predict"><i class="fa fa-check"></i><b>23.10</b> Predict</a></li>
-<li class="chapter" data-level="23.11" data-path="regression.html"><a href="regression.html#diagnostic-plots"><i class="fa fa-check"></i><b>23.11</b> Diagnostic plots</a><ul>
+<li class="chapter" data-level="23.11" data-path="anova.html"><a href="anova.html#diagnostic-plots-1"><i class="fa fa-check"></i><b>23.11</b> Diagnostic plots</a><ul>
 <li class="chapter" data-level="23.11.1" data-path="anova.html"><a href="anova.html#simulations"><i class="fa fa-check"></i><b>23.11.1</b> Simulations</a></li>
 <li class="chapter" data-level="23.11.2" data-path="anova.html"><a href="anova.html#qq-plot-in-mixed-models"><i class="fa fa-check"></i><b>23.11.2</b> QQ plot in mixed models</a></li>
 </ul></li>
@@ -423,14 +425,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="24" data-path="MultivarStat.html"><a href="MultivarStat.html"><i class="fa fa-check"></i><b>24</b> Multivariate Statistics</a><ul>
 <li class="chapter" data-level="24.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>24.1</b> Data sets</a></li>
 <li class="chapter" data-level="24.2" data-path="MultivarStat.html"><a href="MultivarStat.html#some-functions"><i class="fa fa-check"></i><b>24.2</b> Some functions</a><ul>
-<li class="chapter" data-level="24.2.1" data-path="regression.html"><a href="regression.html#visualization"><i class="fa fa-check"></i><b>24.2.1</b> Visualization</a></li>
+<li class="chapter" data-level="24.2.1" data-path="MultivarStat.html"><a href="MultivarStat.html#visualization-3"><i class="fa fa-check"></i><b>24.2.1</b> Visualization</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="25" data-path="TimeSeries.html"><a href="TimeSeries.html"><i class="fa fa-check"></i><b>25</b> Time series</a><ul>
-<li class="chapter" data-level="25.1" data-path="MultivarStat.html"><a href="MultivarStat.html#data-sets"><i class="fa fa-check"></i><b>25.1</b> Data sets</a></li>
+<li class="chapter" data-level="25.1" data-path="TimeSeries.html"><a href="TimeSeries.html#data-sets-1"><i class="fa fa-check"></i><b>25.1</b> Data sets</a></li>
 <li class="chapter" data-level="25.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-and-time"><i class="fa fa-check"></i><b>25.2</b> Date and Time</a><ul>
 <li class="chapter" data-level="25.2.1" data-path="TimeSeries.html"><a href="TimeSeries.html#date"><i class="fa fa-check"></i><b>25.2.1</b> Date</a></li>
-<li class="chapter" data-level="25.2.2" data-path="data-handling.html"><a href="data-handling.html#date-time"><i class="fa fa-check"></i><b>25.2.2</b> Date-Time</a></li>
+<li class="chapter" data-level="25.2.2" data-path="TimeSeries.html"><a href="TimeSeries.html#date-time-1"><i class="fa fa-check"></i><b>25.2.2</b> Date-Time</a></li>
 </ul></li>
 <li class="chapter" data-level="25.3" data-path="TimeSeries.html"><a href="TimeSeries.html#time-series-classes"><i class="fa fa-check"></i><b>25.3</b> Time series classes</a><ul>
 <li class="chapter" data-level="25.3.1" data-path="TimeSeries.html"><a href="TimeSeries.html#ts"><i class="fa fa-check"></i><b>25.3.1</b> ts</a></li>
@@ -459,9 +461,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="29.1.2" data-path="r-markdown.html"><a href="r-markdown.html#knitr"><i class="fa fa-check"></i><b>29.1.2</b> Knitr</a></li>
 <li class="chapter" data-level="29.1.3" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown-1"><i class="fa fa-check"></i><b>29.1.3</b> R Markdown</a></li>
 </ul></li>
-<li class="chapter" data-level="29.2" data-path="basics.html"><a href="basics.html#components"><i class="fa fa-check"></i><b>29.2</b> Components</a><ul>
+<li class="chapter" data-level="29.2" data-path="r-markdown.html"><a href="r-markdown.html#components-1"><i class="fa fa-check"></i><b>29.2</b> Components</a><ul>
 <li class="chapter" data-level="29.2.1" data-path="r-markdown.html"><a href="r-markdown.html#yaml-frontmatter"><i class="fa fa-check"></i><b>29.2.1</b> YAML frontmatter</a></li>
-<li class="chapter" data-level="29.2.2" data-path="Plots.html"><a href="Plots.html#text"><i class="fa fa-check"></i><b>29.2.2</b> Text</a></li>
+<li class="chapter" data-level="29.2.2" data-path="r-markdown.html"><a href="r-markdown.html#text-1"><i class="fa fa-check"></i><b>29.2.2</b> Text</a></li>
 <li class="chapter" data-level="29.2.3" data-path="r-markdown.html"><a href="r-markdown.html#code"><i class="fa fa-check"></i><b>29.2.3</b> Code</a></li>
 </ul></li>
 <li class="chapter" data-level="29.3" data-path="r-markdown.html"><a href="r-markdown.html#figures"><i class="fa fa-check"></i><b>29.3</b> Figures</a></li>
@@ -472,7 +474,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="29.6" data-path="r-markdown.html"><a href="r-markdown.html#section-folding"><i class="fa fa-check"></i><b>29.6</b> Section folding</a></li>
 <li class="chapter" data-level="29.7" data-path="r-markdown.html"><a href="r-markdown.html#add-box"><i class="fa fa-check"></i><b>29.7</b> Add box</a></li>
 <li class="chapter" data-level="29.8" data-path="r-markdown.html"><a href="r-markdown.html#template"><i class="fa fa-check"></i><b>29.8</b> Template</a></li>
-<li class="chapter" data-level="29.9" data-path="r-markdown.html"><a href="r-markdown.html#basic-elements"><i class="fa fa-check"></i><b>29.9</b> Basic Elements</a></li>
+<li class="chapter" data-level="29.9" data-path="r-markdown.html"><a href="r-markdown.html#good-output-formats"><i class="fa fa-check"></i><b>29.9</b> Good output formats</a></li>
+<li class="chapter" data-level="29.10" data-path="r-markdown.html"><a href="r-markdown.html#basic-elements"><i class="fa fa-check"></i><b>29.10</b> Basic Elements</a></li>
 </ul></li>
 <li class="chapter" data-level="30" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>30</b> Bookdown</a><ul>
 <li class="chapter" data-level="30.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>30.1</b> Configuration</a><ul>
@@ -501,17 +504,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="32.7" data-path="git-version-control.html"><a href="git-version-control.html#multiple-users"><i class="fa fa-check"></i><b>32.7</b> Multiple users</a><ul>
 <li class="chapter" data-level="32.7.1" data-path="git-version-control.html"><a href="git-version-control.html#get-foreign-respository-fork"><i class="fa fa-check"></i><b>32.7.1</b> get foreign respository (fork)</a></li>
 </ul></li>
-<li class="chapter" data-level="32.8" data-path="r-studio.html"><a href="r-studio.html#version-control-in-rstudio"><i class="fa fa-check"></i><b>32.8</b> Version Control in RStudio</a></li>
+<li class="chapter" data-level="32.8" data-path="git-version-control.html"><a href="git-version-control.html#version-control-in-rstudio-1"><i class="fa fa-check"></i><b>32.8</b> Version Control in RStudio</a></li>
 </ul></li>
 <li class="chapter" data-level="33" data-path="git2.html"><a href="git2.html"><i class="fa fa-check"></i><b>33</b> git2</a><ul>
-<li class="chapter" data-level="33.1" data-path="git-version-control.html"><a href="git-version-control.html#common-tasks"><i class="fa fa-check"></i><b>33.1</b> Common tasks</a></li>
+<li class="chapter" data-level="33.1" data-path="git2.html"><a href="git2.html#common-tasks-1"><i class="fa fa-check"></i><b>33.1</b> Common tasks</a></li>
 </ul></li>
-<li class="chapter" data-level="34" data-path="env.html"><a href="env.html#packages"><i class="fa fa-check"></i><b>34</b> Packages</a><ul>
-<li class="chapter" data-level="34.1" data-path="env.html"><a href="env.html#package-environment"><i class="fa fa-check"></i><b>34.1</b> Package environment</a></li>
-<li class="chapter" data-level="34.2" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>34.2</b> Useful packages</a></li>
+<li class="chapter" data-level="34" data-path="packages-1.html"><a href="packages-1.html"><i class="fa fa-check"></i><b>34</b> Packages</a><ul>
+<li class="chapter" data-level="34.1" data-path="packages-1.html"><a href="packages-1.html#package-environment-1"><i class="fa fa-check"></i><b>34.1</b> Package environment</a></li>
+<li class="chapter" data-level="34.2" data-path="packages-1.html"><a href="packages-1.html#useful-packages"><i class="fa fa-check"></i><b>34.2</b> Useful packages</a></li>
 </ul></li>
 <li class="chapter" data-level="35" data-path="latex.html"><a href="latex.html"><i class="fa fa-check"></i><b>35</b> Latex</a><ul>
-<li class="chapter" data-level="35.1" data-path="objects.html"><a href="objects.html#symbols"><i class="fa fa-check"></i><b>35.1</b> Symbols</a></li>
+<li class="chapter" data-level="35.1" data-path="latex.html"><a href="latex.html#symbols-2"><i class="fa fa-check"></i><b>35.1</b> Symbols</a></li>
 <li class="chapter" data-level="35.2" data-path="latex.html"><a href="latex.html#improtant"><i class="fa fa-check"></i><b>35.2</b> Improtant</a></li>
 <li class="chapter" data-level="35.3" data-path="latex.html"><a href="latex.html#reto-math"><i class="fa fa-check"></i><b>35.3</b> Reto Math</a></li>
 <li class="chapter" data-level="35.4" data-path="latex.html"><a href="latex.html#sfs"><i class="fa fa-check"></i><b>35.4</b> SfS</a></li>
@@ -523,14 +526,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="36.1" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-import"><i class="fa fa-check"></i><b>36.1</b> Data import</a></li>
 <li class="chapter" data-level="36.2" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-transformation"><i class="fa fa-check"></i><b>36.2</b> Data transformation</a></li>
 <li class="chapter" data-level="36.3" data-path="cheat-sheets.html"><a href="cheat-sheets.html#data-visualization"><i class="fa fa-check"></i><b>36.3</b> Data visualization</a></li>
-<li class="chapter" data-level="36.4" data-path="data-handling.html"><a href="data-handling.html#factors"><i class="fa fa-check"></i><b>36.4</b> Factors</a></li>
+<li class="chapter" data-level="36.4" data-path="cheat-sheets.html"><a href="cheat-sheets.html#factors-1"><i class="fa fa-check"></i><b>36.4</b> Factors</a></li>
 <li class="chapter" data-level="36.5" data-path="cheat-sheets.html"><a href="cheat-sheets.html#lubridate"><i class="fa fa-check"></i><b>36.5</b> Lubridate</a></li>
-<li class="chapter" data-level="36.6" data-path="data-handling.html"><a href="data-handling.html#strings"><i class="fa fa-check"></i><b>36.6</b> Strings</a></li>
+<li class="chapter" data-level="36.6" data-path="cheat-sheets.html"><a href="cheat-sheets.html#strings-1"><i class="fa fa-check"></i><b>36.6</b> Strings</a></li>
 <li class="chapter" data-level="36.7" data-path="cheat-sheets.html"><a href="cheat-sheets.html#regex"><i class="fa fa-check"></i><b>36.7</b> Regex</a></li>
 <li class="chapter" data-level="36.8" data-path="cheat-sheets.html"><a href="cheat-sheets.html#purrr"><i class="fa fa-check"></i><b>36.8</b> Purrr</a></li>
 <li class="chapter" data-level="36.9" data-path="cheat-sheets.html"><a href="cheat-sheets.html#tidyeval"><i class="fa fa-check"></i><b>36.9</b> Tidyeval</a></li>
-<li class="chapter" data-level="36.10" data-path="r-studio.html"><a href="r-studio.html#r-studio"><i class="fa fa-check"></i><b>36.10</b> R Studio</a></li>
-<li class="chapter" data-level="36.11" data-path="r-markdown.html"><a href="r-markdown.html#r-markdown"><i class="fa fa-check"></i><b>36.11</b> R markdown</a></li>
+<li class="chapter" data-level="36.10" data-path="cheat-sheets.html"><a href="cheat-sheets.html#r-studio-1"><i class="fa fa-check"></i><b>36.10</b> R Studio</a></li>
+<li class="chapter" data-level="36.11" data-path="cheat-sheets.html"><a href="cheat-sheets.html#r-markdown-2"><i class="fa fa-check"></i><b>36.11</b> R markdown</a></li>
 <li class="chapter" data-level="36.12" data-path="cheat-sheets.html"><a href="cheat-sheets.html#shiny"><i class="fa fa-check"></i><b>36.12</b> Shiny</a></li>
 <li class="chapter" data-level="36.13" data-path="cheat-sheets.html"><a href="cheat-sheets.html#package-development"><i class="fa fa-check"></i><b>36.13</b> Package development</a></li>
 <li class="chapter" data-level="36.14" data-path="cheat-sheets.html"><a href="cheat-sheets.html#reticulate"><i class="fa fa-check"></i><b>36.14</b> Reticulate</a></li>
@@ -831,7 +834,7 @@ $ylbias
 <h3><span class="header-section-number">16.1.4</span> Device region</h3>
 <!-- ![figure margines](C:/Users/Reto/Downloads/fig_margins.jpg){width=50%} -->
 <!-- <img style="float: right;" src="C:/Users/Reto/Downloads/fig_margins.jpg" width=400> -->
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-87-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-88-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <div id="plot-outside-plotting-region" class="section level5 unnumbered">
 <h5>Plot outside plotting region</h5>
 <div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="Plots.html#cb110-1"></a><span class="kw">par</span>(<span class="st">&quot;xpd&quot;</span>)</span>
@@ -867,8 +870,8 @@ $ylbias
 <li><code>npc</code> normalized plot coordinates</li>
 </ul></li>
 </ul>
-<div class="figure" style="text-align: left"><span id="fig:unnamed-chunk-89"></span>
-<img src="R_Ref_Book_files/figure-html/unnamed-chunk-89-1.png" alt="Interval [0, 1] for different normalized coordinate systems" width="50%" />
+<div class="figure" style="text-align: left"><span id="fig:unnamed-chunk-90"></span>
+<img src="R_Ref_Book_files/figure-html/unnamed-chunk-90-1.png" alt="Interval [0, 1] for different normalized coordinate systems" width="50%" />
 <p class="caption">
 Figure 16.1: Interval [0, 1] for different normalized coordinate systems
 </p>
@@ -917,7 +920,7 @@ Figure 16.1: Interval [0, 1] for different normalized coordinate systems
 <span id="cb112-13"><a href="Plots.html#cb112-13"></a><span class="co"># print the overall labels</span></span>
 <span id="cb112-14"><a href="Plots.html#cb112-14"></a><span class="kw">mtext</span>(<span class="st">&#39;x-axis title&#39;</span>, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">outer =</span> <span class="ot">TRUE</span>, <span class="dt">line =</span> <span class="dv">2</span>)</span>
 <span id="cb112-15"><a href="Plots.html#cb112-15"></a><span class="kw">mtext</span>(<span class="st">&#39;y-axis title&#39;</span>, <span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">outer =</span> <span class="ot">TRUE</span>, <span class="dt">line =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-91-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-92-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="useful-helper-function" class="section level5 unnumbered">
 <h5>Useful helper function</h5>
@@ -945,7 +948,7 @@ Figure 16.1: Interval [0, 1] for different normalized coordinate systems
 <p>Multiple plots without axis</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="Plots.html#cb116-1"></a><span class="kw">FunNewPar</span>(<span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>),</span>
 <span id="cb116-2"><a href="Plots.html#cb116-2"></a>          <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-96-1.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-96-2.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-96-3.png" width="30%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-97-1.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-97-2.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-97-3.png" width="30%" /></p>
 </div>
 </div>
 <div id="margins" class="section level4">
@@ -960,7 +963,7 @@ Figure 16.1: Interval [0, 1] for different normalized coordinate systems
 <span id="cb118-2"><a href="Plots.html#cb118-2"></a>[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span></span>
 <span id="cb118-3"><a href="Plots.html#cb118-3"></a><span class="kw">par</span>(<span class="st">&quot;mai&quot;</span>) <span class="co"># Margine Area</span></span>
 <span id="cb118-4"><a href="Plots.html#cb118-4"></a>[<span class="dv">1</span>] <span class="fl">1.02</span> <span class="fl">0.82</span> <span class="fl">0.82</span> <span class="fl">0.42</span></span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-99-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-100-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p>Define margine area using <code>ndc</code>/<code>nfc</code> coordinate system</p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="Plots.html#cb119-1"></a><span class="kw">par</span>(<span class="st">&quot;omd&quot;</span>) <span class="co"># Start and endpoint of inner region  c(x1, x2, y1, y2)</span></span>
 <span id="cb119-2"><a href="Plots.html#cb119-2"></a>[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span></span>
@@ -968,13 +971,13 @@ Figure 16.1: Interval [0, 1] for different normalized coordinate systems
 <span id="cb119-4"><a href="Plots.html#cb119-4"></a>[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span></span>
 <span id="cb119-5"><a href="Plots.html#cb119-5"></a><span class="kw">par</span>(<span class="st">&quot;plt&quot;</span>) <span class="co"># Start and endpoint of plot region   c(x1, x2, y1, y2)</span></span>
 <span id="cb119-6"><a href="Plots.html#cb119-6"></a>[<span class="dv">1</span>] <span class="fl">0.1171429</span> <span class="fl">0.9400000</span> <span class="fl">0.2040000</span> <span class="fl">0.8360000</span></span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-101-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-102-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p>Define region dimensions in <code>inches</code></p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="Plots.html#cb120-1"></a><span class="kw">par</span>(<span class="st">&quot;fin&quot;</span>)  <span class="co"># Figure dimensions, (width, height)</span></span>
 <span id="cb120-2"><a href="Plots.html#cb120-2"></a>[<span class="dv">1</span>] <span class="dv">7</span> <span class="dv">5</span></span>
 <span id="cb120-3"><a href="Plots.html#cb120-3"></a><span class="kw">par</span>(<span class="st">&quot;pin&quot;</span>)  <span class="co"># Plot dimensions, (width, height)</span></span>
 <span id="cb120-4"><a href="Plots.html#cb120-4"></a>[<span class="dv">1</span>] <span class="fl">5.76</span> <span class="fl">3.16</span></span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-103-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-104-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="square-plot" class="section level4">
 <h4><span class="header-section-number">16.1.6.3</span> Square plot</h4>
@@ -996,7 +999,7 @@ Figure 16.1: Interval [0, 1] for different normalized coordinate systems
 <span id="cb123-3"><a href="Plots.html#cb123-3"></a><span class="kw">par</span>(<span class="st">&quot;fg&quot;</span>)  <span class="co"># color for the foreground (axes, boxes, plotting)</span></span>
 <span id="cb123-4"><a href="Plots.html#cb123-4"></a>[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></span></code></pre></div>
 </div>
-<div id="symbols" class="section level3">
+<div id="symbols-1" class="section level3">
 <h3><span class="header-section-number">16.1.9</span> Symbols</h3>
 <div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="Plots.html#cb124-1"></a><span class="kw">par</span>(<span class="st">&quot;pch&quot;</span>) <span class="co"># symbol</span></span>
 <span id="cb124-2"><a href="Plots.html#cb124-2"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
@@ -1004,7 +1007,7 @@ Figure 16.1: Interval [0, 1] for different normalized coordinate systems
 <span id="cb124-4"><a href="Plots.html#cb124-4"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
 <span id="cb124-5"><a href="Plots.html#cb124-5"></a><span class="kw">par</span>(<span class="st">&quot;col&quot;</span>) <span class="co"># symbol color</span></span>
 <span id="cb124-6"><a href="Plots.html#cb124-6"></a>[<span class="dv">1</span>] <span class="st">&quot;black&quot;</span></span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-108-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-109-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="lines" class="section level3">
 <h3><span class="header-section-number">16.1.10</span> Lines</h3>
@@ -1020,7 +1023,7 @@ Figure 16.1: Interval [0, 1] for different normalized coordinate systems
 <span id="cb125-10"><a href="Plots.html#cb125-10"></a>[<span class="dv">1</span>] <span class="st">&quot;round&quot;</span></span>
 <span id="cb125-11"><a href="Plots.html#cb125-11"></a><span class="kw">par</span>(<span class="st">&quot;lmitre&quot;</span>) <span class="co"># detail to ljoin option &quot;mitre&quot;</span></span>
 <span id="cb125-12"><a href="Plots.html#cb125-12"></a>[<span class="dv">1</span>] <span class="dv">10</span></span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-110-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-110-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-110-3.png" width="50%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-111-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-111-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-111-3.png" width="50%" /></p>
 </div>
 <div id="text" class="section level3">
 <h3><span class="header-section-number">16.1.11</span> Text</h3>
@@ -1041,7 +1044,7 @@ Figure 16.1: Interval [0, 1] for different normalized coordinate systems
 <p>Point size of text = <code>ps</code> * <code>cex</code></p>
 <p>Point size of title = <code>ps</code> * <code>cex</code> * <code>cex.main</code></p>
 <p>Size of “lines” (coordinate system) = constant * <code>cex</code> * <code>mex</code></p>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-112-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-112-2.png" width="50%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-113-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-113-2.png" width="50%" /></p>
 <p>Get new text families with packet extrafont (see <a href="http://blog.revolutionanalytics.com/2012/09/how-to-use-your-favorite-fonts-in-r-charts.html">here</a>)</p>
 
 <div class="rmdwarning">
@@ -1175,7 +1178,7 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 </ul></li>
 </ul>
 <p>Default palette:</p>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-121-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-122-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p>Change palette</p>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="Plots.html#cb134-1"></a>mycols &lt;-<span class="st"> </span><span class="kw">gray.colors</span>(<span class="dt">n =</span> <span class="dv">4</span>, <span class="dt">start =</span> <span class="dv">0</span>, <span class="dt">end =</span> <span class="fl">0.8</span>)</span>
 <span id="cb134-2"><a href="Plots.html#cb134-2"></a><span class="kw">palette</span>(mycols)       <span class="co"># change palette</span></span>
@@ -1214,7 +1217,7 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <span id="cb135-4"><a href="Plots.html#cb135-4"></a><span class="kw">terrain.colors</span>(n)</span>
 <span id="cb135-5"><a href="Plots.html#cb135-5"></a><span class="kw">topo.colors</span>(n)</span>
 <span id="cb135-6"><a href="Plots.html#cb135-6"></a><span class="kw">rainbow</span>(n)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-124-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-125-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <div id="further-palettes" class="section level5 unnumbered">
 <h5>Further palettes</h5>
 <ul>
@@ -1262,7 +1265,7 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <li><code>[]</code> subscript</li>
 </ul>
 <p>An extensive overview can be found in the following tables. The columns of grey text show sample R expressions, and the columns of black text show the resulting output.</p>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-126-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-126-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-126-3.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-126-4.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-126-5.png" width="50%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-127-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-127-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-127-3.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-127-4.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-127-5.png" width="50%" /></p>
 <div id="example" class="section level5 unnumbered">
 <h5>Example</h5>
 <div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="Plots.html#cb137-1"></a>a &lt;-<span class="st"> </span><span class="fl">1.34</span></span>
@@ -1271,7 +1274,7 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <span id="cb137-4"><a href="Plots.html#cb137-4"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)<span class="op">+</span><span class="fl">0.5</span>)</span>
 <span id="cb137-5"><a href="Plots.html#cb137-5"></a><span class="kw">plot</span>(<span class="dv">1</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>)</span>
 <span id="cb137-6"><a href="Plots.html#cb137-6"></a><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">1</span>, <span class="dt">labels =</span> label1, <span class="dt">cex =</span> <span class="fl">1.5</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-127-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
 <div id="high-level-plots" class="section level2">
@@ -1351,12 +1354,12 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <li>shiny (interactive web apps)</li>
 </ul></li>
 </ul>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-1.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-2.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-3.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-4.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-5.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-6.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-7.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-8.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-9.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-10.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-11.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-12.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-13.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-14.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-15.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-16.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-17.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-18.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-19.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-20.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-21.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-22.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-128-23.png" width="30%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-1.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-2.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-3.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-4.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-5.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-6.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-7.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-8.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-9.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-10.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-11.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-12.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-13.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-14.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-15.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-16.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-17.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-18.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-19.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-20.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-21.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-22.png" width="30%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-129-23.png" width="30%" /></p>
 <p><img src="figures/plots/vcd_mosaic.png" width="30%" /><img src="figures/plots/beeswarm.png" width="30%" /><img src="figures/plots/circular.png" width="30%" /><img src="figures/plots/radarchart.png" width="30%" /></p>
 <div id="plot-function" class="section level3">
 <h3><span class="header-section-number">16.4.1</span> Plot function</h3>
 <p>Type argument</p>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-130-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-131-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p>For pmf use <code>type = "h"</code> and for cdf use <code>type = "s"</code></p>
 </div>
 <div id="example-barplot" class="section level3">
@@ -1390,7 +1393,7 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <span id="cb138-27"><a href="Plots.html#cb138-27"></a><span class="kw">arrows</span>(barCenters, myData<span class="op">$</span>mean <span class="op">-</span><span class="st"> </span>myData<span class="op">$</span>se, barCenters,</span>
 <span id="cb138-28"><a href="Plots.html#cb138-28"></a>       myData<span class="op">$</span>mean <span class="op">+</span><span class="st"> </span>myData<span class="op">$</span>se, <span class="dt">lwd =</span> <span class="fl">1.5</span>, <span class="dt">angle =</span> <span class="dv">90</span>,</span>
 <span id="cb138-29"><a href="Plots.html#cb138-29"></a>       <span class="dt">code =</span> <span class="dv">3</span>, <span class="dt">length =</span> <span class="fl">0.05</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-131-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-132-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="example-matplot" class="section level3">
 <h3><span class="header-section-number">16.4.3</span> Example: Matplot</h3>
@@ -1404,7 +1407,7 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <span id="cb139-8"><a href="Plots.html#cb139-8"></a><span class="co">## mq: y coordinates of lines, here: matrix</span></span>
 <span id="cb139-9"><a href="Plots.html#cb139-9"></a><span class="co">##     each column give y coordinate of one line</span></span>
 <span id="cb139-10"><a href="Plots.html#cb139-10"></a><span class="kw">matplot</span>(den.df, mq, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;den.df&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;95%-quantile&quot;</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-132-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-133-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="example-image-and-contour-plot" class="section level3">
 <h3><span class="header-section-number">16.4.4</span> Example: image and contour plot</h3>
@@ -1425,7 +1428,7 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="Plots.html#cb142-1"></a><span class="kw">image</span>(<span class="dt">z =</span> m)</span>
 <span id="cb142-2"><a href="Plots.html#cb142-2"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">2</span>), <span class="dt">y =</span> <span class="kw">rep</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">each =</span> <span class="dv">3</span>))</span>
 <span id="cb142-3"><a href="Plots.html#cb142-3"></a><span class="kw">contour</span>(<span class="dt">z =</span> m, <span class="dt">levels =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-133-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-134-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="Plots.html#cb143-1"></a><span class="kw">library</span>(MASS)</span>
 <span id="cb143-2"><a href="Plots.html#cb143-2"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(loss <span class="op">~</span><span class="st"> </span>tens <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(hard <span class="op">*</span><span class="st"> </span>tens) <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(hard<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(tens<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(hard<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>tens) <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(tens<span class="op">^</span><span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(hard<span class="op">^</span><span class="dv">3</span>), <span class="dt">data =</span> Rubber)</span>
 <span id="cb143-3"><a href="Plots.html#cb143-3"></a></span>
@@ -1440,23 +1443,23 @@ You could also use this command to get your fonts from Windows <code>windowsFont
 <span id="cb143-12"><a href="Plots.html#cb143-12"></a></span>
 <span id="cb143-13"><a href="Plots.html#cb143-13"></a><span class="kw">image</span>(<span class="dt">x =</span> x1, <span class="dt">y =</span> x2, <span class="dt">z =</span> <span class="kw">matrix</span>(grid<span class="op">$</span>y, reso, reso))</span>
 <span id="cb143-14"><a href="Plots.html#cb143-14"></a><span class="kw">contour</span>(<span class="dt">x =</span> x1, <span class="dt">y =</span> x2, <span class="dt">z =</span> <span class="kw">matrix</span>(grid<span class="op">$</span>y, reso, reso), <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-134-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-135-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="Plots.html#cb144-1"></a><span class="co">## easier lattice::contourplot() allows formula method (no matrix necessary)</span></span>
 <span id="cb144-2"><a href="Plots.html#cb144-2"></a>lattice<span class="op">::</span><span class="kw">contourplot</span>(y <span class="op">~</span><span class="st"> </span>hard <span class="op">+</span><span class="st"> </span>tens, <span class="dt">data =</span> grid, <span class="dt">main =</span> <span class="st">&quot;lattice::contourplot()&quot;</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-134-2.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-135-2.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="example-boxplot" class="section level3">
 <h3><span class="header-section-number">16.4.5</span> Example: Boxplot</h3>
 <p>Separately give datapoints for each box</p>
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="Plots.html#cb145-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
 <span id="cb145-2"><a href="Plots.html#cb145-2"></a><span class="kw">boxplot</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">4</span>), <span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">6</span>), <span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">9</span>))</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-135-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-136-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p>Specify assignment to box with formula</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="Plots.html#cb146-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
 <span id="cb146-2"><a href="Plots.html#cb146-2"></a>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">y =</span> <span class="kw">rnorm</span>(<span class="dv">100</span>),</span>
 <span id="cb146-3"><a href="Plots.html#cb146-3"></a>                  <span class="dt">x =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>), <span class="dt">size =</span> <span class="dv">100</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>))</span>
 <span id="cb146-4"><a href="Plots.html#cb146-4"></a><span class="kw">boxplot</span>(y <span class="op">~</span><span class="st"> </span>x, <span class="dt">data =</span> dat)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-136-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-137-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
 <div id="low-level-plots" class="section level2">
@@ -1505,7 +1508,7 @@ Useful function for text: <code>strwidth()</code>. Returns width or height of st
 
 <div id="legends" class="section level3">
 <h3><span class="header-section-number">16.5.1</span> Legends</h3>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-138-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-138-2.png" width="50%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-139-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-139-2.png" width="50%" /></p>
 </div>
 <div id="arrow" class="section level3">
 <h3><span class="header-section-number">16.5.2</span> Arrow</h3>
@@ -1513,7 +1516,7 @@ Useful function for text: <code>strwidth()</code>. Returns width or height of st
 <span id="cb147-2"><a href="Plots.html#cb147-2"></a>       <span class="dt">length =</span> <span class="fl">0.25</span>,</span>
 <span id="cb147-3"><a href="Plots.html#cb147-3"></a>       <span class="dt">angle =</span> <span class="dv">30</span>,</span>
 <span id="cb147-4"><a href="Plots.html#cb147-4"></a>       <span class="dt">code =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-140-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-140-2.png" width="50%" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-141-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-141-2.png" width="50%" /></p>
 </div>
 <div id="panel.first" class="section level3">
 <h3><span class="header-section-number">16.5.3</span> panel.first</h3>
@@ -1521,7 +1524,7 @@ Useful function for text: <code>strwidth()</code>. Returns width or height of st
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="Plots.html#cb148-1"></a><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">pch =</span> <span class="dv">16</span>,</span>
 <span id="cb148-2"><a href="Plots.html#cb148-2"></a>     <span class="dt">panel.first =</span> <span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">seq</span>(<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">2</span>),</span>
 <span id="cb148-3"><a href="Plots.html#cb148-3"></a>                          <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>))</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-141-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-142-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="area-under-curve" class="section level3">
 <h3><span class="header-section-number">16.5.4</span> Area under curve</h3>
@@ -1541,7 +1544,7 @@ Useful function for text: <code>strwidth()</code>. Returns width or height of st
 <span id="cb149-14"><a href="Plots.html#cb149-14"></a>        <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">border =</span> <span class="ot">NA</span>)</span>
 <span id="cb149-15"><a href="Plots.html#cb149-15"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</span>
 <span id="cb149-16"><a href="Plots.html#cb149-16"></a><span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-142-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-143-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
 <div id="plot-empty" class="section level2">

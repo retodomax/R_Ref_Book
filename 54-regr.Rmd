@@ -469,7 +469,7 @@ Interpretation
     - 0-2 Weak
     - 2-6 Positive
     - 6-10 Strong
-    - >10 Very strong
+    - \> 10 Very strong
 
 ### Variable selection
 
