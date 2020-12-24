@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | R Reference book</title>
+  <title>Chapter 32 R Markdown | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | R Reference book" />
+  <meta property="og:title" content="Chapter 32 R Markdown | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | R Reference book" />
+  <meta name="twitter:title" content="Chapter 32 R Markdown | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
-<link rel="prev" href="stuff-still-to-include.html"/>
-
+<link rel="prev" href="reference-management.html"/>
+<link rel="next" href="bookdown.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -564,16 +564,573 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
+<div id="r-markdown-1" class="section level1">
+<h1><span class="header-section-number">Chapter 32</span> R Markdown</h1>
+<div id="components-1" class="section level2">
+<h2><span class="header-section-number">32.1</span> Components</h2>
+<ul>
+<li>Three basic components of an R Markdown document
+<ul>
+<li>Metadata (YAML frontmatter)</li>
+<li>Text (Markdown)</li>
+<li>Code (R, Python, C++, …)</li>
+</ul></li>
+</ul>
+<div id="yaml-frontmatter" class="section level3">
+<h3><span class="header-section-number">32.1.1</span> YAML frontmatter</h3>
+<p>The information of the YAML frontmatter is passed to the output function when the document is rendered. To see <strong>all possible options</strong> go to the help page of the output function (e.g. <code>?rmarkdown::html_document</code> or <code>?bookdown::gitbook</code>). Some options are passed to kniter and some are passed to pandoc.</p>
+<p>All output functions:</p>
+<ul>
+<li><code>beamer_presentation</code></li>
+<li><code>context_document</code></li>
+<li><code>github_document</code></li>
+<li><code>html_document</code></li>
+<li><code>ioslides_presentation</code></li>
+<li><code>latex_document</code></li>
+<li><code>md_document</code></li>
+<li><code>odt_document</code></li>
+<li><code>pdf_document</code></li>
+<li><code>powerpoint_presentation</code></li>
+<li><code>rtf_document</code></li>
+<li><code>slidy_presentation</code></li>
+<li><code>word_document</code></li>
+</ul>
+<p>And some of extension packages (you need to include the package name) e.g. <code>tufte::tufte_html</code></p>
+<p>The YAML frontmatter follows the a certain syntax</p>
+<ul>
+<li>starts and ends with three dashes <code>---</code></li>
+<li>tag and value sparated by <code>:</code></li>
+<li><code>true</code>, <code>false</code> (unlike <code>TRUE</code>, <code>FALSE</code> in R)</li>
+<li>vectors: with square brackets e.g. <code>output: ["html_document", "word_document"]</code></li>
+<li>lists: indet code by two spaces</li>
+</ul>
+</div>
+<div id="text-1" class="section level3">
+<h3><span class="header-section-number">32.1.2</span> Text</h3>
+<p>The syntax for text (also known as prose or narratives) is Markdown. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents.</p>
+<p>Find all formatting syntax in detail in the <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc Manual</a> e.g. </p>
+<ul>
+<li><a href="https://pandoc.org/MANUAL.html#inline-formatting">Inline formatting</a></li>
+<li><a href="https://pandoc.org/MANUAL.html#links-1">Links</a></li>
+<li><a href="https://pandoc.org/MANUAL.html#lists">Lists</a></li>
+<li><a href="https://pandoc.org/MANUAL.html#tables">Tables</a></li>
+</ul>
+<p>or in less detail in the <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">R Markdown manual</a></p>
+<ul>
+<li>\ : escape</li>
+<li>` : code</li>
+<li>* : italic/bold</li>
+<li>_ : italic/bold</li>
+<li>^ : superscript</li>
+<li>~ : subscript</li>
+<li>$ : formula</li>
+<li>@ : reference</li>
+<li># : header</li>
+<li>-/+ : itemize</li>
+<li>&gt; : blockquote</li>
+</ul>
+<p><img src="figures/writing_markdown.png" width="70%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="code" class="section level3">
+<h3><span class="header-section-number">32.1.3</span> Code</h3>
+<div id="types" class="section level4">
+<h4><span class="header-section-number">32.1.3.1</span> Types</h4>
+<p>Two types of code</p>
+<ul>
+<li>A code chunk starts with three backticks like <code>```{r}</code> where <code>r</code> indicates the language name, and ends with three backticks. You can write chunk options in the curly braces (e.g., set the figure height to 5 inches: <code>```{r, fig.height=5}</code>).</li>
+<li>An inline R code expression starts with <code>`r</code> and ends with a backtick <code>`</code>.</li>
+</ul>
+</div>
+<div id="chunck-ouput" class="section level4">
+<h4><span class="header-section-number">32.1.3.2</span> Chunck Ouput</h4>
+<ul>
+<li>Text</li>
+<li>Tables</li>
+<li>Graphics</li>
+</ul>
+</div>
+<div id="chunck-options" class="section level4">
+<h4><span class="header-section-number">32.1.3.3</span> Chunck options</h4>
+<p>All chunk options can be found in the <a href="https://yihui.name/knitr/options/">Knitr Manual</a></p>
+<p>Most important chunck options:</p>
+<ul>
+<li>first element gives the engine (name of the language)</li>
+<li>second element can be a chunck name e.g. <code>{r, my-name, eval = ...}</code></li>
+<li><code>eval</code>: Whether to evaluate a code chunk.</li>
+<li><code>echo</code>: Whether to echo the source code in the output document.</li>
+<li><code>results</code>: When set to <code>'hide'</code>, text output will be hidden; when set to <code>'asis'</code>, text output is written “as-is”, e.g., you can write out raw Markdown text from R code (like <code>cat('**Markdown** is cool.\n')</code>).</li>
+<li><code>collapse</code>: Whether to merge text output and source code into a single code block in the output.</li>
+<li><code>warning</code>, <code>message</code>, and <code>error</code>: Whether to show warnings, messages, and errors in the output document.</li>
+<li><code>include</code>: Whether to include anything from a code chunk in the output document.</li>
+<li><code>cache</code>: Whether to enable caching.</li>
+<li><code>fig.width</code> and <code>fig.height</code> (or <code>fig.dim</code>): The (graphical device) size of R plots in <strong>inches</strong>.</li>
+<li><code>out.width</code> and <code>out.height</code>: The output size of R plots in the output document in <strong>percentage</strong> (e.g. <code>out.width = '80%'</code>).</li>
+<li><code>fig.align</code>: The alignment of plots. It can be <code>'left'</code>, <code>'center'</code>, or <code>'right'</code>.</li>
+<li><code>dev</code>: The graphical device to record R plots. Typically it is <code>'pdf'</code> for LaTeX output, and <code>'png'</code> for HTML output, but you can certainly use other devices, such as <code>'svg'</code> or <code>'jpeg'</code>.</li>
+<li><code>fig.cap</code>: The figure caption.</li>
+<li><code>child</code>: You can include a child document in the main document. This option takes a path to an external file.</li>
+</ul>
+<p>Set chunk option globally:</p>
+<div class="sourceCode" id="cb322"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb322-1"><a href="r-markdown-1.html#cb322-1"></a><span class="bn">```{r, setup, include=FALSE}</span></span>
+<span id="cb322-2"><a href="r-markdown-1.html#cb322-2"></a><span class="bn">knitr::opts_chunk$set(comment = &quot;#&gt;&quot;,</span></span>
+<span id="cb322-3"><a href="r-markdown-1.html#cb322-3"></a><span class="bn">                      tidy = TRUE,</span></span>
+<span id="cb322-4"><a href="r-markdown-1.html#cb322-4"></a><span class="bn">                      fig.align = &quot;center&quot;,</span></span>
+<span id="cb322-5"><a href="r-markdown-1.html#cb322-5"></a><span class="bn">                      out.width = &quot;80%&quot;)</span></span>
+<span id="cb322-6"><a href="r-markdown-1.html#cb322-6"></a><span class="bn">```</span></span></code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+</div>
+</div>
+</div>
+<div id="figures" class="section level2">
+<h2><span class="header-section-number">32.2</span> Figures</h2>
+<p>Plot from code chunks or insert via <code>knitr::include_graphics()</code></p>
+<p>e.g.</p>
+<div class="sourceCode" id="cb323"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb323-1"><a href="r-markdown-1.html#cb323-1"></a><span class="bn">```{r, echo = FALSE, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></span>
+<span id="cb323-2"><a href="r-markdown-1.html#cb323-2"></a><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></span>
+<span id="cb323-3"><a href="r-markdown-1.html#cb323-3"></a><span class="bn">```</span></span></code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+<div class="figure" style="text-align: center"><span id="fig:include-graphics"></span>
+<img src="figures/hex-rmarkdown.png" alt="The R Markdown hex logo." width="25%" />
+<p class="caption">
+Figure 32.1: The R Markdown hex logo.
+</p>
+</div>
+<p>Chunk options</p>
+<ul>
+<li><code>fig.cap = "text"</code> Figure captation text or text reference</li>
+<li><code>out.width &lt; '50%', fig.show='hold', fig.align='default'</code> Show figures next to each other
+<ul>
+<li>Possible Bug: figures often are on top of each other</li>
+<li>Always include <code>fig.align='default'</code> and it should work</li>
+</ul></li>
+</ul>
+<p>Recomended file formate</p>
+<ul>
+<li>If output pdf use pdf images (<a href="https://stackoverflow.com/questions/50165404/how-to-make-a-pdf-using-bookdown-including-svg-images">svg not possible</a>!)</li>
+<li>If output html use png images</li>
+<li>If output both use png
+<ul>
+<li><code>options(knitr.graphics.auto_pdf = TRUE)</code> pdf output will automatically take file with same name but pdf format if it is available.</li>
+</ul></li>
+</ul>
+<div id="wrap-text-arround-plot" class="section level5 unnumbered">
+<h5>Wrap text arround plot</h5>
+<p>Plots can be placed on right side with text wraped arround it. Use the following chunk options:</p>
+<div class="sourceCode" id="cb324"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb324-1"><a href="r-markdown-1.html#cb324-1"></a><span class="bn">```{r, out.width=&#39;25%&#39;, echo = FALSE, out.extra=&#39;style=&quot;float:right; padding:5px&quot;&#39;}</span></span>
+<span id="cb324-2"><a href="r-markdown-1.html#cb324-2"></a><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></span>
+<span id="cb324-3"><a href="r-markdown-1.html#cb324-3"></a><span class="bn">```</span></span></code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+</div>
+<div id="include-figure-which-serves-as-a-link" class="section level5 unnumbered">
+<h5>Include figure which serves as a link</h5>
+<div class="sourceCode" id="cb325"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb325-1"><a href="r-markdown-1.html#cb325-1"></a>&lt;a href=&quot;figures/03_pdf/lubridate.pdf&quot; target=&quot;_blank&quot;&gt; </span>
+<span id="cb325-2"><a href="r-markdown-1.html#cb325-2"></a><span class="bn">```{r, echo=FALSE, out.width=&#39;50%&#39;}</span></span>
+<span id="cb325-3"><a href="r-markdown-1.html#cb325-3"></a><span class="bn">knitr::include_graphics(&#39;figures/03_pdf/lubridate.jpg&#39;)</span></span>
+<span id="cb325-4"><a href="r-markdown-1.html#cb325-4"></a><span class="bn">```</span></span>
+<span id="cb325-5"><a href="r-markdown-1.html#cb325-5"></a>&lt;/a&gt;</span></code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+<p><code>target="_blank"</code> makes sure that the browser opens the pdf in a new tab. To include a pdf without figure, just replace the R chunk part with some words.</p>
+</div>
+</div>
+<div id="tables" class="section level2">
+<h2><span class="header-section-number">32.3</span> Tables</h2>
+<ul>
+<li>For data in R use <code>knitr::kable()</code> (See <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">Kable Manual</a>)</li>
+<li>For text use <a href="https://pandoc.org/MANUAL.html#tables">Pandoc tables</a>
+<ul>
+<li>Available
+<ul>
+<li>Simple tables</li>
+<li>Multiline tables</li>
+<li>Grid tables</li>
+<li>Pipe tables</li>
+</ul></li>
+<li>Recommended to use
+<ul>
+<li>pipe tables for simple tables (generate <a href="https://www.tablesgenerator.com/markdown_tables">here</a>)</li>
+<li>Grid tables where you need bullet points within the table (generate <a href="https://www.tablesgenerator.com/text_tables">here</a>)</li>
+</ul></li>
+</ul></li>
+</ul>
 
-<div id="refs" class="references">
-<div>
-<p>Grolemund, Garrett, and Hadley Wickham. n.d. <em>R for Data Science</em>. Accessed April 12, 2019. <a href="https://r4ds.had.co.nz/">https://r4ds.had.co.nz/</a>.</p>
+<div class="rmdcaution">
+Without using a header, the formated table is reduced to an unformatted html table. Avoid this by including a white space into the header ()
 </div>
-<div>
-<p>Wickham, Hadley. n.d. <em>Advanced R</em>. 2nd ed. Accessed April 12, 2019. <a href="https://adv-r.hadley.nz/">https://adv-r.hadley.nz/</a>.</p>
+
+<div id="html-tables" class="section level3">
+<h3><span class="header-section-number">32.3.1</span> HTML tables</h3>
+<p>Tables can be formatted in CSS if we are only interested in HTML output. Add the following internal <code>&lt;style&gt;</code> element (in document between <code>&lt;style&gt;</code> and <code>&lt;/style&gt;</code> tag) or use an external CSS file (<code>style.css</code>).</p>
+<div id="definition-tables" class="section level5 unnumbered">
+<h5>Definition tables</h5>
+<div class="sourceCode" id="cb326"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb326-1"><a href="r-markdown-1.html#cb326-1"></a><span class="co">/* definition tables (RZ) */</span></span>
+<span id="cb326-2"><a href="r-markdown-1.html#cb326-2"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></span>
+<span id="cb326-3"><a href="r-markdown-1.html#cb326-3"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></span>
+<span id="cb326-4"><a href="r-markdown-1.html#cb326-4"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</span>
+<span id="cb326-5"><a href="r-markdown-1.html#cb326-5"></a>{</span>
+<span id="cb326-6"><a href="r-markdown-1.html#cb326-6"></a>  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></span>
+<span id="cb326-7"><a href="r-markdown-1.html#cb326-7"></a>  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></span>
+<span id="cb326-8"><a href="r-markdown-1.html#cb326-8"></a>  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb326-9"><a href="r-markdown-1.html#cb326-9"></a>}</span>
+<span id="cb326-10"><a href="r-markdown-1.html#cb326-10"></a></span>
+<span id="cb326-11"><a href="r-markdown-1.html#cb326-11"></a><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</span>
+<span id="cb326-12"><a href="r-markdown-1.html#cb326-12"></a>  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></span>
+<span id="cb326-13"><a href="r-markdown-1.html#cb326-13"></a>  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb326-14"><a href="r-markdown-1.html#cb326-14"></a>}</span>
+<span id="cb326-15"><a href="r-markdown-1.html#cb326-15"></a><span class="fu">.deftab</span> th {</span>
+<span id="cb326-16"><a href="r-markdown-1.html#cb326-16"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></span>
+<span id="cb326-17"><a href="r-markdown-1.html#cb326-17"></a>}</span>
+<span id="cb326-18"><a href="r-markdown-1.html#cb326-18"></a><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</span>
+<span id="cb326-19"><a href="r-markdown-1.html#cb326-19"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></span>
+<span id="cb326-20"><a href="r-markdown-1.html#cb326-20"></a>}</span></code></pre></div>
+<p>Afterwards we can use HTML tags to create the table</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb327-1"><a href="r-markdown-1.html#cb327-1"></a><span class="kw">&lt;table</span><span class="ot"> class</span> <span class="ot">=</span> <span class="st">&quot;deftab&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb327-2"><a href="r-markdown-1.html#cb327-2"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb327-3"><a href="r-markdown-1.html#cb327-3"></a>    <span class="kw">&lt;td&gt;</span>**Doe**<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb327-4"><a href="r-markdown-1.html#cb327-4"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb327-5"><a href="r-markdown-1.html#cb327-5"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb327-6"><a href="r-markdown-1.html#cb327-6"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb327-7"><a href="r-markdown-1.html#cb327-7"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb327-8"><a href="r-markdown-1.html#cb327-8"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb327-9"><a href="r-markdown-1.html#cb327-9"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb327-10"><a href="r-markdown-1.html#cb327-10"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb327-11"><a href="r-markdown-1.html#cb327-11"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb327-12"><a href="r-markdown-1.html#cb327-12"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb327-13"><a href="r-markdown-1.html#cb327-13"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb327-14"><a href="r-markdown-1.html#cb327-14"></a><span class="kw">&lt;/table&gt;</span></span></code></pre></div>
+<p>Results in</p>
+<table class = "deftab">
+<tr>
+<td>
+<strong>Doe</strong>
+</td>
+<td>
+John
+</td>
+</tr>
+<tr>
+<td>
+Doe
+</td>
+<td>
+John
+</td>
+</tr>
+<tr>
+<td>
+Doe
+</td>
+<td>
+John
+</td>
+</tr>
+</table>
 </div>
+</div>
+</div>
+<div id="sepecial-characters" class="section level2">
+<h2><span class="header-section-number">32.4</span> Sepecial characters</h2>
+<ul>
+<li>Mathematical stuff with Latex
+<ul>
+<li><span class="math inline">\(\alpha\)</span> <span class="math inline">\(\Gamma\)</span> <span class="math inline">\(\ggg\)</span> <span class="math inline">\(\notin\)</span> <span class="math inline">\(\dagger\)</span> <span class="math inline">\(\mathbb{R}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\infty\)</span> <span class="math inline">\(n\)</span></li>
+</ul></li>
+<li>What you can reach on the keyboard, use keyboard
+<ul>
+<li>§°+"ç%&amp;/()=?¦¬|¢~[]èéàüöä&lt;$£</li>
+</ul></li>
+<li>Some characters with special meaning in markdown needs to be escaped with \
+<ul>
+<li>Everywhere \ ` * _ ^ ~ $ @ { }</li>
+<li>Beginning of new line # - + &gt;</li>
+</ul></li>
+<li>Furter characters
+<ul>
+<li>Find symbol with google, copy-paste (e.g. €)</li>
+<li>Find html code (e.g. &amp;euro; <span class="math inline">\(\Rightarrow\)</span> €)
+<ul>
+<li>Find many <a href="https://dev.w3.org/html5/html-author/charref">here</a></li>
+</ul></li>
+</ul></li>
+<li>html code examples examples
+<ul>
+<li>&amp;nbsp; for non-breaking space (several after each other possible)</li>
+<li>&amp;Tab; for a tab</li>
+<li>&amp;#128512; for 😀</li>
+<li>&amp;larr; for ← (does work in pdf)</li>
+<li>&amp;rArr; for ⇒ (does not work in pdf)</li>
+<li>Will not always work with pdf output (some characters work others not)!</li>
+</ul></li>
+<li>Text writing symbols
+<ul>
+<li>“\” backslash followed by space = nonbreaking space</li>
+<li>backslash followed by newline = hard line break
+-“ ” thin nonbreaking space
+-“‑” nonbreaking hythen (should be used as hythen minus)</li>
+</ul></li>
+</ul>
+</div>
+<div id="section-folding" class="section level2">
+<h2><span class="header-section-number">32.5</span> Section folding</h2>
+<p>Section folding is only available for HTML documents. There are two good options</p>
+<ul>
+<li>Global code folding</li>
+<li>Local section folding</li>
+</ul>
+<div id="global-code-folding" class="section level5 unnumbered">
+<h5>Global code folding</h5>
+<p>Well explained <a href="https://bookdown.org/yihui/rmarkdown/html-document.html#code-folding">here</a>. Put the line <code>code_folding: hide</code> in the YAML header</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb328-1"><a href="r-markdown-1.html#cb328-1"></a><span class="pp">---</span></span>
+<span id="cb328-2"><a href="r-markdown-1.html#cb328-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My Document&quot;</span></span>
+<span id="cb328-3"><a href="r-markdown-1.html#cb328-3"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb328-4"><a href="r-markdown-1.html#cb328-4"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb328-5"><a href="r-markdown-1.html#cb328-5"></a><span class="at">    </span><span class="fu">code_folding</span><span class="kw">:</span><span class="at"> hide</span></span>
+<span id="cb328-6"><a href="r-markdown-1.html#cb328-6"></a><span class="pp">---</span></span></code></pre></div>
+<p>You can specify <code>code_folding: show</code> to still show all R code by default but then allow users to hide the code if they wish.</p>
+</div>
+<div id="local-section-folding" class="section level5 unnumbered">
+<h5>Local section folding</h5>
+<p>Good ideas can be found <a href="https://stackoverflow.com/questions/52576626/rmarkdown-collapsible-panel">here</a>. Here we describe a methode with HTML/CSS buttons.</p>
+<ol style="list-style-type: decimal">
+<li>Add HTML code for button at beginning of your document. Alternatively you make a separate html file. Find button code and how to make separate HTML file in Chapter <a href="bookdown.html#NewBookdownProject">33.2</a></li>
+<li>Add this HTML code at the place were you want the button.</li>
+</ol>
+<div class="sourceCode" id="cb329"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb329-1"><a href="r-markdown-1.html#cb329-1"></a><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction(&#39;new_identifier&#39;)&quot;</span><span class="kw">&gt;</span>Text on button<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb329-2"><a href="r-markdown-1.html#cb329-2"></a><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;new_identifier&quot;</span><span class="ot"> style=</span><span class="st">&quot;display: none&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb329-3"><a href="r-markdown-1.html#cb329-3"></a></span>
+<span id="cb329-4"><a href="r-markdown-1.html#cb329-4"></a>Blabla.</span>
+<span id="cb329-5"><a href="r-markdown-1.html#cb329-5"></a></span>
+<span id="cb329-6"><a href="r-markdown-1.html#cb329-6"></a><span class="kw">&lt;/div&gt;</span></span></code></pre></div>
+<p>Replace <code>new_identifier</code> with unique identifier for that section. Replace <code>Text on button</code> and <code>Blabla</code></p>
+</div>
+</div>
+<div id="add-box" class="section level2">
+<h2><span class="header-section-number">32.6</span> Add box</h2>
+<p>These type of boxes are only available for HTML documents.
+There is a good implementation to add boxes for caution, important, note, tip and waring</p>
+<ol style="list-style-type: decimal">
+<li>Add CSS code for button at beginning of your document. Alternatively you make a separate CSS style file. Find button code and how to make separate CSS style file in Chapter <a href="bookdown.html#NewBookdownProject">33.2</a></li>
+<li>Add this code at the place were you want the button.</li>
+</ol>
+<div class="sourceCode" id="cb330"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb330-1"><a href="r-markdown-1.html#cb330-1"></a><span class="bn">```{block2, type=&#39;rmdcaution&#39;}</span></span>
+<span id="cb330-2"><a href="r-markdown-1.html#cb330-2"></a><span class="bn">Text</span></span>
+<span id="cb330-3"><a href="r-markdown-1.html#cb330-3"></a><span class="bn">```</span></span></code></pre></div>
+<p>Replace <code>rmdcaution</code> with <code>rmdimportant</code>, <code>rmdnote</code>, <code>rmdtip</code> and <code>rmdwarning</code>. Note that the code chunk always needs to be taged as <code>block2</code>.</p>
+<p>Here how they look like</p>
+
+<div class="rmdcaution">
+Caution
+</div>
+
+
+<div class="rmdimportant">
+Important
+</div>
+
+
+<div class="rmdnote">
+Note
+</div>
+
+
+<div class="rmdtip">
+Tip
+</div>
+
+
+<div class="rmdwarning">
+Warning
+</div>
+
+</div>
+<div id="template" class="section level2">
+<h2><span class="header-section-number">32.7</span> Template</h2>
+<p>This is a template containing structure, equations, references, cross-references, figures and tables with caption. The rendered output of the template can be found <a href="https://retodomax.github.io/R_Ref_Book/template.html">here</a>.
+To get the the template in pdf, replace the <code>output</code> section in the YAML header with</p>
+<div class="sourceCode" id="cb331"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb331-1"><a href="r-markdown-1.html#cb331-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb331-2"><a href="r-markdown-1.html#cb331-2"></a><span class="at">    bookdown:</span><span class="fu">:pdf_document2</span><span class="kw">:</span></span>
+<span id="cb331-3"><a href="r-markdown-1.html#cb331-3"></a><span class="at">      </span><span class="fu">includes</span><span class="kw">:</span></span>
+<span id="cb331-4"><a href="r-markdown-1.html#cb331-4"></a><span class="at">          </span><span class="fu">in_header</span><span class="kw">:</span></span>
+<span id="cb331-5"><a href="r-markdown-1.html#cb331-5"></a><span class="at">            </span><span class="kw">-</span><span class="at"> /home/reto/texmf-local/tex/latex/commonstuff/RetoArticle.sty</span></span>
+<span id="cb331-6"><a href="r-markdown-1.html#cb331-6"></a><span class="at">            </span><span class="kw">-</span><span class="at"> /home/reto/texmf-local/tex/latex/commonstuff/RetoMath.sty</span></span>
+<span id="cb331-7"><a href="r-markdown-1.html#cb331-7"></a><span class="fu">classoption</span><span class="kw">:</span><span class="at"> a4paper</span></span>
+<span id="cb331-8"><a href="r-markdown-1.html#cb331-8"></a><span class="fu">geometry</span><span class="kw">:</span><span class="at"> margin=2.5cm</span></span></code></pre></div>
+<p>A shorted Template is available as Code snipped “html” and “pdf”.</p>
+<button onclick="myFunction(&#39;markdown_template&#39;)">
+Show template
+</button>
+<div id="markdown_template" style="display: none">
+<div class="sourceCode" id="cb332"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb332-1"><a href="r-markdown-1.html#cb332-1"></a>---</span>
+<span id="cb332-2"><a href="r-markdown-1.html#cb332-2"></a>project: MyProj    #################################################</span>
+<span id="cb332-3"><a href="r-markdown-1.html#cb332-3"></a>title:   Template</span>
+<span id="cb332-4"><a href="r-markdown-1.html#cb332-4"></a>author:  &quot;<span class="ot">[Reto Zihlmann](https://retodomax.github.io/)</span>&quot;</span>
+<span id="cb332-5"><a href="r-markdown-1.html#cb332-5"></a>date:    &quot;<span class="bn">`r Sys.Date()`</span>&quot;</span>
+<span id="cb332-6"><a href="r-markdown-1.html#cb332-6"></a>output:</span>
+<span id="cb332-7"><a href="r-markdown-1.html#cb332-7"></a>  bookdown::html_document2:</span>
+<span id="cb332-8"><a href="r-markdown-1.html#cb332-8"></a><span class="bn">    toc: true</span></span>
+<span id="cb332-9"><a href="r-markdown-1.html#cb332-9"></a><span class="bn">    toc_float: true</span></span>
+<span id="cb332-10"><a href="r-markdown-1.html#cb332-10"></a>bibliography:</span>
+<span id="cb332-11"><a href="r-markdown-1.html#cb332-11"></a>  - &quot;/home/reto/texmf-local/bibtex/bib/bib.bib&quot;</span>
+<span id="cb332-12"><a href="r-markdown-1.html#cb332-12"></a>  - bib_packages.bib</span>
+<span id="cb332-13"><a href="r-markdown-1.html#cb332-13"></a>link-citations: true</span>
+<span id="cb332-14"><a href="r-markdown-1.html#cb332-14"></a>---</span>
+<span id="cb332-15"><a href="r-markdown-1.html#cb332-15"></a></span>
+<span id="cb332-16"><a href="r-markdown-1.html#cb332-16"></a><span class="bn">```{r, setup, include=FALSE}</span></span>
+<span id="cb332-17"><a href="r-markdown-1.html#cb332-17"></a><span class="bn">knitr::opts_chunk$set(comment = &quot;&quot;,</span></span>
+<span id="cb332-18"><a href="r-markdown-1.html#cb332-18"></a><span class="bn">                      tidy = TRUE,</span></span>
+<span id="cb332-19"><a href="r-markdown-1.html#cb332-19"></a><span class="bn">                      fig.align = &quot;left&quot;,</span></span>
+<span id="cb332-20"><a href="r-markdown-1.html#cb332-20"></a><span class="bn">                      out.width = &quot;100%&quot;,</span></span>
+<span id="cb332-21"><a href="r-markdown-1.html#cb332-21"></a><span class="bn">                      echo = FALSE,</span></span>
+<span id="cb332-22"><a href="r-markdown-1.html#cb332-22"></a><span class="bn">                      warning = FALSE,</span></span>
+<span id="cb332-23"><a href="r-markdown-1.html#cb332-23"></a><span class="bn">                      message = FALSE,</span></span>
+<span id="cb332-24"><a href="r-markdown-1.html#cb332-24"></a><span class="bn">                      error = FALSE)</span></span>
+<span id="cb332-25"><a href="r-markdown-1.html#cb332-25"></a><span class="bn">```</span></span>
+<span id="cb332-26"><a href="r-markdown-1.html#cb332-26"></a></span>
+<span id="cb332-27"><a href="r-markdown-1.html#cb332-27"></a><span class="bn">```{r, package-bib, include=FALSE}</span></span>
+<span id="cb332-28"><a href="r-markdown-1.html#cb332-28"></a><span class="bn"># automatically create a bib database for R packages</span></span>
+<span id="cb332-29"><a href="r-markdown-1.html#cb332-29"></a><span class="bn">knitr::write_bib(c(</span></span>
+<span id="cb332-30"><a href="r-markdown-1.html#cb332-30"></a><span class="bn">  .packages(), &#39;bookdown&#39;, &#39;knitr&#39;, &#39;rmarkdown&#39;, &quot;mgcv&quot;</span></span>
+<span id="cb332-31"><a href="r-markdown-1.html#cb332-31"></a><span class="bn">), &#39;bib_packages.bib&#39;)</span></span>
+<span id="cb332-32"><a href="r-markdown-1.html#cb332-32"></a><span class="bn">```</span></span>
+<span id="cb332-33"><a href="r-markdown-1.html#cb332-33"></a></span>
+<span id="cb332-34"><a href="r-markdown-1.html#cb332-34"></a></span>
+<span id="cb332-35"><a href="r-markdown-1.html#cb332-35"></a>&lt;!--<span class="co"> CSS Stype for Figure caption --&gt;</span></span>
+<span id="cb332-36"><a href="r-markdown-1.html#cb332-36"></a>&lt;!--<span class="co"> CSS Style for more space between headers --&gt;</span></span>
+<span id="cb332-37"><a href="r-markdown-1.html#cb332-37"></a>&lt;style&gt;</span>
+<span id="cb332-38"><a href="r-markdown-1.html#cb332-38"></a>caption {</span>
+<span id="cb332-39"><a href="r-markdown-1.html#cb332-39"></a>  color: gray;</span>
+<span id="cb332-40"><a href="r-markdown-1.html#cb332-40"></a>  font-size: 0.8em;</span>
+<span id="cb332-41"><a href="r-markdown-1.html#cb332-41"></a>}</span>
+<span id="cb332-42"><a href="r-markdown-1.html#cb332-42"></a>p.caption {</span>
+<span id="cb332-43"><a href="r-markdown-1.html#cb332-43"></a>  color: gray;</span>
+<span id="cb332-44"><a href="r-markdown-1.html#cb332-44"></a>  font-size: 0.8em;</span>
+<span id="cb332-45"><a href="r-markdown-1.html#cb332-45"></a>  padding-bottom: 30px;</span>
+<span id="cb332-46"><a href="r-markdown-1.html#cb332-46"></a>}</span>
+<span id="cb332-47"><a href="r-markdown-1.html#cb332-47"></a>h1, .h1 {</span>
+<span id="cb332-48"><a href="r-markdown-1.html#cb332-48"></a><span class="bn">    margin-top: 84px;</span></span>
+<span id="cb332-49"><a href="r-markdown-1.html#cb332-49"></a>}</span>
+<span id="cb332-50"><a href="r-markdown-1.html#cb332-50"></a>h2, .h2, h3, .h3 {</span>
+<span id="cb332-51"><a href="r-markdown-1.html#cb332-51"></a><span class="bn">    margin-top: 42px;</span></span>
+<span id="cb332-52"><a href="r-markdown-1.html#cb332-52"></a>}</span>
+<span id="cb332-53"><a href="r-markdown-1.html#cb332-53"></a>&lt;/style&gt;</span>
+<span id="cb332-54"><a href="r-markdown-1.html#cb332-54"></a></span>
+<span id="cb332-55"><a href="r-markdown-1.html#cb332-55"></a></span>
+<span id="cb332-56"><a href="r-markdown-1.html#cb332-56"></a><span class="fu"># Abstract {-}</span></span>
+<span id="cb332-57"><a href="r-markdown-1.html#cb332-57"></a></span>
+<span id="cb332-58"><a href="r-markdown-1.html#cb332-58"></a>Here is some small abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb332-59"><a href="r-markdown-1.html#cb332-59"></a></span>
+<span id="cb332-60"><a href="r-markdown-1.html#cb332-60"></a></span>
+<span id="cb332-61"><a href="r-markdown-1.html#cb332-61"></a><span class="fu"># Introduction {#intro}</span></span>
+<span id="cb332-62"><a href="r-markdown-1.html#cb332-62"></a></span>
+<span id="cb332-63"><a href="r-markdown-1.html#cb332-63"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb332-64"><a href="r-markdown-1.html#cb332-64"></a></span>
+<span id="cb332-65"><a href="r-markdown-1.html#cb332-65"></a>1. <span class="st">What is the first research question?</span></span>
+<span id="cb332-66"><a href="r-markdown-1.html#cb332-66"></a><span class="st">2. How should we answer it?</span></span>
+<span id="cb332-67"><a href="r-markdown-1.html#cb332-67"></a><span class="st">3. What is the third research question?</span></span>
+<span id="cb332-68"><a href="r-markdown-1.html#cb332-68"></a></span>
+<span id="cb332-69"><a href="r-markdown-1.html#cb332-69"></a></span>
+<span id="cb332-70"><a href="r-markdown-1.html#cb332-70"></a><span class="fu"># Method {#method}</span></span>
+<span id="cb332-71"><a href="r-markdown-1.html#cb332-71"></a></span>
+<span id="cb332-72"><a href="r-markdown-1.html#cb332-72"></a><span class="fu">## Idea {#idea}</span></span>
+<span id="cb332-73"><a href="r-markdown-1.html#cb332-73"></a></span>
+<span id="cb332-74"><a href="r-markdown-1.html#cb332-74"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit (see <span class="ot">[here](https://www.google.ch/))</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Some inline equation $h = f(x)$ in the middle of text. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb332-75"><a href="r-markdown-1.html#cb332-75"></a></span>
+<span id="cb332-76"><a href="r-markdown-1.html#cb332-76"></a>$$</span>
+<span id="cb332-77"><a href="r-markdown-1.html#cb332-77"></a>a^2 + b^2 = c^2</span>
+<span id="cb332-78"><a href="r-markdown-1.html#cb332-78"></a>(\#eq:pythagoras)</span>
+<span id="cb332-79"><a href="r-markdown-1.html#cb332-79"></a>$$</span>
+<span id="cb332-80"><a href="r-markdown-1.html#cb332-80"></a></span>
+<span id="cb332-81"><a href="r-markdown-1.html#cb332-81"></a>As you can see in Equation \@ref(eq:pythagoras), lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb332-82"><a href="r-markdown-1.html#cb332-82"></a></span>
+<span id="cb332-83"><a href="r-markdown-1.html#cb332-83"></a></span>
+<span id="cb332-84"><a href="r-markdown-1.html#cb332-84"></a><span class="bn">```{r, someCalculations, echo = T}</span></span>
+<span id="cb332-85"><a href="r-markdown-1.html#cb332-85"></a><span class="bn">x &lt;- 5.012345678901234567890</span></span>
+<span id="cb332-86"><a href="r-markdown-1.html#cb332-86"></a><span class="bn">y &lt;- 1:20</span></span>
+<span id="cb332-87"><a href="r-markdown-1.html#cb332-87"></a><span class="bn">```</span></span>
+<span id="cb332-88"><a href="r-markdown-1.html#cb332-88"></a></span>
+<span id="cb332-89"><a href="r-markdown-1.html#cb332-89"></a></span>
+<span id="cb332-90"><a href="r-markdown-1.html#cb332-90"></a>In this text we use the variable $x$ and write it  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 inline in text. Now a picture</span>
+<span id="cb332-91"><a href="r-markdown-1.html#cb332-91"></a></span>
+<span id="cb332-92"><a href="r-markdown-1.html#cb332-92"></a></span>
+<span id="cb332-93"><a href="r-markdown-1.html#cb332-93"></a>(ref:resPr3) This is the figure caption. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure.</span>
+<span id="cb332-94"><a href="r-markdown-1.html#cb332-94"></a></span>
+<span id="cb332-95"><a href="r-markdown-1.html#cb332-95"></a><span class="fu">## Calcultion {#calc}</span></span>
+<span id="cb332-96"><a href="r-markdown-1.html#cb332-96"></a></span>
+<span id="cb332-97"><a href="r-markdown-1.html#cb332-97"></a><span class="bn">```{r, figPoints, fig.cap=&quot;(ref:resPr3)&quot;}</span></span>
+<span id="cb332-98"><a href="r-markdown-1.html#cb332-98"></a><span class="bn">plot(1:10)</span></span>
+<span id="cb332-99"><a href="r-markdown-1.html#cb332-99"></a><span class="bn">```</span></span>
+<span id="cb332-100"><a href="r-markdown-1.html#cb332-100"></a></span>
+<span id="cb332-101"><a href="r-markdown-1.html#cb332-101"></a></span>
+<span id="cb332-102"><a href="r-markdown-1.html#cb332-102"></a></span>
+<span id="cb332-103"><a href="r-markdown-1.html#cb332-103"></a>Now we continue with some text. As you can see in Figure \@ref(fig:figPoints) there are 10 points. The same was also decribed in Section \@ref(intro) or in Equation \@ref(eq:pythagoras) or in the package <span class="bn">`rmarkdown`</span> [see @R-bookdown]. The second way to make References [@R-mgcv]. For the third way see @R-knitr.</span>
+<span id="cb332-104"><a href="r-markdown-1.html#cb332-104"></a></span>
+<span id="cb332-105"><a href="r-markdown-1.html#cb332-105"></a></span>
+<span id="cb332-106"><a href="r-markdown-1.html#cb332-106"></a><span class="fu"># Discussion {#disc}</span></span>
+<span id="cb332-107"><a href="r-markdown-1.html#cb332-107"></a></span>
+<span id="cb332-108"><a href="r-markdown-1.html#cb332-108"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb332-109"><a href="r-markdown-1.html#cb332-109"></a></span>
+<span id="cb332-110"><a href="r-markdown-1.html#cb332-110"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb332-111"><a href="r-markdown-1.html#cb332-111"></a></span>
+<span id="cb332-112"><a href="r-markdown-1.html#cb332-112"></a><span class="bn">```{r}</span></span>
+<span id="cb332-113"><a href="r-markdown-1.html#cb332-113"></a><span class="bn">library(magrittr)</span></span>
+<span id="cb332-114"><a href="r-markdown-1.html#cb332-114"></a><span class="bn">library(kableExtra)</span></span>
+<span id="cb332-115"><a href="r-markdown-1.html#cb332-115"></a><span class="bn">dt &lt;- mtcars[1:5, 1:6]</span></span>
+<span id="cb332-116"><a href="r-markdown-1.html#cb332-116"></a><span class="bn">kable(dt,</span></span>
+<span id="cb332-117"><a href="r-markdown-1.html#cb332-117"></a><span class="bn">      digits = 3,</span></span>
+<span id="cb332-118"><a href="r-markdown-1.html#cb332-118"></a><span class="bn">      caption = &quot;Estimated motor current and standard deviation for each impeller at the two operating points&quot;) %&gt;%</span></span>
+<span id="cb332-119"><a href="r-markdown-1.html#cb332-119"></a><span class="bn">  kable_styling(&quot;striped&quot;,</span></span>
+<span id="cb332-120"><a href="r-markdown-1.html#cb332-120"></a><span class="bn">                full_width = F,</span></span>
+<span id="cb332-121"><a href="r-markdown-1.html#cb332-121"></a><span class="bn">                position = &quot;left&quot;) %&gt;%</span></span>
+<span id="cb332-122"><a href="r-markdown-1.html#cb332-122"></a><span class="bn">  add_header_above(c(&quot; &quot; = 1, &quot;Group 1&quot; = 2, &quot;Group 2&quot; = 2, &quot;Group 3&quot; = 2))</span></span>
+<span id="cb332-123"><a href="r-markdown-1.html#cb332-123"></a><span class="bn">```</span></span>
+<span id="cb332-124"><a href="r-markdown-1.html#cb332-124"></a></span>
+<span id="cb332-125"><a href="r-markdown-1.html#cb332-125"></a></span>
+<span id="cb332-126"><a href="r-markdown-1.html#cb332-126"></a></span>
+<span id="cb332-127"><a href="r-markdown-1.html#cb332-127"></a></span>
+<span id="cb332-128"><a href="r-markdown-1.html#cb332-128"></a></span>
+<span id="cb332-129"><a href="r-markdown-1.html#cb332-129"></a><span class="fu"># References {#ref}</span></span></code></pre></div>
+</div>
+<p>Good resources for additional tips/templates</p>
+<ul>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/" class="uri">https://holtzy.github.io/Pimp-my-rmd/</a> (Tips)</li>
+<li><a href="https://github.com/juba/rmdformats" class="uri">https://github.com/juba/rmdformats</a> (Templates package)</li>
+</ul>
+</div>
+<div id="good-output-formats" class="section level2">
+<h2><span class="header-section-number">32.8</span> Good output formats</h2>
+<ul>
+<li>lightweight: <code>rmarkdown::html_vignette</code>
+<ul>
+<li>Details see <a href="https://bookdown.org/yihui/rmarkdown/r-package-vignette.html">here</a></li>
+</ul></li>
+<li>full-featured: <code>bookdown::gitbook</code>
+<ul>
+<li>Option <code>split_by: none</code> allows to get one long page</li>
+<li>Option <code>self_containd: true</code> allows that all css and figure are included in html output file</li>
+</ul></li>
+<li>classic: <code>bookdown::html_document2</code></li>
+</ul>
+<p>Options</p>
+<div class="sourceCode" id="cb333"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb333-1"><a href="r-markdown-1.html#cb333-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at">   Test</span></span>
+<span id="cb333-2"><a href="r-markdown-1.html#cb333-2"></a><span class="fu">author</span><span class="kw">:</span><span class="at">  </span><span class="st">&quot;[Reto Zihlmann](https://retodomax.github.io/)&quot;</span></span>
+<span id="cb333-3"><a href="r-markdown-1.html#cb333-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at">    </span><span class="st">&quot;2020-11-09&quot;</span></span>
+<span id="cb333-4"><a href="r-markdown-1.html#cb333-4"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb333-5"><a href="r-markdown-1.html#cb333-5"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
+<span id="cb333-6"><a href="r-markdown-1.html#cb333-6"></a><span class="at">    </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> none</span></span>
+<span id="cb333-7"><a href="r-markdown-1.html#cb333-7"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+
+<div class="rmdwarning">
+gitbook with option <code>self_containd: true</code> does currently not work with MathJax (Math not correcly displayed). For updates on this issue see <a href="https://stackoverflow.com/questions/64760552/how-to-have-correctly-rendered-mathematical-equations-in-bookdowngitbook-when">here</a>, <a href="https://github.com/rstudio/bookdown/issues/915">here</a> and <a href="https://github.com/rstudio/rmarkdown/issues/727">here</a>.
+</div>
+
+
 </div>
 </div>
             </section>
@@ -581,8 +1138,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="stuff-still-to-include.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="reference-management.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bookdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -613,7 +1170,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/R_Ref_Book/edit/master/99-references.Rmd",
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/65-RMarkdown.Rmd",
 "text": "Edit"
 },
 "history": {

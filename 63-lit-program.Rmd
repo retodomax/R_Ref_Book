@@ -1,0 +1,670 @@
+# Literate programming
+
+Sweave, Knitr and R Markdown all based on Donald Knuth's [Literate programming](https://en.wikipedia.org/wiki/Literate_programming). Text and code are in a common file and the code follows the structure of the text.
+
+
+## Sweave
+
+* Takes text in latex format and R/S code chunks to generate (weave) one tex file.
+* Included in R standard library (utils package)
+* File extension `.Rnw` (R noweb)
+
+## Knitr
+
+* Takes several imputs for text (Latex, Markdown, HTML, AsciiDoc, reStructuredText, and Textile) and code (R, Python, ...)
+* R package
+* See: [Knitr Homepage](https://yihui.name/knitr)
+* Knitr can knit two types of files
+    - `.Rmd` files (R Markdown)
+    - `.Rnw` files (R noweb)
+
+## R Markdown
+
+Combination of Knitr and Pandoc
+
+* Knitr: executes the computer code embedded in Markdown, and converts R Markdown to Markdown
+* Pandoc: renders Markdown to the output format you want (such as PDF, HTML, Word, and so on)
+
+```{r echo = FALSE, out.width='70%', fig.align = 'center'}
+knitr::include_graphics("figures/workflow_knitr.png")
+```
+
+
+
+* See: [Markdown Manual](https://bookdown.org/yihui/rmarkdown/)
+* Compile/Render an  R Markdown document by
+    - using function `rmarkdown::render()`
+    - pushing knit button (Ctrl + Shift + k)
+
+
+
+
+## Basic Elements of Latex and R Markdown
+
+<table class = "comtab">
+  <col width="10%">
+  <col width="45%">
+  <col width="45%">
+  <tr>
+    <th>Element</th>
+    <th>Latex/Sweave</th>
+    <th>Rmarkdown/Bookdown</th>
+  </tr>
+  <tr>
+    <td>**Language**</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Reserved characters</td>
+    <td>`#` `$` `%` `^` `&` `_` `{` `}` `~` `\`</td>
+    <td>`\` `` ` `` `*` `_` `{` `}` `[` `]` `(` `)`\
+    `>` `#` `+` `-` `.` `!`\
+    and more (not always necessary to escape)</td>
+  </tr>
+  <tr>
+    <td>Escaped with</td>
+    <td>`\#` `\$` `\%` `\^{}` `\&` `\_` `\{` `\}` `\~{}` `\textbackslash{}`</td>
+    <td>`\*` `\_` `\\`</td>
+  </tr>
+  <tr>
+    <td>Comments</td>
+    <td>`% comment`</td>
+    <td>`<!--comment-->`</td>
+  </tr>
+  <tr>
+    <td>Multiline comment</td>
+    <td>
+    ```latex
+\usepackage{verbatim}
+\begin{comment}
+    comment
+\end{comment}
+```
+    </td>
+    <td>`<!--comment` <br>
+    `several lines-->`</td>
+  </tr>
+  <tr>
+    <td>**Text options**</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Plain text</td>
+    <td>Plain text</td>
+    <td>Plain text</td>
+  </tr>
+  <tr>
+    <td>*Italics*</td>
+    <td>`\textit{text}`</td>
+    <td>`*text*`</td>
+  </tr>
+  <tr>
+    <td>**Bold**</td>
+    <td>`\textbf{text}`</td>
+    <td>`**text**`</td>
+  </tr>
+  <tr>
+    <td><span style="color: red;">Colored text</span></td>
+    <td>`\textcolor{red}{text}`</td>
+    <td>No general solution (see [here](https://bookdown.org/yihui/rmarkdown-cookbook/font-color.html))\
+    HTML `<span style="color: red;">text</span>`\
+    PDF `\textcolor{}{}`
+    </td>
+  </tr>
+  <tr>
+    <td>Subscript~2~</td>
+    <td>`text$_2$`</td>
+    <td>`text~2~`</td>
+  </tr>
+  <tr>
+    <td>Superscript^2^</td>
+    <td>`text$^2$`</td>
+    <td>`text^2^`</td>
+  </tr>
+  <tr>
+    <td>~~Strikethrough~~</td>
+    <td>
+    ```latex
+\usepackage{ulem}
+\sout{Strikethrough}
+```
+    </td>
+    <td>`~~strikethrough~~`</td>
+  </tr>
+  <tr>
+    <td><http://www.google.ch></td>
+    <td>`\url{https://www.google.ch}`</td>
+    <td>`<http://www.google.ch>`</td>
+  </tr>
+  <tr>
+    <td>[Link](http://www.google.ch)</td>
+    <td>`\href{https://www.google.ch}{Link}`</td>
+    <td>`[Link](http://www.google.ch)`</td>
+  </tr>
+  <tr>
+    <td>
+    * Unordered list
+    * Second level
+    </td>
+    <td>
+    ```latex
+\begin{itemize}
+      \item Unordered list
+      \begin{itemize}
+	      \item Second level
+      \end{itemize}
+\end{itemize}
+```
+    </td>
+    <td>
+    `* Unordered list` <br>
+    \ \ \ `- Second level`
+    </td>
+  </tr>
+  <tr>
+    <td>
+    1. Ordered list
+    </td>
+    <td>
+    ```latex
+\begin{enumerate}
+    \item Ordered list
+\end{enumerate}
+```
+    </td>
+    <td>`1. Ordered list`</td>
+  </tr>
+  <tr>
+    <td>>block quote</td>
+    <td>
+```latex
+\begin{quote}
+  Text
+\end{quote}
+```
+    </td>
+    <td>`> Text`</td>
+  </tr>
+  <tr>
+    <td>**Special Characters**</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Nonbreaking space (10\ kg)</td>
+    <td>`10~kg`</td>
+    <td>`10\ kg`</td>
+  </tr>
+  <tr>
+    <td>Line break</td>
+    <td>`\\ENTER`</td>
+    <td>`\ENTER`</td>
+  </tr>
+  <tr>
+    <td>-- (endash)</td>
+    <td>`--`</td>
+    <td>`--`</td>
+  </tr>
+  <tr>
+    <td>--- (emdash)</td>
+    <td>`---`</td>
+    <td>`---`</td>
+  </tr>
+  <tr>
+    <td>**Sections**</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Header</td>
+    <td>`\section{Header}`</td>
+    <td>`# Header`</td>
+  </tr>
+  <tr>
+    <td>Sub header</td>
+    <td>`\subsection{Subheader}`</td>
+    <td>` ## Subheader`</td>
+  </tr>
+  <tr>
+    <td>Sub header without number</td>
+    <td>`\subsection*{Subheader}`</td>
+    <td>` ## Subheader {-}`</td>
+  </tr>
+  <tr>
+    <td>Horizontal line</td>
+    <td>`\noindent\rule{\textwidth}{0.4pt}`</td>
+    <td>`***`</td>
+  </tr>
+  <tr>
+    <td>**Figures**</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Small image ![](figures/R_logo2.png)</td>
+    <td> `\includegraphics{R_logo2}`</td>
+    <td>`![](R_logo2.png)`</td>
+  </tr>
+  <tr>
+    <td>Formal image ![](figures/R_logo2.png)</td>
+    <td> Snipped "fig"\
+```latex
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{R_logo2}
+  \caption{FigureCaption}
+  \label{fig:mylabel}
+\end{figure}
+```
+    </td>
+    <td> Snipped "fig"\
+````markdown
+`r ''````{r, mylabel, echo=FALSE, fig.cap='FigCap', out.width='25%', fig.align='center', fig.pos="tb"}
+knitr::include_graphics('R_logo2.png')
+```
+````
+<!-- 
+## this seems necessary for correct source code displaying...
+``` --> 
+  Attention: label is `mylabel` but cross-references need to use `fig:mylabel`
+    </td>
+  </tr>
+  <tr>
+    <td>Formal image generated with R code\
+    ![](figures/R_logo2.png)</td>
+    <td> Snipped "figR"\
+
+````markdown
+<<mylabel, echo=FALSE, fig.cap='FigCap',
+  out.width='25%', fig.align='center',
+  fig.pos="tb">>=
+plot(1:3)
+@
+````
+    Attention: label is `mylabel` but cross-references need to use `fig:mylabel`
+    </td>
+    <td> Snipped "figR"\
+
+````markdown
+`r ''````{r, mylabel, echo=FALSE, fig.cap='FigCap', out.width='25%', fig.align='center', fig.pos="tb"}
+plot(1:3)
+```
+````
+<!-- 
+## this seems necessary for correct source code displaying...
+``` --> 
+  Attention: label is `mylabel` but cross-references need to use `fig:mylabel`
+    </td>
+  </tr>
+  <tr>
+    <td>**Tables**</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Tables</td>
+    <td>
+    ```latex
+\begin{longtable}[]{@{}lll@{}}
+\caption{The caption}\\
+\toprule
+col1 & col2 & col3\\
+\midrule
+\endhead
+1 & 2 & 3\\
+1 & 2 & 3\\
+\bottomrule
+\label{tab:pros}
+\end{longtable}
+```
+    </td>
+    <td>Rmarkdown</td>
+  </tr>
+  <tr>
+    <td>**Equations**</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Inline eqation</td>
+    <td>`$A = \pi*r^2$`</td>
+    <td>`$A = \pi*r^2$`</td>
+  </tr>
+  <tr>
+    <td>Equation block</td>
+    <td>
+    ```latex
+\usepackage{amsmath}
+\begin{align*} 
+    E=mc^2
+\end{align*}
+```
+    </td>
+    <td>`$$E=mc^2$$`</td>
+  </tr>
+  <tr>
+    <td>Equation block with number</td>
+    <td>
+    ```latex
+\usepackage{amsmath}
+\begin{align} 
+    a^2 + b^2 = c^2
+\end{align}
+```
+    </td>
+    <td>
+    ```markdown
+$$
+a^2 + b^2 = c^2
+(\#eq:pythagoras)
+$$
+```
+  </td>
+  </tr>
+  <tr>
+    <td>**Code**</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>`Inline code`</td>
+    <td>`\texttt{code}`\
+    `\lstinline{code}` (listings.sty)\
+    `\code{code}` (RetoArticle.sty)</td>
+    <td>`` `code` ``</td>
+  </tr>
+  <tr>
+    <td>`Code block`</td>
+    <td>
+    
+```markdown
+<<eval=FALSE>>=
+code
+@
+```
+
+    </td>
+    <td>
+````markdown
+`r ''````{r, eval=FALSE}
+code
+```
+````
+<!-- 
+## this seems necessary for correct source code displaying...
+``` --> .
+    </td>
+  </tr>
+  <tr>
+    <td>`Code block` as float</td>
+    <td>Snipped "codeblock"\
+
+```latex
+\begin{codeblock}[tb]
+{\internallinenumbers \resetlinenumber[1]
+\footnotesize
+<<eval=FALSE>>=
+Code
+@
+} \caption{CodeCaption} \label{code:Label}
+\end{codeblock}
+```
+.
+    </td>
+    <td> 
+    Makes only sense for PDF.\
+    Use Latex code on left.
+    </td>
+  </tr>
+  <tr>
+    <td>**References**</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Label section</td>
+    <td>`\section{Introduction} \label{sec:intro}`</td>
+    <td>`# Introduction {#sec:intro}`</td>
+  </tr>
+  <tr>
+    <td>Label figure</td>
+    <td>
+    ```latex
+\begin{figure}
+...
+\label{fig:FigLabel}
+\end{figure}
+```
+    </td>
+    <td>
+````markdown
+`r ''````{r, label, fig.cap='...'}
+knitr::include_graphics('figures/hex-rmarkdown.png')
+```
+````
+<!-- 
+## this seems necessary for correct source code displaying...
+``` --> 
+    </td>
+  </tr>
+  <tr>
+    <td>Label table</td>
+    <td>
+    ```latex
+\begin{longtable}[]{@{}lll@{}}
+...
+\label{tab:pros}
+\end{longtable}
+```
+    </td>
+    <td>
+````markdown
+`r ''````{r, label}
+kableExtra::kable(...)
+```
+````
+<!-- 
+## this seems necessary for correct source code displaying...
+``` --> 
+    </td>
+  </tr>
+  <tr>
+    <td>Label equation</td>
+    <td>
+    ```latex
+\begin{align}
+    a^2 + b^2 = c^2
+    \label{eq:1}
+\end{align}
+```
+    </td>
+    <td>
+    ```markdown
+$$
+a^2 + b^2 = c^2
+(\#eq:pythagoras)
+$$
+```
+    </td>
+  </tr>
+  <tr>
+    <td>Label code block</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Cross ref section</td>
+    <td>`See Chapter~\ref{sec:label}`</td>
+    <td>`See Chapter\ \@ref(sec:label)`</td>
+  </tr>
+  <tr>
+    <td>Cross ref figure</td>
+    <td>`See Figure~\ref{fig:label}`</td>
+    <td>`See Figure\ \@ref(fig:label)`</td>
+  </tr>
+  <tr>
+    <td>Cross ref table</td>
+    <td>`See Table~\ref{tab:label}`</td>
+    <td>`See Table\ \@ref(tab:label)`</td>
+  </tr>
+  <tr>
+    <td>Cross ref equation</td>
+    <td>`See Equation~\eqref{eq:label}`</td>
+    <td>`See Equation\ \@ref(eq:label)`</td>
+  </tr>
+  <tr>
+    <td>Cross ref code block</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Bibliography</td>
+    <td>
+    ```latex
+\usepackage{biblatex}
+\addbibresource{bib.bib}
+\begin{document}
+...
+\printbibliography
+\end{document}
+```
+    </td>
+    <td>
+    ```markdown
+---
+title: Thesis
+author: "Reto Zihlmann"
+bibliography: [bib.bib]
+...
+---
+```
+    </td>
+  </tr>
+  <tr>
+    <td>
+    Add citation
+    </td>
+    <td>
+(Autor Year) `\parencite{CitKey}` <br>
+Autor (Year) `\textcite{CitKey}` <br>
+Autor Year `\cite{CitKey}` <br>
+with natbib `\citep{}` `\citet{}` `\cite{}`
+    </td>
+    <td>
+    (Autor Year) `[@CitKey]` <br>
+    Autor (Year) `@CitKey` <br>
+    </td>
+  </tr>
+  <tr>
+    <td>Reference text</td>
+    <td>Laborious. See [here](https://tex.stackexchange.com/a/292890/202258)</td>
+    <td>
+    `(ref:label) text` <br>
+    text `(ref:label)` text
+    </td>
+  </tr>
+  <tr>
+    <td>Element</td>
+    <td>Latex</td>
+    <td>Rmarkdown</td>
+  </tr>
+</table>
+
+
+
+## Part 2
+
+And some new try
+
+<table class = "comtab">
+  <col width="10%">
+  <col width="45%">
+  <col width="45%">
+  <tr>
+    <th>Element</th>
+    <th>Latex/Sweave</th>
+    <th>Rmarkdown/Bookdown</th>
+  </tr>
+  <tr>
+    <td>**Language**</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>`Inline code`</td>
+    <td>`\texttt{code}`\
+    `\lstinline{code}` (listings.sty)\
+    `\code{code}` (RetoArticle.sty)</td>
+    <td>`` `code` ``</td>
+  </tr>
+  <tr>
+    <td>`Code block`</td>
+    <td>
+    ````markdown
+<<eval=FALSE>>=
+code
+@
+````
+    </td>
+    <td> 
+````markdown
+`r ''````{r, eval=FALSE}
+code
+```
+````
+.
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+    </td>
+  <tr>
+    <td>`Code block` as float</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>**References**</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
+
+<!--     <td> -->
+<!-- ````markdown -->
+<!-- <<eval=FALSE>>= -->
+<!-- code -->
+<!-- @ -->
+<!-- ```` -->
+<!--     </td> -->
+<!--     <td> -->
+<!-- ````markdown -->
+<!-- `r ''````{r, eval=FALSE} -->
+<!-- code -->
+<!-- ``` -->
+<!-- ```` -->
+<!-- <!-- -->
+<!-- ## this seems necessary for correct source code displaying... -->
+<!-- ``` --> -->
+<!--     </td> -->
+<!--   </tr> -->
+
+
+<!-- <td>Snipped "codeblock"\ -->
+
+<!-- ```latex -->
+<!-- \begin{codeblock}[tb] -->
+<!-- {\internallinenumbers \resetlinenumber[1] -->
+<!-- \footnotesize -->
+<!-- <<eval=FALSE>>= -->
+<!-- Code -->
+<!-- @ -->
+<!-- } \caption{CodeCaption} \label{code:Label} -->
+<!-- \end{codeblock} -->
+<!-- ``` -->
+<!--     </td> -->
+<!--     <td> </td> -->
+

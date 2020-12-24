@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | R Reference book</title>
+  <title>Chapter 29 Literate programming | R Reference book</title>
   <meta name="description" content="This is a collection of useful R knowledge" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | R Reference book" />
+  <meta property="og:title" content="Chapter 29 Literate programming | R Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="retodomax/R_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | R Reference book" />
+  <meta name="twitter:title" content="Chapter 29 Literate programming | R Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful R knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
-<link rel="prev" href="stuff-still-to-include.html"/>
-
+<link rel="prev" href="r-studio.html"/>
+<link rel="next" href="latex.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -564,16 +564,917 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
+<div id="literate-programming" class="section level1">
+<h1><span class="header-section-number">Chapter 29</span> Literate programming</h1>
+<p>Sweave, Knitr and R Markdown all based on Donald Knuth’s <a href="https://en.wikipedia.org/wiki/Literate_programming">Literate programming</a>. Text and code are in a common file and the code follows the structure of the text.</p>
+<div id="sweave" class="section level2">
+<h2><span class="header-section-number">29.1</span> Sweave</h2>
+<ul>
+<li>Takes text in latex format and R/S code chunks to generate (weave) one tex file.</li>
+<li>Included in R standard library (utils package)</li>
+<li>File extension <code>.Rnw</code> (R noweb)</li>
+</ul>
+</div>
+<div id="knitr" class="section level2">
+<h2><span class="header-section-number">29.2</span> Knitr</h2>
+<ul>
+<li>Takes several imputs for text (Latex, Markdown, HTML, AsciiDoc, reStructuredText, and Textile) and code (R, Python, …)</li>
+<li>R package</li>
+<li>See: <a href="https://yihui.name/knitr">Knitr Homepage</a></li>
+<li>Knitr can knit two types of files
+<ul>
+<li><code>.Rmd</code> files (R Markdown)</li>
+<li><code>.Rnw</code> files (R noweb)</li>
+</ul></li>
+</ul>
+</div>
+<div id="r-markdown" class="section level2">
+<h2><span class="header-section-number">29.3</span> R Markdown</h2>
+<p>Combination of Knitr and Pandoc</p>
+<ul>
+<li>Knitr: executes the computer code embedded in Markdown, and converts R Markdown to Markdown</li>
+<li>Pandoc: renders Markdown to the output format you want (such as PDF, HTML, Word, and so on)</li>
+</ul>
+<p><img src="figures/workflow_knitr.png" width="70%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>See: <a href="https://bookdown.org/yihui/rmarkdown/">Markdown Manual</a></li>
+<li>Compile/Render an R Markdown document by
+<ul>
+<li>using function <code>rmarkdown::render()</code></li>
+<li>pushing knit button (Ctrl + Shift + k)</li>
+</ul></li>
+</ul>
+</div>
+<div id="basic-elements-of-latex-and-r-markdown" class="section level2">
+<h2><span class="header-section-number">29.4</span> Basic Elements of Latex and R Markdown</h2>
+<table class = "comtab">
+<col width="10%">
+<col width="45%">
+<col width="45%">
+<tr>
+<th>
+Element
+</th>
+<th>
+Latex/Sweave
+</th>
+<th>
+Rmarkdown/Bookdown
+</th>
+</tr>
+<tr>
+<td>
+<strong>Language</strong>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Reserved characters
+</td>
+<td>
+<code>#</code> <code>$</code> <code>%</code> <code>^</code> <code>&amp;</code> <code>_</code> <code>{</code> <code>}</code> <code>~</code> <code>\</code>
+</td>
+<td>
+<code>\</code> <code>`</code> <code>*</code> <code>_</code> <code>{</code> <code>}</code> <code>[</code> <code>]</code> <code>(</code> <code>)</code><br />
+<code>&gt;</code> <code>#</code> <code>+</code> <code>-</code> <code>.</code> <code>!</code><br />
+and more (not always necessary to escape)
+</td>
+</tr>
+<tr>
+<td>
+Escaped with
+</td>
+<td>
+<code>\#</code> <code>\$</code> <code>\%</code> <code>\^{}</code> <code>\&amp;</code> <code>\_</code> <code>\{</code> <code>\}</code> <code>\~{}</code> <code>\textbackslash{}</code>
+</td>
+<td>
+<code>\*</code> <code>\_</code> <code>\\</code>
+</td>
+</tr>
+<tr>
+<td>
+Comments
+</td>
+<td>
+<code>% comment</code>
+</td>
+<td>
+<code>&lt;!--comment--&gt;</code>
+</td>
+</tr>
+<tr>
+<td>
+Multiline comment
+</td>
+<td>
+<div class="sourceCode" id="cb293"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb293-1"><a href="literate-programming.html#cb293-1"></a><span class="bu">\usepackage</span>{<span class="ex">verbatim</span>}</span>
+<span id="cb293-2"><a href="literate-programming.html#cb293-2"></a><span class="kw">\begin</span>{<span class="ex">comment</span>}</span>
+<span id="cb293-3"><a href="literate-programming.html#cb293-3"></a><span class="co">    comment</span></span>
+<span id="cb293-4"><a href="literate-programming.html#cb293-4"></a><span class="kw">\end</span>{<span class="ex">comment</span>}</span></code></pre></div>
+</td>
+<td>
+<code>&lt;!--comment</code> <br>
+<code>several lines--&gt;</code>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Text options</strong>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Plain text
+</td>
+<td>
+Plain text
+</td>
+<td>
+Plain text
+</td>
+</tr>
+<tr>
+<td>
+<em>Italics</em>
+</td>
+<td>
+<code>\textit{text}</code>
+</td>
+<td>
+<code>*text*</code>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Bold</strong>
+</td>
+<td>
+<code>\textbf{text}</code>
+</td>
+<td>
+<code>**text**</code>
+</td>
+</tr>
+<tr>
+<td>
+<span style="color: red;">Colored text</span>
+</td>
+<td>
+<code>\textcolor{red}{text}</code>
+</td>
+<td>
+No general solution (see <a href="https://bookdown.org/yihui/rmarkdown-cookbook/font-color.html">here</a>)<br />
+HTML <code>&lt;span style="color: red;"&gt;text&lt;/span&gt;</code><br />
+PDF <code>\textcolor{}{}</code>
+</td>
+</tr>
+<tr>
+<td>
+Subscript<sub>2</sub>
+</td>
+<td>
+<code>text$_2$</code>
+</td>
+<td>
+<code>text~2~</code>
+</td>
+</tr>
+<tr>
+<td>
+Superscript<sup>2</sup>
+</td>
+<td>
+<code>text$^2$</code>
+</td>
+<td>
+<code>text^2^</code>
+</td>
+</tr>
+<tr>
+<td>
+<del>Strikethrough</del>
+</td>
+<td>
+<div class="sourceCode" id="cb294"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb294-1"><a href="literate-programming.html#cb294-1"></a><span class="bu">\usepackage</span>{<span class="ex">ulem</span>}</span>
+<span id="cb294-2"><a href="literate-programming.html#cb294-2"></a><span class="fu">\sout</span>{Strikethrough}</span></code></pre></div>
+</td>
+<td>
+<code>~~strikethrough~~</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.google.ch" class="uri">http://www.google.ch</a>
+</td>
+<td>
+<code>\url{https://www.google.ch}</code>
+</td>
+<td>
+<code>&lt;http://www.google.ch&gt;</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.google.ch">Link</a>
+</td>
+<td>
+<code>\href{https://www.google.ch}{Link}</code>
+</td>
+<td>
+<code>[Link](http://www.google.ch)</code>
+</td>
+</tr>
+<tr>
+<td>
+<ul>
+<li><p>Unordered list</p>
+<ul>
+<li>Second level
+</td>
+<td></li>
+</ul>
+<div class="sourceCode" id="cb295"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb295-1"><a href="literate-programming.html#cb295-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb295-2"><a href="literate-programming.html#cb295-2"></a>  <span class="fu">\item</span> Unordered list</span>
+<span id="cb295-3"><a href="literate-programming.html#cb295-3"></a>  <span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb295-4"><a href="literate-programming.html#cb295-4"></a>      <span class="fu">\item</span> Second level</span>
+<span id="cb295-5"><a href="literate-programming.html#cb295-5"></a>  <span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
+<span id="cb295-6"><a href="literate-programming.html#cb295-6"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code></pre></div>
+</td>
+<td>
+<p><code>* Unordered list</code> <br>
+   <code>- Second level</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<ol style="list-style-type: decimal">
+<li>Ordered list
+</td>
+<td></li>
+</ol>
+<div class="sourceCode" id="cb296"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb296-1"><a href="literate-programming.html#cb296-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb296-2"><a href="literate-programming.html#cb296-2"></a>  <span class="fu">\item</span> Ordered list</span>
+<span id="cb296-3"><a href="literate-programming.html#cb296-3"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code></pre></div>
+</td>
+<td>
+<p><code>1. Ordered list</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<blockquote>
+block quote
+</td>
+<td>
+</blockquote>
+<div class="sourceCode" id="cb297"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb297-1"><a href="literate-programming.html#cb297-1"></a><span class="kw">\begin</span>{<span class="ex">quote</span>}</span>
+<span id="cb297-2"><a href="literate-programming.html#cb297-2"></a>Text</span>
+<span id="cb297-3"><a href="literate-programming.html#cb297-3"></a><span class="kw">\end</span>{<span class="ex">quote</span>}</span></code></pre></div>
+</td>
+<td>
+<p><code>&gt; Text</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Special Characters</strong></p>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p>Nonbreaking space (10 kg)</p>
+</td>
+<td>
+<p><code>10~kg</code></p>
+</td>
+<td>
+<p><code>10\ kg</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Line break</p>
+</td>
+<td>
+<p><code>\\ENTER</code></p>
+</td>
+<td>
+<p><code>\ENTER</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>– (endash)</p>
+</td>
+<td>
+<p><code>--</code></p>
+</td>
+<td>
+<p><code>--</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>— (emdash)</p>
+</td>
+<td>
+<p><code>---</code></p>
+</td>
+<td>
+<p><code>---</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Sections</strong></p>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p>Header</p>
+</td>
+<td>
+<p><code>\section{Header}</code></p>
+</td>
+<td>
+<p><code># Header</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sub header</p>
+</td>
+<td>
+<p><code>\subsection{Subheader}</code></p>
+</td>
+<td>
+<p><code>## Subheader</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sub header without number</p>
+</td>
+<td>
+<p><code>\subsection*{Subheader}</code></p>
+</td>
+<td>
+<p><code>## Subheader {-}</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Horizontal line</p>
+</td>
+<td>
+<p><code>\noindent\rule{\textwidth}{0.4pt}</code></p>
+</td>
+<td>
+<p><code>***</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Figures</strong></p>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p>Small image <img src="figures/R_logo2.png" /></p>
+</td>
+<td>
+<p><code>\includegraphics{R_logo2}</code></p>
+</td>
+<td>
+<p><code>![](R_logo2.png)</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Formal image <img src="figures/R_logo2.png" /></p>
+</td>
+<td>
+<p>Snipped “fig”<br />
+</p>
+<div class="sourceCode" id="cb298"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb298-1"><a href="literate-programming.html#cb298-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}</span>
+<span id="cb298-2"><a href="literate-programming.html#cb298-2"></a><span class="fu">\centering</span></span>
+<span id="cb298-3"><a href="literate-programming.html#cb298-3"></a><span class="bu">\includegraphics</span>[width=0.5<span class="fu">\textwidth</span>]{<span class="ex">R_logo2</span>}</span>
+<span id="cb298-4"><a href="literate-programming.html#cb298-4"></a><span class="fu">\caption</span>{FigureCaption}</span>
+<span id="cb298-5"><a href="literate-programming.html#cb298-5"></a><span class="kw">\label</span>{<span class="ex">fig:mylabel</span>}</span>
+<span id="cb298-6"><a href="literate-programming.html#cb298-6"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code></pre></div>
+</td>
+<td>
+<p>Snipped “fig”<br />
+</p>
+<div class="sourceCode" id="cb299"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb299-1"><a href="literate-programming.html#cb299-1"></a><span class="bn">```{r, mylabel, echo=FALSE, fig.cap=&#39;FigCap&#39;, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.pos=&quot;tb&quot;}</span></span>
+<span id="cb299-2"><a href="literate-programming.html#cb299-2"></a><span class="bn">knitr::include_graphics(&#39;R_logo2.png&#39;)</span></span>
+<span id="cb299-3"><a href="literate-programming.html#cb299-3"></a><span class="bn">```</span></span></code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+<p>Attention: label is <code>mylabel</code> but cross-references need to use <code>fig:mylabel</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Formal image generated with R code<br />
+<img src="figures/R_logo2.png" /></p>
+</td>
+<td>
+<p>Snipped “figR”<br />
+</p></li>
+</ul>
+<div class="sourceCode" id="cb300"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb300-1"><a href="literate-programming.html#cb300-1"></a>&lt;&lt;mylabel, echo=FALSE, fig.cap=&#39;FigCap&#39;,</span>
+<span id="cb300-2"><a href="literate-programming.html#cb300-2"></a>  out.width=&#39;25%&#39;, fig.align=&#39;center&#39;,</span>
+<span id="cb300-3"><a href="literate-programming.html#cb300-3"></a>  fig.pos=&quot;tb&quot;&gt;&gt;=</span>
+<span id="cb300-4"><a href="literate-programming.html#cb300-4"></a>plot(1:3)</span>
+<span id="cb300-5"><a href="literate-programming.html#cb300-5"></a>@</span></code></pre></div>
+Attention: label is <code>mylabel</code> but cross-references need to use <code>fig:mylabel</code>
+</td>
+<td>
+<p>Snipped “figR”<br />
+</p>
+<div class="sourceCode" id="cb301"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb301-1"><a href="literate-programming.html#cb301-1"></a><span class="bn">```{r, mylabel, echo=FALSE, fig.cap=&#39;FigCap&#39;, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.pos=&quot;tb&quot;}</span></span>
+<span id="cb301-2"><a href="literate-programming.html#cb301-2"></a><span class="bn">plot(1:3)</span></span>
+<span id="cb301-3"><a href="literate-programming.html#cb301-3"></a><span class="bn">```</span></span></code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+Attention: label is <code>mylabel</code> but cross-references need to use <code>fig:mylabel</code>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Tables</strong>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Tables
+</td>
+<td>
+<div class="sourceCode" id="cb302"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb302-1"><a href="literate-programming.html#cb302-1"></a><span class="kw">\begin</span>{<span class="ex">longtable</span>}[]{<span class="ch">@{}</span>lll<span class="ch">@{}</span>}</span>
+<span id="cb302-2"><a href="literate-programming.html#cb302-2"></a><span class="fu">\caption</span>{The caption}<span class="fu">\\</span></span>
+<span id="cb302-3"><a href="literate-programming.html#cb302-3"></a><span class="fu">\toprule</span></span>
+<span id="cb302-4"><a href="literate-programming.html#cb302-4"></a>col1 <span class="op">&amp;</span> col2 <span class="op">&amp;</span> col3<span class="fu">\\</span></span>
+<span id="cb302-5"><a href="literate-programming.html#cb302-5"></a><span class="fu">\midrule</span></span>
+<span id="cb302-6"><a href="literate-programming.html#cb302-6"></a><span class="fu">\endhead</span></span>
+<span id="cb302-7"><a href="literate-programming.html#cb302-7"></a>1 <span class="op">&amp;</span> 2 <span class="op">&amp;</span> 3<span class="fu">\\</span></span>
+<span id="cb302-8"><a href="literate-programming.html#cb302-8"></a>1 <span class="op">&amp;</span> 2 <span class="op">&amp;</span> 3<span class="fu">\\</span></span>
+<span id="cb302-9"><a href="literate-programming.html#cb302-9"></a><span class="fu">\bottomrule</span></span>
+<span id="cb302-10"><a href="literate-programming.html#cb302-10"></a><span class="kw">\label</span>{<span class="ex">tab:pros</span>}</span>
+<span id="cb302-11"><a href="literate-programming.html#cb302-11"></a><span class="kw">\end</span>{<span class="ex">longtable</span>}</span></code></pre></div>
+</td>
+<td>
+Rmarkdown
+</td>
+</tr>
+<tr>
+<td>
+<strong>Equations</strong>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Inline eqation
+</td>
+<td>
+<code>$A = \pi*r^2$</code>
+</td>
+<td>
+<code>$A = \pi*r^2$</code>
+</td>
+</tr>
+<tr>
+<td>
+Equation block
+</td>
+<td>
+<div class="sourceCode" id="cb303"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb303-1"><a href="literate-programming.html#cb303-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb303-2"><a href="literate-programming.html#cb303-2"></a><span class="kw">\begin</span>{<span class="ex">align*</span>}<span class="ss"> </span></span>
+<span id="cb303-3"><a href="literate-programming.html#cb303-3"></a><span class="ss">    E=mc^2</span></span>
+<span id="cb303-4"><a href="literate-programming.html#cb303-4"></a><span class="kw">\end</span>{<span class="ex">align*</span>}</span></code></pre></div>
+</td>
+<td>
+<code>$$E=mc^2$$</code>
+</td>
+</tr>
+<tr>
+<td>
+Equation block with number
+</td>
+<td>
+<div class="sourceCode" id="cb304"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb304-1"><a href="literate-programming.html#cb304-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb304-2"><a href="literate-programming.html#cb304-2"></a><span class="kw">\begin</span>{<span class="ex">align</span>}<span class="ss"> </span></span>
+<span id="cb304-3"><a href="literate-programming.html#cb304-3"></a><span class="ss">    a^2 + b^2 = c^2</span></span>
+<span id="cb304-4"><a href="literate-programming.html#cb304-4"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code></pre></div>
+</td>
+<td>
+<div class="sourceCode" id="cb305"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb305-1"><a href="literate-programming.html#cb305-1"></a>$$</span>
+<span id="cb305-2"><a href="literate-programming.html#cb305-2"></a>a^2 + b^2 = c^2</span>
+<span id="cb305-3"><a href="literate-programming.html#cb305-3"></a>(\#eq:pythagoras)</span>
+<span id="cb305-4"><a href="literate-programming.html#cb305-4"></a>$$</span></code></pre></div>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Code</strong>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>Inline code</code>
+</td>
+<td>
+<code>\texttt{code}</code><br />
+<code>\lstinline{code}</code> (listings.sty)<br />
+<code>\code{code}</code> (RetoArticle.sty)
+</td>
+<td>
+<code>`code`</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>Code block</code>
+</td>
+<td>
+<div class="sourceCode" id="cb306"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb306-1"><a href="literate-programming.html#cb306-1"></a>&lt;&lt;eval=FALSE&gt;&gt;=</span>
+<span id="cb306-2"><a href="literate-programming.html#cb306-2"></a>code</span>
+<span id="cb306-3"><a href="literate-programming.html#cb306-3"></a>@</span></code></pre></div>
+</td>
+<td>
+<div class="sourceCode" id="cb307"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb307-1"><a href="literate-programming.html#cb307-1"></a><span class="bn">```{r, eval=FALSE}</span></span>
+<span id="cb307-2"><a href="literate-programming.html#cb307-2"></a><span class="bn">code</span></span>
+<span id="cb307-3"><a href="literate-programming.html#cb307-3"></a><span class="bn">```</span></span></code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+.
+</td>
+</tr>
+<tr>
+<td>
+<code>Code block</code> as float
+</td>
+<td>
+<p>Snipped “codeblock”<br />
+</p>
+<div class="sourceCode" id="cb308"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb308-1"><a href="literate-programming.html#cb308-1"></a><span class="kw">\begin</span>{<span class="ex">codeblock</span>}[tb]</span>
+<span id="cb308-2"><a href="literate-programming.html#cb308-2"></a>{<span class="fu">\internallinenumbers</span> <span class="fu">\resetlinenumber</span>[1]</span>
+<span id="cb308-3"><a href="literate-programming.html#cb308-3"></a><span class="fu">\footnotesize</span></span>
+<span id="cb308-4"><a href="literate-programming.html#cb308-4"></a>&lt;&lt;eval=FALSE&gt;&gt;=</span>
+<span id="cb308-5"><a href="literate-programming.html#cb308-5"></a>Code</span>
+<span id="cb308-6"><a href="literate-programming.html#cb308-6"></a>@</span>
+<span id="cb308-7"><a href="literate-programming.html#cb308-7"></a>} <span class="fu">\caption</span>{CodeCaption} <span class="kw">\label</span>{<span class="ex">code:Label</span>}</span>
+<span id="cb308-8"><a href="literate-programming.html#cb308-8"></a><span class="kw">\end</span>{<span class="ex">codeblock</span>}</span></code></pre></div>
+.
+</td>
+<td>
+Makes only sense for PDF.<br />
+Use Latex code on left.
+</td>
+</tr>
+<tr>
+<td>
+<strong>References</strong>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Label section
+</td>
+<td>
+<code>\section{Introduction} \label{sec:intro}</code>
+</td>
+<td>
+<code># Introduction {#sec:intro}</code>
+</td>
+</tr>
+<tr>
+<td>
+Label figure
+</td>
+<td>
+<div class="sourceCode" id="cb309"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb309-1"><a href="literate-programming.html#cb309-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}</span>
+<span id="cb309-2"><a href="literate-programming.html#cb309-2"></a>...</span>
+<span id="cb309-3"><a href="literate-programming.html#cb309-3"></a><span class="kw">\label</span>{<span class="ex">fig:FigLabel</span>}</span>
+<span id="cb309-4"><a href="literate-programming.html#cb309-4"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code></pre></div>
+</td>
+<td>
+<div class="sourceCode" id="cb310"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb310-1"><a href="literate-programming.html#cb310-1"></a><span class="bn">```{r, label, fig.cap=&#39;...&#39;}</span></span>
+<span id="cb310-2"><a href="literate-programming.html#cb310-2"></a><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></span>
+<span id="cb310-3"><a href="literate-programming.html#cb310-3"></a><span class="bn">```</span></span></code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+<pre><code>&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<td>
+Label table
+</td>
+<td>
+<div class="sourceCode" id="cb312"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb312-1"><a href="literate-programming.html#cb312-1"></a><span class="kw">\begin</span>{<span class="ex">longtable</span>}[]{<span class="ch">@{}</span>lll<span class="ch">@{}</span>}</span>
+<span id="cb312-2"><a href="literate-programming.html#cb312-2"></a>...</span>
+<span id="cb312-3"><a href="literate-programming.html#cb312-3"></a><span class="kw">\label</span>{<span class="ex">tab:pros</span>}</span>
+<span id="cb312-4"><a href="literate-programming.html#cb312-4"></a><span class="kw">\end</span>{<span class="ex">longtable</span>}</span></code></pre></div>
+</td>
+<td>
+<div class="sourceCode" id="cb313"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb313-1"><a href="literate-programming.html#cb313-1"></a><span class="bn">```{r, label}</span></span>
+<span id="cb313-2"><a href="literate-programming.html#cb313-2"></a><span class="bn">kableExtra::kable(...)</span></span>
+<span id="cb313-3"><a href="literate-programming.html#cb313-3"></a><span class="bn">```</span></span></code></pre></div>
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+<pre><code>&lt;/td&gt;</code></pre>
+</tr>
+<tr>
+<td>
+Label equation
+</td>
+<td>
+<div class="sourceCode" id="cb315"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb315-1"><a href="literate-programming.html#cb315-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb315-2"><a href="literate-programming.html#cb315-2"></a><span class="ss">    a^2 + b^2 = c^2</span></span>
+<span id="cb315-3"><a href="literate-programming.html#cb315-3"></a><span class="ss">    </span><span class="sc">\label</span><span class="ss">{eq:1}</span></span>
+<span id="cb315-4"><a href="literate-programming.html#cb315-4"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code></pre></div>
+</td>
+<td>
+<div class="sourceCode" id="cb316"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb316-1"><a href="literate-programming.html#cb316-1"></a>$$</span>
+<span id="cb316-2"><a href="literate-programming.html#cb316-2"></a>a^2 + b^2 = c^2</span>
+<span id="cb316-3"><a href="literate-programming.html#cb316-3"></a>(\#eq:pythagoras)</span>
+<span id="cb316-4"><a href="literate-programming.html#cb316-4"></a>$$</span></code></pre></div>
+</td>
+</tr>
+<tr>
+<td>
+Label code block
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Cross ref section
+</td>
+<td>
+<code>See Chapter~\ref{sec:label}</code>
+</td>
+<td>
+<code>See Chapter\ \@ref(sec:label)</code>
+</td>
+</tr>
+<tr>
+<td>
+Cross ref figure
+</td>
+<td>
+<code>See Figure~\ref{fig:label}</code>
+</td>
+<td>
+<code>See Figure\ \@ref(fig:label)</code>
+</td>
+</tr>
+<tr>
+<td>
+Cross ref table
+</td>
+<td>
+<code>See Table~\ref{tab:label}</code>
+</td>
+<td>
+<code>See Table\ \@ref(tab:label)</code>
+</td>
+</tr>
+<tr>
+<td>
+Cross ref equation
+</td>
+<td>
+<code>See Equation~\eqref{eq:label}</code>
+</td>
+<td>
+<code>See Equation\ \@ref(eq:label)</code>
+</td>
+</tr>
+<tr>
+<td>
+Cross ref code block
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Bibliography
+</td>
+<td>
+<div class="sourceCode" id="cb317"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb317-1"><a href="literate-programming.html#cb317-1"></a><span class="bu">\usepackage</span>{<span class="ex">biblatex</span>}</span>
+<span id="cb317-2"><a href="literate-programming.html#cb317-2"></a><span class="fu">\addbibresource</span>{bib.bib}</span>
+<span id="cb317-3"><a href="literate-programming.html#cb317-3"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb317-4"><a href="literate-programming.html#cb317-4"></a>...</span>
+<span id="cb317-5"><a href="literate-programming.html#cb317-5"></a><span class="fu">\printbibliography</span></span>
+<span id="cb317-6"><a href="literate-programming.html#cb317-6"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+</td>
+<td>
+<div class="sourceCode" id="cb318"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb318-1"><a href="literate-programming.html#cb318-1"></a>---</span>
+<span id="cb318-2"><a href="literate-programming.html#cb318-2"></a>title: Thesis</span>
+<span id="cb318-3"><a href="literate-programming.html#cb318-3"></a>author: &quot;Reto Zihlmann&quot;</span>
+<span id="cb318-4"><a href="literate-programming.html#cb318-4"></a>bibliography: [bib.bib]</span>
+<span id="cb318-5"><a href="literate-programming.html#cb318-5"></a>...</span>
+<span id="cb318-6"><a href="literate-programming.html#cb318-6"></a>---</span></code></pre></div>
+</td>
+</tr>
+<tr>
+<td>
+Add citation
+</td>
+<td>
+(Autor Year) <code>\parencite{CitKey}</code> <br>
+Autor (Year) <code>\textcite{CitKey}</code> <br>
+Autor Year <code>\cite{CitKey}</code> <br>
+with natbib <code>\citep{}</code> <code>\citet{}</code> <code>\cite{}</code>
+</td>
+<td>
+(Autor Year) <code>[@CitKey]</code> <br>
+Autor (Year) <code>@CitKey</code> <br>
+</td>
+</tr>
+<tr>
+<td>
+Reference text
+</td>
+<td>
+Laborious. See <a href="https://tex.stackexchange.com/a/292890/202258">here</a>
+</td>
+<td>
+<code>(ref:label) text</code> <br>
+text <code>(ref:label)</code> text
+</td>
+</tr>
+<tr>
+<td>
+Element
+</td>
+<td>
+Latex
+</td>
+<td>
+Rmarkdown
+</td>
+</tr>
+</table>
+</div>
+<div id="part-2" class="section level2">
+<h2><span class="header-section-number">29.5</span> Part 2</h2>
+<p>And some new try</p>
+<table class = "comtab">
+<col width="10%">
+<col width="45%">
+<col width="45%">
+<tr>
+<th>
+Element
+</th>
+<th>
+Latex/Sweave
+</th>
+<th>
+Rmarkdown/Bookdown
+</th>
+</tr>
+<tr>
+<td>
+<strong>Language</strong>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>Inline code</code>
+</td>
+<td>
+<code>\texttt{code}</code><br />
+<code>\lstinline{code}</code> (listings.sty)<br />
+<code>\code{code}</code> (RetoArticle.sty)
+</td>
+<td>
+<code>`code`</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>Code block</code>
+</td>
+<td>
+<div class="sourceCode" id="cb319"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb319-1"><a href="literate-programming.html#cb319-1"></a>&lt;&lt;eval=FALSE&gt;&gt;=</span>
+<span id="cb319-2"><a href="literate-programming.html#cb319-2"></a>code</span>
+<span id="cb319-3"><a href="literate-programming.html#cb319-3"></a>@</span></code></pre></div>
+</td>
+<td>
+<div class="sourceCode" id="cb320"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb320-1"><a href="literate-programming.html#cb320-1"></a><span class="bn">```{r, eval=FALSE}</span></span>
+<span id="cb320-2"><a href="literate-programming.html#cb320-2"></a><span class="bn">code</span></span>
+<span id="cb320-3"><a href="literate-programming.html#cb320-3"></a><span class="bn">```</span></span></code></pre></div>
+.
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+</td>
+<tr>
+<td>
+<code>Code block</code> as float
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<strong>References</strong>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table>
+<!--     <td> -->
+<!-- ````markdown -->
+<!-- <<eval=FALSE>>= -->
+<!-- code -->
+<!-- @ -->
+<!-- ```` -->
+<!--     </td> -->
+<!--     <td> -->
+<!-- ````markdown -->
+<!-- ```{r, eval=FALSE} -->
+<!-- code -->
+<!-- ``` -->
+<!-- ```` -->
+<!-- <!-- -->
+<!-- ## this seems necessary for correct source code displaying... -->
+<!-- ``` -->
+<p>–&gt;
+<!--     </td> -->
+<!--   </tr> --></p>
+<!-- <td>Snipped "codeblock"\ -->
+<!-- ```latex -->
+<!-- \begin{codeblock}[tb] -->
+<!-- {\internallinenumbers \resetlinenumber[1] -->
+<!-- \footnotesize -->
+<!-- <<eval=FALSE>>= -->
+<!-- Code -->
+<!-- @ -->
+<!-- } \caption{CodeCaption} \label{code:Label} -->
+<!-- \end{codeblock} -->
+<!-- ``` -->
+<!--     </td> -->
+<!--     <td> </td> -->
 
-<div id="refs" class="references">
-<div>
-<p>Grolemund, Garrett, and Hadley Wickham. n.d. <em>R for Data Science</em>. Accessed April 12, 2019. <a href="https://r4ds.had.co.nz/">https://r4ds.had.co.nz/</a>.</p>
-</div>
-<div>
-<p>Wickham, Hadley. n.d. <em>Advanced R</em>. 2nd ed. Accessed April 12, 2019. <a href="https://adv-r.hadley.nz/">https://adv-r.hadley.nz/</a>.</p>
-</div>
 </div>
 </div>
             </section>
@@ -581,8 +1482,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="stuff-still-to-include.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="r-studio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="latex.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -613,7 +1514,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/R_Ref_Book/edit/master/99-references.Rmd",
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/63-lit-program.Rmd",
 "text": "Edit"
 },
 "history": {
