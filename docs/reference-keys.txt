@@ -335,7 +335,3 @@ keras
 sparklyr
 test
 stuff-still-to-include
-this-seems-necessary-for-correct-source-code-displaying
-this-seems-necessary-for-correct-source-code-displaying-1
-this-seems-necessary-for-correct-source-code-displaying-2
-this-seems-necessary-for-correct-source-code-displaying-3
