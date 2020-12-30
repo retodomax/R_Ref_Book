@@ -100,7 +100,7 @@
   </tr>
 </table>
 
-## Improtant
+## Important
 
 ```{block2, type='rmdcaution'}
 A dot which is not used as the end of a scentence has to be followed by a backslash (/). Otherwise there is too much space afterwards. Important for abbriviations like e.g., i.e., etc., et al., ...
@@ -188,6 +188,23 @@ These are only working if the output is a pdf and the RetoMath.sty preamble is i
     <td>`\Poisson{}`</td>
   </tr>
 </table>
+
+| Command                | Result                  | Command                    | Result                      | Command                | Result                  |
+|------------------------|-------------------------|----------------------------|-----------------------------|------------------------|-------------------------|
+| `\ERW{X}`              | $\ERW{X}$               | `\ERWi{X}`                 | $\ERWi{n}{X}$               | `\ERWSymbol`           | $\ERWSymbol$            |
+| `\VAR{X}`              | $\VAR{X}$               | `\VARi{n}{X}`              | $\VARi{n}{X}$               | `\VARSymbol`           | $\VAR{X}$               |
+| `\VARH{X}`             | $\VARH{X}$              | `\VARHi{n}{X}`             | $\VARHi{n}{X}$              | `\wh\VARSymbol`        | $\wh\VARSymbol$         |
+| `\COV{X,Y}`            | $\COV{X,Y}$             | `\COVi{n}{X,Y}`            | $\COVi{n}{X,Y}$             | `\COVSymbol`           | $\COVSymbol$            |
+| `\COVH{X,Y}`           | $\COVH{X,Y}$            | `\COVHi{n}{X,Y}`           | $\COVHi{n}{X,Y}$            | `\wh\COVSymbol`        | $\wh\COVSymbol$         |
+| `\COR{X,Y}`            | $\COR{X,Y}$             | `\CORi{n}{X,Y}`            | $\CORi{n}{X,Y}$             | `\CORSymbol`           | $\CORSymbol$            |
+| `\CORH{X,Y}`           | $\CORH{X,Y}$            | `\CORHi{n}{X,Y}`           | $\CORHi{n}{X,Y}$            | `\wh\CORSymbol`        | $\wh\CORSymbol$         |
+| `\PR{X = c}`           | $\PR{X = c}$            | `\PRi{n}{X = c}`           | $\PRi{n}{X = c}$            | `\PRSymbol`            | $\PRSymbol$             |
+| `\Normal{\mu, 1}`      | $\Normal{\mu, 1}$       | `\Normali{n}{\mu, 1}`      | $\Normali{n}{\mu, 1}$       | `\NormalSymbol`        | $\NormalSymbol$         |
+| `\Binomial{n,p}`       | $\Binomial{n,p}$        | `\Binomiali{n}{n,p}`       | $\Binomiali{n}{n,p}$        | `\BinomialSymbol`      | $\BinomialSymbol$       |
+| `\Bernoulli{p}`        | $\Bernoulli{p}$         | `\Bernoullii{n}{p}`        | $\Bernoullii{n}{p}$         | `\BernoulliSymbol`     | $\BernoulliSymbol$      |
+| `\Exponential{\lambda}`| $\Exponential{\lambda}$ | `\Exponentiali{n}{\lambda}`| $\Exponentiali{n}{\lambda}$ | `\ExponentialSymbol`   | $\ExponentialSymbol$    |
+| `\Poisson{\lambda}`    | $\Poisson{\lambda}$     | `\Poissoni{n}{\lambda}`    | $\Poissoni{n}{\lambda}$     | `\PoissonSymbol`       | $\PoissonSymbol$        |
+
 
 
 ## Constructs

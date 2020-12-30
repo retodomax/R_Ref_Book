@@ -573,98 +573,179 @@ with natbib `\citep{}` `\citet{}` `\cite{}`
 </table>
 
 
+## Templates
 
-## Part 2
+<button onclick="myFunction('sweave_template')">Sweave Template</button>
+<div id="sweave_template" style="display: none">
 
-And some new try
+````latex
+\documentclass[11pt, a4paper]{article}
+\input{RetoArticle.sty}
+\input{RetoMath.sty}
 
-<table class = "comtab">
-  <col width="10%">
-  <col width="45%">
-  <col width="45%">
-  <tr>
-    <th>Element</th>
-    <th>Latex/Sweave</th>
-    <th>Rmarkdown/Bookdown</th>
-  </tr>
-  <tr>
-    <td>**Language**</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>`Inline code`</td>
-    <td>`\texttt{code}`\
-    `\lstinline{code}` (listings.sty)\
-    `\code{code}` (RetoArticle.sty)</td>
-    <td>`` `code` ``</td>
-  </tr>
-  <tr>
-    <td>`Code block`</td>
-    <td>
-    ````markdown
-<<eval=FALSE>>=
-code
+\usepackage[style = authoryear]{biblatex}
+\addbibresource{bib.bib}
+
+\title{Title}
+\author{Reto Zihlmann}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+<<setup, include=FALSE>>=
+knitr::opts_chunk$set(comment = "##",
+                      tidy = FALSE,
+                      fig.align = "left",
+                      fig.width = 7,
+                      fig.height = 5,
+                      out.width = "50%",
+                      echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      error = FALSE)
 @
+
+\section{First Section}
+
+
+
+\newpage
+\printbibliography
+
+\end{document}
 ````
-    </td>
-    <td> 
+
+</div>
+
+<br>
+
+<button onclick="myFunction('RMarkdown_html_template')">RMarkdown html Template</button>
+<div id="RMarkdown_html_template" style="display: none">
+
 ````markdown
-`r ''````{r, eval=FALSE}
-code
+---
+project: `r stringr::str_pad(paste0(unlist(strsplit(getwd(), split = "/"))[length(unlist(strsplit(getwd(), split = "/")))], "    "), 63, "right", pad = "#")`
+title:   Title
+author:  "[Reto Zihlmann](https://retodomax.github.io/)"
+date:    "`r "\u0060r Sys.Date()\u0060"`"
+output:
+	bookdown::html_document2:
+		toc: true
+		toc_float: true
+		includes:
+			before_body: /home/reto/texmf-local/tex/latex/commonstuff/RetoMathjax.tex
+bibliography:
+	- "`r "\u0060r system('kpsewhich bib.bib', intern=TRUE)\u0060"`"
+	- bib_packages.bib
+link-citations: true
+---
+
+`r ''````{r, setup, include=FALSE}
+knitr::opts_chunk$set(comment = "",
+                      tidy = TRUE,
+                      fig.align = "left",
+                      out.width = "100%",
+                      echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE,
+                      error = FALSE)
 ```
+
+`r ''````{r, package-bib, include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', "mgcv"
+), 'bib_packages.bib')
+```
+
+
+<!-- CSS Stype for Figure caption -->
+<!-- CSS Style for more space between headers -->
+<style>
+caption {
+  color: gray;
+  font-size: 0.8em;
+}
+p.caption {
+  color: gray;
+  font-size: 0.8em;
+  padding-bottom: 30px;
+}
+h1, .h1 {
+	margin-top: 84px;
+}
+h2, .h2, h3, .h3 {
+	margin-top: 42px;
+}
+</style>
+
+
+# First Section
+
+
+
+
+
+# References {#ref}
 ````
-.
-<!-- 
-## this seems necessary for correct source code displaying...
-``` -->
-    </td>
-  <tr>
-    <td>`Code block` as float</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>**References**</td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+
+</div>
+
+<br>
+
+
+<button onclick="myFunction('RMarkdown_pdf_template')">RMarkdown pdf Template</button>
+<div id="RMarkdown_pdf_template" style="display: none">
+
+````markdown
+---
+project: `r stringr::str_pad(paste0(unlist(strsplit(getwd(), split = "/"))[length(unlist(strsplit(getwd(), split = "/")))], "    "), 63, "right", pad = "#")`
+title:   Title
+author:  "[Reto Zihlmann](https://retodomax.github.io/)"
+date:    "`r "\u0060r Sys.Date()\u0060"`"
+output:
+	bookdown::pdf_document2:
+		includes:
+			in_header:
+				- /home/reto/texmf-local/tex/latex/commonstuff/RetoArticle.sty
+				- /home/reto/texmf-local/tex/latex/commonstuff/RetoMath.sty
+bibliography:
+	- "`r "\u0060r system('kpsewhich bib.bib', intern=TRUE)\u0060"`"
+	- bib_packages.bib
+link-citations: true
+classoption: a4paper
+geometry: margin=2.5cm
+---
+
+`r ''````{r, setup, include=FALSE}
+knitr::opts_chunk$set(comment = "",
+                      tidy = TRUE,
+                      fig.align = "left",
+                      out.width = "100%",
+                      echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE,
+                      error = FALSE)
+```
+
+`r ''````{r, package-bib, include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', "mgcv"
+), 'bib_packages.bib')
+```
+
+
+# First Section
 
 
 
-<!--     <td> -->
-<!-- ````markdown -->
-<!-- <<eval=FALSE>>= -->
-<!-- code -->
-<!-- @ -->
-<!-- ```` -->
-<!--     </td> -->
-<!--     <td> -->
-<!-- ````markdown -->
-<!-- `r ''````{r, eval=FALSE} -->
-<!-- code -->
-<!-- ``` -->
-<!-- ```` -->
-<!-- <!-- -->
-<!-- ## this seems necessary for correct source code displaying... -->
-<!-- ``` --> -->
-<!--     </td> -->
-<!--   </tr> -->
 
+# References {#ref}
+````
 
-<!-- <td>Snipped "codeblock"\ -->
-
-<!-- ```latex -->
-<!-- \begin{codeblock}[tb] -->
-<!-- {\internallinenumbers \resetlinenumber[1] -->
-<!-- \footnotesize -->
-<!-- <<eval=FALSE>>= -->
-<!-- Code -->
-<!-- @ -->
-<!-- } \caption{CodeCaption} \label{code:Label} -->
-<!-- \end{codeblock} -->
-<!-- ``` -->
-<!--     </td> -->
-<!--     <td> </td> -->
-
+</div>

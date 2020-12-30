@@ -15,3 +15,4 @@ bookdown::gitbook:
   includes:
     in_header:
       - header.html
+    before_body: /home/reto/texmf-local/tex/latex/commonstuff/RetoMathjax.tex
