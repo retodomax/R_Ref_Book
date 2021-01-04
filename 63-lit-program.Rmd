@@ -249,7 +249,8 @@ knitr::include_graphics("figures/workflow_knitr.png")
   </tr>
   <tr>
     <td>Formal image ![](figures/R_logo2.png)</td>
-    <td> Snipped "fig"\
+    <td>
+    Snipped "fig"\
 ```latex
 \begin{figure}
   \centering
@@ -259,7 +260,8 @@ knitr::include_graphics("figures/workflow_knitr.png")
 \end{figure}
 ```
     </td>
-    <td> Snipped "fig"\
+    <td>
+    Snipped "fig"\
 ````markdown
 `r ''````{r, mylabel, echo=FALSE, fig.cap='FigCap', out.width='25%', fig.align='center', fig.pos="tb"}
 knitr::include_graphics('R_logo2.png')
@@ -274,7 +276,8 @@ knitr::include_graphics('R_logo2.png')
   <tr>
     <td>Formal image generated with R code\
     ![](figures/R_logo2.png)</td>
-    <td> Snipped "figR"\
+    <td>
+    Snipped "figR"\
 
 ````markdown
 <<mylabel, echo=FALSE, fig.cap='FigCap',
@@ -285,7 +288,8 @@ plot(1:3)
 ````
     Attention: label is `mylabel` but cross-references need to use `fig:mylabel`
     </td>
-    <td> Snipped "figR"\
+    <td>
+    Snipped "figR"\
 
 ````markdown
 `r ''````{r, mylabel, echo=FALSE, fig.cap='FigCap', out.width='25%', fig.align='center', fig.pos="tb"}
@@ -335,19 +339,21 @@ col1 & col2 & col3\\
   <tr>
     <td>Equation block</td>
     <td>
-    ```latex
+    
+````latex
 \usepackage{amsmath}
 \begin{align*} 
     E=mc^2
 \end{align*}
-```
+````
     </td>
     <td>`$$E=mc^2$$`</td>
   </tr>
   <tr>
     <td>Equation block with number</td>
     <td>
-    ```latex
+    
+```latex
 \usepackage{amsmath}
 \begin{align} 
     a^2 + b^2 = c^2
@@ -355,7 +361,7 @@ col1 & col2 & col3\\
 ```
     </td>
     <td>
-    ```markdown
+```markdown
 $$
 a^2 + b^2 = c^2
 (\#eq:pythagoras)
@@ -387,6 +393,7 @@ code
 
     </td>
     <td>
+    
 ````markdown
 `r ''````{r, eval=FALSE}
 code
@@ -394,12 +401,14 @@ code
 ````
 <!-- 
 ## this seems necessary for correct source code displaying...
-``` --> .
+``` -->
+
     </td>
   </tr>
   <tr>
     <td>`Code block` as float</td>
-    <td>Snipped "codeblock"\
+    <td>
+    Snipped "codeblock"\
 
 ```latex
 \begin{codeblock}[tb]
@@ -411,11 +420,42 @@ Code
 } \caption{CodeCaption} \label{code:Label}
 \end{codeblock}
 ```
-.
+
     </td>
     <td> 
     Makes only sense for PDF.\
     Use Latex code on left.
+    </td>
+  </tr>
+  <tr>
+    <td>**Numbered/Labeled environments**</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Environment</td>
+    <td>
+    From RetoMath.sty
+```latex
+\begin{example} \label{ex:label}
+  ...
+\end{example}
+```
+    Further environments include `definition`, `result` and `proof`.
+    </td>
+    <td>
+    
+````markdown
+`r ''````{example, label="firstExample"}
+...
+```
+````
+<!-- 
+## this seems necessary for correct source code displaying...
+``` -->
+
+    For further environments:\
+    [Bookdown documentation](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#theorems)
     </td>
   </tr>
   <tr>
@@ -431,14 +471,17 @@ Code
   <tr>
     <td>Label figure</td>
     <td>
-    ```latex
+    
+```latex
 \begin{figure}
 ...
 \label{fig:FigLabel}
 \end{figure}
 ```
+
     </td>
     <td>
+    
 ````markdown
 `r ''````{r, label, fig.cap='...'}
 knitr::include_graphics('figures/hex-rmarkdown.png')
@@ -447,6 +490,7 @@ knitr::include_graphics('figures/hex-rmarkdown.png')
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` --> 
+
     </td>
   </tr>
   <tr>
@@ -460,6 +504,7 @@ knitr::include_graphics('figures/hex-rmarkdown.png')
 ```
     </td>
     <td>
+    
 ````markdown
 `r ''````{r, label}
 kableExtra::kable(...)
@@ -491,7 +536,29 @@ $$
   </tr>
   <tr>
     <td>Label code block</td>
-    <td></td>
+    <td>
+    
+    Only floating code blocks with caption
+```latex
+\begin{codeblock}
+...
+\caption{CodeCaption} \label{code:Label}
+\end{codeblock}
+```
+    
+    </td>
+    <td>Only floating code blocks with caption</td>
+  </tr>
+  <tr>
+    <td>Label environment</td>
+    <td>
+    
+```latex
+\begin{example} \label{ex:label}
+  ...
+\end{example}
+```
+    </td>
     <td></td>
   </tr>
   <tr>
@@ -516,6 +583,11 @@ $$
   </tr>
   <tr>
     <td>Cross ref code block</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Cross ref environment</td>
     <td></td>
     <td></td>
   </tr>

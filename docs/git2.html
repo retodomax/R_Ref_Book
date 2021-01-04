@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-12-31" />
+<meta name="date" content="2021-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -564,6 +564,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
+<p style="visibility:hidden;">% Tag useful such that part is included but already hidden even before rendering of MathJax
 \(
 \newcommand{\bm}[1]{\boldsymbol{\mathbf{#1}}}
 
@@ -655,41 +656,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     \right)}
 
 \)
+</p>
 <div id="git2" class="section level1">
 <h1><span class="header-section-number">Chapter 35</span> git2</h1>
 <div id="common-tasks-1" class="section level2">
 <h2><span class="header-section-number">35.1</span> Common tasks</h2>
 <div id="create-a-new-repository-on-the-command-line" class="section level5 unnumbered">
 <h5>create a new repository on the command line</h5>
-<div class="sourceCode" id="cb352"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb352-1"><a href="git2.html#cb352-1"></a><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</span>
-<span id="cb352-2"><a href="git2.html#cb352-2"></a><span class="fu">git</span> init</span>
-<span id="cb352-3"><a href="git2.html#cb352-3"></a><span class="fu">git</span> add README.md</span>
-<span id="cb352-4"><a href="git2.html#cb352-4"></a><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></span>
-<span id="cb352-5"><a href="git2.html#cb352-5"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
-<span id="cb352-6"><a href="git2.html#cb352-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb354-1"><a href="git2.html#cb354-1"></a><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</span>
+<span id="cb354-2"><a href="git2.html#cb354-2"></a><span class="fu">git</span> init</span>
+<span id="cb354-3"><a href="git2.html#cb354-3"></a><span class="fu">git</span> add README.md</span>
+<span id="cb354-4"><a href="git2.html#cb354-4"></a><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></span>
+<span id="cb354-5"><a href="git2.html#cb354-5"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
+<span id="cb354-6"><a href="git2.html#cb354-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
 </div>
 <div id="push-an-existing-repository-from-the-command-line" class="section level5 unnumbered">
 <h5>push an existing repository from the command line</h5>
-<div class="sourceCode" id="cb353"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb353-1"><a href="git2.html#cb353-1"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
-<span id="cb353-2"><a href="git2.html#cb353-2"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb355-1"><a href="git2.html#cb355-1"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
+<span id="cb355-2"><a href="git2.html#cb355-2"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
 </div>
 <div id="clone-existing-repository-and-push-changes" class="section level5 unnumbered">
 <h5>clone existing repository and push changes</h5>
-<div class="sourceCode" id="cb354"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb354-1"><a href="git2.html#cb354-1"></a><span class="fu">git</span> clone git@github.com:retodomax/test.git</span>
-<span id="cb354-2"><a href="git2.html#cb354-2"></a><span class="bu">cd</span> test</span>
-<span id="cb354-3"><a href="git2.html#cb354-3"></a><span class="fu">touch</span> README.md</span>
-<span id="cb354-4"><a href="git2.html#cb354-4"></a><span class="fu">git</span> add README.md</span>
-<span id="cb354-5"><a href="git2.html#cb354-5"></a><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></span>
-<span id="cb354-6"><a href="git2.html#cb354-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb356-1"><a href="git2.html#cb356-1"></a><span class="fu">git</span> clone git@github.com:retodomax/test.git</span>
+<span id="cb356-2"><a href="git2.html#cb356-2"></a><span class="bu">cd</span> test</span>
+<span id="cb356-3"><a href="git2.html#cb356-3"></a><span class="fu">touch</span> README.md</span>
+<span id="cb356-4"><a href="git2.html#cb356-4"></a><span class="fu">git</span> add README.md</span>
+<span id="cb356-5"><a href="git2.html#cb356-5"></a><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></span>
+<span id="cb356-6"><a href="git2.html#cb356-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
 </div>
 <div id="push-existing-folder-to-origin" class="section level5 unnumbered">
 <h5>push existing folder to origin</h5>
-<div class="sourceCode" id="cb355"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb355-1"><a href="git2.html#cb355-1"></a><span class="bu">cd</span> existing_folder</span>
-<span id="cb355-2"><a href="git2.html#cb355-2"></a><span class="fu">git</span> init</span>
-<span id="cb355-3"><a href="git2.html#cb355-3"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
-<span id="cb355-4"><a href="git2.html#cb355-4"></a><span class="fu">git</span> add .</span>
-<span id="cb355-5"><a href="git2.html#cb355-5"></a><span class="fu">git</span> commit</span>
-<span id="cb355-6"><a href="git2.html#cb355-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb357-1"><a href="git2.html#cb357-1"></a><span class="bu">cd</span> existing_folder</span>
+<span id="cb357-2"><a href="git2.html#cb357-2"></a><span class="fu">git</span> init</span>
+<span id="cb357-3"><a href="git2.html#cb357-3"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
+<span id="cb357-4"><a href="git2.html#cb357-4"></a><span class="fu">git</span> add .</span>
+<span id="cb357-5"><a href="git2.html#cb357-5"></a><span class="fu">git</span> commit</span>
+<span id="cb357-6"><a href="git2.html#cb357-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
 
 </div>
 </div>
