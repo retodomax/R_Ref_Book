@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-04" />
+<meta name="date" content="2021-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -469,6 +469,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="30.4" data-path="latex.html"><a href="latex.html#sfs"><i class="fa fa-check"></i><b>30.4</b> SfS</a></li>
 <li class="chapter" data-level="30.5" data-path="latex.html"><a href="latex.html#constructs"><i class="fa fa-check"></i><b>30.5</b> Constructs</a></li>
 <li class="chapter" data-level="30.6" data-path="latex.html"><a href="latex.html#text-format"><i class="fa fa-check"></i><b>30.6</b> Text format</a></li>
+<li class="chapter" data-level="30.7" data-path="latex.html"><a href="latex.html#math-environments"><i class="fa fa-check"></i><b>30.7</b> Math environments</a></li>
 </ul></li>
 <li class="chapter" data-level="31" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>31</b> Reference management</a><ul>
 <li class="chapter" data-level="31.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>31.1</b> Literature</a><ul>
@@ -1146,6 +1147,22 @@ R
 <h2><span class="header-section-number">30.6</span> Text format</h2>
 <p>Colored text</p>
 <p><code>\textcolor{red}{...text...}</code></p>
+</div>
+<div id="math-environments" class="section level2">
+<h2><span class="header-section-number">30.7</span> Math environments</h2>
+<p>Reto Math supports Theorems, Definitions, Results, Proofs and Examples. Definitions are followed by a black diamond (<span class="math inline">\(\blacklozenge\)</span>), Proofs by an open square (<span class="math inline">\(\square\)</span>) and examples by a filled square(<span class="math inline">\(\blacksquare\)</span>).</p>
+<p>Example</p>
+<div class="sourceCode" id="cb324"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb324-1"><a href="latex.html#cb324-1"></a><span class="kw">\begin</span>{<span class="ex">example</span>}</span>
+<span id="cb324-2"><a href="latex.html#cb324-2"></a>  This is an example</span>
+<span id="cb324-3"><a href="latex.html#cb324-3"></a><span class="kw">\end</span>{<span class="ex">example</span>}</span></code></pre></div>
+<p>If math environment ends with display (equation block) add <code>\qedhere</code> to end of equation such that symbol is on same line as the equation and no page break can happen between end of equation and symbol.</p>
+<div class="sourceCode" id="cb325"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb325-1"><a href="latex.html#cb325-1"></a><span class="kw">\begin</span>{<span class="ex">example</span>}</span>
+<span id="cb325-2"><a href="latex.html#cb325-2"></a>  This is an example</span>
+<span id="cb325-3"><a href="latex.html#cb325-3"></a>  <span class="kw">\begin</span>{<span class="ex">equation*</span>}</span>
+<span id="cb325-4"><a href="latex.html#cb325-4"></a><span class="ss">    x = 1+2 </span><span class="sc">\qedhere</span></span>
+<span id="cb325-5"><a href="latex.html#cb325-5"></a><span class="ss">  </span><span class="kw">\end</span>{<span class="ex">equation*</span>}</span>
+<span id="cb325-6"><a href="latex.html#cb325-6"></a><span class="kw">\end</span>{<span class="ex">example</span>}</span></code></pre></div>
+<p>Detailed information <a href="https://tex.stackexchange.com/questions/16453/denoting-the-end-of-example-remark/32394#32394">here</a></p>
 
 </div>
 </div>

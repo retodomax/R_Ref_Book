@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-04" />
+<meta name="date" content="2021-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -469,6 +469,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="30.4" data-path="latex.html"><a href="latex.html#sfs"><i class="fa fa-check"></i><b>30.4</b> SfS</a></li>
 <li class="chapter" data-level="30.5" data-path="latex.html"><a href="latex.html#constructs"><i class="fa fa-check"></i><b>30.5</b> Constructs</a></li>
 <li class="chapter" data-level="30.6" data-path="latex.html"><a href="latex.html#text-format"><i class="fa fa-check"></i><b>30.6</b> Text format</a></li>
+<li class="chapter" data-level="30.7" data-path="latex.html"><a href="latex.html#math-environments"><i class="fa fa-check"></i><b>30.7</b> Math environments</a></li>
 </ul></li>
 <li class="chapter" data-level="31" data-path="reference-management.html"><a href="reference-management.html"><i class="fa fa-check"></i><b>31</b> Reference management</a><ul>
 <li class="chapter" data-level="31.1" data-path="reference-management.html"><a href="reference-management.html#literature"><i class="fa fa-check"></i><b>31.1</b> Literature</a><ul>
@@ -676,54 +677,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Example with all possible default options</p>
 <div id="bookdown.yml" class="section level3">
 <h3><span class="header-section-number">33.1.1</span> <code>_bookdown.yml</code></h3>
-<div class="sourceCode" id="cb337"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb337-1"><a href="bookdown.html#cb337-1"></a><span class="fu">book_filename</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;myBookname&quot;</span></span>
-<span id="cb337-2"><a href="bookdown.html#cb337-2"></a><span class="fu">delete_merged_file</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb337-3"><a href="bookdown.html#cb337-3"></a><span class="fu">language</span><span class="kw">:</span></span>
-<span id="cb337-4"><a href="bookdown.html#cb337-4"></a><span class="at">  </span><span class="fu">ui</span><span class="kw">:</span></span>
-<span id="cb337-5"><a href="bookdown.html#cb337-5"></a><span class="at">    </span><span class="fu">chapter_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></span>
-<span id="cb337-6"><a href="bookdown.html#cb337-6"></a><span class="fu">chapter_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></span>
-<span id="cb337-7"><a href="bookdown.html#cb337-7"></a><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/seankross/bookdown-start</span></span>
-<span id="cb337-8"><a href="bookdown.html#cb337-8"></a><span class="fu">output_dir</span><span class="kw">:</span><span class="at"> docs</span></span>
-<span id="cb337-9"><a href="bookdown.html#cb337-9"></a><span class="fu">rmd_files</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;01-Introduction.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;02-Diving-In.Rmd&quot;</span><span class="kw">]</span></span>
-<span id="cb337-10"><a href="bookdown.html#cb337-10"></a><span class="fu">clean</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">packages.bib</span><span class="kw">,</span><span class="at"> bookdown.bbl</span><span class="kw">]</span></span>
-<span id="cb337-11"><a href="bookdown.html#cb337-11"></a><span class="fu">new_session</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb339-1"><a href="bookdown.html#cb339-1"></a><span class="fu">book_filename</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;myBookname&quot;</span></span>
+<span id="cb339-2"><a href="bookdown.html#cb339-2"></a><span class="fu">delete_merged_file</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb339-3"><a href="bookdown.html#cb339-3"></a><span class="fu">language</span><span class="kw">:</span></span>
+<span id="cb339-4"><a href="bookdown.html#cb339-4"></a><span class="at">  </span><span class="fu">ui</span><span class="kw">:</span></span>
+<span id="cb339-5"><a href="bookdown.html#cb339-5"></a><span class="at">    </span><span class="fu">chapter_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></span>
+<span id="cb339-6"><a href="bookdown.html#cb339-6"></a><span class="fu">chapter_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Chapter &quot;</span></span>
+<span id="cb339-7"><a href="bookdown.html#cb339-7"></a><span class="fu">repo</span><span class="kw">:</span><span class="at"> https://github.com/seankross/bookdown-start</span></span>
+<span id="cb339-8"><a href="bookdown.html#cb339-8"></a><span class="fu">output_dir</span><span class="kw">:</span><span class="at"> docs</span></span>
+<span id="cb339-9"><a href="bookdown.html#cb339-9"></a><span class="fu">rmd_files</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;01-Introduction.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;02-Diving-In.Rmd&quot;</span><span class="kw">]</span></span>
+<span id="cb339-10"><a href="bookdown.html#cb339-10"></a><span class="fu">clean</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">packages.bib</span><span class="kw">,</span><span class="at"> bookdown.bbl</span><span class="kw">]</span></span>
+<span id="cb339-11"><a href="bookdown.html#cb339-11"></a><span class="fu">new_session</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
 <p>Here: add explanation to each option</p>
 </div>
 <div id="output.yml" class="section level3">
 <h3><span class="header-section-number">33.1.2</span> <code>_output.yml</code></h3>
-<div class="sourceCode" id="cb338"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb338-1"><a href="bookdown.html#cb338-1"></a><span class="at">bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
-<span id="cb338-2"><a href="bookdown.html#cb338-2"></a><span class="at">  </span><span class="fu">css</span><span class="kw">:</span><span class="at"> style.css</span></span>
-<span id="cb338-3"><a href="bookdown.html#cb338-3"></a><span class="at">  </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> chapter</span></span>
-<span id="cb338-4"><a href="bookdown.html#cb338-4"></a><span class="at">  </span><span class="fu">config</span><span class="kw">:</span></span>
-<span id="cb338-5"><a href="bookdown.html#cb338-5"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span></span>
-<span id="cb338-6"><a href="bookdown.html#cb338-6"></a><span class="at">      </span><span class="fu">collapse</span><span class="kw">:</span><span class="at"> subsection</span></span>
-<span id="cb338-7"><a href="bookdown.html#cb338-7"></a><span class="fu">      before</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb338-8"><a href="bookdown.html#cb338-8"></a>        &lt;li&gt;&lt;a href=&quot;./&quot;&gt;A Minimal Bookdown Book&lt;/a&gt;&lt;/li&gt;</span>
-<span id="cb338-9"><a href="bookdown.html#cb338-9"></a><span class="fu">      after</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb338-10"><a href="bookdown.html#cb338-10"></a>        &lt;li&gt;&lt;a href=&quot;https://github.com/rstudio/bookdown&quot; target=&quot;blank&quot;&gt;Published with bookdown&lt;/a&gt;&lt;/li&gt;</span>
-<span id="cb338-11"><a href="bookdown.html#cb338-11"></a><span class="at">bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>
-<span id="cb338-12"><a href="bookdown.html#cb338-12"></a><span class="at">  </span><span class="fu">includes</span><span class="kw">:</span></span>
-<span id="cb338-13"><a href="bookdown.html#cb338-13"></a><span class="at">    </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> preamble.tex</span></span>
-<span id="cb338-14"><a href="bookdown.html#cb338-14"></a><span class="at">  </span><span class="fu">latex_engine</span><span class="kw">:</span><span class="at"> xelatex</span></span>
-<span id="cb338-15"><a href="bookdown.html#cb338-15"></a><span class="at">  </span><span class="fu">citation_package</span><span class="kw">:</span><span class="at"> natbib</span></span>
-<span id="cb338-16"><a href="bookdown.html#cb338-16"></a><span class="at">bookdown:</span><span class="fu">:epub_book</span><span class="kw">:</span></span>
-<span id="cb338-17"><a href="bookdown.html#cb338-17"></a><span class="at">  </span><span class="fu">stylesheet</span><span class="kw">:</span><span class="at"> style.css</span></span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb340-1"><a href="bookdown.html#cb340-1"></a><span class="at">bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
+<span id="cb340-2"><a href="bookdown.html#cb340-2"></a><span class="at">  </span><span class="fu">css</span><span class="kw">:</span><span class="at"> style.css</span></span>
+<span id="cb340-3"><a href="bookdown.html#cb340-3"></a><span class="at">  </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> chapter</span></span>
+<span id="cb340-4"><a href="bookdown.html#cb340-4"></a><span class="at">  </span><span class="fu">config</span><span class="kw">:</span></span>
+<span id="cb340-5"><a href="bookdown.html#cb340-5"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span></span>
+<span id="cb340-6"><a href="bookdown.html#cb340-6"></a><span class="at">      </span><span class="fu">collapse</span><span class="kw">:</span><span class="at"> subsection</span></span>
+<span id="cb340-7"><a href="bookdown.html#cb340-7"></a><span class="fu">      before</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb340-8"><a href="bookdown.html#cb340-8"></a>        &lt;li&gt;&lt;a href=&quot;./&quot;&gt;A Minimal Bookdown Book&lt;/a&gt;&lt;/li&gt;</span>
+<span id="cb340-9"><a href="bookdown.html#cb340-9"></a><span class="fu">      after</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb340-10"><a href="bookdown.html#cb340-10"></a>        &lt;li&gt;&lt;a href=&quot;https://github.com/rstudio/bookdown&quot; target=&quot;blank&quot;&gt;Published with bookdown&lt;/a&gt;&lt;/li&gt;</span>
+<span id="cb340-11"><a href="bookdown.html#cb340-11"></a><span class="at">bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>
+<span id="cb340-12"><a href="bookdown.html#cb340-12"></a><span class="at">  </span><span class="fu">includes</span><span class="kw">:</span></span>
+<span id="cb340-13"><a href="bookdown.html#cb340-13"></a><span class="at">    </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> preamble.tex</span></span>
+<span id="cb340-14"><a href="bookdown.html#cb340-14"></a><span class="at">  </span><span class="fu">latex_engine</span><span class="kw">:</span><span class="at"> xelatex</span></span>
+<span id="cb340-15"><a href="bookdown.html#cb340-15"></a><span class="at">  </span><span class="fu">citation_package</span><span class="kw">:</span><span class="at"> natbib</span></span>
+<span id="cb340-16"><a href="bookdown.html#cb340-16"></a><span class="at">bookdown:</span><span class="fu">:epub_book</span><span class="kw">:</span></span>
+<span id="cb340-17"><a href="bookdown.html#cb340-17"></a><span class="at">  </span><span class="fu">stylesheet</span><span class="kw">:</span><span class="at"> style.css</span></span></code></pre></div>
 </div>
 <div id="yaml-header" class="section level3">
 <h3><span class="header-section-number">33.1.3</span> yaml header</h3>
-<div class="sourceCode" id="cb339"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb339-1"><a href="bookdown.html#cb339-1"></a><span class="pp">---</span></span>
-<span id="cb339-2"><a href="bookdown.html#cb339-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;A Minimal Bookdown Book&quot;</span></span>
-<span id="cb339-3"><a href="bookdown.html#cb339-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Sean Kross&quot;</span></span>
-<span id="cb339-4"><a href="bookdown.html#cb339-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2016-12-02&quot;</span></span>
-<span id="cb339-5"><a href="bookdown.html#cb339-5"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> bookdown::bookdown_site</span></span>
-<span id="cb339-6"><a href="bookdown.html#cb339-6"></a><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> book</span></span>
-<span id="cb339-7"><a href="bookdown.html#cb339-7"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">book.bib</span><span class="kw">]</span></span>
-<span id="cb339-8"><a href="bookdown.html#cb339-8"></a><span class="fu">biblio-style</span><span class="kw">:</span><span class="at"> apalike</span></span>
-<span id="cb339-9"><a href="bookdown.html#cb339-9"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
-<span id="cb339-10"><a href="bookdown.html#cb339-10"></a><span class="fu">github-repo</span><span class="kw">:</span><span class="at"> seankross/bookdown-start</span></span>
-<span id="cb339-11"><a href="bookdown.html#cb339-11"></a><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;http\://seankross.com/bookdown-start/&#39;</span></span>
-<span id="cb339-12"><a href="bookdown.html#cb339-12"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Everything you need (and nothing more) to start a bookdown book.&quot;</span></span>
-<span id="cb339-13"><a href="bookdown.html#cb339-13"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb341-1"><a href="bookdown.html#cb341-1"></a><span class="pp">---</span></span>
+<span id="cb341-2"><a href="bookdown.html#cb341-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;A Minimal Bookdown Book&quot;</span></span>
+<span id="cb341-3"><a href="bookdown.html#cb341-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Sean Kross&quot;</span></span>
+<span id="cb341-4"><a href="bookdown.html#cb341-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2016-12-02&quot;</span></span>
+<span id="cb341-5"><a href="bookdown.html#cb341-5"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> bookdown::bookdown_site</span></span>
+<span id="cb341-6"><a href="bookdown.html#cb341-6"></a><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> book</span></span>
+<span id="cb341-7"><a href="bookdown.html#cb341-7"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">book.bib</span><span class="kw">]</span></span>
+<span id="cb341-8"><a href="bookdown.html#cb341-8"></a><span class="fu">biblio-style</span><span class="kw">:</span><span class="at"> apalike</span></span>
+<span id="cb341-9"><a href="bookdown.html#cb341-9"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb341-10"><a href="bookdown.html#cb341-10"></a><span class="fu">github-repo</span><span class="kw">:</span><span class="at"> seankross/bookdown-start</span></span>
+<span id="cb341-11"><a href="bookdown.html#cb341-11"></a><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;http\://seankross.com/bookdown-start/&#39;</span></span>
+<span id="cb341-12"><a href="bookdown.html#cb341-12"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Everything you need (and nothing more) to start a bookdown book.&quot;</span></span>
+<span id="cb341-13"><a href="bookdown.html#cb341-13"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 </div>
 <div id="NewBookdownProject" class="section level2">
@@ -744,77 +745,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Delete <code>download: ["pdf", "epub"]</code></li>
 <li>Add these lines</li>
 </ol>
-<div class="sourceCode" id="cb340"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb340-1"><a href="bookdown.html#cb340-1"></a><span class="fu">config</span><span class="kw">:</span></span>
-<span id="cb340-2"><a href="bookdown.html#cb340-2"></a><span class="at">  </span><span class="fu">fontsettings</span><span class="kw">:</span></span>
-<span id="cb340-3"><a href="bookdown.html#cb340-3"></a><span class="at"> </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> white</span></span>
-<span id="cb340-4"><a href="bookdown.html#cb340-4"></a><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> sans</span></span>
-<span id="cb340-5"><a href="bookdown.html#cb340-5"></a><span class="at"> </span><span class="fu">size</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
-<span id="cb340-6"><a href="bookdown.html#cb340-6"></a><span class="at">  </span><span class="fu">edit</span><span class="kw">:</span><span class="at"> https://github.com/retodomax/R_Ref_Book/edit/master/%s</span></span>
-<span id="cb340-7"><a href="bookdown.html#cb340-7"></a><span class="fu">includes</span><span class="kw">:</span></span>
-<span id="cb340-8"><a href="bookdown.html#cb340-8"></a><span class="at">  </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> header.html</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb342"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb342-1"><a href="bookdown.html#cb342-1"></a><span class="fu">config</span><span class="kw">:</span></span>
+<span id="cb342-2"><a href="bookdown.html#cb342-2"></a><span class="at">  </span><span class="fu">fontsettings</span><span class="kw">:</span></span>
+<span id="cb342-3"><a href="bookdown.html#cb342-3"></a><span class="at"> </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> white</span></span>
+<span id="cb342-4"><a href="bookdown.html#cb342-4"></a><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> sans</span></span>
+<span id="cb342-5"><a href="bookdown.html#cb342-5"></a><span class="at"> </span><span class="fu">size</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb342-6"><a href="bookdown.html#cb342-6"></a><span class="at">  </span><span class="fu">edit</span><span class="kw">:</span><span class="at"> https://github.com/retodomax/R_Ref_Book/edit/master/%s</span></span>
+<span id="cb342-7"><a href="bookdown.html#cb342-7"></a><span class="fu">includes</span><span class="kw">:</span></span>
+<span id="cb342-8"><a href="bookdown.html#cb342-8"></a><span class="at">  </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> header.html</span></span></code></pre></div></li>
 <li>Go to <code>index.Rmd</code>, add these lines</li>
 </ol>
-<div class="sourceCode" id="cb341"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb341-1"><a href="bookdown.html#cb341-1"></a><span class="fu">github-repo</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;retodomax/R_Ref_Book&quot;</span></span>
-<span id="cb341-2"><a href="bookdown.html#cb341-2"></a><span class="fu">cover-image</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;figures/01_cover/Cover.svg&quot;</span></span>
-<span id="cb341-3"><a href="bookdown.html#cb341-3"></a><span class="fu">favicon</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;figures/00_icon/icon.ico&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb343-1"><a href="bookdown.html#cb343-1"></a><span class="fu">github-repo</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;retodomax/R_Ref_Book&quot;</span></span>
+<span id="cb343-2"><a href="bookdown.html#cb343-2"></a><span class="fu">cover-image</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;figures/01_cover/Cover.svg&quot;</span></span>
+<span id="cb343-3"><a href="bookdown.html#cb343-3"></a><span class="fu">favicon</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;figures/00_icon/icon.ico&quot;</span></span></code></pre></div>
 <ol start="7" style="list-style-type: decimal">
 <li>Add <code>header.html</code> file with following content: (hide button)</li>
 </ol>
-<div class="sourceCode" id="cb342"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb342-1"><a href="bookdown.html#cb342-1"></a><span class="kw">&lt;script&gt;</span></span>
-<span id="cb342-2"><a href="bookdown.html#cb342-2"></a><span class="kw">function</span> <span class="at">myFunction</span>(myid) <span class="op">{</span></span>
-<span id="cb342-3"><a href="bookdown.html#cb342-3"></a>  <span class="kw">var</span> x <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(myid)<span class="op">;</span></span>
-<span id="cb342-4"><a href="bookdown.html#cb342-4"></a>  <span class="cf">if</span> (<span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">===</span> <span class="st">&quot;none&quot;</span>) <span class="op">{</span></span>
-<span id="cb342-5"><a href="bookdown.html#cb342-5"></a>    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;block&quot;</span><span class="op">;</span></span>
-<span id="cb342-6"><a href="bookdown.html#cb342-6"></a>  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
-<span id="cb342-7"><a href="bookdown.html#cb342-7"></a>    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;none&quot;</span><span class="op">;</span></span>
-<span id="cb342-8"><a href="bookdown.html#cb342-8"></a>  <span class="op">}</span></span>
-<span id="cb342-9"><a href="bookdown.html#cb342-9"></a><span class="op">}</span></span>
-<span id="cb342-10"><a href="bookdown.html#cb342-10"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb344-1"><a href="bookdown.html#cb344-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb344-2"><a href="bookdown.html#cb344-2"></a><span class="kw">function</span> <span class="at">myFunction</span>(myid) <span class="op">{</span></span>
+<span id="cb344-3"><a href="bookdown.html#cb344-3"></a>  <span class="kw">var</span> x <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(myid)<span class="op">;</span></span>
+<span id="cb344-4"><a href="bookdown.html#cb344-4"></a>  <span class="cf">if</span> (<span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">===</span> <span class="st">&quot;none&quot;</span>) <span class="op">{</span></span>
+<span id="cb344-5"><a href="bookdown.html#cb344-5"></a>    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;block&quot;</span><span class="op">;</span></span>
+<span id="cb344-6"><a href="bookdown.html#cb344-6"></a>  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb344-7"><a href="bookdown.html#cb344-7"></a>    <span class="va">x</span>.<span class="va">style</span>.<span class="at">display</span> <span class="op">=</span> <span class="st">&quot;none&quot;</span><span class="op">;</span></span>
+<span id="cb344-8"><a href="bookdown.html#cb344-8"></a>  <span class="op">}</span></span>
+<span id="cb344-9"><a href="bookdown.html#cb344-9"></a><span class="op">}</span></span>
+<span id="cb344-10"><a href="bookdown.html#cb344-10"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
 <ol start="8" style="list-style-type: decimal">
 <li>Go to <code>styles.css</code>, add these lines</li>
 </ol>
-<div class="sourceCode" id="cb343"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb343-1"><a href="bookdown.html#cb343-1"></a><span class="co">/* definition tables (RZ) */</span></span>
-<span id="cb343-2"><a href="bookdown.html#cb343-2"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></span>
-<span id="cb343-3"><a href="bookdown.html#cb343-3"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></span>
-<span id="cb343-4"><a href="bookdown.html#cb343-4"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</span>
-<span id="cb343-5"><a href="bookdown.html#cb343-5"></a>{</span>
-<span id="cb343-6"><a href="bookdown.html#cb343-6"></a>  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></span>
-<span id="cb343-7"><a href="bookdown.html#cb343-7"></a>  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></span>
-<span id="cb343-8"><a href="bookdown.html#cb343-8"></a>  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></span>
-<span id="cb343-9"><a href="bookdown.html#cb343-9"></a>}</span>
-<span id="cb343-10"><a href="bookdown.html#cb343-10"></a></span>
-<span id="cb343-11"><a href="bookdown.html#cb343-11"></a><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</span>
-<span id="cb343-12"><a href="bookdown.html#cb343-12"></a>  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></span>
-<span id="cb343-13"><a href="bookdown.html#cb343-13"></a>  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></span>
-<span id="cb343-14"><a href="bookdown.html#cb343-14"></a>}</span>
-<span id="cb343-15"><a href="bookdown.html#cb343-15"></a><span class="fu">.deftab</span> th {</span>
-<span id="cb343-16"><a href="bookdown.html#cb343-16"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></span>
-<span id="cb343-17"><a href="bookdown.html#cb343-17"></a>}</span>
-<span id="cb343-18"><a href="bookdown.html#cb343-18"></a><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</span>
-<span id="cb343-19"><a href="bookdown.html#cb343-19"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></span>
-<span id="cb343-20"><a href="bookdown.html#cb343-20"></a>}</span>
-<span id="cb343-21"><a href="bookdown.html#cb343-21"></a></span>
-<span id="cb343-22"><a href="bookdown.html#cb343-22"></a><span class="co">/* boxes with warnings, notes, tips,... */</span></span>
-<span id="cb343-23"><a href="bookdown.html#cb343-23"></a><span class="fu">.rmdcaution</span><span class="op">,</span> <span class="fu">.rmdimportant</span><span class="op">,</span> <span class="fu">.rmdnote</span><span class="op">,</span> <span class="fu">.rmdtip</span><span class="op">,</span> <span class="fu">.rmdwarning</span> {</span>
-<span id="cb343-24"><a href="bookdown.html#cb343-24"></a>  <span class="kw">padding</span>: <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">4</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb343-25"><a href="bookdown.html#cb343-25"></a>  <span class="kw">margin-bottom</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb343-26"><a href="bookdown.html#cb343-26"></a>  <span class="kw">background</span>: <span class="cn">#f5f5f5</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">center</span>/<span class="dv">3</span><span class="dt">em</span> <span class="dv">no-repeat</span><span class="op">;</span></span>
-<span id="cb343-27"><a href="bookdown.html#cb343-27"></a>}</span>
-<span id="cb343-28"><a href="bookdown.html#cb343-28"></a><span class="fu">.rmdcaution</span> {</span>
-<span id="cb343-29"><a href="bookdown.html#cb343-29"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/caution.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb343-30"><a href="bookdown.html#cb343-30"></a>}</span>
-<span id="cb343-31"><a href="bookdown.html#cb343-31"></a><span class="fu">.rmdimportant</span> {</span>
-<span id="cb343-32"><a href="bookdown.html#cb343-32"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/important.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb343-33"><a href="bookdown.html#cb343-33"></a>}</span>
-<span id="cb343-34"><a href="bookdown.html#cb343-34"></a><span class="fu">.rmdnote</span> {</span>
-<span id="cb343-35"><a href="bookdown.html#cb343-35"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/note.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb343-36"><a href="bookdown.html#cb343-36"></a>}</span>
-<span id="cb343-37"><a href="bookdown.html#cb343-37"></a><span class="fu">.rmdtip</span> {</span>
-<span id="cb343-38"><a href="bookdown.html#cb343-38"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/tip.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb343-39"><a href="bookdown.html#cb343-39"></a>}</span>
-<span id="cb343-40"><a href="bookdown.html#cb343-40"></a><span class="fu">.rmdwarning</span> {</span>
-<span id="cb343-41"><a href="bookdown.html#cb343-41"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/warning.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb343-42"><a href="bookdown.html#cb343-42"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb345-1"><a href="bookdown.html#cb345-1"></a><span class="co">/* definition tables (RZ) */</span></span>
+<span id="cb345-2"><a href="bookdown.html#cb345-2"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></span>
+<span id="cb345-3"><a href="bookdown.html#cb345-3"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></span>
+<span id="cb345-4"><a href="bookdown.html#cb345-4"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</span>
+<span id="cb345-5"><a href="bookdown.html#cb345-5"></a>{</span>
+<span id="cb345-6"><a href="bookdown.html#cb345-6"></a>  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></span>
+<span id="cb345-7"><a href="bookdown.html#cb345-7"></a>  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></span>
+<span id="cb345-8"><a href="bookdown.html#cb345-8"></a>  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb345-9"><a href="bookdown.html#cb345-9"></a>}</span>
+<span id="cb345-10"><a href="bookdown.html#cb345-10"></a></span>
+<span id="cb345-11"><a href="bookdown.html#cb345-11"></a><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</span>
+<span id="cb345-12"><a href="bookdown.html#cb345-12"></a>  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></span>
+<span id="cb345-13"><a href="bookdown.html#cb345-13"></a>  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb345-14"><a href="bookdown.html#cb345-14"></a>}</span>
+<span id="cb345-15"><a href="bookdown.html#cb345-15"></a><span class="fu">.deftab</span> th {</span>
+<span id="cb345-16"><a href="bookdown.html#cb345-16"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></span>
+<span id="cb345-17"><a href="bookdown.html#cb345-17"></a>}</span>
+<span id="cb345-18"><a href="bookdown.html#cb345-18"></a><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</span>
+<span id="cb345-19"><a href="bookdown.html#cb345-19"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></span>
+<span id="cb345-20"><a href="bookdown.html#cb345-20"></a>}</span>
+<span id="cb345-21"><a href="bookdown.html#cb345-21"></a></span>
+<span id="cb345-22"><a href="bookdown.html#cb345-22"></a><span class="co">/* boxes with warnings, notes, tips,... */</span></span>
+<span id="cb345-23"><a href="bookdown.html#cb345-23"></a><span class="fu">.rmdcaution</span><span class="op">,</span> <span class="fu">.rmdimportant</span><span class="op">,</span> <span class="fu">.rmdnote</span><span class="op">,</span> <span class="fu">.rmdtip</span><span class="op">,</span> <span class="fu">.rmdwarning</span> {</span>
+<span id="cb345-24"><a href="bookdown.html#cb345-24"></a>  <span class="kw">padding</span>: <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">4</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb345-25"><a href="bookdown.html#cb345-25"></a>  <span class="kw">margin-bottom</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb345-26"><a href="bookdown.html#cb345-26"></a>  <span class="kw">background</span>: <span class="cn">#f5f5f5</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">center</span>/<span class="dv">3</span><span class="dt">em</span> <span class="dv">no-repeat</span><span class="op">;</span></span>
+<span id="cb345-27"><a href="bookdown.html#cb345-27"></a>}</span>
+<span id="cb345-28"><a href="bookdown.html#cb345-28"></a><span class="fu">.rmdcaution</span> {</span>
+<span id="cb345-29"><a href="bookdown.html#cb345-29"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/caution.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb345-30"><a href="bookdown.html#cb345-30"></a>}</span>
+<span id="cb345-31"><a href="bookdown.html#cb345-31"></a><span class="fu">.rmdimportant</span> {</span>
+<span id="cb345-32"><a href="bookdown.html#cb345-32"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/important.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb345-33"><a href="bookdown.html#cb345-33"></a>}</span>
+<span id="cb345-34"><a href="bookdown.html#cb345-34"></a><span class="fu">.rmdnote</span> {</span>
+<span id="cb345-35"><a href="bookdown.html#cb345-35"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/note.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb345-36"><a href="bookdown.html#cb345-36"></a>}</span>
+<span id="cb345-37"><a href="bookdown.html#cb345-37"></a><span class="fu">.rmdtip</span> {</span>
+<span id="cb345-38"><a href="bookdown.html#cb345-38"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/tip.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb345-39"><a href="bookdown.html#cb345-39"></a>}</span>
+<span id="cb345-40"><a href="bookdown.html#cb345-40"></a><span class="fu">.rmdwarning</span> {</span>
+<span id="cb345-41"><a href="bookdown.html#cb345-41"></a>  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;../figures/02_css/warning.png&quot;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb345-42"><a href="bookdown.html#cb345-42"></a>}</span></code></pre></div>
 <ol start="9" style="list-style-type: decimal">
 <li>Add folder <code>figures</code> with following subfolders (containing png files)
 <ul>

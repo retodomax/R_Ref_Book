@@ -221,3 +221,30 @@ These are only working if the output is a pdf and the RetoMath.sty preamble is i
 Colored text
 
 `\textcolor{red}{...text...}`
+
+## Math environments
+
+Reto Math supports Theorems, Definitions, Results, Proofs and Examples. Definitions are followed by a black diamond ($\blacklozenge$), Proofs by an open square ($\square$) and examples by a filled square($\blacksquare$).
+
+Example
+
+```latex
+\begin{example}
+  This is an example
+\end{example}
+```
+
+If math environment ends with display (equation block) add `\qedhere` to end of equation such that symbol is on same line as the equation and no page break can happen between end of equation and symbol.
+
+```latex
+\begin{example}
+  This is an example
+  \begin{equation*}
+    x = 1+2 \qedhere
+  \end{equation*}
+\end{example}
+```
+
+Detailed information [here](https://tex.stackexchange.com/questions/16453/denoting-the-end-of-example-remark/32394#32394)
+
+Consider replacing the current solution with package `ntheorem` (reasons outlined [here](https://tex.stackexchange.com/questions/232438/using-qedhere-automatically-in-every-proof). However, there are also arguments against it [here](https://tex.stackexchange.com/questions/5599/theorem-packages-which-to-use-which-conflict))

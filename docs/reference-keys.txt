@@ -273,6 +273,7 @@ reto-math
 sfs
 constructs
 text-format
+math-environments
 reference-management
 literature
 recommended-using-zotero
