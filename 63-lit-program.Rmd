@@ -131,7 +131,7 @@ knitr::include_graphics("figures/workflow_knitr.png")
 \sout{Strikethrough}
 ```
     </td>
-    <td>`~~strikethrough~~`</td>
+    <td>`~~Strikethrough~~`</td>
   </tr>
   <tr>
     <td><http://www.google.ch></td>
@@ -263,7 +263,7 @@ knitr::include_graphics("figures/workflow_knitr.png")
     <td>
     Snipped "fig"\
 ````markdown
-`r ''````{r, mylabel, echo=FALSE, fig.cap='FigCap', out.width='25%', fig.align='center', fig.pos="tb"}
+`r ''````{r, mylabel, echo=FALSE, fig.cap='FigCap', fig.pos="tb"}
 knitr::include_graphics('R_logo2.png')
 ```
 ````
@@ -281,7 +281,6 @@ knitr::include_graphics('R_logo2.png')
 
 ````markdown
 <<mylabel, echo=FALSE, fig.cap='FigCap',
-  out.width='25%', fig.align='center',
   fig.pos="tb">>=
 plot(1:3)
 @
@@ -292,7 +291,7 @@ plot(1:3)
     Snipped "figR"\
 
 ````markdown
-`r ''````{r, mylabel, echo=FALSE, fig.cap='FigCap', out.width='25%', fig.align='center', fig.pos="tb"}
+`r ''````{r, mylabel, echo=FALSE, fig.cap='FigCap', fig.pos="tb"}
 plot(1:3)
 ```
 ````
@@ -671,10 +670,10 @@ with natbib `\citep{}` `\citet{}` `\cite{}`
 <<setup, include=FALSE>>=
 knitr::opts_chunk$set(comment = "##",
                       tidy = FALSE,
-                      fig.align = "left",
+                      fig.align = "center",
+                      out.width = "50%",
                       fig.width = 7,
                       fig.height = 5,
-                      out.width = "50%",
                       echo = TRUE,
                       warning = FALSE,
                       message = FALSE,
@@ -717,11 +716,13 @@ link-citations: true
 ---
 
 `r ''````{r, setup, include=FALSE}
-knitr::opts_chunk$set(comment = "",
-                      tidy = TRUE,
-                      fig.align = "left",
-                      out.width = "100%",
-                      echo = FALSE,
+knitr::opts_chunk$set(comment = "##",
+                      tidy = FALSE,
+                      fig.align = "center",
+                      out.width = "50%",
+                      fig.width = 7,
+                      fig.height = 5,
+                      echo = TRUE,
                       warning = FALSE,
                       message = FALSE,
                       error = FALSE)
@@ -794,11 +795,13 @@ geometry: margin=2.5cm
 ---
 
 `r ''````{r, setup, include=FALSE}
-knitr::opts_chunk$set(comment = "",
-                      tidy = TRUE,
-                      fig.align = "left",
-                      out.width = "100%",
-                      echo = FALSE,
+knitr::opts_chunk$set(comment = "##",
+                      tidy = FALSE,
+                      fig.align = "center",
+                      out.width = "50%",
+                      fig.width = 7,
+                      fig.height = 5,
+                      echo = TRUE,
                       warning = FALSE,
                       message = FALSE,
                       error = FALSE)

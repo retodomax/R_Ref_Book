@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -724,14 +724,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb21-2"><a href="fun.html#cb21-2"></a>  x<span class="op">^</span><span class="dv">2</span> <span class="co"># with comment</span></span>
 <span id="cb21-3"><a href="fun.html#cb21-3"></a>  }</span>
 <span id="cb21-4"><a href="fun.html#cb21-4"></a><span class="kw">attributes</span>(myfun)</span>
-<span id="cb21-5"><a href="fun.html#cb21-5"></a><span class="op">$</span>srcref</span>
-<span id="cb21-6"><a href="fun.html#cb21-6"></a><span class="cf">function</span>(x) {</span>
-<span id="cb21-7"><a href="fun.html#cb21-7"></a>  x<span class="op">^</span><span class="dv">2</span> <span class="co"># with comment</span></span>
-<span id="cb21-8"><a href="fun.html#cb21-8"></a>  }</span>
+<span id="cb21-5"><a href="fun.html#cb21-5"></a><span class="co">## $srcref</span></span>
+<span id="cb21-6"><a href="fun.html#cb21-6"></a><span class="co">## function(x) {</span></span>
+<span id="cb21-7"><a href="fun.html#cb21-7"></a><span class="co">##   x^2 # with comment</span></span>
+<span id="cb21-8"><a href="fun.html#cb21-8"></a><span class="co">##   }</span></span>
 <span id="cb21-9"><a href="fun.html#cb21-9"></a><span class="kw">body</span>(myfun)</span>
-<span id="cb21-10"><a href="fun.html#cb21-10"></a>{</span>
-<span id="cb21-11"><a href="fun.html#cb21-11"></a>    x<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb21-12"><a href="fun.html#cb21-12"></a>}</span></code></pre></div>
+<span id="cb21-10"><a href="fun.html#cb21-10"></a><span class="co">## {</span></span>
+<span id="cb21-11"><a href="fun.html#cb21-11"></a><span class="co">##     x^2</span></span>
+<span id="cb21-12"><a href="fun.html#cb21-12"></a><span class="co">## }</span></span></code></pre></div>
 </div>
 <div id="function-arguments" class="section level2">
 <h2><span class="header-section-number">3.3</span> Arguments</h2>
@@ -750,18 +750,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="fun.html#cb22-1"></a>myfunction &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="dv">2</span>) x <span class="op">+</span><span class="st"> </span>y</span>
 <span id="cb22-2"><a href="fun.html#cb22-2"></a><span class="kw">formals</span>(myfunction)</span>
-<span id="cb22-3"><a href="fun.html#cb22-3"></a><span class="op">$</span>x</span>
-<span id="cb22-4"><a href="fun.html#cb22-4"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
-<span id="cb22-5"><a href="fun.html#cb22-5"></a></span>
-<span id="cb22-6"><a href="fun.html#cb22-6"></a><span class="op">$</span>y</span>
-<span id="cb22-7"><a href="fun.html#cb22-7"></a>[<span class="dv">1</span>] <span class="dv">2</span></span>
+<span id="cb22-3"><a href="fun.html#cb22-3"></a><span class="co">## $x</span></span>
+<span id="cb22-4"><a href="fun.html#cb22-4"></a><span class="co">## [1] 1</span></span>
+<span id="cb22-5"><a href="fun.html#cb22-5"></a><span class="co">## </span></span>
+<span id="cb22-6"><a href="fun.html#cb22-6"></a><span class="co">## $y</span></span>
+<span id="cb22-7"><a href="fun.html#cb22-7"></a><span class="co">## [1] 2</span></span>
 <span id="cb22-8"><a href="fun.html#cb22-8"></a><span class="kw">myfunction</span>()</span>
-<span id="cb22-9"><a href="fun.html#cb22-9"></a>[<span class="dv">1</span>] <span class="dv">3</span></span>
+<span id="cb22-9"><a href="fun.html#cb22-9"></a><span class="co">## [1] 3</span></span>
 <span id="cb22-10"><a href="fun.html#cb22-10"></a><span class="kw">formals</span>(myfunction) &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">3</span>, <span class="dt">y =</span> <span class="dv">4</span>)</span>
 <span id="cb22-11"><a href="fun.html#cb22-11"></a><span class="kw">myfunction</span>()</span>
-<span id="cb22-12"><a href="fun.html#cb22-12"></a>[<span class="dv">1</span>] <span class="dv">7</span></span>
+<span id="cb22-12"><a href="fun.html#cb22-12"></a><span class="co">## [1] 7</span></span>
 <span id="cb22-13"><a href="fun.html#cb22-13"></a>(<span class="cf">function</span>(x) <span class="kw">formals</span>())()</span>
-<span id="cb22-14"><a href="fun.html#cb22-14"></a><span class="op">$</span>x</span></code></pre></div>
+<span id="cb22-14"><a href="fun.html#cb22-14"></a><span class="co">## $x</span></span></code></pre></div>
 <p>Arguments are matched by the following hirarchy</p>
 <ul>
 <li>Complete name</li>
@@ -789,11 +789,11 @@ Use <code>missing()</code> to check if a formal argument has been manually set.<
 <span id="cb23-3"><a href="fun.html#cb23-3"></a>adders_bad &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">10</span>)</span>
 <span id="cb23-4"><a href="fun.html#cb23-4"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(adders_bad)) adders_bad[[i]] &lt;-<span class="st"> </span><span class="kw">add</span>(i)</span>
 <span id="cb23-5"><a href="fun.html#cb23-5"></a>adders_bad[[<span class="dv">1</span>]](<span class="dv">10</span>) <span class="co"># should be 11</span></span>
-<span id="cb23-6"><a href="fun.html#cb23-6"></a>[<span class="dv">1</span>] <span class="dv">20</span></span>
+<span id="cb23-6"><a href="fun.html#cb23-6"></a><span class="co">## [1] 20</span></span>
 <span id="cb23-7"><a href="fun.html#cb23-7"></a>adders_bad[[<span class="dv">10</span>]](<span class="dv">10</span>) <span class="co">## should be 20</span></span>
-<span id="cb23-8"><a href="fun.html#cb23-8"></a>[<span class="dv">1</span>] <span class="dv">20</span></span>
+<span id="cb23-8"><a href="fun.html#cb23-8"></a><span class="co">## [1] 20</span></span>
 <span id="cb23-9"><a href="fun.html#cb23-9"></a><span class="kw">get</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">envir =</span> <span class="kw">environment</span>(adders_bad[[<span class="dv">1</span>]])) <span class="co"># should be 1</span></span>
-<span id="cb23-10"><a href="fun.html#cb23-10"></a>[<span class="dv">1</span>] <span class="dv">10</span></span>
+<span id="cb23-10"><a href="fun.html#cb23-10"></a><span class="co">## [1] 10</span></span>
 <span id="cb23-11"><a href="fun.html#cb23-11"></a></span>
 <span id="cb23-12"><a href="fun.html#cb23-12"></a><span class="co"># good</span></span>
 <span id="cb23-13"><a href="fun.html#cb23-13"></a>add &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
@@ -803,11 +803,11 @@ Use <code>missing()</code> to check if a formal argument has been manually set.<
 <span id="cb23-17"><a href="fun.html#cb23-17"></a>adders_good &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">10</span>)</span>
 <span id="cb23-18"><a href="fun.html#cb23-18"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(adders_good)) adders_good[[i]] &lt;-<span class="st"> </span><span class="kw">add</span>(i)</span>
 <span id="cb23-19"><a href="fun.html#cb23-19"></a>adders_good[[<span class="dv">1</span>]](<span class="dv">10</span>) <span class="co"># should be 11</span></span>
-<span id="cb23-20"><a href="fun.html#cb23-20"></a>[<span class="dv">1</span>] <span class="dv">11</span></span>
+<span id="cb23-20"><a href="fun.html#cb23-20"></a><span class="co">## [1] 11</span></span>
 <span id="cb23-21"><a href="fun.html#cb23-21"></a>adders_good[[<span class="dv">10</span>]](<span class="dv">10</span>) <span class="co">## should be 20</span></span>
-<span id="cb23-22"><a href="fun.html#cb23-22"></a>[<span class="dv">1</span>] <span class="dv">20</span></span>
+<span id="cb23-22"><a href="fun.html#cb23-22"></a><span class="co">## [1] 20</span></span>
 <span id="cb23-23"><a href="fun.html#cb23-23"></a><span class="kw">get</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">envir =</span> <span class="kw">environment</span>(adders_good[[<span class="dv">1</span>]])) <span class="co"># should be 1</span></span>
-<span id="cb23-24"><a href="fun.html#cb23-24"></a>[<span class="dv">1</span>] <span class="dv">1</span></span></code></pre></div>
+<span id="cb23-24"><a href="fun.html#cb23-24"></a><span class="co">## [1] 1</span></span></code></pre></div>
 <ul>
 <li>An unevaluated argument is called a <strong>promise</strong>. A promise is made up of two parts:
 <ul>
@@ -843,7 +843,7 @@ Use <code>missing()</code> to check if a formal argument has been manually set.<
 <span id="cb24-7"><a href="fun.html#cb24-7"></a>  <span class="kw">g</span>()</span>
 <span id="cb24-8"><a href="fun.html#cb24-8"></a>}</span>
 <span id="cb24-9"><a href="fun.html#cb24-9"></a><span class="kw">f</span>()</span></code></pre></div>
-<pre><code>[1] 2</code></pre>
+<pre><code>## [1] 2</code></pre>
 <ul>
 <li>Assigning a function also assignes a certain environment (environment property)</li>
 <li>Example:
@@ -860,7 +860,7 @@ Use <code>missing()</code> to check if a formal argument has been manually set.<
 <span id="cb26-6"><a href="fun.html#cb26-6"></a>}</span>
 <span id="cb26-7"><a href="fun.html#cb26-7"></a>k &lt;-<span class="st"> </span><span class="kw">j</span>(<span class="dv">1</span>)</span>
 <span id="cb26-8"><a href="fun.html#cb26-8"></a><span class="kw">k</span>()</span></code></pre></div>
-<pre><code>[1] 1 2</code></pre>
+<pre><code>## [1] 1 2</code></pre>
 <ul>
 <li>Object saved in a higher environment are not found below</li>
 <li>Example:
@@ -879,7 +879,7 @@ Use <code>missing()</code> to check if a formal argument has been manually set.<
 <span id="cb28-7"><a href="fun.html#cb28-7"></a>  a</span>
 <span id="cb28-8"><a href="fun.html#cb28-8"></a>}</span>
 <span id="cb28-9"><a href="fun.html#cb28-9"></a><span class="kw">j</span>()</span></code></pre></div>
-<pre><code>[1] 2.34</code></pre>
+<pre><code>## [1] 2.34</code></pre>
 </div>
 </div>
 <div id="return-value" class="section level2">
@@ -956,7 +956,7 @@ Use <code>missing()</code> to check if a formal argument has been manually set.<
 </table>
 <p>All special functions can also be called like a “normal” function</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="fun.html#cb31-1"></a><span class="st">`</span><span class="dt">[</span><span class="st">`</span>(letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dv">2</span>)</span></code></pre></div>
-<pre><code>[1] &quot;b&quot;</code></pre>
+<pre><code>## [1] &quot;b&quot;</code></pre>
 <p>Replacement function make some changes to the data and assign the new output to the first argument</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="fun.html#cb33-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
 <span id="cb33-2"><a href="fun.html#cb33-2"></a><span class="kw">names</span>(x) &lt;-<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>] <span class="co"># user friendly</span></span>
@@ -980,17 +980,17 @@ Use <code>missing()</code> to check if a formal argument has been manually set.<
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="fun.html#cb35-1"></a><span class="kw">methods</span>(print)            <span class="co"># all methods for function name print</span></span>
 <span id="cb35-2"><a href="fun.html#cb35-2"></a><span class="kw">methods</span>(<span class="dt">class =</span> <span class="st">&quot;matrix&quot;</span>) <span class="co"># all methods for class matrix</span></span></code></pre></div>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="fun.html#cb36-1"></a>print</span></code></pre></div>
-<pre><code>standardGeneric for &quot;print&quot; defined from package &quot;base&quot;
-
-function (x, ...) 
-standardGeneric(&quot;print&quot;)
-&lt;environment: 0x556d956763b8&gt;
-Methods may be defined for arguments: x
-Use  showMethods(&quot;print&quot;)  for currently available ones.</code></pre>
+<pre><code>## standardGeneric for &quot;print&quot; defined from package &quot;base&quot;
+## 
+## function (x, ...) 
+## standardGeneric(&quot;print&quot;)
+## &lt;environment: 0x55d5860fc8e8&gt;
+## Methods may be defined for arguments: x
+## Use  showMethods(&quot;print&quot;)  for currently available ones.</code></pre>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="fun.html#cb38-1"></a><span class="kw">head</span>(<span class="kw">methods</span>(print))</span></code></pre></div>
-<pre><code>[1] &quot;print,ANY-method&quot;            &quot;print,diagonalMatrix-method&quot;
-[3] &quot;print,sparseMatrix-method&quot;   &quot;print.aareg&quot;                
-[5] &quot;print.abbrev&quot;                &quot;print.acf&quot;                  </code></pre>
+<pre><code>## [1] &quot;print,ANY-method&quot;            &quot;print,diagonalMatrix-method&quot;
+## [3] &quot;print,sparseMatrix-method&quot;   &quot;print.aareg&quot;                
+## [5] &quot;print.abbrev&quot;                &quot;print.acf&quot;</code></pre>
 
 </div>
 </div>

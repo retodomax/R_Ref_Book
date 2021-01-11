@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -766,11 +766,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Set chunk option globally:</p>
 <div class="sourceCode" id="cb327"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb327-1"><a href="r-markdown-1.html#cb327-1"></a><span class="bn">```{r, setup, include=FALSE}</span></span>
-<span id="cb327-2"><a href="r-markdown-1.html#cb327-2"></a><span class="bn">knitr::opts_chunk$set(comment = &quot;#&gt;&quot;,</span></span>
-<span id="cb327-3"><a href="r-markdown-1.html#cb327-3"></a><span class="bn">                      tidy = TRUE,</span></span>
+<span id="cb327-2"><a href="r-markdown-1.html#cb327-2"></a><span class="bn">knitr::opts_chunk$set(comment = &quot;##&quot;,</span></span>
+<span id="cb327-3"><a href="r-markdown-1.html#cb327-3"></a><span class="bn">                      tidy = FALSE,</span></span>
 <span id="cb327-4"><a href="r-markdown-1.html#cb327-4"></a><span class="bn">                      fig.align = &quot;center&quot;,</span></span>
-<span id="cb327-5"><a href="r-markdown-1.html#cb327-5"></a><span class="bn">                      out.width = &quot;80%&quot;)</span></span>
-<span id="cb327-6"><a href="r-markdown-1.html#cb327-6"></a><span class="bn">```</span></span></code></pre></div>
+<span id="cb327-5"><a href="r-markdown-1.html#cb327-5"></a><span class="bn">                      out.width = &quot;50%&quot;,</span></span>
+<span id="cb327-6"><a href="r-markdown-1.html#cb327-6"></a><span class="bn">                      fig.width = 7,</span></span>
+<span id="cb327-7"><a href="r-markdown-1.html#cb327-7"></a><span class="bn">                      fig.height = 5,</span></span>
+<span id="cb327-8"><a href="r-markdown-1.html#cb327-8"></a><span class="bn">                      echo = TRUE,</span></span>
+<span id="cb327-9"><a href="r-markdown-1.html#cb327-9"></a><span class="bn">                      warning = FALSE,</span></span>
+<span id="cb327-10"><a href="r-markdown-1.html#cb327-10"></a><span class="bn">                      message = FALSE,</span></span>
+<span id="cb327-11"><a href="r-markdown-1.html#cb327-11"></a><span class="bn">                      error = FALSE)</span></span>
+<span id="cb327-12"><a href="r-markdown-1.html#cb327-12"></a><span class="bn">```</span></span></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->

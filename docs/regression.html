@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -706,24 +706,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="regression.html#cb161-1"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Pax <span class="op">~</span><span class="st"> </span>ATM, <span class="dt">data =</span> unique2010)</span></code></pre></div>
 <p>Automatic testing <span class="math inline">\(H_0: \beta_j = 0\)</span></p>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="regression.html#cb162-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
-<pre><code>
-Call:
-lm(formula = Pax ~ ATM, data = unique2010)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--104188  -40885    2099   48588   89154 
-
-Coefficients:
-              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) -1.198e+06  1.524e+05  -7.858 7.94e-08 ***
-ATM          1.388e+02  6.878e+00  20.176 1.11e-15 ***
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-Residual standard error: 59700 on 22 degrees of freedom
-Multiple R-squared:  0.9487,    Adjusted R-squared:  0.9464 
-F-statistic: 407.1 on 1 and 22 DF,  p-value: 1.11e-15</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Pax ~ ATM, data = unique2010)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -104188  -40885    2099   48588   89154 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -1.198e+06  1.524e+05  -7.858 7.94e-08 ***
+## ATM          1.388e+02  6.878e+00  20.176 1.11e-15 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 59700 on 22 degrees of freedom
+## Multiple R-squared:  0.9487, Adjusted R-squared:  0.9464 
+## F-statistic: 407.1 on 1 and 22 DF,  p-value: 1.11e-15</code></pre>
 <p>Manual testing <span class="math inline">\(H_0: \beta_j = b\)</span></p>
 <div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="regression.html#cb164-1"></a>b &lt;-<span class="st"> </span><span class="dv">5</span>  <span class="co"># for example</span></span>
 <span id="cb164-2"><a href="regression.html#cb164-2"></a>mycoef &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)<span class="op">$</span>coefficients</span>
@@ -749,8 +749,8 @@ F-statistic: 407.1 on 1 and 22 DF,  p-value: 1.11e-15</code></pre>
 <div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="regression.html#cb167-1"></a><span class="co">## Predict values for any predictor values</span></span>
 <span id="cb167-2"><a href="regression.html#cb167-2"></a>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ATM=</span><span class="kw">c</span>(<span class="dv">24000</span>))</span>
 <span id="cb167-3"><a href="regression.html#cb167-3"></a><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat)</span></code></pre></div>
-<pre><code>      1 
-2132598 </code></pre>
+<pre><code>##       1 
+## 2132598</code></pre>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="regression.html#cb169-1"></a><span class="co">## CI for regression line</span></span>
 <span id="cb169-2"><a href="regression.html#cb169-2"></a>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ATM=</span><span class="kw">seq</span>(<span class="dv">18000</span>, <span class="dv">26000</span>, <span class="dt">length=</span><span class="dv">200</span>))</span>
 <span id="cb169-3"><a href="regression.html#cb169-3"></a>ci &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat, <span class="dt">interval=</span><span class="st">&quot;confidence&quot;</span>)</span>
@@ -922,15 +922,15 @@ F-statistic: 407.1 on 1 and 22 DF,  p-value: 1.11e-15</code></pre>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="regression.html#cb179-1"></a><span class="co">## Only numerical predictors</span></span>
 <span id="cb179-2"><a href="regression.html#cb179-2"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Pax <span class="op">~</span><span class="st"> </span>ATM <span class="op">+</span><span class="st"> </span>Cargo, <span class="dt">data =</span> unique2010)</span>
 <span id="cb179-3"><a href="regression.html#cb179-3"></a>car<span class="op">::</span><span class="kw">vif</span>(fit)</span>
-<span id="cb179-4"><a href="regression.html#cb179-4"></a>     ATM    Cargo </span>
-<span id="cb179-5"><a href="regression.html#cb179-5"></a><span class="fl">1.052416</span> <span class="fl">1.052416</span> </span>
+<span id="cb179-4"><a href="regression.html#cb179-4"></a><span class="co">##      ATM    Cargo </span></span>
+<span id="cb179-5"><a href="regression.html#cb179-5"></a><span class="co">## 1.052416 1.052416</span></span>
 <span id="cb179-6"><a href="regression.html#cb179-6"></a></span>
 <span id="cb179-7"><a href="regression.html#cb179-7"></a><span class="co">## Contains fatorial predictor</span></span>
 <span id="cb179-8"><a href="regression.html#cb179-8"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Sepal.Length <span class="op">~</span><span class="st"> </span>Sepal.Width <span class="op">+</span><span class="st"> </span>Species, <span class="dt">data =</span> iris)</span>
 <span id="cb179-9"><a href="regression.html#cb179-9"></a>car<span class="op">::</span><span class="kw">vif</span>(fit)</span>
-<span id="cb179-10"><a href="regression.html#cb179-10"></a>                GVIF Df GVIF<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>Df))</span>
-<span id="cb179-11"><a href="regression.html#cb179-11"></a>Sepal.Width <span class="fl">1.668844</span>  <span class="dv">1</span>        <span class="fl">1.291837</span></span>
-<span id="cb179-12"><a href="regression.html#cb179-12"></a>Species     <span class="fl">1.668844</span>  <span class="dv">2</span>        <span class="fl">1.136590</span></span></code></pre></div>
+<span id="cb179-10"><a href="regression.html#cb179-10"></a><span class="co">##                 GVIF Df GVIF^(1/(2*Df))</span></span>
+<span id="cb179-11"><a href="regression.html#cb179-11"></a><span class="co">## Sepal.Width 1.668844  1        1.291837</span></span>
+<span id="cb179-12"><a href="regression.html#cb179-12"></a><span class="co">## Species     1.668844  2        1.136590</span></span></code></pre></div>
 </div>
 <div id="aicbic" class="section level3">
 <h3><span class="header-section-number">22.8.2</span> AIC/BIC</h3>
@@ -1135,25 +1135,25 @@ F-statistic: 407.1 on 1 and 22 DF,  p-value: 1.11e-15</code></pre>
 <span id="cb189-6"><a href="regression.html#cb189-6"></a><span class="kw">lines</span>(x, <span class="kw">fitted</span>(fit))</span></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-190-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="regression.html#cb190-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
-<pre><code>
-Family: gaussian 
-Link function: identity 
-
-Formula:
-y ~ s(x)
-
-Parametric coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)
-(Intercept)   0.2373     0.1850   1.283    0.212
-
-Approximate significance of smooth terms:
-       edf Ref.df     F p-value    
-s(x) 5.958  7.117 219.2  &lt;2e-16 ***
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-R-sq.(adj) =  0.982   Deviance explained = 98.6%
-GCV = 1.3369  Scale est. = 1.0268    n = 30</code></pre>
+<pre><code>## 
+## Family: gaussian 
+## Link function: identity 
+## 
+## Formula:
+## y ~ s(x)
+## 
+## Parametric coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept)   0.2373     0.1850   1.283    0.212
+## 
+## Approximate significance of smooth terms:
+##        edf Ref.df     F p-value    
+## s(x) 5.958  7.117 219.2  &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## R-sq.(adj) =  0.982   Deviance explained = 98.6%
+## GCV = 1.3369  Scale est. = 1.0268    n = 30</code></pre>
 <ul>
 <li><code>edf</code> Empirical degrees of freedom</li>
 <li><code>Ref.df</code> Alternative way to calculate df</li>
@@ -1173,18 +1173,18 @@ Scale est.: estimate of 𝜎_𝐸^2</p>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="regression.html#cb193-1"></a>fit &lt;-<span class="st"> </span><span class="kw">gam</span>(Mortality <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(Educ), <span class="dt">data =</span> apm)</span>
 <span id="cb193-2"><a href="regression.html#cb193-2"></a><span class="kw">gam.check</span>(fit)</span></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-192-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
-<pre><code>
-Method: GCV   Optimizer: magic
-Smoothing parameter selection converged after 5 iterations.
-The RMS GCV score gradient at convergence was 0.0003494895 .
-The Hessian was positive definite.
-Model rank =  10 / 10 
-
-Basis dimension (k) checking results. Low p-value (k-index&lt;1) may
-indicate that k is too low, especially if edf is close to k&#39;.
-
-         k&#39; edf k-index p-value
-s(Educ) 9.0 2.1    1.03    0.54</code></pre>
+<pre><code>## 
+## Method: GCV   Optimizer: magic
+## Smoothing parameter selection converged after 5 iterations.
+## The RMS GCV score gradient at convergence was 0.0003494895 .
+## The Hessian was positive definite.
+## Model rank =  10 / 10 
+## 
+## Basis dimension (k) checking results. Low p-value (k-index&lt;1) may
+## indicate that k is too low, especially if edf is close to k&#39;.
+## 
+##          k&#39; edf k-index p-value
+## s(Educ) 9.0 2.1    1.03    0.54</code></pre>
 <ul>
 <li>low <code>p-value</code> and <code>k-index</code> &lt; 1 indicate that actual fit might need more flexibility
 <ul>
@@ -1212,15 +1212,15 @@ s(Educ) 9.0 2.1    1.03    0.54</code></pre>
 <div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="regression.html#cb196-1"></a>fit_ols &lt;-<span class="st"> </span><span class="kw">lm</span>(prestige <span class="op">~</span><span class="st"> </span>income <span class="op">+</span><span class="st"> </span>education, <span class="dt">data =</span> Prestige)</span>
 <span id="cb196-2"><a href="regression.html#cb196-2"></a>fit_gam &lt;-<span class="st"> </span><span class="kw">gam</span>(prestige <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(income) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(education), <span class="dt">data =</span> Prestige)</span>
 <span id="cb196-3"><a href="regression.html#cb196-3"></a><span class="kw">anova</span>(fit_ols, fit_gam, <span class="dt">test =</span> <span class="st">&quot;Chisq&quot;</span>)</span></code></pre></div>
-<pre><code>Analysis of Variance Table
-
-Model 1: prestige ~ income + education
-Model 2: prestige ~ s(income) + s(education)
-  Res.Df    RSS     Df Sum of Sq  Pr(&gt;Chi)    
-1 99.000 6038.9                               
-2 94.705 4585.0 4.2951    1453.9 6.783e-06 ***
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: prestige ~ income + education
+## Model 2: prestige ~ s(income) + s(education)
+##   Res.Df    RSS     Df Sum of Sq  Pr(&gt;Chi)    
+## 1 99.000 6038.9                               
+## 2 94.705 4585.0 4.2951    1453.9 6.783e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>In our case clear evidence for the more complex GAM model.</p>
 </div>
 <div id="alternatives" class="section level5 unnumbered">
@@ -1255,56 +1255,56 @@ glm.fit: fitted probabilities numerically 0 or 1 occured</code></pre>
 </ul>
 <p>Both should yield in similar results. <code>drop1()</code> might be better suited for factorial predictors and interactions (drops only terms which can be dropped).</p>
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="regression.html#cb201-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
-<pre><code>
-Call:
-glm(formula = survival ~ log10(weight) + age, family = binomial, 
-    data = baby)
-
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--2.2694  -0.7032   0.3813   0.6899   2.2186  
-
-Coefficients:
-               Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)   -42.81347    7.40864  -5.779 7.52e-09 ***
-log10(weight)  12.87954    2.72022   4.735 2.19e-06 ***
-age             0.15187    0.08857   1.715   0.0864 .  
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 230.79  on 166  degrees of freedom
-Residual deviance: 158.56  on 164  degrees of freedom
-AIC: 164.56
-
-Number of Fisher Scoring iterations: 5</code></pre>
+<pre><code>## 
+## Call:
+## glm(formula = survival ~ log10(weight) + age, family = binomial, 
+##     data = baby)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.2694  -0.7032   0.3813   0.6899   2.2186  
+## 
+## Coefficients:
+##                Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)   -42.81347    7.40864  -5.779 7.52e-09 ***
+## log10(weight)  12.87954    2.72022   4.735 2.19e-06 ***
+## age             0.15187    0.08857   1.715   0.0864 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 230.79  on 166  degrees of freedom
+## Residual deviance: 158.56  on 164  degrees of freedom
+## AIC: 164.56
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
 <div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="regression.html#cb203-1"></a><span class="kw">drop1</span>(fit, <span class="dt">test =</span> <span class="st">&quot;Chisq&quot;</span>)</span></code></pre></div>
-<pre><code>Single term deletions
-
-Model:
-survival ~ log10(weight) + age
-              Df Deviance    AIC     LRT  Pr(&gt;Chi)    
-&lt;none&gt;             158.56 164.56                      
-log10(weight)  1   188.70 192.70 30.1382 4.023e-08 ***
-age            1   161.58 165.58  3.0182   0.08234 .  
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre><code>## Single term deletions
+## 
+## Model:
+## survival ~ log10(weight) + age
+##               Df Deviance    AIC     LRT  Pr(&gt;Chi)    
+## &lt;none&gt;             158.56 164.56                      
+## log10(weight)  1   188.70 192.70 30.1382 4.023e-08 ***
+## age            1   161.58 165.58  3.0182   0.08234 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>A p-value for a “global F-test” can be manually computed</p>
 <div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="regression.html#cb205-1"></a><span class="dv">1</span><span class="op">-</span><span class="kw">pchisq</span>(fit<span class="op">$</span>null.deviance<span class="op">-</span>fit<span class="op">$</span>deviance, <span class="dt">df=</span>(fit<span class="op">$</span>df.null<span class="op">-</span>fit<span class="op">$</span>df.res))</span></code></pre></div>
-<pre><code>[1] 2.220446e-16</code></pre>
+<pre><code>## [1] 2.220446e-16</code></pre>
 <p><strong>CI</strong></p>
 <div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="regression.html#cb207-1"></a><span class="co">## Automatic (slightly different (better) than manual CI)</span></span>
 <span id="cb207-2"><a href="regression.html#cb207-2"></a><span class="kw">confint</span>(fit, <span class="st">&quot;log10(weight)&quot;</span>)</span></code></pre></div>
-<pre><code>    2.5 %    97.5 % 
- 7.868942 18.592123 </code></pre>
+<pre><code>##     2.5 %    97.5 % 
+##  7.868942 18.592123</code></pre>
 <div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="regression.html#cb209-1"></a><span class="kw">confint</span>(fit, <span class="st">&quot;(Intercept)&quot;</span>)</span></code></pre></div>
-<pre><code>    2.5 %    97.5 % 
--58.49314 -29.29536 </code></pre>
+<pre><code>##     2.5 %    97.5 % 
+## -58.49314 -29.29536</code></pre>
 <div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="regression.html#cb211-1"></a><span class="co">## Manual</span></span>
 <span id="cb211-2"><a href="regression.html#cb211-2"></a>mycoef &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)<span class="op">$</span>coefficients</span>
 <span id="cb211-3"><a href="regression.html#cb211-3"></a>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Estimate&quot;</span>] <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))<span class="op">*</span>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Std. Error&quot;</span>]</span></code></pre></div>
-<pre><code>[1] -57.33414 -28.29280</code></pre>
+<pre><code>## [1] -57.33414 -28.29280</code></pre>
 <p><strong>Coefficient of determination</strong> <span class="math inline">\(R^2\)</span></p>
 <div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="regression.html#cb213-1"></a>fit_dev &lt;-<span class="st"> </span>fit<span class="op">$</span>deviance</span>
 <span id="cb213-2"><a href="regression.html#cb213-2"></a>fit_null &lt;-<span class="st"> </span>fit<span class="op">$</span>null.deviance</span>
@@ -1353,33 +1353,33 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <div id="inference-2" class="section level5 unnumbered">
 <h5>Inference</h5>
 <div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="regression.html#cb219-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
-<pre><code>
-Call:
-glm(formula = Species ~ log(Area) + log(Elevation) + log(Nearest) + 
-    I(log(Scruz + 0.4)) + log(Adjacent), family = poisson, data = gala)
-
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--5.4226  -2.7223  -0.4634   2.5587   8.3320  
-
-Coefficients:
-                     Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)          3.323245   0.286430  11.602  &lt; 2e-16 ***
-log(Area)            0.350370   0.018005  19.459  &lt; 2e-16 ***
-log(Elevation)       0.033108   0.057034   0.580  0.56158    
-log(Nearest)        -0.040153   0.014071  -2.854  0.00432 ** 
-I(log(Scruz + 0.4)) -0.035848   0.013207  -2.714  0.00664 ** 
-log(Adjacent)       -0.089452   0.006944 -12.882  &lt; 2e-16 ***
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-(Dispersion parameter for poisson family taken to be 1)
-
-    Null deviance: 3510.73  on 29  degrees of freedom
-Residual deviance:  359.94  on 24  degrees of freedom
-AIC: 532.77
-
-Number of Fisher Scoring iterations: 5</code></pre>
+<pre><code>## 
+## Call:
+## glm(formula = Species ~ log(Area) + log(Elevation) + log(Nearest) + 
+##     I(log(Scruz + 0.4)) + log(Adjacent), family = poisson, data = gala)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -5.4226  -2.7223  -0.4634   2.5587   8.3320  
+## 
+## Coefficients:
+##                      Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)          3.323245   0.286430  11.602  &lt; 2e-16 ***
+## log(Area)            0.350370   0.018005  19.459  &lt; 2e-16 ***
+## log(Elevation)       0.033108   0.057034   0.580  0.56158    
+## log(Nearest)        -0.040153   0.014071  -2.854  0.00432 ** 
+## I(log(Scruz + 0.4)) -0.035848   0.013207  -2.714  0.00664 ** 
+## log(Adjacent)       -0.089452   0.006944 -12.882  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for poisson family taken to be 1)
+## 
+##     Null deviance: 3510.73  on 29  degrees of freedom
+## Residual deviance:  359.94  on 24  degrees of freedom
+## AIC: 532.77
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
 </div>
 <div id="diagnostics-2" class="section level5 unnumbered">
 <h5>Diagnostics</h5>

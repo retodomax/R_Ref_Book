@@ -31,18 +31,27 @@ not_existing_object
 
 
 ## Local
-```{r, collapse=TRUE}
+```{r, eval=FALSE}
 x <- strptime(x = "10.05.1993", format = "%d.%m.%Y")
 
 ## default local of operating system
+Sys.getlocale("LC_TIME")
+## [1] "C"
 format(x = x, "%B")
+## [1] "May"
 
 ## local German_Switzerland
-Sys.setlocale("LC_ALL", "German_Switzerland")
+if(.Platform$OS.type == "unix"){
+  Sys.setlocale("LC_TIME", "de_CH.UTF-8")
+} else if(.Platform$OS.type == "windows"){
+  Sys.setlocale("LC_TIME", "German")
+}
 format(x = x, "%B")
+## [1] "Mai"
 
 ## local English
-Sys.setlocale("LC_ALL", "English")
+Sys.setlocale("LC_TIME", "C")
 format(x = x, "%B")
+## [1] "May"
 ```
 

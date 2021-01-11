@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -737,9 +737,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="examples-1" class="section level5 unnumbered">
 <h5>Examples</h5>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-handling.html#cb70-1"></a><span class="dv">7</span> <span class="op">%%</span><span class="st"> </span><span class="dv">2</span>    <span class="co"># remainder</span></span>
-<span id="cb70-2"><a href="data-handling.html#cb70-2"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
+<span id="cb70-2"><a href="data-handling.html#cb70-2"></a><span class="co">## [1] 1</span></span>
 <span id="cb70-3"><a href="data-handling.html#cb70-3"></a><span class="dv">7</span> <span class="op">%/%</span><span class="st"> </span><span class="dv">2</span>   <span class="co"># floor of division</span></span>
-<span id="cb70-4"><a href="data-handling.html#cb70-4"></a>[<span class="dv">1</span>] <span class="dv">3</span></span></code></pre></div>
+<span id="cb70-4"><a href="data-handling.html#cb70-4"></a><span class="co">## [1] 3</span></span></code></pre></div>
 <div class="figure" style="text-align: left"><span id="fig:unnamed-chunk-53"></span>
 <img src="figures/logic_gates.png" alt="..." width="50%" />
 <p class="caption">
@@ -957,28 +957,28 @@ Figure 8.1: …
 <span id="cb73-4"><a href="data-handling.html#cb73-4"></a>long &lt;-<span class="st"> </span><span class="kw">reshape</span>(wide, <span class="dt">v.names =</span> <span class="st">&quot;conc&quot;</span>, <span class="dt">idvar =</span> <span class="st">&quot;Subject&quot;</span>,</span>
 <span id="cb73-5"><a href="data-handling.html#cb73-5"></a>                <span class="dt">timevar =</span> <span class="st">&quot;time&quot;</span>, <span class="dt">direction =</span> <span class="st">&quot;long&quot;</span>)</span>
 <span id="cb73-6"><a href="data-handling.html#cb73-6"></a><span class="kw">head</span>(long)</span></code></pre></div>
-<pre><code>       Subject time conc
-1.0.25       1 0.25 1.50
-2.0.25       2 0.25 2.03
-3.0.25       3 0.25 2.72
-4.0.25       4 0.25 1.85
-5.0.25       5 0.25 2.05
-6.0.25       6 0.25 2.31</code></pre>
+<pre><code>##        Subject time conc
+## 1.0.25       1 0.25 1.50
+## 2.0.25       2 0.25 2.03
+## 3.0.25       3 0.25 2.72
+## 4.0.25       4 0.25 1.85
+## 5.0.25       5 0.25 2.05
+## 6.0.25       6 0.25 2.31</code></pre>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="data-handling.html#cb75-1"></a><span class="kw">head</span>(wide)</span></code></pre></div>
-<pre><code>   Subject conc.0.25 conc.0.5 conc.0.75 conc.1 conc.1.25 conc.2 conc.3 conc.4
-1        1      1.50     0.94      0.78   0.48      0.37   0.19   0.12   0.11
-12       2      2.03     1.63      0.71   0.70      0.64   0.36   0.32   0.20
-23       3      2.72     1.49      1.16   0.80      0.80   0.39   0.22   0.12
-34       4      1.85     1.39      1.02   0.89      0.59   0.40   0.16   0.11
-45       5      2.05     1.04      0.81   0.39      0.30   0.23   0.13   0.11
-56       6      2.31     1.44      1.03   0.84      0.64   0.42   0.24   0.17
-   conc.5 conc.6 conc.8
-1    0.08   0.07   0.05
-12   0.25   0.12   0.08
-23   0.11   0.08   0.08
-34   0.10   0.07   0.07
-45   0.08   0.10   0.06
-56   0.13   0.10   0.09</code></pre>
+<pre><code>##    Subject conc.0.25 conc.0.5 conc.0.75 conc.1 conc.1.25 conc.2 conc.3 conc.4
+## 1        1      1.50     0.94      0.78   0.48      0.37   0.19   0.12   0.11
+## 12       2      2.03     1.63      0.71   0.70      0.64   0.36   0.32   0.20
+## 23       3      2.72     1.49      1.16   0.80      0.80   0.39   0.22   0.12
+## 34       4      1.85     1.39      1.02   0.89      0.59   0.40   0.16   0.11
+## 45       5      2.05     1.04      0.81   0.39      0.30   0.23   0.13   0.11
+## 56       6      2.31     1.44      1.03   0.84      0.64   0.42   0.24   0.17
+##    conc.5 conc.6 conc.8
+## 1    0.08   0.07   0.05
+## 12   0.25   0.12   0.08
+## 23   0.11   0.08   0.08
+## 34   0.10   0.07   0.07
+## 45   0.08   0.10   0.06
+## 56   0.13   0.10   0.09</code></pre>
 <div id="dplyer-version" class="section level5 unnumbered">
 <h5>dplyer version</h5>
 <ul>

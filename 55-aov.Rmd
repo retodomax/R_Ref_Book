@@ -164,7 +164,7 @@ boxplot(weight ~ group, data = PlantGrowth)
 ```{r, fig.align='default', fig.show='hold'}
 with(snails, interaction.plot(x.factor = density, trace.factor = season, response = y))
 ggplot(Machines, aes (x = Machine, y = score, group = Worker, col = Worker)) +
-  geom_point() + stat_summary(fun.y = mean, geom = "line")
+  geom_point() + stat_summary(fun = mean, geom = "line")
 ```
 
 ### Summary plot
@@ -412,7 +412,7 @@ pf((summary(fit.scheffe)$test$tstat)^2 / 2, 2, 27, lower.tail = FALSE)
 ```{r}
 fit.tukey <- glht(fit, linfct = mcp(group = "Tukey"))
 summary(fit.tukey)
-plot(confint(glht(fit.tukey)))
+plot(confint(fit.tukey))
 ```
 
 Example with compact letter display

@@ -77,9 +77,9 @@ tabl <- "
 cat(tabl)
 ```
 
-Note that you can store much larger numbers with double than with integers. Numbers larger than the largest double are stored as `Inf`
+Note that you can store much larger numbers with double than with integers. Numbers larger than the largest integer are stored as `NA` and numbers larger than the largest double are stored as `Inf`.
 
-```{r, collapse=TRUE}
+```{r, collapse=TRUE, warning=TRUE}
 2147483647L + 1L
 2^1023.9999
 2^1024

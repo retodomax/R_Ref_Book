@@ -100,10 +100,16 @@ Set chunk option globally:
 
 ````markdown
 `r ''````{r, setup, include=FALSE}
-knitr::opts_chunk$set(comment = "#>",
-                      tidy = TRUE,
+knitr::opts_chunk$set(comment = "##",
+                      tidy = FALSE,
                       fig.align = "center",
-                      out.width = "80%")
+                      out.width = "50%",
+                      fig.width = 7,
+                      fig.height = 5,
+                      echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      error = FALSE)
 ```
 ````
 

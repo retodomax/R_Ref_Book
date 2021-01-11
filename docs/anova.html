@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -684,22 +684,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">23.2</span> Example</h2>
 <div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="anova.html#cb223-1"></a>fit &lt;-<span class="st"> </span><span class="kw">aov</span>(Yield <span class="op">~</span><span class="st"> </span>Genotype <span class="op">+</span><span class="st"> </span>Block, <span class="dt">data =</span> data)</span>
 <span id="cb223-2"><a href="anova.html#cb223-2"></a><span class="kw">anova</span>(fit)          <span class="co">#Anova table</span></span>
-<span id="cb223-3"><a href="anova.html#cb223-3"></a>Analysis of Variance Table</span>
-<span id="cb223-4"><a href="anova.html#cb223-4"></a></span>
-<span id="cb223-5"><a href="anova.html#cb223-5"></a>Response<span class="op">:</span><span class="st"> </span>Yield</span>
-<span id="cb223-6"><a href="anova.html#cb223-6"></a>          Df Sum Sq Mean Sq F value <span class="kw">Pr</span>(<span class="op">&gt;</span>F)</span>
-<span id="cb223-7"><a href="anova.html#cb223-7"></a>Genotype   <span class="dv">1</span>   <span class="fl">4.00</span>    <span class="fl">4.00</span>   <span class="fl">25.00</span> <span class="fl">0.1257</span></span>
-<span id="cb223-8"><a href="anova.html#cb223-8"></a>Block      <span class="dv">1</span>   <span class="fl">1.00</span>    <span class="fl">1.00</span>    <span class="fl">6.25</span> <span class="fl">0.2422</span></span>
-<span id="cb223-9"><a href="anova.html#cb223-9"></a>Residuals  <span class="dv">1</span>   <span class="fl">0.16</span>    <span class="fl">0.16</span>               </span>
+<span id="cb223-3"><a href="anova.html#cb223-3"></a><span class="co">## Analysis of Variance Table</span></span>
+<span id="cb223-4"><a href="anova.html#cb223-4"></a><span class="co">## </span></span>
+<span id="cb223-5"><a href="anova.html#cb223-5"></a><span class="co">## Response: Yield</span></span>
+<span id="cb223-6"><a href="anova.html#cb223-6"></a><span class="co">##           Df Sum Sq Mean Sq F value Pr(&gt;F)</span></span>
+<span id="cb223-7"><a href="anova.html#cb223-7"></a><span class="co">## Genotype   1   4.00    4.00   25.00 0.1257</span></span>
+<span id="cb223-8"><a href="anova.html#cb223-8"></a><span class="co">## Block      1   1.00    1.00    6.25 0.2422</span></span>
+<span id="cb223-9"><a href="anova.html#cb223-9"></a><span class="co">## Residuals  1   0.16    0.16</span></span>
 <span id="cb223-10"><a href="anova.html#cb223-10"></a><span class="kw">coef</span>(fit)           <span class="co">#Effect of different Factors</span></span>
-<span id="cb223-11"><a href="anova.html#cb223-11"></a>(Intercept)   Genotype2      Blockb </span>
-<span id="cb223-12"><a href="anova.html#cb223-12"></a>        <span class="fl">6.5</span>        <span class="fl">-2.0</span>        <span class="fl">-1.0</span> </span>
+<span id="cb223-11"><a href="anova.html#cb223-11"></a><span class="co">## (Intercept)   Genotype2      Blockb </span></span>
+<span id="cb223-12"><a href="anova.html#cb223-12"></a><span class="co">##         6.5        -2.0        -1.0</span></span>
 <span id="cb223-13"><a href="anova.html#cb223-13"></a><span class="kw">predict</span>(fit)        <span class="co">#Predict the fixed effect</span></span>
-<span id="cb223-14"><a href="anova.html#cb223-14"></a>  <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span>   <span class="dv">4</span> </span>
-<span id="cb223-15"><a href="anova.html#cb223-15"></a><span class="fl">6.5</span> <span class="fl">5.5</span> <span class="fl">4.5</span> <span class="fl">3.5</span> </span>
+<span id="cb223-14"><a href="anova.html#cb223-14"></a><span class="co">##   1   2   3   4 </span></span>
+<span id="cb223-15"><a href="anova.html#cb223-15"></a><span class="co">## 6.5 5.5 4.5 3.5</span></span>
 <span id="cb223-16"><a href="anova.html#cb223-16"></a><span class="kw">residuals</span>(fit)      <span class="co">#Actual yield - predicted fixed effect</span></span>
-<span id="cb223-17"><a href="anova.html#cb223-17"></a>   <span class="dv">1</span>    <span class="dv">2</span>    <span class="dv">3</span>    <span class="dv">4</span> </span>
-<span id="cb223-18"><a href="anova.html#cb223-18"></a><span class="fl">-0.2</span>  <span class="fl">0.2</span>  <span class="fl">0.2</span> <span class="fl">-0.2</span> </span>
+<span id="cb223-17"><a href="anova.html#cb223-17"></a><span class="co">##    1    2    3    4 </span></span>
+<span id="cb223-18"><a href="anova.html#cb223-18"></a><span class="co">## -0.2  0.2  0.2 -0.2</span></span>
 <span id="cb223-19"><a href="anova.html#cb223-19"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
 <span id="cb223-20"><a href="anova.html#cb223-20"></a><span class="kw">plot</span>(fit)</span></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-208-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
@@ -718,43 +718,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="anova.html#cb224-1"></a><span class="co">## rep() with arguments times, each, length.out</span></span>
 <span id="cb224-2"><a href="anova.html#cb224-2"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">times =</span> <span class="dv">2</span>)</span>
-<span id="cb224-3"><a href="anova.html#cb224-3"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">1</span> <span class="dv">2</span></span>
+<span id="cb224-3"><a href="anova.html#cb224-3"></a><span class="co">## [1] 1 2 1 2</span></span>
 <span id="cb224-4"><a href="anova.html#cb224-4"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">each =</span> <span class="dv">2</span>)</span>
-<span id="cb224-5"><a href="anova.html#cb224-5"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">2</span></span>
+<span id="cb224-5"><a href="anova.html#cb224-5"></a><span class="co">## [1] 1 1 2 2</span></span>
 <span id="cb224-6"><a href="anova.html#cb224-6"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">length.out =</span> <span class="dv">5</span>)</span>
-<span id="cb224-7"><a href="anova.html#cb224-7"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">1</span></span>
+<span id="cb224-7"><a href="anova.html#cb224-7"></a><span class="co">## [1] 1 2 1 2 1</span></span>
 <span id="cb224-8"><a href="anova.html#cb224-8"></a></span>
 <span id="cb224-9"><a href="anova.html#cb224-9"></a><span class="co">## gl() is a shortcut for factor(rep())</span></span>
 <span id="cb224-10"><a href="anova.html#cb224-10"></a><span class="kw">gl</span>(<span class="dv">2</span>,<span class="dv">3</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Treat&quot;</span>))</span>
-<span id="cb224-11"><a href="anova.html#cb224-11"></a>[<span class="dv">1</span>] Control Control Control Treat   Treat   Treat  </span>
-<span id="cb224-12"><a href="anova.html#cb224-12"></a>Levels<span class="op">:</span><span class="st"> </span>Control Treat</span>
+<span id="cb224-11"><a href="anova.html#cb224-11"></a><span class="co">## [1] Control Control Control Treat   Treat   Treat  </span></span>
+<span id="cb224-12"><a href="anova.html#cb224-12"></a><span class="co">## Levels: Control Treat</span></span>
 <span id="cb224-13"><a href="anova.html#cb224-13"></a><span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Treat&quot;</span>), <span class="dt">each =</span> <span class="dv">3</span>)) <span class="co"># same output</span></span>
-<span id="cb224-14"><a href="anova.html#cb224-14"></a>[<span class="dv">1</span>] Control Control Control Treat   Treat   Treat  </span>
-<span id="cb224-15"><a href="anova.html#cb224-15"></a>Levels<span class="op">:</span><span class="st"> </span>Control Treat</span>
+<span id="cb224-14"><a href="anova.html#cb224-14"></a><span class="co">## [1] Control Control Control Treat   Treat   Treat  </span></span>
+<span id="cb224-15"><a href="anova.html#cb224-15"></a><span class="co">## Levels: Control Treat</span></span>
 <span id="cb224-16"><a href="anova.html#cb224-16"></a></span>
 <span id="cb224-17"><a href="anova.html#cb224-17"></a><span class="co">## expand.grid() and interaction()</span></span>
 <span id="cb224-18"><a href="anova.html#cb224-18"></a>(df &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">Block =</span> LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>], <span class="dt">Treat =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>))</span>
-<span id="cb224-19"><a href="anova.html#cb224-19"></a>  Block Treat</span>
-<span id="cb224-20"><a href="anova.html#cb224-20"></a><span class="dv">1</span>     A     <span class="dv">1</span></span>
-<span id="cb224-21"><a href="anova.html#cb224-21"></a><span class="dv">2</span>     B     <span class="dv">1</span></span>
-<span id="cb224-22"><a href="anova.html#cb224-22"></a><span class="dv">3</span>     A     <span class="dv">2</span></span>
-<span id="cb224-23"><a href="anova.html#cb224-23"></a><span class="dv">4</span>     B     <span class="dv">2</span></span>
-<span id="cb224-24"><a href="anova.html#cb224-24"></a><span class="dv">5</span>     A     <span class="dv">3</span></span>
-<span id="cb224-25"><a href="anova.html#cb224-25"></a><span class="dv">6</span>     B     <span class="dv">3</span></span>
+<span id="cb224-19"><a href="anova.html#cb224-19"></a><span class="co">##   Block Treat</span></span>
+<span id="cb224-20"><a href="anova.html#cb224-20"></a><span class="co">## 1     A     1</span></span>
+<span id="cb224-21"><a href="anova.html#cb224-21"></a><span class="co">## 2     B     1</span></span>
+<span id="cb224-22"><a href="anova.html#cb224-22"></a><span class="co">## 3     A     2</span></span>
+<span id="cb224-23"><a href="anova.html#cb224-23"></a><span class="co">## 4     B     2</span></span>
+<span id="cb224-24"><a href="anova.html#cb224-24"></a><span class="co">## 5     A     3</span></span>
+<span id="cb224-25"><a href="anova.html#cb224-25"></a><span class="co">## 6     B     3</span></span>
 <span id="cb224-26"><a href="anova.html#cb224-26"></a><span class="kw">interaction</span>(df<span class="op">$</span>Block, df<span class="op">$</span>Treat)</span>
-<span id="cb224-27"><a href="anova.html#cb224-27"></a>[<span class="dv">1</span>] A<span class="fl">.1</span> B<span class="fl">.1</span> A<span class="fl">.2</span> B<span class="fl">.2</span> A<span class="fl">.3</span> B<span class="fl">.3</span></span>
-<span id="cb224-28"><a href="anova.html#cb224-28"></a>Levels<span class="op">:</span><span class="st"> </span>A<span class="fl">.1</span> B<span class="fl">.1</span> A<span class="fl">.2</span> B<span class="fl">.2</span> A<span class="fl">.3</span> B<span class="fl">.3</span></span>
+<span id="cb224-27"><a href="anova.html#cb224-27"></a><span class="co">## [1] A.1 B.1 A.2 B.2 A.3 B.3</span></span>
+<span id="cb224-28"><a href="anova.html#cb224-28"></a><span class="co">## Levels: A.1 B.1 A.2 B.2 A.3 B.3</span></span>
 <span id="cb224-29"><a href="anova.html#cb224-29"></a></span>
 <span id="cb224-30"><a href="anova.html#cb224-30"></a><span class="co">## combn()</span></span>
 <span id="cb224-31"><a href="anova.html#cb224-31"></a><span class="kw">combn</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dv">2</span>) <span class="co"># Combinatorics: combine each element with every other element</span></span>
-<span id="cb224-32"><a href="anova.html#cb224-32"></a>     [,<span class="dv">1</span>] [,<span class="dv">2</span>] [,<span class="dv">3</span>] [,<span class="dv">4</span>] [,<span class="dv">5</span>] [,<span class="dv">6</span>]</span>
-<span id="cb224-33"><a href="anova.html#cb224-33"></a>[<span class="dv">1</span>,]    <span class="dv">1</span>    <span class="dv">1</span>    <span class="dv">1</span>    <span class="dv">2</span>    <span class="dv">2</span>    <span class="dv">3</span></span>
-<span id="cb224-34"><a href="anova.html#cb224-34"></a>[<span class="dv">2</span>,]    <span class="dv">2</span>    <span class="dv">3</span>    <span class="dv">4</span>    <span class="dv">3</span>    <span class="dv">4</span>    <span class="dv">4</span></span>
+<span id="cb224-32"><a href="anova.html#cb224-32"></a><span class="co">##      [,1] [,2] [,3] [,4] [,5] [,6]</span></span>
+<span id="cb224-33"><a href="anova.html#cb224-33"></a><span class="co">## [1,]    1    1    1    2    2    3</span></span>
+<span id="cb224-34"><a href="anova.html#cb224-34"></a><span class="co">## [2,]    2    3    4    3    4    4</span></span>
 <span id="cb224-35"><a href="anova.html#cb224-35"></a><span class="kw">combn</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">3</span>) <span class="co"># Make all possible 3-fold combinations (4 choose 3 combinations)</span></span>
-<span id="cb224-36"><a href="anova.html#cb224-36"></a>     [,<span class="dv">1</span>]</span>
-<span id="cb224-37"><a href="anova.html#cb224-37"></a>[<span class="dv">1</span>,]    <span class="dv">1</span></span>
-<span id="cb224-38"><a href="anova.html#cb224-38"></a>[<span class="dv">2</span>,]    <span class="dv">2</span></span>
-<span id="cb224-39"><a href="anova.html#cb224-39"></a>[<span class="dv">3</span>,]    <span class="dv">3</span></span></code></pre></div>
+<span id="cb224-36"><a href="anova.html#cb224-36"></a><span class="co">##      [,1]</span></span>
+<span id="cb224-37"><a href="anova.html#cb224-37"></a><span class="co">## [1,]    1</span></span>
+<span id="cb224-38"><a href="anova.html#cb224-38"></a><span class="co">## [2,]    2</span></span>
+<span id="cb224-39"><a href="anova.html#cb224-39"></a><span class="co">## [3,]    3</span></span></code></pre></div>
 <div id="randomization" class="section level3">
 <h3><span class="header-section-number">23.3.1</span> Randomization</h3>
 <ul>
@@ -763,8 +763,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="anova.html#cb225-1"></a>treat.ord &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>), <span class="dt">each =</span> <span class="dv">5</span>)</span>
 <span id="cb225-2"><a href="anova.html#cb225-2"></a><span class="kw">sample</span>(treat.ord, <span class="dt">replace =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code> [1] &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;D&quot; &quot;D&quot; &quot;A&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot;
-[20] &quot;C&quot;</code></pre>
+<pre><code>##  [1] &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;D&quot; &quot;D&quot; &quot;A&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot;
+## [20] &quot;C&quot;</code></pre>
 </div>
 </div>
 <div id="visualization-2" class="section level2">
@@ -785,7 +785,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">23.4.3</span> Interaction plot</h3>
 <div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="anova.html#cb229-1"></a><span class="kw">with</span>(snails, <span class="kw">interaction.plot</span>(<span class="dt">x.factor =</span> density, <span class="dt">trace.factor =</span> season, <span class="dt">response =</span> y))</span>
 <span id="cb229-2"><a href="anova.html#cb229-2"></a><span class="kw">ggplot</span>(Machines, <span class="kw">aes</span> (<span class="dt">x =</span> Machine, <span class="dt">y =</span> score, <span class="dt">group =</span> Worker, <span class="dt">col =</span> Worker)) <span class="op">+</span></span>
-<span id="cb229-3"><a href="anova.html#cb229-3"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">stat_summary</span>(<span class="dt">fun.y =</span> mean, <span class="dt">geom =</span> <span class="st">&quot;line&quot;</span>)</span></code></pre></div>
+<span id="cb229-3"><a href="anova.html#cb229-3"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">stat_summary</span>(<span class="dt">fun =</span> mean, <span class="dt">geom =</span> <span class="st">&quot;line&quot;</span>)</span></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-213-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-213-2.png" width="50%" /></p>
 </div>
 <div id="summary-plot" class="section level3">
@@ -799,9 +799,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="identifiability" class="section level3">
 <h3><span class="header-section-number">23.5.1</span> Identifiability</h3>
 <div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="anova.html#cb231-1"></a><span class="kw">options</span>(<span class="st">&quot;contrasts&quot;</span>) <span class="co"># Default</span></span></code></pre></div>
-<pre><code>$contrasts
-        unordered           ordered 
-&quot;contr.treatment&quot;      &quot;contr.poly&quot; </code></pre>
+<pre><code>## $contrasts
+##         unordered           ordered 
+## &quot;contr.treatment&quot;      &quot;contr.poly&quot;</code></pre>
 <ul>
 <li>Unordered: Unordered factors (nominal scale)</li>
 <li>Ordered: Ordered factors (ordinal scale)</li>
@@ -939,14 +939,14 @@ Interpretation of significance in <code>anova()</code> always in favour of large
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="anova.html#cb237-1"></a><span class="kw">coef</span>(fit)</span>
-<span id="cb237-2"><a href="anova.html#cb237-2"></a>(Intercept)   grouptrt1   grouptrt2 </span>
-<span id="cb237-3"><a href="anova.html#cb237-3"></a>      <span class="fl">5.032</span>      <span class="fl">-0.371</span>       <span class="fl">0.494</span> </span>
+<span id="cb237-2"><a href="anova.html#cb237-2"></a><span class="co">## (Intercept)   grouptrt1   grouptrt2 </span></span>
+<span id="cb237-3"><a href="anova.html#cb237-3"></a><span class="co">##       5.032      -0.371       0.494</span></span>
 <span id="cb237-4"><a href="anova.html#cb237-4"></a><span class="kw">dummy.coef</span>(fit)</span>
-<span id="cb237-5"><a href="anova.html#cb237-5"></a>Full coefficients are </span>
-<span id="cb237-6"><a href="anova.html#cb237-6"></a>                                    </span>
-<span id="cb237-7"><a href="anova.html#cb237-7"></a>(Intercept)<span class="op">:</span><span class="st">     </span><span class="fl">5.032</span>              </span>
-<span id="cb237-8"><a href="anova.html#cb237-8"></a>group<span class="op">:</span><span class="st">            </span>ctrl   trt1   trt2</span>
-<span id="cb237-9"><a href="anova.html#cb237-9"></a>                 <span class="fl">0.000</span> <span class="fl">-0.371</span>  <span class="fl">0.494</span></span></code></pre></div>
+<span id="cb237-5"><a href="anova.html#cb237-5"></a><span class="co">## Full coefficients are </span></span>
+<span id="cb237-6"><a href="anova.html#cb237-6"></a><span class="co">##                                     </span></span>
+<span id="cb237-7"><a href="anova.html#cb237-7"></a><span class="co">## (Intercept):     5.032              </span></span>
+<span id="cb237-8"><a href="anova.html#cb237-8"></a><span class="co">## group:            ctrl   trt1   trt2</span></span>
+<span id="cb237-9"><a href="anova.html#cb237-9"></a><span class="co">##                  0.000 -0.371  0.494</span></span></code></pre></div>
 </div>
 <div id="tests-and-ci-for-coeficients" class="section level2">
 <h2><span class="header-section-number">23.9</span> Tests and CI for coeficients</h2>
@@ -962,36 +962,36 @@ Interpretation of significance in <code>anova()</code> always in favour of large
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="anova.html#cb238-1"></a><span class="kw">summary.lm</span>(fit)</span></code></pre></div>
-<pre><code>
-Call:
-aov(formula = weight ~ group, data = PlantGrowth)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--1.0710 -0.4180 -0.0060  0.2627  1.3690 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)   5.0320     0.1971  25.527   &lt;2e-16 ***
-grouptrt1    -0.3710     0.2788  -1.331   0.1944    
-grouptrt2     0.4940     0.2788   1.772   0.0877 .  
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-Residual standard error: 0.6234 on 27 degrees of freedom
-Multiple R-squared:  0.2641,    Adjusted R-squared:  0.2096 
-F-statistic: 4.846 on 2 and 27 DF,  p-value: 0.01591</code></pre>
+<pre><code>## 
+## Call:
+## aov(formula = weight ~ group, data = PlantGrowth)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.0710 -0.4180 -0.0060  0.2627  1.3690 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   5.0320     0.1971  25.527   &lt;2e-16 ***
+## grouptrt1    -0.3710     0.2788  -1.331   0.1944    
+## grouptrt2     0.4940     0.2788   1.772   0.0877 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.6234 on 27 degrees of freedom
+## Multiple R-squared:  0.2641, Adjusted R-squared:  0.2096 
+## F-statistic: 4.846 on 2 and 27 DF,  p-value: 0.01591</code></pre>
 <div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="anova.html#cb240-1"></a><span class="kw">confint</span>(fit)</span></code></pre></div>
-<pre><code>                  2.5 %    97.5 %
-(Intercept)  4.62752600 5.4364740
-grouptrt1   -0.94301261 0.2010126
-grouptrt2   -0.07801261 1.0660126</code></pre>
+<pre><code>##                   2.5 %    97.5 %
+## (Intercept)  4.62752600 5.4364740
+## grouptrt1   -0.94301261 0.2010126
+## grouptrt2   -0.07801261 1.0660126</code></pre>
 </div>
 <div id="predict" class="section level2">
 <h2><span class="header-section-number">23.10</span> Predict</h2>
 <div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="anova.html#cb242-1"></a><span class="kw">predict</span>(fit, <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">group =</span> <span class="kw">c</span>(<span class="st">&quot;ctrl&quot;</span>, <span class="st">&quot;trt1&quot;</span>, <span class="st">&quot;trt2&quot;</span>)))</span></code></pre></div>
-<pre><code>    1     2     3 
-5.032 4.661 5.526 </code></pre>
+<pre><code>##     1     2     3 
+## 5.032 4.661 5.526</code></pre>
 <p><code>newdata</code> has to be a <code>data.frame</code> with all predictor variables in columns with the same name as the original predictor in the model (here <code>y ~ group</code>)</p>
 </div>
 <div id="diagnostic-plots-1" class="section level2">
@@ -1047,19 +1047,19 @@ grouptrt2   -0.07801261 1.0660126</code></pre>
 <div id="test-contrast" class="section level3">
 <h3><span class="header-section-number">23.12.1</span> Test contrast</h3>
 <div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="anova.html#cb249-1"></a><span class="kw">summary</span>(fit.man, <span class="dt">test =</span> <span class="kw">adjusted</span>(<span class="st">&quot;none&quot;</span>))</span></code></pre></div>
-<pre><code>
-     Simultaneous Tests for General Linear Hypotheses
-
-Multiple Comparisons of Means: User-defined Contrasts
-
-
-Fit: aov(formula = weight ~ group, data = PlantGrowth)
-
-Linear Hypotheses:
-              Estimate Std. Error t value Pr(&gt;|t|)
-mycontr1 == 0  -0.0615     0.2414  -0.255    0.801
-mycontr2 == 0   0.3710     0.2788   1.331    0.194
-(Adjusted p values reported -- none method)</code></pre>
+<pre><code>## 
+##   Simultaneous Tests for General Linear Hypotheses
+## 
+## Multiple Comparisons of Means: User-defined Contrasts
+## 
+## 
+## Fit: aov(formula = weight ~ group, data = PlantGrowth)
+## 
+## Linear Hypotheses:
+##               Estimate Std. Error t value Pr(&gt;|t|)
+## mycontr1 == 0  -0.0615     0.2414  -0.255    0.801
+## mycontr2 == 0   0.3710     0.2788   1.331    0.194
+## (Adjusted p values reported -- none method)</code></pre>
 </div>
 </div>
 <div id="multiple-comparison" class="section level2">
@@ -1081,8 +1081,8 @@ mycontr2 == 0   0.3710     0.2788   1.331    0.194
 <span id="cb252-5"><a href="anova.html#cb252-5"></a><span class="co">## in our case g-1 = 2, N-g = 27</span></span>
 <span id="cb252-6"><a href="anova.html#cb252-6"></a></span>
 <span id="cb252-7"><a href="anova.html#cb252-7"></a><span class="kw">pf</span>((<span class="kw">summary</span>(fit.scheffe)<span class="op">$</span>test<span class="op">$</span>tstat)<span class="op">^</span><span class="dv">2</span> <span class="op">/</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">27</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code>         1 
-0.05323245 </code></pre>
+<pre><code>##          1 
+## 0.05323245</code></pre>
 <ul>
 <li><code>summary(fit.sheffe)$test$tstat</code> returns t-value of glht t-test</li>
 <li><code>^2</code> Squared =&gt; F-Test</li>
@@ -1093,23 +1093,23 @@ mycontr2 == 0   0.3710     0.2788   1.331    0.194
 <h3><span class="header-section-number">23.13.3</span> Tukey HSD (All pairwise comparisons)</h3>
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="anova.html#cb254-1"></a>fit.tukey &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="st">&quot;Tukey&quot;</span>))</span>
 <span id="cb254-2"><a href="anova.html#cb254-2"></a><span class="kw">summary</span>(fit.tukey)</span></code></pre></div>
-<pre><code>
-     Simultaneous Tests for General Linear Hypotheses
-
-Multiple Comparisons of Means: Tukey Contrasts
-
-
-Fit: aov(formula = weight ~ group, data = PlantGrowth)
-
-Linear Hypotheses:
-                 Estimate Std. Error t value Pr(&gt;|t|)  
-trt1 - ctrl == 0  -0.3710     0.2788  -1.331   0.3909  
-trt2 - ctrl == 0   0.4940     0.2788   1.772   0.1981  
-trt2 - trt1 == 0   0.8650     0.2788   3.103   0.0121 *
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-(Adjusted p values reported -- single-step method)</code></pre>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="anova.html#cb256-1"></a><span class="kw">plot</span>(<span class="kw">confint</span>(<span class="kw">glht</span>(fit.tukey)))</span></code></pre></div>
+<pre><code>## 
+##   Simultaneous Tests for General Linear Hypotheses
+## 
+## Multiple Comparisons of Means: Tukey Contrasts
+## 
+## 
+## Fit: aov(formula = weight ~ group, data = PlantGrowth)
+## 
+## Linear Hypotheses:
+##                  Estimate Std. Error t value Pr(&gt;|t|)  
+## trt1 - ctrl == 0  -0.3710     0.2788  -1.331   0.3909  
+## trt2 - ctrl == 0   0.4940     0.2788   1.772   0.1981  
+## trt2 - trt1 == 0   0.8650     0.2788   3.103   0.0121 *
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## (Adjusted p values reported -- single-step method)</code></pre>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="anova.html#cb256-1"></a><span class="kw">plot</span>(<span class="kw">confint</span>(fit.tukey))</span></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-233-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p>Example with compact letter display</p>
 <div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="anova.html#cb257-1"></a>subCO2 &lt;-<span class="st"> </span>CO2[CO2<span class="op">$</span>conc <span class="op">==</span><span class="st"> </span><span class="dv">1000</span>,]</span>
@@ -1136,19 +1136,19 @@ Letters will not be displayed if treatment names contain a space (e.g. <code>Qu
 <div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="anova.html#cb258-1"></a><span class="co">## fitst level is set as control</span></span>
 <span id="cb258-2"><a href="anova.html#cb258-2"></a>fit.dunnett &lt;-<span class="st"> </span><span class="kw">glht</span>(fit, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">group =</span> <span class="st">&quot;Dunnett&quot;</span>))</span>
 <span id="cb258-3"><a href="anova.html#cb258-3"></a><span class="kw">summary</span>(fit.dunnett)</span></code></pre></div>
-<pre><code>
-     Simultaneous Tests for General Linear Hypotheses
-
-Multiple Comparisons of Means: Dunnett Contrasts
-
-
-Fit: aov(formula = weight ~ group, data = PlantGrowth)
-
-Linear Hypotheses:
-                 Estimate Std. Error t value Pr(&gt;|t|)
-trt1 - ctrl == 0  -0.3710     0.2788  -1.331    0.323
-trt2 - ctrl == 0   0.4940     0.2788   1.772    0.153
-(Adjusted p values reported -- single-step method)</code></pre>
+<pre><code>## 
+##   Simultaneous Tests for General Linear Hypotheses
+## 
+## Multiple Comparisons of Means: Dunnett Contrasts
+## 
+## 
+## Fit: aov(formula = weight ~ group, data = PlantGrowth)
+## 
+## Linear Hypotheses:
+##                  Estimate Std. Error t value Pr(&gt;|t|)
+## trt1 - ctrl == 0  -0.3710     0.2788  -1.331    0.323
+## trt2 - ctrl == 0   0.4940     0.2788   1.772    0.153
+## (Adjusted p values reported -- single-step method)</code></pre>
 </div>
 </div>
 <div id="designs" class="section level2">
@@ -1182,7 +1182,7 @@ trt2 - ctrl == 0   0.4940     0.2788   1.772    0.153
 <span id="cb261-11"><a href="anova.html#cb261-11"></a><span class="co"># 3) calculate F value and p value</span></span>
 <span id="cb261-12"><a href="anova.html#cb261-12"></a>F_value &lt;-<span class="st"> </span>MSS_dens<span class="op">/</span>MSS_er</span>
 <span id="cb261-13"><a href="anova.html#cb261-13"></a><span class="kw">pf</span>(F_value, <span class="dv">2</span>, <span class="dv">12</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code>[1] 0.6520635</code></pre>
+<pre><code>## [1] 0.6520635</code></pre>
 <div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="anova.html#cb263-1"></a><span class="co"># 2: df of &quot;density, 12: df of residuals</span></span></code></pre></div>
 </div>
 </div>
@@ -1218,37 +1218,37 @@ trt2 - ctrl == 0   0.4940     0.2788   1.772    0.153
 <span id="cb264-10"><a href="anova.html#cb264-10"></a>fit &lt;-<span class="st"> </span><span class="kw">aov</span>(score <span class="op">~</span><span class="st"> </span>Machine <span class="op">+</span><span class="st"> </span><span class="kw">Error</span>(Worker <span class="op">+</span><span class="st"> </span>Machine<span class="op">:</span>Worker), <span class="dt">data =</span> Machines)</span></code></pre></div>
 <p>Old approach using <code>Error()</code> does <strong>not</strong> estimate standard deviations of error terms. But the F value of machine is now computed correctly (<span class="math inline">\(MS_{Machine}\)</span> is devided by <span class="math inline">\(MS_{Machine:Worker}\)</span> and not by <span class="math inline">\(MS_E\)</span>)</p>
 <div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="anova.html#cb265-1"></a><span class="kw">summary</span>(fit.lme)</span></code></pre></div>
-<pre><code>Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
-lmerModLmerTest]
-Formula: effort ~ Type + (1 | Subject)
-   Data: ergoStool
-
-REML criterion at convergence: 121.1
-
-Scaled residuals: 
-     Min       1Q   Median       3Q      Max 
--1.80200 -0.64317  0.05783  0.70100  1.63142 
-
-Random effects:
- Groups   Name        Variance Std.Dev.
- Subject  (Intercept) 1.775    1.332   
- Residual             1.211    1.100   
-Number of obs: 36, groups:  Subject, 9
-
-Fixed effects:
-            Estimate Std. Error      df t value Pr(&gt;|t|)    
-(Intercept)   8.5556     0.5760 15.5298  14.853 1.36e-10 ***
-TypeT2        3.8889     0.5187 24.0000   7.498 9.75e-08 ***
-TypeT3        2.2222     0.5187 24.0000   4.284 0.000256 ***
-TypeT4        0.6667     0.5187 24.0000   1.285 0.210951    
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-Correlation of Fixed Effects:
-       (Intr) TypeT2 TypeT3
-TypeT2 -0.450              
-TypeT3 -0.450  0.500       
-TypeT4 -0.450  0.500  0.500</code></pre>
+<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
+## lmerModLmerTest]
+## Formula: effort ~ Type + (1 | Subject)
+##    Data: ergoStool
+## 
+## REML criterion at convergence: 121.1
+## 
+## Scaled residuals: 
+##      Min       1Q   Median       3Q      Max 
+## -1.80200 -0.64317  0.05783  0.70100  1.63142 
+## 
+## Random effects:
+##  Groups   Name        Variance Std.Dev.
+##  Subject  (Intercept) 1.775    1.332   
+##  Residual             1.211    1.100   
+## Number of obs: 36, groups:  Subject, 9
+## 
+## Fixed effects:
+##             Estimate Std. Error      df t value Pr(&gt;|t|)    
+## (Intercept)   8.5556     0.5760 15.5298  14.853 1.36e-10 ***
+## TypeT2        3.8889     0.5187 24.0000   7.498 9.75e-08 ***
+## TypeT3        2.2222     0.5187 24.0000   4.284 0.000256 ***
+## TypeT4        0.6667     0.5187 24.0000   1.285 0.210951    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##        (Intr) TypeT2 TypeT3
+## TypeT2 -0.450              
+## TypeT3 -0.450  0.500       
+## TypeT4 -0.450  0.500  0.500</code></pre>
 
 <div class="rmdwarning">
 At section <code>Random effects</code>, the <code>Std.Dev</code> is simply the square root of the <code>Variance</code> <strong>not</strong> the standard error
@@ -1258,36 +1258,36 @@ At section <code>Random effects</code>, the <code>Std.Dev</code> is simply the s
 <h4><span class="header-section-number">23.14.2.1</span> Fixed effects</h4>
 <p>Estimates</p>
 <div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="anova.html#cb267-1"></a><span class="kw">fixef</span>(fit.lme)</span></code></pre></div>
-<pre><code>(Intercept)      TypeT2      TypeT3      TypeT4 
-  8.5555556   3.8888889   2.2222222   0.6666667 </code></pre>
+<pre><code>## (Intercept)      TypeT2      TypeT3      TypeT4 
+##   8.5555556   3.8888889   2.2222222   0.6666667</code></pre>
 <p>Tests</p>
 <div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="anova.html#cb269-1"></a><span class="kw">drop1</span>(fit.lme)</span></code></pre></div>
-<pre><code>Single term deletions using Satterthwaite&#39;s method:
-
-Model:
-effort ~ Type + (1 | Subject)
-     Sum Sq Mean Sq NumDF DenDF F value    Pr(&gt;F)    
-Type 81.194  27.065     3    24  22.356 3.935e-07 ***
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre><code>## Single term deletions using Satterthwaite&#39;s method:
+## 
+## Model:
+## effort ~ Type + (1 | Subject)
+##      Sum Sq Mean Sq NumDF DenDF F value    Pr(&gt;F)    
+## Type 81.194  27.065     3    24  22.356 3.935e-07 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>CI (random and fixed effects)</p>
 <div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="anova.html#cb271-1"></a><span class="kw">confint</span>(fit.lme, <span class="dt">oldNames =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code>                            2.5 %   97.5 %
-sd_(Intercept)|Subject  0.7342354 2.287261
-sigma                   0.8119798 1.390104
-(Intercept)             7.4238425 9.687269
-TypeT2                  2.8953043 4.882473
-TypeT3                  1.2286377 3.215807
-TypeT4                 -0.3269179 1.660251</code></pre>
+<pre><code>##                             2.5 %   97.5 %
+## sd_(Intercept)|Subject  0.7342354 2.287261
+## sigma                   0.8119798 1.390104
+## (Intercept)             7.4238425 9.687269
+## TypeT2                  2.8953043 4.882473
+## TypeT3                  1.2286377 3.215807
+## TypeT4                 -0.3269179 1.660251</code></pre>
 </div>
 <div id="random-effects" class="section level4">
 <h4><span class="header-section-number">23.14.2.2</span> Random effects</h4>
 <p>Estimates <span class="math inline">\(\sigma_W^2\)</span>, <span class="math inline">\(\sigma_{W:M}^2\)</span>, <span class="math inline">\(\sigma_E^2\)</span></p>
 <div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="anova.html#cb273-1"></a><span class="kw">unlist</span>(<span class="kw">VarCorr</span>(fit.lme))</span></code></pre></div>
-<pre><code> Subject 
-1.775463 </code></pre>
+<pre><code>##  Subject 
+## 1.775463</code></pre>
 <div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="anova.html#cb275-1"></a><span class="kw">sigma</span>(fit.lme)<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
-<pre><code>[1] 1.210648</code></pre>
+<pre><code>## [1] 1.210648</code></pre>
 
 <div class="rmdwarning">
 <code>VarCorr()</code> automatically prints standard deviation <span class="math inline">\(\sigma\)</span> but stores variance <span class="math inline">\(\sigma^2\)</span> if assigned or unlisted
@@ -1295,35 +1295,35 @@ TypeT4                 -0.3269179 1.660251</code></pre>
 
 <p>Estimates <span class="math inline">\(\alpha_i\)</span>, <span class="math inline">\(\beta_j\)</span>, <span class="math inline">\((\alpha\beta)_{ij}\)</span></p>
 <div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="anova.html#cb277-1"></a><span class="kw">ranef</span>(fit.lme)</span></code></pre></div>
-<pre><code>$Subject
-    (Intercept)
-8 -1.708716e+00
-5 -1.495127e+00
-4 -8.543581e-01
-9 -2.135895e-01
-6  1.641913e-15
-3  4.271791e-01
-7  4.271791e-01
-1  1.708716e+00
-2  1.708716e+00
-
-with conditional variances for &quot;Subject&quot; </code></pre>
+<pre><code>## $Subject
+##     (Intercept)
+## 8 -1.708716e+00
+## 5 -1.495127e+00
+## 4 -8.543581e-01
+## 9 -2.135895e-01
+## 6  1.641913e-15
+## 3  4.271791e-01
+## 7  4.271791e-01
+## 1  1.708716e+00
+## 2  1.708716e+00
+## 
+## with conditional variances for &quot;Subject&quot;</code></pre>
 <p>Estimates <span class="math inline">\(E(\mu_i | \alpha_i)\)</span></p>
 <div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="anova.html#cb279-1"></a><span class="kw">coef</span>(fit.lme)</span></code></pre></div>
-<pre><code>$Subject
-  (Intercept)   TypeT2   TypeT3    TypeT4
-8    6.846839 3.888889 2.222222 0.6666667
-5    7.060429 3.888889 2.222222 0.6666667
-4    7.701197 3.888889 2.222222 0.6666667
-9    8.341966 3.888889 2.222222 0.6666667
-6    8.555556 3.888889 2.222222 0.6666667
-3    8.982735 3.888889 2.222222 0.6666667
-7    8.982735 3.888889 2.222222 0.6666667
-1   10.264272 3.888889 2.222222 0.6666667
-2   10.264272 3.888889 2.222222 0.6666667
-
-attr(,&quot;class&quot;)
-[1] &quot;coef.mer&quot;</code></pre>
+<pre><code>## $Subject
+##   (Intercept)   TypeT2   TypeT3    TypeT4
+## 8    6.846839 3.888889 2.222222 0.6666667
+## 5    7.060429 3.888889 2.222222 0.6666667
+## 4    7.701197 3.888889 2.222222 0.6666667
+## 9    8.341966 3.888889 2.222222 0.6666667
+## 6    8.555556 3.888889 2.222222 0.6666667
+## 3    8.982735 3.888889 2.222222 0.6666667
+## 7    8.982735 3.888889 2.222222 0.6666667
+## 1   10.264272 3.888889 2.222222 0.6666667
+## 2   10.264272 3.888889 2.222222 0.6666667
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;coef.mer&quot;</code></pre>
 <p>Tests</p>
 <div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="anova.html#cb281-1"></a><span class="co">## approximate</span></span>
 <span id="cb281-2"><a href="anova.html#cb281-2"></a><span class="kw">ranova</span>(fit.lme)</span>

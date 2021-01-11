@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -667,19 +667,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="miscellaneous.html#cb56-1"></a>x1 &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.1</span>)</span>
 <span id="cb56-2"><a href="miscellaneous.html#cb56-2"></a>x2 &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">10</span> <span class="op">/</span><span class="st"> </span><span class="dv">10</span></span>
 <span id="cb56-3"><a href="miscellaneous.html#cb56-3"></a>x1 <span class="op">==</span><span class="st"> </span>x2</span></code></pre></div>
-<pre><code> [1]  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE</code></pre>
+<pre><code>##  [1]  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE</code></pre>
 <p>The numbers are not equal even if they are printed the same way by default.
 We find the true values if we print more number of digits</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="miscellaneous.html#cb58-1"></a><span class="kw">print</span>(x1, <span class="dt">digits =</span> <span class="dv">17</span>)</span></code></pre></div>
-<pre><code> [1] 0.00000000000000000 0.10000000000000001 0.20000000000000001
- [4] 0.30000000000000004 0.40000000000000002 0.50000000000000000
- [7] 0.60000000000000009 0.70000000000000007 0.80000000000000004
-[10] 0.90000000000000002 1.00000000000000000</code></pre>
+<pre><code>##  [1] 0.00000000000000000 0.10000000000000001 0.20000000000000001
+##  [4] 0.30000000000000004 0.40000000000000002 0.50000000000000000
+##  [7] 0.60000000000000009 0.70000000000000007 0.80000000000000004
+## [10] 0.90000000000000002 1.00000000000000000</code></pre>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="miscellaneous.html#cb60-1"></a><span class="kw">print</span>(x2, <span class="dt">digits =</span> <span class="dv">17</span>)</span></code></pre></div>
-<pre><code> [1] 0.00000000000000000 0.10000000000000001 0.20000000000000001
- [4] 0.29999999999999999 0.40000000000000002 0.50000000000000000
- [7] 0.59999999999999998 0.69999999999999996 0.80000000000000004
-[10] 0.90000000000000002 1.00000000000000000</code></pre>
+<pre><code>##  [1] 0.00000000000000000 0.10000000000000001 0.20000000000000001
+##  [4] 0.29999999999999999 0.40000000000000002 0.50000000000000000
+##  [7] 0.59999999999999998 0.69999999999999996 0.80000000000000004
+## [10] 0.90000000000000002 1.00000000000000000</code></pre>
 <p>The saved numbers are not precisely the number we would expect. There are two reasons for that:</p>
 <ol style="list-style-type: decimal">
 <li>Rounding to store decimal numbers</li>
@@ -690,7 +690,7 @@ We find the true values if we print more number of digits</p>
 <p>Storing a decimal numbers (double) with infinite precision uses an infinite amount of memory. Therefore doubles are rounded before they are stored to the computer:</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="miscellaneous.html#cb62-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">3</span></span>
 <span id="cb62-2"><a href="miscellaneous.html#cb62-2"></a><span class="kw">print</span>(x, <span class="dt">digits =</span> <span class="dv">22</span>)</span></code></pre></div>
-<pre><code>[1] 0.3333333333333333148296</code></pre>
+<pre><code>## [1] 0.3333333333333333148296</code></pre>
 <p>only 17 digits after the comma are stored when calculating 1/3</p>
 </div>
 <div id="binary-representations" class="section level5 unnumbered">
@@ -710,13 +710,13 @@ We find the true values if we print more number of digits</p>
 <li>Compare (vectors of) numbers with <code>all.equal()</code></li>
 </ol>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="miscellaneous.html#cb64-1"></a><span class="kw">all.equal</span>(x1, x2)</span>
-<span id="cb64-2"><a href="miscellaneous.html#cb64-2"></a>[<span class="dv">1</span>] <span class="ot">TRUE</span></span>
+<span id="cb64-2"><a href="miscellaneous.html#cb64-2"></a><span class="co">## [1] TRUE</span></span>
 <span id="cb64-3"><a href="miscellaneous.html#cb64-3"></a><span class="kw">all.equal</span>(x1, x2, <span class="dt">tol =</span> <span class="fl">1e-10</span>)</span>
-<span id="cb64-4"><a href="miscellaneous.html#cb64-4"></a>[<span class="dv">1</span>] <span class="ot">TRUE</span></span>
+<span id="cb64-4"><a href="miscellaneous.html#cb64-4"></a><span class="co">## [1] TRUE</span></span>
 <span id="cb64-5"><a href="miscellaneous.html#cb64-5"></a><span class="kw">all.equal</span>(x1, x2, <span class="dt">tol =</span> <span class="dv">0</span>) <span class="co">## -&gt; shows the *relative* difference</span></span>
-<span id="cb64-6"><a href="miscellaneous.html#cb64-6"></a>[<span class="dv">1</span>] <span class="st">&quot;Mean relative difference: 1.734723e-16&quot;</span></span>
+<span id="cb64-6"><a href="miscellaneous.html#cb64-6"></a><span class="co">## [1] &quot;Mean relative difference: 1.734723e-16&quot;</span></span>
 <span id="cb64-7"><a href="miscellaneous.html#cb64-7"></a><span class="kw">abs</span>(x1 <span class="op">-</span><span class="st"> </span>x2) <span class="op">&lt;=</span><span class="st"> </span><span class="fl">1e-10</span> <span class="op">*</span><span class="st"> </span><span class="kw">abs</span>((x1 <span class="op">+</span><span class="st"> </span>x2)<span class="op">/</span><span class="dv">2</span>) <span class="co"># alternatively</span></span>
-<span id="cb64-8"><a href="miscellaneous.html#cb64-8"></a> [<span class="dv">1</span>] <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span></span></code></pre></div>
+<span id="cb64-8"><a href="miscellaneous.html#cb64-8"></a><span class="co">##  [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE</span></span></code></pre></div>
 </div>
 <div id="more-interesting-information-about-double-representation" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> More interesting information about double representation</h3>
@@ -770,13 +770,14 @@ help page of <code>.Machine</code></p>
 </tr>
 </tbody>
 </table>
-<p>Note that you can store much larger numbers with double than with integers. Numbers larger than the largest double are stored as <code>Inf</code></p>
+<p>Note that you can store much larger numbers with double than with integers. Numbers larger than the largest integer are stored as <code>NA</code> and numbers larger than the largest double are stored as <code>Inf</code>.</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="miscellaneous.html#cb65-1"></a>2147483647L <span class="op">+</span><span class="st"> </span>1L</span>
-<span id="cb65-2"><a href="miscellaneous.html#cb65-2"></a>[<span class="dv">1</span>] <span class="ot">NA</span></span>
-<span id="cb65-3"><a href="miscellaneous.html#cb65-3"></a><span class="dv">2</span><span class="op">^</span><span class="fl">1023.9999</span></span>
-<span id="cb65-4"><a href="miscellaneous.html#cb65-4"></a>[<span class="dv">1</span>] <span class="fl">1.797569e+308</span></span>
-<span id="cb65-5"><a href="miscellaneous.html#cb65-5"></a><span class="dv">2</span><span class="op">^</span><span class="dv">1024</span></span>
-<span id="cb65-6"><a href="miscellaneous.html#cb65-6"></a>[<span class="dv">1</span>] <span class="ot">Inf</span></span></code></pre></div>
+<span id="cb65-2"><a href="miscellaneous.html#cb65-2"></a><span class="co">## Warning in 2147483647L + 1L: NAs produced by integer overflow</span></span>
+<span id="cb65-3"><a href="miscellaneous.html#cb65-3"></a><span class="co">## [1] NA</span></span>
+<span id="cb65-4"><a href="miscellaneous.html#cb65-4"></a><span class="dv">2</span><span class="op">^</span><span class="fl">1023.9999</span></span>
+<span id="cb65-5"><a href="miscellaneous.html#cb65-5"></a><span class="co">## [1] 1.797569e+308</span></span>
+<span id="cb65-6"><a href="miscellaneous.html#cb65-6"></a><span class="dv">2</span><span class="op">^</span><span class="dv">1024</span></span>
+<span id="cb65-7"><a href="miscellaneous.html#cb65-7"></a><span class="co">## [1] Inf</span></span></code></pre></div>
 </div>
 </div>
 <div id="how-packages-can-exist" class="section level2">
