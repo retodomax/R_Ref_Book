@@ -42,6 +42,7 @@ lexical-scoping
 return-value
 special-calls
 generic-functions
+s3-and-s4
 env
 general-properties
 definition
