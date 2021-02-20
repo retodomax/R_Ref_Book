@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-11" />
+<meta name="date" content="2021-01-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -325,7 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>16.5.3</b> panel.first</a></li>
 <li class="chapter" data-level="16.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>16.5.4</b> Area under curve</a></li>
 </ul></li>
-<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.6</b> Plot empty</a></li>
+<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-math-coordinate-system"><i class="fa fa-check"></i><b>16.6</b> Plot Math Coordinate System</a></li>
+<li class="chapter" data-level="16.7" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.7</b> Plot empty</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>17</b> Interactive Plots</a></li>
 <li class="chapter" data-level="18" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>18</b> ggplot</a><ul>
@@ -487,11 +488,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="32.3" data-path="r-markdown-1.html"><a href="r-markdown-1.html#tables"><i class="fa fa-check"></i><b>32.3</b> Tables</a><ul>
 <li class="chapter" data-level="32.3.1" data-path="r-markdown-1.html"><a href="r-markdown-1.html#html-tables"><i class="fa fa-check"></i><b>32.3.1</b> HTML tables</a></li>
 </ul></li>
-<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#sepecial-characters"><i class="fa fa-check"></i><b>32.4</b> Sepecial characters</a></li>
-<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.5</b> Section folding</a></li>
-<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.6</b> Add box</a></li>
-<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.7</b> Template</a></li>
-<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.8</b> Good output formats</a></li>
+<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#math"><i class="fa fa-check"></i><b>32.4</b> Math</a></li>
+<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#special-characters"><i class="fa fa-check"></i><b>32.5</b> Special characters</a></li>
+<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.6</b> Section folding</a></li>
+<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.7</b> Add box</a></li>
+<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.8</b> Template</a></li>
+<li class="chapter" data-level="32.9" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.9</b> Good output formats</a></li>
 </ul></li>
 <li class="chapter" data-level="33" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>33</b> Bookdown</a><ul>
 <li class="chapter" data-level="33.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>33.1</b> Configuration</a><ul>
@@ -662,35 +664,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 26</span> Computational statistics</h1>
 <div id="cross-validation" class="section level2">
 <h2><span class="header-section-number">26.1</span> Cross validation</h2>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="Computational-Statistics.html#cb288-1"></a><span class="co">#Randomly shuffle the data</span></span>
-<span id="cb288-2"><a href="Computational-Statistics.html#cb288-2"></a>dat&lt;-dat[<span class="kw">sample</span>(<span class="kw">nrow</span>(dat)),]</span>
-<span id="cb288-3"><a href="Computational-Statistics.html#cb288-3"></a></span>
-<span id="cb288-4"><a href="Computational-Statistics.html#cb288-4"></a><span class="co">#Create 10 equally size folds</span></span>
-<span id="cb288-5"><a href="Computational-Statistics.html#cb288-5"></a>folds &lt;-<span class="st"> </span><span class="kw">cut</span>(<span class="kw">seq</span>(<span class="dv">1</span>,<span class="kw">nrow</span>(dat)),<span class="dt">breaks=</span><span class="dv">10</span>,<span class="dt">labels=</span><span class="ot">FALSE</span>)</span>
-<span id="cb288-6"><a href="Computational-Statistics.html#cb288-6"></a></span>
-<span id="cb288-7"><a href="Computational-Statistics.html#cb288-7"></a><span class="co">#Perform 10 fold cross validation</span></span>
-<span id="cb288-8"><a href="Computational-Statistics.html#cb288-8"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>){</span>
-<span id="cb288-9"><a href="Computational-Statistics.html#cb288-9"></a>  <span class="co">#Segement your data by fold using the which() function </span></span>
-<span id="cb288-10"><a href="Computational-Statistics.html#cb288-10"></a>  testIndexes &lt;-<span class="st"> </span><span class="kw">which</span>(folds<span class="op">==</span>i,<span class="dt">arr.ind=</span><span class="ot">TRUE</span>)</span>
-<span id="cb288-11"><a href="Computational-Statistics.html#cb288-11"></a>  testData &lt;-<span class="st"> </span>dat[testIndexes, ]</span>
-<span id="cb288-12"><a href="Computational-Statistics.html#cb288-12"></a>  trainData &lt;-<span class="st"> </span>dat[<span class="op">-</span>testIndexes, ]</span>
-<span id="cb288-13"><a href="Computational-Statistics.html#cb288-13"></a>  <span class="co">#Use the test and train data partitions however you desire...</span></span>
-<span id="cb288-14"><a href="Computational-Statistics.html#cb288-14"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="Computational-Statistics.html#cb289-1"></a><span class="co">#Randomly shuffle the data</span></span>
+<span id="cb289-2"><a href="Computational-Statistics.html#cb289-2"></a>dat&lt;-dat[<span class="kw">sample</span>(<span class="kw">nrow</span>(dat)),]</span>
+<span id="cb289-3"><a href="Computational-Statistics.html#cb289-3"></a></span>
+<span id="cb289-4"><a href="Computational-Statistics.html#cb289-4"></a><span class="co">#Create 10 equally size folds</span></span>
+<span id="cb289-5"><a href="Computational-Statistics.html#cb289-5"></a>folds &lt;-<span class="st"> </span><span class="kw">cut</span>(<span class="kw">seq</span>(<span class="dv">1</span>,<span class="kw">nrow</span>(dat)),<span class="dt">breaks=</span><span class="dv">10</span>,<span class="dt">labels=</span><span class="ot">FALSE</span>)</span>
+<span id="cb289-6"><a href="Computational-Statistics.html#cb289-6"></a></span>
+<span id="cb289-7"><a href="Computational-Statistics.html#cb289-7"></a><span class="co">#Perform 10 fold cross validation</span></span>
+<span id="cb289-8"><a href="Computational-Statistics.html#cb289-8"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>){</span>
+<span id="cb289-9"><a href="Computational-Statistics.html#cb289-9"></a>  <span class="co">#Segement your data by fold using the which() function </span></span>
+<span id="cb289-10"><a href="Computational-Statistics.html#cb289-10"></a>  testIndexes &lt;-<span class="st"> </span><span class="kw">which</span>(folds<span class="op">==</span>i,<span class="dt">arr.ind=</span><span class="ot">TRUE</span>)</span>
+<span id="cb289-11"><a href="Computational-Statistics.html#cb289-11"></a>  testData &lt;-<span class="st"> </span>dat[testIndexes, ]</span>
+<span id="cb289-12"><a href="Computational-Statistics.html#cb289-12"></a>  trainData &lt;-<span class="st"> </span>dat[<span class="op">-</span>testIndexes, ]</span>
+<span id="cb289-13"><a href="Computational-Statistics.html#cb289-13"></a>  <span class="co">#Use the test and train data partitions however you desire...</span></span>
+<span id="cb289-14"><a href="Computational-Statistics.html#cb289-14"></a>}</span></code></pre></div>
 </div>
 <div id="k-nearest-neighbor" class="section level2">
 <h2><span class="header-section-number">26.2</span> k nearest neighbor</h2>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="Computational-Statistics.html#cb289-1"></a>fit &lt;-<span class="st"> </span><span class="kw">kknn</span>(y <span class="op">~</span><span class="st"> </span>., dfTrain, dfTest, <span class="dt">k =</span> <span class="dv">8</span>)</span>
-<span id="cb289-2"><a href="Computational-Statistics.html#cb289-2"></a>pred &lt;-<span class="st"> </span><span class="kw">predict</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="Computational-Statistics.html#cb290-1"></a>fit &lt;-<span class="st"> </span><span class="kw">kknn</span>(y <span class="op">~</span><span class="st"> </span>., dfTrain, dfTest, <span class="dt">k =</span> <span class="dv">8</span>)</span>
+<span id="cb290-2"><a href="Computational-Statistics.html#cb290-2"></a>pred &lt;-<span class="st"> </span><span class="kw">predict</span>(fit)</span></code></pre></div>
 </div>
 <div id="bootstrap" class="section level2">
 <h2><span class="header-section-number">26.3</span> Bootstrap</h2>
 <p><strong>Problem:</strong> If we would know the true Model (data generating mechanism) <span class="math inline">\(P\)</span> we could use simulation to get the distribution of estimator <span class="math inline">\(\hat{\theta}\)</span></p>
 <p><strong>Idea</strong> Simulate from estimated version of <span class="math inline">\(P\)</span> (<span class="math inline">\(= \hat{P}\)</span>)</p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="Computational-Statistics.html#cb290-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="dt">path =</span> <span class="st">&quot;figures/bootstrap_diag.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="Computational-Statistics.html#cb291-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="dt">path =</span> <span class="st">&quot;figures/bootstrap_diag.png&quot;</span>)</span></code></pre></div>
 <p><img src="figures/bootstrap_diag.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="Computational-Statistics.html#cb291-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="dt">path =</span> <span class="st">&quot;https://www.draw.io/?lightbox=1&amp;highlight=0000ff&amp;edit=_blank&amp;layers=1&amp;nav=1#G1CE9oSwrcFVZVwdF3DGHnH7C9xUT3tmeG&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="Computational-Statistics.html#cb292-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="dt">path =</span> <span class="st">&quot;https://www.draw.io/?lightbox=1&amp;highlight=0000ff&amp;edit=_blank&amp;layers=1&amp;nav=1#G1CE9oSwrcFVZVwdF3DGHnH7C9xUT3tmeG&quot;</span>)</span></code></pre></div>
 <p><img src="https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1#G1CE9oSwrcFVZVwdF3DGHnH7C9xUT3tmeG" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="Computational-Statistics.html#cb292-1"></a><span class="co">## Question: Can I access draw.io graphics which I saved on Google drive directly via a link?</span></span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="Computational-Statistics.html#cb293-1"></a><span class="co">## Question: Can I access draw.io graphics which I saved on Google drive directly via a link?</span></span></code></pre></div>
 <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;www.draw.io\&quot; modified=\&quot;2020-02-02T16:33:31.851Z\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36\&quot; etag=\&quot;wfRMFttaLNwQe4VnSy61\&quot; version=\&quot;12.6.4\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;q9leG2a7vCDuBEXNin2n\&quot; name=\&quot;Page-1\&quot;&gt;7Vltb9owEP41kbZKnRIbSPm4UNpqXVWkruvaL5WbuElaE1PHFMKvn4OdN5IAbYHQaRISufPZsZ/nnjsLNNgbTk8ZGnkX1MFEA7oz1eCxBoBh6EB8xZ5Ieo6OlMNlvqOCMseVP8PKqSvv2HdwWAjklBLuj4pOmwYBtnnBhxijk2LYIyXFt46Qi0uOKxuRsvfGd7inTgHMzH+GfddL3mx0unJkiJJgtUToIYdOpGt+ONjXYI9RyuXTcNrDJAYvwUUicFIzmm6M4YCvM+GFeb97l79mJ5d39rVv/XBh9/uh2mzIo+TA2BHnVyZl3KMuDRDpZ16L0XHg4HhVXVhZzE9KR8JpCOcT5jxSZKIxp8Ll8SFRo3jq8z/x9G9tZd3mRo6nauW5ESVGwFmUmxSbt/mxbNrcSuaVUUrooGNm4yXQJNmGmIv5kjiVzzFuuRcoDk4xHWKxHxHAMEHcfy3mFVLp6aZxGYPiQZH4BkLVuq+IjNWbNNASn4H8KtFdJHPi+RxfjdAcmIlQdJG4WjBfMeN4uvT4yajKUj1asCc5dSmXlxNWS98SYO0mFWDk8j9TwyoFFPI/k8PGFQDWVADcLwXon6WmfZiZzSGupg6oL7aSibVTFGuqzGQJmRpq1gJv6TbeTyWoKWZ39+IoYklda/ccykNp3N0He1rkgL67IvfUCW9ewOTsfHZ9fn06nD1cWDDpCvsviVybBzvq83DNKtdpqspVMgo+IaPmf0ZX77pU7ESN8xDXTGugmcd7UuDS6rUvtzijYT2AXXT9jedrddeHrWa7vgGb5dL8h7hsNXyD69QUtS/xFa7dF1XtwJiXtcrbXBbwtSIit4a1ag1LrtEhgibrgYknl8/5+3g5ffQJ6VFCmbADGuDtVNiqK2RaTndTYut+WkgblHjgHuZIYL2Zq/h2oC3dzo+abl6ttyG7VDdL50idfGIVVFC1YxWYFVwtABd6aBQ/2mNGIosh+zm+hq5CMIO7Bk9GuWgFNBCew+7S7rM+wLC7AHCrAuAKfLcIcLdeDDKf2/2DOM/jIX0gra3kb8gZfcabT+rF+xU0y5gbVaC/A3NhZv8wyKae/U8D+38B&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}">
 
 </div>

@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-11" />
+<meta name="date" content="2021-01-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -325,7 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>16.5.3</b> panel.first</a></li>
 <li class="chapter" data-level="16.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>16.5.4</b> Area under curve</a></li>
 </ul></li>
-<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.6</b> Plot empty</a></li>
+<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-math-coordinate-system"><i class="fa fa-check"></i><b>16.6</b> Plot Math Coordinate System</a></li>
+<li class="chapter" data-level="16.7" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.7</b> Plot empty</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>17</b> Interactive Plots</a></li>
 <li class="chapter" data-level="18" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>18</b> ggplot</a><ul>
@@ -487,11 +488,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="32.3" data-path="r-markdown-1.html"><a href="r-markdown-1.html#tables"><i class="fa fa-check"></i><b>32.3</b> Tables</a><ul>
 <li class="chapter" data-level="32.3.1" data-path="r-markdown-1.html"><a href="r-markdown-1.html#html-tables"><i class="fa fa-check"></i><b>32.3.1</b> HTML tables</a></li>
 </ul></li>
-<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#sepecial-characters"><i class="fa fa-check"></i><b>32.4</b> Sepecial characters</a></li>
-<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.5</b> Section folding</a></li>
-<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.6</b> Add box</a></li>
-<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.7</b> Template</a></li>
-<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.8</b> Good output formats</a></li>
+<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#math"><i class="fa fa-check"></i><b>32.4</b> Math</a></li>
+<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#special-characters"><i class="fa fa-check"></i><b>32.5</b> Special characters</a></li>
+<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.6</b> Section folding</a></li>
+<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.7</b> Add box</a></li>
+<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.8</b> Template</a></li>
+<li class="chapter" data-level="32.9" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.9</b> Good output formats</a></li>
 </ul></li>
 <li class="chapter" data-level="33" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>33</b> Bookdown</a><ul>
 <li class="chapter" data-level="33.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>33.1</b> Configuration</a><ul>
@@ -1152,16 +1154,16 @@ R
 <h2><span class="header-section-number">30.7</span> Math environments</h2>
 <p>Reto Math supports Theorems, Definitions, Results, Proofs and Examples. Definitions are followed by a black diamond (<span class="math inline">\(\blacklozenge\)</span>), Proofs by an open square (<span class="math inline">\(\square\)</span>) and examples by a filled square(<span class="math inline">\(\blacksquare\)</span>).</p>
 <p>Example</p>
-<div class="sourceCode" id="cb324"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb324-1"><a href="latex.html#cb324-1"></a><span class="kw">\begin</span>{<span class="ex">example</span>}</span>
-<span id="cb324-2"><a href="latex.html#cb324-2"></a>  This is an example</span>
-<span id="cb324-3"><a href="latex.html#cb324-3"></a><span class="kw">\end</span>{<span class="ex">example</span>}</span></code></pre></div>
-<p>If math environment ends with display (equation block) add <code>\qedhere</code> to end of equation such that symbol is on same line as the equation and no page break can happen between end of equation and symbol.</p>
 <div class="sourceCode" id="cb325"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb325-1"><a href="latex.html#cb325-1"></a><span class="kw">\begin</span>{<span class="ex">example</span>}</span>
 <span id="cb325-2"><a href="latex.html#cb325-2"></a>  This is an example</span>
-<span id="cb325-3"><a href="latex.html#cb325-3"></a>  <span class="kw">\begin</span>{<span class="ex">equation*</span>}</span>
-<span id="cb325-4"><a href="latex.html#cb325-4"></a><span class="ss">    x = 1+2 </span><span class="sc">\qedhere</span></span>
-<span id="cb325-5"><a href="latex.html#cb325-5"></a><span class="ss">  </span><span class="kw">\end</span>{<span class="ex">equation*</span>}</span>
-<span id="cb325-6"><a href="latex.html#cb325-6"></a><span class="kw">\end</span>{<span class="ex">example</span>}</span></code></pre></div>
+<span id="cb325-3"><a href="latex.html#cb325-3"></a><span class="kw">\end</span>{<span class="ex">example</span>}</span></code></pre></div>
+<p>If math environment ends with display (equation block) add <code>\qedhere</code> to end of equation such that symbol is on same line as the equation and no page break can happen between end of equation and symbol.</p>
+<div class="sourceCode" id="cb326"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb326-1"><a href="latex.html#cb326-1"></a><span class="kw">\begin</span>{<span class="ex">example</span>}</span>
+<span id="cb326-2"><a href="latex.html#cb326-2"></a>  This is an example</span>
+<span id="cb326-3"><a href="latex.html#cb326-3"></a>  <span class="kw">\begin</span>{<span class="ex">equation*</span>}</span>
+<span id="cb326-4"><a href="latex.html#cb326-4"></a><span class="ss">    x = 1+2 </span><span class="sc">\qedhere</span></span>
+<span id="cb326-5"><a href="latex.html#cb326-5"></a><span class="ss">  </span><span class="kw">\end</span>{<span class="ex">equation*</span>}</span>
+<span id="cb326-6"><a href="latex.html#cb326-6"></a><span class="kw">\end</span>{<span class="ex">example</span>}</span></code></pre></div>
 <p>Detailed information <a href="https://tex.stackexchange.com/questions/16453/denoting-the-end-of-example-remark/32394#32394">here</a></p>
 <p>Consider replacing the current solution with package <code>ntheorem</code> (reasons outlined <a href="https://tex.stackexchange.com/questions/232438/using-qedhere-automatically-in-every-proof">here</a>. However, there are also arguments against it <a href="https://tex.stackexchange.com/questions/5599/theorem-packages-which-to-use-which-conflict">here</a>)</p>
 

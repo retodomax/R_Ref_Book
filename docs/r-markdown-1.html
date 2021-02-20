@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-11" />
+<meta name="date" content="2021-01-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -325,7 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>16.5.3</b> panel.first</a></li>
 <li class="chapter" data-level="16.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>16.5.4</b> Area under curve</a></li>
 </ul></li>
-<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.6</b> Plot empty</a></li>
+<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-math-coordinate-system"><i class="fa fa-check"></i><b>16.6</b> Plot Math Coordinate System</a></li>
+<li class="chapter" data-level="16.7" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.7</b> Plot empty</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>17</b> Interactive Plots</a></li>
 <li class="chapter" data-level="18" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>18</b> ggplot</a><ul>
@@ -487,11 +488,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="32.3" data-path="r-markdown-1.html"><a href="r-markdown-1.html#tables"><i class="fa fa-check"></i><b>32.3</b> Tables</a><ul>
 <li class="chapter" data-level="32.3.1" data-path="r-markdown-1.html"><a href="r-markdown-1.html#html-tables"><i class="fa fa-check"></i><b>32.3.1</b> HTML tables</a></li>
 </ul></li>
-<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#sepecial-characters"><i class="fa fa-check"></i><b>32.4</b> Sepecial characters</a></li>
-<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.5</b> Section folding</a></li>
-<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.6</b> Add box</a></li>
-<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.7</b> Template</a></li>
-<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.8</b> Good output formats</a></li>
+<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#math"><i class="fa fa-check"></i><b>32.4</b> Math</a></li>
+<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#special-characters"><i class="fa fa-check"></i><b>32.5</b> Special characters</a></li>
+<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.6</b> Section folding</a></li>
+<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.7</b> Add box</a></li>
+<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.8</b> Template</a></li>
+<li class="chapter" data-level="32.9" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.9</b> Good output formats</a></li>
 </ul></li>
 <li class="chapter" data-level="33" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>33</b> Bookdown</a><ul>
 <li class="chapter" data-level="33.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>33.1</b> Configuration</a><ul>
@@ -765,18 +767,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>child</code>: You can include a child document in the main document. This option takes a path to an external file.</li>
 </ul>
 <p>Set chunk option globally:</p>
-<div class="sourceCode" id="cb327"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb327-1"><a href="r-markdown-1.html#cb327-1"></a><span class="bn">```{r, setup, include=FALSE}</span></span>
-<span id="cb327-2"><a href="r-markdown-1.html#cb327-2"></a><span class="bn">knitr::opts_chunk$set(comment = &quot;##&quot;,</span></span>
-<span id="cb327-3"><a href="r-markdown-1.html#cb327-3"></a><span class="bn">                      tidy = FALSE,</span></span>
-<span id="cb327-4"><a href="r-markdown-1.html#cb327-4"></a><span class="bn">                      fig.align = &quot;center&quot;,</span></span>
-<span id="cb327-5"><a href="r-markdown-1.html#cb327-5"></a><span class="bn">                      out.width = &quot;50%&quot;,</span></span>
-<span id="cb327-6"><a href="r-markdown-1.html#cb327-6"></a><span class="bn">                      fig.width = 7,</span></span>
-<span id="cb327-7"><a href="r-markdown-1.html#cb327-7"></a><span class="bn">                      fig.height = 5,</span></span>
-<span id="cb327-8"><a href="r-markdown-1.html#cb327-8"></a><span class="bn">                      echo = TRUE,</span></span>
-<span id="cb327-9"><a href="r-markdown-1.html#cb327-9"></a><span class="bn">                      warning = FALSE,</span></span>
-<span id="cb327-10"><a href="r-markdown-1.html#cb327-10"></a><span class="bn">                      message = FALSE,</span></span>
-<span id="cb327-11"><a href="r-markdown-1.html#cb327-11"></a><span class="bn">                      error = FALSE)</span></span>
-<span id="cb327-12"><a href="r-markdown-1.html#cb327-12"></a><span class="bn">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb328-1"><a href="r-markdown-1.html#cb328-1"></a><span class="bn">```{r, setup, include=FALSE}</span></span>
+<span id="cb328-2"><a href="r-markdown-1.html#cb328-2"></a><span class="bn">knitr::opts_chunk$set(comment = &quot;##&quot;,</span></span>
+<span id="cb328-3"><a href="r-markdown-1.html#cb328-3"></a><span class="bn">                      tidy = FALSE,</span></span>
+<span id="cb328-4"><a href="r-markdown-1.html#cb328-4"></a><span class="bn">                      fig.align = &quot;center&quot;,</span></span>
+<span id="cb328-5"><a href="r-markdown-1.html#cb328-5"></a><span class="bn">                      out.width = &quot;50%&quot;,</span></span>
+<span id="cb328-6"><a href="r-markdown-1.html#cb328-6"></a><span class="bn">                      fig.width = 7,</span></span>
+<span id="cb328-7"><a href="r-markdown-1.html#cb328-7"></a><span class="bn">                      fig.height = 5,</span></span>
+<span id="cb328-8"><a href="r-markdown-1.html#cb328-8"></a><span class="bn">                      echo = TRUE,</span></span>
+<span id="cb328-9"><a href="r-markdown-1.html#cb328-9"></a><span class="bn">                      warning = FALSE,</span></span>
+<span id="cb328-10"><a href="r-markdown-1.html#cb328-10"></a><span class="bn">                      message = FALSE,</span></span>
+<span id="cb328-11"><a href="r-markdown-1.html#cb328-11"></a><span class="bn">                      error = FALSE)</span></span>
+<span id="cb328-12"><a href="r-markdown-1.html#cb328-12"></a><span class="bn">```</span></span></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -787,9 +789,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">32.2</span> Figures</h2>
 <p>Plot from code chunks or insert via <code>knitr::include_graphics()</code></p>
 <p>e.g.</p>
-<div class="sourceCode" id="cb328"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb328-1"><a href="r-markdown-1.html#cb328-1"></a><span class="bn">```{r, echo = FALSE, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></span>
-<span id="cb328-2"><a href="r-markdown-1.html#cb328-2"></a><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></span>
-<span id="cb328-3"><a href="r-markdown-1.html#cb328-3"></a><span class="bn">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb329-1"><a href="r-markdown-1.html#cb329-1"></a><span class="bn">```{r, echo = FALSE, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></span>
+<span id="cb329-2"><a href="r-markdown-1.html#cb329-2"></a><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></span>
+<span id="cb329-3"><a href="r-markdown-1.html#cb329-3"></a><span class="bn">```</span></span></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -820,20 +822,20 @@ Figure 32.1: The R Markdown hex logo.
 <div id="wrap-text-arround-plot" class="section level5 unnumbered">
 <h5>Wrap text arround plot</h5>
 <p>Plots can be placed on right side with text wraped arround it. Use the following chunk options:</p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb329-1"><a href="r-markdown-1.html#cb329-1"></a><span class="bn">```{r, out.width=&#39;25%&#39;, echo = FALSE, out.extra=&#39;style=&quot;float:right; padding:5px&quot;&#39;}</span></span>
-<span id="cb329-2"><a href="r-markdown-1.html#cb329-2"></a><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></span>
-<span id="cb329-3"><a href="r-markdown-1.html#cb329-3"></a><span class="bn">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb330-1"><a href="r-markdown-1.html#cb330-1"></a><span class="bn">```{r, out.width=&#39;25%&#39;, echo = FALSE, out.extra=&#39;style=&quot;float:right; padding:5px&quot;&#39;}</span></span>
+<span id="cb330-2"><a href="r-markdown-1.html#cb330-2"></a><span class="bn">knitr::include_graphics(&#39;figures/hex-rmarkdown.png&#39;)</span></span>
+<span id="cb330-3"><a href="r-markdown-1.html#cb330-3"></a><span class="bn">```</span></span></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
 </div>
 <div id="include-figure-which-serves-as-a-link" class="section level5 unnumbered">
 <h5>Include figure which serves as a link</h5>
-<div class="sourceCode" id="cb330"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb330-1"><a href="r-markdown-1.html#cb330-1"></a>&lt;a href=&quot;figures/03_pdf/lubridate.pdf&quot; target=&quot;_blank&quot;&gt; </span>
-<span id="cb330-2"><a href="r-markdown-1.html#cb330-2"></a><span class="bn">```{r, echo=FALSE, out.width=&#39;50%&#39;}</span></span>
-<span id="cb330-3"><a href="r-markdown-1.html#cb330-3"></a><span class="bn">knitr::include_graphics(&#39;figures/03_pdf/lubridate.jpg&#39;)</span></span>
-<span id="cb330-4"><a href="r-markdown-1.html#cb330-4"></a><span class="bn">```</span></span>
-<span id="cb330-5"><a href="r-markdown-1.html#cb330-5"></a>&lt;/a&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb331-1"><a href="r-markdown-1.html#cb331-1"></a>&lt;a href=&quot;figures/03_pdf/lubridate.pdf&quot; target=&quot;_blank&quot;&gt; </span>
+<span id="cb331-2"><a href="r-markdown-1.html#cb331-2"></a><span class="bn">```{r, echo=FALSE, out.width=&#39;50%&#39;}</span></span>
+<span id="cb331-3"><a href="r-markdown-1.html#cb331-3"></a><span class="bn">knitr::include_graphics(&#39;figures/03_pdf/lubridate.jpg&#39;)</span></span>
+<span id="cb331-4"><a href="r-markdown-1.html#cb331-4"></a><span class="bn">```</span></span>
+<span id="cb331-5"><a href="r-markdown-1.html#cb331-5"></a>&lt;/a&gt;</span></code></pre></div>
 <!-- 
 ## this seems necessary for correct source code displaying...
 ``` -->
@@ -870,41 +872,41 @@ Without using a header, the formated table is reduced to an unformatted html tab
 <p>Tables can be formatted in CSS if we are only interested in HTML output. Add the following internal <code>&lt;style&gt;</code> element (in document between <code>&lt;style&gt;</code> and <code>&lt;/style&gt;</code> tag) or use an external CSS file (<code>style.css</code>).</p>
 <div id="definition-tables" class="section level5 unnumbered">
 <h5>Definition tables</h5>
-<div class="sourceCode" id="cb331"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb331-1"><a href="r-markdown-1.html#cb331-1"></a><span class="co">/* definition tables (RZ) */</span></span>
-<span id="cb331-2"><a href="r-markdown-1.html#cb331-2"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></span>
-<span id="cb331-3"><a href="r-markdown-1.html#cb331-3"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></span>
-<span id="cb331-4"><a href="r-markdown-1.html#cb331-4"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</span>
-<span id="cb331-5"><a href="r-markdown-1.html#cb331-5"></a>{</span>
-<span id="cb331-6"><a href="r-markdown-1.html#cb331-6"></a>  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></span>
-<span id="cb331-7"><a href="r-markdown-1.html#cb331-7"></a>  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></span>
-<span id="cb331-8"><a href="r-markdown-1.html#cb331-8"></a>  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></span>
-<span id="cb331-9"><a href="r-markdown-1.html#cb331-9"></a>}</span>
-<span id="cb331-10"><a href="r-markdown-1.html#cb331-10"></a></span>
-<span id="cb331-11"><a href="r-markdown-1.html#cb331-11"></a><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</span>
-<span id="cb331-12"><a href="r-markdown-1.html#cb331-12"></a>  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></span>
-<span id="cb331-13"><a href="r-markdown-1.html#cb331-13"></a>  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></span>
-<span id="cb331-14"><a href="r-markdown-1.html#cb331-14"></a>}</span>
-<span id="cb331-15"><a href="r-markdown-1.html#cb331-15"></a><span class="fu">.deftab</span> th {</span>
-<span id="cb331-16"><a href="r-markdown-1.html#cb331-16"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></span>
-<span id="cb331-17"><a href="r-markdown-1.html#cb331-17"></a>}</span>
-<span id="cb331-18"><a href="r-markdown-1.html#cb331-18"></a><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</span>
-<span id="cb331-19"><a href="r-markdown-1.html#cb331-19"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></span>
-<span id="cb331-20"><a href="r-markdown-1.html#cb331-20"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb332-1"><a href="r-markdown-1.html#cb332-1"></a><span class="co">/* definition tables (RZ) */</span></span>
+<span id="cb332-2"><a href="r-markdown-1.html#cb332-2"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> td<span class="op">,</span></span>
+<span id="cb332-3"><a href="r-markdown-1.html#cb332-3"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> th<span class="op">,</span></span>
+<span id="cb332-4"><a href="r-markdown-1.html#cb332-4"></a><span class="fu">.book</span> <span class="fu">.book-body</span> <span class="fu">.page-wrapper</span> <span class="fu">.page-inner</span> section<span class="fu">.normal</span> <span class="fu">.deftab</span> tr</span>
+<span id="cb332-5"><a href="r-markdown-1.html#cb332-5"></a>{</span>
+<span id="cb332-6"><a href="r-markdown-1.html#cb332-6"></a>  <span class="kw">padding</span>:<span class="dv">0</span><span class="op">;</span></span>
+<span id="cb332-7"><a href="r-markdown-1.html#cb332-7"></a>  <span class="kw">border-style</span>: <span class="dv">hidden</span><span class="op">;</span></span>
+<span id="cb332-8"><a href="r-markdown-1.html#cb332-8"></a>  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb332-9"><a href="r-markdown-1.html#cb332-9"></a>}</span>
+<span id="cb332-10"><a href="r-markdown-1.html#cb332-10"></a></span>
+<span id="cb332-11"><a href="r-markdown-1.html#cb332-11"></a><span class="fu">.deftab</span> th<span class="op">,</span> <span class="fu">.deftab</span> td {</span>
+<span id="cb332-12"><a href="r-markdown-1.html#cb332-12"></a>  <span class="kw">vertical-align</span>: <span class="dv">top</span><span class="op">;</span></span>
+<span id="cb332-13"><a href="r-markdown-1.html#cb332-13"></a>  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb332-14"><a href="r-markdown-1.html#cb332-14"></a>}</span>
+<span id="cb332-15"><a href="r-markdown-1.html#cb332-15"></a><span class="fu">.deftab</span> th {</span>
+<span id="cb332-16"><a href="r-markdown-1.html#cb332-16"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* header cells are 20% width (first column) */</span></span>
+<span id="cb332-17"><a href="r-markdown-1.html#cb332-17"></a>}</span>
+<span id="cb332-18"><a href="r-markdown-1.html#cb332-18"></a><span class="fu">.deftab</span> td<span class="in">:nth-child(1)</span> {</span>
+<span id="cb332-19"><a href="r-markdown-1.html#cb332-19"></a>  <span class="kw">width</span>: <span class="dv">20</span><span class="dt">%</span><span class="op">;</span>       <span class="co">/* first td cell also 20% width (first column) */</span></span>
+<span id="cb332-20"><a href="r-markdown-1.html#cb332-20"></a>}</span></code></pre></div>
 <p>Afterwards we can use HTML tags to create the table</p>
-<div class="sourceCode" id="cb332"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb332-1"><a href="r-markdown-1.html#cb332-1"></a><span class="kw">&lt;table</span><span class="ot"> class</span> <span class="ot">=</span> <span class="st">&quot;deftab&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb332-2"><a href="r-markdown-1.html#cb332-2"></a>  <span class="kw">&lt;tr&gt;</span></span>
-<span id="cb332-3"><a href="r-markdown-1.html#cb332-3"></a>    <span class="kw">&lt;td&gt;</span>**Doe**<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb332-4"><a href="r-markdown-1.html#cb332-4"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb332-5"><a href="r-markdown-1.html#cb332-5"></a>  <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb332-6"><a href="r-markdown-1.html#cb332-6"></a>  <span class="kw">&lt;tr&gt;</span></span>
-<span id="cb332-7"><a href="r-markdown-1.html#cb332-7"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb332-8"><a href="r-markdown-1.html#cb332-8"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb332-9"><a href="r-markdown-1.html#cb332-9"></a>  <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb332-10"><a href="r-markdown-1.html#cb332-10"></a>  <span class="kw">&lt;tr&gt;</span></span>
-<span id="cb332-11"><a href="r-markdown-1.html#cb332-11"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb332-12"><a href="r-markdown-1.html#cb332-12"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb332-13"><a href="r-markdown-1.html#cb332-13"></a>  <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb332-14"><a href="r-markdown-1.html#cb332-14"></a><span class="kw">&lt;/table&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb333-1"><a href="r-markdown-1.html#cb333-1"></a><span class="kw">&lt;table</span><span class="ot"> class</span> <span class="ot">=</span> <span class="st">&quot;deftab&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb333-2"><a href="r-markdown-1.html#cb333-2"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb333-3"><a href="r-markdown-1.html#cb333-3"></a>    <span class="kw">&lt;td&gt;</span>**Doe**<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb333-4"><a href="r-markdown-1.html#cb333-4"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb333-5"><a href="r-markdown-1.html#cb333-5"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb333-6"><a href="r-markdown-1.html#cb333-6"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb333-7"><a href="r-markdown-1.html#cb333-7"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb333-8"><a href="r-markdown-1.html#cb333-8"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb333-9"><a href="r-markdown-1.html#cb333-9"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb333-10"><a href="r-markdown-1.html#cb333-10"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb333-11"><a href="r-markdown-1.html#cb333-11"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb333-12"><a href="r-markdown-1.html#cb333-12"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb333-13"><a href="r-markdown-1.html#cb333-13"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb333-14"><a href="r-markdown-1.html#cb333-14"></a><span class="kw">&lt;/table&gt;</span></span></code></pre></div>
 <p>Results in</p>
 <table class = "deftab">
 <tr>
@@ -935,8 +937,13 @@ John
 </div>
 </div>
 </div>
-<div id="sepecial-characters" class="section level2">
-<h2><span class="header-section-number">32.4</span> Sepecial characters</h2>
+<div id="math" class="section level2">
+<h2><span class="header-section-number">32.4</span> Math</h2>
+<p>New math commands can be included via Latex for pdf or <a href="https://www.mathjax.org/">Mathjax</a> for html.</p>
+<p>See this <a href="https://stackoverflow.com/questions/33226675/how-to-get-bm-to-work-in-an-r-markdown-to-html-file/33248213#33248213">StackOverflow post</a> on how to include a Mathjax preamble</p>
+</div>
+<div id="special-characters" class="section level2">
+<h2><span class="header-section-number">32.5</span> Special characters</h2>
 <ul>
 <li>Mathematical stuff with Latex
 <ul>
@@ -978,7 +985,7 @@ John
 </ul>
 </div>
 <div id="section-folding" class="section level2">
-<h2><span class="header-section-number">32.5</span> Section folding</h2>
+<h2><span class="header-section-number">32.6</span> Section folding</h2>
 <p>Section folding is only available for HTML documents. There are two good options</p>
 <ul>
 <li>Global code folding</li>
@@ -987,12 +994,12 @@ John
 <div id="global-code-folding" class="section level5 unnumbered">
 <h5>Global code folding</h5>
 <p>Well explained <a href="https://bookdown.org/yihui/rmarkdown/html-document.html#code-folding">here</a>. Put the line <code>code_folding: hide</code> in the YAML header</p>
-<div class="sourceCode" id="cb333"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb333-1"><a href="r-markdown-1.html#cb333-1"></a><span class="pp">---</span></span>
-<span id="cb333-2"><a href="r-markdown-1.html#cb333-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My Document&quot;</span></span>
-<span id="cb333-3"><a href="r-markdown-1.html#cb333-3"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb333-4"><a href="r-markdown-1.html#cb333-4"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb333-5"><a href="r-markdown-1.html#cb333-5"></a><span class="at">    </span><span class="fu">code_folding</span><span class="kw">:</span><span class="at"> hide</span></span>
-<span id="cb333-6"><a href="r-markdown-1.html#cb333-6"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb334-1"><a href="r-markdown-1.html#cb334-1"></a><span class="pp">---</span></span>
+<span id="cb334-2"><a href="r-markdown-1.html#cb334-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My Document&quot;</span></span>
+<span id="cb334-3"><a href="r-markdown-1.html#cb334-3"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb334-4"><a href="r-markdown-1.html#cb334-4"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb334-5"><a href="r-markdown-1.html#cb334-5"></a><span class="at">    </span><span class="fu">code_folding</span><span class="kw">:</span><span class="at"> hide</span></span>
+<span id="cb334-6"><a href="r-markdown-1.html#cb334-6"></a><span class="pp">---</span></span></code></pre></div>
 <p>You can specify <code>code_folding: show</code> to still show all R code by default but then allow users to hide the code if they wish.</p>
 </div>
 <div id="local-section-folding" class="section level5 unnumbered">
@@ -1002,26 +1009,26 @@ John
 <li>Add HTML code for button at beginning of your document. Alternatively you make a separate html file. Find button code and how to make separate HTML file in Chapter <a href="bookdown.html#NewBookdownProject">33.2</a></li>
 <li>Add this HTML code at the place were you want the button.</li>
 </ol>
-<div class="sourceCode" id="cb334"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb334-1"><a href="r-markdown-1.html#cb334-1"></a><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction(&#39;new_identifier&#39;)&quot;</span><span class="kw">&gt;</span>Text on button<span class="kw">&lt;/button&gt;</span></span>
-<span id="cb334-2"><a href="r-markdown-1.html#cb334-2"></a><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;new_identifier&quot;</span><span class="ot"> style=</span><span class="st">&quot;display: none&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb334-3"><a href="r-markdown-1.html#cb334-3"></a></span>
-<span id="cb334-4"><a href="r-markdown-1.html#cb334-4"></a>Blabla.</span>
-<span id="cb334-5"><a href="r-markdown-1.html#cb334-5"></a></span>
-<span id="cb334-6"><a href="r-markdown-1.html#cb334-6"></a><span class="kw">&lt;/div&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb335-1"><a href="r-markdown-1.html#cb335-1"></a><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction(&#39;new_identifier&#39;)&quot;</span><span class="kw">&gt;</span>Text on button<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb335-2"><a href="r-markdown-1.html#cb335-2"></a><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;new_identifier&quot;</span><span class="ot"> style=</span><span class="st">&quot;display: none&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb335-3"><a href="r-markdown-1.html#cb335-3"></a></span>
+<span id="cb335-4"><a href="r-markdown-1.html#cb335-4"></a>Blabla.</span>
+<span id="cb335-5"><a href="r-markdown-1.html#cb335-5"></a></span>
+<span id="cb335-6"><a href="r-markdown-1.html#cb335-6"></a><span class="kw">&lt;/div&gt;</span></span></code></pre></div>
 <p>Replace <code>new_identifier</code> with unique identifier for that section. Replace <code>Text on button</code> and <code>Blabla</code></p>
 </div>
 </div>
 <div id="add-box" class="section level2">
-<h2><span class="header-section-number">32.6</span> Add box</h2>
+<h2><span class="header-section-number">32.7</span> Add box</h2>
 <p>These type of boxes are only available for HTML documents.
 There is a good implementation to add boxes for caution, important, note, tip and waring</p>
 <ol style="list-style-type: decimal">
 <li>Add CSS code for button at beginning of your document. Alternatively you make a separate CSS style file. Find button code and how to make separate CSS style file in Chapter <a href="bookdown.html#NewBookdownProject">33.2</a></li>
 <li>Add this code at the place were you want the button.</li>
 </ol>
-<div class="sourceCode" id="cb335"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb335-1"><a href="r-markdown-1.html#cb335-1"></a><span class="bn">```{block2, type=&#39;rmdcaution&#39;}</span></span>
-<span id="cb335-2"><a href="r-markdown-1.html#cb335-2"></a><span class="bn">Text</span></span>
-<span id="cb335-3"><a href="r-markdown-1.html#cb335-3"></a><span class="bn">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb336-1"><a href="r-markdown-1.html#cb336-1"></a><span class="bn">```{block2, type=&#39;rmdcaution&#39;}</span></span>
+<span id="cb336-2"><a href="r-markdown-1.html#cb336-2"></a><span class="bn">Text</span></span>
+<span id="cb336-3"><a href="r-markdown-1.html#cb336-3"></a><span class="bn">```</span></span></code></pre></div>
 <p>Replace <code>rmdcaution</code> with <code>rmdimportant</code>, <code>rmdnote</code>, <code>rmdtip</code> and <code>rmdwarning</code>. Note that the code chunk always needs to be taged as <code>block2</code>.</p>
 <p>Here how they look like</p>
 
@@ -1051,151 +1058,151 @@ Warning
 
 </div>
 <div id="template" class="section level2">
-<h2><span class="header-section-number">32.7</span> Template</h2>
+<h2><span class="header-section-number">32.8</span> Template</h2>
 <p>This is a template containing structure, equations, references, cross-references, figures and tables with caption. The rendered output of the template can be found <a href="https://retodomax.github.io/R_Ref_Book/template.html">here</a>.
 To get the the template in pdf, replace the <code>output</code> section in the YAML header with</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb336-1"><a href="r-markdown-1.html#cb336-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb336-2"><a href="r-markdown-1.html#cb336-2"></a><span class="at">    bookdown:</span><span class="fu">:pdf_document2</span><span class="kw">:</span></span>
-<span id="cb336-3"><a href="r-markdown-1.html#cb336-3"></a><span class="at">      </span><span class="fu">includes</span><span class="kw">:</span></span>
-<span id="cb336-4"><a href="r-markdown-1.html#cb336-4"></a><span class="at">          </span><span class="fu">in_header</span><span class="kw">:</span></span>
-<span id="cb336-5"><a href="r-markdown-1.html#cb336-5"></a><span class="at">            </span><span class="kw">-</span><span class="at"> /home/reto/texmf-local/tex/latex/commonstuff/RetoArticle.sty</span></span>
-<span id="cb336-6"><a href="r-markdown-1.html#cb336-6"></a><span class="at">            </span><span class="kw">-</span><span class="at"> /home/reto/texmf-local/tex/latex/commonstuff/RetoMath.sty</span></span>
-<span id="cb336-7"><a href="r-markdown-1.html#cb336-7"></a><span class="fu">classoption</span><span class="kw">:</span><span class="at"> a4paper</span></span>
-<span id="cb336-8"><a href="r-markdown-1.html#cb336-8"></a><span class="fu">geometry</span><span class="kw">:</span><span class="at"> margin=2.5cm</span></span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb337-1"><a href="r-markdown-1.html#cb337-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb337-2"><a href="r-markdown-1.html#cb337-2"></a><span class="at">    bookdown:</span><span class="fu">:pdf_document2</span><span class="kw">:</span></span>
+<span id="cb337-3"><a href="r-markdown-1.html#cb337-3"></a><span class="at">      </span><span class="fu">includes</span><span class="kw">:</span></span>
+<span id="cb337-4"><a href="r-markdown-1.html#cb337-4"></a><span class="at">          </span><span class="fu">in_header</span><span class="kw">:</span></span>
+<span id="cb337-5"><a href="r-markdown-1.html#cb337-5"></a><span class="at">            </span><span class="kw">-</span><span class="at"> /home/reto/texmf-local/tex/latex/commonstuff/RetoArticle.sty</span></span>
+<span id="cb337-6"><a href="r-markdown-1.html#cb337-6"></a><span class="at">            </span><span class="kw">-</span><span class="at"> /home/reto/texmf-local/tex/latex/commonstuff/RetoMath.sty</span></span>
+<span id="cb337-7"><a href="r-markdown-1.html#cb337-7"></a><span class="fu">classoption</span><span class="kw">:</span><span class="at"> a4paper</span></span>
+<span id="cb337-8"><a href="r-markdown-1.html#cb337-8"></a><span class="fu">geometry</span><span class="kw">:</span><span class="at"> margin=2.5cm</span></span></code></pre></div>
 <p>A shorted template is available as code snipped “html” and “pdf”.</p>
 <button onclick="myFunction(&#39;markdown_template&#39;)">
 Show template
 </button>
 <div id="markdown_template" style="display: none">
-<div class="sourceCode" id="cb337"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb337-1"><a href="r-markdown-1.html#cb337-1"></a>---</span>
-<span id="cb337-2"><a href="r-markdown-1.html#cb337-2"></a>project: MyProj    #################################################</span>
-<span id="cb337-3"><a href="r-markdown-1.html#cb337-3"></a>title:   Template</span>
-<span id="cb337-4"><a href="r-markdown-1.html#cb337-4"></a>author:  &quot;<span class="ot">[Reto Zihlmann](https://retodomax.github.io/)</span>&quot;</span>
-<span id="cb337-5"><a href="r-markdown-1.html#cb337-5"></a>date:    &quot;<span class="bn">`r Sys.Date()`</span>&quot;</span>
-<span id="cb337-6"><a href="r-markdown-1.html#cb337-6"></a>output:</span>
-<span id="cb337-7"><a href="r-markdown-1.html#cb337-7"></a>  bookdown::html_document2:</span>
-<span id="cb337-8"><a href="r-markdown-1.html#cb337-8"></a><span class="bn">    toc: true</span></span>
-<span id="cb337-9"><a href="r-markdown-1.html#cb337-9"></a><span class="bn">    toc_float: true</span></span>
-<span id="cb337-10"><a href="r-markdown-1.html#cb337-10"></a>bibliography:</span>
-<span id="cb337-11"><a href="r-markdown-1.html#cb337-11"></a>  - &quot;/home/reto/texmf-local/bibtex/bib/bib.bib&quot;</span>
-<span id="cb337-12"><a href="r-markdown-1.html#cb337-12"></a>  - bib_packages.bib</span>
-<span id="cb337-13"><a href="r-markdown-1.html#cb337-13"></a>link-citations: true</span>
-<span id="cb337-14"><a href="r-markdown-1.html#cb337-14"></a>---</span>
-<span id="cb337-15"><a href="r-markdown-1.html#cb337-15"></a></span>
-<span id="cb337-16"><a href="r-markdown-1.html#cb337-16"></a><span class="bn">```{r, setup, include=FALSE}</span></span>
-<span id="cb337-17"><a href="r-markdown-1.html#cb337-17"></a><span class="bn">knitr::opts_chunk$set(comment = &quot;&quot;,</span></span>
-<span id="cb337-18"><a href="r-markdown-1.html#cb337-18"></a><span class="bn">                      tidy = TRUE,</span></span>
-<span id="cb337-19"><a href="r-markdown-1.html#cb337-19"></a><span class="bn">                      fig.align = &quot;left&quot;,</span></span>
-<span id="cb337-20"><a href="r-markdown-1.html#cb337-20"></a><span class="bn">                      out.width = &quot;100%&quot;,</span></span>
-<span id="cb337-21"><a href="r-markdown-1.html#cb337-21"></a><span class="bn">                      echo = FALSE,</span></span>
-<span id="cb337-22"><a href="r-markdown-1.html#cb337-22"></a><span class="bn">                      warning = FALSE,</span></span>
-<span id="cb337-23"><a href="r-markdown-1.html#cb337-23"></a><span class="bn">                      message = FALSE,</span></span>
-<span id="cb337-24"><a href="r-markdown-1.html#cb337-24"></a><span class="bn">                      error = FALSE)</span></span>
-<span id="cb337-25"><a href="r-markdown-1.html#cb337-25"></a><span class="bn">```</span></span>
-<span id="cb337-26"><a href="r-markdown-1.html#cb337-26"></a></span>
-<span id="cb337-27"><a href="r-markdown-1.html#cb337-27"></a><span class="bn">```{r, package-bib, include=FALSE}</span></span>
-<span id="cb337-28"><a href="r-markdown-1.html#cb337-28"></a><span class="bn"># automatically create a bib database for R packages</span></span>
-<span id="cb337-29"><a href="r-markdown-1.html#cb337-29"></a><span class="bn">knitr::write_bib(c(</span></span>
-<span id="cb337-30"><a href="r-markdown-1.html#cb337-30"></a><span class="bn">  .packages(), &#39;bookdown&#39;, &#39;knitr&#39;, &#39;rmarkdown&#39;, &quot;mgcv&quot;</span></span>
-<span id="cb337-31"><a href="r-markdown-1.html#cb337-31"></a><span class="bn">), &#39;bib_packages.bib&#39;)</span></span>
-<span id="cb337-32"><a href="r-markdown-1.html#cb337-32"></a><span class="bn">```</span></span>
-<span id="cb337-33"><a href="r-markdown-1.html#cb337-33"></a></span>
-<span id="cb337-34"><a href="r-markdown-1.html#cb337-34"></a></span>
-<span id="cb337-35"><a href="r-markdown-1.html#cb337-35"></a>&lt;!--<span class="co"> CSS Stype for Figure caption --&gt;</span></span>
-<span id="cb337-36"><a href="r-markdown-1.html#cb337-36"></a>&lt;!--<span class="co"> CSS Style for more space between headers --&gt;</span></span>
-<span id="cb337-37"><a href="r-markdown-1.html#cb337-37"></a>&lt;style&gt;</span>
-<span id="cb337-38"><a href="r-markdown-1.html#cb337-38"></a>caption {</span>
-<span id="cb337-39"><a href="r-markdown-1.html#cb337-39"></a>  color: gray;</span>
-<span id="cb337-40"><a href="r-markdown-1.html#cb337-40"></a>  font-size: 0.8em;</span>
-<span id="cb337-41"><a href="r-markdown-1.html#cb337-41"></a>}</span>
-<span id="cb337-42"><a href="r-markdown-1.html#cb337-42"></a>p.caption {</span>
-<span id="cb337-43"><a href="r-markdown-1.html#cb337-43"></a>  color: gray;</span>
-<span id="cb337-44"><a href="r-markdown-1.html#cb337-44"></a>  font-size: 0.8em;</span>
-<span id="cb337-45"><a href="r-markdown-1.html#cb337-45"></a>  padding-bottom: 30px;</span>
-<span id="cb337-46"><a href="r-markdown-1.html#cb337-46"></a>}</span>
-<span id="cb337-47"><a href="r-markdown-1.html#cb337-47"></a>h1, .h1 {</span>
-<span id="cb337-48"><a href="r-markdown-1.html#cb337-48"></a><span class="bn">    margin-top: 84px;</span></span>
-<span id="cb337-49"><a href="r-markdown-1.html#cb337-49"></a>}</span>
-<span id="cb337-50"><a href="r-markdown-1.html#cb337-50"></a>h2, .h2, h3, .h3 {</span>
-<span id="cb337-51"><a href="r-markdown-1.html#cb337-51"></a><span class="bn">    margin-top: 42px;</span></span>
-<span id="cb337-52"><a href="r-markdown-1.html#cb337-52"></a>}</span>
-<span id="cb337-53"><a href="r-markdown-1.html#cb337-53"></a>&lt;/style&gt;</span>
-<span id="cb337-54"><a href="r-markdown-1.html#cb337-54"></a></span>
-<span id="cb337-55"><a href="r-markdown-1.html#cb337-55"></a></span>
-<span id="cb337-56"><a href="r-markdown-1.html#cb337-56"></a><span class="fu"># Abstract {-}</span></span>
-<span id="cb337-57"><a href="r-markdown-1.html#cb337-57"></a></span>
-<span id="cb337-58"><a href="r-markdown-1.html#cb337-58"></a>Here is some small abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-<span id="cb337-59"><a href="r-markdown-1.html#cb337-59"></a></span>
-<span id="cb337-60"><a href="r-markdown-1.html#cb337-60"></a></span>
-<span id="cb337-61"><a href="r-markdown-1.html#cb337-61"></a><span class="fu"># Introduction {#intro}</span></span>
-<span id="cb337-62"><a href="r-markdown-1.html#cb337-62"></a></span>
-<span id="cb337-63"><a href="r-markdown-1.html#cb337-63"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-<span id="cb337-64"><a href="r-markdown-1.html#cb337-64"></a></span>
-<span id="cb337-65"><a href="r-markdown-1.html#cb337-65"></a>1. <span class="st">What is the first research question?</span></span>
-<span id="cb337-66"><a href="r-markdown-1.html#cb337-66"></a><span class="st">2. How should we answer it?</span></span>
-<span id="cb337-67"><a href="r-markdown-1.html#cb337-67"></a><span class="st">3. What is the third research question?</span></span>
-<span id="cb337-68"><a href="r-markdown-1.html#cb337-68"></a></span>
-<span id="cb337-69"><a href="r-markdown-1.html#cb337-69"></a></span>
-<span id="cb337-70"><a href="r-markdown-1.html#cb337-70"></a><span class="fu"># Method {#method}</span></span>
-<span id="cb337-71"><a href="r-markdown-1.html#cb337-71"></a></span>
-<span id="cb337-72"><a href="r-markdown-1.html#cb337-72"></a><span class="fu">## Idea {#idea}</span></span>
-<span id="cb337-73"><a href="r-markdown-1.html#cb337-73"></a></span>
-<span id="cb337-74"><a href="r-markdown-1.html#cb337-74"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit (see <span class="ot">[here](https://www.google.ch/))</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Some inline equation $h = f(x)$ in the middle of text. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-<span id="cb337-75"><a href="r-markdown-1.html#cb337-75"></a></span>
-<span id="cb337-76"><a href="r-markdown-1.html#cb337-76"></a>$$</span>
-<span id="cb337-77"><a href="r-markdown-1.html#cb337-77"></a>a^2 + b^2 = c^2</span>
-<span id="cb337-78"><a href="r-markdown-1.html#cb337-78"></a>(\#eq:pythagoras)</span>
-<span id="cb337-79"><a href="r-markdown-1.html#cb337-79"></a>$$</span>
-<span id="cb337-80"><a href="r-markdown-1.html#cb337-80"></a></span>
-<span id="cb337-81"><a href="r-markdown-1.html#cb337-81"></a>As you can see in Equation \@ref(eq:pythagoras), lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-<span id="cb337-82"><a href="r-markdown-1.html#cb337-82"></a></span>
-<span id="cb337-83"><a href="r-markdown-1.html#cb337-83"></a></span>
-<span id="cb337-84"><a href="r-markdown-1.html#cb337-84"></a><span class="bn">```{r, someCalculations, echo = T}</span></span>
-<span id="cb337-85"><a href="r-markdown-1.html#cb337-85"></a><span class="bn">x &lt;- 5.012345678901234567890</span></span>
-<span id="cb337-86"><a href="r-markdown-1.html#cb337-86"></a><span class="bn">y &lt;- 1:20</span></span>
-<span id="cb337-87"><a href="r-markdown-1.html#cb337-87"></a><span class="bn">```</span></span>
-<span id="cb337-88"><a href="r-markdown-1.html#cb337-88"></a></span>
-<span id="cb337-89"><a href="r-markdown-1.html#cb337-89"></a></span>
-<span id="cb337-90"><a href="r-markdown-1.html#cb337-90"></a>In this text we use the variable $x$ and write it  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 inline in text. Now a picture</span>
-<span id="cb337-91"><a href="r-markdown-1.html#cb337-91"></a></span>
-<span id="cb337-92"><a href="r-markdown-1.html#cb337-92"></a></span>
-<span id="cb337-93"><a href="r-markdown-1.html#cb337-93"></a>(ref:resPr3) This is the figure caption. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure.</span>
-<span id="cb337-94"><a href="r-markdown-1.html#cb337-94"></a></span>
-<span id="cb337-95"><a href="r-markdown-1.html#cb337-95"></a><span class="fu">## Calcultion {#calc}</span></span>
-<span id="cb337-96"><a href="r-markdown-1.html#cb337-96"></a></span>
-<span id="cb337-97"><a href="r-markdown-1.html#cb337-97"></a><span class="bn">```{r, figPoints, fig.cap=&quot;(ref:resPr3)&quot;}</span></span>
-<span id="cb337-98"><a href="r-markdown-1.html#cb337-98"></a><span class="bn">plot(1:10)</span></span>
-<span id="cb337-99"><a href="r-markdown-1.html#cb337-99"></a><span class="bn">```</span></span>
-<span id="cb337-100"><a href="r-markdown-1.html#cb337-100"></a></span>
-<span id="cb337-101"><a href="r-markdown-1.html#cb337-101"></a></span>
-<span id="cb337-102"><a href="r-markdown-1.html#cb337-102"></a></span>
-<span id="cb337-103"><a href="r-markdown-1.html#cb337-103"></a>Now we continue with some text. As you can see in Figure \@ref(fig:figPoints) there are 10 points. The same was also decribed in Section \@ref(intro) or in Equation \@ref(eq:pythagoras) or in the package <span class="bn">`rmarkdown`</span> [see @R-bookdown]. The second way to make References [@R-mgcv]. For the third way see @R-knitr.</span>
-<span id="cb337-104"><a href="r-markdown-1.html#cb337-104"></a></span>
-<span id="cb337-105"><a href="r-markdown-1.html#cb337-105"></a></span>
-<span id="cb337-106"><a href="r-markdown-1.html#cb337-106"></a><span class="fu"># Discussion {#disc}</span></span>
-<span id="cb337-107"><a href="r-markdown-1.html#cb337-107"></a></span>
-<span id="cb337-108"><a href="r-markdown-1.html#cb337-108"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-<span id="cb337-109"><a href="r-markdown-1.html#cb337-109"></a></span>
-<span id="cb337-110"><a href="r-markdown-1.html#cb337-110"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-<span id="cb337-111"><a href="r-markdown-1.html#cb337-111"></a></span>
-<span id="cb337-112"><a href="r-markdown-1.html#cb337-112"></a><span class="bn">```{r}</span></span>
-<span id="cb337-113"><a href="r-markdown-1.html#cb337-113"></a><span class="bn">library(magrittr)</span></span>
-<span id="cb337-114"><a href="r-markdown-1.html#cb337-114"></a><span class="bn">library(kableExtra)</span></span>
-<span id="cb337-115"><a href="r-markdown-1.html#cb337-115"></a><span class="bn">dt &lt;- mtcars[1:5, 1:6]</span></span>
-<span id="cb337-116"><a href="r-markdown-1.html#cb337-116"></a><span class="bn">kable(dt,</span></span>
-<span id="cb337-117"><a href="r-markdown-1.html#cb337-117"></a><span class="bn">      digits = 3,</span></span>
-<span id="cb337-118"><a href="r-markdown-1.html#cb337-118"></a><span class="bn">      caption = &quot;Estimated motor current and standard deviation for each impeller at the two operating points&quot;) %&gt;%</span></span>
-<span id="cb337-119"><a href="r-markdown-1.html#cb337-119"></a><span class="bn">  kable_styling(&quot;striped&quot;,</span></span>
-<span id="cb337-120"><a href="r-markdown-1.html#cb337-120"></a><span class="bn">                full_width = F,</span></span>
-<span id="cb337-121"><a href="r-markdown-1.html#cb337-121"></a><span class="bn">                position = &quot;left&quot;) %&gt;%</span></span>
-<span id="cb337-122"><a href="r-markdown-1.html#cb337-122"></a><span class="bn">  add_header_above(c(&quot; &quot; = 1, &quot;Group 1&quot; = 2, &quot;Group 2&quot; = 2, &quot;Group 3&quot; = 2))</span></span>
-<span id="cb337-123"><a href="r-markdown-1.html#cb337-123"></a><span class="bn">```</span></span>
-<span id="cb337-124"><a href="r-markdown-1.html#cb337-124"></a></span>
-<span id="cb337-125"><a href="r-markdown-1.html#cb337-125"></a></span>
-<span id="cb337-126"><a href="r-markdown-1.html#cb337-126"></a></span>
-<span id="cb337-127"><a href="r-markdown-1.html#cb337-127"></a></span>
-<span id="cb337-128"><a href="r-markdown-1.html#cb337-128"></a></span>
-<span id="cb337-129"><a href="r-markdown-1.html#cb337-129"></a><span class="fu"># References {#ref}</span></span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb338-1"><a href="r-markdown-1.html#cb338-1"></a>---</span>
+<span id="cb338-2"><a href="r-markdown-1.html#cb338-2"></a>project: MyProj    #################################################</span>
+<span id="cb338-3"><a href="r-markdown-1.html#cb338-3"></a>title:   Template</span>
+<span id="cb338-4"><a href="r-markdown-1.html#cb338-4"></a>author:  &quot;<span class="ot">[Reto Zihlmann](https://retodomax.github.io/)</span>&quot;</span>
+<span id="cb338-5"><a href="r-markdown-1.html#cb338-5"></a>date:    &quot;<span class="bn">`r Sys.Date()`</span>&quot;</span>
+<span id="cb338-6"><a href="r-markdown-1.html#cb338-6"></a>output:</span>
+<span id="cb338-7"><a href="r-markdown-1.html#cb338-7"></a>  bookdown::html_document2:</span>
+<span id="cb338-8"><a href="r-markdown-1.html#cb338-8"></a><span class="bn">    toc: true</span></span>
+<span id="cb338-9"><a href="r-markdown-1.html#cb338-9"></a><span class="bn">    toc_float: true</span></span>
+<span id="cb338-10"><a href="r-markdown-1.html#cb338-10"></a>bibliography:</span>
+<span id="cb338-11"><a href="r-markdown-1.html#cb338-11"></a>  - &quot;/home/reto/texmf-local/bibtex/bib/bib.bib&quot;</span>
+<span id="cb338-12"><a href="r-markdown-1.html#cb338-12"></a>  - bib_packages.bib</span>
+<span id="cb338-13"><a href="r-markdown-1.html#cb338-13"></a>link-citations: true</span>
+<span id="cb338-14"><a href="r-markdown-1.html#cb338-14"></a>---</span>
+<span id="cb338-15"><a href="r-markdown-1.html#cb338-15"></a></span>
+<span id="cb338-16"><a href="r-markdown-1.html#cb338-16"></a><span class="bn">```{r, setup, include=FALSE}</span></span>
+<span id="cb338-17"><a href="r-markdown-1.html#cb338-17"></a><span class="bn">knitr::opts_chunk$set(comment = &quot;&quot;,</span></span>
+<span id="cb338-18"><a href="r-markdown-1.html#cb338-18"></a><span class="bn">                      tidy = TRUE,</span></span>
+<span id="cb338-19"><a href="r-markdown-1.html#cb338-19"></a><span class="bn">                      fig.align = &quot;left&quot;,</span></span>
+<span id="cb338-20"><a href="r-markdown-1.html#cb338-20"></a><span class="bn">                      out.width = &quot;100%&quot;,</span></span>
+<span id="cb338-21"><a href="r-markdown-1.html#cb338-21"></a><span class="bn">                      echo = FALSE,</span></span>
+<span id="cb338-22"><a href="r-markdown-1.html#cb338-22"></a><span class="bn">                      warning = FALSE,</span></span>
+<span id="cb338-23"><a href="r-markdown-1.html#cb338-23"></a><span class="bn">                      message = FALSE,</span></span>
+<span id="cb338-24"><a href="r-markdown-1.html#cb338-24"></a><span class="bn">                      error = FALSE)</span></span>
+<span id="cb338-25"><a href="r-markdown-1.html#cb338-25"></a><span class="bn">```</span></span>
+<span id="cb338-26"><a href="r-markdown-1.html#cb338-26"></a></span>
+<span id="cb338-27"><a href="r-markdown-1.html#cb338-27"></a><span class="bn">```{r, package-bib, include=FALSE}</span></span>
+<span id="cb338-28"><a href="r-markdown-1.html#cb338-28"></a><span class="bn"># automatically create a bib database for R packages</span></span>
+<span id="cb338-29"><a href="r-markdown-1.html#cb338-29"></a><span class="bn">knitr::write_bib(c(</span></span>
+<span id="cb338-30"><a href="r-markdown-1.html#cb338-30"></a><span class="bn">  .packages(), &#39;bookdown&#39;, &#39;knitr&#39;, &#39;rmarkdown&#39;, &quot;mgcv&quot;</span></span>
+<span id="cb338-31"><a href="r-markdown-1.html#cb338-31"></a><span class="bn">), &#39;bib_packages.bib&#39;)</span></span>
+<span id="cb338-32"><a href="r-markdown-1.html#cb338-32"></a><span class="bn">```</span></span>
+<span id="cb338-33"><a href="r-markdown-1.html#cb338-33"></a></span>
+<span id="cb338-34"><a href="r-markdown-1.html#cb338-34"></a></span>
+<span id="cb338-35"><a href="r-markdown-1.html#cb338-35"></a>&lt;!--<span class="co"> CSS Stype for Figure caption --&gt;</span></span>
+<span id="cb338-36"><a href="r-markdown-1.html#cb338-36"></a>&lt;!--<span class="co"> CSS Style for more space between headers --&gt;</span></span>
+<span id="cb338-37"><a href="r-markdown-1.html#cb338-37"></a>&lt;style&gt;</span>
+<span id="cb338-38"><a href="r-markdown-1.html#cb338-38"></a>caption {</span>
+<span id="cb338-39"><a href="r-markdown-1.html#cb338-39"></a>  color: gray;</span>
+<span id="cb338-40"><a href="r-markdown-1.html#cb338-40"></a>  font-size: 0.8em;</span>
+<span id="cb338-41"><a href="r-markdown-1.html#cb338-41"></a>}</span>
+<span id="cb338-42"><a href="r-markdown-1.html#cb338-42"></a>p.caption {</span>
+<span id="cb338-43"><a href="r-markdown-1.html#cb338-43"></a>  color: gray;</span>
+<span id="cb338-44"><a href="r-markdown-1.html#cb338-44"></a>  font-size: 0.8em;</span>
+<span id="cb338-45"><a href="r-markdown-1.html#cb338-45"></a>  padding-bottom: 30px;</span>
+<span id="cb338-46"><a href="r-markdown-1.html#cb338-46"></a>}</span>
+<span id="cb338-47"><a href="r-markdown-1.html#cb338-47"></a>h1, .h1 {</span>
+<span id="cb338-48"><a href="r-markdown-1.html#cb338-48"></a><span class="bn">    margin-top: 84px;</span></span>
+<span id="cb338-49"><a href="r-markdown-1.html#cb338-49"></a>}</span>
+<span id="cb338-50"><a href="r-markdown-1.html#cb338-50"></a>h2, .h2, h3, .h3 {</span>
+<span id="cb338-51"><a href="r-markdown-1.html#cb338-51"></a><span class="bn">    margin-top: 42px;</span></span>
+<span id="cb338-52"><a href="r-markdown-1.html#cb338-52"></a>}</span>
+<span id="cb338-53"><a href="r-markdown-1.html#cb338-53"></a>&lt;/style&gt;</span>
+<span id="cb338-54"><a href="r-markdown-1.html#cb338-54"></a></span>
+<span id="cb338-55"><a href="r-markdown-1.html#cb338-55"></a></span>
+<span id="cb338-56"><a href="r-markdown-1.html#cb338-56"></a><span class="fu"># Abstract {-}</span></span>
+<span id="cb338-57"><a href="r-markdown-1.html#cb338-57"></a></span>
+<span id="cb338-58"><a href="r-markdown-1.html#cb338-58"></a>Here is some small abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb338-59"><a href="r-markdown-1.html#cb338-59"></a></span>
+<span id="cb338-60"><a href="r-markdown-1.html#cb338-60"></a></span>
+<span id="cb338-61"><a href="r-markdown-1.html#cb338-61"></a><span class="fu"># Introduction {#intro}</span></span>
+<span id="cb338-62"><a href="r-markdown-1.html#cb338-62"></a></span>
+<span id="cb338-63"><a href="r-markdown-1.html#cb338-63"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb338-64"><a href="r-markdown-1.html#cb338-64"></a></span>
+<span id="cb338-65"><a href="r-markdown-1.html#cb338-65"></a>1. <span class="st">What is the first research question?</span></span>
+<span id="cb338-66"><a href="r-markdown-1.html#cb338-66"></a><span class="st">2. How should we answer it?</span></span>
+<span id="cb338-67"><a href="r-markdown-1.html#cb338-67"></a><span class="st">3. What is the third research question?</span></span>
+<span id="cb338-68"><a href="r-markdown-1.html#cb338-68"></a></span>
+<span id="cb338-69"><a href="r-markdown-1.html#cb338-69"></a></span>
+<span id="cb338-70"><a href="r-markdown-1.html#cb338-70"></a><span class="fu"># Method {#method}</span></span>
+<span id="cb338-71"><a href="r-markdown-1.html#cb338-71"></a></span>
+<span id="cb338-72"><a href="r-markdown-1.html#cb338-72"></a><span class="fu">## Idea {#idea}</span></span>
+<span id="cb338-73"><a href="r-markdown-1.html#cb338-73"></a></span>
+<span id="cb338-74"><a href="r-markdown-1.html#cb338-74"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit (see <span class="ot">[here](https://www.google.ch/))</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Some inline equation $h = f(x)$ in the middle of text. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb338-75"><a href="r-markdown-1.html#cb338-75"></a></span>
+<span id="cb338-76"><a href="r-markdown-1.html#cb338-76"></a>$$</span>
+<span id="cb338-77"><a href="r-markdown-1.html#cb338-77"></a>a^2 + b^2 = c^2</span>
+<span id="cb338-78"><a href="r-markdown-1.html#cb338-78"></a>(\#eq:pythagoras)</span>
+<span id="cb338-79"><a href="r-markdown-1.html#cb338-79"></a>$$</span>
+<span id="cb338-80"><a href="r-markdown-1.html#cb338-80"></a></span>
+<span id="cb338-81"><a href="r-markdown-1.html#cb338-81"></a>As you can see in Equation \@ref(eq:pythagoras), lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb338-82"><a href="r-markdown-1.html#cb338-82"></a></span>
+<span id="cb338-83"><a href="r-markdown-1.html#cb338-83"></a></span>
+<span id="cb338-84"><a href="r-markdown-1.html#cb338-84"></a><span class="bn">```{r, someCalculations, echo = T}</span></span>
+<span id="cb338-85"><a href="r-markdown-1.html#cb338-85"></a><span class="bn">x &lt;- 5.012345678901234567890</span></span>
+<span id="cb338-86"><a href="r-markdown-1.html#cb338-86"></a><span class="bn">y &lt;- 1:20</span></span>
+<span id="cb338-87"><a href="r-markdown-1.html#cb338-87"></a><span class="bn">```</span></span>
+<span id="cb338-88"><a href="r-markdown-1.html#cb338-88"></a></span>
+<span id="cb338-89"><a href="r-markdown-1.html#cb338-89"></a></span>
+<span id="cb338-90"><a href="r-markdown-1.html#cb338-90"></a>In this text we use the variable $x$ and write it  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 inline in text. Now a picture</span>
+<span id="cb338-91"><a href="r-markdown-1.html#cb338-91"></a></span>
+<span id="cb338-92"><a href="r-markdown-1.html#cb338-92"></a></span>
+<span id="cb338-93"><a href="r-markdown-1.html#cb338-93"></a>(ref:resPr3) This is the figure caption. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure. We can use it to explain the content of the figure.</span>
+<span id="cb338-94"><a href="r-markdown-1.html#cb338-94"></a></span>
+<span id="cb338-95"><a href="r-markdown-1.html#cb338-95"></a><span class="fu">## Calcultion {#calc}</span></span>
+<span id="cb338-96"><a href="r-markdown-1.html#cb338-96"></a></span>
+<span id="cb338-97"><a href="r-markdown-1.html#cb338-97"></a><span class="bn">```{r, figPoints, fig.cap=&quot;(ref:resPr3)&quot;}</span></span>
+<span id="cb338-98"><a href="r-markdown-1.html#cb338-98"></a><span class="bn">plot(1:10)</span></span>
+<span id="cb338-99"><a href="r-markdown-1.html#cb338-99"></a><span class="bn">```</span></span>
+<span id="cb338-100"><a href="r-markdown-1.html#cb338-100"></a></span>
+<span id="cb338-101"><a href="r-markdown-1.html#cb338-101"></a></span>
+<span id="cb338-102"><a href="r-markdown-1.html#cb338-102"></a></span>
+<span id="cb338-103"><a href="r-markdown-1.html#cb338-103"></a>Now we continue with some text. As you can see in Figure \@ref(fig:figPoints) there are 10 points. The same was also decribed in Section \@ref(intro) or in Equation \@ref(eq:pythagoras) or in the package <span class="bn">`rmarkdown`</span> [see @R-bookdown]. The second way to make References [@R-mgcv]. For the third way see @R-knitr.</span>
+<span id="cb338-104"><a href="r-markdown-1.html#cb338-104"></a></span>
+<span id="cb338-105"><a href="r-markdown-1.html#cb338-105"></a></span>
+<span id="cb338-106"><a href="r-markdown-1.html#cb338-106"></a><span class="fu"># Discussion {#disc}</span></span>
+<span id="cb338-107"><a href="r-markdown-1.html#cb338-107"></a></span>
+<span id="cb338-108"><a href="r-markdown-1.html#cb338-108"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb338-109"><a href="r-markdown-1.html#cb338-109"></a></span>
+<span id="cb338-110"><a href="r-markdown-1.html#cb338-110"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb338-111"><a href="r-markdown-1.html#cb338-111"></a></span>
+<span id="cb338-112"><a href="r-markdown-1.html#cb338-112"></a><span class="bn">```{r}</span></span>
+<span id="cb338-113"><a href="r-markdown-1.html#cb338-113"></a><span class="bn">library(magrittr)</span></span>
+<span id="cb338-114"><a href="r-markdown-1.html#cb338-114"></a><span class="bn">library(kableExtra)</span></span>
+<span id="cb338-115"><a href="r-markdown-1.html#cb338-115"></a><span class="bn">dt &lt;- mtcars[1:5, 1:6]</span></span>
+<span id="cb338-116"><a href="r-markdown-1.html#cb338-116"></a><span class="bn">kable(dt,</span></span>
+<span id="cb338-117"><a href="r-markdown-1.html#cb338-117"></a><span class="bn">      digits = 3,</span></span>
+<span id="cb338-118"><a href="r-markdown-1.html#cb338-118"></a><span class="bn">      caption = &quot;Estimated motor current and standard deviation for each impeller at the two operating points&quot;) %&gt;%</span></span>
+<span id="cb338-119"><a href="r-markdown-1.html#cb338-119"></a><span class="bn">  kable_styling(&quot;striped&quot;,</span></span>
+<span id="cb338-120"><a href="r-markdown-1.html#cb338-120"></a><span class="bn">                full_width = F,</span></span>
+<span id="cb338-121"><a href="r-markdown-1.html#cb338-121"></a><span class="bn">                position = &quot;left&quot;) %&gt;%</span></span>
+<span id="cb338-122"><a href="r-markdown-1.html#cb338-122"></a><span class="bn">  add_header_above(c(&quot; &quot; = 1, &quot;Group 1&quot; = 2, &quot;Group 2&quot; = 2, &quot;Group 3&quot; = 2))</span></span>
+<span id="cb338-123"><a href="r-markdown-1.html#cb338-123"></a><span class="bn">```</span></span>
+<span id="cb338-124"><a href="r-markdown-1.html#cb338-124"></a></span>
+<span id="cb338-125"><a href="r-markdown-1.html#cb338-125"></a></span>
+<span id="cb338-126"><a href="r-markdown-1.html#cb338-126"></a></span>
+<span id="cb338-127"><a href="r-markdown-1.html#cb338-127"></a></span>
+<span id="cb338-128"><a href="r-markdown-1.html#cb338-128"></a></span>
+<span id="cb338-129"><a href="r-markdown-1.html#cb338-129"></a><span class="fu"># References {#ref}</span></span></code></pre></div>
 </div>
 <p>Good resources for additional tips/templates</p>
 <ul>
@@ -1204,7 +1211,7 @@ Show template
 </ul>
 </div>
 <div id="good-output-formats" class="section level2">
-<h2><span class="header-section-number">32.8</span> Good output formats</h2>
+<h2><span class="header-section-number">32.9</span> Good output formats</h2>
 <ul>
 <li>lightweight: <code>rmarkdown::html_vignette</code>
 <ul>
@@ -1218,13 +1225,13 @@ Show template
 <li>classic: <code>bookdown::html_document2</code></li>
 </ul>
 <p>Options</p>
-<div class="sourceCode" id="cb338"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb338-1"><a href="r-markdown-1.html#cb338-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at">   Test</span></span>
-<span id="cb338-2"><a href="r-markdown-1.html#cb338-2"></a><span class="fu">author</span><span class="kw">:</span><span class="at">  </span><span class="st">&quot;[Reto Zihlmann](https://retodomax.github.io/)&quot;</span></span>
-<span id="cb338-3"><a href="r-markdown-1.html#cb338-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at">    </span><span class="st">&quot;2020-11-09&quot;</span></span>
-<span id="cb338-4"><a href="r-markdown-1.html#cb338-4"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb338-5"><a href="r-markdown-1.html#cb338-5"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
-<span id="cb338-6"><a href="r-markdown-1.html#cb338-6"></a><span class="at">    </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> none</span></span>
-<span id="cb338-7"><a href="r-markdown-1.html#cb338-7"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb339-1"><a href="r-markdown-1.html#cb339-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at">   Test</span></span>
+<span id="cb339-2"><a href="r-markdown-1.html#cb339-2"></a><span class="fu">author</span><span class="kw">:</span><span class="at">  </span><span class="st">&quot;[Reto Zihlmann](https://retodomax.github.io/)&quot;</span></span>
+<span id="cb339-3"><a href="r-markdown-1.html#cb339-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at">    </span><span class="st">&quot;2020-11-09&quot;</span></span>
+<span id="cb339-4"><a href="r-markdown-1.html#cb339-4"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb339-5"><a href="r-markdown-1.html#cb339-5"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
+<span id="cb339-6"><a href="r-markdown-1.html#cb339-6"></a><span class="at">    </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> none</span></span>
+<span id="cb339-7"><a href="r-markdown-1.html#cb339-7"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
 
 <div class="rmdwarning">
 gitbook with option <code>self_containd: true</code> does currently not work with MathJax (Math not correcly displayed). For updates on this issue see <a href="https://stackoverflow.com/questions/64760552/how-to-have-correctly-rendered-mathematical-equations-in-bookdowngitbook-when">here</a>, <a href="https://github.com/rstudio/bookdown/issues/915">here</a> and <a href="https://github.com/rstudio/rmarkdown/issues/727">here</a>.

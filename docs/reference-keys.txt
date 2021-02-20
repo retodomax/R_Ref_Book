@@ -7,7 +7,7 @@ fig:MiscPack
 fig:unnamed-chunk-53
 fig:unnamed-chunk-90
 fig:include-graphics
-fig:unnamed-chunk-275
+fig:unnamed-chunk-276
 objects
 inspect-object
 classifications
@@ -148,6 +148,7 @@ legends
 arrow
 panel.first
 area-under-curve
+plot-math-coordinate-system
 plot-empty
 interactive-plots
 ggplot
@@ -289,7 +290,8 @@ chunck-options
 figures
 tables
 html-tables
-sepecial-characters
+math
+special-characters
 section-folding
 add-box
 template

@@ -267,9 +267,14 @@ Results in
   </tr>
 </table>
 
+## Math
+
+New math commands can be included via Latex for pdf or [Mathjax](https://www.mathjax.org/) for html.
+
+See this [StackOverflow post](https://stackoverflow.com/questions/33226675/how-to-get-bm-to-work-in-an-r-markdown-to-html-file/33248213#33248213) on how to include a Mathjax preamble
 
 
-## Sepecial characters
+## Special characters
 
 * Mathematical stuff with Latex
     - $\alpha$ $\Gamma$ $\ggg$ $\notin$ $\dagger$ $\mathbb{R}$ $\Rightarrow$ $\infty$ $n$

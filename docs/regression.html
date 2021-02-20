@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-11" />
+<meta name="date" content="2021-01-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -325,7 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>16.5.3</b> panel.first</a></li>
 <li class="chapter" data-level="16.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>16.5.4</b> Area under curve</a></li>
 </ul></li>
-<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.6</b> Plot empty</a></li>
+<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-math-coordinate-system"><i class="fa fa-check"></i><b>16.6</b> Plot Math Coordinate System</a></li>
+<li class="chapter" data-level="16.7" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.7</b> Plot empty</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>17</b> Interactive Plots</a></li>
 <li class="chapter" data-level="18" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>18</b> ggplot</a><ul>
@@ -487,11 +488,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="32.3" data-path="r-markdown-1.html"><a href="r-markdown-1.html#tables"><i class="fa fa-check"></i><b>32.3</b> Tables</a><ul>
 <li class="chapter" data-level="32.3.1" data-path="r-markdown-1.html"><a href="r-markdown-1.html#html-tables"><i class="fa fa-check"></i><b>32.3.1</b> HTML tables</a></li>
 </ul></li>
-<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#sepecial-characters"><i class="fa fa-check"></i><b>32.4</b> Sepecial characters</a></li>
-<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.5</b> Section folding</a></li>
-<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.6</b> Add box</a></li>
-<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.7</b> Template</a></li>
-<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.8</b> Good output formats</a></li>
+<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#math"><i class="fa fa-check"></i><b>32.4</b> Math</a></li>
+<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#special-characters"><i class="fa fa-check"></i><b>32.5</b> Special characters</a></li>
+<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.6</b> Section folding</a></li>
+<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.7</b> Add box</a></li>
+<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.8</b> Template</a></li>
+<li class="chapter" data-level="32.9" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.9</b> Good output formats</a></li>
 </ul></li>
 <li class="chapter" data-level="33" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>33</b> Bookdown</a><ul>
 <li class="chapter" data-level="33.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>33.1</b> Configuration</a><ul>
@@ -661,27 +663,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="regression" class="section level1">
 <h1><span class="header-section-number">Chapter 22</span> Regression</h1>
 <p>Load data sets of this chapter</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="regression.html#cb158-1"></a><span class="kw">data</span>(<span class="st">&quot;apm&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</span>
-<span id="cb158-2"><a href="regression.html#cb158-2"></a><span class="kw">data</span>(<span class="st">&quot;unique2010&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</span>
-<span id="cb158-3"><a href="regression.html#cb158-3"></a><span class="kw">data</span>(<span class="st">&quot;baby&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</span>
-<span id="cb158-4"><a href="regression.html#cb158-4"></a></span>
-<span id="cb158-5"><a href="regression.html#cb158-5"></a><span class="kw">data</span>(<span class="st">&quot;iris&quot;</span>)</span>
-<span id="cb158-6"><a href="regression.html#cb158-6"></a><span class="kw">data</span>(<span class="st">&quot;Leinhardt&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;carData&quot;</span>)</span>
-<span id="cb158-7"><a href="regression.html#cb158-7"></a><span class="kw">data</span>(<span class="st">&quot;Prestige&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;carData&quot;</span>)</span>
-<span id="cb158-8"><a href="regression.html#cb158-8"></a><span class="kw">data</span>(<span class="st">&quot;gala&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;faraway&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="regression.html#cb159-1"></a><span class="kw">data</span>(<span class="st">&quot;apm&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</span>
+<span id="cb159-2"><a href="regression.html#cb159-2"></a><span class="kw">data</span>(<span class="st">&quot;unique2010&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</span>
+<span id="cb159-3"><a href="regression.html#cb159-3"></a><span class="kw">data</span>(<span class="st">&quot;baby&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;DataRZ&quot;</span>)</span>
+<span id="cb159-4"><a href="regression.html#cb159-4"></a></span>
+<span id="cb159-5"><a href="regression.html#cb159-5"></a><span class="kw">data</span>(<span class="st">&quot;iris&quot;</span>)</span>
+<span id="cb159-6"><a href="regression.html#cb159-6"></a><span class="kw">data</span>(<span class="st">&quot;Leinhardt&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;carData&quot;</span>)</span>
+<span id="cb159-7"><a href="regression.html#cb159-7"></a><span class="kw">data</span>(<span class="st">&quot;Prestige&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;carData&quot;</span>)</span>
+<span id="cb159-8"><a href="regression.html#cb159-8"></a><span class="kw">data</span>(<span class="st">&quot;gala&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;faraway&quot;</span>)</span></code></pre></div>
 <div id="preperation" class="section level2">
 <h2><span class="header-section-number">22.1</span> Preperation</h2>
 <div id="plot-predictors" class="section level5 unnumbered">
 <h5>Plot predictors</h5>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="regression.html#cb159-1"></a><span class="kw">library</span>(FunRZ)</span>
-<span id="cb159-2"><a href="regression.html#cb159-2"></a><span class="kw">pairs</span>(iris, <span class="dt">lower.panel =</span> panel.smooth, <span class="dt">diag.panel =</span> panel.hist,</span>
-<span id="cb159-3"><a href="regression.html#cb159-3"></a>      <span class="dt">upper.panel =</span> panel.cor)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-154-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="regression.html#cb160-1"></a><span class="kw">library</span>(FunRZ)</span>
+<span id="cb160-2"><a href="regression.html#cb160-2"></a><span class="kw">pairs</span>(iris, <span class="dt">lower.panel =</span> panel.smooth, <span class="dt">diag.panel =</span> panel.hist,</span>
+<span id="cb160-3"><a href="regression.html#cb160-3"></a>      <span class="dt">upper.panel =</span> panel.cor)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-155-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="transform-and-check-for-na" class="section level5 unnumbered">
 <h5>Transform and check for NA</h5>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="regression.html#cb160-1"></a><span class="kw">any</span>(<span class="kw">is.na</span>(iris<span class="op">$</span>Sepal.length))</span>
-<span id="cb160-2"><a href="regression.html#cb160-2"></a>iris<span class="op">$</span>log_sepal &lt;-<span class="st"> </span><span class="kw">log</span>(iris<span class="op">$</span>Sepal.length)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="regression.html#cb161-1"></a><span class="kw">any</span>(<span class="kw">is.na</span>(iris<span class="op">$</span>Sepal.length))</span>
+<span id="cb161-2"><a href="regression.html#cb161-2"></a>iris<span class="op">$</span>log_sepal &lt;-<span class="st"> </span><span class="kw">log</span>(iris<span class="op">$</span>Sepal.length)</span></code></pre></div>
 </div>
 </div>
 <div id="fit" class="section level2">
@@ -703,9 +705,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>summary()</code> estimates, std. error, p values, multiple R-squared</li>
 <li><code>confint()</code> CI</li>
 </ul>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="regression.html#cb161-1"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Pax <span class="op">~</span><span class="st"> </span>ATM, <span class="dt">data =</span> unique2010)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="regression.html#cb162-1"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Pax <span class="op">~</span><span class="st"> </span>ATM, <span class="dt">data =</span> unique2010)</span></code></pre></div>
 <p>Automatic testing <span class="math inline">\(H_0: \beta_j = 0\)</span></p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="regression.html#cb162-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="regression.html#cb163-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Pax ~ ATM, data = unique2010)
@@ -725,17 +727,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Multiple R-squared:  0.9487, Adjusted R-squared:  0.9464 
 ## F-statistic: 407.1 on 1 and 22 DF,  p-value: 1.11e-15</code></pre>
 <p>Manual testing <span class="math inline">\(H_0: \beta_j = b\)</span></p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="regression.html#cb164-1"></a>b &lt;-<span class="st"> </span><span class="dv">5</span>  <span class="co"># for example</span></span>
-<span id="cb164-2"><a href="regression.html#cb164-2"></a>mycoef &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)<span class="op">$</span>coefficients</span>
-<span id="cb164-3"><a href="regression.html#cb164-3"></a>t_val &lt;-<span class="st"> </span>(mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Estimate&quot;</span>]<span class="op">-</span>b)<span class="op">/</span>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Std. Error&quot;</span>]</span>
-<span id="cb164-4"><a href="regression.html#cb164-4"></a>(<span class="dv">1</span><span class="op">-</span><span class="kw">pt</span>(<span class="kw">abs</span>(t_val), df))<span class="op">*</span><span class="dv">2</span>    <span class="co">## df = degrees of freedom of residuals (find in summary)</span></span>
-<span id="cb164-5"><a href="regression.html#cb164-5"></a>                            <span class="co">## *2 two sided test</span></span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="regression.html#cb165-1"></a>b &lt;-<span class="st"> </span><span class="dv">5</span>  <span class="co"># for example</span></span>
+<span id="cb165-2"><a href="regression.html#cb165-2"></a>mycoef &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)<span class="op">$</span>coefficients</span>
+<span id="cb165-3"><a href="regression.html#cb165-3"></a>t_val &lt;-<span class="st"> </span>(mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Estimate&quot;</span>]<span class="op">-</span>b)<span class="op">/</span>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Std. Error&quot;</span>]</span>
+<span id="cb165-4"><a href="regression.html#cb165-4"></a>(<span class="dv">1</span><span class="op">-</span><span class="kw">pt</span>(<span class="kw">abs</span>(t_val), df))<span class="op">*</span><span class="dv">2</span>    <span class="co">## df = degrees of freedom of residuals (find in summary)</span></span>
+<span id="cb165-5"><a href="regression.html#cb165-5"></a>                            <span class="co">## *2 two sided test</span></span></code></pre></div>
 <p>Automatic CI</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="regression.html#cb165-1"></a><span class="kw">confint</span>(fit, <span class="st">&quot;ATM&quot;</span>)</span>
-<span id="cb165-2"><a href="regression.html#cb165-2"></a><span class="kw">confint</span>(fit, <span class="st">&quot;(Intercept)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="regression.html#cb166-1"></a><span class="kw">confint</span>(fit, <span class="st">&quot;ATM&quot;</span>)</span>
+<span id="cb166-2"><a href="regression.html#cb166-2"></a><span class="kw">confint</span>(fit, <span class="st">&quot;(Intercept)&quot;</span>)</span></code></pre></div>
 <p>Manual CI</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="regression.html#cb166-1"></a>mycoef &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)<span class="op">$</span>coefficients</span>
-<span id="cb166-2"><a href="regression.html#cb166-2"></a>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Estimate&quot;</span>] <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>), df)<span class="op">*</span>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Std. Error&quot;</span>] <span class="co">## df = degrees of freedom of residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="regression.html#cb167-1"></a>mycoef &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)<span class="op">$</span>coefficients</span>
+<span id="cb167-2"><a href="regression.html#cb167-2"></a>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Estimate&quot;</span>] <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>), df)<span class="op">*</span>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Std. Error&quot;</span>] <span class="co">## df = degrees of freedom of residuals</span></span></code></pre></div>
 </div>
 <div id="prediction" class="section level2">
 <h2><span class="header-section-number">22.4</span> Prediction</h2>
@@ -746,61 +748,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>newdata</code> needs to be a <code>data.frame</code> with same colomn name as predictors</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="regression.html#cb167-1"></a><span class="co">## Predict values for any predictor values</span></span>
-<span id="cb167-2"><a href="regression.html#cb167-2"></a>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ATM=</span><span class="kw">c</span>(<span class="dv">24000</span>))</span>
-<span id="cb167-3"><a href="regression.html#cb167-3"></a><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat)</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="regression.html#cb168-1"></a><span class="co">## Predict values for any predictor values</span></span>
+<span id="cb168-2"><a href="regression.html#cb168-2"></a>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ATM=</span><span class="kw">c</span>(<span class="dv">24000</span>))</span>
+<span id="cb168-3"><a href="regression.html#cb168-3"></a><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat)</span></code></pre></div>
 <pre><code>##       1 
 ## 2132598</code></pre>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="regression.html#cb169-1"></a><span class="co">## CI for regression line</span></span>
-<span id="cb169-2"><a href="regression.html#cb169-2"></a>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ATM=</span><span class="kw">seq</span>(<span class="dv">18000</span>, <span class="dv">26000</span>, <span class="dt">length=</span><span class="dv">200</span>))</span>
-<span id="cb169-3"><a href="regression.html#cb169-3"></a>ci &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat, <span class="dt">interval=</span><span class="st">&quot;confidence&quot;</span>)</span>
-<span id="cb169-4"><a href="regression.html#cb169-4"></a></span>
-<span id="cb169-5"><a href="regression.html#cb169-5"></a><span class="co">## PI for regression line</span></span>
-<span id="cb169-6"><a href="regression.html#cb169-6"></a>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ATM=</span><span class="kw">seq</span>(<span class="dv">18000</span>, <span class="dv">26000</span>, <span class="dt">length=</span><span class="dv">200</span>))</span>
-<span id="cb169-7"><a href="regression.html#cb169-7"></a>pi &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat, <span class="dt">interval=</span><span class="st">&quot;prediction&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="regression.html#cb170-1"></a><span class="co">## CI for regression line</span></span>
+<span id="cb170-2"><a href="regression.html#cb170-2"></a>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ATM=</span><span class="kw">seq</span>(<span class="dv">18000</span>, <span class="dv">26000</span>, <span class="dt">length=</span><span class="dv">200</span>))</span>
+<span id="cb170-3"><a href="regression.html#cb170-3"></a>ci &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat, <span class="dt">interval=</span><span class="st">&quot;confidence&quot;</span>)</span>
+<span id="cb170-4"><a href="regression.html#cb170-4"></a></span>
+<span id="cb170-5"><a href="regression.html#cb170-5"></a><span class="co">## PI for regression line</span></span>
+<span id="cb170-6"><a href="regression.html#cb170-6"></a>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ATM=</span><span class="kw">seq</span>(<span class="dv">18000</span>, <span class="dv">26000</span>, <span class="dt">length=</span><span class="dv">200</span>))</span>
+<span id="cb170-7"><a href="regression.html#cb170-7"></a>pi &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat, <span class="dt">interval=</span><span class="st">&quot;prediction&quot;</span>)</span></code></pre></div>
 </div>
 <div id="plot-regression" class="section level2">
 <h2><span class="header-section-number">22.5</span> Plot regression</h2>
 <p>Include regression formula</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="regression.html#cb170-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb170-2"><a href="regression.html#cb170-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">50</span>, <span class="dt">mean =</span> <span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span>
-<span id="cb170-3"><a href="regression.html#cb170-3"></a>y &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span>
-<span id="cb170-4"><a href="regression.html#cb170-4"></a><span class="kw">plot</span>(y <span class="op">~</span><span class="st"> </span>x)</span>
-<span id="cb170-5"><a href="regression.html#cb170-5"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span>x)</span>
-<span id="cb170-6"><a href="regression.html#cb170-6"></a><span class="kw">abline</span>(fit)</span>
-<span id="cb170-7"><a href="regression.html#cb170-7"></a>x_cor &lt;-<span class="st"> </span><span class="kw">grconvertX</span>(<span class="fl">0.1</span>, <span class="dt">from =</span> <span class="st">&#39;npc&#39;</span>)</span>
-<span id="cb170-8"><a href="regression.html#cb170-8"></a>y_cor &lt;-<span class="st"> </span><span class="kw">grconvertY</span>(<span class="fl">0.9</span>, <span class="dt">from =</span> <span class="st">&#39;npc&#39;</span>)</span>
-<span id="cb170-9"><a href="regression.html#cb170-9"></a>fit_eq &lt;-<span class="st"> </span><span class="kw">format</span>(<span class="kw">coef</span>(fit), <span class="dt">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb170-10"><a href="regression.html#cb170-10"></a>fit_r_sq &lt;-<span class="st"> </span><span class="kw">format</span>(<span class="kw">summary</span>(fit)<span class="op">$</span>adj.r.squared, <span class="dt">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb170-11"><a href="regression.html#cb170-11"></a>fit_cor &lt;-<span class="st"> </span><span class="kw">format</span>(<span class="kw">cor</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y), <span class="dt">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb170-12"><a href="regression.html#cb170-12"></a></span>
-<span id="cb170-13"><a href="regression.html#cb170-13"></a><span class="kw">text</span>(<span class="dt">x =</span> x_cor, <span class="dt">y =</span> y_cor, <span class="dt">pos =</span> <span class="dv">4</span>,</span>
-<span id="cb170-14"><a href="regression.html#cb170-14"></a>     <span class="dt">labels =</span> <span class="kw">bquote</span>(y <span class="op">==</span><span class="st"> </span>.(fit_eq[<span class="dv">2</span>]) <span class="op">*</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span>.(fit_eq[<span class="dv">1</span>])))</span>
-<span id="cb170-15"><a href="regression.html#cb170-15"></a><span class="kw">text</span>(<span class="dt">x =</span> x_cor, <span class="dt">y =</span> y_cor<span class="dv">-1</span>, <span class="dt">pos =</span> <span class="dv">4</span>,</span>
-<span id="cb170-16"><a href="regression.html#cb170-16"></a>     <span class="dt">labels =</span> <span class="kw">bquote</span>(R[adj]<span class="op">^</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span>.(fit_r_sq)))</span>
-<span id="cb170-17"><a href="regression.html#cb170-17"></a><span class="kw">text</span>(<span class="dt">x =</span> x_cor, <span class="dt">y =</span> y_cor<span class="dv">-2</span>, <span class="dt">pos =</span> <span class="dv">4</span>,</span>
-<span id="cb170-18"><a href="regression.html#cb170-18"></a>     <span class="dt">labels =</span> <span class="kw">bquote</span>(cor <span class="op">==</span><span class="st"> </span>.(fit_cor)))</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-162-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
-<p>Include CI and PI</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="regression.html#cb171-1"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Pax <span class="op">~</span><span class="st"> </span>ATM, <span class="dt">data =</span> unique2010)</span>
-<span id="cb171-2"><a href="regression.html#cb171-2"></a>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ATM=</span><span class="kw">seq</span>(<span class="dv">18000</span>, <span class="dv">26000</span>, <span class="dt">length=</span><span class="dv">200</span>))</span>
-<span id="cb171-3"><a href="regression.html#cb171-3"></a>ci &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat, <span class="dt">interval=</span><span class="st">&quot;confidence&quot;</span>)</span>
-<span id="cb171-4"><a href="regression.html#cb171-4"></a>pi &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat, <span class="dt">interval=</span><span class="st">&quot;prediction&quot;</span>)</span>
-<span id="cb171-5"><a href="regression.html#cb171-5"></a><span class="kw">plot</span>(Pax <span class="op">~</span><span class="st"> </span>ATM, <span class="dt">data=</span>unique2010, <span class="dt">pch=</span><span class="dv">20</span>)</span>
-<span id="cb171-6"><a href="regression.html#cb171-6"></a></span>
-<span id="cb171-7"><a href="regression.html#cb171-7"></a><span class="kw">lines</span>(dat<span class="op">$</span>ATM, ci[,<span class="dv">2</span>], <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</span>
-<span id="cb171-8"><a href="regression.html#cb171-8"></a><span class="kw">lines</span>(dat<span class="op">$</span>ATM, ci[,<span class="dv">3</span>], <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</span>
-<span id="cb171-9"><a href="regression.html#cb171-9"></a><span class="kw">lines</span>(dat<span class="op">$</span>ATM, pi[,<span class="dv">2</span>], <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb171-10"><a href="regression.html#cb171-10"></a><span class="kw">lines</span>(dat<span class="op">$</span>ATM, pi[,<span class="dv">3</span>], <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb171-11"><a href="regression.html#cb171-11"></a><span class="kw">abline</span>(fit, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="regression.html#cb171-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb171-2"><a href="regression.html#cb171-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">50</span>, <span class="dt">mean =</span> <span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb171-3"><a href="regression.html#cb171-3"></a>y &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb171-4"><a href="regression.html#cb171-4"></a><span class="kw">plot</span>(y <span class="op">~</span><span class="st"> </span>x)</span>
+<span id="cb171-5"><a href="regression.html#cb171-5"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span>x)</span>
+<span id="cb171-6"><a href="regression.html#cb171-6"></a><span class="kw">abline</span>(fit)</span>
+<span id="cb171-7"><a href="regression.html#cb171-7"></a>x_cor &lt;-<span class="st"> </span><span class="kw">grconvertX</span>(<span class="fl">0.1</span>, <span class="dt">from =</span> <span class="st">&#39;npc&#39;</span>)</span>
+<span id="cb171-8"><a href="regression.html#cb171-8"></a>y_cor &lt;-<span class="st"> </span><span class="kw">grconvertY</span>(<span class="fl">0.9</span>, <span class="dt">from =</span> <span class="st">&#39;npc&#39;</span>)</span>
+<span id="cb171-9"><a href="regression.html#cb171-9"></a>fit_eq &lt;-<span class="st"> </span><span class="kw">format</span>(<span class="kw">coef</span>(fit), <span class="dt">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb171-10"><a href="regression.html#cb171-10"></a>fit_r_sq &lt;-<span class="st"> </span><span class="kw">format</span>(<span class="kw">summary</span>(fit)<span class="op">$</span>adj.r.squared, <span class="dt">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb171-11"><a href="regression.html#cb171-11"></a>fit_cor &lt;-<span class="st"> </span><span class="kw">format</span>(<span class="kw">cor</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y), <span class="dt">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb171-12"><a href="regression.html#cb171-12"></a></span>
+<span id="cb171-13"><a href="regression.html#cb171-13"></a><span class="kw">text</span>(<span class="dt">x =</span> x_cor, <span class="dt">y =</span> y_cor, <span class="dt">pos =</span> <span class="dv">4</span>,</span>
+<span id="cb171-14"><a href="regression.html#cb171-14"></a>     <span class="dt">labels =</span> <span class="kw">bquote</span>(y <span class="op">==</span><span class="st"> </span>.(fit_eq[<span class="dv">2</span>]) <span class="op">*</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span>.(fit_eq[<span class="dv">1</span>])))</span>
+<span id="cb171-15"><a href="regression.html#cb171-15"></a><span class="kw">text</span>(<span class="dt">x =</span> x_cor, <span class="dt">y =</span> y_cor<span class="dv">-1</span>, <span class="dt">pos =</span> <span class="dv">4</span>,</span>
+<span id="cb171-16"><a href="regression.html#cb171-16"></a>     <span class="dt">labels =</span> <span class="kw">bquote</span>(R[adj]<span class="op">^</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span>.(fit_r_sq)))</span>
+<span id="cb171-17"><a href="regression.html#cb171-17"></a><span class="kw">text</span>(<span class="dt">x =</span> x_cor, <span class="dt">y =</span> y_cor<span class="dv">-2</span>, <span class="dt">pos =</span> <span class="dv">4</span>,</span>
+<span id="cb171-18"><a href="regression.html#cb171-18"></a>     <span class="dt">labels =</span> <span class="kw">bquote</span>(cor <span class="op">==</span><span class="st"> </span>.(fit_cor)))</span></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-163-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
-<p>Regression line with log transformation</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="regression.html#cb172-1"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">log</span>(infant) <span class="op">~</span><span class="st"> </span><span class="kw">log</span>(income), <span class="dt">data =</span> Leinhardt)</span>
-<span id="cb172-2"><a href="regression.html#cb172-2"></a><span class="kw">plot</span>(infant <span class="op">~</span><span class="st"> </span>income, <span class="dt">data =</span> Leinhardt)</span>
-<span id="cb172-3"><a href="regression.html#cb172-3"></a>my_pre &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">income =</span> <span class="kw">seq</span>(<span class="kw">min</span>(Leinhardt<span class="op">$</span>income), <span class="kw">max</span>(Leinhardt<span class="op">$</span>income), <span class="dt">length.out =</span> <span class="dv">200</span>))</span>
-<span id="cb172-4"><a href="regression.html#cb172-4"></a>my_pre<span class="op">$</span>infant &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">predict</span>(fit, <span class="dt">newdata =</span> my_pre))</span>
-<span id="cb172-5"><a href="regression.html#cb172-5"></a><span class="kw">lines</span>(my_pre<span class="op">$</span>income, my_pre<span class="op">$</span>infant)</span></code></pre></div>
+<p>Include CI and PI</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="regression.html#cb172-1"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Pax <span class="op">~</span><span class="st"> </span>ATM, <span class="dt">data =</span> unique2010)</span>
+<span id="cb172-2"><a href="regression.html#cb172-2"></a>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ATM=</span><span class="kw">seq</span>(<span class="dv">18000</span>, <span class="dv">26000</span>, <span class="dt">length=</span><span class="dv">200</span>))</span>
+<span id="cb172-3"><a href="regression.html#cb172-3"></a>ci &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat, <span class="dt">interval=</span><span class="st">&quot;confidence&quot;</span>)</span>
+<span id="cb172-4"><a href="regression.html#cb172-4"></a>pi &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>dat, <span class="dt">interval=</span><span class="st">&quot;prediction&quot;</span>)</span>
+<span id="cb172-5"><a href="regression.html#cb172-5"></a><span class="kw">plot</span>(Pax <span class="op">~</span><span class="st"> </span>ATM, <span class="dt">data=</span>unique2010, <span class="dt">pch=</span><span class="dv">20</span>)</span>
+<span id="cb172-6"><a href="regression.html#cb172-6"></a></span>
+<span id="cb172-7"><a href="regression.html#cb172-7"></a><span class="kw">lines</span>(dat<span class="op">$</span>ATM, ci[,<span class="dv">2</span>], <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</span>
+<span id="cb172-8"><a href="regression.html#cb172-8"></a><span class="kw">lines</span>(dat<span class="op">$</span>ATM, ci[,<span class="dv">3</span>], <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</span>
+<span id="cb172-9"><a href="regression.html#cb172-9"></a><span class="kw">lines</span>(dat<span class="op">$</span>ATM, pi[,<span class="dv">2</span>], <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb172-10"><a href="regression.html#cb172-10"></a><span class="kw">lines</span>(dat<span class="op">$</span>ATM, pi[,<span class="dv">3</span>], <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb172-11"><a href="regression.html#cb172-11"></a><span class="kw">abline</span>(fit, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-164-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p>Regression line with log transformation</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="regression.html#cb173-1"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">log</span>(infant) <span class="op">~</span><span class="st"> </span><span class="kw">log</span>(income), <span class="dt">data =</span> Leinhardt)</span>
+<span id="cb173-2"><a href="regression.html#cb173-2"></a><span class="kw">plot</span>(infant <span class="op">~</span><span class="st"> </span>income, <span class="dt">data =</span> Leinhardt)</span>
+<span id="cb173-3"><a href="regression.html#cb173-3"></a>my_pre &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">income =</span> <span class="kw">seq</span>(<span class="kw">min</span>(Leinhardt<span class="op">$</span>income), <span class="kw">max</span>(Leinhardt<span class="op">$</span>income), <span class="dt">length.out =</span> <span class="dv">200</span>))</span>
+<span id="cb173-4"><a href="regression.html#cb173-4"></a>my_pre<span class="op">$</span>infant &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">predict</span>(fit, <span class="dt">newdata =</span> my_pre))</span>
+<span id="cb173-5"><a href="regression.html#cb173-5"></a><span class="kw">lines</span>(my_pre<span class="op">$</span>income, my_pre<span class="op">$</span>infant)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-165-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="model-comparison" class="section level2">
 <h2><span class="header-section-number">22.6</span> Model comparison</h2>
@@ -834,80 +836,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">22.7</span> Diagnostic plots</h2>
 <div id="tukey-anscombe-plot" class="section level3">
 <h3><span class="header-section-number">22.7.1</span> Tukey-Anscombe plot</h3>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-166-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-166-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-166-3.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-166-4.png" width="50%" /></p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="regression.html#cb173-1"></a><span class="co"># Automatic</span></span>
-<span id="cb173-2"><a href="regression.html#cb173-2"></a><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">1</span>)</span>
-<span id="cb173-3"><a href="regression.html#cb173-3"></a></span>
-<span id="cb173-4"><a href="regression.html#cb173-4"></a><span class="co"># Manual</span></span>
-<span id="cb173-5"><a href="regression.html#cb173-5"></a><span class="kw">plot</span>(<span class="kw">fitted</span>(fit), <span class="kw">residuals</span>(fit))</span>
-<span id="cb173-6"><a href="regression.html#cb173-6"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</span>
-<span id="cb173-7"><a href="regression.html#cb173-7"></a><span class="kw">lines</span>(<span class="kw">loess.smooth</span>(<span class="kw">fitted</span>(fit), <span class="kw">residuals</span>(fit)),</span>
-<span id="cb173-8"><a href="regression.html#cb173-8"></a>      <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb173-9"><a href="regression.html#cb173-9"></a></span>
-<span id="cb173-10"><a href="regression.html#cb173-10"></a><span class="co"># Resampling</span></span>
-<span id="cb173-11"><a href="regression.html#cb173-11"></a>FunRZ<span class="op">::</span><span class="kw">FunResplot</span>(fit, <span class="dt">plot =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-167-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-167-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-167-3.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-167-4.png" width="50%" /></p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="regression.html#cb174-1"></a><span class="co"># Automatic</span></span>
+<span id="cb174-2"><a href="regression.html#cb174-2"></a><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">1</span>)</span>
+<span id="cb174-3"><a href="regression.html#cb174-3"></a></span>
+<span id="cb174-4"><a href="regression.html#cb174-4"></a><span class="co"># Manual</span></span>
+<span id="cb174-5"><a href="regression.html#cb174-5"></a><span class="kw">plot</span>(<span class="kw">fitted</span>(fit), <span class="kw">residuals</span>(fit))</span>
+<span id="cb174-6"><a href="regression.html#cb174-6"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</span>
+<span id="cb174-7"><a href="regression.html#cb174-7"></a><span class="kw">lines</span>(<span class="kw">loess.smooth</span>(<span class="kw">fitted</span>(fit), <span class="kw">residuals</span>(fit)),</span>
+<span id="cb174-8"><a href="regression.html#cb174-8"></a>      <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb174-9"><a href="regression.html#cb174-9"></a></span>
+<span id="cb174-10"><a href="regression.html#cb174-10"></a><span class="co"># Resampling</span></span>
+<span id="cb174-11"><a href="regression.html#cb174-11"></a>FunRZ<span class="op">::</span><span class="kw">FunResplot</span>(fit, <span class="dt">plot =</span> <span class="dv">1</span>)</span></code></pre></div>
 </div>
 <div id="normal-qq-plot" class="section level3">
 <h3><span class="header-section-number">22.7.2</span> Normal QQ plot</h3>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-168-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-168-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-168-3.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-168-4.png" width="50%" /></p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="regression.html#cb174-1"></a><span class="co"># Automatic</span></span>
-<span id="cb174-2"><a href="regression.html#cb174-2"></a><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">2</span>)</span>
-<span id="cb174-3"><a href="regression.html#cb174-3"></a></span>
-<span id="cb174-4"><a href="regression.html#cb174-4"></a><span class="co"># Manual</span></span>
-<span id="cb174-5"><a href="regression.html#cb174-5"></a><span class="kw">qqnorm</span>(<span class="kw">rstandard</span>(fit))</span>
-<span id="cb174-6"><a href="regression.html#cb174-6"></a><span class="kw">qqline</span>(<span class="kw">rstandard</span>(fit))</span>
-<span id="cb174-7"><a href="regression.html#cb174-7"></a></span>
-<span id="cb174-8"><a href="regression.html#cb174-8"></a><span class="co"># Resampling</span></span>
-<span id="cb174-9"><a href="regression.html#cb174-9"></a>FunRZ<span class="op">::</span><span class="kw">FunResplot</span>(fit, <span class="dt">plot =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-169-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-169-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-169-3.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-169-4.png" width="50%" /></p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="regression.html#cb175-1"></a><span class="co"># Automatic</span></span>
+<span id="cb175-2"><a href="regression.html#cb175-2"></a><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">2</span>)</span>
+<span id="cb175-3"><a href="regression.html#cb175-3"></a></span>
+<span id="cb175-4"><a href="regression.html#cb175-4"></a><span class="co"># Manual</span></span>
+<span id="cb175-5"><a href="regression.html#cb175-5"></a><span class="kw">qqnorm</span>(<span class="kw">rstandard</span>(fit))</span>
+<span id="cb175-6"><a href="regression.html#cb175-6"></a><span class="kw">qqline</span>(<span class="kw">rstandard</span>(fit))</span>
+<span id="cb175-7"><a href="regression.html#cb175-7"></a></span>
+<span id="cb175-8"><a href="regression.html#cb175-8"></a><span class="co"># Resampling</span></span>
+<span id="cb175-9"><a href="regression.html#cb175-9"></a>FunRZ<span class="op">::</span><span class="kw">FunResplot</span>(fit, <span class="dt">plot =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <div id="scale-location-plot" class="section level3">
 <h3><span class="header-section-number">22.7.3</span> Scale-Location plot</h3>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-170-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-170-2.png" width="50%" /></p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="regression.html#cb175-1"></a><span class="co"># Automatic</span></span>
-<span id="cb175-2"><a href="regression.html#cb175-2"></a><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">3</span>)</span>
-<span id="cb175-3"><a href="regression.html#cb175-3"></a></span>
-<span id="cb175-4"><a href="regression.html#cb175-4"></a><span class="co"># Manual</span></span>
-<span id="cb175-5"><a href="regression.html#cb175-5"></a>res &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">abs</span>((<span class="kw">rstandard</span>(fit))))</span>
-<span id="cb175-6"><a href="regression.html#cb175-6"></a><span class="kw">plot</span>(<span class="kw">fitted</span>(fit), res)</span>
-<span id="cb175-7"><a href="regression.html#cb175-7"></a><span class="kw">lines</span>(<span class="kw">loess.smooth</span>(<span class="kw">fitted</span>(fit), res),</span>
-<span id="cb175-8"><a href="regression.html#cb175-8"></a>      <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb175-9"><a href="regression.html#cb175-9"></a></span>
-<span id="cb175-10"><a href="regression.html#cb175-10"></a><span class="co"># Resampling</span></span>
-<span id="cb175-11"><a href="regression.html#cb175-11"></a>FunRZ<span class="op">::</span><span class="kw">FunResplot</span>(fit, <span class="dt">plot =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-171-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-171-2.png" width="50%" /></p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="regression.html#cb176-1"></a><span class="co"># Automatic</span></span>
+<span id="cb176-2"><a href="regression.html#cb176-2"></a><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">3</span>)</span>
+<span id="cb176-3"><a href="regression.html#cb176-3"></a></span>
+<span id="cb176-4"><a href="regression.html#cb176-4"></a><span class="co"># Manual</span></span>
+<span id="cb176-5"><a href="regression.html#cb176-5"></a>res &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">abs</span>((<span class="kw">rstandard</span>(fit))))</span>
+<span id="cb176-6"><a href="regression.html#cb176-6"></a><span class="kw">plot</span>(<span class="kw">fitted</span>(fit), res)</span>
+<span id="cb176-7"><a href="regression.html#cb176-7"></a><span class="kw">lines</span>(<span class="kw">loess.smooth</span>(<span class="kw">fitted</span>(fit), res),</span>
+<span id="cb176-8"><a href="regression.html#cb176-8"></a>      <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb176-9"><a href="regression.html#cb176-9"></a></span>
+<span id="cb176-10"><a href="regression.html#cb176-10"></a><span class="co"># Resampling</span></span>
+<span id="cb176-11"><a href="regression.html#cb176-11"></a>FunRZ<span class="op">::</span><span class="kw">FunResplot</span>(fit, <span class="dt">plot =</span> <span class="dv">3</span>)</span></code></pre></div>
 </div>
 <div id="leverage-plot" class="section level3">
 <h3><span class="header-section-number">22.7.4</span> Leverage plot</h3>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-172-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-172-2.png" width="50%" /></p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="regression.html#cb176-1"></a><span class="co"># Automatic</span></span>
-<span id="cb176-2"><a href="regression.html#cb176-2"></a><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">4</span>)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-173-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-173-2.png" width="50%" /></p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="regression.html#cb177-1"></a><span class="co"># Automatic</span></span>
+<span id="cb177-2"><a href="regression.html#cb177-2"></a><span class="kw">plot</span>(fit, <span class="dt">which =</span> <span class="dv">4</span>)</span></code></pre></div>
 </div>
 <div id="residuals-vs-any" class="section level3">
 <h3><span class="header-section-number">22.7.5</span> Residuals vs any</h3>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-174-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-174-2.png" width="50%" /></p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="regression.html#cb177-1"></a><span class="co"># vs Predictors</span></span>
-<span id="cb177-2"><a href="regression.html#cb177-2"></a><span class="kw">plot</span>(<span class="kw">residuals</span>(fit) <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> df)</span>
-<span id="cb177-3"><a href="regression.html#cb177-3"></a></span>
-<span id="cb177-4"><a href="regression.html#cb177-4"></a><span class="co"># vs Possible predictors</span></span>
-<span id="cb177-5"><a href="regression.html#cb177-5"></a><span class="kw">plot</span>(<span class="kw">residuals</span>(fit) <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> df)</span>
-<span id="cb177-6"><a href="regression.html#cb177-6"></a></span>
-<span id="cb177-7"><a href="regression.html#cb177-7"></a><span class="co"># vs Temporal/Spatial information</span></span>
-<span id="cb177-8"><a href="regression.html#cb177-8"></a><span class="kw">plot</span>(<span class="kw">residuals</span>(fit))  <span class="co">## against Index</span></span>
-<span id="cb177-9"><a href="regression.html#cb177-9"></a><span class="kw">plot</span>(<span class="kw">residuals</span>(fit) <span class="op">~</span><span class="st"> </span>Time<span class="op">-</span>Space<span class="op">-</span>Variable)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-175-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-175-2.png" width="50%" /></p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="regression.html#cb178-1"></a><span class="co"># vs Predictors</span></span>
+<span id="cb178-2"><a href="regression.html#cb178-2"></a><span class="kw">plot</span>(<span class="kw">residuals</span>(fit) <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> df)</span>
+<span id="cb178-3"><a href="regression.html#cb178-3"></a></span>
+<span id="cb178-4"><a href="regression.html#cb178-4"></a><span class="co"># vs Possible predictors</span></span>
+<span id="cb178-5"><a href="regression.html#cb178-5"></a><span class="kw">plot</span>(<span class="kw">residuals</span>(fit) <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> df)</span>
+<span id="cb178-6"><a href="regression.html#cb178-6"></a></span>
+<span id="cb178-7"><a href="regression.html#cb178-7"></a><span class="co"># vs Temporal/Spatial information</span></span>
+<span id="cb178-8"><a href="regression.html#cb178-8"></a><span class="kw">plot</span>(<span class="kw">residuals</span>(fit))  <span class="co">## against Index</span></span>
+<span id="cb178-9"><a href="regression.html#cb178-9"></a><span class="kw">plot</span>(<span class="kw">residuals</span>(fit) <span class="op">~</span><span class="st"> </span>Time<span class="op">-</span>Space<span class="op">-</span>Variable)</span></code></pre></div>
 </div>
 <div id="partial-residual-plot" class="section level3">
 <h3><span class="header-section-number">22.7.6</span> Partial residual plot</h3>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-176-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-176-2.png" width="50%" /></p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="regression.html#cb178-1"></a><span class="co"># Automatic</span></span>
-<span id="cb178-2"><a href="regression.html#cb178-2"></a>car<span class="op">::</span><span class="kw">crPlots</span>(fit)</span>
-<span id="cb178-3"><a href="regression.html#cb178-3"></a>car<span class="op">::</span><span class="kw">crPlot</span>(fit, <span class="dt">variable =</span> x1)</span>
-<span id="cb178-4"><a href="regression.html#cb178-4"></a></span>
-<span id="cb178-5"><a href="regression.html#cb178-5"></a><span class="co"># Manual</span></span>
-<span id="cb178-6"><a href="regression.html#cb178-6"></a>myres &lt;-<span class="st"> </span><span class="kw">residuals</span>(fit, <span class="dt">type =</span> <span class="st">&quot;partial&quot;</span>)</span>
-<span id="cb178-7"><a href="regression.html#cb178-7"></a>mycof &lt;-<span class="st"> </span>fit<span class="op">$</span>coefficients</span>
-<span id="cb178-8"><a href="regression.html#cb178-8"></a><span class="co">## for target variable x1</span></span>
-<span id="cb178-9"><a href="regression.html#cb178-9"></a><span class="kw">plot</span>(myres[,<span class="st">&quot;x1&quot;</span>] <span class="op">~</span><span class="st"> </span>x1)</span>
-<span id="cb178-10"><a href="regression.html#cb178-10"></a><span class="kw">abline</span>(<span class="dt">a =</span> <span class="op">-</span>mycof[<span class="st">&quot;x1&quot;</span>]<span class="op">*</span><span class="kw">mean</span>(x1), <span class="dt">b =</span> mycof[<span class="st">&quot;x1&quot;</span>])</span>
-<span id="cb178-11"><a href="regression.html#cb178-11"></a><span class="kw">lines</span>(<span class="kw">loess.smooth</span>(x1, myres[,<span class="st">&quot;x1&quot;</span>]), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-177-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-177-2.png" width="50%" /></p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="regression.html#cb179-1"></a><span class="co"># Automatic</span></span>
+<span id="cb179-2"><a href="regression.html#cb179-2"></a>car<span class="op">::</span><span class="kw">crPlots</span>(fit)</span>
+<span id="cb179-3"><a href="regression.html#cb179-3"></a>car<span class="op">::</span><span class="kw">crPlot</span>(fit, <span class="dt">variable =</span> x1)</span>
+<span id="cb179-4"><a href="regression.html#cb179-4"></a></span>
+<span id="cb179-5"><a href="regression.html#cb179-5"></a><span class="co"># Manual</span></span>
+<span id="cb179-6"><a href="regression.html#cb179-6"></a>myres &lt;-<span class="st"> </span><span class="kw">residuals</span>(fit, <span class="dt">type =</span> <span class="st">&quot;partial&quot;</span>)</span>
+<span id="cb179-7"><a href="regression.html#cb179-7"></a>mycof &lt;-<span class="st"> </span>fit<span class="op">$</span>coefficients</span>
+<span id="cb179-8"><a href="regression.html#cb179-8"></a><span class="co">## for target variable x1</span></span>
+<span id="cb179-9"><a href="regression.html#cb179-9"></a><span class="kw">plot</span>(myres[,<span class="st">&quot;x1&quot;</span>] <span class="op">~</span><span class="st"> </span>x1)</span>
+<span id="cb179-10"><a href="regression.html#cb179-10"></a><span class="kw">abline</span>(<span class="dt">a =</span> <span class="op">-</span>mycof[<span class="st">&quot;x1&quot;</span>]<span class="op">*</span><span class="kw">mean</span>(x1), <span class="dt">b =</span> mycof[<span class="st">&quot;x1&quot;</span>])</span>
+<span id="cb179-11"><a href="regression.html#cb179-11"></a><span class="kw">lines</span>(<span class="kw">loess.smooth</span>(x1, myres[,<span class="st">&quot;x1&quot;</span>]), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="model-improvement" class="section level2">
@@ -919,18 +921,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Fit contains only numerical predictors: <span class="math inline">\(\text{VIF} &gt; 5\)</span> critically</li>
 <li>Fit contains also factorial predictors: <code>GVIF^(1/(2*Df))</code> <span class="math inline">\(&gt; 5\)</span> critically</li>
 </ul>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="regression.html#cb179-1"></a><span class="co">## Only numerical predictors</span></span>
-<span id="cb179-2"><a href="regression.html#cb179-2"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Pax <span class="op">~</span><span class="st"> </span>ATM <span class="op">+</span><span class="st"> </span>Cargo, <span class="dt">data =</span> unique2010)</span>
-<span id="cb179-3"><a href="regression.html#cb179-3"></a>car<span class="op">::</span><span class="kw">vif</span>(fit)</span>
-<span id="cb179-4"><a href="regression.html#cb179-4"></a><span class="co">##      ATM    Cargo </span></span>
-<span id="cb179-5"><a href="regression.html#cb179-5"></a><span class="co">## 1.052416 1.052416</span></span>
-<span id="cb179-6"><a href="regression.html#cb179-6"></a></span>
-<span id="cb179-7"><a href="regression.html#cb179-7"></a><span class="co">## Contains fatorial predictor</span></span>
-<span id="cb179-8"><a href="regression.html#cb179-8"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Sepal.Length <span class="op">~</span><span class="st"> </span>Sepal.Width <span class="op">+</span><span class="st"> </span>Species, <span class="dt">data =</span> iris)</span>
-<span id="cb179-9"><a href="regression.html#cb179-9"></a>car<span class="op">::</span><span class="kw">vif</span>(fit)</span>
-<span id="cb179-10"><a href="regression.html#cb179-10"></a><span class="co">##                 GVIF Df GVIF^(1/(2*Df))</span></span>
-<span id="cb179-11"><a href="regression.html#cb179-11"></a><span class="co">## Sepal.Width 1.668844  1        1.291837</span></span>
-<span id="cb179-12"><a href="regression.html#cb179-12"></a><span class="co">## Species     1.668844  2        1.136590</span></span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="regression.html#cb180-1"></a><span class="co">## Only numerical predictors</span></span>
+<span id="cb180-2"><a href="regression.html#cb180-2"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Pax <span class="op">~</span><span class="st"> </span>ATM <span class="op">+</span><span class="st"> </span>Cargo, <span class="dt">data =</span> unique2010)</span>
+<span id="cb180-3"><a href="regression.html#cb180-3"></a>car<span class="op">::</span><span class="kw">vif</span>(fit)</span>
+<span id="cb180-4"><a href="regression.html#cb180-4"></a><span class="co">##      ATM    Cargo </span></span>
+<span id="cb180-5"><a href="regression.html#cb180-5"></a><span class="co">## 1.052416 1.052416</span></span>
+<span id="cb180-6"><a href="regression.html#cb180-6"></a></span>
+<span id="cb180-7"><a href="regression.html#cb180-7"></a><span class="co">## Contains fatorial predictor</span></span>
+<span id="cb180-8"><a href="regression.html#cb180-8"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Sepal.Length <span class="op">~</span><span class="st"> </span>Sepal.Width <span class="op">+</span><span class="st"> </span>Species, <span class="dt">data =</span> iris)</span>
+<span id="cb180-9"><a href="regression.html#cb180-9"></a>car<span class="op">::</span><span class="kw">vif</span>(fit)</span>
+<span id="cb180-10"><a href="regression.html#cb180-10"></a><span class="co">##                 GVIF Df GVIF^(1/(2*Df))</span></span>
+<span id="cb180-11"><a href="regression.html#cb180-11"></a><span class="co">## Sepal.Width 1.668844  1        1.291837</span></span>
+<span id="cb180-12"><a href="regression.html#cb180-12"></a><span class="co">## Species     1.668844  2        1.136590</span></span></code></pre></div>
 </div>
 <div id="aicbic" class="section level3">
 <h3><span class="header-section-number">22.8.2</span> AIC/BIC</h3>
@@ -960,63 +962,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">22.8.3</span> Variable selection</h3>
 <div id="backward-elimination" class="section level4">
 <h4><span class="header-section-number">22.8.3.1</span> Backward elimination</h4>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="regression.html#cb180-1"></a><span class="co">## Manual</span></span>
-<span id="cb180-2"><a href="regression.html#cb180-2"></a>fit01 &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>JanTemp <span class="op">+</span><span class="st"> </span>JulyTemp <span class="op">+</span><span class="st"> </span>RelHum <span class="op">+</span><span class="st"> </span></span>
-<span id="cb180-3"><a href="regression.html#cb180-3"></a><span class="st">        </span>Rain <span class="op">+</span><span class="st"> </span>Educ <span class="op">+</span><span class="st"> </span>Dens <span class="op">+</span><span class="st"> </span>NonWhite <span class="op">+</span><span class="st"> </span>WhiteCollar <span class="op">+</span></span>
-<span id="cb180-4"><a href="regression.html#cb180-4"></a><span class="st">        </span><span class="kw">log</span>(Pop) <span class="op">+</span><span class="st"> </span>House <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(HC) <span class="op">+</span></span>
-<span id="cb180-5"><a href="regression.html#cb180-5"></a><span class="st">        </span><span class="kw">log</span>(NOx) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(SO2), <span class="dt">data=</span>apm) <span class="co"># full model</span></span>
-<span id="cb180-6"><a href="regression.html#cb180-6"></a></span>
-<span id="cb180-7"><a href="regression.html#cb180-7"></a><span class="kw">drop1</span>(fit01, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span>
-<span id="cb180-8"><a href="regression.html#cb180-8"></a>fit02 &lt;-<span class="st"> </span><span class="kw">update</span>(fit, .<span class="op">~</span>. – House ) <span class="co"># remove predictor with highest p-value / highest AIC/BIC</span></span>
-<span id="cb180-9"><a href="regression.html#cb180-9"></a><span class="kw">drop1</span>(fit02, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span>
-<span id="cb180-10"><a href="regression.html#cb180-10"></a><span class="co"># ...</span></span>
-<span id="cb180-11"><a href="regression.html#cb180-11"></a></span>
-<span id="cb180-12"><a href="regression.html#cb180-12"></a><span class="co">## Automatic</span></span>
-<span id="cb180-13"><a href="regression.html#cb180-13"></a>fit01 &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>JanTemp <span class="op">+</span><span class="st"> </span>JulyTemp <span class="op">+</span><span class="st"> </span>RelHum <span class="op">+</span></span>
-<span id="cb180-14"><a href="regression.html#cb180-14"></a><span class="st">        </span>Rain <span class="op">+</span><span class="st"> </span>Educ <span class="op">+</span><span class="st"> </span>Dens <span class="op">+</span><span class="st"> </span>NonWhite <span class="op">+</span><span class="st"> </span>WhiteCollar <span class="op">+</span></span>
-<span id="cb180-15"><a href="regression.html#cb180-15"></a><span class="st">        </span><span class="kw">log</span>(Pop) <span class="op">+</span><span class="st"> </span>House <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(HC) <span class="op">+</span></span>
-<span id="cb180-16"><a href="regression.html#cb180-16"></a><span class="st">        </span><span class="kw">log</span>(NOx) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(SO2), <span class="dt">data=</span>apm)</span>
-<span id="cb180-17"><a href="regression.html#cb180-17"></a>fit02 &lt;-<span class="st"> </span><span class="kw">step</span>(fit01, <span class="dt">direction =</span> <span class="st">&quot;backward&quot;</span>, <span class="dt">k =</span> <span class="dv">2</span>) <span class="co"># k defines selection criterion (AIC, BIC)</span></span></code></pre></div>
-</div>
-<div id="forward-selection" class="section level4">
-<h4><span class="header-section-number">22.8.3.2</span> Forward selection</h4>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="regression.html#cb181-1"></a><span class="co">## Manual</span></span>
-<span id="cb181-2"><a href="regression.html#cb181-2"></a>fit01 &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> apm)</span>
-<span id="cb181-3"><a href="regression.html#cb181-3"></a>f_full &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>JanTemp <span class="op">+</span><span class="st"> </span>JulyTemp <span class="op">+</span><span class="st"> </span>RelHum <span class="op">+</span></span>
-<span id="cb181-4"><a href="regression.html#cb181-4"></a><span class="st">          </span>Rain <span class="op">+</span><span class="st"> </span>Educ <span class="op">+</span><span class="st"> </span>Dens <span class="op">+</span><span class="st"> </span>NonWhite <span class="op">+</span><span class="st"> </span>WhiteCollar <span class="op">+</span></span>
-<span id="cb181-5"><a href="regression.html#cb181-5"></a><span class="st">          </span><span class="kw">log</span>(Pop) <span class="op">+</span><span class="st"> </span>House <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(HC) <span class="op">+</span></span>
-<span id="cb181-6"><a href="regression.html#cb181-6"></a><span class="st">          </span><span class="kw">log</span>(NOx) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(SO2), <span class="dt">data=</span>apm)</span>
-<span id="cb181-7"><a href="regression.html#cb181-7"></a><span class="kw">add1</span>(fit01, <span class="dt">scope =</span> f_full, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span>
-<span id="cb181-8"><a href="regression.html#cb181-8"></a>fit02 &lt;-<span class="st"> </span><span class="kw">update</span>(fit01, .<span class="op">~</span>. <span class="op">+</span><span class="st"> </span>NonWhite ) <span class="co"># add predictor with lowest p-value / lowest AIC/BIC</span></span>
-<span id="cb181-9"><a href="regression.html#cb181-9"></a><span class="kw">add1</span>(fit02, <span class="dt">scope =</span> f_full, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span>
+<span id="cb181-2"><a href="regression.html#cb181-2"></a>fit01 &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>JanTemp <span class="op">+</span><span class="st"> </span>JulyTemp <span class="op">+</span><span class="st"> </span>RelHum <span class="op">+</span><span class="st"> </span></span>
+<span id="cb181-3"><a href="regression.html#cb181-3"></a><span class="st">        </span>Rain <span class="op">+</span><span class="st"> </span>Educ <span class="op">+</span><span class="st"> </span>Dens <span class="op">+</span><span class="st"> </span>NonWhite <span class="op">+</span><span class="st"> </span>WhiteCollar <span class="op">+</span></span>
+<span id="cb181-4"><a href="regression.html#cb181-4"></a><span class="st">        </span><span class="kw">log</span>(Pop) <span class="op">+</span><span class="st"> </span>House <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(HC) <span class="op">+</span></span>
+<span id="cb181-5"><a href="regression.html#cb181-5"></a><span class="st">        </span><span class="kw">log</span>(NOx) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(SO2), <span class="dt">data=</span>apm) <span class="co"># full model</span></span>
+<span id="cb181-6"><a href="regression.html#cb181-6"></a></span>
+<span id="cb181-7"><a href="regression.html#cb181-7"></a><span class="kw">drop1</span>(fit01, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span>
+<span id="cb181-8"><a href="regression.html#cb181-8"></a>fit02 &lt;-<span class="st"> </span><span class="kw">update</span>(fit, .<span class="op">~</span>. – House ) <span class="co"># remove predictor with highest p-value / highest AIC/BIC</span></span>
+<span id="cb181-9"><a href="regression.html#cb181-9"></a><span class="kw">drop1</span>(fit02, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span>
 <span id="cb181-10"><a href="regression.html#cb181-10"></a><span class="co"># ...</span></span>
 <span id="cb181-11"><a href="regression.html#cb181-11"></a></span>
 <span id="cb181-12"><a href="regression.html#cb181-12"></a><span class="co">## Automatic</span></span>
-<span id="cb181-13"><a href="regression.html#cb181-13"></a>f_full &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>JanTemp <span class="op">+</span><span class="st"> </span>JulyTemp <span class="op">+</span><span class="st"> </span>RelHum <span class="op">+</span></span>
+<span id="cb181-13"><a href="regression.html#cb181-13"></a>fit01 &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>JanTemp <span class="op">+</span><span class="st"> </span>JulyTemp <span class="op">+</span><span class="st"> </span>RelHum <span class="op">+</span></span>
 <span id="cb181-14"><a href="regression.html#cb181-14"></a><span class="st">        </span>Rain <span class="op">+</span><span class="st"> </span>Educ <span class="op">+</span><span class="st"> </span>Dens <span class="op">+</span><span class="st"> </span>NonWhite <span class="op">+</span><span class="st"> </span>WhiteCollar <span class="op">+</span></span>
 <span id="cb181-15"><a href="regression.html#cb181-15"></a><span class="st">        </span><span class="kw">log</span>(Pop) <span class="op">+</span><span class="st"> </span>House <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(HC) <span class="op">+</span></span>
 <span id="cb181-16"><a href="regression.html#cb181-16"></a><span class="st">        </span><span class="kw">log</span>(NOx) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(SO2), <span class="dt">data=</span>apm)</span>
-<span id="cb181-17"><a href="regression.html#cb181-17"></a>f_null &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> apm)</span>
-<span id="cb181-18"><a href="regression.html#cb181-18"></a>sc &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">lower =</span> f_null, <span class="dt">upper =</span> f_full)</span>
-<span id="cb181-19"><a href="regression.html#cb181-19"></a>fit02 &lt;-<span class="st"> </span><span class="kw">step</span>(f_null, <span class="dt">scope =</span> sc, <span class="dt">direction =</span> <span class="st">&quot;forward&quot;</span>, <span class="dt">k =</span> <span class="dv">2</span>) <span class="co"># k defines selection criterion (AIC, BIC)</span></span></code></pre></div>
+<span id="cb181-17"><a href="regression.html#cb181-17"></a>fit02 &lt;-<span class="st"> </span><span class="kw">step</span>(fit01, <span class="dt">direction =</span> <span class="st">&quot;backward&quot;</span>, <span class="dt">k =</span> <span class="dv">2</span>) <span class="co"># k defines selection criterion (AIC, BIC)</span></span></code></pre></div>
+</div>
+<div id="forward-selection" class="section level4">
+<h4><span class="header-section-number">22.8.3.2</span> Forward selection</h4>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="regression.html#cb182-1"></a><span class="co">## Manual</span></span>
+<span id="cb182-2"><a href="regression.html#cb182-2"></a>fit01 &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> apm)</span>
+<span id="cb182-3"><a href="regression.html#cb182-3"></a>f_full &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>JanTemp <span class="op">+</span><span class="st"> </span>JulyTemp <span class="op">+</span><span class="st"> </span>RelHum <span class="op">+</span></span>
+<span id="cb182-4"><a href="regression.html#cb182-4"></a><span class="st">          </span>Rain <span class="op">+</span><span class="st"> </span>Educ <span class="op">+</span><span class="st"> </span>Dens <span class="op">+</span><span class="st"> </span>NonWhite <span class="op">+</span><span class="st"> </span>WhiteCollar <span class="op">+</span></span>
+<span id="cb182-5"><a href="regression.html#cb182-5"></a><span class="st">          </span><span class="kw">log</span>(Pop) <span class="op">+</span><span class="st"> </span>House <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(HC) <span class="op">+</span></span>
+<span id="cb182-6"><a href="regression.html#cb182-6"></a><span class="st">          </span><span class="kw">log</span>(NOx) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(SO2), <span class="dt">data=</span>apm)</span>
+<span id="cb182-7"><a href="regression.html#cb182-7"></a><span class="kw">add1</span>(fit01, <span class="dt">scope =</span> f_full, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span>
+<span id="cb182-8"><a href="regression.html#cb182-8"></a>fit02 &lt;-<span class="st"> </span><span class="kw">update</span>(fit01, .<span class="op">~</span>. <span class="op">+</span><span class="st"> </span>NonWhite ) <span class="co"># add predictor with lowest p-value / lowest AIC/BIC</span></span>
+<span id="cb182-9"><a href="regression.html#cb182-9"></a><span class="kw">add1</span>(fit02, <span class="dt">scope =</span> f_full, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span>
+<span id="cb182-10"><a href="regression.html#cb182-10"></a><span class="co"># ...</span></span>
+<span id="cb182-11"><a href="regression.html#cb182-11"></a></span>
+<span id="cb182-12"><a href="regression.html#cb182-12"></a><span class="co">## Automatic</span></span>
+<span id="cb182-13"><a href="regression.html#cb182-13"></a>f_full &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>JanTemp <span class="op">+</span><span class="st"> </span>JulyTemp <span class="op">+</span><span class="st"> </span>RelHum <span class="op">+</span></span>
+<span id="cb182-14"><a href="regression.html#cb182-14"></a><span class="st">        </span>Rain <span class="op">+</span><span class="st"> </span>Educ <span class="op">+</span><span class="st"> </span>Dens <span class="op">+</span><span class="st"> </span>NonWhite <span class="op">+</span><span class="st"> </span>WhiteCollar <span class="op">+</span></span>
+<span id="cb182-15"><a href="regression.html#cb182-15"></a><span class="st">        </span><span class="kw">log</span>(Pop) <span class="op">+</span><span class="st"> </span>House <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(HC) <span class="op">+</span></span>
+<span id="cb182-16"><a href="regression.html#cb182-16"></a><span class="st">        </span><span class="kw">log</span>(NOx) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(SO2), <span class="dt">data=</span>apm)</span>
+<span id="cb182-17"><a href="regression.html#cb182-17"></a>f_null &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> apm)</span>
+<span id="cb182-18"><a href="regression.html#cb182-18"></a>sc &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">lower =</span> f_null, <span class="dt">upper =</span> f_full)</span>
+<span id="cb182-19"><a href="regression.html#cb182-19"></a>fit02 &lt;-<span class="st"> </span><span class="kw">step</span>(f_null, <span class="dt">scope =</span> sc, <span class="dt">direction =</span> <span class="st">&quot;forward&quot;</span>, <span class="dt">k =</span> <span class="dv">2</span>) <span class="co"># k defines selection criterion (AIC, BIC)</span></span></code></pre></div>
 </div>
 <div id="both-directions" class="section level4">
 <h4><span class="header-section-number">22.8.3.3</span> Both directions</h4>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="regression.html#cb182-1"></a>f_full &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>JanTemp <span class="op">+</span><span class="st"> </span>JulyTemp <span class="op">+</span><span class="st"> </span>RelHum <span class="op">+</span></span>
-<span id="cb182-2"><a href="regression.html#cb182-2"></a><span class="st">        </span>Rain <span class="op">+</span><span class="st"> </span>Educ <span class="op">+</span><span class="st"> </span>Dens <span class="op">+</span><span class="st"> </span>NonWhite <span class="op">+</span><span class="st"> </span>WhiteCollar <span class="op">+</span></span>
-<span id="cb182-3"><a href="regression.html#cb182-3"></a><span class="st">        </span><span class="kw">log</span>(Pop) <span class="op">+</span><span class="st"> </span>House <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(HC) <span class="op">+</span></span>
-<span id="cb182-4"><a href="regression.html#cb182-4"></a><span class="st">        </span><span class="kw">log</span>(NOx) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(SO2), <span class="dt">data=</span>apm)</span>
-<span id="cb182-5"><a href="regression.html#cb182-5"></a>fit02 &lt;-<span class="st"> </span><span class="kw">step</span>(f_full, <span class="dt">direction =</span> <span class="st">&quot;both&quot;</span>, <span class="dt">k =</span> <span class="dv">2</span>) <span class="co"># k defines selection criterion (AIC, BIC)</span></span></code></pre></div>
-</div>
-<div id="all-possible-models" class="section level4">
-<h4><span class="header-section-number">22.8.3.4</span> All possible models</h4>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="regression.html#cb183-1"></a>f_full &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>JanTemp <span class="op">+</span><span class="st"> </span>JulyTemp <span class="op">+</span><span class="st"> </span>RelHum <span class="op">+</span></span>
 <span id="cb183-2"><a href="regression.html#cb183-2"></a><span class="st">        </span>Rain <span class="op">+</span><span class="st"> </span>Educ <span class="op">+</span><span class="st"> </span>Dens <span class="op">+</span><span class="st"> </span>NonWhite <span class="op">+</span><span class="st"> </span>WhiteCollar <span class="op">+</span></span>
 <span id="cb183-3"><a href="regression.html#cb183-3"></a><span class="st">        </span><span class="kw">log</span>(Pop) <span class="op">+</span><span class="st"> </span>House <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(HC) <span class="op">+</span></span>
 <span id="cb183-4"><a href="regression.html#cb183-4"></a><span class="st">        </span><span class="kw">log</span>(NOx) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(SO2), <span class="dt">data=</span>apm)</span>
-<span id="cb183-5"><a href="regression.html#cb183-5"></a>fit02 &lt;-<span class="st"> </span>leaps<span class="op">::</span><span class="kw">regsubsets</span>(<span class="kw">formula</span>(f_full), <span class="dt">nbest =</span> <span class="dv">1</span>, <span class="dt">dat =</span> apm, <span class="dt">nvmax =</span> <span class="dv">14</span>)</span>
-<span id="cb183-6"><a href="regression.html#cb183-6"></a><span class="kw">plot</span>(fit02) <span class="co"># black predictors are included in the model</span></span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-182-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<span id="cb183-5"><a href="regression.html#cb183-5"></a>fit02 &lt;-<span class="st"> </span><span class="kw">step</span>(f_full, <span class="dt">direction =</span> <span class="st">&quot;both&quot;</span>, <span class="dt">k =</span> <span class="dv">2</span>) <span class="co"># k defines selection criterion (AIC, BIC)</span></span></code></pre></div>
+</div>
+<div id="all-possible-models" class="section level4">
+<h4><span class="header-section-number">22.8.3.4</span> All possible models</h4>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="regression.html#cb184-1"></a>f_full &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>JanTemp <span class="op">+</span><span class="st"> </span>JulyTemp <span class="op">+</span><span class="st"> </span>RelHum <span class="op">+</span></span>
+<span id="cb184-2"><a href="regression.html#cb184-2"></a><span class="st">        </span>Rain <span class="op">+</span><span class="st"> </span>Educ <span class="op">+</span><span class="st"> </span>Dens <span class="op">+</span><span class="st"> </span>NonWhite <span class="op">+</span><span class="st"> </span>WhiteCollar <span class="op">+</span></span>
+<span id="cb184-3"><a href="regression.html#cb184-3"></a><span class="st">        </span><span class="kw">log</span>(Pop) <span class="op">+</span><span class="st"> </span>House <span class="op">+</span><span class="st"> </span>Income <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(HC) <span class="op">+</span></span>
+<span id="cb184-4"><a href="regression.html#cb184-4"></a><span class="st">        </span><span class="kw">log</span>(NOx) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(SO2), <span class="dt">data=</span>apm)</span>
+<span id="cb184-5"><a href="regression.html#cb184-5"></a>fit02 &lt;-<span class="st"> </span>leaps<span class="op">::</span><span class="kw">regsubsets</span>(<span class="kw">formula</span>(f_full), <span class="dt">nbest =</span> <span class="dv">1</span>, <span class="dt">dat =</span> apm, <span class="dt">nvmax =</span> <span class="dv">14</span>)</span>
+<span id="cb184-6"><a href="regression.html#cb184-6"></a><span class="kw">plot</span>(fit02) <span class="co"># black predictors are included in the model</span></span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-183-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 
 <div class="rmdcaution">
 <code>leaps::regsubsets</code> cannot deal correctly with factor variables and interaction terms
@@ -1026,44 +1028,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="select-model-with-lowest-predictive-mse" class="section level4">
 <h4><span class="header-section-number">22.8.3.5</span> Select model with lowest predictive MSE</h4>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="regression.html#cb184-1"></a><span class="co">## Automatic (not recommended)</span></span>
-<span id="cb184-2"><a href="regression.html#cb184-2"></a>DAAG<span class="op">::</span><span class="kw">CVlm</span>(data, formula, fold.number, ...)</span>
-<span id="cb184-3"><a href="regression.html#cb184-3"></a></span>
-<span id="cb184-4"><a href="regression.html#cb184-4"></a></span>
-<span id="cb184-5"><a href="regression.html#cb184-5"></a><span class="co">## Manual (this code only test one possible model)</span></span>
-<span id="cb184-6"><a href="regression.html#cb184-6"></a>dat &lt;-<span class="st"> </span>apm</span>
-<span id="cb184-7"><a href="regression.html#cb184-7"></a></span>
-<span id="cb184-8"><a href="regression.html#cb184-8"></a><span class="co"># Randomly shuffle the data</span></span>
-<span id="cb184-9"><a href="regression.html#cb184-9"></a>dat &lt;-<span class="st"> </span>dat[<span class="kw">sample</span>(<span class="kw">nrow</span>(dat)), ]</span>
-<span id="cb184-10"><a href="regression.html#cb184-10"></a></span>
-<span id="cb184-11"><a href="regression.html#cb184-11"></a><span class="co"># Create 10 equally size folds</span></span>
-<span id="cb184-12"><a href="regression.html#cb184-12"></a>f &lt;-<span class="st"> </span><span class="dv">10</span></span>
-<span id="cb184-13"><a href="regression.html#cb184-13"></a>folds &lt;-<span class="st"> </span><span class="kw">cut</span>(<span class="kw">seq</span>(<span class="dv">1</span>, <span class="kw">nrow</span>(dat)), <span class="dt">breaks =</span> f, <span class="dt">labels =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb184-14"><a href="regression.html#cb184-14"></a></span>
-<span id="cb184-15"><a href="regression.html#cb184-15"></a><span class="co"># Perform 10 fold cross validation</span></span>
-<span id="cb184-16"><a href="regression.html#cb184-16"></a>SE &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, f)</span>
-<span id="cb184-17"><a href="regression.html#cb184-17"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>f){</span>
-<span id="cb184-18"><a href="regression.html#cb184-18"></a>  <span class="co">#Segement your data by fold using the which() function</span></span>
-<span id="cb184-19"><a href="regression.html#cb184-19"></a>  testIndexes &lt;-<span class="st"> </span><span class="kw">which</span>(folds<span class="op">==</span>i,<span class="dt">arr.ind=</span><span class="ot">TRUE</span>)</span>
-<span id="cb184-20"><a href="regression.html#cb184-20"></a>  testData &lt;-<span class="st"> </span>dat[testIndexes, ]</span>
-<span id="cb184-21"><a href="regression.html#cb184-21"></a>  trainData &lt;-<span class="st"> </span>dat[<span class="op">-</span>testIndexes, ]</span>
-<span id="cb184-22"><a href="regression.html#cb184-22"></a>  </span>
-<span id="cb184-23"><a href="regression.html#cb184-23"></a>  <span class="co">#Use the test and train data partitions to check one model</span></span>
-<span id="cb184-24"><a href="regression.html#cb184-24"></a>  fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>NonWhite, <span class="dt">data =</span> trainData)</span>
-<span id="cb184-25"><a href="regression.html#cb184-25"></a>  pred &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata =</span> testData)</span>
-<span id="cb184-26"><a href="regression.html#cb184-26"></a>  SE[i] &lt;-<span class="st"> </span><span class="kw">mean</span>((testData<span class="op">$</span>Mortality <span class="op">-</span><span class="st"> </span>pred)<span class="op">^</span><span class="dv">2</span>)</span>
-<span id="cb184-27"><a href="regression.html#cb184-27"></a>}</span>
-<span id="cb184-28"><a href="regression.html#cb184-28"></a><span class="kw">mean</span>(SE)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="regression.html#cb185-1"></a><span class="co">## Automatic (not recommended)</span></span>
+<span id="cb185-2"><a href="regression.html#cb185-2"></a>DAAG<span class="op">::</span><span class="kw">CVlm</span>(data, formula, fold.number, ...)</span>
+<span id="cb185-3"><a href="regression.html#cb185-3"></a></span>
+<span id="cb185-4"><a href="regression.html#cb185-4"></a></span>
+<span id="cb185-5"><a href="regression.html#cb185-5"></a><span class="co">## Manual (this code only test one possible model)</span></span>
+<span id="cb185-6"><a href="regression.html#cb185-6"></a>dat &lt;-<span class="st"> </span>apm</span>
+<span id="cb185-7"><a href="regression.html#cb185-7"></a></span>
+<span id="cb185-8"><a href="regression.html#cb185-8"></a><span class="co"># Randomly shuffle the data</span></span>
+<span id="cb185-9"><a href="regression.html#cb185-9"></a>dat &lt;-<span class="st"> </span>dat[<span class="kw">sample</span>(<span class="kw">nrow</span>(dat)), ]</span>
+<span id="cb185-10"><a href="regression.html#cb185-10"></a></span>
+<span id="cb185-11"><a href="regression.html#cb185-11"></a><span class="co"># Create 10 equally size folds</span></span>
+<span id="cb185-12"><a href="regression.html#cb185-12"></a>f &lt;-<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb185-13"><a href="regression.html#cb185-13"></a>folds &lt;-<span class="st"> </span><span class="kw">cut</span>(<span class="kw">seq</span>(<span class="dv">1</span>, <span class="kw">nrow</span>(dat)), <span class="dt">breaks =</span> f, <span class="dt">labels =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb185-14"><a href="regression.html#cb185-14"></a></span>
+<span id="cb185-15"><a href="regression.html#cb185-15"></a><span class="co"># Perform 10 fold cross validation</span></span>
+<span id="cb185-16"><a href="regression.html#cb185-16"></a>SE &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, f)</span>
+<span id="cb185-17"><a href="regression.html#cb185-17"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>f){</span>
+<span id="cb185-18"><a href="regression.html#cb185-18"></a>  <span class="co">#Segement your data by fold using the which() function</span></span>
+<span id="cb185-19"><a href="regression.html#cb185-19"></a>  testIndexes &lt;-<span class="st"> </span><span class="kw">which</span>(folds<span class="op">==</span>i,<span class="dt">arr.ind=</span><span class="ot">TRUE</span>)</span>
+<span id="cb185-20"><a href="regression.html#cb185-20"></a>  testData &lt;-<span class="st"> </span>dat[testIndexes, ]</span>
+<span id="cb185-21"><a href="regression.html#cb185-21"></a>  trainData &lt;-<span class="st"> </span>dat[<span class="op">-</span>testIndexes, ]</span>
+<span id="cb185-22"><a href="regression.html#cb185-22"></a>  </span>
+<span id="cb185-23"><a href="regression.html#cb185-23"></a>  <span class="co">#Use the test and train data partitions to check one model</span></span>
+<span id="cb185-24"><a href="regression.html#cb185-24"></a>  fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Mortality <span class="op">~</span><span class="st"> </span>NonWhite, <span class="dt">data =</span> trainData)</span>
+<span id="cb185-25"><a href="regression.html#cb185-25"></a>  pred &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata =</span> testData)</span>
+<span id="cb185-26"><a href="regression.html#cb185-26"></a>  SE[i] &lt;-<span class="st"> </span><span class="kw">mean</span>((testData<span class="op">$</span>Mortality <span class="op">-</span><span class="st"> </span>pred)<span class="op">^</span><span class="dv">2</span>)</span>
+<span id="cb185-27"><a href="regression.html#cb185-27"></a>}</span>
+<span id="cb185-28"><a href="regression.html#cb185-28"></a><span class="kw">mean</span>(SE)</span></code></pre></div>
 </div>
 </div>
 <div id="predictor-relevance" class="section level3">
 <h3><span class="header-section-number">22.8.4</span> Predictor relevance</h3>
 <p>significance <span class="math inline">\(\neq\)</span> relevance</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="regression.html#cb185-1"></a><span class="co">## Standardized coefficients</span></span>
-<span id="cb185-2"><a href="regression.html#cb185-2"></a>lelaimpo<span class="op">::</span><span class="kw">calc.relim</span>(fit, <span class="dt">type =</span> <span class="st">&quot;betasq&quot;</span>, <span class="dt">rela =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb185-3"><a href="regression.html#cb185-3"></a></span>
-<span id="cb185-4"><a href="regression.html#cb185-4"></a><span class="co">## LMG criterion</span></span>
-<span id="cb185-5"><a href="regression.html#cb185-5"></a>lelaimpo<span class="op">::</span><span class="kw">calc.relim</span>(fit, <span class="dt">type =</span> <span class="st">&quot;lmg&quot;</span>, <span class="dt">rela =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="regression.html#cb186-1"></a><span class="co">## Standardized coefficients</span></span>
+<span id="cb186-2"><a href="regression.html#cb186-2"></a>lelaimpo<span class="op">::</span><span class="kw">calc.relim</span>(fit, <span class="dt">type =</span> <span class="st">&quot;betasq&quot;</span>, <span class="dt">rela =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb186-3"><a href="regression.html#cb186-3"></a></span>
+<span id="cb186-4"><a href="regression.html#cb186-4"></a><span class="co">## LMG criterion</span></span>
+<span id="cb186-5"><a href="regression.html#cb186-5"></a>lelaimpo<span class="op">::</span><span class="kw">calc.relim</span>(fit, <span class="dt">type =</span> <span class="st">&quot;lmg&quot;</span>, <span class="dt">rela =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="shrinkage" class="section level2">
@@ -1072,17 +1074,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="smoothing" class="section level2">
 <h2><span class="header-section-number">22.10</span> Smoothing</h2>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-186-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-187-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <div id="running-mean-yellow-box" class="section level3">
 <h3><span class="header-section-number">22.10.1</span> Running mean (yellow box)</h3>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="regression.html#cb186-1"></a>fit &lt;-<span class="st"> </span><span class="kw">ksmooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,  <span class="co"># Data</span></span>
-<span id="cb186-2"><a href="regression.html#cb186-2"></a>               <span class="dt">kernel =</span> <span class="st">&quot;box&quot;</span>,                 <span class="co"># weighting of points</span></span>
-<span id="cb186-3"><a href="regression.html#cb186-3"></a>               <span class="dt">bandwidth =</span> <span class="dv">1000</span>,               <span class="co"># spread of weighting function</span></span>
-<span id="cb186-4"><a href="regression.html#cb186-4"></a>               <span class="dt">n.points =</span> <span class="dv">24</span>,                  <span class="co"># number of points which should be evaluated</span></span>
-<span id="cb186-5"><a href="regression.html#cb186-5"></a>               <span class="dt">x.points =</span> unique2010<span class="op">$</span>ATM)      <span class="co"># where they should be evaluated</span></span>
-<span id="cb186-6"><a href="regression.html#cb186-6"></a><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</span>
-<span id="cb186-7"><a href="regression.html#cb186-7"></a><span class="kw">lines</span>(fit)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-187-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="regression.html#cb187-1"></a>fit &lt;-<span class="st"> </span><span class="kw">ksmooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,  <span class="co"># Data</span></span>
+<span id="cb187-2"><a href="regression.html#cb187-2"></a>               <span class="dt">kernel =</span> <span class="st">&quot;box&quot;</span>,                 <span class="co"># weighting of points</span></span>
+<span id="cb187-3"><a href="regression.html#cb187-3"></a>               <span class="dt">bandwidth =</span> <span class="dv">1000</span>,               <span class="co"># spread of weighting function</span></span>
+<span id="cb187-4"><a href="regression.html#cb187-4"></a>               <span class="dt">n.points =</span> <span class="dv">24</span>,                  <span class="co"># number of points which should be evaluated</span></span>
+<span id="cb187-5"><a href="regression.html#cb187-5"></a>               <span class="dt">x.points =</span> unique2010<span class="op">$</span>ATM)      <span class="co"># where they should be evaluated</span></span>
+<span id="cb187-6"><a href="regression.html#cb187-6"></a><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</span>
+<span id="cb187-7"><a href="regression.html#cb187-7"></a><span class="kw">lines</span>(fit)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-188-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p><span class="math display">\[\begin{align*}
     &amp;&amp; 0.25 \cdot \text{bandwith} &amp;= Q_{75\%} \\
     \Rightarrow &amp;&amp; \text{bandwith} &amp;= \text{complete width of box}
@@ -1090,13 +1092,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="gaussian-kernel-estimate-green-gaussian" class="section level3">
 <h3><span class="header-section-number">22.10.2</span> Gaussian kernel estimate (green gaussian)</h3>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="regression.html#cb187-1"></a>fit &lt;-<span class="st"> </span><span class="kw">ksmooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,</span>
-<span id="cb187-2"><a href="regression.html#cb187-2"></a>          <span class="dt">kernel =</span> <span class="st">&quot;normal&quot;</span>,</span>
-<span id="cb187-3"><a href="regression.html#cb187-3"></a>          <span class="dt">bandwidth =</span> <span class="dv">1000</span>,</span>
-<span id="cb187-4"><a href="regression.html#cb187-4"></a>          <span class="dt">n.points =</span> <span class="dv">1000</span>)</span>
-<span id="cb187-5"><a href="regression.html#cb187-5"></a><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</span>
-<span id="cb187-6"><a href="regression.html#cb187-6"></a><span class="kw">lines</span>(fit)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-188-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="regression.html#cb188-1"></a>fit &lt;-<span class="st"> </span><span class="kw">ksmooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,</span>
+<span id="cb188-2"><a href="regression.html#cb188-2"></a>          <span class="dt">kernel =</span> <span class="st">&quot;normal&quot;</span>,</span>
+<span id="cb188-3"><a href="regression.html#cb188-3"></a>          <span class="dt">bandwidth =</span> <span class="dv">1000</span>,</span>
+<span id="cb188-4"><a href="regression.html#cb188-4"></a>          <span class="dt">n.points =</span> <span class="dv">1000</span>)</span>
+<span id="cb188-5"><a href="regression.html#cb188-5"></a><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</span>
+<span id="cb188-6"><a href="regression.html#cb188-6"></a><span class="kw">lines</span>(fit)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-189-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <p><span class="math display">\[\begin{align*}
  &amp;&amp; P(X \leq 0.25 \cdot \text{bandwith}) &amp;= 0.75 \\
  \Rightarrow &amp;&amp; P\left(Z \leq \frac{0.25 \cdot \text{bandwith}}{\sigma}\right) &amp;= 0.75 \\
@@ -1106,14 +1108,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="loess-smoother" class="section level3">
 <h3><span class="header-section-number">22.10.3</span> LOESS smoother</h3>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="regression.html#cb188-1"></a>smoo &lt;-<span class="st"> </span><span class="kw">loess.smooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,  <span class="co"># Data</span></span>
-<span id="cb188-2"><a href="regression.html#cb188-2"></a>                     <span class="dt">span =</span> <span class="dv">2</span><span class="op">/</span><span class="dv">3</span>,                     <span class="co"># smoothing parameter (smaller =&gt; smoother)</span></span>
-<span id="cb188-3"><a href="regression.html#cb188-3"></a>                     <span class="dt">degree =</span> <span class="dv">1</span>,                     <span class="co"># 1: local linear regr, 2: local polynomial regr</span></span>
-<span id="cb188-4"><a href="regression.html#cb188-4"></a>                     <span class="dt">family =</span> <span class="st">&quot;symmetric&quot;</span>)           <span class="co"># &quot;symmetric&quot;: robust fitting, &quot;gaussian&quot;: least squares fitting</span></span>
-<span id="cb188-5"><a href="regression.html#cb188-5"></a></span>
-<span id="cb188-6"><a href="regression.html#cb188-6"></a><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</span>
-<span id="cb188-7"><a href="regression.html#cb188-7"></a><span class="kw">lines</span>(fit)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-189-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="regression.html#cb189-1"></a>smoo &lt;-<span class="st"> </span><span class="kw">loess.smooth</span>(unique2010<span class="op">$</span>ATM,unique2010<span class="op">$</span>Pax,  <span class="co"># Data</span></span>
+<span id="cb189-2"><a href="regression.html#cb189-2"></a>                     <span class="dt">span =</span> <span class="dv">2</span><span class="op">/</span><span class="dv">3</span>,                     <span class="co"># smoothing parameter (smaller =&gt; smoother)</span></span>
+<span id="cb189-3"><a href="regression.html#cb189-3"></a>                     <span class="dt">degree =</span> <span class="dv">1</span>,                     <span class="co"># 1: local linear regr, 2: local polynomial regr</span></span>
+<span id="cb189-4"><a href="regression.html#cb189-4"></a>                     <span class="dt">family =</span> <span class="st">&quot;symmetric&quot;</span>)           <span class="co"># &quot;symmetric&quot;: robust fitting, &quot;gaussian&quot;: least squares fitting</span></span>
+<span id="cb189-5"><a href="regression.html#cb189-5"></a></span>
+<span id="cb189-6"><a href="regression.html#cb189-6"></a><span class="kw">plot</span>(unique2010<span class="op">$</span>ATM, unique2010<span class="op">$</span>Pax)</span>
+<span id="cb189-7"><a href="regression.html#cb189-7"></a><span class="kw">lines</span>(fit)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-190-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
 <div id="gam" class="section level2">
@@ -1127,14 +1129,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>splines::ns()</code> natural spline</li>
 <li><code>gam::lo()</code> loess</li>
 </ul>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="regression.html#cb189-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">30</span></span>
-<span id="cb189-2"><a href="regression.html#cb189-2"></a>y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">30</span>)<span class="op">+</span><span class="dv">10</span><span class="op">*</span><span class="kw">sin</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>)<span class="op">*</span><span class="fl">0.2</span>)</span>
-<span id="cb189-3"><a href="regression.html#cb189-3"></a><span class="kw">plot</span>(x, y)</span>
-<span id="cb189-4"><a href="regression.html#cb189-4"></a><span class="kw">library</span>(mgcv)</span>
-<span id="cb189-5"><a href="regression.html#cb189-5"></a>fit &lt;-<span class="st"> </span><span class="kw">gam</span>(y <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(x))</span>
-<span id="cb189-6"><a href="regression.html#cb189-6"></a><span class="kw">lines</span>(x, <span class="kw">fitted</span>(fit))</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-190-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="regression.html#cb190-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="regression.html#cb190-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">30</span></span>
+<span id="cb190-2"><a href="regression.html#cb190-2"></a>y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">30</span>)<span class="op">+</span><span class="dv">10</span><span class="op">*</span><span class="kw">sin</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>)<span class="op">*</span><span class="fl">0.2</span>)</span>
+<span id="cb190-3"><a href="regression.html#cb190-3"></a><span class="kw">plot</span>(x, y)</span>
+<span id="cb190-4"><a href="regression.html#cb190-4"></a><span class="kw">library</span>(mgcv)</span>
+<span id="cb190-5"><a href="regression.html#cb190-5"></a>fit &lt;-<span class="st"> </span><span class="kw">gam</span>(y <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(x))</span>
+<span id="cb190-6"><a href="regression.html#cb190-6"></a><span class="kw">lines</span>(x, <span class="kw">fitted</span>(fit))</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-191-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="regression.html#cb191-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
 <pre><code>## 
 ## Family: gaussian 
 ## Link function: identity 
@@ -1165,14 +1167,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Scale est.: estimate of 𝜎_𝐸^2</p>
 <div id="options" class="section level5 unnumbered">
 <h5>Options</h5>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="regression.html#cb192-1"></a><span class="kw">s</span>(x1, <span class="dt">bs =</span> <span class="st">&quot;tp&quot;</span>) <span class="co"># tp: thin plate, cr: cubic spline</span></span>
-<span id="cb192-2"><a href="regression.html#cb192-2"></a><span class="kw">s</span>(x1, <span class="dt">df =</span> <span class="dv">3</span>)    <span class="co"># prespecify the df (instead of determine it by CV)</span></span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="regression.html#cb193-1"></a><span class="kw">s</span>(x1, <span class="dt">bs =</span> <span class="st">&quot;tp&quot;</span>) <span class="co"># tp: thin plate, cr: cubic spline</span></span>
+<span id="cb193-2"><a href="regression.html#cb193-2"></a><span class="kw">s</span>(x1, <span class="dt">df =</span> <span class="dv">3</span>)    <span class="co"># prespecify the df (instead of determine it by CV)</span></span></code></pre></div>
 </div>
 <div id="diagnostics" class="section level5 unnumbered">
 <h5>Diagnostics</h5>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="regression.html#cb193-1"></a>fit &lt;-<span class="st"> </span><span class="kw">gam</span>(Mortality <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(Educ), <span class="dt">data =</span> apm)</span>
-<span id="cb193-2"><a href="regression.html#cb193-2"></a><span class="kw">gam.check</span>(fit)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-192-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="regression.html#cb194-1"></a>fit &lt;-<span class="st"> </span><span class="kw">gam</span>(Mortality <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(Educ), <span class="dt">data =</span> apm)</span>
+<span id="cb194-2"><a href="regression.html#cb194-2"></a><span class="kw">gam.check</span>(fit)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-193-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <pre><code>## 
 ## Method: GCV   Optimizer: magic
 ## Smoothing parameter selection converged after 5 iterations.
@@ -1195,23 +1197,23 @@ Scale est.: estimate of 𝜎_𝐸^2</p>
 </div>
 <div id="visualization" class="section level5 unnumbered">
 <h5>Visualization</h5>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="regression.html#cb195-1"></a><span class="co">## Partial residual plot</span></span>
-<span id="cb195-2"><a href="regression.html#cb195-2"></a>fit_gam &lt;-<span class="st"> </span><span class="kw">gam</span>(prestige <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(income) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(education), <span class="dt">data =</span> Prestige)</span>
-<span id="cb195-3"><a href="regression.html#cb195-3"></a><span class="kw">plot</span>(fit_gam, <span class="dt">shade =</span> T, <span class="dt">residuals =</span> T, <span class="dt">main =</span> <span class="st">&quot;GAM Partial Residual Plot&quot;</span>, <span class="dt">pch =</span> <span class="dv">20</span>)</span>
-<span id="cb195-4"><a href="regression.html#cb195-4"></a></span>
-<span id="cb195-5"><a href="regression.html#cb195-5"></a><span class="co">## 3D plot (only with exactly two s() terms)</span></span>
-<span id="cb195-6"><a href="regression.html#cb195-6"></a><span class="kw">vis.gam</span>(fit_gam, <span class="dt">theta =</span> <span class="dv">45</span>, <span class="dt">phi =</span> <span class="dv">30</span>) <span class="co"># rotation arround vertical (theta) and horizontal (phi) axis</span></span>
-<span id="cb195-7"><a href="regression.html#cb195-7"></a></span>
-<span id="cb195-8"><a href="regression.html#cb195-8"></a><span class="co">## Interaction spline</span></span>
-<span id="cb195-9"><a href="regression.html#cb195-9"></a>fit_gam &lt;-<span class="st"> </span><span class="kw">gam</span>(prestige <span class="op">~</span><span class="st"> </span><span class="kw">te</span>(income, education), <span class="dt">data =</span> Prestige)</span>
-<span id="cb195-10"><a href="regression.html#cb195-10"></a><span class="kw">plot</span>(fit_gam)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-193-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-193-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-193-3.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-193-4.png" width="50%" /></p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="regression.html#cb196-1"></a><span class="co">## Partial residual plot</span></span>
+<span id="cb196-2"><a href="regression.html#cb196-2"></a>fit_gam &lt;-<span class="st"> </span><span class="kw">gam</span>(prestige <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(income) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(education), <span class="dt">data =</span> Prestige)</span>
+<span id="cb196-3"><a href="regression.html#cb196-3"></a><span class="kw">plot</span>(fit_gam, <span class="dt">shade =</span> T, <span class="dt">residuals =</span> T, <span class="dt">main =</span> <span class="st">&quot;GAM Partial Residual Plot&quot;</span>, <span class="dt">pch =</span> <span class="dv">20</span>)</span>
+<span id="cb196-4"><a href="regression.html#cb196-4"></a></span>
+<span id="cb196-5"><a href="regression.html#cb196-5"></a><span class="co">## 3D plot (only with exactly two s() terms)</span></span>
+<span id="cb196-6"><a href="regression.html#cb196-6"></a><span class="kw">vis.gam</span>(fit_gam, <span class="dt">theta =</span> <span class="dv">45</span>, <span class="dt">phi =</span> <span class="dv">30</span>) <span class="co"># rotation arround vertical (theta) and horizontal (phi) axis</span></span>
+<span id="cb196-7"><a href="regression.html#cb196-7"></a></span>
+<span id="cb196-8"><a href="regression.html#cb196-8"></a><span class="co">## Interaction spline</span></span>
+<span id="cb196-9"><a href="regression.html#cb196-9"></a>fit_gam &lt;-<span class="st"> </span><span class="kw">gam</span>(prestige <span class="op">~</span><span class="st"> </span><span class="kw">te</span>(income, education), <span class="dt">data =</span> Prestige)</span>
+<span id="cb196-10"><a href="regression.html#cb196-10"></a><span class="kw">plot</span>(fit_gam)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-194-1.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-194-2.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-194-3.png" width="50%" /><img src="R_Ref_Book_files/figure-html/unnamed-chunk-194-4.png" width="50%" /></p>
 </div>
 <div id="model-comparison-1" class="section level5 unnumbered">
 <h5>Model comparison</h5>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="regression.html#cb196-1"></a>fit_ols &lt;-<span class="st"> </span><span class="kw">lm</span>(prestige <span class="op">~</span><span class="st"> </span>income <span class="op">+</span><span class="st"> </span>education, <span class="dt">data =</span> Prestige)</span>
-<span id="cb196-2"><a href="regression.html#cb196-2"></a>fit_gam &lt;-<span class="st"> </span><span class="kw">gam</span>(prestige <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(income) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(education), <span class="dt">data =</span> Prestige)</span>
-<span id="cb196-3"><a href="regression.html#cb196-3"></a><span class="kw">anova</span>(fit_ols, fit_gam, <span class="dt">test =</span> <span class="st">&quot;Chisq&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="regression.html#cb197-1"></a>fit_ols &lt;-<span class="st"> </span><span class="kw">lm</span>(prestige <span class="op">~</span><span class="st"> </span>income <span class="op">+</span><span class="st"> </span>education, <span class="dt">data =</span> Prestige)</span>
+<span id="cb197-2"><a href="regression.html#cb197-2"></a>fit_gam &lt;-<span class="st"> </span><span class="kw">gam</span>(prestige <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(income) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(education), <span class="dt">data =</span> Prestige)</span>
+<span id="cb197-3"><a href="regression.html#cb197-3"></a><span class="kw">anova</span>(fit_ols, fit_gam, <span class="dt">test =</span> <span class="st">&quot;Chisq&quot;</span>)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Model 1: prestige ~ income + education
@@ -1238,7 +1240,7 @@ Scale est.: estimate of 𝜎_𝐸^2</p>
 <h3><span class="header-section-number">22.12.1</span> Logistic Regression</h3>
 <div id="fitting" class="section level5 unnumbered">
 <h5>Fitting</h5>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="regression.html#cb198-1"></a>fit &lt;-<span class="st"> </span><span class="kw">glm</span>(survival <span class="op">~</span><span class="st"> </span><span class="kw">log10</span>(weight) <span class="op">+</span><span class="st"> </span>age, <span class="dt">data =</span> baby, <span class="dt">family=</span>binomial)</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="regression.html#cb199-1"></a>fit &lt;-<span class="st"> </span><span class="kw">glm</span>(survival <span class="op">~</span><span class="st"> </span><span class="kw">log10</span>(weight) <span class="op">+</span><span class="st"> </span>age, <span class="dt">data =</span> baby, <span class="dt">family=</span>binomial)</span></code></pre></div>
 <p>Possible warning messages of fitting</p>
 <pre><code>Warning message:
 glm.fit: algorithm did not converge</code></pre>
@@ -1254,7 +1256,7 @@ glm.fit: fitted probabilities numerically 0 or 1 occured</code></pre>
 <li><code>drop1()</code></li>
 </ul>
 <p>Both should yield in similar results. <code>drop1()</code> might be better suited for factorial predictors and interactions (drops only terms which can be dropped).</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="regression.html#cb201-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="regression.html#cb202-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = survival ~ log10(weight) + age, family = binomial, 
@@ -1279,7 +1281,7 @@ glm.fit: fitted probabilities numerically 0 or 1 occured</code></pre>
 ## AIC: 164.56
 ## 
 ## Number of Fisher Scoring iterations: 5</code></pre>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="regression.html#cb203-1"></a><span class="kw">drop1</span>(fit, <span class="dt">test =</span> <span class="st">&quot;Chisq&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="regression.html#cb204-1"></a><span class="kw">drop1</span>(fit, <span class="dt">test =</span> <span class="st">&quot;Chisq&quot;</span>)</span></code></pre></div>
 <pre><code>## Single term deletions
 ## 
 ## Model:
@@ -1291,68 +1293,68 @@ glm.fit: fitted probabilities numerically 0 or 1 occured</code></pre>
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>A p-value for a “global F-test” can be manually computed</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="regression.html#cb205-1"></a><span class="dv">1</span><span class="op">-</span><span class="kw">pchisq</span>(fit<span class="op">$</span>null.deviance<span class="op">-</span>fit<span class="op">$</span>deviance, <span class="dt">df=</span>(fit<span class="op">$</span>df.null<span class="op">-</span>fit<span class="op">$</span>df.res))</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="regression.html#cb206-1"></a><span class="dv">1</span><span class="op">-</span><span class="kw">pchisq</span>(fit<span class="op">$</span>null.deviance<span class="op">-</span>fit<span class="op">$</span>deviance, <span class="dt">df=</span>(fit<span class="op">$</span>df.null<span class="op">-</span>fit<span class="op">$</span>df.res))</span></code></pre></div>
 <pre><code>## [1] 2.220446e-16</code></pre>
 <p><strong>CI</strong></p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="regression.html#cb207-1"></a><span class="co">## Automatic (slightly different (better) than manual CI)</span></span>
-<span id="cb207-2"><a href="regression.html#cb207-2"></a><span class="kw">confint</span>(fit, <span class="st">&quot;log10(weight)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="regression.html#cb208-1"></a><span class="co">## Automatic (slightly different (better) than manual CI)</span></span>
+<span id="cb208-2"><a href="regression.html#cb208-2"></a><span class="kw">confint</span>(fit, <span class="st">&quot;log10(weight)&quot;</span>)</span></code></pre></div>
 <pre><code>##     2.5 %    97.5 % 
 ##  7.868942 18.592123</code></pre>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="regression.html#cb209-1"></a><span class="kw">confint</span>(fit, <span class="st">&quot;(Intercept)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="regression.html#cb210-1"></a><span class="kw">confint</span>(fit, <span class="st">&quot;(Intercept)&quot;</span>)</span></code></pre></div>
 <pre><code>##     2.5 %    97.5 % 
 ## -58.49314 -29.29536</code></pre>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="regression.html#cb211-1"></a><span class="co">## Manual</span></span>
-<span id="cb211-2"><a href="regression.html#cb211-2"></a>mycoef &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)<span class="op">$</span>coefficients</span>
-<span id="cb211-3"><a href="regression.html#cb211-3"></a>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Estimate&quot;</span>] <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))<span class="op">*</span>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Std. Error&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="regression.html#cb212-1"></a><span class="co">## Manual</span></span>
+<span id="cb212-2"><a href="regression.html#cb212-2"></a>mycoef &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)<span class="op">$</span>coefficients</span>
+<span id="cb212-3"><a href="regression.html#cb212-3"></a>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Estimate&quot;</span>] <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))<span class="op">*</span>mycoef[<span class="st">&quot;(Intercept)&quot;</span>,<span class="st">&quot;Std. Error&quot;</span>]</span></code></pre></div>
 <pre><code>## [1] -57.33414 -28.29280</code></pre>
 <p><strong>Coefficient of determination</strong> <span class="math inline">\(R^2\)</span></p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="regression.html#cb213-1"></a>fit_dev &lt;-<span class="st"> </span>fit<span class="op">$</span>deviance</span>
-<span id="cb213-2"><a href="regression.html#cb213-2"></a>fit_null &lt;-<span class="st"> </span>fit<span class="op">$</span>null.deviance</span>
-<span id="cb213-3"><a href="regression.html#cb213-3"></a>n &lt;-<span class="st"> </span><span class="kw">length</span>(baby<span class="op">$</span>weight)</span>
-<span id="cb213-4"><a href="regression.html#cb213-4"></a>R_<span class="dv">2</span> &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">-</span><span class="kw">exp</span>((fit_dev<span class="op">-</span>fit_null)<span class="op">/</span>n))<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">exp</span>(<span class="op">-</span>fit_null<span class="op">/</span>n))</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="regression.html#cb214-1"></a>fit_dev &lt;-<span class="st"> </span>fit<span class="op">$</span>deviance</span>
+<span id="cb214-2"><a href="regression.html#cb214-2"></a>fit_null &lt;-<span class="st"> </span>fit<span class="op">$</span>null.deviance</span>
+<span id="cb214-3"><a href="regression.html#cb214-3"></a>n &lt;-<span class="st"> </span><span class="kw">length</span>(baby<span class="op">$</span>weight)</span>
+<span id="cb214-4"><a href="regression.html#cb214-4"></a>R_<span class="dv">2</span> &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">-</span><span class="kw">exp</span>((fit_dev<span class="op">-</span>fit_null)<span class="op">/</span>n))<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">exp</span>(<span class="op">-</span>fit_null<span class="op">/</span>n))</span></code></pre></div>
 </div>
 <div id="visualization-1" class="section level5 unnumbered">
 <h5>Visualization</h5>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="regression.html#cb214-1"></a><span class="co">## Bernoulli probability</span></span>
-<span id="cb214-2"><a href="regression.html#cb214-2"></a>lin_pred &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)       <span class="co">## linear predictor</span></span>
-<span id="cb214-3"><a href="regression.html#cb214-3"></a>bern_prob &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;response&quot;</span>)  <span class="co">## bernoulli probability</span></span>
-<span id="cb214-4"><a href="regression.html#cb214-4"></a><span class="kw">plot</span>(lin_pred, baby<span class="op">$</span>survival, <span class="dt">type=</span><span class="st">&quot;n&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;linear predictor&quot;</span>)</span>
-<span id="cb214-5"><a href="regression.html#cb214-5"></a><span class="kw">points</span>(lin_pred[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">0</span>], baby<span class="op">$</span>survival[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">0</span>], <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb214-6"><a href="regression.html#cb214-6"></a><span class="kw">points</span>(lin_pred[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">1</span>], baby<span class="op">$</span>survival[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">1</span>], <span class="dt">pch =</span> <span class="dv">17</span>)</span>
-<span id="cb214-7"><a href="regression.html#cb214-7"></a><span class="kw">lines</span>(<span class="kw">sort</span>(lin_pred), <span class="kw">sort</span>(bern_prob), <span class="dt">lty=</span><span class="dv">3</span>)</span>
-<span id="cb214-8"><a href="regression.html#cb214-8"></a><span class="kw">title</span>(<span class="st">&quot;Survival vs. Linear Predictor&quot;</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-200-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="regression.html#cb215-1"></a><span class="co">## Predictor space (only if exactly two predictors)</span></span>
-<span id="cb215-2"><a href="regression.html#cb215-2"></a><span class="kw">plot</span>(age <span class="op">~</span><span class="st"> </span>weight, <span class="dt">data=</span>baby, <span class="dt">type=</span><span class="st">&quot;n&quot;</span>)</span>
-<span id="cb215-3"><a href="regression.html#cb215-3"></a><span class="kw">points</span>(age <span class="op">~</span><span class="st"> </span>weight, <span class="dt">subset=</span>(survival<span class="op">==</span><span class="dv">0</span>), <span class="dt">data=</span>baby, <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb215-4"><a href="regression.html#cb215-4"></a><span class="kw">points</span>(age <span class="op">~</span><span class="st"> </span>weight, <span class="dt">subset=</span>(survival<span class="op">==</span><span class="dv">1</span>), <span class="dt">data=</span>baby, <span class="dt">pch =</span> <span class="dv">17</span>)</span>
-<span id="cb215-5"><a href="regression.html#cb215-5"></a><span class="kw">title</span>(<span class="st">&quot;Survival after Premature Birth&quot;</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-200-2.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="regression.html#cb215-1"></a><span class="co">## Bernoulli probability</span></span>
+<span id="cb215-2"><a href="regression.html#cb215-2"></a>lin_pred &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)       <span class="co">## linear predictor</span></span>
+<span id="cb215-3"><a href="regression.html#cb215-3"></a>bern_prob &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;response&quot;</span>)  <span class="co">## bernoulli probability</span></span>
+<span id="cb215-4"><a href="regression.html#cb215-4"></a><span class="kw">plot</span>(lin_pred, baby<span class="op">$</span>survival, <span class="dt">type=</span><span class="st">&quot;n&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;linear predictor&quot;</span>)</span>
+<span id="cb215-5"><a href="regression.html#cb215-5"></a><span class="kw">points</span>(lin_pred[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">0</span>], baby<span class="op">$</span>survival[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">0</span>], <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb215-6"><a href="regression.html#cb215-6"></a><span class="kw">points</span>(lin_pred[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">1</span>], baby<span class="op">$</span>survival[baby<span class="op">$</span>survival<span class="op">==</span><span class="dv">1</span>], <span class="dt">pch =</span> <span class="dv">17</span>)</span>
+<span id="cb215-7"><a href="regression.html#cb215-7"></a><span class="kw">lines</span>(<span class="kw">sort</span>(lin_pred), <span class="kw">sort</span>(bern_prob), <span class="dt">lty=</span><span class="dv">3</span>)</span>
+<span id="cb215-8"><a href="regression.html#cb215-8"></a><span class="kw">title</span>(<span class="st">&quot;Survival vs. Linear Predictor&quot;</span>)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-201-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="regression.html#cb216-1"></a><span class="co">## Predictor space (only if exactly two predictors)</span></span>
+<span id="cb216-2"><a href="regression.html#cb216-2"></a><span class="kw">plot</span>(age <span class="op">~</span><span class="st"> </span>weight, <span class="dt">data=</span>baby, <span class="dt">type=</span><span class="st">&quot;n&quot;</span>)</span>
+<span id="cb216-3"><a href="regression.html#cb216-3"></a><span class="kw">points</span>(age <span class="op">~</span><span class="st"> </span>weight, <span class="dt">subset=</span>(survival<span class="op">==</span><span class="dv">0</span>), <span class="dt">data=</span>baby, <span class="dt">pch =</span> <span class="dv">16</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb216-4"><a href="regression.html#cb216-4"></a><span class="kw">points</span>(age <span class="op">~</span><span class="st"> </span>weight, <span class="dt">subset=</span>(survival<span class="op">==</span><span class="dv">1</span>), <span class="dt">data=</span>baby, <span class="dt">pch =</span> <span class="dv">17</span>)</span>
+<span id="cb216-5"><a href="regression.html#cb216-5"></a><span class="kw">title</span>(<span class="st">&quot;Survival after Premature Birth&quot;</span>)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-201-2.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="diagnostics-1" class="section level5 unnumbered">
 <h5>Diagnostics</h5>
 <p>Different types of residuals</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="regression.html#cb216-1"></a><span class="kw">resid</span>(fit, <span class="dt">type =</span> <span class="st">&quot;pearson&quot;</span>)</span>
-<span id="cb216-2"><a href="regression.html#cb216-2"></a><span class="kw">resid</span>(fit, <span class="dt">type =</span> <span class="st">&quot;deviance&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="regression.html#cb217-1"></a><span class="kw">resid</span>(fit, <span class="dt">type =</span> <span class="st">&quot;pearson&quot;</span>)</span>
+<span id="cb217-2"><a href="regression.html#cb217-2"></a><span class="kw">resid</span>(fit, <span class="dt">type =</span> <span class="st">&quot;deviance&quot;</span>)</span></code></pre></div>
 <p>Tukey-Anscombe plot should be done manually because we need a non-robust smoother</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="regression.html#cb217-1"></a>xx &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)</span>
-<span id="cb217-2"><a href="regression.html#cb217-2"></a>yy &lt;-<span class="st"> </span><span class="kw">residuals</span>(fit, <span class="dt">type=</span><span class="st">&quot;deviance&quot;</span>)</span>
-<span id="cb217-3"><a href="regression.html#cb217-3"></a><span class="kw">plot</span>(xx, yy, <span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">main=</span><span class="st">&quot;Tukey-Anscombe Plot&quot;</span>)</span>
-<span id="cb217-4"><a href="regression.html#cb217-4"></a><span class="kw">lines</span>(<span class="kw">loess.smooth</span>(xx, yy, <span class="dt">family=</span><span class="st">&quot;gaussian&quot;</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb217-5"><a href="regression.html#cb217-5"></a><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>, <span class="dt">lty=</span><span class="dv">3</span>, <span class="dt">col=</span><span class="st">&quot;grey&quot;</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-202-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="regression.html#cb218-1"></a>xx &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)</span>
+<span id="cb218-2"><a href="regression.html#cb218-2"></a>yy &lt;-<span class="st"> </span><span class="kw">residuals</span>(fit, <span class="dt">type=</span><span class="st">&quot;deviance&quot;</span>)</span>
+<span id="cb218-3"><a href="regression.html#cb218-3"></a><span class="kw">plot</span>(xx, yy, <span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">main=</span><span class="st">&quot;Tukey-Anscombe Plot&quot;</span>)</span>
+<span id="cb218-4"><a href="regression.html#cb218-4"></a><span class="kw">lines</span>(<span class="kw">loess.smooth</span>(xx, yy, <span class="dt">family=</span><span class="st">&quot;gaussian&quot;</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb218-5"><a href="regression.html#cb218-5"></a><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>, <span class="dt">lty=</span><span class="dv">3</span>, <span class="dt">col=</span><span class="st">&quot;grey&quot;</span>)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-203-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
 <div id="poisson-regression" class="section level3">
 <h3><span class="header-section-number">22.12.2</span> Poisson Regression</h3>
 <div id="fitting-1" class="section level5 unnumbered">
 <h5>Fitting</h5>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="regression.html#cb218-1"></a>fit &lt;-<span class="st"> </span><span class="kw">glm</span>(Species <span class="op">~</span><span class="st"> </span><span class="kw">log</span>(Area) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(Elevation) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(Nearest) <span class="op">+</span></span>
-<span id="cb218-2"><a href="regression.html#cb218-2"></a><span class="st">             </span><span class="kw">I</span>(<span class="kw">log</span>(Scruz<span class="fl">+0.4</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(Adjacent), <span class="dt">data =</span> gala, <span class="dt">family =</span> poisson)</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="regression.html#cb219-1"></a>fit &lt;-<span class="st"> </span><span class="kw">glm</span>(Species <span class="op">~</span><span class="st"> </span><span class="kw">log</span>(Area) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(Elevation) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(Nearest) <span class="op">+</span></span>
+<span id="cb219-2"><a href="regression.html#cb219-2"></a><span class="st">             </span><span class="kw">I</span>(<span class="kw">log</span>(Scruz<span class="fl">+0.4</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(Adjacent), <span class="dt">data =</span> gala, <span class="dt">family =</span> poisson)</span></code></pre></div>
 </div>
 <div id="inference-2" class="section level5 unnumbered">
 <h5>Inference</h5>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="regression.html#cb219-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="regression.html#cb220-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = Species ~ log(Area) + log(Elevation) + log(Nearest) + 
@@ -1384,17 +1386,17 @@ glm.fit: fitted probabilities numerically 0 or 1 occured</code></pre>
 <div id="diagnostics-2" class="section level5 unnumbered">
 <h5>Diagnostics</h5>
 <p>Residuals should lie within range <span class="math inline">\([-2, 2]\)</span>, this would not be fulfilled in our example:</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="regression.html#cb221-1"></a>xx &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)</span>
-<span id="cb221-2"><a href="regression.html#cb221-2"></a>yy &lt;-<span class="st"> </span><span class="kw">resid</span>(fit, <span class="dt">type=</span><span class="st">&quot;pearson&quot;</span>)</span>
-<span id="cb221-3"><a href="regression.html#cb221-3"></a><span class="kw">plot</span>(xx, yy, <span class="dt">main=</span><span class="st">&quot;Tukey-Anscombe Plot&quot;</span>,</span>
-<span id="cb221-4"><a href="regression.html#cb221-4"></a>     <span class="dt">xlab =</span> <span class="st">&quot;Linear Predictor&quot;</span>,</span>
-<span id="cb221-5"><a href="regression.html#cb221-5"></a>     <span class="dt">ylab =</span> <span class="st">&quot;Pearson Residuals&quot;</span>,</span>
-<span id="cb221-6"><a href="regression.html#cb221-6"></a>     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>))</span>
-<span id="cb221-7"><a href="regression.html#cb221-7"></a>smoo &lt;-<span class="st"> </span><span class="kw">loess.smooth</span>(xx, yy)</span>
-<span id="cb221-8"><a href="regression.html#cb221-8"></a><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>, <span class="dt">col=</span><span class="st">&quot;grey&quot;</span>)</span>
-<span id="cb221-9"><a href="regression.html#cb221-9"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb221-10"><a href="regression.html#cb221-10"></a><span class="kw">lines</span>(smoo, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-205-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="regression.html#cb222-1"></a>xx &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)</span>
+<span id="cb222-2"><a href="regression.html#cb222-2"></a>yy &lt;-<span class="st"> </span><span class="kw">resid</span>(fit, <span class="dt">type=</span><span class="st">&quot;pearson&quot;</span>)</span>
+<span id="cb222-3"><a href="regression.html#cb222-3"></a><span class="kw">plot</span>(xx, yy, <span class="dt">main=</span><span class="st">&quot;Tukey-Anscombe Plot&quot;</span>,</span>
+<span id="cb222-4"><a href="regression.html#cb222-4"></a>     <span class="dt">xlab =</span> <span class="st">&quot;Linear Predictor&quot;</span>,</span>
+<span id="cb222-5"><a href="regression.html#cb222-5"></a>     <span class="dt">ylab =</span> <span class="st">&quot;Pearson Residuals&quot;</span>,</span>
+<span id="cb222-6"><a href="regression.html#cb222-6"></a>     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>))</span>
+<span id="cb222-7"><a href="regression.html#cb222-7"></a>smoo &lt;-<span class="st"> </span><span class="kw">loess.smooth</span>(xx, yy)</span>
+<span id="cb222-8"><a href="regression.html#cb222-8"></a><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>, <span class="dt">col=</span><span class="st">&quot;grey&quot;</span>)</span>
+<span id="cb222-9"><a href="regression.html#cb222-9"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb222-10"><a href="regression.html#cb222-10"></a><span class="kw">lines</span>(smoo, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-206-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 
 </div>
 </div>

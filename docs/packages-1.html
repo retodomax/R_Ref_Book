@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-11" />
+<meta name="date" content="2021-01-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -325,7 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>16.5.3</b> panel.first</a></li>
 <li class="chapter" data-level="16.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>16.5.4</b> Area under curve</a></li>
 </ul></li>
-<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.6</b> Plot empty</a></li>
+<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-math-coordinate-system"><i class="fa fa-check"></i><b>16.6</b> Plot Math Coordinate System</a></li>
+<li class="chapter" data-level="16.7" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.7</b> Plot empty</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>17</b> Interactive Plots</a></li>
 <li class="chapter" data-level="18" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>18</b> ggplot</a><ul>
@@ -487,11 +488,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="32.3" data-path="r-markdown-1.html"><a href="r-markdown-1.html#tables"><i class="fa fa-check"></i><b>32.3</b> Tables</a><ul>
 <li class="chapter" data-level="32.3.1" data-path="r-markdown-1.html"><a href="r-markdown-1.html#html-tables"><i class="fa fa-check"></i><b>32.3.1</b> HTML tables</a></li>
 </ul></li>
-<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#sepecial-characters"><i class="fa fa-check"></i><b>32.4</b> Sepecial characters</a></li>
-<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.5</b> Section folding</a></li>
-<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.6</b> Add box</a></li>
-<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.7</b> Template</a></li>
-<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.8</b> Good output formats</a></li>
+<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#math"><i class="fa fa-check"></i><b>32.4</b> Math</a></li>
+<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#special-characters"><i class="fa fa-check"></i><b>32.5</b> Special characters</a></li>
+<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.6</b> Section folding</a></li>
+<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.7</b> Add box</a></li>
+<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.8</b> Template</a></li>
+<li class="chapter" data-level="32.9" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.9</b> Good output formats</a></li>
 </ul></li>
 <li class="chapter" data-level="33" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>33</b> Bookdown</a><ul>
 <li class="chapter" data-level="33.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>33.1</b> Configuration</a><ul>
@@ -675,9 +677,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>ls()</code> list object in certain environment</li>
 <li><code>find()</code> the environment from which a certain function comes</li>
 </ul>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="packages-1.html#cb360-1"></a><span class="kw">search</span>()      <span class="co"># returns search path</span></span>
-<span id="cb360-2"><a href="packages-1.html#cb360-2"></a><span class="kw">ls</span>(<span class="dt">pos =</span> <span class="dv">2</span>)   <span class="co"># object contained in environment nr 2</span></span>
-<span id="cb360-3"><a href="packages-1.html#cb360-3"></a><span class="kw">find</span>(<span class="st">&quot;print&quot;</span>) <span class="co"># Environment in which function &quot;print&quot; is defined</span></span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="packages-1.html#cb361-1"></a><span class="kw">search</span>()      <span class="co"># returns search path</span></span>
+<span id="cb361-2"><a href="packages-1.html#cb361-2"></a><span class="kw">ls</span>(<span class="dt">pos =</span> <span class="dv">2</span>)   <span class="co"># object contained in environment nr 2</span></span>
+<span id="cb361-3"><a href="packages-1.html#cb361-3"></a><span class="kw">find</span>(<span class="st">&quot;print&quot;</span>) <span class="co"># Environment in which function &quot;print&quot; is defined</span></span></code></pre></div>
 </div>
 <div id="useful-packages" class="section level2">
 <h2><span class="header-section-number">36.2</span> Useful packages</h2>

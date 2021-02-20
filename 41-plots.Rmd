@@ -1352,6 +1352,25 @@ abline(v = 2)
 ```
 
 
+## Plot Math Coordinate System
+
+```{r}
+mathplot <- function(xlim = c(0,1), ylim = c(0,1), xlab = "x", ylab = "y"){
+  par(xaxs = "i", yaxs = "i")  # no +- 4%
+  plot.new()
+  plot.window(xlim = xlim, ylim = ylim)
+  u <- par("usr")
+  shape::Arrows(u[1], u[3], u[2], u[3], arr.adj = 1, xpd = TRUE)
+  shape::Arrows(u[1], u[3], u[1], u[4], arr.adj = 1, xpd = TRUE)
+  shape::Arrows(u[1], u[3], u[2], u[3], arr.adj = 1, xpd = TRUE)
+  shape::Arrows(u[1], u[3], u[1], u[4], arr.adj = 1, xpd = TRUE)
+  mtext(text = xlab, side = 1, line = 1, adj = 1)
+  mtext(text = ylab, side = 2, line = 1, adj = 1)
+}
+mathplot()
+```
+
+
 
 
 ## Plot empty
@@ -1369,6 +1388,7 @@ par( ann = FALSE      # no titles
 ```{r, eval=FALSE}
 # Perfect
 plot.new()
+plot.window(xlim = ..., ylim = ...)
 
 # Good
 plot(0, type = "n", axes = FALSE, ann = FALSE)

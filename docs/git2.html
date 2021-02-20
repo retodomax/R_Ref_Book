@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-11" />
+<meta name="date" content="2021-01-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -325,7 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>16.5.3</b> panel.first</a></li>
 <li class="chapter" data-level="16.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>16.5.4</b> Area under curve</a></li>
 </ul></li>
-<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.6</b> Plot empty</a></li>
+<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-math-coordinate-system"><i class="fa fa-check"></i><b>16.6</b> Plot Math Coordinate System</a></li>
+<li class="chapter" data-level="16.7" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.7</b> Plot empty</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>17</b> Interactive Plots</a></li>
 <li class="chapter" data-level="18" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>18</b> ggplot</a><ul>
@@ -487,11 +488,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="32.3" data-path="r-markdown-1.html"><a href="r-markdown-1.html#tables"><i class="fa fa-check"></i><b>32.3</b> Tables</a><ul>
 <li class="chapter" data-level="32.3.1" data-path="r-markdown-1.html"><a href="r-markdown-1.html#html-tables"><i class="fa fa-check"></i><b>32.3.1</b> HTML tables</a></li>
 </ul></li>
-<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#sepecial-characters"><i class="fa fa-check"></i><b>32.4</b> Sepecial characters</a></li>
-<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.5</b> Section folding</a></li>
-<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.6</b> Add box</a></li>
-<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.7</b> Template</a></li>
-<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.8</b> Good output formats</a></li>
+<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#math"><i class="fa fa-check"></i><b>32.4</b> Math</a></li>
+<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#special-characters"><i class="fa fa-check"></i><b>32.5</b> Special characters</a></li>
+<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.6</b> Section folding</a></li>
+<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.7</b> Add box</a></li>
+<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.8</b> Template</a></li>
+<li class="chapter" data-level="32.9" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.9</b> Good output formats</a></li>
 </ul></li>
 <li class="chapter" data-level="33" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>33</b> Bookdown</a><ul>
 <li class="chapter" data-level="33.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>33.1</b> Configuration</a><ul>
@@ -664,35 +666,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">35.1</span> Common tasks</h2>
 <div id="create-a-new-repository-on-the-command-line" class="section level5 unnumbered">
 <h5>create a new repository on the command line</h5>
-<div class="sourceCode" id="cb356"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb356-1"><a href="git2.html#cb356-1"></a><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</span>
-<span id="cb356-2"><a href="git2.html#cb356-2"></a><span class="fu">git</span> init</span>
-<span id="cb356-3"><a href="git2.html#cb356-3"></a><span class="fu">git</span> add README.md</span>
-<span id="cb356-4"><a href="git2.html#cb356-4"></a><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></span>
-<span id="cb356-5"><a href="git2.html#cb356-5"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
-<span id="cb356-6"><a href="git2.html#cb356-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb357-1"><a href="git2.html#cb357-1"></a><span class="bu">echo</span> <span class="st">&quot;# test&quot;</span> <span class="op">&gt;&gt;</span> README.md</span>
+<span id="cb357-2"><a href="git2.html#cb357-2"></a><span class="fu">git</span> init</span>
+<span id="cb357-3"><a href="git2.html#cb357-3"></a><span class="fu">git</span> add README.md</span>
+<span id="cb357-4"><a href="git2.html#cb357-4"></a><span class="fu">git</span> commit -m <span class="st">&quot;first commit&quot;</span></span>
+<span id="cb357-5"><a href="git2.html#cb357-5"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
+<span id="cb357-6"><a href="git2.html#cb357-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
 </div>
 <div id="push-an-existing-repository-from-the-command-line" class="section level5 unnumbered">
 <h5>push an existing repository from the command line</h5>
-<div class="sourceCode" id="cb357"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb357-1"><a href="git2.html#cb357-1"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
-<span id="cb357-2"><a href="git2.html#cb357-2"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb358-1"><a href="git2.html#cb358-1"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
+<span id="cb358-2"><a href="git2.html#cb358-2"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
 </div>
 <div id="clone-existing-repository-and-push-changes" class="section level5 unnumbered">
 <h5>clone existing repository and push changes</h5>
-<div class="sourceCode" id="cb358"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb358-1"><a href="git2.html#cb358-1"></a><span class="fu">git</span> clone git@github.com:retodomax/test.git</span>
-<span id="cb358-2"><a href="git2.html#cb358-2"></a><span class="bu">cd</span> test</span>
-<span id="cb358-3"><a href="git2.html#cb358-3"></a><span class="fu">touch</span> README.md</span>
-<span id="cb358-4"><a href="git2.html#cb358-4"></a><span class="fu">git</span> add README.md</span>
-<span id="cb358-5"><a href="git2.html#cb358-5"></a><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></span>
-<span id="cb358-6"><a href="git2.html#cb358-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb359-1"><a href="git2.html#cb359-1"></a><span class="fu">git</span> clone git@github.com:retodomax/test.git</span>
+<span id="cb359-2"><a href="git2.html#cb359-2"></a><span class="bu">cd</span> test</span>
+<span id="cb359-3"><a href="git2.html#cb359-3"></a><span class="fu">touch</span> README.md</span>
+<span id="cb359-4"><a href="git2.html#cb359-4"></a><span class="fu">git</span> add README.md</span>
+<span id="cb359-5"><a href="git2.html#cb359-5"></a><span class="fu">git</span> commit -m <span class="st">&quot;add README&quot;</span></span>
+<span id="cb359-6"><a href="git2.html#cb359-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
 </div>
 <div id="push-existing-folder-to-origin" class="section level5 unnumbered">
 <h5>push existing folder to origin</h5>
-<div class="sourceCode" id="cb359"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb359-1"><a href="git2.html#cb359-1"></a><span class="bu">cd</span> existing_folder</span>
-<span id="cb359-2"><a href="git2.html#cb359-2"></a><span class="fu">git</span> init</span>
-<span id="cb359-3"><a href="git2.html#cb359-3"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
-<span id="cb359-4"><a href="git2.html#cb359-4"></a><span class="fu">git</span> add .</span>
-<span id="cb359-5"><a href="git2.html#cb359-5"></a><span class="fu">git</span> commit</span>
-<span id="cb359-6"><a href="git2.html#cb359-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb360-1"><a href="git2.html#cb360-1"></a><span class="bu">cd</span> existing_folder</span>
+<span id="cb360-2"><a href="git2.html#cb360-2"></a><span class="fu">git</span> init</span>
+<span id="cb360-3"><a href="git2.html#cb360-3"></a><span class="fu">git</span> remote add origin git@github.com:retodomax/test.git</span>
+<span id="cb360-4"><a href="git2.html#cb360-4"></a><span class="fu">git</span> add .</span>
+<span id="cb360-5"><a href="git2.html#cb360-5"></a><span class="fu">git</span> commit</span>
+<span id="cb360-6"><a href="git2.html#cb360-6"></a><span class="fu">git</span> push -u origin master</span></code></pre></div>
 
 </div>
 </div>

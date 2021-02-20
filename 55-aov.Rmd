@@ -326,7 +326,7 @@ qqnorm(rnorm(nrow(df)))
 ```
 
 Simulations for Tukey-Anscombe plot
-```{r}
+```{r, out.width='100%'}
 df <- PlantGrowth
 df.sim <- df
 set.seed(12)

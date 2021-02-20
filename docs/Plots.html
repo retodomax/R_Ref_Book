@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-01-11" />
+<meta name="date" content="2021-01-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -325,7 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.5.3" data-path="Plots.html"><a href="Plots.html#panel.first"><i class="fa fa-check"></i><b>16.5.3</b> panel.first</a></li>
 <li class="chapter" data-level="16.5.4" data-path="Plots.html"><a href="Plots.html#area-under-curve"><i class="fa fa-check"></i><b>16.5.4</b> Area under curve</a></li>
 </ul></li>
-<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.6</b> Plot empty</a></li>
+<li class="chapter" data-level="16.6" data-path="Plots.html"><a href="Plots.html#plot-math-coordinate-system"><i class="fa fa-check"></i><b>16.6</b> Plot Math Coordinate System</a></li>
+<li class="chapter" data-level="16.7" data-path="Plots.html"><a href="Plots.html#plot-empty"><i class="fa fa-check"></i><b>16.7</b> Plot empty</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="interactive-plots.html"><a href="interactive-plots.html"><i class="fa fa-check"></i><b>17</b> Interactive Plots</a></li>
 <li class="chapter" data-level="18" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>18</b> ggplot</a><ul>
@@ -487,11 +488,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="32.3" data-path="r-markdown-1.html"><a href="r-markdown-1.html#tables"><i class="fa fa-check"></i><b>32.3</b> Tables</a><ul>
 <li class="chapter" data-level="32.3.1" data-path="r-markdown-1.html"><a href="r-markdown-1.html#html-tables"><i class="fa fa-check"></i><b>32.3.1</b> HTML tables</a></li>
 </ul></li>
-<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#sepecial-characters"><i class="fa fa-check"></i><b>32.4</b> Sepecial characters</a></li>
-<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.5</b> Section folding</a></li>
-<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.6</b> Add box</a></li>
-<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.7</b> Template</a></li>
-<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.8</b> Good output formats</a></li>
+<li class="chapter" data-level="32.4" data-path="r-markdown-1.html"><a href="r-markdown-1.html#math"><i class="fa fa-check"></i><b>32.4</b> Math</a></li>
+<li class="chapter" data-level="32.5" data-path="r-markdown-1.html"><a href="r-markdown-1.html#special-characters"><i class="fa fa-check"></i><b>32.5</b> Special characters</a></li>
+<li class="chapter" data-level="32.6" data-path="r-markdown-1.html"><a href="r-markdown-1.html#section-folding"><i class="fa fa-check"></i><b>32.6</b> Section folding</a></li>
+<li class="chapter" data-level="32.7" data-path="r-markdown-1.html"><a href="r-markdown-1.html#add-box"><i class="fa fa-check"></i><b>32.7</b> Add box</a></li>
+<li class="chapter" data-level="32.8" data-path="r-markdown-1.html"><a href="r-markdown-1.html#template"><i class="fa fa-check"></i><b>32.8</b> Template</a></li>
+<li class="chapter" data-level="32.9" data-path="r-markdown-1.html"><a href="r-markdown-1.html#good-output-formats"><i class="fa fa-check"></i><b>32.9</b> Good output formats</a></li>
 </ul></li>
 <li class="chapter" data-level="33" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>33</b> Bookdown</a><ul>
 <li class="chapter" data-level="33.1" data-path="bookdown.html"><a href="bookdown.html#configuration"><i class="fa fa-check"></i><b>33.1</b> Configuration</a><ul>
@@ -1642,23 +1644,41 @@ Useful function for text: <code>strwidth()</code>. Returns width or height of st
 <p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-143-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 </div>
+<div id="plot-math-coordinate-system" class="section level2">
+<h2><span class="header-section-number">16.6</span> Plot Math Coordinate System</h2>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="Plots.html#cb150-1"></a>mathplot &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;y&quot;</span>){</span>
+<span id="cb150-2"><a href="Plots.html#cb150-2"></a>  <span class="kw">par</span>(<span class="dt">xaxs =</span> <span class="st">&quot;i&quot;</span>, <span class="dt">yaxs =</span> <span class="st">&quot;i&quot;</span>)  <span class="co"># no +- 4%</span></span>
+<span id="cb150-3"><a href="Plots.html#cb150-3"></a>  <span class="kw">plot.new</span>()</span>
+<span id="cb150-4"><a href="Plots.html#cb150-4"></a>  <span class="kw">plot.window</span>(<span class="dt">xlim =</span> xlim, <span class="dt">ylim =</span> ylim)</span>
+<span id="cb150-5"><a href="Plots.html#cb150-5"></a>  u &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)</span>
+<span id="cb150-6"><a href="Plots.html#cb150-6"></a>  shape<span class="op">::</span><span class="kw">Arrows</span>(u[<span class="dv">1</span>], u[<span class="dv">3</span>], u[<span class="dv">2</span>], u[<span class="dv">3</span>], <span class="dt">arr.adj =</span> <span class="dv">1</span>, <span class="dt">xpd =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb150-7"><a href="Plots.html#cb150-7"></a>  shape<span class="op">::</span><span class="kw">Arrows</span>(u[<span class="dv">1</span>], u[<span class="dv">3</span>], u[<span class="dv">1</span>], u[<span class="dv">4</span>], <span class="dt">arr.adj =</span> <span class="dv">1</span>, <span class="dt">xpd =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb150-8"><a href="Plots.html#cb150-8"></a>  shape<span class="op">::</span><span class="kw">Arrows</span>(u[<span class="dv">1</span>], u[<span class="dv">3</span>], u[<span class="dv">2</span>], u[<span class="dv">3</span>], <span class="dt">arr.adj =</span> <span class="dv">1</span>, <span class="dt">xpd =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb150-9"><a href="Plots.html#cb150-9"></a>  shape<span class="op">::</span><span class="kw">Arrows</span>(u[<span class="dv">1</span>], u[<span class="dv">3</span>], u[<span class="dv">1</span>], u[<span class="dv">4</span>], <span class="dt">arr.adj =</span> <span class="dv">1</span>, <span class="dt">xpd =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb150-10"><a href="Plots.html#cb150-10"></a>  <span class="kw">mtext</span>(<span class="dt">text =</span> xlab, <span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">1</span>, <span class="dt">adj =</span> <span class="dv">1</span>)</span>
+<span id="cb150-11"><a href="Plots.html#cb150-11"></a>  <span class="kw">mtext</span>(<span class="dt">text =</span> ylab, <span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">line =</span> <span class="dv">1</span>, <span class="dt">adj =</span> <span class="dv">1</span>)</span>
+<span id="cb150-12"><a href="Plots.html#cb150-12"></a>}</span>
+<span id="cb150-13"><a href="Plots.html#cb150-13"></a><span class="kw">mathplot</span>(<span class="dt">xlab =</span> <span class="st">&quot;X&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Y&quot;</span>)</span></code></pre></div>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-144-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+</div>
 <div id="plot-empty" class="section level2">
-<h2><span class="header-section-number">16.6</span> Plot empty</h2>
+<h2><span class="header-section-number">16.7</span> Plot empty</h2>
 <div id="plot-without-axisbox" class="section level5 unnumbered">
 <h5>Plot without axis/box</h5>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="Plots.html#cb150-1"></a><span class="kw">par</span>( <span class="dt">ann =</span> <span class="ot">FALSE</span>      <span class="co"># no titles</span></span>
-<span id="cb150-2"><a href="Plots.html#cb150-2"></a>    , <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>   <span class="co"># no box</span></span>
-<span id="cb150-3"><a href="Plots.html#cb150-3"></a>    , <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no x axis</span></span>
-<span id="cb150-4"><a href="Plots.html#cb150-4"></a>    , <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no y axis</span></span>
-<span id="cb150-5"><a href="Plots.html#cb150-5"></a>    )</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="Plots.html#cb151-1"></a><span class="kw">par</span>( <span class="dt">ann =</span> <span class="ot">FALSE</span>      <span class="co"># no titles</span></span>
+<span id="cb151-2"><a href="Plots.html#cb151-2"></a>    , <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>   <span class="co"># no box</span></span>
+<span id="cb151-3"><a href="Plots.html#cb151-3"></a>    , <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no x axis</span></span>
+<span id="cb151-4"><a href="Plots.html#cb151-4"></a>    , <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>  <span class="co"># no y axis</span></span>
+<span id="cb151-5"><a href="Plots.html#cb151-5"></a>    )</span></code></pre></div>
 </div>
 <div id="plot-empty-1" class="section level5 unnumbered">
 <h5>Plot empty</h5>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="Plots.html#cb151-1"></a><span class="co"># Perfect</span></span>
-<span id="cb151-2"><a href="Plots.html#cb151-2"></a><span class="kw">plot.new</span>()</span>
-<span id="cb151-3"><a href="Plots.html#cb151-3"></a></span>
-<span id="cb151-4"><a href="Plots.html#cb151-4"></a><span class="co"># Good</span></span>
-<span id="cb151-5"><a href="Plots.html#cb151-5"></a><span class="kw">plot</span>(<span class="dv">0</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="Plots.html#cb152-1"></a><span class="co"># Perfect</span></span>
+<span id="cb152-2"><a href="Plots.html#cb152-2"></a><span class="kw">plot.new</span>()</span>
+<span id="cb152-3"><a href="Plots.html#cb152-3"></a><span class="kw">plot.window</span>(<span class="dt">xlim =</span> ..., <span class="dt">ylim =</span> ...)</span>
+<span id="cb152-4"><a href="Plots.html#cb152-4"></a></span>
+<span id="cb152-5"><a href="Plots.html#cb152-5"></a><span class="co"># Good</span></span>
+<span id="cb152-6"><a href="Plots.html#cb152-6"></a><span class="kw">plot</span>(<span class="dv">0</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 
 </div>
 </div>
