@@ -272,5 +272,6 @@ head(methods(print))
 ### S3 and S4
 
 * [How to see source code](https://stackoverflow.com/questions/19226816/how-can-i-view-the-source-code-for-a-function)
+  - [Debug non-exported function](https://stackoverflow.com/a/22133524/6152316)
 * [Theory of Object oriented programming in R](https://adv-r.hadley.nz/oo.html)
 

@@ -1,5 +1,13 @@
 # R from the shell
 
+Mainly two commands
+
+* `Rscript` (newer one, preferred)
+* `R CMD BATCH` (old one)
+
+Details see [here](https://support.rstudio.com/hc/en-us/articles/218012917-How-to-run-R-scripts-from-the-command-line)
+
+
 Execute single commands
 
 ```bash
@@ -48,3 +56,20 @@ done
 # Use R interactively in console (Linux)
 
 Go to shell and type R, hit Enter. Opens up interactive console.
+
+
+# Run Sweave from console
+
+```bash
+R CMD Sweave path/to/file.Rnw
+```
+
+
+# Extract R code from Rnw file
+
+```bash
+R CMD Stangle path/to/file.Rnw
+```
+
+
+

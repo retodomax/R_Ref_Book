@@ -437,7 +437,7 @@ lines(loess.smooth(x1, myres[,"x1"]), col = "red")
 The variance inflation factor $\text{VIF}$ quantifies the multicollinearity between predictor variables.
 
 * Fit contains only numerical predictors: $\text{VIF} > 5$ critically
-* Fit contains also factorial predictors: `GVIF^(1/(2*Df))` $> 5$ critically
+* Fit contains also factorial predictors (with > 2 levels): `GVIF^(1/(2*Df))` $> 5$ critically
 
 ```{r, collapse=TRUE}
 ## Only numerical predictors

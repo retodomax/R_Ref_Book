@@ -95,3 +95,11 @@ Note that you can store much larger numbers with double than with integers. Numb
 ```{r MiscPack, echo = FALSE, fig.cap='(ref:MiscPack)', fig.show = 'hold'}
 knitr::include_graphics("figures/package-kinds.png")
 ```
+
+
+## Good practice in R programming
+
+
+* Use `seq_len(n)` and `seq_along(vec)` instead of `1:n` for loops
+  - works if `n` is 0 or `vec` is empty
+  - Fast

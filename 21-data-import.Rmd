@@ -42,12 +42,21 @@ source("https://raw.githubusercontent.com/retodomax/reponame/master/foldername/f
 
 ## Read data
 
-* `read.table()` most general case `sep = ""`
-* `read.csv()` different default value `sep = ","`
-* `read.csv2()` different default value `sep = ";"`
-* `read.delim()` different default value `sep = "\t"`
+Read tables
+
+* `read.table()` most general case `sep = ""` (separated by any white space, see help file), `dec = "."`
+* `read.csv()` different default values `sep = ","`
+* `read.csv2()` different default values `sep = ";"`, `dec = ","`
+* `read.delim()` different default values `sep = "\t"`
+* `read.delim2()` different default values `sep = "\t"`, `dec = ","`
 
 Functions of package `readr`
+
+<a href="figures/03_pdf/data-import.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/data-import.jpg')
+```
+</a>
 
 * `read_csv()` separating value `","`
 * `read_csv2()` separating value `";"`

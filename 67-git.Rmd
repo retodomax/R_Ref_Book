@@ -7,7 +7,12 @@
 * `ls` list all files within directory
 * `head` show head of file
 * `rm` remove file
+* `mkdir` make directory
 * `touch` create empty file, change timestamps of a file
+* `echo "Text" > README.txt` create/overwrite text file
+* `echo "Text" >> README.txt` append text to text file
+* `cat README.txt` print textfile to console
+
 
 
 ## Git basics
@@ -19,7 +24,9 @@ Two very good intros:
 
 Download Git: [here](https://git-scm.com/downloads)
 
-Recommended: do your first steps with a Git client (GUI) to get a feeling for the workflow. Good clients are [SourceTree](https://www.sourcetreeapp.com/), [GitKraken](https://www.gitkraken.com/) but there are many more [here](https://git-scm.com/downloads/guis)
+Recommended: do your first steps with a Git client (GUI) to get a feeling for the workflow. Good clients are [SourceTree](https://www.sourcetreeapp.com/), [GitKraken](https://www.gitkraken.com/) but there are many more [here](https://git-scm.com/downloads/guis). Very lightwight and the first GUI was [gitk](https://git-scm.com/docs/gitk/) which is a GUI wrapper of the command `git log` and has only limited functionality.
+
+Famous [Cheatsheet website](https://ndpsoftware.com/git-cheatsheet.html#loc=index;)
 
 
 ##### basic git commands {-}
@@ -154,4 +161,11 @@ git push -u origin master
 ## Version Control in RStudio
 
 See this <a href="figures/03_pdf/version_control_in_RStudio.pdf.pdf" target="_blank">pdf</a>
+
+
+## Extensions
+
+* [Large File Storage](https://git-lfs.github.com/)
+  - Specify files which should not be added to git but instead replaced with text pointer and stored separtely on server
+  - Makes sure, git repository does not become too large
 

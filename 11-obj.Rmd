@@ -63,7 +63,7 @@ knitr::kable(mytab, format="pandoc")
 
 ## Classifications
 
-Objects can be ordered in a hirarchical structure
+Objects can be ordered in a hierarchical structure
 
 ```{r, echo = FALSE, out.width='50%'}
 knitr::include_graphics('figures/r_object.png')
@@ -197,6 +197,7 @@ Formula syntax is a way to specify linear models.
 * `model` consists of terms separated by `+`
 * Single terms consist of variable/factor names separated by `:`
 * Such a term is interpreted as the interaction of all the variables and factors appearing in the term.
+* This notation is originally referred to as [Wilkinson-style notation](https://www.jstor.org/stable/2346786?origin=crossref) and was later [extended e.g. for lme4](https://stats.stackexchange.com/q/284913/237402)
 
 
 |Symbol  |  Example  |  Meaning                                                 |

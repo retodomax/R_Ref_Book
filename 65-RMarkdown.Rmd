@@ -117,6 +117,39 @@ knitr::opts_chunk$set(comment = "##",
 ## this seems necessary for correct source code displaying...
 ``` --> 
 
+#### Code highlighting
+
+* This is controlled by `knitr`
+* Different ways for `.Rmd` and `.Rnw` documents
+* `.Rmd`
+  - For rmarkdown, the syntax highlighting is provided by pandoc, NOT `knitr.`
+  - Depends if it is code block (no curly braces at top) or code chunk (curly braces at top)
+    + For code blocks (without curly braces) everything is handled by pandoc
+    + to check which languages are supported go to terminal and type `pandoc --list-highlight-languages`
+    + Supported is e.g. R, bash, latex, bibtex, makefile, python but for example NOT stan.
+  - [Manual](https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style)
+  - Use the following header
+
+```yaml
+---
+title: "My Document"
+output:
+  html_document:
+    theme: tango
+---
+```
+
+  - Possible themes include: `default`, `tango`, `pygments`, `kate`, `monochrome`, `espresso`, `zenburn`, `haddock`, `breezedark`, and `textmate`
+  - [Preview all themes](https://www.garrickadenbuie.com/blog/pandoc-syntax-highlighting-examples/)
+  - [Modify themes](https://community.rstudio.com/t/edit-tango-highlight/39106) (not so easy!)
+* `.Rnw`
+  - syntax highlighting is provided by `knitr`
+  - [Manual](https://rdrr.io/cran/knitr/man/knit_theme.html)
+  - [Preview all themes](https://gist.github.com/yihui/3422133)
+  - [Modify themes](https://stackoverflow.com/questions/11421614/code-styling-for-black-and-white-documents)
+    + put `knit_theme$set("~/texmf/RetoKnitrCodeHighlight.css")` in the first code chunk and 
+    + create/modify `RetoKnitrCodeHighlight.css`
+
 
 ## Figures
 
@@ -144,7 +177,7 @@ Chunk options
     - Possible Bug: figures often are on top of each other
     - Always include `fig.align='default'` and it should work
 
-Recomended file formate
+Recommended file format
 
 * If output pdf use pdf images ([svg not possible](https://stackoverflow.com/questions/50165404/how-to-make-a-pdf-using-bookdown-including-svg-images)!)
 * If output html use png images
@@ -154,7 +187,7 @@ Recomended file formate
 
 ##### Wrap text arround plot {-}
 
-Plots can be placed on right side with text wraped arround it. Use the following chunk options:
+Plots can be placed on right side with text wrapped around it. Use the following chunk options:
 
 ````markdown
 `r ''````{r, out.width='25%', echo = FALSE, out.extra='style="float:right; padding:5px"'}
@@ -184,7 +217,11 @@ knitr::include_graphics('figures/03_pdf/lubridate.jpg')
 
 ## Tables
 
-* For data in R use `knitr::kable()` (See [Kable Manual](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html))
+* For data in R use
+  - `knitr::kable()`/[`kableExtra::kbl()`]((https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html))
+  - [`flextable`](https://ardata-fr.github.io/flextable-book/)
+  - [`gt`](https://gt.rstudio.com/articles/intro-creating-gt-tables.html)
+* Quick coercion of complex objects (fitted model, anova table ...) to Latex/HTML tables: [xtable](https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf)
 * For text use [Pandoc tables](https://pandoc.org/MANUAL.html#tables)
     + Available
         - Simple tables
@@ -194,6 +231,18 @@ knitr::include_graphics('figures/03_pdf/lubridate.jpg')
     + Recommended to use
         - pipe tables for simple tables (generate [here](https://www.tablesgenerator.com/markdown_tables))
         - Grid tables where you need bullet points within the table (generate [here](https://www.tablesgenerator.com/text_tables))
+
+
+pipe tables will always be full width in html and not full width in pdf. To make them a specific width in html use
+
+```markdown
+<div style="width: 50%;">
+| Col1 | Col2 |
+|------|:----:|
+| 1    | 2    |
+| 3    | 4    |
+</div>
+```
 
 
 ```{block2, type='rmdcaution'}
@@ -398,8 +447,8 @@ output:
     bookdown::pdf_document2:
       includes:
           in_header:
-            - /home/reto/texmf-local/tex/latex/commonstuff/RetoArticle.sty
-            - /home/reto/texmf-local/tex/latex/commonstuff/RetoMath.sty
+            - /home/reto/texmf/tex/latex/commonstuff/RetoArticle.sty
+            - /home/reto/texmf/tex/latex/commonstuff/RetoMath.sty
 classoption: a4paper
 geometry: margin=2.5cm
 ```

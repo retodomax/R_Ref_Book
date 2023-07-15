@@ -1,4 +1,34 @@
-# ggplot
+# ggplot2
+
+## R Base Graphics vs ggplot2
+
+**R base graphics**
+
+* Based on packages `grapics` and `grDevices`
+* Application
+  - Graphical parameters are set with the function `par()`
+  - High level plot functions create new plot
+  - Low level plot functions add elements
+* Concept
+  - Every plotting function directly prints to the output device
+  - What is printed cannot be deleted
+  - You can only print on top of an existing plot
+
+**ggplot2**
+
+* Based on package `ggplot2`
+* Concept
+  - Write a program (saved in a `gg` object) that can later be used to create the plot in one step
+  - The whole plot is saved in a single object
+  - `ggplot()` creates the `gg` object
+  - `+.gg()` adds layers to an existing `gg` object
+
+
+
+
+
+
+## Syntax
 
 [Reference page](https://ggplot2.tidyverse.org/reference/)
 
@@ -73,3 +103,13 @@ Examples:
 `stat`: algorithm to calculate new values for a graph
 
 Check default value of `stat` argument in each `geom`
+
+
+## Combine base graphics and ggplot2
+
+* Very difficult to combine output of both
+  - Usually you have to decide for one of both
+* Possible help
+  - Package `gridBase` helps to combine grid (also ggplot2) and base graphics output
+    + [Vignette](https://cran.r-project.org/web/packages/gridBase/vignettes/gridBase.pdf)
+  - `ggthemes::theme_base` allows for ggplot output with the base graphics design

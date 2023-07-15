@@ -1,0 +1,234 @@
+# Makefiles
+
+
+## Tutorials
+
+* [Makefiles and Sweave](https://www.r-bloggers.com/2011/05/makefiles-and-sweave/)
+* [Manual of make](https://www.gnu.org/software/make/manual/make.html)
+* [Stack Overflow](https://stackoverflow.com/questions/46741739/how-to-use-makefiles-with-r-cmd-build)
+* @baker2020UsingGNUMake
+  - [JSS](https://www.jstatsoft.org/article/view/v094c01/)
+
+
+## Small examples
+
+Simple: Run specific bash commands
+
+```bash
+# Sweave all Rnw
+R CMD Sweave ./../chapters/chapter1.Rnw
+R CMD Sweave ./../chapters/chapter2.Rnw
+
+# Create Slides
+pdflatex slides.tex
+
+# Extract R code from Rnw
+R CMD Stangle ./../chapters/chapter1.Rnw
+R CMD Stangle ./../chapters/chapter2.Rnw
+
+# Creating one file with all Code
+cat chapter1.R chapter2.R > demo.R
+
+# Removes Chunks in Democode
+sed "/chunk/d" demo.R > democode.R
+rm -f demo.R
+
+# Cleaning Folder
+rm -f *.aux *.log *.toc *.nav *.snm *.vrb *.out *.aux chapter*.tex chapter*.R
+
+# make 2x2 pdf of slides
+pdfnup --nup 2x2 --suffix '2x2' slides.pdf
+```
+
+Better: Specify rules how target files can be built
+
+```bash
+# Makefile 
+
+# File lists:
+RNW = $(wildcard rnw/*.Rnw)
+R = $(patsubst %.Rnw,%.R,$(RNW))
+TEX = $(patsubst %.Rnw,%.tex,$(RNW))
+
+# Master file:
+MASTER = MasterThesisSfS
+
+# Meta rules:
+.Rnw.tex:
+	Rscript -e "library(knitr); knitr::knit('$<','$@')"  # $< is prerequisite, and $@ is target
+
+.Rnw.R:
+	Rscript -e "library(knitr); knitr::purl('$<',documentation=0L)"
+
+.tex.pdf:
+	latexmk -bibtex -synctex=1 -pdf  -use-make -halt-on-error \
+	 -pdflatex="pdflatex" -silent $(MASTER).tex
+
+# Conversion rules:
+all: 	$(MASTER).pdf 
+
+$(MASTER).pdf: $(TEX) $(MASTER).tex 
+
+short: $(TEX)
+	pdflatex $(MASTER).tex 	
+
+clean:
+	rm -f *~   *.out Rplots.pdf comment.cut \
+              *.idx *.ilg *.brf *.blg *.spl  $(MASTER).dvi \
+              *.backup *.toc *.fls  *fdb_latexmk *.synctex.gz  
+
+cleanall: clean
+	rm -f *.aux *.log *.ind 
+	rm -f figures/ff???????_fig*.pdf
+	rm -f ff????????.tex ff????????.R $(MASTER).bbl
+	rm -rf cache .Rhistory
+
+# Some technical details
+.SUFFIXES: .Rnw .R .tex .pdf
+.SILENT: *.pdf *.tex	
+.PHONY: all short clean cleanall
+
+# 2019 Reinhard Furrer, Florian Gerber
+```
+
+The above script uses [Old-Fashioned Suffix Rules](https://www.gnu.org/software/make/manual/make.html#Suffix-Rules) (e.g. `.Rnw.tex:` which is no longer recommended.
+
+
+```bash
+# Makefile
+
+# Path to search
+MYFOLD = $(shell find ./../../../01_Material/ -type d)
+VPATH = tex R $(MYFOLD)
+
+# File lists:
+NecessaryRnwFiles = file1 file2 file3 file4
+TEX = $(addsuffix .tex,$(NecessaryRnwFiles))
+R = $(addsuffix .R,$(NecessaryRnwFiles))
+SVG_ODG = $(shell find ./../../../01_Material/ -type f \( -name "*.svg" -o -name "*.odg" \))
+PDFimg = $(addsuffix .pdf, $(basename $(SVG_ODG)))
+
+# Master file:
+MASTER = slides
+
+
+# Pattern Rules:
+
+%.tex: %.Rnw 
+	Rscript -e "library(knitr); knitr::knit('$<', 'tex/$@')"
+
+%.R: %.Rnw
+	Rscript -e "library(knitr); knitr::purl('$<', 'R/$@', documentation=0L)"
+
+%.pdf: %.tex
+	latexmk -pdf $<
+
+%.pdf: %.svg
+	inkscape --export-type=pdf $<
+
+%.pdf: %.odg
+	soffice --convert-to pdf $< --outdir $(dir $@)
+
+
+# Conversion rules:
+
+all: $(PDFimg) $(MASTER).pdf demo.R
+	rm -f *.aux *.log *.toc *.nav *.snm *.vrb *.out *.aux *.fls *fdb_latexmk
+	pdfjam --nup 2x2 $(MASTER).pdf --outfile $(MASTER)_2x2.pdf --landscape
+
+$(MASTER).pdf: $(TEX) $(MASTER).tex
+
+$(MASTER).tex: $(MASTER).Rnw
+	Rscript -e "library(knitr); knitr::knit('$<', '$@')"
+
+demo.R: $(R)
+	cat $(addprefix R/, $(R)) > demo.R
+
+clean:
+	rm -f $(addprefix tex/, $(TEX))
+	rm -f $(addprefix R/, $(R))
+	rm -f *.aux *.log *.toc *.nav *.snm *.vrb *.out *.aux *.fls *fdb_latexmk
+	rm -f $(MASTER).pdf $(MASTER)_2x2.pdf
+	rm -f $(MASTER).tex
+	rm -f demo.R
+
+
+# Technical detail
+.PHONY: all clean
+```
+
+## Explanantion
+
+* `MYFOLD = $(shell find ./../../../01_Material/ -type d)`
+  - Lists all the sub-folders in the Material folder
+  - Calls shell command [`find`](https://man7.org/linux/man-pages/man1/find.1.html) and extracts the path of folders
+  - `-type d` list only directories (no files)
+  - earlier I used `MYFOLD = $(shell tree ./../../../01_Material/ -d -f -i)` but strangely it did not work in the RStudio Terminal.
+  - `find` will return a list separated by newlines? In the `VPATH` variable, directory names are separated by colons or blanks (see [here](https://www.gnu.org/software/make/manual/make.html#General-Search)). Some internet posts suggest to first replace all spaces by colons.  However, for me it worked without doing this. Otherwise see [here](https://stackoverflow.com/a/54192443/6152316) and [here](https://stackoverflow.com/a/10571900/6152316).
+* `VPATH = tex R $(MYFOLD)`
+  - [VPATH](https://www.gnu.org/software/make/manual/make.html#General-Search) adds directories to the search path of `make`
+  - files will now also be found in folder `./tex`, `./R` and all directories contained in variable `MYFOLD`
+* `NecessaryRnwFiles = file1 file2 file3 file4`
+  - Manual list of files which we will need to compile
+* `TEX = $(addsuffix .tex,$(NecessaryRnwFiles))`
+  - add suffix '.tex' to all characters in variable `NecessaryRnwFiles`
+* `SVG_ODG = $(shell find ./../../../01_Material/ -type f \( -name "*.svg" -o -name "*.odg" \))`
+  - calls shell command [`find`](https://man7.org/linux/man-pages/man1/find.1.html) returning name and path of all files following a specific pattern
+  - `-type f` makes sure that only files (not directories) are returned
+  - `\( pattern1 -o pattern2 \)` allows to [look for two pattern at once](https://stackoverflow.com/a/1133720/6152316)
+  - `*.svg` is a pattern with wildcard
+* `$(basename $(SVG_ODG))`
+  - `basename` removes file suffix from all characters in variable `SVG_ODG`
+* Pattern Rules
+  - [Pattern Rules](https://www.gnu.org/software/make/manual/make.html#Pattern-Intro) define how to convert files of a certain extensions to files of another extensions
+  - `$@` is the file name in the target format, `$<` the file name in the original format (see [Automatic Variables](https://www.gnu.org/software/make/manual/make.html#Automatic-Variables))
+* `all: $(PDFimg) $(MASTER).pdf demo.R ...`
+  - defines the prerequisites and rules to create `all` which is a [Phony Target](https://www.gnu.org/software/make/manual/make.html#Phony-Targets)
+  - Prerequisites are all files contained in variable `PDFimg`, the file with the name which is stored in the variable `MASTER` with extension pdf, and the file `demo.R`
+  - Afterwards the rules how to 'create' all is defined. In this specific case the prerequisite already make sure that all important files are created and the remaining rules just clean up some unnecessary files and create a 2x2 pdf.
+* `$(MASTER).pdf: $(TEX) $(MASTER).tex`
+  - To create the file with the name which is stored in `MASTER` and the suffix `.pdf` we first need to some prerequisites.
+* `cat $(addprefix R/, $(R)) > demo.R`
+  - Concatenate all files in variable `R`, found in folder `R`, and save the concatenated string to the file `demo.R`
+* `.PHONY: all clean`
+  - Make sure that `make` will first find the [Phony Target](https://www.gnu.org/software/make/manual/make.html#Phony-Targets) `all` and `clean` even if there might be files with the name `all` and `clean`.
+
+## Usefull commands
+
+Find recursively all Rnw files in directory and put them into vector
+
+```bash
+RNW = $(shell find ./../../../01_Material/ -type f -name '*.Rnw')
+```
+
+
+## Recursive search for file in path
+
+* https://stackoverflow.com/questions/2483182/recursive-wildcards-in-gnu-make
+* https://stackoverflow.com/questions/231229/how-to-generate-a-makefile-with-source-in-sub-directories-using-just-one-makefile
+
+## Print variable in Makefile
+
+To debug it can be helpful to print a specific variable. See [here](https://stackoverflow.com/questions/16467718/how-to-print-out-a-variable-in-makefile)
+
+```bash
+.PHONY: printvar
+printvar: ; $(info $$var is [${var}])echo Hello world
+```
+
+[Book Managing Projects with GNU Make, Chapter 12, Debugging Makefiles](https://learning.oreilly.com/library/view/managing-projects-with/0596006101/ch12.html#make3-CHP-12-SECT-1)
+[Alternative Debugging methods](https://www.gnu.org/software/automake/manual/html_node/Debugging-Make-Rules.html)
+
+## Sweave and knitr
+
+* Rnw documents with Sweave syntax can be transformed to knitr syntax directly
+* Useful commands
+  - `knitr::Sweave2knitr()`
+  - At start of Rnw file: `%\VignetteEngine{knitr::knitr}` will make `R CMD Sweave` to automatically use knitr
+
+
+## General Recomondations for Multi-file LaTeX projects
+
+* [Overleaf: Multi-file LaTeX projects](https://www.overleaf.com/learn/latex/Multi-file_LaTeX_projects)
+* [reddit: graphics path](https://www.reddit.com/r/LaTeX/comments/1yd1r9/need_help_with_specifying_separate_graphics_paths/)
+* [Blog: Organize LaTeX Project](http://www.jespertoftkristensen.com/JTK/Blog/Entries/2014/1/13_Organize_your_LaTeX_Project.html)

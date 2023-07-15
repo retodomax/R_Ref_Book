@@ -1,10 +1,13 @@
 --- 
-title: "R Reference book"
+title: "R Reference Book"
 author: "Reto Zihlmann"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [zotero_lib.bib, packages.bib]
+bibliography: 
+  - "`r system('kpsewhich bib.bib', intern=TRUE)`"
+  - zotero_lib.bib
+  - bib_packages.bib
 biblio-style: apalike
 link-citations: yes
 github-repo: "retodomax/R_Ref_Book"
@@ -37,7 +40,7 @@ knitr::include_graphics("figures/01_cover/Cover2.png")
 
 ***
 
-This book contains a not final and constantely growing collection of useful R knowledge. [R](https://www.r-project.org/) is a free software environment for statistical computing and graphics. 
+This book contains a constantly growing collection of useful R knowledge. [R](https://www.r-project.org/) is a free software environment for statistical computing and graphics. 
 The book is written in [RMarkdown](https://rmarkdown.rstudio.com/) with [bookdown](https://bookdown.org/).
 
 
@@ -52,7 +55,7 @@ The book is written in [RMarkdown](https://rmarkdown.rstudio.com/) with [bookdow
 # automatically create a bib database for R packages
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
+), 'bib_packages.bib')
 ```
 
 ```{r include=FALSE}
@@ -76,6 +79,7 @@ pkgTest("MASS")
 pkgTest("car")
 pkgTest("multcomp")
 pkgTest("lmerTest")
+pkgTest("GGally")
 
 
 

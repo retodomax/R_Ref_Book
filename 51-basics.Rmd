@@ -4,8 +4,8 @@
 
 * `d` Density (pdf, pmf)
 * `p` Probability (cdf)
-* `q` Quantile
-* `r` Random
+* `q` Quantile (quantile function)
+* `r` Random sampling
 
 
 ```{r, echo=FALSE, fig.show='hold', fig.align='default', out.width='24%', fig.width=4, fig.height=5}

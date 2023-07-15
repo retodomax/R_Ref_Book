@@ -1,8 +1,13 @@
 # Interactive Plots
 
-* HTML Widgets framework
-    - Do not need live R session
-    - Interactivity comes from the client side (via JavaScript in the web browser)
+Overview of the R plot implementations [ggplot2 book](https://ggplot2-book.org/introduction.html#how-does-ggplot2-fit-in-with-other-r-graphics)
+
+* HTML Widgets framework <http://www.htmlwidgets.org>
+  - Do not need live R session
+  - Interactivity comes from the client side (via JavaScript in the web browser)
+  - many packages built on top of that (e.g. leaflet)
+* plotly
+  - javascript visualisation toolkit 
 * Shiny framework
-    - Easy but rely on a live R session
-    - Interactivity from the provider (server with running R session)
+  - Easy but rely on a live R session
+  - Interactivity from the provider (server with running R session)

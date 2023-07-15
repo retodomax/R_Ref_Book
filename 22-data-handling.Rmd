@@ -15,6 +15,8 @@
 |`%%`| Modulo | `!=` | unequal | `xor(x,y)` | logical exclusive OR |
 |`%/%`| Integer division | | | | |
 
+Order in which they are executed is defined in `?Syntax`
+
 ##### Examples {-}
 
 ```{r, collapse=TRUE}
@@ -72,6 +74,8 @@ R has 3 formates to store Date-Time
 * `POSIXlt` list with year, month, day, ...
 * `Date` String in form "YYYY-MM-DD"
 
+Some formats are better suited for specific objectives. E.g. `ggplot2` can only work with POSIXct not POSIXlt.
+
 ##### Transform between string and Date-Time format {-}
 
 ```{r, echo=FALSE, out.width='50%'}
@@ -80,13 +84,44 @@ knitr::include_graphics('figures/Date_time.png')
 
 
 * From string to Date-Time
-    - `strptime()`
+    - string -> POSIXlt
+      + `strptime()` (means string parser time, i.e. parses a string to a date-time or date)
+      + `as.POSIXlt()`
+    - string -> POSIXct
+      + `as.POSIXct()`
+    - string -> Date
+      + `as.Date()`
+* From POSIXt to character
+    - `strftime()` (means string formatter time, i.e. formats a time to a string)
     - `format()`
-    - `as.POSIXct()`
-    - `as.POSIXlt()`
-    - `as.Date()` does not specify the time
-* From Date-Time to string
-    - `strftime()`
+    - `as.character()`
+
+```{r, eval=FALSE}
+now <- Sys.time()
+snow <- strftime(now, format = "%d.%m.%Y")
+
+### from POSIXxt -> character
+# format() (methods format.POSIXlt and format.POSIXct)
+# as.character()
+# strftime()
+strftime(now, format = "%d.%m.%Y")
+format(now, format = "%d.%m.%Y")
+as.character(now, format = "%d.%m.%Y")
+
+### character -> POSIXlt
+# strptime()
+(x <- strptime(snow, format = "%d.%m.%Y"))
+class(x)
+(x <- as.POSIXlt(snow, format = "%d.%m.%Y"))
+class(x)
+
+### character -> POSIXct
+# as.POSIXct()
+(x <- as.POSIXct(snow, format = "%d.%m.%Y"))
+class(x)
+```
+
+
 
 |      |  Meaning        |      | Meaning             |
 |:-----|:----------------|:-----|:--------------------|
@@ -95,6 +130,7 @@ knitr::include_graphics('figures/Date_time.png')
 | `%d` | Day (01-31)     | `%H` | Hours (00-23)       |
 | `%M` | Minute (00-59)  | `%S` | Second (00-61)      |
 | `%j` | DOY (001-366)   | `%V` | WOY (00-53)         |
+| `%F` | YYYY-MM-DD      | `%T` | HH:MM:SS            |
 
 All conversion specification can be found [here](https://stat.ethz.ch/R-manual/R-devel/library/base/html/strptime.html)
 
@@ -254,3 +290,54 @@ knitr::include_graphics('figures/03_pdf/data-transformation.jpg')
 </a>
 
 
+## `dplyr` functions
+
+
+## Basic functions
+
+* `filter()` select rows
+* `arrange()` sort rows (in combination with `desc()`)
+* `select()` select columns
+* `mutate()` create new column
+* `summarise()` aggregate
+* `group_by()` group
+
+
+## Add ons
+
+* `slice()` select rows based on location
+  - `slice_head()`
+  - `slice_tail()`
+* `rename()` change name of column
+* `relocate()` change order of columns
+
+
+## tidyselect
+
+See `?select`
+
+* Basic
+  - `:`, `!`, `&`, `|`, `c()`
+* Helper
+  - `everything()`
+  - `last_col()`
+* Pattern matching
+  - `starts_with()`
+  - `ends_with()`
+  - `contains()` contain a literal string
+  - `matches()` matches a regular expression
+  - `num_range()` matches a numerical range like x01, x02, x03.
+* Character vector
+  - `all_of()` error if one is not found
+  - `any_of()` no error
+  - [Help manual](https://tidyselect.r-lib.org/reference/all_of.html)
+* Based on arbitrary function
+  - `where()`
+  
+  
+## Additinally useful
+
+* [`accross()`](https://dplyr.tidyverse.org/reference/across.html) apply the same transformation to multiple column
+* `nest()`
+    - https://drsimonj.svbtle.com/running-a-model-on-separate-groups
+* `case_when()` as an alternative to `ifelse()`

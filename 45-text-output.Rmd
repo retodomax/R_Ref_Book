@@ -21,3 +21,48 @@ plot(1, type = "n")
 text(1,1, labels = "text \n and more text")
 ```
 
+
+## Print text to console
+
+Main functions
+
+* `print()`
+* `cat()`
+* `message()`
+* `warning()`
+* `stop()`
+* `write()`
+
+See [this excellent post on Stack Overflow](https://stackoverflow.com/a/36700294/6152316)
+
+Details
+
+* `print()`
+  - Arguments are not pasted together
+  - Elements are numbered like `[1]`
+  - Quotation mark around strings
+* `cat()`
+  - Arguments are pasted together (default: `sep = " "`)
+  - You have to force new lines with `\n`
+  - Most generic `print.*()` functions use `cat()` or mixture of `print.default()` and `cat()` (see for example `getAnywhere(print.lm)`
+* `message()`
+  - Arguments are pasted together (default: `sep = ""`)
+  - Output not sent to stdout (standard output) but to stderr (standard error)
+    + Printed in red color
+    + can be suppressed and caught with e.g. `supressMessages()`, `tryCatch()`, ...
+  
+
+## Combine Text and variables
+
+* `paste()`
+* `cat()`
+* `format()`
+* `sprintf()`
+* `glue::glue()`
+
+```{r, collapse=TRUE}
+cat("pi is given by", format(pi, digits = 3))
+sprintf("pi is given by %.2f", pi)
+glue::glue("pi is given by {pi}")
+```
+

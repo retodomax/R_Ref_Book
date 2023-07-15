@@ -245,7 +245,7 @@ knitr::include_graphics("figures/workflow_knitr.png")
   <tr>
     <td>Small image ![](figures/R_logo2.png)</td>
     <td> `\includegraphics{R_logo2}`</td>
-    <td>`![](R_logo2.png)`</td>
+    <td>`![](R_logo2.png){width=50%}`</td>
   </tr>
   <tr>
     <td>Formal image ![](figures/R_logo2.png)</td>
@@ -293,6 +293,34 @@ plot(1:3)
 ````markdown
 `r ''````{r, mylabel, echo=FALSE, fig.cap='FigCap', fig.pos="tb"}
 plot(1:3)
+```
+````
+<!-- 
+## this seems necessary for correct source code displaying...
+``` --> 
+  Attention: label is `mylabel` but cross-references need to use `fig:mylabel`
+    </td>
+  </tr>
+  <tr>
+    <td>Formal image generated with tikz code\
+    ![](figures/R_logo2.png)</td>
+    <td>
+        Snipped "tikz"\
+```latex
+	\begin{figure}
+		\centering
+		%%MyTikzCode%%
+		\caption{mycaption}
+		\label{fig:mylabel}
+	\end{figure}
+```
+    </td>
+    <td>
+    Snipped "tikz"\
+
+````markdown
+`r ''````{tikz, mylabel, echo=FALSE, fig.cap = 'myCaption', fig.pos="tb", fig.ext = 'png', engine.opts = list(template = system('kpsewhich tikz2pdf.tex', intern=TRUE))}
+	%%MyTikzCode%%
 ```
 ````
 <!-- 
@@ -708,7 +736,7 @@ output:
 		toc: true
 		toc_float: true
 		includes:
-			before_body: /home/reto/texmf-local/tex/latex/commonstuff/RetoMathjax.tex
+			before_body: /home/reto/texmf/tex/latex/commonstuff/RetoMathjax.tex
 bibliography:
 	- "`r "\u0060r system('kpsewhich bib.bib', intern=TRUE)\u0060"`"
 	- bib_packages.bib
@@ -784,8 +812,8 @@ output:
 	bookdown::pdf_document2:
 		includes:
 			in_header:
-				- /home/reto/texmf-local/tex/latex/commonstuff/RetoArticle.sty
-				- /home/reto/texmf-local/tex/latex/commonstuff/RetoMath.sty
+				- /home/reto/texmf/tex/latex/commonstuff/RetoArticle.sty
+				- /home/reto/texmf/tex/latex/commonstuff/RetoMath.sty
 bibliography:
 	- "`r "\u0060r system('kpsewhich bib.bib', intern=TRUE)\u0060"`"
 	- bib_packages.bib

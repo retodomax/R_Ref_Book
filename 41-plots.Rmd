@@ -8,6 +8,14 @@
 
 Good overviews:
 
+<a href="figures/03_pdf/r-graphical-parameters-cheatsheet.pdf" target="_blank"> 
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics('figures/03_pdf/r-graphical-parameters-cheatsheet.JPG')
+```
+</a>
+
+
+
 * [Official Documentation](https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/par.html)
 * [Illustrated Documentation](http://rstudio-pubs-static.s3.amazonaws.com/315576_85cccd774c29428ba46969316cbc76c0.html)
 * Book R in a Nutshell: A Desktop Quick Reference
@@ -680,6 +688,74 @@ par("smo")    # unimplemented
 ```
 
 
+
+
+
+## Graphics Size and Resolution
+
+### Terminology
+
+* [Point (typography)](https://en.wikipedia.org/wiki/Point_(typography)) Unit of length in typography. 1 point = $1/72$ inch $\approx$ 0.353 mm.
+  - Typically, font size and size of spaces are defined in unit "pointsize"
+* [Pixels per inch](https://en.wikipedia.org/wiki/Pixel_density) (ppi) measurement of pixel density 
+
+### Devices
+
+* `pdf()`
+  - `width`/`height`
+    + By default 7 inches
+    + Are always specified in **inches**. No `unit` argument.
+    + To specify in cm use function `cm()` which converts **from** cm **to** inches.
+  - No resolution argument necessary (vector graphic)
+* `png()`
+  - `width`/`height`
+    + By default 480 units (by default pixels)
+    + `unit` argument changes unit (`px`, `in`, `cm`, `mm`)
+  - Resolution: See below
+
+### Resolution and Font Size with png
+
+Depends if `height`/`width` is specified in pixels or in length
+
+* `unit = "px"` (NOT recommended)
+   - `res` by default 72 ppi if not specified otherwise
+   - pixels $\xrightarrow{\text{ppi}}$ inches
+   - Changing `res` will also change the font size (relative to image dimensions)! Reason: `pointsize` is defined in inches and inches are defined via `ppi`.
+* `height`/`width` not specified in pixels
+  - `res` has to be specified (NO default value)
+  - pixels $\xleftarrow{\text{ppi}}$ inches
+  - Changing the `res` has no effect on font size (relative to image dimensions)
+
+```{r, eval=FALSE}
+# default: width = 480, height = 480, units = "px", pointsize = 12, res = 72
+png("TestPlot.png")
+plot(1:10)
+dev.off()
+
+# change only `res`
+png("TestPlot.png", res = 30)
+plot(1:10)
+dev.off()
+## font size (relative to image dimensions) very small now
+
+png("TestPlot.png", width = 17, height = 17, units = "cm", res = 200)
+plot(1:10)
+dev.off()
+## now the font size is defined relative to the image dimensions
+## Changing the `res` will not change the font size
+png("TestPlot.png", width = 17, height = 17, units = "cm", res = 300)
+plot(1:10)
+dev.off()
+
+## you can still change the font size with the argument `pointsize`
+png("TestPlot.png", width = 17, height = 17, units = "cm", res = 300, pointsize = 24)
+plot(1:10)
+dev.off()
+```
+
+
+
+
 ## Colors
 
 Very well explained [here](http://www.melissaclarkson.com/resources/R_guides/documents/colors_Ver2.pdf)
@@ -792,11 +868,11 @@ par(old_par)
 
 * Add two more digits to hexadecimal code, which define transparency
     - `#RRGGBBaa`
-* Use `alpha()` function of package `ggplot2`
+* Use `adjustcolor()` function
+  - Alternative: `ggplot2::alpha()`
 
 ```{r, eval=FALSE}
-require(ggplot2)
-plot(..., col = alpha(gray, 0.5))
+plot(..., col = adjustcolor("gray", alpha.f = 0.5))
 ```
 
 
@@ -886,6 +962,7 @@ Common high level plot functions
     - `plot.design()`
 * Multivariate
     - `pairs()`
+    - `GGally::ggpairs()`
     - Bubble Plot
     - `coplot()`
     - `stars()`
@@ -1001,6 +1078,10 @@ panel.hist <- function (x, ...)
 }
 pairs(x = iris, lower.panel = panel.smooth,
       upper.panel = panel.cor, diag.panel = panel.hist, main = "pairs()")
+
+
+# ggpairs -----------------------------------------------------------------
+GGally::ggpairs(iris)
 
 # Bubble plot -------------------------------------------------------------
 plot(swiss$Fertility, swiss$Examination, cex = swiss$Catholic/50+1,
@@ -1161,12 +1242,17 @@ matplot(den.df, mq, type = "l", xlab = "den.df", ylab = "95%-quantile")
 
 ### Example: image and contour plot
 
-Be careful with `image()` and `contour()`
+Be careful with `image()` and `contour()`. There are different conventions for mapping the matrix indices $(i, j)$ to the spatial coordinates $(x, y)$.
 
-1. matrix is transposed
+* Cartesian convention
+  1. matrix is transposed
     - rows of matrix end up on x axis
     - columns on y axis
-2. columns are flipped (first column is at bottom)
+  2. columns are flipped (first column is at bottom)
+* European reading order
+  - Matrix plotted as it would also be written down
+
+For details see @baddeleySpatialPointPatterns2016 [chapter 3.6.3]
 
 ```{r, }
 (m <- matrix(1:6, 3, 2))
@@ -1175,6 +1261,20 @@ text(x = rep(0:2/2, 2), y = rep(0:1, each = 3))
 contour(z = m, levels = 1:6, add = TRUE)
 ```
 
+For European reading order first rotate matrix using `t(m[nrow(m):1,,drop=FALSE])` (see [here](https://stackoverflow.com/a/16497058/6152316))
+
+```{r}
+image(t(m[nrow(m):1,,drop=FALSE]))
+text(x = rep(0:1, each = 3), y = rep(2:0/2, 2))
+```
+
+or use `heatmap()`
+
+```{r}
+heatmap(x = m, Rowv = NA, Colv = NA, revC = TRUE, asp = 1, scale = "none")
+```
+
+Example: visualize polynomial regression model with two predictors
 
 ```{r}
 library(MASS)
@@ -1200,7 +1300,7 @@ lattice::contourplot(y ~ hard + tens, data = grid, main = "lattice::contourplot(
 
 ### Example: Boxplot
 
-Separately give datapoints for each box
+Separately give data points for each box
 
 ```{r}
 set.seed(1)
@@ -1356,7 +1456,7 @@ abline(v = 2)
 
 ```{r}
 mathplot <- function(xlim = c(0,1), ylim = c(0,1), xlab = "x", ylab = "y"){
-  par(xaxs = "i", yaxs = "i")  # no +- 4%
+  opar <- par(xaxs = "i", yaxs = "i")  # no +- 4%
   plot.new()
   plot.window(xlim = xlim, ylim = ylim)
   u <- par("usr")
@@ -1366,6 +1466,7 @@ mathplot <- function(xlim = c(0,1), ylim = c(0,1), xlab = "x", ylab = "y"){
   shape::Arrows(u[1], u[3], u[1], u[4], arr.adj = 1, xpd = TRUE)
   mtext(text = xlab, side = 1, line = 1, adj = 1)
   mtext(text = ylab, side = 2, line = 1, adj = 1)
+  par(opar)
 }
 mathplot()
 ```
