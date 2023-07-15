@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2021-02-20" />
+<meta name="date" content="2021-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -571,7 +571,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <p style="visibility:hidden;">% Tag useful such that part is included but already hidden even before rendering of MathJax
 \(
-\newcommand{\bm}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\bm}[1]{\boldsymbol{#1}}
+% \newcommand{\bm}[1]{\boldsymbol{\mathbf{#1}}}  % Use this if you prefere upright (not italic) vectors and matrices
 
 % Operators
 \newcommand{\tr}{{}^{\intercal}}               % transpose (needs amssymb)
@@ -702,7 +703,7 @@ Only visual properties which map a variable are in <code>aes()</code>. Visual pr
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="ggplot.html#cb155-1"></a><span class="kw">require</span>(ggplot2)</span>
 <span id="cb155-2"><a href="ggplot.html#cb155-2"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span></span>
 <span id="cb155-3"><a href="ggplot.html#cb155-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
-<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-150-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="R_Ref_Book_files/figure-html/unnamed-chunk-151-1.png" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <ul>
 <li><code>facet_wrap()</code> split plot according to factor</li>
 <li><code>facet_grid()</code> split plot according to 2 factors</li>
